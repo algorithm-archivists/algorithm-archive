@@ -9,5 +9,6 @@
     * [Building Blocks](chapters/principles_of_code/building_blocks.md)
     * [Code Quality](chapters/principles_of_code/code_quality.md)
 * [Mathematical Background](chapters/mathematical_background.md)
-* [Miscellaneous Algorithms](chapters/miscellaneous_algorithms.md)
+* [Miscellaneous Algorithms](chapters/miscellaneous_algorithms/miscellaneous_algorithms.md)
+    * [FFT](chapters/miscellaneous_algorithms/cooley_tukey.md)
 
