@@ -1,4 +1,4 @@
-Code Quality
+## Code Quality
 
 I am a computational physicist. Industry programmers give researchers a hard time for their programming capabilities, not because they cannot code, but because (for the most part) research code looks bad. Programming, like any other art form, is limited by the artist's ability to *do* art. For many computational researchers, the code is not their art. Science is. Programming is simply the brush they use to stroke the canvas of reality. Many times, they become so consumed with their painting that they ignore their tools. Now, truth be told, I have seen some pretty repulsive industry code, too, so this complaint is not exclusively biased towards researchers.
 

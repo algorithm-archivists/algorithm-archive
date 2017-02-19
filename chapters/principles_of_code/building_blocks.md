@@ -1,4 +1,4 @@
-Building blocks
+## Building blocks
 
 When it comes to programming, there are certain features that will be used again and again, so it's a good idea to mention how they work and where they are used.
 
