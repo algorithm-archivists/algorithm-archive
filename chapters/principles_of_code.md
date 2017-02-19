@@ -53,7 +53,7 @@ x = 5
 ```
 Then we have set the value of the variable *x* to be *5*. But here's a question that your computer has to answer: what is 5?
 
-To us, the answer's trivial, it's a number! This is true, but there are different types of numbers. There are integers that include all counting numbers from negative to positive infinity: $-\infty, \cdots, -1, 0, 1, \cdots, \infty$. Then there are floating-point numbers which include everything in-between every counting number; however, that is not the end of the story. Floating-point numbers also have certain levels of precision, the numbers of 0's after the decimal point. Each of these levels of precision will require a different level of storage space on the computer, so it make sense to differentiate them based on the amount of storage they require.
+To us, the answer's trivial, it's a number! This is true, but there are different types of numbers. There are integers that include all counting numbers from negative to positive infinity: $$-\infty, \cdots, -1, 0, 1, \cdots, \infty$$. Then there are floating-point numbers which include everything in-between every counting number; however, that is not the end of the story. Floating-point numbers also have certain levels of precision, the numbers of 0's after the decimal point. Each of these levels of precision will require a different level of storage space on the computer, so it make sense to differentiate them based on the amount of storage they require.
 
 But how much space does a single number take?
 
