@@ -46,13 +46,35 @@ $$x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k \cdot e^{2 \pi k n / N}$$
 
 Where $$X_n$$ and $$x_n$$ are sequences of $$N$$ complex and real numbers, respectively. In principle, this is no easier to understand than the previous case! For some reason, though, putting code to this transformation really helped me figure out what was actually going on.
 
-...
+```
+function DFT(x::Array{Float64})
+    N = length(x)
 
-It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix! That said, the Discrete Fourier Transform is slow, primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful. So what was the trick that everyone used to go from a Discrete fourier Transform to a *Fast* Fourier Transform? 
+    # We want two vectors here for real space (n) and frequency space (k)
+    n = 0:N-1
+    k = n'
+    transform_matrix = exp(-2im * pi *n *k / N)
+    return x * transform_matrix
+
+end
+```
+
+In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column. We then set `k` to be the same thing, but in a row. This means that when we multiply them together, we get a matrix, but not just any matrix! This matrix is the heart to the transformation itself!
+
+```
+transform_matrix = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im; 
+                    1.0+0.0im  6.12323e-17-1.0im  -1.0-1.22465e-16im -1.83697e-16+1.0im; 
+                    1.0+0.0im -1.0-1.22465e-16im   1.0+2.44929e-16im -1.0-3.67394e-16im; 
+                    1.0+0.0im -1.83697e-16+1.0im  -1.0-3.67394e-16im  5.51091e-16-1.0im]
+```
+
+It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix! That said, the Discrete Fourier Transform is slow -- primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful. So what was the trick that everyone used to go from a Discrete fourier Transform to a *Fast* Fourier Transform? 
 
 Recursion!
 
 ### The Cooley-Tukey Algorithm
+
+In some sense, I may have oversold this algorithm. In fact, I definitely have. It's like I have already given you the punchline to a joke and am now getting around to explaining it. Oh well.
 
 ### Butterfly Diagrams
 
