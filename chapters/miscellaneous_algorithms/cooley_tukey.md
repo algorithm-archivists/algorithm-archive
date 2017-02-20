@@ -1,8 +1,8 @@
 ## What Makes a Fourier Transform Fast?
 
-If there were ever an algorithm to radically change the landscape of computer science and engineering by making seemingly impossible possible, it would be the Fast Fourier Transform (FFT). On the surface, the algorithm seems like a simple application of recursion, and in principle, that is exactly what it is; however, the Fourier Transform is no ordinary transform. No, the Fourier Transform allows researchers and engineers to easily bounce back and forth between real space and frequency space. 
+If there were ever an algorithm to radically change the landscape of computer science and engineering by making seemingly impossible possible, it would be the Fast Fourier Transform (FFT). On the surface, the algorithm seems like a simple application of recursion, and in principle, that is exactly what it is; however, the Fourier Transform is no ordinary transform -- it allows researchers and engineers to easily bounce back and forth between real space and frequency space. 
 
-Now, I know this seems underwhelming, just a neat trick to show your friends on a Sunday night when everyone's bored, but the sheer number of engineering applications that use frequency space is overwhelming! From calculating superfluid vortex positions to super-resolution imaging, Fourier Transforms lie at the heart of many scientific disciplines and are essential to many algorithms we will cover later in this book. 
+Now, I know this seems underwhelming, just a neat trick to show friends on a Sunday night when everyone's bored, but the sheer number of engineering applications that use frequency space is overwhelming! From calculating superfluid vortex positions to super-resolution imaging, Fourier Transforms lie at the heart of many scientific disciplines and are essential to many algorithms we will cover later in this book. 
 
 Simply put, the Fourier Transform is a beautiful application of complex number systems; however, it would never be used today if not for the ability to quickly perform the operation through the use of the Fast Fourier Transform, first introduced by the great Frederick Gauss in 1805 and later independently discovered by James Cooley and John Tukey in 1965{{ "ct1965" | cite }}. Gauss (of course) already had too many things named after him and Cooley and Tukey both had cooler names, so the most common algorithm for FFT's today is known as the Cooley-Tukey algorithm.
 
@@ -35,6 +35,22 @@ $$f(x) = \int_{-\infty} ^\infty F(\xi) (\cos(2 \pi \xi x) + i \sin(2 \pi \xi x))
 Here, there are $$\sin$$ and $$\cos$$ functions in the formulas, so it looks much friendlier, right? This means that a point in real space is defined by the integral over all space of it's corresponding frequency function multiplied by sinusoidal oscillations. At this point, mathematicians usually get it. Truth be told, I didn't. In fact, I didn't understand it fully until we discretized real and frequency space to create the Discrete Fourier Transform (DFT).
 
 ### What is a Discrete Fourier Transform?
+
+In principle, the Discrete Fourier Transform (DFT) is simply the Fourier transform with summations instead of integrals:
+
+$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-2 \pi k n / N}$$
+
+and 
+
+$$x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k \cdot e^{2 \pi k n / N}$$
+
+Where $$X_n$$ and $$x_n$$ are sequences of $$N$$ complex and real numbers, respectively. In principle, this is no easier to understand than the previous case! For some reason, though, putting code to this transformation really helped me figure out what was actually going on.
+
+...
+
+It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix! That said, the Discrete Fourier Transform is slow, primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful. So what was the trick that everyone used to go from a Discrete fourier Transform to a *Fast* Fourier Transform? 
+
+Recursion!
 
 ### The Cooley-Tukey Algorithm
 
