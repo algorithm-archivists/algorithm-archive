@@ -1,3 +1,4 @@
 {
     "plugins": ["mathjax"]
+    "plugins": ["bibtex-cite"]
 }
