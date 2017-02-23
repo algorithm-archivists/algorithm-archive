@@ -10,6 +10,10 @@
     * [Building Blocks](chapters/principles_of_code/building_blocks.md)
     * [Code Quality](chapters/principles_of_code/code_quality.md)
 * [Mathematical Background](chapters/mathematical_background.md)
+* [Computational Mathematics](chapters/computational_mathematics/computational_mathematics.md)
+    * [FFT](chapters/computational_mathematics/cooley_tukey.md)
+* [Computational Physics](chapters/computational_physics/computational_physics.md)
+* [Computational Biology](chapters/computational_biology/computational_biology.md)
+* [Computational Creativity](chapters/computational_creativity/computational_creativity.md)
 * [Miscellaneous Algorithms](chapters/miscellaneous_algorithms/miscellaneous_algorithms.md)
-    * [FFT](chapters/miscellaneous_algorithms/cooley_tukey.md)
-
+* [Computer Architecture](chapters/computer_architecture/computer_architecture.md)

@@ -1,0 +1,5 @@
+# Computational Mathematics
+
+There is a particular sect of programming that orbits around particular problems in mathematics that can only be addressed with the help of certain algorithms -- many of which you may already know from a mathematical course or two. In principle, these algorithms form the foundations of many other fields, and it is always difficult to make a distinction between an algorithm meant to do mathematics and an algorithm meant to do physics or some other scientific field. For this reason, I will say that any algorithm whose purpose is to calculate a mathematical quantity will belong here.
+
+For the most part, this will include algorithms to find eigenvalues and eigenvectors and areas of computational geometry. Obviously, this section will be cleaned up as more is written.
