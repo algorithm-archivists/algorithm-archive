@@ -16,4 +16,4 @@
 * [Computational Biology](chapters/computational_biology/computational_biology.md)
 * [Computational Creativity](chapters/computational_creativity/computational_creativity.md)
 * [Miscellaneous Algorithms](chapters/miscellaneous_algorithms/miscellaneous_algorithms.md)
-* [Computer Architecture](chapters/computer_architecture/computer_architecture.md)
+* [Computer Architectures](chapters/computer_architectures/computer_architectures.md)
