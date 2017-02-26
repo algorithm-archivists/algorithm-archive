@@ -91,8 +91,8 @@ Now, Row Eschelon form is nice, but wouldn't it be even better if our system of 
 
 $$
 \begin{align}
-11x &= 156 \\
-11y &= 58 \\
+11x &= 18 \\
+11y &= -14 \\
 11z &= 18 
 \end{align}
 $$
@@ -104,8 +104,8 @@ Then we would know exactly what $$x$$, $$y$$, and $$z$$ are without any fuss! In
 $$
 \left[
 \begin{array}{ccc|c}
-11 & 0 & 0 & 156 \\
-0 & 11 & 0 & 116 \\
+11 & 0 & 0 & 18 \\
+0 & 11 & 0 & -14 \\
 0 & 0 & 11 & 18 
 \end{array}
 \right]
@@ -156,8 +156,8 @@ $$\left[
 \end{array}
 \right]$$ $$\rightarrow$$ $$\left[
 \begin{array}{ccc|c}
-11 & 0 & 0 & 156 \\
-0 & 11 & 0 & 116 \\
+11 & 0 & 0 & 18 \\
+0 & 11 & 0 & -14 \\
 0 & 0 & 11 & 18 
 \end{array}
 \right]$$
