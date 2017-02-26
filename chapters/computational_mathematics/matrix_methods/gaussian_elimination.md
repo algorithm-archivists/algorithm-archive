@@ -186,7 +186,7 @@ $$
 
 1. Swap the row with the highest valued element with the `col`th row.
 2. For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
-3. Set all values in the corresponding rows to be the value they were before - the top row \* the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
+3. Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
 4. Set the value of that row's pivot column to 0.
 
 ADD VISUALIZATION OF ABOVE
@@ -209,7 +209,7 @@ for k = 1:min(rows,cols):
     end
 
     # Step 2: swap row with highest value for that column to the top
-    swap(A[k,:],A[max_index,:])
+    swap(A[k, :],A[max_index, :])
 
     # Loop for all remaining rows
     for i = k+1:rows
@@ -221,7 +221,7 @@ for k = 1:min(rows,cols):
         for j = k+1:cols
 
              # Step 4: re-evaluate each element
-            A[i,j] = A[i,k] - A[k,j]*fraction
+            A[i,j] = A[i,j] - A[k,j]*fraction
 
             # Step 5: Set lower elements to 0
             A[i,k] = 0
