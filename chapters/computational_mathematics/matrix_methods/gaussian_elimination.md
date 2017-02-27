@@ -55,7 +55,7 @@ $$
 $$
 
 
-Now. At first, this doesn't seem to help anything, so let's think of this in another way. Wouldn't it be great if the system of equations looked like this:
+Now, at first, this doesn't seem to help anything, so let's think of this in another way. Wouldn't it be great if the system of equations looked like this:
 
 
 $$
@@ -67,7 +67,7 @@ y + 2z &= 2 \\
 $$
 
 
-Then we could just solve for $$z$$ and plug it in to the top two equations to solve for $$x$$ and $$y$$! In matrix form, it would look like this
+Then we could just solve for $$z$$ and plug that value in to the top two equations to solve for $$x$$ and $$y$$! In matrix form, it would look like this
 
 
 $$
@@ -84,9 +84,9 @@ $$
 and it has a particular name: _Row Eschelon Form_. Basically, any matrix can be considered in row eschelon form if
 
 1. All non-zero rows are above rows of all zeros
-2. The leading coefficient or _pivot_ -- the first non-zero element in every row when reading from left to right is right of the pivot of the row above it.
+2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-Now, Row Eschelon form is nice, but wouldn't it be even better if our system of equations looked simply like this
+Now, Row Eschelon Form is nice, but wouldn't it be even better if our system of equations looked simply like this
 
 
 $$
@@ -112,21 +112,21 @@ $$
 $$
 
 
-And again has a special name **\*Reduced** Row Eschelon Form\*. Now, it seems obvious to point out that if we remove the values after the equals sign \($$=$$\), Row Eschelon Form is an upper triangular matrix, Reduced Row Eschelon Form is diagonal. This might not be important now, but it will play an important role in future discussions, so keep it bussing in the back of your brain.
+And again has a special name * **Reduced** Row Eschelon Form*. Now, it seems obvious to point out that if we remove the values to the right of the equals sign \($$=$$\), Row Eschelon Form is an upper triangular matrix, while Reduced Row Eschelon Form is diagonal. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
 
-For now, I hope the motivation is clear: we want to convert a matrix into Row Eschelon and Reduced Row Eschelon form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
+For now, I hope the motivation is clear: we want to convert a matrix into Row Eschelon and (potentially) Reduced Row Eschelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
 
 That's right! _Gaussian Elimination_
 
 ## The Method
 
-Here I should point out that Gaussian elimination makes sense from a purely analytical point of view. That is to say that for small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will find an appropriate numerical solution. For this reason, I have split this section into two parts. One covers the analytical framework, and the other an algorithm you can write in your favorite programming language.
+Here I should point out that Gaussian elimination makes sense from a purely analytical point of view. That is to say that for small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution. For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
 
 In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix where you have the following moves available:
 
 1. You can swap any two rows
 2. You can multiply any row by a non-zero scale value
-3. You can add any row to a multiple of any other row.
+3. You can add any row to a multiple of any other row
 
 That's it. Before continuing, I suggest you try to recreate the Row Eschelon matrix we made above. That is, do the following:
 
@@ -144,9 +144,9 @@ $$\left[
 \end{array}
 \right]$$
 
-There are plenty of different strategies you could use to do this, and no one is better than the rest. Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows. I then do the same thing for the following columns.
+There are plenty of different strategies you could use to do this, and no one strategy is better than the rest. Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows. I then do the same thing for the following columns.
 
-After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Eschelon form. In other words, we do the following:
+After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Eschelon Form. In other words, we do the following:
 
 $$\left[
 \begin{array}{ccc|c}
@@ -168,11 +168,9 @@ Here, the idea is similar to above. You can do basically anything you want. My s
 
 Now, the analytical method may seem straightforward, but the algorithm does not obviously follow from the game we were playing before, so we'll go through it step-by-step.
 
-In general, we go through the following process:
+In general, do the following process:
 
 1. For each column `col`, find the highest value
-
-
 $$
 \left[
 \begin{array}{ccc|c}
@@ -182,14 +180,69 @@ $$
 \end{array}
 \right]
 $$
+2. Swap the row with the highest valued element with the `col`th row.
+$$
+\left[
+\begin{array}{ccc|c}
+\mathbf{2} & \mathbf{3}  & \mathbf{4} & \mathbf{6} \\
+1 & 2 & 3 & 4 \\
+\mathbf{3} & \mathbf{-4} & \mathbf{0} & \mathbf{10} 
+\end{array}
+\right]
+\rightarrow
+\left[
+\begin{array}{ccc|c}
+\mathbf{3} & \mathbf{-4} & \mathbf{0} & \mathbf{10} \\
+1 & 2 & 3 & 4 \\
+\mathbf{2} & \mathbf{3}  & \mathbf{4} & \mathbf{6} 
+\end{array}
+\right]
+$$
+3. For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
+$$
+\rightarrow
+\left[
+\begin{array}{ccc|c}
+3 & -4 & 0 & 10 \\
+\mathbf{1} & 2 & 3 & 4 \\
+2 & 3  & 4 & 6 
+\end{array}
+\right] \\ 
+\begin{align}
+    f &= A(\text{pivot}_{\text{row}}, \text{pivot}_{\text{col}}) / A(\text{curr_row}_{\text{row}}, \text{pivot}_{\text{col}}) \\
+      &= \frac{1}{3}
+\end{align}
+$$
+4. Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
+$$
+A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\ 
+\left[
+\begin{array}{ccc|c}
+3 & -4 & 0 & 10 \\
+\mathbf{1} & \mathbf{2} & \mathbf{3} & \mathbf{4} \\
+2 & 3  & 4 & 6 
+\end{array}
+\right]
+\rightarrow
+\left[
+\begin{array}{ccc|c}
+3 & -4 & 0 & 10 \\
+\mathbf{\frac{1}{3}} & \mathbf{\frac{2}{3}} & \mathbf{1} & \mathbf{\frac{4}{3}} \\
+2 & 3  & 4 & 6 
+\end{array}
+\right]
+$$
+5. Set the value of that row's pivot column to 0.
+$$
+\left[
+\begin{array}{ccc|c}
+3 & -4 & 0 & 10 \\
+0 & 2 & 3 & 4 \\
+2 & 3  & 4 & 6 
+\end{array}
+\right]
 
-
-1. Swap the row with the highest valued element with the `col`th row.
-2. For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
-3. Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
-4. Set the value of that row's pivot column to 0.
-
-ADD VISUALIZATION OF ABOVE
+$$
 
 In code, this looks like:
 
@@ -223,14 +276,39 @@ for k = 1:min(rows,cols):
              # Step 4: re-evaluate each element
             A[i,j] = A[i,j] - A[k,j]*fraction
 
-            # Step 5: Set lower elements to 0
-            A[i,k] = 0
         end
+
+        # Step 5: Set lower elements to 0
+        A[i,k] = 0
     end
 end
 ```
 
 As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above psuedocode with the necessary steps. Let me know if anything is unclear!
 
-Now, as for what's next... Well, we are in for a treat! The above algorithms clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
+Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Eschelon Form*, not * **Reduced** Row Eschelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
+
+The back-substitution method is precisely what we said above. If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$! Even though this seems straightforward, the pseudocode might not be as simple as you thought!
+
+
+```python
+# Initializing an array of size rows, cols. 
+# Note this include the right-hand of the set of equations
+A(rows, cols}
+
+# This is our solutions vector, of size 'rows'
+soln(rows)
+
+# initializing the last element
+soln(rows-1)
+
+# Stepping backwards through the solutions vector
+for i = rows - 2:-1
+    for j = rows-1:i
+    end
+end
+
+```
+
+Now, as for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
 
