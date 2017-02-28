@@ -69,7 +69,7 @@ end
 Syntactically, they are a little different, but the content is identical.
 ### Recursion
 
-Simply put, recursion is the process of putting a function inside a function. Now, I know what you are thinking, "Why does this deserve a special name?" That is a very good question and one I have never been able to understand. That said, it is an incredibly good trick to have up your sleeve to speed up certain computations. 
+Simply put, recursion is the process of putting a function inside itself. Now, I know what you are thinking, "Why does this deserve a special name?" That is a very good question and one I have never been able to understand. That said, it is an incredibly good trick to have up your sleeve to speed up certain computations. 
 
 ### Classes and Structs
 
