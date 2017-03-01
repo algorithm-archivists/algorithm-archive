@@ -17,6 +17,7 @@
         * [Thomas Algorithm](chapters/computational_mathematics/matrix_methods/thomas.md)
     * [FFT](chapters/computational_mathematics/cooley_tukey.md)
 * [Computational Physics](chapters/computational_physics/computational_physics.md)
+    * [Euler Methods](chapters/computational_physics/euler.md)
 * [Computational Biology](chapters/computational_biology/computational_biology.md)
 * [Computational Creativity](chapters/computational_creativity/computational_creativity.md)
 * [Miscellaneous Algorithms](chapters/miscellaneous_algorithms/miscellaneous_algorithms.md)
