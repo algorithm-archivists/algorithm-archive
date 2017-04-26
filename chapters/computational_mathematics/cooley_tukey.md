@@ -1,10 +1,10 @@
 ## What Makes a Fourier Transform Fast?
 
-If there were ever an algorithm to radically change the landscape of computer science and engineering by making seemingly impossible possible, it would be the Fast Fourier Transform (FFT). On the surface, the algorithm seems like a simple application of recursion, and in principle, that is exactly what it is; however, the Fourier Transform is no ordinary transform -- it allows researchers and engineers to easily bounce back and forth between real space and frequency space. 
+If there were ever an algorithm to radically change the landscape of computer science and engineering by making seemingly impossible possible, it would be the Fast Fourier Transform (FFT). On the surface, the algorithm seems like a simple application of recursion, and in principle, that is exactly what it is; however, the Fourier Transform is no ordinary transform -- it allows researchers and engineers to easily bounce back and forth between real space and frequency space and is the heart of many physics and engineering applications.
 
 Now, I know this seems underwhelming, just a neat trick to show friends on a Sunday night when everyone's bored, but the sheer number of engineering applications that use frequency space is overwhelming! From calculating superfluid vortex positions to super-resolution imaging, Fourier Transforms lie at the heart of many scientific disciplines and are essential to many algorithms we will cover later in this book. 
 
-Simply put, the Fourier Transform is a beautiful application of complex number systems; however, it would never be used today if not for the ability to quickly perform the operation through the use of the Fast Fourier Transform, first introduced by the great Frederick Gauss in 1805 and later independently discovered by James Cooley and John Tukey in 1965{{ "ct1965" | cite }}. Gauss (of course) already had too many things named after him and Cooley and Tukey both had cooler names, so the most common algorithm for FFT's today is known as the Cooley-Tukey algorithm.
+Simply put, the Fourier Transform is a beautiful application of complex number systems; however, it would rarely be used today if not for the ability to quickly perform the operation through the use of the Fast Fourier Transform, first introduced by the great Frederick Gauss in 1805 and later independently discovered by James Cooley and John Tukey in 1965{{ "ct1965" | cite }}. Gauss (of course) already had too many things named after him and Cooley and Tukey both had cooler names, so the most common algorithm for FFT's today is known as the Cooley-Tukey algorithm.
 
 ### What is a Fourier Transform?
 
@@ -74,9 +74,44 @@ Recursion!
 
 ### The Cooley-Tukey Algorithm
 
-In some sense, I may have oversold this algorithm. In fact, I definitely have. It's like I have already given you the punchline to a joke and am now getting around to explaining it. Oh well.
+In some sense, I may have oversold this algorithm. In fact, I definitely have. It's like I have already given you the punchline to a joke and am now getting around to explaining it. Oh well. The problem with using a standard DFT is that it requires a large matrix multiplication, which is a prohibitively complex operation. The trick to the Cooley-Tukey algorithm is recursion. In particular, we split the matrix we wish to perform the FFT on into two parts: one for all elements with even indices and another for all odd indices. We then proceed to split the array again and again until we have a manageable array size to perform a DFT (or similar FFT) on. With recursion, we can reduce the complexity to $\sim O(n \log n)$, which is a feasible operation. 
+
+For me, it is usually easist to think of the Cooley-Tukey algorithm as a method to circumvent a complicated matrix multiplication rather than a method to perform a Fourier Transform; however, this is only because Fourier Transforms seem like mathematical magic. Matrix multiplications do not.
+
+In the end, the code looks like:
+```
+# Implementing the Cooley-Tukey Algorithm
+function cooley_tukey(x)
+    N = length(x)
+
+    #println(N)
+
+    if(N%2 !=0)
+        println("Must be a power of 2!")
+        exit(0)
+    end
+    if(N <= 2)
+        #println("DFT_slow")
+        return DFT(x)
+    else
+        x_even = cooley_tukey(x[1:2:N])
+        x_odd = cooley_tukey(x[2:2:N])
+        n = 0:N-1
+        #n = n'
+        half = div(N,2)
+        factor = exp(-2im*pi*n/N)
+        return vcat(x_even + factor[1:half] .* x_odd,
+                     x_even + factor[half+1:N] .* x_odd) 
+    end
+    
+end
+```
 
 ### Butterfly Diagrams
+As another note, the Cooley-Tukey algorithm is often described pictorially in the form of *Butterfly Diagrams*. These show where each element in the array go before, during, and after the FFT. In this diagram, we see an initial array `x` split into even and odd parts and then concatenated into `X` as seen above.
+![Butterfly Diagram](butterfly_diagram.png)
+
+I will update this section in the near future with more information, so stay tuned for more!
 
 ### Bibliography
 
