@@ -18,6 +18,8 @@
     * [FFT](chapters/computational_mathematics/cooley_tukey.md)
 * [Computational Physics](chapters/computational_physics/computational_physics.md)
     * [Euler Methods](chapters/computational_physics/euler.md)
+    * [Verlet Integration](chapters/computational_physics/verlet.md)
+    * [Barnes-Hut](chapters/computational_physics/barnes_hut.md)
 * [Computational Biology](chapters/computational_biology/computational_biology.md)
 * [Computational Creativity](chapters/computational_creativity/computational_creativity.md)
 * [Miscellaneous Algorithms](chapters/miscellaneous_algorithms/miscellaneous_algorithms.md)
