@@ -153,7 +153,6 @@ void stormer_verlet(double pos, double acc, double dt){
 // Simple function for velocity-verlet
 void velocity_verlet(double pos, double acc, double dt){
 
-    // Note that we are using a temp variable for the previous position
     double time, vel;
     vel = 0;
     time = 0;
@@ -169,6 +168,12 @@ void velocity_verlet(double pos, double acc, double dt){
 
 int main(){
 
+    // Note that depending on the simulation, you might want to have the verlet 
+    // loop outside.
+
+    // For example, if your acceleration chages as a function of time, you might
+    // need to also change the acceleration to be read into each of these 
+    // functions
     verlet(5.0, -10, 0.01);
     stormer_verlet(5.0, -10, 0.01);
     velocity_verlet(5.0, -10, 0.01);
