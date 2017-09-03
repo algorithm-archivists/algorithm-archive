@@ -43,6 +43,14 @@ Where $$F(\xi)$$ represents a function in frequency space and $$\xi$$ represents
 
 If we take a sinusoidal function like $$\sin(\omega t)$$ or $$\cos(\omega t)$$, we find a curve that goes from $$\pm1$$, shown in FIGURE1a. Both of these curves can be described by their corresponding frequencies, $$\omega$$. So, instead of representing these curves as seen in FIGURE1a, We could instead describe them as shown in FIGURE1b. Here, FIGURE1a is in real space and FIGURE1b is in frequency space. 
 
+![Complicated Sinusoidal Function](sinusoid.png)
+
+*FIGURE1a: Complicated Sinusoidal Function*
+
+![FFT of FIGURE1a](fft.png)
+
+*FIGURE1b: abs(fft(FIGURE1a))*
+
 Now, how does this relate to the transformations above? Well, the easiest way is to substitute in the following relation:
 
 $$e^{2 \pi i \theta} = \cos(2 \pi \theta) + i \sin(2 \pi \theta)$$
