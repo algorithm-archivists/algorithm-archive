@@ -33,7 +33,7 @@ Simply put, the Fourier Transform is a beautiful application of complex number s
 
 To an outsider, the Fourier Transform looks like a mathematical mess -- certainly a far cry from the heroic portal between two domains I have depicted it to be; however, like most things, it's not as bad as it initially appears to be. So, here it is in all it's glory!
 
-$F(\xi) = \int_{-\infty} ^\infty f(x) e^{-2 \pi i x \xi} dx$
+$$F(\xi) = \int_{-\infty} ^\infty f(x) e^{-2 \pi i x \xi} dx$$
 
 and
 
@@ -41,7 +41,15 @@ $$f(x) = \int_{-\infty} ^\infty F(\xi) e^{2 \pi i \xi x} d\xi$$
 
 Where $$F(\xi)$$ represents a function in frequency space and $$\xi$$ represents any number on the frequency plane, and $$f(x)$$ represents any number in real space and $$x$$ represents any value on the real plane. Note here that the only difference between the two exponential terms is a minus sign in the transformation to frequency space. As I mentioned, this is not intuitive syntax, so please allow me to explain a bit.
 
-If we take a sinusoidal function like $$\sin(\omega t)$$ or $$\cos(\omega t)$$, we find a curve that goes from $$\pm1$$, shown in FIGURE1a. Both of these curves can be described by their corresponding frequencies, $$\omega$$. So, instead of representing these curves as seen in FIGURE1a, We could instead describe them as shown in FIGURE1b. Here, FIGRE1a is in real space and FIGURE1b is in frequency space. 
+If we take a sinusoidal function like $$\sin(\omega t)$$ or $$\cos(\omega t)$$, we find a curve that goes from $$\pm1$$, shown in FIGURE1a. Both of these curves can be described by their corresponding frequencies, $$\omega$$. So, instead of representing these curves as seen in FIGURE1a, We could instead describe them as shown in FIGURE1b. Here, FIGURE1a is in real space and FIGURE1b is in frequency space. 
+
+![Complicated Sinusoidal Function](sinusoid.png)
+
+*FIGURE1a: Complicated Sinusoidal Function*
+
+![FFT of FIGURE1a](fft.png)
+
+*FIGURE1b: abs(fft(FIGURE1a))*
 
 Now, how does this relate to the transformations above? Well, the easiest way is to substitute in the following relation:
 
@@ -97,7 +105,7 @@ Recursion!
 
 ### The Cooley-Tukey Algorithm
 
-In some sense, I may have oversold this algorithm. In fact, I definitely have. It's like I have already given you the punchline to a joke and am now getting around to explaining it. Oh well. The problem with using a standard DFT is that it requires a large matrix multiplication, which is a prohibitively complex operation. The trick to the Cooley-Tukey algorithm is recursion. In particular, we split the matrix we wish to perform the FFT on into two parts: one for all elements with even indices and another for all odd indices. We then proceed to split the array again and again until we have a manageable array size to perform a DFT (or similar FFT) on. With recursion, we can reduce the complexity to $\sim O(n \log n)$, which is a feasible operation. 
+In some sense, I may have oversold this algorithm. In fact, I definitely have. It's like I have already given you the punchline to a joke and am now getting around to explaining it. Oh well. The problem with using a standard DFT is that it requires a large matrix multiplication, which is a prohibitively complex operation. The trick to the Cooley-Tukey algorithm is recursion. In particular, we split the matrix we wish to perform the FFT on into two parts: one for all elements with even indices and another for all odd indices. We then proceed to split the array again and again until we have a manageable array size to perform a DFT (or similar FFT) on. With recursion, we can reduce the complexity to $$\sim \,athcal{O}(n \log n)$$, which is a feasible operation. 
 
 For me, it is usually easist to think of the Cooley-Tukey algorithm as a method to circumvent a complicated matrix multiplication rather than a method to perform a Fourier Transform; however, this is only because Fourier Transforms seem like mathematical magic. Matrix multiplications do not.
 
