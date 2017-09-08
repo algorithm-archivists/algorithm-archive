@@ -1,0 +1,5 @@
+# Computational Mathematics
+
+Algorithms are a set of techniques programmers use to attack whatever challenge they are faced with. Each one is a tool meant to be used for a specific purpose and to solve a subset of problems. As the field of computer science has grown, certain algorithms that were once ground-breaking in their own right have become fundamental features of other, more complex algorithms. Even so, these algorithms should not be taken lightly. "Fundamental" does not mean "straightforward." Especially for new programmers, some of these algorithms might be significantly callenging to understand and use, but that's part of the beauty of programming! The more you learn, the better programmer you become and what once might taken hours (or even days) to understand becomes a straightforward exercise done without a second-thought.
+
+All algorithms in this section are used later in the archive for more complex algorithms; however, some of those later chapters may not be written yet, so if you have an algorithm you want to cover, let me know! 
