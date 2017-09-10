@@ -114,7 +114,7 @@ Do you think we should be using real code snippets in the main text or stick the
 
 # Example Code
 
-## C++
+### C++
 
 ```cpp
 /*-------------simple_tree_traversal.cpp--------------------------------------//
@@ -216,7 +216,7 @@ int main(){
 
 ```
 
-## Python
+### Python
 
 ```Python
 
