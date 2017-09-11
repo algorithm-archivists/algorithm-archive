@@ -328,7 +328,7 @@ def main():
 main()
 ```
 
-###C
+### C
 
 ```C
 #include <stdio.h>
