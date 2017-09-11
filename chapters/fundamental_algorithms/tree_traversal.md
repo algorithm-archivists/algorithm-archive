@@ -23,11 +23,7 @@ $$
 
 # Tree Traversal 
 
-Trees are naturally recursive data structures, and because of this, we cannot access their elements like we might access the elements of a vector or array. Instead, we need to use more interesting methods to work through each element. This is often called *Tree Traversal*, and there are many different ways to do this. For now, we will restrict the discussion to two common and related methods of tree traversal: *Depth-First* and *Breadth-First Search*. First, let's take a look at the tree data structure:
-
-![A simple tree](full_tree.png)
-
-Note that trees vary greatly in shape and size depending on how they are used; however, they are composed primarily of nodes that house other, children nodes, like so:
+Trees are naturally recursive data structures, and because of this, we cannot access their elements like we might access the elements of a vector or array. Instead, we need to use more interesting methods to work through each element. This is often called *Tree Traversal*, and there are many different ways to do this. For now, we will restrict the discussion to two common and related methods of tree traversal: *Depth-First* and *Breadth-First Search*. Note that trees vary greatly in shape and size depending on how they are used; however, they are composed primarily of nodes that house other, children nodes, like so:
 
 ```cpp
 struct node{
@@ -40,7 +36,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 
 ```cpp
 void DFS_recursive(const node& n){
-    if (n.children.size() == 0){
+
+    if (!n){
         return;
     }
 
@@ -53,7 +50,63 @@ void DFS_recursive(const node& n){
 
 ```
 
-At least to me, this makes a lot of sense. We fight recursion with recursion! Rather surprisingly, though, we can traverse through our tree in the same order non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
+At least to me, this makes a lot of sense. We fight recursion with recursion! First, we check to make sure the node we are looking at exists, and if it does, we call `DFS_recursive(...)` on each of it's nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
+
+![DFS ordering](full_tree_DFS.png)
+
+Note that in this case, the first element searched through is still the root of the tree. This type of tree traversal is known as *pre-order* DFS. We do an action (output the ID) before searching through the children. If we shift the function around and place the data output at the end of the function, we can modify the order in which we search through the tree to be *post-order* and look something like this:
+
+
+```cpp
+void DFS_recursive_postorder(const node& n){
+
+    if (!n){
+        return;
+    }
+
+    for (int i = 0; i < n.children.size(); ++i){
+        DFS_recursive(n.children[i]);
+    }
+
+    // Here we are doing something...
+    std::cout << n.ID << '\n';
+}
+
+```
+
+![DFS ordering](full_tree_DFS.png)
+
+In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
+
+
+```cpp
+
+struct node{
+    int id;
+    node *left, *right;
+};
+
+void DFS_recursive_inorder(const node& n){
+
+    if (!n){
+        return;
+    }
+
+    DFS_recursive(n.left);
+
+    // Here we are doing something...
+    std::cout << n.ID << '\n';
+
+    DFS_recursive(n.right);
+}
+
+```
+
+![DFS ordering](full_tree_DFS.png)
+
+Note that in this case, we the initial check whether the node exists or not is essential to traversing the entire tree. In addition, the order is a somewhat odd mix between the post and preorderings.
+
+Rather surprisingly, we can perform a DFS non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
 
 1. Put the root node in the stack
 2. Take it out and put in its children
@@ -79,11 +132,7 @@ void DFS_stack(const node& n){
 }
 ```
 
-To be clear, depth-first search traverses through the nodes in a tree in the following order:
-
-![DFS ordering](full_tree_DFS.png)
-
-This means that if we have an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
+All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
 ![BFS ordering](full_tree_BFS.png)
 
@@ -121,13 +170,6 @@ Do you think we should be using real code snippets in the main text or stick the
 *
 * Purpose: To implement basic tree traversal in C++.
 *
-*   Notes: -Other languages will be implemented in the Arcane Algorithm Archive
-*          -This screen will only be on the video for 1 second...
-*          -... So, if you are reading this, great job! You know how to pause!
-*          -There's no secret information here. It's just me rambling.
-*          -Also: we are using a vector library here. Sorry!
-*          -Oh yeah, compile with: g++ simple_tree_traversal.cpp
-*
 *-----------------------------------------------------------------------------*/
 
 #include <iostream>
@@ -161,7 +203,7 @@ void create_tree(node& n, int num_row, int num_child){
 
 // Simple recursive scheme for DFS
 void DFS_recursive(const node& n){
-    if (n.children.size() == 0){
+    if (!n){
         return;
     }
 
