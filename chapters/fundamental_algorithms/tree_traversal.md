@@ -37,12 +37,9 @@ Because of this, the most straightforward way to traverse the tree might be recu
 ```cpp
 void DFS_recursive(const node& n){
 
-    if (!n){
-        return;
-    }
-
     // Here we are doing something...
     std::cout << n.ID << '\n';
+
     for (int i = 0; i < n.children.size(); ++i){
         DFS_recursive(n.children[i]);
     }
@@ -50,20 +47,18 @@ void DFS_recursive(const node& n){
 
 ```
 
-At least to me, this makes a lot of sense. We fight recursion with recursion! First, we check to make sure the node we are looking at exists, and if it does, we call `DFS_recursive(...)` on each of it's nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
+At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
-![DFS ordering](full_tree_DFS.png)
+![DFS ordering pre](DFS_pre.png)
 
-Note that in this case, the first element searched through is still the root of the tree. This type of tree traversal is known as *pre-order* DFS. We do an action (output the ID) before searching through the children. If we shift the function around and place the data output at the end of the function, we can modify the order in which we search through the tree to be *post-order* and look something like this:
+Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors! 
+
+Now, in this case the first element searched through is still the root of the tree. This type of tree traversal is known as *pre-order* DFS. We perform an action (output the ID) *before* searching through the children. If we shift the function around and place the data output at the end of the function, we can modify the order in which we search through the tree to be *post-order* and look something like this:
 
 
 ```cpp
 void DFS_recursive_postorder(const node& n){
 
-    if (!n){
-        return;
-    }
-
     for (int i = 0; i < n.children.size(); ++i){
         DFS_recursive(n.children[i]);
     }
@@ -74,39 +69,39 @@ void DFS_recursive_postorder(const node& n){
 
 ```
 
-![DFS ordering](full_tree_DFS.png)
+![DFS ordering post](DFS_post.png)
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
 
 
 ```cpp
 
-struct node{
-    int id;
-    node *left, *right;
-};
-
+// This assumes only 2 children
 void DFS_recursive_inorder(const node& n){
 
-    if (!n){
-        return;
+    if (n.children.size() > 2){
+        std::cout << "Not binary tree!" << '\n';
+        exit(1);
     }
 
-    DFS_recursive(n.left);
+    if (n.children.size() > 0){
+        DFS_recursive_btree(n.children[0]);
+        std::cout << n.ID << '\n';
+        DFS_recursive_btree(n.children[1]);
+    }
+    else{
+        std::cout << n.ID << '\n';
+    }
 
-    // Here we are doing something...
-    std::cout << n.ID << '\n';
-
-    DFS_recursive(n.right);
 }
 
 ```
 
-![DFS ordering](full_tree_DFS.png)
+![DFS ordering in](DFS_in.png)
 
-Note that in this case, we the initial check whether the node exists or not is essential to traversing the entire tree. In addition, the order is a somewhat odd mix between the post and preorderings.
+The order here seems to be some mix of the other 2 methods and works through the binary tree from left to right.
 
-Rather surprisingly, we can perform a DFS non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
+Now, at this point, it might seem that the only way to search through a recursive data structure is with recusion, but this is not necessarily the case! Rather surprisingly, we can perform a DFS non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
 
 1. Put the root node in the stack
 2. Take it out and put in its children
@@ -203,9 +198,6 @@ void create_tree(node& n, int num_row, int num_child){
 
 // Simple recursive scheme for DFS
 void DFS_recursive(const node& n){
-    if (!n){
-        return;
-    }
 
     // Here we are doing something...
     std::cout << n.ID << '\n';
