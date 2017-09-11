@@ -352,6 +352,7 @@ typedef struct node_points{
 } node_points;
 
 void push(node_points *np, node *n){
+    // Adding node into a queue or a stack
     node_list *temp = (node_list*)malloc(sizeof(node_list));
     temp->n = *n;
     temp->last_list = temp->next_list = NULL;
@@ -366,6 +367,7 @@ void push(node_points *np, node *n){
 }
 
 void stack_pop(node_points *np){
+    // Removing the last node_list of the stack
     node_list *temp;
     temp = np->end_point;
     if(temp){
@@ -378,6 +380,7 @@ void stack_pop(node_points *np){
 }
 
 void queue_pop(node_points *np){
+    // Removing the first node_list of the queue
     node_list *temp;
     temp = np->start_point;
     if(temp){
@@ -421,6 +424,7 @@ void DFS_recursive(node *n){
 }
 
 void DFS_stack(node *n){
+    // Creating a stack and then setting its value to 0
     node_points stack;
     memset(&stack, 0, sizeof(node_points));
     push(&stack, n);
@@ -431,6 +435,7 @@ void DFS_stack(node *n){
 	printf("%d\n", temp.ID);
 	stack_pop(&stack);
 	for(int i=0; i < temp.children_num; ++i){
+	    // Checking if the node has any children
 	    if(!temp.children){
 		break;
 	    }
@@ -440,6 +445,7 @@ void DFS_stack(node *n){
 }
 
 void BFS_queue(node *n){
+    // Creating a queue and then setting its value to 0
     node_points queue;
     memset(&queue, 0, sizeof(node_points));
     push(&queue, n);
@@ -450,6 +456,7 @@ void BFS_queue(node *n){
 	printf("%d\n", temp.ID);
 	queue_pop(&queue);
 	for(int i = 0; i < temp.children_num; ++i){
+	    // Checking if the node has any children
 	    if(!temp.children){
 		break;
 	    }
@@ -459,6 +466,7 @@ void BFS_queue(node *n){
 }
 
 void destroy_tree(node *n){
+    // This function is for cleaning up all the nodes
     if(n->ID == 0){
 	return;
     }
