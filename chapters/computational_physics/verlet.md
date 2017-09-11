@@ -377,6 +377,8 @@ Submitted by Jie
 
 ![Scratch 2D implementation](verlet_scratch.png)
 
+Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
+
 #### Matlab
 ```matlab
 % Submitted by P. Mekhail
