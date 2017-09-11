@@ -293,7 +293,6 @@ class Verlet(Simulation):
         self.obj.pos = self.obj.pos * 2 - self.prev_pos + self.obj.acc * self.dt * self.dt
         self.prev_pos = temp_pos
 
-
 class Stormer_Verlet(Simulation):
 
     def step(self):
@@ -302,7 +301,6 @@ class Stormer_Verlet(Simulation):
         self.prev_pos = temp_pos
 
         self.obj.vel += self.obj.acc * self.dt
-
 
 class Velocity_Verlet(Simulation):
 
@@ -332,3 +330,103 @@ if __name__ == "__main__":
     main()
 
 ```
+
+
+
+#### Haskell
+```haskell
+-- submitted by Jie
+type Position     = [Double]
+type Speed        = [Double]
+type Time         = Double
+type Particle     = (Position, Speed, Acceleration, Time)
+type Acceleration = [Double]
+
+verletStep :: (Particle -> Acceleration)
+              -> Time
+              -> Particle
+              -> Particle
+              -> Particle
+verletStep acc dt (xOld, _, aOld, _) (x, v, a, t) = (x', v', a', t+dt)
+  where
+  x' = zipWith3 (\xOld x a -> 2*x - xOld + a*dt^2 ) xOld x a
+  v' = zipWith3 (\v a aOld -> v + 0.5*(aOld + a)*dt) v a aOld
+  a' = acc (x', v', [], t+dt)
+
+trajectory :: (Particle -> Acceleration)
+              -> Time
+              -> Particle
+              -> [Particle]
+trajectory acc dt p0@(x, v, a, t0) = t
+  where
+  t  = p0 : p1 : zipWith (verletStep acc dt) t (tail t)
+  p1 = (x', v', acc (x', v', [], t0+dt), t0+dt)
+  x' = zipWith3 (\x v a -> x + v*dt + 0.5*a*dt^2 ) x v a
+  v' = zipWith (\v a -> v + a*dt) v a
+
+freeFall :: Particle
+freeFall = last $ takeWhile (\([x],_,_,_) -> x > 0) $ trajectory acc dt p0
+  where
+  p0    = ([5], [0], [-10], 0)
+  dt    = 0.001
+  acc _ = [-10]
+```
+
+#### Scratch
+Submitted by Jie
+
+![Scratch 2D implementation](verlet_scratch.png)
+
+#### Matlab
+```matlab
+% Submitted by P. Mekhail
+%% Verlet Integration
+%%
+% This simulates a ball falling (and bouncing) using Verlet integration.
+% It was made under the instruction of our overlord LeiosOS.
+% You can find his video here:
+% <https://www.youtube.com/watch?v=g55QvpAev0I>
+
+% Parameters to change
+n = 400;        % Number of steps
+x0 = 5;         % Ball starting height(in metres)
+v0 = 0;         % Ball starting velocity (+ive is up)
+dt = 0.01;      % Time step (in seconds)
+eff = 0.4;      % Ball efficency when bouncing
+A = @(x) -10;   % Acceleration as a function of position
+bounce = 1;     % Do you want the ball to bounce?
+
+% Making position and time vectors
+x = zeros(n,1);
+t = 0:dt:n*dt-dt;
+
+% Setting the initial conditions
+x(1) = x0;
+x(2) = x0 + v0*dt + 0.5*A(x0)*dt^2;
+
+% Runnin Verlet Integration
+for i = 2:n-1
+    xnew = 2*x(i)-x(i-1)+A(x(i))*dt^2;
+    if bounce
+        if xnew > 0
+            % If you haven't hit the ground keep going
+            x(i+1) = xnew;
+        else
+            % If you have calculated velocity and invert its sign
+            v = sqrt(eff)*(xnew-x(i-1))/(2*dt);
+            x(i+1) = x(i) - v*dt + 0.5*A(x(i))*dt^2;
+        end
+    else
+        x(i+1) = xnew;
+    end
+end
+plot(t,x)
+title('Ball''s Trajectory')
+xlabel('Time (s)'); ylabel('Height (m)');
+
+```
+
+#### LabVIEW
+Submitted by P. Mekhail
+
+![Verlet LabVIEW](verlet_labview.png)
