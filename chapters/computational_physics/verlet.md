@@ -436,6 +436,7 @@ Submitted by P. Mekhail
 #### C
 
 ```
+// Submitted by Gathros
 #include <stdio.h>
 
 // Simple function for velocity-verlet
