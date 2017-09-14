@@ -509,14 +509,6 @@ int main(){
 <!DOCTYPE html>
 <html>
 <body>
-<h2>JavaScript</h2>
-<p>verlet:</p>
-<p id="verlet"></p>
-<p>stormer_verlet:</p>
-<p id="stormer_verlet"></p>
-<p>velocity_verlet:</p>
-<p id="velocity_verlet"></p>
-
 <script>
 function verlet(pos, acc, dt){
 
@@ -569,11 +561,10 @@ function velocity_verlet(pos, acc, dt){
 
 }
 
-document.getElementById("verlet").innerHTML = verlet(5.0, -10, 0.01);
-document.getElementById("stormer_verlet").innerHTML = stormer_verlet(5.0, -10, 0.01);
-document.getElementById("velocity_verlet").innerHTML = velocity_verlet(5.0, -10, 0.01);
+document.write(verlet(5.0, -10, 0.01) + "<br>");
+document.write(stormer_verlet(5.0, -10, 0.01) + "<br>");
+document.write(velocity_verlet(5.0, -10, 0.01) + "<br>");
 </script>
-
 </body>
 </html>
 ```
