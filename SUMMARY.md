@@ -13,6 +13,7 @@
     * [Taylor Series](chapters/mathematical_background/taylor_series.md)
 * [Fundamental Algorithms](chapters/fundamental_algorithms/fundamental_algorithms.md)
     * [Tree Traversal](chapters/fundamental_algorithms/tree_traversal.md)
+    * [Euclidean Algorithm](chapters/fundamental_algorithms/euclidean_algorithm/euclidean.md)
 * [Computational Mathematics](chapters/computational_mathematics/computational_mathematics.md)
     * [Matrix Methods](chapters/computational_mathematics/matrix_methods/matrix_methods.md)
         * [Gaussian Elimination](chapters/computational_mathematics/matrix_methods/gaussian_elimination.md)
