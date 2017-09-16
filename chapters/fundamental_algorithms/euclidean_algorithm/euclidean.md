@@ -227,3 +227,53 @@ def euclid_sub(a, b):
 print euclid_mod(64 * 67, 64 * 81)
 print euclid_sub(128 * 12, 128 * 77)
 ```
+
+### C#
+
+```cs
+// submitted by Julian Schacher‏
+using System;
+
+namespace Euclidean_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int check = Algorithms.EuclidMod(64 * 67, 64 * 81);
+            int check2 = Algorithms.EuclidSub(128 * 12, 128 * 77);
+
+            Console.WriteLine(check);
+            Console.WriteLine(check2);
+        }
+    }
+
+    public static class Algorithms
+    {
+        public static int EuclidSub(int a, int b)
+        {
+            while (a != b)
+            {
+                if (a > b)
+                    a = a - b;
+                else
+                    b = b - a;
+            }
+
+            return a;
+        }
+
+        public static int EuclidMod(int a, int b)
+        {
+            while (b != 0)
+            {
+                var temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+    }
+}
+```
