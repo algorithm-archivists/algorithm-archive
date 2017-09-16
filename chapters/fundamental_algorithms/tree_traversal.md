@@ -328,7 +328,7 @@ def main():
 main()
 ```
 
-#### Python 2
+### Python 2
 ```python
 # Depth-First and Breadth-First Traversal
 # Submitted by Matthew Giallourakis 
@@ -578,7 +578,7 @@ int main() {
 }
 ```
 
-#### C#:
+### C#:
 
 ```cs
 // submitted by Julian Schacher‏
@@ -686,7 +686,7 @@ namespace Tree_Traversal
 }
 ```
 
-#### JavaScript
+### JavaScript
 
 ```html
 <!DOCTYPE html>
@@ -761,7 +761,7 @@ BFS_queue(root);
 <html>
 ```
 
-#### Haskell
+### Haskell
 ```hs
 --- Submitted by Jie
 data Tree a = Empty
@@ -794,7 +794,7 @@ testTree = Node 1 [Node 2 [Node 3 [],
 
 ```
 
-#### Scratch
+### Scratch
 Submitted by Jie
 
 [https://scratch.mit.edu/projects/174017753/](https://scratch.mit.edu/projects/174017753/)
