@@ -354,3 +354,36 @@ let chk2 = euclid_sub (128 * 12) (128 * 77)
 let () = print_string ((int_of_string chk1) ^ "\n")
 let () = print_string ((int_of_string chk2) ^ "\n")
 ```
+
+### Java
+```java
+// sumbitted by lolatomroflsinnlos
+public static void main(String[] args) {
+
+    System.out.println(euclidSub(64 * 67, 64 * 81));
+    System.out.println(euclidMod(128 * 12, 128 * 77));
+
+}
+
+public static int euclidSub(int a, int b) {
+    while (a != b) {
+        if (a > b) {
+            a -=b;
+        } else {
+            b -=a;
+        }
+    }
+
+    return a;
+}
+
+public static int euclidMod(int a, int b) {
+    while (b != 0){
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    return a;
+}﻿
+```
