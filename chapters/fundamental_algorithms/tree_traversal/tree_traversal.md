@@ -250,9 +250,9 @@ int main(){
 
 ```
 
-### Python:
+### Python 2:
 
-```Python
+```python
 
 # /*-------------simple_tree_traversal.py--------------------------------------//
 # *
@@ -328,7 +328,7 @@ def main():
 main()
 ```
 
-### Python 2
+### Python 3
 ```python
 # Depth-First and Breadth-First Traversal
 # Submitted by Matthew Giallourakis 

@@ -2,7 +2,7 @@
 
 * [README](README.md)
 * [Introduction](chapters/introduction.md)
-* [Getting Started](chapters/getting_started.md)
+* [A Personal Note](chapters/getting_started.md)
 * [Principles of Code](chapters/principles_of_code/principles_of_code.md)
     * [Hindsight](chapters/principles_of_code/hindsight.md)
     * [Choosing A Language](chapters/principles_of_code/choosing_a_language/choosing_a_language.md)
@@ -12,7 +12,7 @@
 * [Mathematical Background](chapters/mathematical_background/mathematical_background.md)
     * [Taylor Series](chapters/mathematical_background/taylor_series.md)
 * [Fundamental Algorithms](chapters/fundamental_algorithms/fundamental_algorithms.md)
-    * [Tree Traversal](chapters/fundamental_algorithms/tree_traversal.md)
+    * [Tree Traversal](chapters/fundamental_algorithms/tree_traversal/tree_traversal.md)
     * [Euclidean Algorithm](chapters/fundamental_algorithms/euclidean_algorithm/euclidean.md)
 * [Computational Mathematics](chapters/computational_mathematics/computational_mathematics.md)
     * [Matrix Methods](chapters/computational_mathematics/matrix_methods/matrix_methods.md)
