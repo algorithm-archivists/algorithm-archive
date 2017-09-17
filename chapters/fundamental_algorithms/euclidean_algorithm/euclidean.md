@@ -331,3 +331,26 @@ fn main() {
   println!("{}", chk2);
 }
 ```
+
+### OCaml
+
+```ocaml
+let rec euclid_mod a b =
+  if b = 0 then
+    a
+  else
+    euclid_mod b (a mod b)
+
+let rec euclid_sub a b =
+  if a = b then
+    a
+  else if a < b then
+    euclid_sub a (b - a)
+  else
+    euclid_sub (a - b) b
+
+let chk1 = euclid_mod (64 * 67) (64 * 81)
+let chk2 = euclid_sub (128 * 12) (128 * 77)
+let () = print_string ((int_of_string chk1) ^ "\n")
+let () = print_string ((int_of_string chk2) ^ "\n")
+```
