@@ -65,23 +65,14 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 # Example Code
 ### C++
 ```cpp
-/*-------------euclidean.cpp--------------------------------------------------//
-*
-* Purpose: To implement euclidean algorithm to find the greatest common divisor
-*
-*   Notes: Compile with g++ euclidean.cpp
-*
-*-----------------------------------------------------------------------------*/
-
 #include <iostream>
+#include <cstdint>
 
-// Euclidean algorithm with mod
-int euclid_mod(int a, int b){
-
-    int temp;
-    while (b != 0){
-        temp = b;
-        b = a%b;
+// Euclidean algorithm using modulus
+std::uint64_t euclid_mod(std::uint64_t a, std::uint64_t b) {
+    while (b != 0) {
+        auto temp = b;
+        b = a % b;
         a = temp;
     }
 
@@ -89,13 +80,11 @@ int euclid_mod(int a, int b){
 }
 
 // Euclidean algorithm with subtraction
-int euclid_sub(int a, int b){
-
-    while (a != b){
-        if (a > b){
+std::uint64_t euclid_sub(std::uint64_t a, std::uint64_t b) {
+    while (a != b) {
+        if (a > b) {
             a = a - b;
-        }
-        else{
+        } else {
             b = b - a;
         }
     }
@@ -104,9 +93,8 @@ int euclid_sub(int a, int b){
 }
 
 int main(){
-
-    int check = euclid_mod(64*67, 64*81);
-    int check2 = euclid_sub(128*12, 128*77);
+    auto check1 = euclid_mod(64*67, 64*81);
+    auto check2 = euclid_sub(128*12, 128*77);
 
     std::cout << check << '\n';
     std::cout << check2 << '\n';
