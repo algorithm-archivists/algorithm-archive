@@ -74,7 +74,6 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 *-----------------------------------------------------------------------------*/
 
 #include <iostream>
-#include <math.h>
 
 // Euclidean algorithm with mod
 int euclid_mod(int a, int b){
@@ -118,7 +117,6 @@ int main(){
 ### C
 ```c
 #include <stdio.h>
-#include <math.h>
 
 int euclid_mod(int a, int b){
 
@@ -275,5 +273,61 @@ namespace Euclidean_Algorithm
             return a;
         }
     }
+}
+```
+
+### Haskell
+
+```haskell
+euclidSub :: Integer -> Integer -> Integer
+euclidSub a b =
+  if a == b then
+    a
+  else if a < b then
+    euclidSub a (b - a)
+  else
+    euclidSub (a - b) b
+
+euclidMod :: Integer -> Integer -> Integer
+euclidMod a 0 = a
+euclidMod a b = euclidMod b (a `mod` b)
+
+main :: IO ()
+main = do
+  let chk1 = euclidMod (64 * 67) (64 * 81)
+      chk2 = euclidSub (128 * 12) (128 * 77)
+  putStrLn (show chk1)
+  putStrLn (show chk2)
+  return ()
+```
+
+### Rust
+
+```rust
+fn euclid_sub(mut a: u64, mut b: u64) -> u64 {
+  while a != b {
+    if a < b {
+      b = b - a;
+    } else {
+      a = a - b;
+    }
+  }
+  a
+}
+
+fn euclid_rem(mut a: u64, mut b: u64) -> u64 {
+  while b != 0 {
+    let tmp = b;
+    b = a % b;
+    a = tmp;
+  }
+  a
+}
+
+fn main() {
+  let chk1 = euclid_rem(64 * 67, 64 * 81);
+  let chk2 = euclid_sub(128 * 12, 128 * 77);
+  println!("{}", chk1);
+  println!("{}", chk2);
 }
 ```
