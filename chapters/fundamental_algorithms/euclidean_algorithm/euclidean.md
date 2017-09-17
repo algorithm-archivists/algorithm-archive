@@ -114,3 +114,166 @@ int main(){
 }
 
 ```
+
+### C
+```c
+#include <stdio.h>
+#include <math.h>
+
+int euclid_mod(int a, int b){
+
+    int temp;
+    while (b != 0){
+        temp = b;
+        b = a%b;
+        a = temp;
+    }
+
+    return a;
+}
+
+int euclid_sub(int a, int b){
+
+    while (a != b){
+        if (a > b){
+            a = a - b;
+        }
+        else{
+            b = b - a;
+        }
+    }
+
+    return a;
+}
+
+int main(){
+
+    int check = euclid_mod(64*67, 64*81);
+    int check2 = euclid_sub(128*12, 128*77);
+
+    printf("%d\n", check);
+    printf("%d\n", check2);
+}
+
+```
+
+### JavaScript
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function euclid_mod(a, b){
+
+    var temp;
+    while (b != 0){
+        temp = b;
+        b = a%b;
+        a = temp;
+    }
+
+    return a;
+}
+
+function euclid_sub(a, b){
+
+    while (a != b){
+        if (a > b){
+            a = a - b;
+        }
+        else{
+            b = b - a;
+        }
+    }
+
+    return a;
+}
+
+document.write(euclid_mod(64*67, 64*81) + "<br>");
+document.write(euclid_sub(128*12, 128*77) + "<br>");
+</script>
+</body>
+</html>
+```
+
+### Python
+
+```python
+
+#  euclidean.py
+
+def euclid_mod(a, b):
+
+    temp = 0
+
+    while b > 0:
+        temp = b
+        b = a % b
+        a = temp
+
+    return a
+
+def euclid_sub(a, b):
+
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
+
+    return a
+
+print euclid_mod(64 * 67, 64 * 81)
+print euclid_sub(128 * 12, 128 * 77)
+```
+
+### C#
+
+```cs
+// submitted by Julian Schacher‏
+using System;
+
+namespace Euclidean_Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int check = Algorithms.EuclidMod(64 * 67, 64 * 81);
+            int check2 = Algorithms.EuclidSub(128 * 12, 128 * 77);
+
+            Console.WriteLine(check);
+            Console.WriteLine(check2);
+        }
+    }
+
+    public static class Algorithms
+    {
+        public static int EuclidSub(int a, int b)
+        {
+            while (a != b)
+            {
+                if (a > b)
+                    a = a - b;
+                else
+                    b = b - a;
+            }
+
+            return a;
+        }
+
+        public static int EuclidMod(int a, int b)
+        {
+            while (b != 0)
+            {
+                var temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
+    }
+}
+```
