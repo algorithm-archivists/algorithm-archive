@@ -217,6 +217,8 @@ document.write(euclid_sub(128*12, 128*77) + "<br>");
 
 def euclid_mod(a, b):
 
+    a = abs(a)
+    b = abs(b)
     temp = 0
 
     while b > 0:
@@ -227,6 +229,9 @@ def euclid_mod(a, b):
     return a
 
 def euclid_sub(a, b):
+
+    a = abs(a)
+    b = abs(b)
 
     while a != b:
         if a > b:
@@ -380,6 +385,9 @@ public static void main(String[] args) {
 }
 
 public static int euclidSub(int a, int b) {
+	a = Math.abs(a);
+	b = Math.abs(b);
+
     while (a != b) {
         if (a > b) {
             a -=b;
@@ -392,6 +400,9 @@ public static int euclidSub(int a, int b) {
 }
 
 public static int euclidMod(int a, int b) {
+	a = Math.abs(a);
+	b = Math.abs(b);
+
     while (b != 0){
         int temp = b;
         b = a % b;
