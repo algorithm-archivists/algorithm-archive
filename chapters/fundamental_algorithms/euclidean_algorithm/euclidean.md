@@ -269,6 +269,10 @@ namespace Euclidean_Algorithm
     {
         public static int EuclidSub(int a, int b)
         {
+            // Math.Abs for negative number support
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+
             while (a != b)
             {
                 if (a > b)
@@ -282,6 +286,10 @@ namespace Euclidean_Algorithm
 
         public static int EuclidMod(int a, int b)
         {
+            // Math.Abs for negative number support
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+
             while (b != 0)
             {
                 var temp = b;
