@@ -74,9 +74,12 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 *-----------------------------------------------------------------------------*/
 
 #include <iostream>
+#include <cmath>
 
 // Euclidean algorithm with mod
 int euclid_mod(int a, int b){
+    a = std::abs(a);
+    b = std::abs(b);
 
     int temp;
     while (b != 0){
@@ -90,6 +93,8 @@ int euclid_mod(int a, int b){
 
 // Euclidean algorithm with subtraction
 int euclid_sub(int a, int b){
+    a = std::abs(a);
+    b = std::abs(b);
 
     while (a != b){
         if (a > b){
@@ -117,8 +122,11 @@ int main(){
 ### C
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 
 int euclid_mod(int a, int b){
+    a = abs(a);
+    b = abs(b);
 
     int temp;
     while (b != 0){
@@ -131,6 +139,8 @@ int euclid_mod(int a, int b){
 }
 
 int euclid_sub(int a, int b){
+    a = abs(a);
+    b = abs(b);
 
     while (a != b){
         if (a > b){
@@ -163,6 +173,8 @@ int main(){
 <body>
 <script>
 function euclid_mod(a, b){
+    a = Math.abs(a);
+    b = Math.abs(b);
 
     var temp;
     while (b != 0){
@@ -175,6 +187,8 @@ function euclid_mod(a, b){
 }
 
 function euclid_sub(a, b){
+    a = Math.abs(a);
+    b = Math.abs(b);
 
     while (a != b){
         if (a > b){
