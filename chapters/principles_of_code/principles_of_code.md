@@ -4,7 +4,7 @@ At least to me, programming is a form of creative expression. Sure, programming 
 
 Here's that cycle again in code:
 
-```
+```julia
 type Human
     ability::Int64
     standard::Int64
