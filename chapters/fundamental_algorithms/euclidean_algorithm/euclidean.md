@@ -368,7 +368,7 @@ let euclid_sub a b =
     else if a < b then
       inner a (b - a)
     else
-    inner (a - b) b
+      inner (a - b) b
   in (inner (abs a) (abs b))
 
 let chk1 = euclid_mod (64 * 67) (64 * 81)
