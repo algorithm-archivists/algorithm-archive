@@ -65,23 +65,16 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 # Example Code
 ### C++
 ```cpp
-/*-------------euclidean.cpp--------------------------------------------------//
-*
-* Purpose: To implement euclidean algorithm to find the greatest common divisor
-*
-*   Notes: Compile with g++ euclidean.cpp
-*
-*-----------------------------------------------------------------------------*/
-
 #include <iostream>
+#include <cmath>
 
-// Euclidean algorithm with mod
-int euclid_mod(int a, int b){
-
-    int temp;
-    while (b != 0){
-        temp = b;
-        b = a%b;
+// Euclidean algorithm using modulus
+int euclid_mod(int a, int b) {
+    a = std::abs(a);
+    b = std::abs(b);
+    while (b != 0) {
+        auto temp = b;
+        b = a % b;
         a = temp;
     }
 
@@ -89,26 +82,25 @@ int euclid_mod(int a, int b){
 }
 
 // Euclidean algorithm with subtraction
-int euclid_sub(int a, int b){
-
-    while (a != b){
-        if (a > b){
-            a = a - b;
-        }
-        else{
-            b = b - a;
+int euclid_sub(int a, int b) {
+    a = std::abs(a);
+    b = std::abs(b);
+    while (a != b) {
+        if (a > b) {
+            a -= b;
+        } else {
+            b -= a;
         }
     }
 
     return a;
 }
 
-int main(){
+int main() {
+    auto check1 = euclid_mod(64*67, 64*81);
+    auto check2 = euclid_sub(128*12, 128*77);
 
-    int check = euclid_mod(64*67, 64*81);
-    int check2 = euclid_sub(128*12, 128*77);
-
-    std::cout << check << '\n';
+    std::cout << check1 << '\n';
     std::cout << check2 << '\n';
 }
 
@@ -280,17 +272,19 @@ namespace Euclidean_Algorithm
 
 ```haskell
 euclidSub :: Integer -> Integer -> Integer
-euclidSub a b =
-  if a == b then
-    a
-  else if a < b then
-    euclidSub a (b - a)
-  else
-    euclidSub (a - b) b
+euclidSub a b = inner (abs a) (abs b) where
+  inner a b =
+    if a == b then
+      a
+    else if a < b then
+      euclidSub a (b - a)
+    else
+      euclidSub (a - b) b
 
 euclidMod :: Integer -> Integer -> Integer
-euclidMod a 0 = a
-euclidMod a b = euclidMod b (a `mod` b)
+euclidMod a b = inner (abs a) (abs b) where
+  inner a 0 = a
+  inner a b = inner b (a `mod` b)
 
 main :: IO ()
 main = do
@@ -304,18 +298,22 @@ main = do
 ### Rust
 
 ```rust
-fn euclid_sub(mut a: u64, mut b: u64) -> u64 {
+fn euclid_sub(mut a: i64, mut b: i64) -> i64 {
+  a = a.abs();
+  b = b.abs();
   while a != b {
     if a < b {
-      b = b - a;
+      b -= a;
     } else {
-      a = a - b;
+      a -= b;
     }
   }
   a
 }
 
-fn euclid_rem(mut a: u64, mut b: u64) -> u64 {
+fn euclid_rem(mut a: i64, mut b: i64) -> i64 {
+  a = a.abs();
+  b = b.abs();
   while b != 0 {
     let tmp = b;
     b = a % b;
@@ -335,24 +333,27 @@ fn main() {
 ### OCaml
 
 ```ocaml
-let rec euclid_mod a b =
-  if b = 0 then
-    a
-  else
-    euclid_mod b (a mod b)
+let euclid_mod a b =
+  let rec inner a = function
+  | 0 -> a
+  | b -> inner b (a mod b)
+  in (inner (abs a) (abs b))
 
-let rec euclid_sub a b =
-  if a = b then
-    a
-  else if a < b then
-    euclid_sub a (b - a)
-  else
-    euclid_sub (a - b) b
+let euclid_sub a b =
+  let rec inner a b =
+    if a = b then
+      a
+    else if a < b then
+      inner a (b - a)
+    else
+    inner (a - b) b
+  in (inner (abs a) (abs b))
 
 let chk1 = euclid_mod (64 * 67) (64 * 81)
 let chk2 = euclid_sub (128 * 12) (128 * 77)
-let () = print_string ((int_of_string chk1) ^ "\n")
-let () = print_string ((int_of_string chk2) ^ "\n")
+let () =
+  chk1 |> print_int |> print_newline;
+  chk2 |> print_int |> print_newline
 ```
 
 ### Java
