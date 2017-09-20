@@ -65,6 +65,8 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 # Example Code
 ### C++
 ```cpp
+// originally contributed by James Schloss (Leios)
+// restyled by Nicole Mazzuca (ubsan)
 #include <iostream>
 #include <cmath>
 
@@ -298,6 +300,8 @@ namespace Euclidean_Algorithm
 ### Haskell
 
 ```haskell
+-- contributed by Nicole Mazzuca (ubsan)
+
 euclidSub :: Integer -> Integer -> Integer
 euclidSub a b = inner (abs a) (abs b) where
   inner a b =
@@ -325,6 +329,8 @@ main = do
 ### Rust
 
 ```rust
+// contributed by Nicole Mazzuca (ubsan)
+
 fn euclid_sub(mut a: i64, mut b: i64) -> i64 {
     a = a.abs();
     b = b.abs();
@@ -362,6 +368,8 @@ fn main() {
 ### OCaml
 
 ```ocaml
+(* contributed by Nicole Mazzuca (ubsan) *)
+
 let euclid_mod a b =
   let rec inner a = function
   | 0 -> a

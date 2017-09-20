@@ -161,6 +161,9 @@ Do you think we should be using real code snippets in the main text or stick the
 ### C++:
 
 ```cpp
+// initially contributed by James Schloss (Leios)
+// restyled by Nicole Mazzuca (ubsan)
+
 #include <iostream>
 #include <cstddef>
 #include <utility>
