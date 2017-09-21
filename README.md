@@ -4,4 +4,8 @@ The book can be found here: https://www.gitbook.com/book/leios/algorithm-archive
 
 ----
 
-This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+## License
+The content of this project itself is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (link below). The code examples are licensed under the MIT license (found in LICENSE.md).
+
+{% creativecommons type="by-nc" %}
+{% endcreativecommons %}
