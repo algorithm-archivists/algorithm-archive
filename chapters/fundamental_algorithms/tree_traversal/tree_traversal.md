@@ -798,6 +798,80 @@ testTree = Node 1 [Node 2 [Node 3 [],
 
 ```
 
+### OCaml
+```ocaml
+(* submitted by Nicole Mazzuca (ubsan) *)
+module Tree: sig
+  type t
+
+  val create: int -> t
+  val add_child: t -> t -> t
+  val dfs_recursive: t -> unit
+  val dfs_stack: t -> unit
+  val bfs_queue: t -> unit
+end =
+struct
+  type t = { children: t list; value: int }
+
+  let create value = { children = []; value = value }
+  let add_child self child = 
+    { children = child :: self.children; value = self.value }
+
+  let rec list_iter lst f = match lst with
+  | x :: xs -> f x; list_iter xs f
+  | [] -> ()
+
+  let rec dfs_recursive self =
+    print_int self.value |> print_newline;
+    list_iter self.children dfs_recursive
+
+  let dfs_stack self =
+    let open Stack in
+    let stack = create () in
+    push self stack;
+    while (not (is_empty stack)) do
+      let temp = pop stack in
+      print_int temp.value |> print_newline;
+      list_iter temp.children
+        (function child -> push child stack)
+    done
+
+  let bfs_queue self =
+    let open Queue in
+    let queue = create () in
+    add self queue;
+    while (not (is_empty queue)) do
+      let temp = take queue in
+      print_int temp.value |> print_newline;
+      list_iter temp.children
+        (function child -> push child queue)
+    done
+end
+
+let rec create_tree num_row num_child =
+  let open Tree in
+  let tree = create num_row in
+  match num_row with
+  | 0 -> tree
+  | n ->
+      let child = create_tree (num_row - 1) num_child in
+      let rec inner tree = function
+      | 0 -> tree
+      | n -> add_child (inner tree (n - 1)) child
+      in (inner tree num_child)
+
+let main () =
+  let tree = create_tree 3 3 in
+  print_string "--- dfs_recursive --- \n";
+  Tree.dfs_recursive tree;
+  print_string "--- dfs_stack --- \n";
+  Tree.dfs_stack tree;
+  print_string "--- bfs_queue --- \n";
+  Tree.bfs_queue tree
+
+let () = main ()
+```
+
 ### Scratch
 Submitted by Jie
 
