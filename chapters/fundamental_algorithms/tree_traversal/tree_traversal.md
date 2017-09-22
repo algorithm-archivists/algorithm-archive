@@ -798,6 +798,100 @@ testTree = Node 1 [Node 2 [Node 3 [],
 
 ```
 
+### OCaml
+```ocaml
+(* submitted by Nicole Mazzuca (ubsan) *)
+module Tree: sig
+  (*
+    create a module signature
+    this allows us to not give out any implementation details
+  *)
+  type t
+
+  val create: int -> t
+  val add_child: t -> t -> t
+  val dfs_recursive: t -> unit
+  val dfs_stack: t -> unit
+  val bfs_queue: t -> unit
+end =
+struct
+  type t = { children: t list; value: int }
+
+  let create value = { children = []; value = value }
+  (*
+    note: doing it this way means that we create lots of lists
+    it could mean, potentially, a lot of allocations
+    however, it also means we're functionally pure, which is nice
+  *)
+  let add_child self child = 
+    { children = child :: self.children; value = self.value }
+
+  (* recursive is by far the easiest to do in functional langs *)
+  let rec dfs_recursive self =
+    print_int self.value |> print_newline;
+    List.iter dfs_recursive self.children
+
+  (*
+    both dfs_stack and bfs_queue are almost identical to C++
+    there's not much interesting here
+  *)
+  let dfs_stack self =
+    (* let open is :+1: *)
+    let open Stack in
+    let stack = create () in
+    push self stack;
+    while (not (is_empty stack)) do
+      let temp = pop stack in
+      print_int temp.value |> print_newline;
+      List.iter
+        (function child -> push child stack)
+        temp.children
+    done
+
+  let bfs_queue self =
+    let open Queue in
+    let queue = create () in
+    add self queue;
+    while (not (is_empty queue)) do
+      let temp = take queue in
+      print_int temp.value |> print_newline;
+      List.iter
+        (function child -> push child queue)
+        temp.children
+    done
+end
+
+let rec create_tree num_row num_child =
+  let open Tree in
+  let tree = create num_row in
+  match num_row with
+  | 0 -> tree
+  | n ->
+      let child = create_tree (num_row - 1) num_child in
+      (*
+        using a recursive function, instead of a for loop,
+        allows us to not use mutation
+
+        this is basically a for loop, written with recursive
+        functions :)
+      *)
+      let rec inner tree = function
+      | 0 -> tree
+      | n -> add_child (inner tree (n - 1)) child
+      in (inner tree num_child)
+
+let main () =
+  let tree = create_tree 3 3 in
+  print_string "--- dfs_recursive --- \n";
+  Tree.dfs_recursive tree;
+  print_string "--- dfs_stack --- \n";
+  Tree.dfs_stack tree;
+  print_string "--- bfs_queue --- \n";
+  Tree.bfs_queue tree
+
+let () = main ()
+```
+
 ### Scratch
 Submitted by Jie
 
