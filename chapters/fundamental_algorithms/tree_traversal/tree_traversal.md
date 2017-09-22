@@ -892,6 +892,60 @@ let main () =
 let () = main ()
 ```
 
+### Rust
+```rust
+// Submitted by Gustorn
+use std::collections::VecDeque;
+
+struct Tree {
+    value: i32,
+    children: Vec<Tree>,
+}
+
+impl Tree {
+    fn new(depth: i32, num_children: usize) -> Tree {
+        let mut tree = Tree { value: depth, children: vec![] };
+        if depth > 0 {
+            for _ in 0..num_children {
+                tree.children.push(Tree::new(depth - 1, num_children));
+            }
+        }
+        tree
+    }
+    
+    fn dfs_recursive(&self) {
+        println!("{}", self.value);
+        for child in &self.children {
+            child.dfs_recursive();
+        }
+    }
+    
+    fn dfs_stack(&self) {
+        let mut stack = vec![self];
+        while let Some(top) = stack.pop() {
+            println!("{}", top.value);
+            stack.extend(&top.children);
+        }
+    }
+    
+    fn bfs_queue(&self) {
+        let mut queue = VecDeque::new();
+        queue.push_back(self);
+        while let Some(first) = queue.pop_front() {
+            println!("{}", first.value);
+            queue.extend(&first.children);
+        }
+    }
+}
+
+fn main() {
+    let tree = Tree::new(3, 3);
+    tree.dfs_recursive();
+    tree.dfs_stack();
+    tree.bfs_queue();
+}
+```
+
 ### Scratch
 Submitted by Jie
 
