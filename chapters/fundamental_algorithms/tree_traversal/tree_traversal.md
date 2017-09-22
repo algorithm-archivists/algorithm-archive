@@ -802,6 +802,10 @@ testTree = Node 1 [Node 2 [Node 3 [],
 ```ocaml
 (* submitted by Nicole Mazzuca (ubsan) *)
 module Tree: sig
+  (*
+    create a module signature
+    this allows us to not give out any implementation details
+  *)
   type t
 
   val create: int -> t
@@ -814,26 +818,34 @@ struct
   type t = { children: t list; value: int }
 
   let create value = { children = []; value = value }
+  (*
+    note: doing it this way means that we create lots of lists
+    it could mean, potentially, a lot of allocations
+    however, it also means we're functionally pure, which is nice
+  *)
   let add_child self child = 
     { children = child :: self.children; value = self.value }
 
-  let rec list_iter lst f = match lst with
-  | x :: xs -> f x; list_iter xs f
-  | [] -> ()
-
+  (* recursive is by far the easiest to do in functional langs *)
   let rec dfs_recursive self =
     print_int self.value |> print_newline;
-    list_iter self.children dfs_recursive
+    List.iter dfs_recursive self.children
 
+  (*
+    both dfs_stack and bfs_queue are almost identical to C++
+    there's not much interesting here
+  *)
   let dfs_stack self =
+    (* let open is :+1: *)
     let open Stack in
     let stack = create () in
     push self stack;
     while (not (is_empty stack)) do
       let temp = pop stack in
       print_int temp.value |> print_newline;
-      list_iter temp.children
+      List.iter
         (function child -> push child stack)
+        temp.children
     done
 
   let bfs_queue self =
@@ -843,8 +855,9 @@ struct
     while (not (is_empty queue)) do
       let temp = take queue in
       print_int temp.value |> print_newline;
-      list_iter temp.children
+      List.iter
         (function child -> push child queue)
+        temp.children
     done
 end
 
@@ -855,6 +868,13 @@ let rec create_tree num_row num_child =
   | 0 -> tree
   | n ->
       let child = create_tree (num_row - 1) num_child in
+      (*
+        using a recursive function, instead of a for loop,
+        allows us to not use mutation
+
+        this is basically a for loop, written with recursive
+        functions :)
+      *)
       let rec inner tree = function
       | 0 -> tree
       | n -> add_child (inner tree (n - 1)) child
