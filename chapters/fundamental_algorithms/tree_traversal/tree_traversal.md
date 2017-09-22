@@ -895,7 +895,6 @@ let () = main ()
 ### Rust
 ```rust
 // Submitted by Gustorn
-// Submitted by Gustorn
 use std::collections::VecDeque;
 
 struct Tree {
