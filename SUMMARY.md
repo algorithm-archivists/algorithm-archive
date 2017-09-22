@@ -1,6 +1,7 @@
 # Summary
 
 * [README](README.md)
+* [TODO](TODO.md)
 * [Introduction](chapters/introduction.md)
 * [A Personal Note](chapters/getting_started.md)
 * [Principles of Code](chapters/principles_of_code/principles_of_code.md)
