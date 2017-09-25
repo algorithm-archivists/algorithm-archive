@@ -161,93 +161,97 @@ Do you think we should be using real code snippets in the main text or stick the
 ### C++:
 
 ```cpp
-/*-------------simple_tree_traversal.cpp--------------------------------------//
-*
-* Purpose: To implement basic tree traversal in C++.
-*
-*-----------------------------------------------------------------------------*/
+// initially contributed by James Schloss (Leios)
+// restyled by Nicole Mazzuca (ubsan)
 
 #include <iostream>
+#include <cstddef>
+#include <utility>
 #include <vector>
 #include <stack>
 #include <queue>
 
-// So we heard you liked nodes...
-struct node{
-    std::vector<node> children;
-    int ID;
+using std::size_t;
+
+class Tree {
+    std::vector<Tree> children;
+    int value;
+public:
+    Tree(int value): children(), value(value) {}
+
+    void add_child(Tree child)
+    {
+        children.push_back(std::move(child));
+    }
+
+    // Simple recursive scheme for DFS
+    void DFS_recursive() const {
+        // Here we are doing something...
+        std::cout << value << '\n';
+        for (Tree const& child: children) {
+            child.DFS_recursive();
+        }
+    }
+
+    // Simple non-recursive scheme for DFS
+    void DFS_stack() const {
+        std::stack<const Tree*> stack;
+        stack.push(this);
+
+        while (stack.size() > 0) {
+            const Tree& temp = *stack.top();
+            stack.pop();
+
+            std::cout << temp.value << '\n';
+            for (Tree const& child: temp.children) {
+                stack.push(&child);
+            }
+        }
+    }
+
+    // simple non-recursive scheme for BFS
+    void BFS_queue() const {
+        std::queue<const Tree*> queue;
+        queue.push(this);
+
+        while (queue.size() > 0) {
+            const Tree& temp = *queue.front();
+            queue.pop();
+
+            std::cout << temp.value << '\n';
+            for (Tree const& child: temp.children) {
+                queue.push(&child);
+            }
+        }
+    }
 };
 
-// There are better ways to do this, I'm sure...
-void create_tree(node& n, int num_row, int num_child){
+Tree create_tree(size_t num_row, size_t num_child)
+{
     // We'll just set the ID to whatever we want here...
-    n.ID = num_row;
-    if (num_row == 0){
-        return;
+    Tree ret(num_row);
+
+    if (num_row == 0) {
+        return ret;
     }
 
     // Creating children
-    n.children.reserve(num_child);
-    for (int i = 0; i < num_child; ++i){
-        node child;
-        create_tree(child, num_row - 1, num_child);
-        n.children.push_back(child);
+    for (size_t i = 0; i < num_child; ++i) {
+        Tree child = create_tree(num_row - 1, num_child);
+        ret.add_child(std::move(child));
     }
 
+    return ret;
 }
 
-// Simple recursive scheme for DFS
-void DFS_recursive(const node& n){
 
-    // Here we are doing something...
-    std::cout << n.ID << '\n';
-    for (int i = 0; i < n.children.size(); ++i){
-        DFS_recursive(n.children[i]);
-    }
+int main() {
+    // Creating Tree in main
+    Tree root = create_tree(3, 3);
+    root.DFS_recursive();
+    root.DFS_stack();
+    root.BFS_queue();
 }
-
-// Simple non-recursive scheme for DFS
-void DFS_stack(const node& n){
-    std::stack<node> s;
-    s.push(n);
-    node temp;
-
-    while(s.size() > 0){
-        std::cout << s.top().ID << '\n';
-        temp = s.top();
-        s.pop();
-        for (int i = 0; i < temp.children.size(); ++i){
-            s.push(temp.children[i]);
-        }
-    }
-}
-
-// simple non-recursive scheme for BFS 
-void BFS_queue(const node& n){
-    std::queue<node> q;
-    q.push(n);
-    node temp;
-
-    while(q.size() > 0){
-        std::cout << q.front().ID << '\n';
-        temp = q.front();
-        q.pop();
-        for (int i = 0; i < temp.children.size(); ++i){
-            q.push(temp.children[i]);
-        }
-    }
-}
-
-int main(){
-
-    // Creating tree in main
-    node root;
-    create_tree(root, 3, 3);
-    DFS_recursive(root);
-    DFS_stack(root);
-    BFS_queue(root);
-}
-
 ```
 
 ### Python 2:
@@ -792,6 +796,154 @@ testTree = Node 1 [Node 2 [Node 3 [],
                            Node 13 [Node 14 []]],
                    Node 15 []]
 
+```
+
+### OCaml
+```ocaml
+(* submitted by Nicole Mazzuca (ubsan) *)
+module Tree: sig
+  (*
+    create a module signature
+    this allows us to not give out any implementation details
+  *)
+  type t
+
+  val create: int -> t
+  val add_child: t -> t -> t
+  val dfs_recursive: t -> unit
+  val dfs_stack: t -> unit
+  val bfs_queue: t -> unit
+end =
+struct
+  type t = { children: t list; value: int }
+
+  let create value = { children = []; value = value }
+  (*
+    note: doing it this way means that we create lots of lists
+    it could mean, potentially, a lot of allocations
+    however, it also means we're functionally pure, which is nice
+  *)
+  let add_child self child = 
+    { children = child :: self.children; value = self.value }
+
+  (* recursive is by far the easiest to do in functional langs *)
+  let rec dfs_recursive self =
+    print_int self.value |> print_newline;
+    List.iter dfs_recursive self.children
+
+  (*
+    both dfs_stack and bfs_queue are almost identical to C++
+    there's not much interesting here
+  *)
+  let dfs_stack self =
+    (* let open is :+1: *)
+    let open Stack in
+    let stack = create () in
+    push self stack;
+    while (not (is_empty stack)) do
+      let temp = pop stack in
+      print_int temp.value |> print_newline;
+      List.iter
+        (function child -> push child stack)
+        temp.children
+    done
+
+  let bfs_queue self =
+    let open Queue in
+    let queue = create () in
+    add self queue;
+    while (not (is_empty queue)) do
+      let temp = take queue in
+      print_int temp.value |> print_newline;
+      List.iter
+        (function child -> push child queue)
+        temp.children
+    done
+end
+
+let rec create_tree num_row num_child =
+  let open Tree in
+  let tree = create num_row in
+  match num_row with
+  | 0 -> tree
+  | n ->
+      let child = create_tree (num_row - 1) num_child in
+      (*
+        using a recursive function, instead of a for loop,
+        allows us to not use mutation
+
+        this is basically a for loop, written with recursive
+        functions :)
+      *)
+      let rec inner tree = function
+      | 0 -> tree
+      | n -> add_child (inner tree (n - 1)) child
+      in (inner tree num_child)
+
+let main () =
+  let tree = create_tree 3 3 in
+  print_string "--- dfs_recursive --- \n";
+  Tree.dfs_recursive tree;
+  print_string "--- dfs_stack --- \n";
+  Tree.dfs_stack tree;
+  print_string "--- bfs_queue --- \n";
+  Tree.bfs_queue tree
+
+let () = main ()
+```
+
+### Rust
+```rust
+// Submitted by Gustorn
+use std::collections::VecDeque;
+
+struct Tree {
+    value: i32,
+    children: Vec<Tree>,
+}
+
+impl Tree {
+    fn new(depth: i32, num_children: usize) -> Tree {
+        let mut tree = Tree { value: depth, children: vec![] };
+        if depth > 0 {
+            for _ in 0..num_children {
+                tree.children.push(Tree::new(depth - 1, num_children));
+            }
+        }
+        tree
+    }
+    
+    fn dfs_recursive(&self) {
+        println!("{}", self.value);
+        for child in &self.children {
+            child.dfs_recursive();
+        }
+    }
+    
+    fn dfs_stack(&self) {
+        let mut stack = vec![self];
+        while let Some(top) = stack.pop() {
+            println!("{}", top.value);
+            stack.extend(&top.children);
+        }
+    }
+    
+    fn bfs_queue(&self) {
+        let mut queue = VecDeque::new();
+        queue.push_back(self);
+        while let Some(first) = queue.pop_front() {
+            println!("{}", first.value);
+            queue.extend(&first.children);
+        }
+    }
+}
+
+fn main() {
+    let tree = Tree::new(3, 3);
+    tree.dfs_recursive();
+    tree.dfs_stack();
+    tree.bfs_queue();
+}
 ```
 
 ### Scratch
