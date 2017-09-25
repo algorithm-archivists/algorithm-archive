@@ -4,6 +4,7 @@
 * [TODO](TODO.md)
 * [Introduction](chapters/introduction.md)
 * [A Personal Note](chapters/getting_started.md)
+* [How To Contribute](chapters/how_to_contribute.md)
 * [Principles of Code](chapters/principles_of_code/principles_of_code.md)
     * [Choosing A Language](chapters/principles_of_code/choosing_a_language/choosing_a_language.md)
         * [Compiled Languages](chapters/principles_of_code/choosing_a_language/compiled/compiled.md)
