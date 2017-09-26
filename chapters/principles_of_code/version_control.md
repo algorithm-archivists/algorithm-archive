@@ -191,7 +191,87 @@ To switch branches, use
 git checkout branch
 ```
 
-And this will change all of the files on your local directory to match the branch you have swapped to.
+And this will change all of the files on your local directory to match the branch you have swapped to. 
+Note that if you have local changes that will be overwritten when changing branches, git will note these changes and tell you to do something about them before switching to a new branch.
+If you want to get rid of the changes, you could delete any files that are causing conflicts; however, this is barbaric and should be avoided in civilized society.
+Another solution is to use a feature of git called the `stash`.
+In many ways, this is much easier to do than deleting files manually. All you need to do is type:
+
+```
+git stash
+```
+
+This will stash all the local changes and bring the directory back to the latest HEAD. If you want to get your changes back, just use
+
+```
+git stash apply
+```
+
+Now, here's the problem: because `git stash` is so convenient, I tend to have the habit of stashing local changes quite often. This means that I have multiple modifications stored, all connected to different commits.
+Quite frankly, it's a mess. That said, I can list out everything in my stash with 
+
+```
+git stash list
+```
+
+and apply whichever stash I want with 
+
+```
+git apply stash@{i}
+```
+
+Where `i` is the value of the stash item I want to apply. 
+
+Now, to be clear: I am not encouraging anyone to use `git stash` to hide away local changes and make branch traversal easier; however, if you are about to delete files, maybe try `git stash` instead?
+
+### Interacting with github
+
+To this point, we have introduced the concept of `remote`s and how to set them up, but we have not discussed how to interact with them.
+for the most part, there are only a few commands to keep in mind. the easiest one to explain is 
+
+```
+git push
+```
+
+After we have made a commit (discussed above), we can push it to github like so
+
+```
+git push remote branch
+```
+
+for example, if you are pushing the `master` branch to the `origin` remote, it would be
+
+```
+git push origin master
+```
+
+Now, I personally like being explicit about which branch and remote we are working with, but you can tell git to ignore the `remote` and `branch` specifications by setting an upstream url, which means running
+
+```
+git push -u remote branch
+```
+
+Once this is run, the remote and branch will be stored for later and you won't need to think about it ever again! (Well, you might need to think about it when working on more complicated things later)
+
+Now, if `push`ing moves changes from your own computer to a repository online, it would make sense that `pull`ing does the opposite and moves changes from an online repository to your machine. Like before, this is straightforward:
+
+```
+git pull remote branch
+```
+
+However, there's a little more to it than that. In essense, `git pull` is running two separate commands. One updates your git repository with the information found on your remotes. This one is called `git fetch`. the other one finds the changes and merges those changes with the branch found on your local machine. This is called `git merge`. When put together, it might look like:
+
+```
+git fetch
+git merge origin/master
+```
+
+Note here that the `merge` command is incredibly powerful and is also used to merge different branches; however, merging leads to an incredibly complicated topic that is beyond the scope of this discussion: *merge conflicts*.
 
 
-### Pushing to github
+### Concepts we missed
+
+Unfortunately, this discussion has a scope. It is not meant to give you a deep, meaningful understanding of git. 
+Instead, we focused on the basics, with the hope of encouraging our community to start collaborating together.
+The more you use git, the easier it will be to use in the future and the more it will start to make sense.
+That said, due to the nature of this guide, there were a few things we missed. The two most important of which might be *merge conflicts* and *rebasing*, bot of which are important to discuss at some point in the future.
