@@ -4,39 +4,43 @@ I am a fan of open-source software. It allows users to see the nuts and bolts of
 Unlike proprietary software, any user can learn everything about the software from the ground up, and that's an incredibly exciting prospect! 
 More than that, open-source development breeds strong communities of like-minded individuals who work together to solve problems they care about. 
 At least in my case, open-source software inspired me to code in my free time. It taught me that programming is more than a simple series of instructions for a computer. 
-More than anything, though, open-source software taught me about how to work with others and overcome petty squabbles, because if there's one thing the open-source community is known for, it's petty squabbles. 
+More than anything, though, open-source software taught me about how to work with others and overcome petty squabbles, because if there's one thing any open-source community is known for, it's petty squabbling. 
 
 It might be because of my appreciation of large-scale software development that I never questioned the utility of version control. 
-If you have a couple hundred people all contributing source code to the same place, there has to be some way to control all the different codebases individuals have on their own machines. 
-Even if I had no collaborators, version control was a way to make sure my laptop and work machine both had the same code without having to transer a USB stick back and forth. 
+If there are a couple hundred people all contributing source code to the same place, there has to be some way to control all the different codebases each individual has on their own machine. 
+Even if I have no collaborators, version control is a way to make sure my laptop and work machine both have the same code without having to transer a USB stick back and forth. 
 That said, at some point in my life, I settled in as a physics researcher. 
 This meant that I wrote code to solve physics problems with a small team. The problem was that even though I was using version control, the rest of my team was not. 
 
 This was frustrating.
- I would hear my labmates say something like, "Yeah. I rewrote my code last night and now nothing works, but I already saved over my previous version, so I'll just work with what I have." 
+
+ I would hear my labmates say things like, "Yeah. I rewrote my code last night and now nothing works, but I already saved over my previous version, so I'll just work with what I have." 
 Or, "I'm writing a paper with my boss. We are using Dropbox and upload files with slightly different names after we modify them. Right now, we are on paper_78c."
 The point is: version control exists to control different versions of software (and other documents). 
 If you are writing code, it exists as a way to quickly save what you have before making largescale modifications. 
 It also allows individuals to collaborate on a larger scale by providing necessary tools to merge work created by different individuals into a single, cohesive story.
 
-No matter how you look at it, version control is a useful and necessary tool to collaborate with other programmers and is definitely worth discussing in-depth.
+No matter how you look at it, version control is a useful and necessary tool to collaborate with other programmers and is definitely worth discussing in depth.
 Though many version control systems exist, for now we will focus on git, simply because it is incredibly popular and this book is hosted both on github and gitbook.
-We hope to discuss other version control methods and strengthen the tutorial on git provided here in the future; however, this book is meant as an archive of algorithms, not as an introduction to version control or best software principles. 
-For now, this tutorial is simply meant as a quick way to kickstart our community into using git and collaborating more effectively on this book. 
+We hope to discuss other version control methods and strengthen the tutorial on git provided here in the future; however, this book is meant as an archive of algorithms, not as an introduction to version control or best software practices. 
+Though discussions like these are useful, we must be careful not to get too far out-of-scope.
+For now, this tutorial is simply meant as a quick way to kickstart our community into using git and collaborating more effectively with each other (specifically on this book). 
 
 I feel like this introduction may have been a little too long. Let me know what you think! Regardless, now it's time to talk about git!
 
 ### *Git*ting started!
 
-As mentioned, this is not an exhaustive overview of how to use git for all version control purposes. 
-Instead, this is meant to provided the basics with the hope of providing our community a quick kick-start into collaborating effectively with version control. 
 I suppose let's start simply: git manages different versions of code available on different machines. 
-When using git, you will have a local copy of a repository of code that may or may not be up-to-date with a copy of the code repository in some remote location. 
+When using git, there will be a local copy of a repository of code that may or may not be up-to-date with a copy of the code repository in some remote location. 
 
 Now, there is an easy way, a hard way, and an impossibly complicated way to use git. 
-We'll be walking through the hard way. It's not the most complicated way to set up a git repo, but it is the way that provides the most intuition on the topic.
+We'll be walking through the easy and hard ways.
+We are not trying to impress anyone with git wizardry. We are simply trying to provide the basics with a little undersanding sprinkled in.
 
-First things first, make sure git is installed on your system and set it up with the following commands
+As a side note: we will be assuming that you are using git from the terminal. There is a GUI available from github and it works super well for most cases; however, it's also self-explanatory in most cases. 
+Put another way: if you can understand the ways of the terminal, the git GUI will be much more straightforward. On the other hand, learning the GUI will not necessarily help you when using the terminal.
+
+So, first things first. Make sure git is installed on your system and set it up with the following commands
 
 ```
 git config --global user.name name
@@ -44,7 +48,9 @@ git config --global user.email name@email.com
 ```
 
 Obviously, use your own name and e-mail... unless your name is actually *name* and your e-mail is actually *name@email.com*, in which case the above commands are correct.
-Remember that git is meant to facilitate collaborative code development, so we need to know who is submitting code so we can communicate more effectively later. 
+In the rare case that a user named "name" with the e-mail "name@email.com" is reading this, I apologize for spoiling your anonymity.
+For everyone else, remember that git is meant to facilitate collaborative code development, so we need to know who is submitting code so we can communicate more effectively later. 
+That said, it is alright to use a username and e-mail address that does not spoil your identity in the real world, so long as you are reachable by the information provided. 
 
 Now we need to find a repository of code to work on. If you are starting your own repository or want to work on an internal network, this will not be too big of an issue.
 If you just want to get the feel for how git works, I suggest going to [github.com](https://github.com/) and checking out the code developed there. 
