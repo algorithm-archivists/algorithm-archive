@@ -1,10 +1,10 @@
 ## Git and Version Control
 
-I am a fan of open-source software. It allows users to see the nuts and bolts of code running on their system and mess around with it if they like. 
-Unlike proprietary software, any user can learn everything about the software from the ground up, and that's an incredibly exciting prospect! 
+I am a fan of open-source software. It allows users to see inside the code running on their system and mess around with it if they like. 
+Unlike proprietary software, any user can learn everything from the ground up, and that's an incredibly exciting prospect! 
 More than that, open-source development breeds strong communities of like-minded individuals who work together to solve problems they care about. 
-At least in my case, open-source software inspired me to code in my free time. It taught me that programming is more than a simple series of instructions for a computer. 
-More than anything, though, open-source software taught me about how to work with others and overcome petty squabbles, because if there's one thing any open-source community is known for, it's petty squabbling. 
+At least in my case, the open-source community inspired me to code in my free time. It taught me that programming is more than a simple series of instructions for a computer. 
+More than anything, though, open-source software development taught me about how to work with others and overcome petty squabbles, because if there's one thing any open-source community is known for, it's petty squabbling. 
 
 It might be because of my appreciation of large-scale software development that I never questioned the utility of version control. 
 If there are a couple hundred people all contributing source code to the same place, there has to be some way to control all the different codebases each individual has on their own machine. 
@@ -14,7 +14,7 @@ This meant that I wrote code to solve physics problems with a small team. The pr
 
 This was frustrating.
 
- I would hear my labmates say things like, "Yeah. I rewrote my code last night and now nothing works, but I already saved over my previous version, so I'll just work with what I have." 
+I would hear my labmates say things like, "I rewrote my code last night and now nothing works, but I already saved over my previous version, so I'll just work with what I have." 
 Or, "I'm writing a paper with my boss. We are using Dropbox and upload files with slightly different names after we modify them. Right now, we are on paper_78c."
 The point is: version control exists to control different versions of software (and other documents). 
 If you are writing code, it exists as a way to quickly save what you have before making largescale modifications. 
@@ -22,7 +22,7 @@ It also allows individuals to collaborate on a larger scale by providing necessa
 
 No matter how you look at it, version control is a useful and necessary tool to collaborate with other programmers and is definitely worth discussing in depth.
 Though many version control systems exist, for now we will focus on git, simply because it is incredibly popular and this book is hosted both on github and gitbook.
-We hope to discuss other version control methods and strengthen the tutorial on git provided here in the future; however, this book is meant as an archive of algorithms, not as an introduction to version control or best software practices. 
+We hope to discuss other version control methods and strengthen this tutorial on git in the future; however, this book is meant as an archive of algorithms, not as an introduction to version control or best software practices. 
 Though discussions like these are useful, we must be careful not to get too far out-of-scope.
 For now, this tutorial is simply meant as a quick way to kickstart our community into using git and collaborating more effectively with each other (specifically on this book). 
 
@@ -30,7 +30,7 @@ I feel like this introduction may have been a little too long. Let me know what 
 
 ### *Git*ting started!
 
-I suppose let's start simply: git manages different versions of code available on different machines. 
+I suppose let's start simply: git manages different versions of code available on different machines and from different locations. 
 When using git, there will be a local copy of a repository of code that may or may not be up-to-date with a copy of the code repository in some remote location. 
 
 Now, there is an easy way, a hard way, and an impossibly complicated way to use git. 
@@ -52,21 +52,23 @@ In the rare case that a user named "name" with the e-mail "name@email.com" is re
 For everyone else, remember that git is meant to facilitate collaborative code development, so we need to know who is submitting code so we can communicate more effectively later. 
 That said, it is alright to use a username and e-mail address that does not spoil your identity in the real world, so long as you are reachable by the information provided. 
 
+### Finding some code
+
 Now we need to find a repository of code to work on. If you are starting your own repository or want to work on an internal network, this will not be too big of an issue.
 If you just want to get the feel for how git works, I suggest going to [github.com](https://github.com/) and checking out the code developed there. 
-Note that you will not be able to contribute to any directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
-Because of this, you may want to create a repository under your own github username or making your own copy of the code by going to any code you want to modify and clicking the *fork* button:
+Note that you will not be able to contribute to any old directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
+Because of this, you may want to create a repository under your own github username or making your own copy of someone elses code on github by clicking the *fork* button:
 
 ![How to fork](fork.png)
 
 Note that if you have a fork of a particular code repository, you can ask the owner of the original code repository to pull your changes into their version of the code with a *pull request*, but we are getting ahead of ourselves here. 
-If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/leios/algorithm-archive) and modify that.
+If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/leios/algorithm-archive) and modify that!
 
-Regardless, as long as there is a repository under your username on github, we can continue by linking the remote github location to our local git directory. First, we need to find the url of the github repository, as shown here:
+Regardless, as long as there is a repository under your username on github, we can continue by linking that remote github location to your local git directory. First, we need to find the url of the github repository, as shown here:
 
 ![How to clone](clone.png)
 
-Note that there are 2 provided urls here, one for ssh and another for https. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
+Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
 Now, you will probably be interacting with github a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/). 
 If you want, we can discuss the set-up in more detail later (just let me know!), but for now, we'll stick with https because it's more familiar to new users.
 
@@ -90,27 +92,31 @@ git merge origin/master
 Here, `git clone` does every step of the *not-so-easy* way in one command, so the two methods are completely identical. Because of this, in most cases, I just use `git clone`; however, the *not-so-easy* way is much more explicit and helps us understand what is going on a little better.
 For now, we will breifly describe each of the commands; however, we will definitely be covering them in more depth through this tutorial.
 So, here it is, step-by-step:
-1. `mkdir algorithm_archive`:make a directory. We can call this directory anything, but we'll call it algorithm_archive for now.
+1. `mkdir algorithm_archive`: make a directory. We can call this directory anything, but we'll call it algorithm_archive for now.
 2. `git init`: initialize git
 3. `git remote add origin https://github.com/leios/algorithm-archive`: add a remote location (the github url we found just a second ago). Again, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that. 
 4. `git fetch`: update the local directory with the information from the remote online repository
-5. `git merge origin/master`: merge those updates. Right now, the `origin/master` part of this command might seem like a bit of black octocat magic.
+5. `git merge origin/master`: merge those updates. Right now, the `origin/master` part of this command might seem like a bit of black octocat magic, but we will cover it in just a bit!
 
-No matter how you initialize your git repository, you will link your local directory with a remote location. If you ever want to see these locations, simply type:
+No matter how you initialize your git repository, your local directory will be linked with a remote location. If you ever want to see this location, simply type:
 
 ```
 git remote -v
-origin	git@github.com:leios/algorithm-archive.git (fetch)
-origin	git@github.com:leios/algorithm-archive.git (push)
+origin	https://github.com/user/algorithm-archive.git (fetch)
+origin	https://github.com/user/algorithm-archive.git (push)
 ```
 
 This provides information on different `remote`s. We'll talk about `fetch` and `push` a bit later. 
 Now, you might be asking yourself: If I am only connected to the url I forked earlier, what happens when the owner of the main code repository pushes changes? How will I update my code when this happens?
-The solution here is simple: Add another `remote` like so:
+Actually, you probably were not asking that question. It's not an obvious question at all, but it's a useful question to move this tutorial forward.
+The solution is simple: Add another `remote` like so:
 
 ```
 git remote add upstream https://github.com/leios/algorithm-archive
 ```
+
+Obviously, you can call the remote anything. I kinda arbitrarily chose to call it `upstream`. By adding this in, you can easily interact with the same codebase from multiple remote locations.
+That said, we need to talk about how to do that.
 
 ### Committing to git
 
