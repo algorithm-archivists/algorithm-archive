@@ -57,14 +57,14 @@ If you just want to get the feel for how git works, I suggest going to [github.c
 Note that you will not be able to contribute to any directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
 Because of this, you may want to create a repository under your own github username or making your own copy of the code by going to any code you want to modify and clicking the *fork* button:
 
-IMAGE OF FORK
+![How to fork](fork.png)
 
 Note that if you have a fork of a particular code repository, you can ask the owner of the original code repository to pull your changes into their version of the code with a *pull request*, but we are getting ahead of ourselves here. 
 If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/leios/algorithm-archive) and modify that.
 
 Regardless, as long as there is a repository under your username on github, we can continue by linking the remote github location to our local git directory. First, we need to find the url of the github repository, as shown here:
 
-IMAGE OF CLONE
+![How to clone](clone.png)
 
 Note that there are 2 provided urls here, one for ssh and another for https. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
 Now, you will probably be interacting with github a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/). 
@@ -88,9 +88,13 @@ git merge origin/master
 ```
 
 Here, `git clone` does every step of the *not-so-easy* way in one command, so the two methods are completely identical. Because of this, in most cases, I just use `git clone`; however, the *not-so-easy* way is much more explicit and helps us understand what is going on a little better.
-First, we make a directory. We can call this directory anything, but we'll call it `algorithm_archive` for now. 
-Then we go into the directory and initialize git and add a `remote` location: the github url we found just a second ago. Now, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that.
-We'll be discussing the final two commands a little later. For now, know that `git fetch` updates your local directory with the information from the remote online repository, and `git merge origin/master` merges those updates.
+For now, we will breifly describe each of the commands; however, we will definitely be covering them in more depth through this tutorial.
+So, here it is, step-by-step:
+1. `mkdir algorithm_archive`:make a directory. We can call this directory anything, but we'll call it algorithm_archive for now.
+2. `git init`: initialize git
+3. `git remote add origin https://github.com/leios/algorithm-archive`: add a remote location (the github url we found just a second ago). Again, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that. 
+4. `git fetch`: update the local directory with the information from the remote online repository
+5. `git merge origin/master`: merge those updates. Right now, the `origin/master` part of this command might seem like a bit of black octocat magic.
 
 No matter how you initialize your git repository, you will link your local directory with a remote location. If you ever want to see these locations, simply type:
 
