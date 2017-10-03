@@ -1,15 +1,16 @@
 ## Git and Version Control
 
 I am a fan of open-source software. It allows users to see inside the code running on their system and mess around with it if they like. 
-Unlike proprietary software, any user can learn everything from the ground up, and that's an incredibly exciting prospect! 
+Unlike proprietary software, open source software allows any user to learn the entire codebase from the ground up, and that's an incredibly exciting prospect! 
 More than that, open-source development breeds strong communities of like-minded individuals who work together to solve problems they care about. 
-At least in my case, the open-source community inspired me to code in my free time. It taught me that programming is more than a simple series of instructions for a computer. 
+At least in my case, different open-source communites inspired me to code in my free time. 
+It taught me that programming is more than a simple series of instructions for a computer. 
 More than anything, though, open-source software development taught me about how to work with others and overcome petty squabbles, because if there's one thing any open-source community is known for, it's petty squabbling. 
 
 It might be because of my appreciation of large-scale software development that I never questioned the utility of version control. 
 If there are a couple hundred people all contributing source code to the same place, there has to be some way to control all the different codebases each individual has on their own machine. 
 Even if I have no collaborators, version control is a way to make sure my laptop and work machine both have the same code without having to transer a USB stick back and forth. 
-That said, at some point in my life, I settled in as a physics researcher. 
+That said, at some point in my life, I became a physics researcher. 
 This meant that I wrote code to solve physics problems with a small team. The problem was that even though I was using version control, the rest of my team was not. 
 
 This was frustrating.
@@ -57,7 +58,7 @@ That said, it is alright to use a username and e-mail address that does not spoi
 Now we need to find a repository of code to work on. If you are starting your own repository or want to work on an internal network, this will not be too big of an issue.
 If you just want to get the feel for how git works, I suggest going to [github.com](https://github.com/) and checking out the code developed there. 
 Note that you will not be able to contribute to any old directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
-Because of this, you may want to create a repository under your own github username or making your own copy of someone elses code on github by clicking the *fork* button:
+Because of this, you may want to create a repository under your own github username or make your own copy of someone elses code on github by clicking the *fork* button:
 
 ![How to fork](fork.png)
 
@@ -106,9 +107,9 @@ origin	https://github.com/user/algorithm-archive.git (fetch)
 origin	https://github.com/user/algorithm-archive.git (push)
 ```
 
-This provides information on different `remote`s. We'll talk about `fetch` and `push` a bit later. 
+This provides information on different `remotes`. We'll talk about `fetch` and `push` a bit later. 
 Now, you might be asking yourself: If I am only connected to the url I forked earlier, what happens when the owner of the main code repository pushes changes? How will I update my code when this happens?
-Actually, you probably were not asking that question. It's not an obvious question at all, but it's a useful question to move this tutorial forward.
+Actually, you probably were not asking that question. It's not an obvious question to ask at all, but it's a useful question to move this tutorial forward.
 The solution is simple: Add another `remote` like so:
 
 ```
@@ -133,7 +134,7 @@ Nothing crazy, just something so we can get the feeling of git. To see what file
 git status
 ```
 
-This will show that `CONTRIBUTORS.ms` has been modified.
+This will show that `CONTRIBUTORS.md` has been modified.
 If we want to save our changes, we need to add all of the files with changes to them to a package called a `commit`.
 To add the files, simple type:
 
@@ -141,14 +142,17 @@ To add the files, simple type:
 git add CONTRIBUTORS.md
 ```
 
-Then if we type `git status` again, it will show that the file `CONTRIBUTORS.md` is in a *staging area* awaiting commit. This simply means that git is waiting to make sure there are no other changes we want to package up.
+Then if we type `git status` again, it will show that the file `CONTRIBUTORS.md` is in a *staging area* awaiting commit.
+This simply means that git is waiting to make sure there are no other changes we want to package up.
 Now we create the `commit` by typing 
 
 ```
 git commit -m "Adding name to contributors file"
 ```
 
-Note that if you do not use the `-m` message flag (just `git commit`), git will open your default editor (probably vi) to ask for a message. *Every git commit needs a git message!* Make the messages count. Be as descriptive as possible! 
+Note that if you do not use the `-m` message flag (just `git commit`), git will open your default editor (probably vi) to ask for a message. 
+*Every git commit needs a git message!* Make the messages count.
+Be as descriptive as possible! 
 If you want to see all commits that have ever been made on this repository, simply type
 
 ```
@@ -156,7 +160,7 @@ git log
 ```
 
 This will show you the history so far. As a side note, it also shows why good, clean commit messages are essential to managing large, open-source projects. 
-If there are hundreds (or thousands) of commits, and one of the features implemented somewhere down the line has a bug, clean commit messages allow us to find when the feature was implemented and possibly when the bug arose. 
+If there are hundreds (or thousands) of commits, and one of the features implemented somewhere down the line has a bug, clean commit messages allow us to find when that feature was implemented and possibly when the bug arose. 
 
 Now let's say you want to checkout what the code looked like at a particular commit. To do this, we need to look at the generated unique string (SHA-1 checksum) associated with the commit we want and paste the first few (roughly 5) characters into the following command:
 
@@ -169,7 +173,7 @@ See, when we are sent back in time to the chosen commit (with the above command)
 This refers to the term we use to describe the very latest commit, **HEAD**.
 If we wanted to checkout the previous commit (for example), we would use `git checkout HEAD~1`, the second-to-last commit would be `HEAD~2`, and so on and so-forth.
 
-When we checkout another commit, we are rolling back the head of our commitment snake back to what it was in the past. 
+When we checkout another commit, we are rolling the head of our commitment snake back to what it was in the past. 
 In the detached head state, we shouldn't really do any development. It's more of a read-only type of thing; however, if we want to develop the code starting at that commit, we could use
 
 ```
@@ -181,16 +185,15 @@ But this requires a little explanation!
 
 ### Checkout these branches!
 
-Now let's take a step to the side and talk about another fantastic git feature, branches. 
-We have code forked under our own username on github. This means that there are at least 2 functioning versions of the code we are working on: our own fork and the original owner's fork. 
+Now let's take a step to the side and talk about another fantastic git feature, *branches*. 
+At this point, we might have code forked under our own username on github. This means that there could be at least 2 functioning versions of the code we are working on: our own fork and the original owner's fork. 
 That said, within each fork, there is the ability to have multiple lines of development, each one on a different *branch*.
 
-If you are new to software development, this might not seem to useful; however, imagine you are working on a large, open-source project that thousands of people use.
-At some point, you want to re-organize a bunch of features in the code. 
-As a developer, you are not sure whether all the features you are re-organizing will still work properly after re-organizing them, but you know the code needs to be modified!
-The problem is that you have users who may need the features you accidentally break. 
+If you are new to software development, this might not seem too useful; however, imagine you are working on a large, open-source project that thousands of people use.
+At some point, you might want to re-organize a bunch of features in the code. 
+As a developer, you might not be sure whether all the features you are re-organizing will still work properly after re-organizing them, but you know the code needs to be modified!
+The problem is that you have users who may need the features you might accidentally break. 
 For this reason, you might want to have a "master" branch -- one that is always working for the users, and a "development" branch -- one that is in the middle of creating new features for users.
-
 In truth, there are dozens of reasons why developers might want to work on slightly different versions of the code. 
 Rather than spending time outlining all the potential reasons, let's just dive into how branches are made and maintained.
 
@@ -240,10 +243,41 @@ Where `i` is the value of the stash item I want to apply.
 
 Now, to be clear: I am not encouraging anyone to use `git stash` to hide away local changes and make branch traversal easier; however, if you are about to delete files, maybe try `git stash` instead?
 
+Finally, we need to talk about a super sticky part of git: *merging branches*. 
+Following from the story above, you might have code in a development branch. 
+When you are happy with the changes in the development branch, you might want to merge those changes back to the master branch. 
+Assuming that no one was developing on the master branch and that the development branch is ahead of the master branch, this can be done with the following:
+
+```
+git checkout master
+git merge branch
+```
+
+This is the simplest case, but it's rarely this simple. Often times, there will be development on different branches and when we merge these brances together, there will be conflicts. 
+These conflicts are noted in each of the files that need to be modified like so
+
+```
+I am writing about 
+<<<<<<< HEAD
+things
+=======
+stuff
+>>>>>>> development
+```
+
+Here, we wrote the phrase: "I am writing about *things*" on the master branch and "I am writing about *stuff*" on the development branch. Git got confused and let us know it has no idea what's going on.
+To solve this, we will need to manually go through and find all the conflicts noted in the `git status` command and fix them to what they should be.
+The easiest way to do this (in my opinion) can be found here: [https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
+
+Note that there are a lot of good tools for this and everyone has their favorite choice.
+I don't expect for too many users to run into merge conflicts while working with the Algorithm Archive, so I will omit much more discussion here, but let me know if you think I should cover this in more detail.
+It's an incredibly difficult aspect of using git and will drive you nuts the first tie you see it, but after that, it will be much more straightforward.
+Also: let me know if there's any tools you like, and I'll add them to this guide here.
+
 ### Interacting with github
 
 To this point, we have introduced the concept of `remote`s and how to set them up, but we have not discussed how to interact with them.
-for the most part, there are only a few commands to keep in mind. the easiest one to explain is 
+For the most part, there are only a few commands to keep in mind. the easiest one to explain is 
 
 ```
 git push
@@ -255,7 +289,7 @@ After we have made a commit (discussed above), we can push it to github like so
 git push remote branch
 ```
 
-for example, if you are pushing the `master` branch to the `origin` remote, it would be
+For example, if you are pushing the `master` branch to the `origin` remote, it would be
 
 ```
 git push origin master
@@ -275,19 +309,61 @@ Now, if `push`ing moves changes from your own computer to a repository online, i
 git pull remote branch
 ```
 
-However, there's a little more to it than that. In essense, `git pull` is running two separate commands. One updates your git repository with the information found on your remotes. This one is called `git fetch`. the other one finds the changes and merges those changes with the branch found on your local machine. This is called `git merge`. When put together, it might look like:
+However, there's a little more to it than that. In essense, `git pull` is running two separate commands. One updates your git repository with the information found on your remotes. This one is called `git fetch`.
+The other one finds the changes and merges those changes with the branch found on your local machine. This is called `git merge` (as discussed before). When put together, it might look like:
 
 ```
 git fetch
 git merge origin/master
 ```
 
-Note here that the `merge` command is incredibly powerful and is also used to merge different branches; however, merging leads to an incredibly complicated topic that is beyond the scope of this discussion: *merge conflicts*.
+For now, I think that's all you will need: `git pull` and `git push`.
+Now let's talk about something that will certainly happen in your programming career: mistakes.
 
+### Dealing with mistakes
+
+I cannot help with programming mistakes (typos and such), but when it comes to version control there are two times in which mistakes can be made: **before a commit** and **after a commit**.
+Each of these have a different solution and have different repercussions depending on how you want to proceed with code development. 
+Note that these solutions can be quite complicated and may easily move beyond the scope of this text. 
+Because of this, I will link to appropriate documentation as necessary.
+
+Firstly, let's talk about what happens when you make a mistake while your code is in the staging area, awaiting a commit. 
+Here, the solution is simple: 
+
+```
+git reset
+```
+
+That's it. Don't overcomplicate it. You haven't committed to the code yet, so just unstage everything back to the `HEAD`.
+The problem is that this command is quite nuanced and has plenty of other uses. This goes beyong the scope of this text, but you can find more information here: [https://git-scm.com/blog](https://git-scm.com/blog).
+
+Now, what if your mistake was found after committing? Well, that's a little more complicated. Your mistake is already in your `git log`. 
+The easiest way to deal with this is to live with the mistake and make a new commit that fixes it later.
+One way to reverse the commit completely is with
+
+```
+git revert commit
+```
+
+where `commit` is whatever commit you want to undo from your `git log`.
+Assuming you are working with a small team and don't mind having a somewhat dirty commit history where your mistakes haunt you forever in your `git log`, this is fine; however, if you want to remove the commit completely, you might need to think about using another command:
+
+```
+git rebase
+```
+
+the problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately. 
+Because of this, I often just live with my mistakes; however, in rare cases, having a clean `git log` is incredibly important. 
+I am not a git magician (yet), so I will not delve into what is essentially black magic to me. Instead, I'll link a guide: [https://git-scm.com/book/en/v2/Git-Branching-Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
+
+I know that this section is a little sparse and there's a lot I missed.
+If you want to provide more information, feel free to do so and submit it via pull request.
 
 ### Concepts we missed
 
 Unfortunately, this discussion has a scope. It is not meant to give you a deep, meaningful understanding of git. 
 Instead, we focused on the basics, with the hope of encouraging our community to start collaborating together.
 The more you use git, the easier it will be to use in the future and the more it will start to make sense.
-That said, due to the nature of this guide, there were a few things we missed. The two most important of which might be *merge conflicts* and *rebasing*, bot of which are important to discuss at some point in the future.
+That said, due to the nature of this guide, there were a few things we missed, the two most important of which are **rebasing** and **merge conflicts**. 
+
+In addition, I need to be honest in saying that I am not the most qualified person to teach anyone how to use git or version control and that there are plenty of good guides out there already, so if you have any guides that you like, please let me know and I can add them to the end of this guide for more information.
