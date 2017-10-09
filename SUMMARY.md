@@ -13,6 +13,7 @@
     * [Building Blocks](chapters/principles_of_code/building_blocks/building_blocks.md)
     * [Code Quality](chapters/principles_of_code/code_quality.md)
     * [Version Control](chapters/principles_of_code/version_control.md)
+    * [Complexity Notation](chapters/principles_of_code/notation/notation.md)
 * [Mathematical Background](chapters/mathematical_background/mathematical_background.md)
     * [Taylor Series](chapters/mathematical_background/taylor_series.md)
 * [Fundamental Algorithms](chapters/fundamental_algorithms/fundamental_algorithms.md)
