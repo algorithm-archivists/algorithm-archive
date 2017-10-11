@@ -23,7 +23,7 @@
     * [Matrix Methods](chapters/computational_mathematics/matrix_methods/matrix_methods.md)
         * [Gaussian Elimination](chapters/computational_mathematics/matrix_methods/gaussian_elimination.md)
         * [Thomas Algorithm](chapters/computational_mathematics/matrix_methods/thomas.md)
-    * [FFT](chapters/computational_mathematics/cooley_tukey.md)
+    * [FFT](chapters/computational_mathematics/FFT/cooley_tukey.md)
 * [Computational Physics](chapters/computational_physics/computational_physics.md)
     * [Euler Methods](chapters/computational_physics/euler.md)
     * [Verlet Integration](chapters/computational_physics/verlet.md)
