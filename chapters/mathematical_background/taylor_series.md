@@ -21,6 +21,8 @@ $$
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
 
+NOTE: Incomplete!
+
 # Taylor Series Expansion
 
 I have been formally trained as a physicist. In my mind, there are several mathematical topics that blur the boundary between mathematics and physics. Taylor Series Expansions are one of those topics.
@@ -38,23 +40,25 @@ f(x) \simeq f(a) + \frac{df(a)}{da}(x-a)
     + \frac{1}{2}\frac{d^2f(a)}{da^2}(x-a)^2
 $$
 
-If we substitute the derivatives for their physical quantities with $$f(a) \rightarrow x(t)$$ and measure from 0, we find that
+If we substitute the derivatives for their physical quantities with $$f(x) \rightarrow x(t)$$, expanding from 0, and set
 
 $$
 \begin{align}
-\frac{dx(t)}{dt} &= \text{velocity} = v \\
+\frac{dx(t)}{dt} &= \text{velocity} = v(t) \\
 \frac{d^2x(t)}{dt^2} &= \text{acceleration} = a \\
 \end{align}
 $$
 
-and the above expansion turns into one of the most common formulas in classical physics, the *kinematic equation*!
+The Taylor series expansion turns into one of the most common formulas in classical physics, the *kinematic equation*!
 
 $$
-x(t) = \simeq x(t) + \frac{dx(t)}{dt}(t) 
-    + \frac{1}{2}\frac{d^2x(t)}{dt^2}(t)^2
+x(t) \simeq x_0 + v_0t 
+    + \frac{1}{2}at^2
 $$
 
-In fact, it the Taylor Series Expansion can be found in the most unusual places and is used as the foundation of many different algorithms throughout this book. At first, it might not seem obvious why, but we can approximate almost any smooth function with a Taylor Series Expansion, and the more terms we include, the better our approximation becomes! For example, take Figure 1. Any function can be approximated as a sum of all the derivatives for that function. If we evaluate these derivatives at any point, we closely approximate the actual function.
+Note that here, we assume the acceleration to be constant, but it could technically have higher order terms.
+
+Truth be told, the Taylor Series Expansion can be found in the most unusual places and is used as the foundation of many different algorithms throughout this book. At first, it might not seem obvious why, but we can approximate almost any smooth function with a Taylor Series Expansion, and the more terms we include, the better our approximation becomes! For example, take Figure 1. Any function can be approximated as a sum of all the derivatives for that function. If we evaluate these derivatives at any point, we closely approximate the actual function.
 
 ![Function sum][function_sum]
 
