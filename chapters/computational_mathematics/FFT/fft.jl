@@ -14,27 +14,61 @@ end
 function cooley_tukey(x)
     N = length(x)
 
-    #println(N)
-
-    if(N%2 !=0)
-        println("Must be a power of 2!")
-        exit(0)
-    end
-    if(N <= 2)
-        #println("DFT_slow")
-        return DFT(x)
-    else
+    if (N > 2)
         x_odd = cooley_tukey(x[1:2:N])
         x_even = cooley_tukey(x[2:2:N])
-        n = 0:N-1
-        #n = n'
-        half = div(N,2)
-        factor = exp.(-2im*pi*n/N)
-        #println(factor)
-        return vcat(x_odd + factor[1:half] .* x_even,
-                    x_odd + factor[half+1:N] .* x_even) 
+    else
+        x_odd = x[1]
+        x_even = x[2]
+    end
+    n = 0:N-1
+    #n = n'
+    half = div(N,2)
+    factor = exp.(-2im*pi*n/N)
+    println(factor)
+    return vcat(x_odd + x_even .* factor[1:half],
+                x_odd + x_even .* factor[half+1:N]) 
+
+end
+
+function bitreverse(a::Array)
+    # First, we need to find the necessary number of bits
+    digits = convert(Int,ceil(log2(length(a))))
+
+    indices = [i for i = 0:length(a)-1]
+
+
+    bit_indices = []
+    for i = 1:length(indices)
+        push!(bit_indices, bits(indices[i]))
     end
 
+    # Now stripping the unnecessary numbers
+    for i = 1:length(bit_indices)
+        bit_indices[i] = bit_indices[i][end-digits:end]
+    end
+
+    # Flipping the bits
+    for i =1:length(bit_indices)
+        bit_indices[i] = reverse(bit_indices[i])
+    end
+
+
+    #replacing indices
+    for i = 1:length(indices)
+        indices[i] = 0
+        for j = 1:digits
+            indices[i] += 2^(j-1) * parse(string(bit_indices[i][end-j]))
+        end
+       indices[i] += 1
+    end
+
+    b = [i for i = 1:length(a)]
+    for i = 1:length(indices)
+        b[i] = a[indices[i]]
+    end
+
+    return b
 end
 
 function approx(x, y)
@@ -48,7 +82,7 @@ function approx(x, y)
 end
 
 function main()
-    x = [0 1 0 1 0 1 0 1]
+    x = [100 1]
     y = cooley_tukey(x)
     for i in y
         println(i)

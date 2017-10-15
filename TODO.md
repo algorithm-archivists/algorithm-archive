@@ -10,6 +10,7 @@ I apologize for taking so long with each chapter, but I figure making this list 
 Write:
 
 * Bitlogic
+* Finish Building Blocks and Split into Sections
 * Algorithms already covered (gift-wrapping, sorting...)
 * Language choices (Makefiles, Fortran, Julia...). Note that I kinda wanted to turn this into a series of sorts where I review each language with a series of standard tests.
 
