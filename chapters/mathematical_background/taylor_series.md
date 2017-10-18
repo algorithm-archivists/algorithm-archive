@@ -36,8 +36,8 @@ where $$f(x)$$ is some function along real or complex space, $$a$$ is the point 
 From this perspective, the expansion just looks like a bunch of derivatives strung together! Where's the physics? Well, let's expand this series for the first few derivatives:
 
 $$
-f(x) \simeq f(a) + \frac{df(a)}{da}(x-a) 
-    + \frac{1}{2}\frac{d^2f(a)}{da^2}(x-a)^2
+f(x) \simeq f(a) + \frac{df(a)}{dx}(x-a) 
+    + \frac{1}{2}\frac{d^2f(a)}{dx^2}(x-a)^2
 $$
 
 If we substitute the derivatives for their physical quantities with $$f(x) \rightarrow x(t)$$, expanding from 0, and set
