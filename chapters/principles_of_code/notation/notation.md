@@ -213,7 +213,7 @@ Basically, take complexity notation with a grain of salt.
 It is a useful descriptor of how fast algorithms should run in an ideal world; however, ideal worlds do not exist. 
 When it comes to programming, there may be hundreds of other factors that need to be considered before implementing anything. 
 That said, complexity notation should not be ignored. 
-If you can easily implement an algorithm that is notationally faster with no repurcussions, go for it!
+If you can easily implement an algorithm that is notationally faster with no repercussions, go for it!
 Just be sure you do not waste time trying to optimize code you haven't written yet.
 
 In general, my advice would be the following:

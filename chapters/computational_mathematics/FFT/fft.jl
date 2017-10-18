@@ -71,6 +71,43 @@ function bitreverse(a::Array)
     return b
 end
 
+function iterative_cooley_tukey(x)
+    N = length(x)
+    logN = convert(Int,ceil(log2(length(x))))
+    bnum = div(N,2)
+    stride = 0;
+    for i = 1:logN
+       stride = div(N, bnum)
+       for j = 0:bnum-1
+           start_index = j*stride + 1
+           y = butterfly(x[start_index:start_index + stride - 1])
+           for k = 1:length(y)
+               x[start_index+k-1] = y[k]
+           end
+       end 
+       bnum = div(bnum,2)
+    end
+
+    return x
+end
+
+function butterfly(x)
+    N = length(x)
+    half = div(N,2)
+    n = [i for i = 0:N-1]
+    half = div(N,2)
+    factor = exp.(-2im*pi*n/N)
+
+    y = [0 + 0.0im for i = 1:length(x)]
+
+    for i = 1:half
+        y[i] = x[i] + x[half+i]*factor[i]
+        y[half+i] = x[i] + x[half+i]*factor[half+i]
+    end
+
+    return y
+end
+
 function approx(x, y)
     val = true
     for i = 1:length(x)
@@ -82,10 +119,12 @@ function approx(x, y)
 end
 
 function main()
-    x = [100 1]
+    x = [100. + 0im 1]
     y = cooley_tukey(x)
-    for i in y
-        println(i)
+    z = iterative_cooley_tukey(x)
+    for i = 1:length(y)
+        println(y[i])
+        println(z[i])
     end
 end
 
