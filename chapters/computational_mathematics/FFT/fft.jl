@@ -27,7 +27,7 @@ function cooley_tukey(x)
     factor = exp.(-2im*pi*n/N)
     println(factor)
     return vcat(x_odd + x_even .* factor[1:half],
-                x_odd + x_even .* factor[half+1:N]) 
+                x_odd - x_even .* factor[1:half]) 
 
 end
 
@@ -63,7 +63,7 @@ function bitreverse(a::Array)
        indices[i] += 1
     end
 
-    b = [i for i = 1:length(a)]
+    b = [float(i) for i = 1:length(a)]
     for i = 1:length(indices)
         b[i] = a[indices[i]]
     end
@@ -76,19 +76,23 @@ function iterative_cooley_tukey(x)
     logN = convert(Int,ceil(log2(length(x))))
     bnum = div(N,2)
     stride = 0;
+
+    x = bitreverse(x)
+
+    z = [Complex(x[i]) for i = 1:length(x)]
     for i = 1:logN
        stride = div(N, bnum)
        for j = 0:bnum-1
            start_index = j*stride + 1
-           y = butterfly(x[start_index:start_index + stride - 1])
+           y = butterfly(z[start_index:start_index + stride - 1])
            for k = 1:length(y)
-               x[start_index+k-1] = y[k]
+               z[start_index+k-1] = y[k]
            end
        end 
        bnum = div(bnum,2)
     end
 
-    return x
+    return z
 end
 
 function butterfly(x)
@@ -102,7 +106,7 @@ function butterfly(x)
 
     for i = 1:half
         y[i] = x[i] + x[half+i]*factor[i]
-        y[half+i] = x[i] + x[half+i]*factor[half+i]
+        y[half+i] = x[i] - x[half+i]*factor[i]
     end
 
     return y
@@ -119,7 +123,7 @@ function approx(x, y)
 end
 
 function main()
-    x = [100. + 0im 1]
+    x = [100. + 0im 1 2 3]
     y = cooley_tukey(x)
     z = iterative_cooley_tukey(x)
     for i = 1:length(y)
