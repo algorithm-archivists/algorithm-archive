@@ -1,3 +1,3 @@
 {
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons"]
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount"]
 }
