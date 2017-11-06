@@ -38,17 +38,43 @@ end
 ```
 
 Syntactically, they are a little different, but the content is identical.
-That said, it's not obvious how functions help when writing code at this point; however, it will become incredibly obvious once you see them in action.
+That said, it's not obvious how functions help when writing code at this point; however, this will become incredibly obvious once you see them in action.
 Basically, functions allow programmers to create reusable operations that can be called at any point in the code.
 In a sense, functions make understanding code much, much easier.
-For example, take a look at the following code:
-
-```julia
-```
 
 ### Recursion
 
 Simply put, recursion is the process of putting a function inside itself. 
 Now, I know what you are thinking, "Why does this deserve a special name?" 
-That is a very good question and one I have never been able to understand. 
-That said, it is an incredibly good trick to have up your sleeve to speed up certain computations. 
+That is a very good question and one that tooke me a while to understand. 
+Let's take a simple example:
+
+```julia
+function f(x)
+    x = x + 1
+    f(x)
+end
+```
+
+Every time `f(x)` is called, it calls `f(x)`, which then calls `f(x)` again and again and again...
+Basically, we just replicated a `while` loop!
+The problem here is that *we forgot a stop condition!*
+This means that our function will run forever, constantly incrementing the value of x for all eternity!
+
+There are many possible solutions, one of which looks like this:
+
+```julia
+function f(x, cutoff)
+    if (x < cutoff)
+        x = x + 1
+        f(x)
+    end
+end
+```
+
+In the end, no matter how you choose to use recursion, you need to think carefully about what you want the code to do.
+For example, in the case shown here, recursion is definitely not the most straightforward way to increment the value of $$x$$ by $$1$$.
+In some cases, though, recursion not only makes the code easier to use and understand, but it might also be the only way to solve a provided problem.
+In addition, the proper use of recursion can speed up certain code tremendously.
+
+I guess the main point is this: *recursion is powerful, but with great power comes great resposibility!*

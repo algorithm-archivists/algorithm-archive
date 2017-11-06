@@ -1,3 +1,6 @@
 {
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount"]
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount"],
+    "lunr": {
+        "maxIndexSize": 1000000000
+    }
 }

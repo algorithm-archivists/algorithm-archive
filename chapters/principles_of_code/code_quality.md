@@ -1,12 +1,12 @@
 ## Code Quality
 
-I am a computational physicist. Industry programmers give researchers a hard time for their programming capabilities, not because they cannot code, but because (for the most part) research code looks bad. Programming, like any other art form, is limited by the artist's ability to *do* art. For many computational researchers, the code is not their art. Science is. Programming is simply the brush they use to stroke the canvas of reality. Many times, they become so consumed with their painting that they ignore their tools. Now, truth be told, I have seen some pretty repulsive industry code, too, so this complaint is not exclusively biased towards researchers.
+I am a computational physicist. Industry programmers give researchers a hard time for their programming capabilities, not because they cannot code, but because (for the most part) research code looks bad. 
+Programming, like any other form of creative expression, is limited by the artist's ability to creatively express themselves. 
+For many computational researchers, the code is not their art. Science is. 
+Programming is simply the brush they use to stroke the canvas of reality. 
+Many times, they become so consumed with their painting that they ignore their tools. Now, truth be told, I have seen some pretty repulsive industry code, too, so this complaint is not exclusively biased towards researchers.
 
 No matter what the intended goal might be, it is important to be able to read and understand the code you are writing. I know putting a comment block at the start of programs might seem like a chore, but it's not so bad, and letting everyone know up-front what the code is intended to do is incredibly useful to readers. Remember that in a few months, you will be a reader too. Take the time to properly care for your code, to clean your brush after using it. It'll pay off in the long run, I promise. 
-
-### Compilation
-
-### Version control
 
 ### Comments / style
 
