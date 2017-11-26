@@ -23,13 +23,11 @@ $$
 
 ## What Makes a Fourier Transform Fast?
 
-If there were ever an algorithm to radically change the landscape of computer science and engineering by making seemingly impossible possible, it would be the Fast Fourier Transform (FFT). 
+If there were ever an algorithm to radically change the landscape of computer science and engineering by making seemingly impossible problems possible, it would be the Fast Fourier Transform (FFT). 
 On the surface, the algorithm seems like a simple application of recursion, and in principle, that is exactly what it is; however, the Fourier Transform is no ordinary transform -- it allows researchers and engineers to easily bounce back and forth between real space and frequency space and is the heart of many physics and engineering applications.
-
-Now, I know this might seem underwhelming, just a neat trick to show friends on a Sunday night when everyone's bored, but the sheer number of engineering applications that use frequency space is overwhelming! 
 From calculating superfluid vortex positions to super-resolution imaging, Fourier Transforms lay at the heart of many scientific disciplines and are essential to many algorithms we will cover later in this book. 
 
-Simply put, the Fourier Transform is a beautiful application of complex number systems; however, it would rarely be used today if not for the ability to quickly perform the operation through the use of the Fast Fourier Transform, first introduced by the great Frederick Gauss in 1805 and later independently discovered by James Cooley and John Tukey in 1965 {{ "ct1965" | cite }}. 
+Simply put, the Fourier Transform is a beautiful application of complex number systems; however, it would rarely be used today if not for the ability to quickly perform the operation with Fast Fourier Transform, first introduced by the great Frederick Gauss in 1805 and later independently discovered by James Cooley and John Tukey in 1965 {{ "ct1965" | cite }}. 
 Gauss (of course) already had too many things named after him and Cooley and Tukey both had cooler names, so the most common algorithm for FFT's today is known as the Cooley-Tukey algorithm.
 
 ### What is a Fourier Transform?
@@ -43,26 +41,27 @@ and
 
 $$f(x) = \int_{-\infty} ^\infty F(\xi) e^{2 \pi i \xi x} d\xi$$
 
-Where $$F(\xi)$$ represents a function in frequency space, $$\xi$$ represents a value in frequency space, and $$f(x)$$ represents a function in real space and $$x$$ represents a value on the real plane. 
+Where $$F(\xi)$$ represents a function in frequency space, $$\xi$$ represents a value in frequency space, $$f(x)$$ represents a function in real space, and $$x$$ represents a value in the real space. 
 Note here that the only difference between the two exponential terms is a minus sign in the transformation to frequency space. 
 As I mentioned, this is not intuitive syntax, so please allow me to explain a bit.
 
-If we take a sinusoidal function like $$\sin(\omega t)$$ or $$\cos(\omega t)$$, we find a curve that goes from $$\pm1$$, shown in FIGURE1a. Both of these curves can be described by their corresponding frequencies, $$\omega$$. So, instead of representing these curves as seen in FIGURE1a, We could instead describe them as shown in FIGURE1b. Here, FIGURE1a is in real space and FIGURE1b is in frequency space. 
+Firstly, **what does the Fourier Transform do?**
 
-![Complicated Sinusoidal Function](sinusoid.png)
+If we take a sum sinusoidal functions (like $$\sin(\omega t)$$ or $$\cos(\omega t)$$), we might find a complicated mess of waves between $$\pm 1$$.
+Each constituent wave can be described by only one value: $$\omega$$.
+So, instead of representing these curves as seen above, we could instead describe them as peaks in frequency space, as shown below. 
 
-*FIGURE1a: Complicated Sinusoidal Function*
+![Fourier Example](FT_example.png)
 
-![FFT of FIGURE1a](fft.png)
-
-*FIGURE1b: abs(fft(FIGURE1a))*
+This is what the Fourier Transform does! 
+After performing the transform, it is now much, much easier to understand precisely which frequencies are in our waveform, which is essential to most areas of signal processing.
 
 Now, how does this relate to the transformations above? 
 Well, the easiest way is to substitute in the Euler's formula:
 
 $$e^{2 \pi i \theta} = \cos(2 \pi \theta) + i \sin(2 \pi \theta)$$
 
-This clearly turns our function in Frequency space into:
+This clearly turns our function in frequency space into:
 
 $$F(\xi) = \int_{-\infty} ^\infty f(x) (\cos(-2 \pi x \xi) + i \sin(-2 \pi x \xi))dx$$
 
@@ -70,11 +69,11 @@ and our function in real space into:
 
 $$f(x) = \int_{-\infty} ^\infty F(\xi) (\cos(2 \pi \xi x) + i \sin(2 \pi \xi x))e^{2 \pi i \xi x} d\xi$$
 
-Here, there are $$\sin$$ and $$\cos$$ functions in the formulas, so it looks much friendlier, right? 
+Here, the $$\sin$$ and $$\cos$$ functions are clearly written in the formulas, so it looks much friendlier, right? 
 This means that a point in real space is defined by the integral over all space of it's corresponding frequency function multiplied by sinusoidal oscillations. 
-At this point, mathematicians usually get it. 
-Truth be told, I didn't. 
-In fact, I didn't understand it fully until we discretized real and frequency space to create the Discrete Fourier Transform (DFT).
+
+Truth be told, even after seeing this math, I still didn't understand Fourier Transforms. 
+Truth be told, I didn't understand it fully until I discretized real and frequency space to create the Discrete Fourier Transform (DFT), which is the only way to implement Fourier Transforms in code.
 
 ### What is a Discrete Fourier Transform?
 
@@ -86,7 +85,7 @@ and
 
 $$x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k \cdot e^{2 \pi k n / N}$$
 
-Where $$X_n$$ and $$x_n$$ are sequences of $$N$$ complex and real numbers, respectively. 
+Where $$X_n$$ and $$x_n$$ are sequences of $$N$$ numbers in frequency and real space, respectively. 
 In principle, this is no easier to understand than the previous case! 
 For some reason, though, putting code to this transformation really helped me figure out what was actually going on.
 
@@ -123,18 +122,14 @@ Recursion!
 
 ### The Cooley-Tukey Algorithm
 
-In some sense, I may have oversold this algorithm. 
-In fact, I definitely have. 
-It's like I have already given you the punchline to a joke and am now getting around to explaining it. Oh well. 
 The problem with using a standard DFT is that it requires a large matrix multiplications and sums over all elements, which are prohibitively complex operations.
+The Cooley-Tukey algorithm calculates the DFT directly with fewer summations and without matrix multiplications.
+If necessary, DFT's can still be calculated directly at the early stages of the FFT calculation.
 The trick to the Cooley-Tukey algorithm is recursion. 
 In particular, we split the matrix we wish to perform the FFT on into two parts: one for all elements with even indices and another for all odd indices. 
 We then proceed to split the array again and again until we have a manageable array size to perform a DFT (or similar FFT) on. 
+We can also perform a similar re-ordering by using a bit reversal scheme, where we output each array index's integer value in binary and flip it to find the new location of that element.
 With recursion, we can reduce the complexity to $$\sim \mathcal{O}(n \log n)$$, which is a feasible operation. 
-
-Note here that we may also re-arrange the elements of our array in *bit-reverse* order, which basically means that we take all the array indices, write the indices' bitstrings out, and then reverse them to find the new index locations. 
-This method is advantageous when performing the Cooley-Tukey algorithm non-recursively.
-No matter how we split the initial input array up, we now need to add all of them back together into a final array that is appropriately ordered.
 
 In the end, the code looks like:
 ```
@@ -142,20 +137,16 @@ In the end, the code looks like:
 function cooley_tukey(x)
     N = length(x)
 
-    #println(N)
-
     if(N%2 !=0)
         println("Must be a power of 2!")
         exit(0)
     end
     if(N <= 2)
-        #println("DFT_slow")
         return DFT(x)
     else
         x_even = cooley_tukey(x[1:2:N])
         x_odd = cooley_tukey(x[2:2:N])
         n = 0:N-1
-        #n = n'
         half = div(N,2)
         factor = exp(-2im*pi*n/N)
         return vcat(x_even + factor[1:half] .* x_odd,
@@ -165,12 +156,68 @@ function cooley_tukey(x)
 end
 ```
 
+As a side note, we are enforcing that the array must be a power of 2 for the operation to work. 
+This is a limitation of the fact that we are using recursion and dividing the array in 2 every time; however, if your array is not a power of 2, you can simply pad the leftover space with 0's until your array is a power of 2.
+
+The above method is a perfectly valid FFT; however, it is missing the pictorial heart and soul of the Cooley-Tukey algorithm: Butterfly Diagrams.
+
 ### Butterfly Diagrams
-As another note, the Cooley-Tukey algorithm is often described pictorially in the form of *Butterfly Diagrams*. These show where each element in the array go before, during, and after the FFT. In this diagram, we see an initial array `x` split into even and odd parts and then concatenated into `X` as seen above.
+Butterfly Diagrams show where each element in the array goes before, during, and after the FFT. 
+As mentioned, the FFT must perform a DFT. 
+This means that even though we need to be careful about how we add elements together, we are still ultimately performing the following operation:
+
+$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-2 \pi k n / N}$$
+
+However, after shuffling the initial array (by bit reversing or recursive subdivision), we perform the matrix multiplication of the $$e^{-2 \pi k n / N}$$ terms in pieces.
+Basically, we split the array into a series of omega values:
+
+$$\omega_N^k = e^{-2 \pi k / N}$$
+
+And at each step, we use the appropriate term.
+For example, imagine we need to perform an FFT of an array of only 2 elements. 
+We can represent this addition with the following (radix-2) butterfly:
+
+![Radix-2, positive W](radix-2screen_positive.jpg)
+
+Here, the diagram means the following:
+
+$$
+b_0 = a_0 + \omega_2^0 a_1 \\
+
+b_1 = a_0 + \omega_2^1 a_1
+$$
+
+However, it turns out that the second half of our array of $$\omega$$ values is always the negative of the first half, so $$\omega_2^0 = -\omega_2^1$$, so we can use the following butterfly diagram:
+
+![Radix-2](radix-2screen.jpg)
+
+With the following equations:
+
+$$
+b_0 = a_0 + \omega_2^0 a_1 \\
+
+b_1 = a_0 - \omega_2^0 a_1
+$$
+
+By swapping out the second $$\omega$$ value in this way, we can save a good amount of space.
+Now imagine we need to combine more elements.
+In this case, we start with simple butterflies, as shown above, and then sum butterflies of butterflies.
+For example, if we have 8 elements, this might look like this:
+
+![Radix-8](radix-8screen.jpg)
+
+Note that we can perform a DFT directly before using any butterflies, if we so desire, but we need to be careful with how we shuffle our array if that's the case.
+In the code snippet provided in the previous section, the subdivision was performed in the same function as the concatenation, so the ordering was always correct; however, if we were to re-order with bit-reversal, this might not be the case.
+
+For example, take a look at the ordering of FFT ([found on wikipedia](https://en.wikipedia.org/wiki/Butterfly_diagram)) that performs the DFT shortcut:
+
 ![Butterfly Diagram](butterfly_diagram.png)
 
-I will update this section in the near future with more information, so stay tuned for more!
+Here, the ordering of the array was simply divided into even and odd elements once, but they did not recursively divide the arrays of even and odd elements again because they knew they would perform a DFT soon thereafter.
 
+Ultimately, that's all I want to say about Fourier Transforms for now, but this chapter still needs a good amount of work!
+I'll definitely come back to this at some point, so let me know what you liked and didn't like and we can go from there!
+ 
 ### Bibliography
 
 {% references %} {% endreferences %}
