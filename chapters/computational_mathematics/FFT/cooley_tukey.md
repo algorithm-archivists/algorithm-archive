@@ -96,8 +96,8 @@ function DFT(x::Array{Float64})
     # We want two vectors here for real space (n) and frequency space (k)
     n = 0:N-1
     k = n'
-    transform_matrix = exp(-2im * pi *n *k / N)
-    return x * transform_matrix
+    M = exp(-2im * pi *n *k / N)
+    return x * M
 
 end
 ```
@@ -108,10 +108,10 @@ This means that when we multiply them together, we get a matrix, but not just an
 This matrix is the heart to the transformation itself!
 
 ```
-transform_matrix = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im; 
-                    1.0+0.0im  6.12323e-17-1.0im  -1.0-1.22465e-16im -1.83697e-16+1.0im; 
-                    1.0+0.0im -1.0-1.22465e-16im   1.0+2.44929e-16im -1.0-3.67394e-16im; 
-                    1.0+0.0im -1.83697e-16+1.0im  -1.0-3.67394e-16im  5.51091e-16-1.0im]
+M = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im; 
+     1.0+0.0im  6.12323e-17-1.0im  -1.0-1.22465e-16im -1.83697e-16+1.0im; 
+     1.0+0.0im -1.0-1.22465e-16im   1.0+2.44929e-16im -1.0-3.67394e-16im; 
+     1.0+0.0im -1.83697e-16+1.0im  -1.0-3.67394e-16im  5.51091e-16-1.0im]
 ```
 
 It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix! 
@@ -221,3 +221,169 @@ I'll definitely come back to this at some point, so let me know what you liked a
 ### Bibliography
 
 {% references %} {% endreferences %}
+
+### Example Code
+
+To be clear, the example code this time will be complicated and requires the following functions:
+
+* An FFT library (either in-built or something like FFTW)
+* An approximation function to tell if two arrays are similar
+
+As mentioned in the text, the Cooley-Tukey algorithm may be implemented either recursively or non-recursively, with the recursive method being much easier to implement.
+I would ask that you implement either the recursive or non-recursive methods (or both, if you feel so inclined).
+If the language you want to write your implementation in is already used, please append your code to the already existing codebase.
+As before, pull requests are favoured.
+
+Note: I implemented this in Julia because the code seems more straightforward in Julia; however, if you wish to write better Julia code or better code in your own language, please feel free to do so!
+**I do not claim that this is the most efficient way to implement the Cooley-Tukey method, so if you have a better way to do it, feel free to implement it that way!**
+
+#### Julia
+
+```julia
+#simple DFT function
+function DFT(x)
+    N = length(x)
+
+    # We want two vectors here for real space (n) and frequency space (k)
+    n = 0:N-1
+    k = n'
+    transform_matrix = exp.(-2im * pi *n *k / N)
+    return transform_matrix*x
+
+end
+
+# Implementing the recursively Cooley-Tukey Algorithm
+function cooley_tukey(x)
+    N = length(x)
+
+    if (N > 2)
+        x_odd = cooley_tukey(x[1:2:N])
+        x_even = cooley_tukey(x[2:2:N])
+    else
+        x_odd = x[1]
+        x_even = x[2]
+    end
+    n = 0:N-1
+    half = div(N,2)
+    factor = exp.(-2im*pi*n/N)
+
+    return vcat(x_odd + x_even .* factor[1:half],
+                x_odd - x_even .* factor[1:half]) 
+
+end
+
+# Helper function for iterative Cooley Tukey
+function bitreverse(a::Array)
+    # First, we need to find the necessary number of bits
+    digits = convert(Int,ceil(log2(length(a))))
+
+    # Creating a range for the current element order
+    # To be odified later
+    indices = [i for i = 0:length(a)-1]
+
+    # Creating a list of all the bits to flip later
+    bit_indices = []
+    for i = 1:length(indices)
+        push!(bit_indices, bits(indices[i]))
+    end
+
+    # Now stripping the unnecessary numbers
+    for i = 1:length(bit_indices)
+        bit_indices[i] = bit_indices[i][end-digits:end]
+    end
+
+    # Flipping the bits
+    for i =1:length(bit_indices)
+        bit_indices[i] = reverse(bit_indices[i])
+    end
+
+    #replacing indices
+    for i = 1:length(indices)
+        indices[i] = 0
+        for j = 1:digits
+            indices[i] += 2^(j-1) * parse(string(bit_indices[i][end-j]))
+        end
+       indices[i] += 1
+    end
+
+    # replacing the elements as necessary
+    b = [float(i) for i = 1:length(a)]
+    for i = 1:length(indices)
+        b[i] = a[indices[i]]
+    end
+
+    return b
+end
+
+# Iterative FFT method, requires butterfly() and bit_reverse()
+function iterative_cooley_tukey(x)
+    N = length(x)
+    logN = convert(Int,ceil(log2(length(x))))
+
+    # Number of butterflies every iteration, starting at logN / 2
+    bnum = div(N,2)
+
+    # The distance between butterflies
+    stride = 0;
+
+    # Function found above
+    x = bitreverse(x)
+
+    z = [Complex(x[i]) for i = 1:length(x)]
+    for i = 1:logN
+       stride = div(N, bnum)
+       for j = 0:bnum-1
+           start_index = j*stride + 1
+           y = butterfly(z[start_index:start_index + stride - 1])
+           for k = 1:length(y)
+               z[start_index+k-1] = y[k]
+           end
+       end 
+
+       # Halving butterfly number every timestep
+       bnum = div(bnum,2)
+    end
+
+    return z
+end
+
+# Reads in an array and performs a butterfly operation over the array
+function butterfly(x)
+    N = length(x)
+    half = div(N,2)
+    n = [i for i = 0:N-1]
+    half = div(N,2)
+    factor = exp.(-2im*pi*n/N)
+
+    y = [0 + 0.0im for i = 1:length(x)]
+
+    for i = 1:half
+        y[i] = x[i] + x[half+i]*factor[i]
+        y[half+i] = x[i] - x[half+i]*factor[i]
+    end
+
+    return y
+end
+
+# Simple implementation of approximation function
+function approx(x, y)
+    val = true
+    for i = 1:length(x)
+        if (abs(x[i]) - abs(y[i]) > 1e-5)
+            val = false
+        end
+    end
+    println(val)
+end
+
+function main()
+    x = rand(128)
+    y = cooley_tukey(x)
+    z = iterative_cooley_tukey(x)
+    w = fft(x)
+    approx(w,y)
+    approx(w,z)
+end
+
+main()
+```

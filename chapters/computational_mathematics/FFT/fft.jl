@@ -25,7 +25,6 @@ function cooley_tukey(x)
     #n = n'
     half = div(N,2)
     factor = exp.(-2im*pi*n/N)
-    println(factor)
     return vcat(x_odd + x_even .* factor[1:half],
                 x_odd - x_even .* factor[1:half]) 
 
@@ -36,7 +35,6 @@ function bitreverse(a::Array)
     digits = convert(Int,ceil(log2(length(a))))
 
     indices = [i for i = 0:length(a)-1]
-
 
     bit_indices = []
     for i = 1:length(indices)
@@ -52,7 +50,6 @@ function bitreverse(a::Array)
     for i =1:length(bit_indices)
         bit_indices[i] = reverse(bit_indices[i])
     end
-
 
     #replacing indices
     for i = 1:length(indices)
@@ -123,13 +120,12 @@ function approx(x, y)
 end
 
 function main()
-    x = [100. + 0im 1 2 3]
+    x = rand(128)
     y = cooley_tukey(x)
     z = iterative_cooley_tukey(x)
-    for i = 1:length(y)
-        println(y[i])
-        println(z[i])
-    end
+    w = fft(x)
+    approx(y, w)
+    approx(z, w)
 end
 
 main()
