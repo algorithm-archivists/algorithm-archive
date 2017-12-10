@@ -19,15 +19,15 @@ void cooley_tukey(std::complex<double> *X, int N){
         cooley_tukey(X, N/2);
         cooley_tukey(X + N/2, N/2);
 
+		std::complex<double> w;
         for(int k = 0; k < N/2; k++){
-            std::complex<double> e = X[k];
-            std::complex<double> o = X[k + N/2];
-            std::complex<double> w = exp(std::complex<double>(0, -2.0*M_PI*k/N));
-            X[k] = e + w*o;
-            X[k + N/2] = e - w*o;
+            w = exp(std::complex<double>(0, -2.0*M_PI*k/N));
+            X[k + N/2] = X[k] - w*X[k + N/2];
+            X[k] -= (X[k + N/2]-X[k]);
         }
     }
 }
+
 
 void bitReverse(std::complex<double> *X, int N){
 	std::complex<double> *temp = new std::complex<double>[N];
@@ -70,7 +70,7 @@ void iterative_cooley_tukey(std::complex<double> *X, int N){
 	}
 }
 
-int approx(std::complex<double> *X, std::complex<double> *Y, int N){
+void approx(std::complex<double> *X, std::complex<double> *Y, int N){
 	for(int i = 0; i < N; ++i){
 		std::cout << std::abs(X[i]) - std::abs(Y[i]) << std::endl;
 	}
@@ -90,6 +90,6 @@ int main(){
 	std::cout << "abcd" << std::endl;
 	iterative_cooley_tukey(z, 64);
 
-	std::cout << approx(y,z,64) << std::endl;
+	approx(y,z,64);
 	return 0;
 }
