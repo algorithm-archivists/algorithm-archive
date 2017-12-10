@@ -29,19 +29,19 @@ void cooley_tukey(std::complex<double> *X, int N){
 
 void bitReverse(std::complex<double> *X, int N){
 	std::complex<double> temp[N];
-	unsigned int num, nrev, bnum;
+	unsigned int b, m = (unsigned int) log2(N);
 
 	for(unsigned int i = 0; i < N; ++i){
-    	bnum = 1<<(unsigned int)log2(N);
-    	nrev = num = i;
-
-    	for(int j = 1; j<log2(N); ++j){
-        	num >>= 1;
-        	nrev <<= 1;
-        	nrev |= num & 1;
-    	}
-    	nrev &= bnum-1;
-		temp[i] = X[(int)nrev];
+    	b = i;
+		// Reverse bits
+		b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+		b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+		b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+		b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+		b = ((b >> 16) | (b << 16)) >> (32 - m);
+		if(b <= i)
+			b = i;
+		temp[i] = X[b];
 	}
 
 	for(int i = 0; i < N; ++i){
@@ -51,42 +51,36 @@ void bitReverse(std::complex<double> *X, int N){
 
 void iterative_cooley_tukey(std::complex<double> *X, int N){
 	int stride;
+	std::complex<double> v,w;
 
 	bitReverse(X, N);
-	for(int i = 1; i < log2(N); ++i){
+
+	for(int i = 1; i <= log2(N); ++i){
 		stride = std::pow(2, i);
-		std::complex<double> v,w = exp(std::complex<double>(0, -2.0*M_PI/stride));
+		w = exp(std::complex<double>(0, -2.0*M_PI/stride));
+		v = 1.0;
 		for(int j = 0; j < N; j += stride){
-			v = 1.0;
 			for(int k = 0; k < stride/2; k++){
-				X[k + stride/2] = X[k] - v*X[k + stride/2];
-            	X[k] -= (X[k + stride/2]-X[k]);
-				v *= w;
+				X[k + j + stride/2] = X[k + j] - v*X[k + j + stride/2];
+            	X[k + j] -= (X[k + j + stride/2]-X[k + j]);
 			}
+			v *= w;
 		}
 	}
 }
 
-void approx(std::complex<double> *X, std::complex<double> *Y, int N){
-	for(int i = 0; i < N; ++i){
-		std::cout << std::abs(X[i]) - std::abs(Y[i]) << std::endl;
-	}
-}
-
 int main(){
-	std::cout << "a" << std::endl;
 	srand(time(NULL));
 	std::complex<double> x[64], y[64], z[64];
-	std::cout << "ab" << std::endl;
 	for(int i = 0; i < 64; ++i){
 		x[i] = y[i] = z[i] = std::complex<double>(rand() / (double) RAND_MAX, 0.0);
 	}
 
-	std::cout << "abc" << std::endl;
 	cooley_tukey(y, 64);
-	std::cout << "abcd" << std::endl;
 	iterative_cooley_tukey(z, 64);
 
-	approx(y,z,64);
+	for(int i = 0; i < 64; ++i){
+		std::cout << i << "\t" << std::abs(y[i]) - std::abs(z[i]) << std::endl;
+	}
 	return 0;
 }
