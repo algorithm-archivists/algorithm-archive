@@ -6,7 +6,7 @@
 
 void cooley_tukey(std::complex<double> *X, int N){
     if(N >= 2){
-        std::complex<double> *temp = new std::complex<double>[N/2];
+        std::complex<double> temp[N/2];
     	for(int i=0; i< N/2; i++){
         	temp[i] = X[i*2 + 1];
         	X[i] = X[i*2];
@@ -14,7 +14,6 @@ void cooley_tukey(std::complex<double> *X, int N){
     	for(int i=0; i< N/2; i++){
         	X[i + N/2] = temp[i];
 		}
-    	delete[] temp;
 
         cooley_tukey(X, N/2);
         cooley_tukey(X + N/2, N/2);
@@ -28,9 +27,8 @@ void cooley_tukey(std::complex<double> *X, int N){
     }
 }
 
-
 void bitReverse(std::complex<double> *X, int N){
-	std::complex<double> *temp = new std::complex<double>[N];
+	std::complex<double> temp[N];
 	unsigned int num, nrev, bnum;
 
 	for(unsigned int i = 0; i < N; ++i){
@@ -49,22 +47,21 @@ void bitReverse(std::complex<double> *X, int N){
 	for(int i = 0; i < N; ++i){
 		X[i] = temp[i];
 	}
-	delete[] temp;
 }
 
 void iterative_cooley_tukey(std::complex<double> *X, int N){
 	int stride;
-	std::complex<double> u,t;
 
 	bitReverse(X, N);
 	for(int i = 1; i < log2(N); ++i){
 		stride = std::pow(2, i);
+		std::complex<double> v,w = exp(std::complex<double>(0, -2.0*M_PI/stride));
 		for(int j = 0; j < N; j += stride){
+			v = 1.0;
 			for(int k = 0; k < stride/2; k++){
-				u = X[k] + X[k + stride/2]*exp(std::complex<double>(0, -2.0*M_PI*k/stride));
-				t = X[k] - X[k + stride/2]*exp(std::complex<double>(0, -2.0*M_PI*k/stride));
-				X[k] = u;
-				X[k + stride/2] = t;
+				X[k + stride/2] = X[k] - v*X[k + stride/2];
+            	X[k] -= (X[k + stride/2]-X[k]);
+				v *= w;
 			}
 		}
 	}
