@@ -17,6 +17,7 @@
         * [Functions](chapters/principles_of_code/building_blocks/functions.md)
         * [Classes](chapters/principles_of_code/building_blocks/classes.md)
         * [Stacks and Queues](chapters/principles_of_code/building_blocks/stacks.md)
+        * [Bit Logic](chapters/principles_of_code/building_blocks/bitlogic.md)
     * [Version Control](chapters/principles_of_code/version_control.md)
     * [Complexity Notation](chapters/principles_of_code/notation/notation.md)
 * [Mathematical Background](chapters/mathematical_background/mathematical_background.md)

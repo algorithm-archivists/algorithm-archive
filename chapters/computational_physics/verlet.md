@@ -65,7 +65,7 @@ $$
 
 However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, but get's the job done in a pinch.
 
-Now, let's say we actually need the velocity to calculate out next tiemstep. Well, in this case, we simply cannot use the above approximation and instead need to use the *Velocity Verlet* algorithm.
+Now, let's say we actually need the velocity to calculate out next timestep. Well, in this case, we simply cannot use the above approximation and instead need to use the *Velocity Verlet* algorithm.
 
 # Velocity Verlet
 
