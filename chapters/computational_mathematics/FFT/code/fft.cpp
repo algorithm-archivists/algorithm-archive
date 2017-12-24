@@ -18,7 +18,7 @@ void cooley_tukey(std::complex<double> *X, int N){
         cooley_tukey(X, N/2);
         cooley_tukey(X + N/2, N/2);
 
-		std::complex<double> w;
+	std::complex<double> w;
         for(int k = 0; k < N/2; k++){
             w = exp(std::complex<double>(0, -2.0*M_PI*k/N));
             X[k + N/2] = X[k] - w*X[k + N/2];
