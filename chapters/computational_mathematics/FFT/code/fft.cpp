@@ -61,8 +61,14 @@ void iterative_cooley_tukey(std::complex<double> *X, int N){
 		v = 1.0;
 		for(int j = 0; j < N; j += stride){
 			for(int k = 0; k < stride/2; k++){
+<<<<<<< HEAD
 				X[k + j + stride/2] = X[k + j] - v*X[k + j + stride/2];
             	X[k + j] -= (X[k + j + stride/2]-X[k + j]);
+=======
+				X[k + stride/2] = X[k] - v*X[k + stride/2];
+            			X[k] -= (X[k + stride/2]-X[k]);
+				v *= w;
+>>>>>>> refs/remotes/origin/master
 			}
 			v *= w;
 		}
