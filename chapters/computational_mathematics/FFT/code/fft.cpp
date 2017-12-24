@@ -10,10 +10,10 @@ void cooley_tukey(std::complex<double> *X, int N){
     	for(int i=0; i< N/2; i++){
         	temp[i] = X[i*2 + 1];
         	X[i] = X[i*2];
-		}
+	}
     	for(int i=0; i< N/2; i++){
         	X[i + N/2] = temp[i];
-		}
+	}
 
         cooley_tukey(X, N/2);
         cooley_tukey(X + N/2, N/2);
@@ -28,25 +28,23 @@ void cooley_tukey(std::complex<double> *X, int N){
 }
 
 void bitReverse(std::complex<double> *X, int N){
-	std::complex<double> temp[N];
-	unsigned int b, m = (unsigned int) log2(N);
+        std::complex<double> temp;
+        unsigned int b;
 
-	for(unsigned int i = 0; i < N; ++i){
-    	b = i;
-		// Reverse bits
-		b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
-		b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
-		b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
-		b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-		b = ((b >> 16) | (b << 16)) >> (32 - m);
-		if(b <= i)
-			b = i;
-		temp[i] = X[b];
-	}
-
-	for(int i = 0; i < N; ++i){
-		X[i] = temp[i];
-	}
+        for(unsigned int i = 0; i < N; ++i){
+                b = i;
+                // Reverse bits
+                b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+                b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+                b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+                b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+                b = ((b >> 16) | (b << 16)) >> (32 - (unsigned int) log2(N));
+                if(b > i){
+                        temp = X[b];
+                        X[b] = X[i];
+                        X[i] = temp;
+                }
+        }
 }
 
 void iterative_cooley_tukey(std::complex<double> *X, int N){
@@ -58,19 +56,13 @@ void iterative_cooley_tukey(std::complex<double> *X, int N){
 	for(int i = 1; i <= log2(N); ++i){
 		stride = std::pow(2, i);
 		w = exp(std::complex<double>(0, -2.0*M_PI/stride));
-		v = 1.0;
 		for(int j = 0; j < N; j += stride){
+			v = 1.0;
 			for(int k = 0; k < stride/2; k++){
-<<<<<<< HEAD
 				X[k + j + stride/2] = X[k + j] - v*X[k + j + stride/2];
-            	X[k + j] -= (X[k + j + stride/2]-X[k + j]);
-=======
-				X[k + stride/2] = X[k] - v*X[k + stride/2];
-            			X[k] -= (X[k + stride/2]-X[k]);
+            			X[k + j] -= (X[k + j + stride/2]-X[k + j]);
 				v *= w;
->>>>>>> refs/remotes/origin/master
 			}
-			v *= w;
 		}
 	}
 }
