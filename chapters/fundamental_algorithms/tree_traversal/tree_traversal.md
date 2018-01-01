@@ -158,7 +158,7 @@ Do you think we should be using real code snippets in the main text or stick the
 
 # Example Code
 
-### C++:
+### C++
 
 ```cpp
 // initially contributed by James Schloss (Leios)
@@ -254,7 +254,7 @@ int main() {
 }
 ```
 
-### Python 2:
+### Python 2
 
 ```python
 
@@ -582,10 +582,10 @@ int main() {
 }
 ```
 
-### C#:
+### C# #
 
 ```cs
-// submitted by Julian Schacher‏
+// submitted by Julian Schacher (jspp)
 using System;
 using System.Collections.Generic;
 

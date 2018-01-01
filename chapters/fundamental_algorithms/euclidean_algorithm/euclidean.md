@@ -239,10 +239,10 @@ print euclid_mod(64 * 67, 64 * 81)
 print euclid_sub(128 * 12, 128 * 77)
 ```
 
-### C#
+### C# #
 
 ```cs
-// submitted by Julian Schacher
+// submitted by Julian Schacher (jspp)
 using System;
 
 namespace Euclidean_Algorithm
