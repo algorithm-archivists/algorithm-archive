@@ -585,7 +585,7 @@ int main() {
 ### C#:
 
 ```cs
-// submitted by Julian Schacher‏
+// submitted by Julian Schacher (jspp)
 using System;
 using System.Collections.Generic;
 
