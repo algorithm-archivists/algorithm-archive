@@ -420,3 +420,304 @@ main = do
 #### Scratch
 
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
+
+#### C
+
+```c
+// written by Gathros.
+
+#include <complex.h>
+#include <math.h>
+
+// These headers are for presentation not for the algorithm.
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+#define PI 3.1415926535897932384626
+
+void cooley_tukey(double complex *X, const size_t N){
+        if(N >= 2){
+                // Splits the array, so the top half are the odd elements 
+		// and the bottom half are the even ones.
+                double complex tmp [N/2];
+                for(size_t i = 0; i < N/2; ++i){
+                        tmp[i] = X[2*i + 1];
+                        X[i] = X[2*i];
+                }
+                for(size_t i = 0; i < N/2; ++i){
+                        X[i + N/2] = tmp[i];
+                }
+
+                // Recursion.
+                cooley_tukey(X, N/2);
+                cooley_tukey(X + N/2, N/2);
+
+                // Combine.
+                for(size_t i = 0; i < N/2; ++i){
+                        X[i + N/2] = X[i] - cexp(-2.0*I*PI*i/N)*X[i + N/2];
+                        X[i] -= (X[i + N/2]-X[i]);
+                }
+        }
+}
+
+void bit_reverse(double complex *X, size_t N){
+        // Bit reverses the array X[] but only if the size of the array is less then 2^32.
+                double complex temp;
+        unsigned int b;
+
+        for(unsigned int i = 0; i < N; ++i){
+                b = i;
+                b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+                b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+                b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+                b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+                b = ((b >> 16) | (b << 16)) >> (32 - (unsigned int) log2((double)N));
+                if(b > i){
+                        temp = X[b];
+                        X[b] = X[i];
+                        X[i] = temp;
+                }
+        }
+}
+
+void iterative_cooley_tukey(double complex *X, size_t N){
+        int stride;
+        double complex v,w;
+
+        // Bit reverse the array.
+        bit_reverse(X, N);
+
+        // Preform the butterfly on the array.
+        for(int i = 1; i <= log2((double)N); ++i){
+                stride = pow(2, i);
+                w = cexp(-2.0*I*PI/stride);
+                for(size_t j = 0; j < N; j += stride){
+                        v = 1.0;
+                        for(size_t k = 0; k < stride/2; k++){
+                                X[k + j + stride/2] = X[k + j] - v*X[k + j + stride/2];
+                                X[k + j] -= (X[k + j + stride/2] - X[k + j]);
+                                v *= w;
+                        }
+                }
+        }
+}
+
+void approx(double complex *X, double complex *Y, size_t N){
+        // This is to show that the arrays are approximate.
+        for(size_t i = 0; i < N; ++i){
+                printf("%f\n", cabs(X[i]) - cabs(Y[i]));
+        }
+}
+
+int main(){
+        // Initalizing the arrays for FFT.
+        srand(time(NULL));
+        const size_t N = 64;
+        double complex x[N], y[N], z[N];
+        for(size_t i = 0; i < N; ++i){
+                x[i] = rand() / (double) RAND_MAX;
+                y[i] = x[i];
+                z[i] = x[i];
+        }
+
+        // Preform FFT.
+        cooley_tukey(y, N);
+        iterative_cooley_tukey(z, N);
+
+        // Check if the different methods are approximate.
+        approx(y, z, N);
+
+        return 0;
+}
+
+```
+
+#### C++
+
+```c++
+// written by Gathros, modernized by Nicole Mazzuca.
+
+#include <complex>
+#include <vector>
+#include <array>
+#include <cstdint>
+
+// These headers are for presentation not for the algorithm.
+#include <random>
+#include <iostream>
+#include <iomanip>
+
+using c64 = std::complex<double>;
+template <typename T>
+constexpr T pi() {
+  return 3.14159265358979323846264338327950288419716;
+}
+
+template <typename Iter, typename Iter_end>
+void cooley_tukey(Iter start, Iter_end end) {
+  auto size = end - start;
+  if (size >= 2) {
+    // Splits the array, so the top half are the odd elements and the bottom are the even ones.
+    auto temp = std::vector<c64>(size / 2);
+    for (std::size_t i = 0; i < size / 2; ++i) {
+      temp[i] = start[i * 2 + 1];
+      start[i] = start[i * 2];
+    }
+    for (std::size_t i = 0; i < size / 2; ++i) {
+      start[i + size / 2] = temp[i];
+    }
+
+    // Recursion.
+    cooley_tukey(start, start + size / 2);
+    cooley_tukey(start + size / 2, end);
+
+    // Combine.
+    for (std::size_t k = 0; k < size / 2; ++k) {
+      auto w = std::exp(c64(0, -2.0 * pi<double>() * k / size));
+      start[k + size / 2] = start[k] - w * start[k + size / 2];
+      start[k] -= (start[k + size / 2] - start[k]);
+    }
+  }
+}
+
+
+template <typename Iter, typename Iter_end>
+void bit_reverse(Iter start, Iter_end end) {
+  // Bit reverses the array X[] but only if the size of the array is less then 2^32.
+  auto size = end - start;
+
+  for (std::uint32_t i = 0; i < size; ++i) {
+    auto b = i;
+    b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+    b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+    b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+    b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+    b = ((b >> 16) | (b << 16)) >> (32 - std::uint32_t(log2(size)));
+    if (b > i) {
+      std::swap(start[b], start[i]);
+    }
+  }
+}
+
+template <typename Iter, typename Iter_end>
+void iterative_cooley_tukey(Iter start, Iter_end end) {
+  // Bit reverse the array.
+  bit_reverse(start, end);
+
+  //Preform the butterfly on the array.
+  auto size = end - start;
+  for (std::size_t stride = 2; stride <= size; stride *= 2) {
+    auto w = exp(c64(0, -2.0 * pi<double>() / stride));
+    for (std::size_t j = 0; j < size; j += stride) {
+      auto v = c64(1.0);
+      for (std::size_t k = 0; k < stride / 2; k++) {
+        start[k + j + stride / 2] =
+          start[k + j] - v * start[k + j + stride / 2];
+        start[k + j] -= (start[k + j + stride / 2] - start[k + j]);
+        v *= w;
+      }
+    }
+  }
+}
+
+int main() {
+  // Initalizing the FFT inputs.
+  auto random_number_generator = std::mt19937_64();
+  auto generate_random_double = [&]() {
+    auto rn = random_number_generator();
+    return double(rn) / double(UINT64_MAX);
+  };
+
+  std::array<c64, 64> initial;
+
+  for (auto& el : initial) {
+    el = generate_random_double();
+  }
+
+  auto recursive = initial;
+  auto iterative = initial;
+
+  // Preform an FFT on the arrays.
+  cooley_tukey(recursive.begin(), recursive.end());
+  iterative_cooley_tukey(iterative.begin(), iterative.end());
+
+  // Check if the arrays are approximate.
+  std::cout
+    << std::right
+    << std::setw(16) << "idx"
+    << std::setw(16) << "rec"
+    << std::setw(16) << "it"
+    << std::setw(16) << "subtracted"
+    << '\n';
+  for (int i = 0; i < initial.size(); ++i) {
+    auto rec = recursive[i];
+    auto it = iterative[i];
+    std::cout
+      << std::setw(16) << i
+      << std::setw(16) << std::abs(rec)
+      << std::setw(16) << std::abs(it)
+      << std::setw(16) << (std::abs(rec) - std::abs(it))
+      << '\n';
+  }
+}
+
+```
+
+#### Python
+```python
+# Submitted by Gathros
+
+from random import random
+from cmath import exp, pi
+from math import log2
+
+def cooley_tukey(X):
+        N = len(X)
+        if N <= 1:
+                return X
+        even = cooley_tukey(X[0::2])
+        odd =  cooley_tukey(X[1::2])
+
+        temp = [i for i in range(N)]
+        for k in range(N//2):
+                temp[k] = even[k] + exp(-2j*pi*k/N) * odd[k]
+                temp[k+N//2] = even[k] - exp(-2j*pi*k/N)*odd[k]
+        return temp
+
+def bitReverse(X):
+        N = len(X)
+        temp = [i for i in range(N)]
+        for k in range(N):
+                b =  sum(1<<(int(log2(N))-1-i) for i in range(int(log2(N))) if k>>i&1)
+                temp[k] = X[b]
+                temp[b] = X[k]
+        return temp
+
+def iterative_cooley_tukey(X):
+        N = len(X)
+
+        X = bitReverse(X)
+
+        for i in range(1, int(log2(N)) + 1):
+                stride = 2**i
+                w = exp(-2j*pi/stride)
+                for j in range(0, N, stride):
+                        v = 1
+                        for k in range(stride//2):
+                                X[k + j + stride//2] = X[k + j] - v*X[k + j + stride//2];
+                                X[k + j] -= (X[k + j + stride//2] - X[k + j]);
+                                v *= w;
+        return X
+
+X = []
+
+for i in range(64):
+        X.append(random())
+
+Y = cooley_tukey(X)
+Z = iterative_cooley_tukey(X)
+
+print(all(abs([Y[i] - Z[i] for i in range(64)][j]) < 1 for j in range(64)))
+
+```
