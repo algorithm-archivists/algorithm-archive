@@ -1,6 +1,21 @@
 {
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount"],
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api"],
     "lunr": {
         "maxIndexSize": 1000000000
-    }
+    },
+	"pluginsConfig": {
+		"theme-api": {
+			"languages": [
+				{
+					"lang": "de",
+					"name": "Default",
+					"default": true
+				},
+				{
+					"lang": "cs",
+					"name": "CSharp"	
+				}
+			]
+		}
+	}
 }
