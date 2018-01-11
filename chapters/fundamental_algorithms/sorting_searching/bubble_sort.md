@@ -45,27 +45,7 @@ function bubble_sort(Vector{Type} a)
 end
 ```
 {% sample lang="cs" %}
-```cs
-public static List<T> BubbleSort<T>(List<T> list) where T : IComparable<T>
-{
-    var length = list.Count;
-    
-    for (int i = 0; i < length; i++)
-    {
-        for (int j = 1; j < length; j++)
-        {
-            if (list[j - 1].CompareTo(list[j]) > 0)
-            {
-                var temp = list[j - 1];
-                list[j - 1] = list[j];
-                list[j] = temp;
-            }
-        }
-    }
-
-    return list;
-}
-```
+[import:8-26, unindent:"true", lang:"csharp"](code/Sorting.cs)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

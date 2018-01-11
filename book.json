@@ -1,5 +1,5 @@
 {
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api"],
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock"],
     "lunr": {
         "maxIndexSize": 1000000000
     },
