@@ -27,6 +27,8 @@ Computer science is (almost by definition) a science about computers -- a device
 
 The algorithm is a simple way to find the *greatest common divisor* (GCD) of two numbers, which is useful for a number of different applications (like reducing fractions). The first method (envisioned by Euclid) uses simple subtraction:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```python
 function euclid_sub(a::Int64, b::Int64)
     while (a != b)
@@ -38,6 +40,7 @@ function euclid_sub(a::Int64, b::Int64)
     end
 end
 ```
+{% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
 
@@ -45,6 +48,8 @@ Here, we simply line the two numbers up every step and subtract the lower value 
 
 Modern implementations, though, often use the modulus operator (%) like so
 
+{% method %}
+{% sample lang="pseudo" %}
 ```python
 function euclid_mod(a::Int64, b::Int64)
     temp = Int64
@@ -55,6 +60,7 @@ function euclid_mod(a::Int64, b::Int64)
     end
 end
 ```
+{% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
 
