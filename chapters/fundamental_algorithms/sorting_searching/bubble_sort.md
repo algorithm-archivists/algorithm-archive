@@ -30,6 +30,8 @@ If it is, we swap the elements and then move to the next element.
 In this way, we sweep through the array $$n$$ times for each element and continually swap any two adjacent elements that are improperly ordered.
 This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with code similar to the following:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```julia
 function bubble_sort(Vector{Type} a)
     n = length(a)
@@ -42,6 +44,29 @@ function bubble_sort(Vector{Type} a)
     end
 end
 ```
+{% sample lang="cs" %}
+```cs
+public static List<T> BubbleSort<T>(List<T> list) where T : IComparable<T>
+{
+    var length = list.Count;
+    
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = 1; j < length; j++)
+        {
+            if (list[j - 1].CompareTo(list[j]) > 0)
+            {
+                var temp = list[j - 1];
+                list[j - 1] = list[j];
+                list[j] = temp;
+            }
+        }
+    }
+
+    return list;
+}
+```
+{% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
 Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so We'll come back to this in the future and talk about how to optimize it.

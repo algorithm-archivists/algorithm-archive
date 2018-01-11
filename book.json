@@ -7,15 +7,20 @@
 		"theme-api": {
 			"languages": [
 				{
-					"lang": "de",
-					"name": "Default",
+					"lang": "pseudo",
+					"name": "Pseudocode",
 					"default": true
 				},
 				{
+					"lang": "jl",
+					"name": "julia"
+				},
+				{
 					"lang": "cs",
-					"name": "CSharp"	
+					"name": "C#"	
 				}
-			]
+			],
+			"split": true 
 		}
 	}
 }
