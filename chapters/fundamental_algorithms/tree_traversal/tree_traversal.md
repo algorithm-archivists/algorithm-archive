@@ -89,7 +89,7 @@ Now, in this case the first element searched through is still the root of the tr
 void DFS_recursive_postorder(const node& n){
 
     for (int i = 0; i < n.children.size(); ++i){
-        DFS_recursive(n.children[i]);
+        DFS_recursive_postorder(n.children[i]);
     }
 
     // Here we are doing something...
@@ -122,7 +122,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 ```cpp
 
 // This assumes only 2 children
-void DFS_recursive_inorder(const node& n){
+void DFS_recursive_inorder_btree(const node& n){
 
     if (n.children.size() > 2){
         std::cout << "Not binary tree!" << '\n';
@@ -130,9 +130,9 @@ void DFS_recursive_inorder(const node& n){
     }
 
     if (n.children.size() > 0){
-        DFS_recursive_btree(n.children[0]);
+        DFS_recursive_inorder_btree(n.children[0]);
         std::cout << n.ID << '\n';
-        DFS_recursive_btree(n.children[1]);
+        DFS_recursive_inorder_btree(n.children[1]);
     }
     else{
         std::cout << n.ID << '\n';
