@@ -701,109 +701,28 @@ int main() {
 
 ```cs
 // submitted by Julian Schacher (jspp)
+
 using System;
-using System.Collections.Generic;
+using ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal;
 
-namespace Tree_Traversal
+namespace ArcaneAlgorithmArchiveCLI
 {
-    class Program
+    class MainClass
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var root = TreeCreator.CreateTree(3, 3);
-            Console.WriteLine("DFSRecursive:");
-            Algorithms.DFSRecursive(root);
+            var tree = new Tree(3, 3);
+            Console.WriteLine("StartDFSRecursive:");
+            tree.StartDFSRecursive();
             Console.WriteLine("DFSStack:");
-            Algorithms.DFSStack(root);
+            tree.DFSStack();
             Console.WriteLine("DFSQueue");
-            Algorithms.BFSQueue(root);
-        }
-    }
-
-    public static class TreeCreator
-    {
-        public static Node CreateTree(int depthCount, int childrenCount)
-        {
-            var root = new Node
-            {
-                Id = 1
-            };
-            CreateAllChildren(root, depthCount, childrenCount);
-            return root;
-        }
-
-        private static void CreateAllChildren(Node node, int rowCount, int childrenCount)
-        {
-            if (rowCount <= 1)
-                return;
-
-            for (int i = 0; i < childrenCount; i++)
-            {
-                node.Children.Add(new Node
-                {
-                    Id = node.Id * 10 + i + 1
-                });
-                CreateAllChildren(node.Children[i], rowCount - 1, childrenCount);
-            }
-        }
-    }
-
-    public static class Algorithms
-    {
-        public static void DFSRecursive(Node node)
-        {
-            Console.WriteLine(node.Id);
-
-            foreach (var c in node.Children)
-            {
-                DFSRecursive(c);
-            }
-        }
-
-        public static void DFSStack(Node node)
-        {
-            var stack = new Stack<Node>();
-            stack.Push(node);
-            Node temp;
-
-            while (stack.Count != 0)
-            {
-                Console.WriteLine(stack.Peek().Id);
-                temp = stack.Pop();
-
-                foreach (var c in temp.Children)
-                {
-                    stack.Push(c);
-                }
-            }
-        }
-
-        public static void BFSQueue(Node node)
-        {
-            var queue = new Queue<Node>();
-            queue.Enqueue(node);
-            Node temp;
-
-            while (queue.Count != 0)
-            {
-                Console.WriteLine(queue.Peek().Id);
-                temp = queue.Dequeue();
-
-                foreach (var c in temp.Children)
-                {
-                    queue.Enqueue(c);
-                }
-            }
-        }
-    }
-
-    public class Node
-    {
-        public List<Node> Children { get; set; } = new List<Node>();
-        public int Id { get; set; }
-    }
+            tree.BFSQueue();
+		}
+	}
 }
 ```
+[import, lang="csharp"](code/Tree.cs)
 
 ### JavaScript
 
