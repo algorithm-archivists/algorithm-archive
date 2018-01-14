@@ -34,13 +34,7 @@ struct node{
 };
 ```
 {% sample lang="C#" %}
-```csharp
-public class Node
-{
-	public List<Node> Children { get; set; } = new List<Node>();
-	public int Id { get; set; }
-}
-```
+[import:11-15, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -60,18 +54,7 @@ void DFS_recursive(const node& n){
 
 ```
 {% sample lang="C#" %}
-```csharp
-public void DFSRecursive(Node node)
-{
-	// Here we are doing something...
-    Console.WriteLine(node.Id);
-
-    foreach (var c in node.Children)
-    {
-        DFSRecursive(c);
-    }
-}
-```
+[import:48-57, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -98,18 +81,7 @@ void DFS_recursive_postorder(const node& n){
 
 ```
 {% sample lang="C#" %}
-```csharp
-public void DFSRecursivePostorder(Node node)
-{
-    foreach (var c in node.Children)
-    {
-        DFSRecursivePostorder(c);
-    }
-
-	// Here we are doing something...
-    Console.WriteLine(node.Id);
-}
-```
+[import:75-84, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
 {% endmethod %}
 
 ![DFS ordering post](DFS_post.png)
@@ -142,27 +114,7 @@ void DFS_recursive_inorder_btree(const node& n){
 
 ```
 {% sample lang="C#" %}
-```csharp
-// This assumes only 2 children
-public void DFSRecursiveInorderBinary(Node node)
-{
-    if (node.Children.Count > 2)
-    {
-        throw new Exception("Not binary tree!");
-    }
-    
-    if (node.Children.Count > 0)
-    {
-        DFSRecursiveInorderBinary(node.Children[0]);
-        Console.WriteLine(node.Id);
-        DFSRecursiveInorderBinary(node.Children[1]);
-    }
-    else
-    {
-        Console.WriteLine(node.Id);
-    }
-}
-```
+[import:86-104, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
 {% endmethod %}
 
 ![DFS ordering in](DFS_in.png)
@@ -197,26 +149,7 @@ void DFS_stack(const node& n){
 }
 ```
 {% sample lang="C#" %}
-```csharp
-public void DFSStack()
-{
-    var stack = new Stack<Node>();
-    stack.Push(root);
-    Node temp;
-
-    while (stack.Count != 0)
-    {
-        Console.WriteLine(stack.Peek().Id);
-        temp = stack.Pop();
-
-        foreach (var c in temp.Children)
-        {
-            stack.Push(c);
-		}
-    }
-}
-
-```
+[import:36-52, unindent:"true", lang:"csharp"](code/Tree.cs)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -245,25 +178,7 @@ void BFS_queue(const node& n){
 
 ```
 {% sample lang="C#" %}
-```C#
-public void BFSQueue()
-{
-    var queue = new Queue<Node>();
-    queue.Enqueue(root);
-    Node temp;
-
-    while (queue.Count != 0)
-    {
-        Console.WriteLine(queue.Peek().Id);
-        temp = queue.Dequeue();
-
-        foreach (var c in temp.Children)
-        {
-           queue.Enqueue(c);
-        }
-    }
-}
-```
+[import:54-70, unindent:"true", lang:"csharp"](code/Tree.cs)
 {% endmethod %}
 
 # Point of Discussion
@@ -722,7 +637,7 @@ namespace ArcaneAlgorithmArchiveCLI
 	}
 }
 ```
-[import, lang="csharp"](code/Tree.cs)
+[import:2-, lang="csharp"](code/Tree.cs)
 
 ### JavaScript
 

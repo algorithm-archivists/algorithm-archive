@@ -45,7 +45,7 @@ function bubble_sort(Vector{Type} a)
 end
 ```
 {% sample lang="cs" %}
-[import:8-26, unindent:"true", lang:"csharp"](code/Sorting.cs)
+[import:9-27, unindent:"true", lang:"csharp"](code/Sorting.cs)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

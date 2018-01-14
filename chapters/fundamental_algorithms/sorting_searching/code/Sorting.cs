@@ -1,4 +1,5 @@
-﻿using System;
+﻿// submitted by Julian Schacher (jspp)
+using System;
 using System.Collections.Generic;
 
 namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.SortingSearching

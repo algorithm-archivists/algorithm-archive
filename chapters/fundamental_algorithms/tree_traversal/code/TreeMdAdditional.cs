@@ -5,16 +5,17 @@ using System.Collections.Generic;
 namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
 {
     // This class recreates Tree and inlcudes changed or new methods needed for in-text-code.
+    // Therefor this file disregards coding standards and best practices.
     public class TreeMdAdditional
     {
-        private class Node
+        public class Node
         {
             public List<Node> Children { get; set; } = new List<Node>();
             public int Id { get; set; }
         }
 
         private Node root;
-         
+
         public void CreateTree(int depthCount, int childrenCount)
         {
             root = new Node
@@ -28,17 +29,34 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
         {
             CreateTree(depthCount, childrenCount);
         }
-        
+
+        public void StartDFSRecursive()
+        {
+            DFSRecursive(root);
+        }
+
         public void StartDFSRecursivePostorder()
         {
             DFSRecursivePostorder(root);
         }
-        
+
         public void StartDFSRecursiveInorderBinary()
         {
             DFSRecursiveInorderBinary(root);
         }
-        
+
+        public void DFSRecursive(Node node)
+        {
+            // Here we are doing something...
+            Console.WriteLine(node.Id);
+
+            foreach (var c in node.Children)
+            {
+                DFSRecursive(c);
+            }
+        }
+
+
         private void CreateAllChildren(Node node, int rowCount, int childrenCount)
         {
             if (rowCount <= 1)
@@ -54,23 +72,25 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
             }
         }
 
-        private void DFSRecursivePostorder(Node node)
+        public void DFSRecursivePostorder(Node node)
         {
             foreach (var c in node.Children)
             {
                 DFSRecursivePostorder(c);
             }
             
+            // Here we are doing something...
             Console.WriteLine(node.Id);
         }
         
-        private void DFSRecursiveInorderBinary(Node node)
+        // This assumes only 2 children
+        public void DFSRecursiveInorderBinary(Node node)
         {
             if (node.Children.Count > 2)
             {
                 throw new Exception("Not binary tree!");
             }
-            
+
             if (node.Children.Count > 0)
             {
                 DFSRecursiveInorderBinary(node.Children[0]);
