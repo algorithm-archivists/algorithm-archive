@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
 {
-    // This class is not suposed to be there. That's why things in Tree.cs aren't protected.
-    public class TreeMd : Tree
+    // This class recreates Tree and inlcudes changed or new methods needed for in-text-code.
+    public class TreeMdAdditional
     {
         private class Node
         {
@@ -15,7 +15,7 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
 
         private Node root;
          
-        public new void CreateTree(int depthCount, int childrenCount)
+        public void CreateTree(int depthCount, int childrenCount)
         {
             root = new Node
             {
@@ -24,7 +24,7 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
             CreateAllChildren(root, depthCount, childrenCount);
         }
 
-        public TreeMd(int depthCount, int childrenCount) : base (depthCount, childrenCount) 
+        public TreeMdAdditional(int depthCount, int childrenCount)
         {
             CreateTree(depthCount, childrenCount);
         }
