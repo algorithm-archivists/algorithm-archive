@@ -44,6 +44,8 @@ function bogo_sort(Vector{Type} a)
     end
 end
 ```
+{% sample lang="C#" %}
+[import:29-35, unindent=true, lang:"csharp"](code/Sorting.cs)
 {% endmethod %}
 
 That's it.
