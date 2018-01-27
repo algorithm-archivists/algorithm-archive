@@ -32,16 +32,16 @@ For integer numbers, 0 is still 0 and 1 is still 1; however, for 2, we need to u
 
 | Integer Number | Binary Number |
 | -------------- | ------------- |
-| 0 | 0000 |
-| 1 | 0001 |
-| 2 | 0010 |
-| 3 | 0011 |
-| 4 | 0100 |
-| 5 | 0101 |
-| 6 | 0110 |
-| 7 | 0111 |
-| 8 | 1000 |
-| 9 | 1001 |
+| 0 | `0000` |
+| 1 | `0001` |
+| 2 | `0010` |
+| 3 | `0011` |
+| 4 | `0100` |
+| 5 | `0101` |
+| 6 | `0110` |
+| 7 | `0111` |
+| 8 | `1000` |
+| 9 | `1001` |
 
 The easiest way to interpret a binary string is to imagine that each digit is a power of 2 and add them together. For example, take the number 13, with a bitstring 1101:
 
@@ -61,10 +61,10 @@ Another method is to "roll over" to negative numbers when the bit count gets too
 
 | Integer Number | Binary Number |
 | -------------- | ------------- |
-| 126 | 01111110 |
-| 127 | 01111111 |
-| -128 | 10000000 | 
-| -127 | 10000001 |
+| 126 | `01111110` |
+| 127 | `01111111` |
+| -128 | `10000000` | 
+| -127 | `10000001` |
 
 Ultimately, integer numbers are not that difficult to deal with in binary, so let's move onto something more complicated: *floating-point numbers!*
 
@@ -75,9 +75,9 @@ Here are a few floats and their integer representations:
 
 | Floating-point Number | Binary Number |
 | -------------- | ------------- |
-| 9.125 | 1001.001|
-| 10.25 | 1010.01|
-| 1.00 | 1 |
+| 9.125 | `1001.001`|
+| 10.25 | `1010.01`|
+| 1.00 | `1` |
 
 The idea is similar to before: Each digit represents a power of 2; however, this time any digit after the decimal point counts negative.
 So for 9.125, we have 1 $$2^3 = 8$$, 1 $$2^0 = 1$$, and 1 $$2^{-3} = \frac{1}{8}$$.
@@ -94,9 +94,9 @@ So here are a few floating-point numbers and their corresponding bitstrings:
 
 | Float | Sign | Exponent | Mantissa |
 | ----- | ---- | -------- | -------- |
-| 9.125 | 0 | 10000010 | 00100100000000000000000|
-| - 5.25 | 1 | 10000001 | 01010000000000000000000|
-| - 4096.625 | 1 | 10001011 | 00000000000010100000000 | 
+| 9.125 | `0` | `10000010` | `00100100000000000000000`|
+| - 5.25 | `1` | `10000001` | `01010000000000000000000`|
+| - 4096.625 | `1` | `10001011` | `00000000000010100000000` | 
 
 Now that we know how to represent integers and floating-point numbers, let's move on to operations, starting with *bitshift operators*
 
@@ -107,9 +107,9 @@ Because of the somewhat complicated nature of floating-point numbers, bitshift o
 
 | Operation | Integer | Bitstring |
 | --------- | ------- | --------- |
-| None      | 10      | 00001010 |
-| Bitshift left, << | 20 | 00010100|
-| Bitshift right, >> | 5 | 00000101|
+| None      | 10      | `00001010` |
+| Bitshift left, << | 20 | `00010100`|
+| Bitshift right, >> | 5 | `00000101`|
 
 There are more complicated things that can be done with the bitshift operators; however, we'll leave that discussion for another day!
 
