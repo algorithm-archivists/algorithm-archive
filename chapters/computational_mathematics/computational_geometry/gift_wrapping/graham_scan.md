@@ -49,7 +49,7 @@ If the output is positive, then the points form a counter-clockwise "left" turn.
 If the output is negative, then the points form a clockwise "right" turn.
 We basically do not want clockwise rotations, because this means we are at an interior angle.
 
-<---ADD FIGURE--->
+<!---ADD FIGURE--->
 
 To save memory and expensive `append()` operations, we ultimately look for points that should be on the hull and swap them with the first elements in the array.
 If there are $$M$$ elements on the hull, then the first $$M$$ elements in our output random distribution of points will be the hull. 

@@ -37,8 +37,7 @@ Here is what this might look like in code:
 
 ```julia
 type Pos
-    x::Float64
-    y::Float64
+    Float64 x,y
 end
 
 function jarvis_march(Vector{Pos} points)
