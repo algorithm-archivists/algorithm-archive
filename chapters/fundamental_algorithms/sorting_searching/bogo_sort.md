@@ -35,6 +35,8 @@ In the best case, this algorithm runs with a complexity of $$\Omega(1)$$, and in
 
 In code, it looks something like this:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```julia
 function bogo_sort(Vector{Type} a)
     while(!is_sorted(a))
@@ -42,6 +44,9 @@ function bogo_sort(Vector{Type} a)
     end
 end
 ```
+{% sample lang="C#" %}
+[import:29-35, unindent=true, lang:"csharp"](code/Sorting.cs)
+{% endmethod %}
 
 That's it.
 Ship it!

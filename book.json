@@ -1,6 +1,26 @@
 {
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount"],
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock"],
     "lunr": {
         "maxIndexSize": 1000000000
-    }
+    },
+	"pluginsConfig": {
+		"theme-api": {
+			"languages": [
+				{
+					"lang": "pseudo",
+					"name": "Pseudocode",
+					"default": true
+				},
+				{
+					"lang": "jl",
+					"name": "julia"
+				},
+				{
+					"lang": "cs",
+					"name": "C#"	
+				}
+			],
+			"split": true 
+		}
+	}
 }

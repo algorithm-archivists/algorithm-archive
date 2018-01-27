@@ -30,6 +30,8 @@ If it is, we swap the elements and then move to the next element.
 In this way, we sweep through the array $$n$$ times for each element and continually swap any two adjacent elements that are improperly ordered.
 This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with code similar to the following:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```julia
 function bubble_sort(Vector{Type} a)
     n = length(a)
@@ -42,6 +44,9 @@ function bubble_sort(Vector{Type} a)
     end
 end
 ```
+{% sample lang="cs" %}
+[import:9-27, unindent:"true", lang:"csharp"](code/Sorting.cs)
+{% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
 Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so We'll come back to this in the future and talk about how to optimize it.

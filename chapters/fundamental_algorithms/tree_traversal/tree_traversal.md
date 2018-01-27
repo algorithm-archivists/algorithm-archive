@@ -25,15 +25,22 @@ $$
 
 Trees are naturally recursive data structures, and because of this, we cannot access their elements like we might access the elements of a vector or array. Instead, we need to use more interesting methods to work through each element. This is often called *Tree Traversal*, and there are many different ways to do this. For now, we will restrict the discussion to two common and related methods of tree traversal: *Depth-First* and *Breadth-First Search*. Note that trees vary greatly in shape and size depending on how they are used; however, they are composed primarily of nodes that house other, children nodes, like so:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```cpp
 struct node{
     std::vector<node> children;
     int ID;
 };
 ```
+{% sample lang="C#" %}
+[import:11-15, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
+{% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```cpp
 void DFS_recursive(const node& n){
 
@@ -46,6 +53,9 @@ void DFS_recursive(const node& n){
 }
 
 ```
+{% sample lang="C#" %}
+[import:48-57, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
+{% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
@@ -56,11 +66,13 @@ Note that the in the code above, we are missing a crucial step: *checking to see
 Now, in this case the first element searched through is still the root of the tree. This type of tree traversal is known as *pre-order* DFS. We perform an action (output the ID) *before* searching through the children. If we shift the function around and place the data output at the end of the function, we can modify the order in which we search through the tree to be *post-order* and look something like this:
 
 
+{% method %}
+{% sample lang="pseudo" %}
 ```cpp
 void DFS_recursive_postorder(const node& n){
 
     for (int i = 0; i < n.children.size(); ++i){
-        DFS_recursive(n.children[i]);
+        DFS_recursive_postorder(n.children[i]);
     }
 
     // Here we are doing something...
@@ -68,16 +80,21 @@ void DFS_recursive_postorder(const node& n){
 }
 
 ```
+{% sample lang="C#" %}
+[import:75-84, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
+{% endmethod %}
 
 ![DFS ordering post](DFS_post.png)
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
 
 
+{% method %}
+{% sample lang="pseudo" %}
 ```cpp
 
 // This assumes only 2 children
-void DFS_recursive_inorder(const node& n){
+void DFS_recursive_inorder_btree(const node& n){
 
     if (n.children.size() > 2){
         std::cout << "Not binary tree!" << '\n';
@@ -85,9 +102,9 @@ void DFS_recursive_inorder(const node& n){
     }
 
     if (n.children.size() > 0){
-        DFS_recursive_btree(n.children[0]);
+        DFS_recursive_inorder_btree(n.children[0]);
         std::cout << n.ID << '\n';
-        DFS_recursive_btree(n.children[1]);
+        DFS_recursive_inorder_btree(n.children[1]);
     }
     else{
         std::cout << n.ID << '\n';
@@ -96,6 +113,9 @@ void DFS_recursive_inorder(const node& n){
 }
 
 ```
+{% sample lang="C#" %}
+[import:86-104, unindent:"true", lang:"csharp"](code/TreeMdAdditional.cs)
+{% endmethod %}
 
 ![DFS ordering in](DFS_in.png)
 
@@ -110,6 +130,8 @@ Now, at this point, it might seem that the only way to search through a recursiv
 
 In code, it looks like this:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```cpp
 void DFS_stack(const node& n){
     std::stack<node> s;
@@ -126,6 +148,9 @@ void DFS_stack(const node& n){
     }
 }
 ```
+{% sample lang="C#" %}
+[import:36-52, unindent:"true", lang:"csharp"](code/Tree.cs)
+{% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
@@ -133,6 +158,8 @@ All this said, there are a few details about DFS that might not be idea, dependi
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
 
+{% method %}
+{% sample lang="pseudo" %}
 ```cpp
 void BFS_queue(const node& n){
     std::queue<node> q;
@@ -150,6 +177,9 @@ void BFS_queue(const node& n){
 }
 
 ```
+{% sample lang="C#" %}
+[import:54-70, unindent:"true", lang:"csharp"](code/Tree.cs)
+{% endmethod %}
 
 # Point of Discussion
 I have used C++ syntax for this chapter; however, this goes against my policy to keep the Algorithm Archive language-indifferent. On the one had, it's nice to see compilable code in the archive. On the other had, I don't want this to become a C++ book. I think I will try to come up with a clear psudocode scheme and use it throughout this book from now on, but I wanted to hear your thoughts.
@@ -586,109 +616,28 @@ int main() {
 
 ```cs
 // submitted by Julian Schacher (jspp)
+
 using System;
-using System.Collections.Generic;
+using ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal;
 
-namespace Tree_Traversal
+namespace ArcaneAlgorithmArchiveCLI
 {
-    class Program
+    class MainClass
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var root = TreeCreator.CreateTree(3, 3);
-            Console.WriteLine("DFSRecursive:");
-            Algorithms.DFSRecursive(root);
+            var tree = new Tree(3, 3);
+            Console.WriteLine("StartDFSRecursive:");
+            tree.StartDFSRecursive();
             Console.WriteLine("DFSStack:");
-            Algorithms.DFSStack(root);
+            tree.DFSStack();
             Console.WriteLine("DFSQueue");
-            Algorithms.BFSQueue(root);
-        }
-    }
-
-    public static class TreeCreator
-    {
-        public static Node CreateTree(int depthCount, int childrenCount)
-        {
-            var root = new Node
-            {
-                Id = 1
-            };
-            CreateAllChildren(root, depthCount, childrenCount);
-            return root;
-        }
-
-        private static void CreateAllChildren(Node node, int rowCount, int childrenCount)
-        {
-            if (rowCount <= 1)
-                return;
-
-            for (int i = 0; i < childrenCount; i++)
-            {
-                node.Children.Add(new Node
-                {
-                    Id = node.Id * 10 + i + 1
-                });
-                CreateAllChildren(node.Children[i], rowCount - 1, childrenCount);
-            }
-        }
-    }
-
-    public static class Algorithms
-    {
-        public static void DFSRecursive(Node node)
-        {
-            Console.WriteLine(node.Id);
-
-            foreach (var c in node.Children)
-            {
-                DFSRecursive(c);
-            }
-        }
-
-        public static void DFSStack(Node node)
-        {
-            var stack = new Stack<Node>();
-            stack.Push(node);
-            Node temp;
-
-            while (stack.Count != 0)
-            {
-                Console.WriteLine(stack.Peek().Id);
-                temp = stack.Pop();
-
-                foreach (var c in temp.Children)
-                {
-                    stack.Push(c);
-                }
-            }
-        }
-
-        public static void BFSQueue(Node node)
-        {
-            var queue = new Queue<Node>();
-            queue.Enqueue(node);
-            Node temp;
-
-            while (queue.Count != 0)
-            {
-                Console.WriteLine(queue.Peek().Id);
-                temp = queue.Dequeue();
-
-                foreach (var c in temp.Children)
-                {
-                    queue.Enqueue(c);
-                }
-            }
-        }
-    }
-
-    public class Node
-    {
-        public List<Node> Children { get; set; } = new List<Node>();
-        public int Id { get; set; }
-    }
+            tree.BFSQueue();
+		}
+	}
 }
 ```
+[import:2-, lang="csharp"](code/Tree.cs)
 
 ### JavaScript
 
