@@ -27,7 +27,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 
 {% method %}
 {% sample lang="C++" %}
-[import:1-4, unindent:"true", lang:"cpp"](code/c++/Tree.cpp)
+[import:1-4, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="C#" %}
 [import:11-15, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="C" %}
@@ -46,7 +46,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 
 {% method %}
 {% sample lang="C++" %}
-[import:6-14, unindent:"true", lang:"cpp"](code/c++/Tree.cpp)
+[import:6-14, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="C#" %}
 [import:48-57, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="C" %}
@@ -72,7 +72,7 @@ Now, in this case the first element searched through is still the root of the tr
 
 {% method %}
 {% sample lang="C++" %}
-[import:16-24, unindent:"true", lang:"cpp"](code/c++/Tree.cpp)
+[import:16-24, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="C#" %}
 [import:75-84, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="C" %}
@@ -94,7 +94,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 
 {% method %}
 {% sample lang="C++" %}
-[import:27-44, unindent:"true", lang:"cpp"](code/c++/Tree.cpp)
+[import:27-44, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="C#" %}
 [import:86-104, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="C" %}
@@ -124,7 +124,7 @@ In code, it looks like this:
 
 {% method %}
 {% sample lang="C++" %}
-[import:46-59, unindent:"true", lang:"cpp"](code/c++/Tree.cpp)
+[import:46-59, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="C#" %}
 [import:36-52, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="C" %}
@@ -177,16 +177,16 @@ Do you think we should be using real code snippets in the main text or stick the
 [import:2-, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="C" %}
 ### C
-[import:2-, unindent:"true", lang:"csharp"](code/c/Tree_example.c)
+[import:2-, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="javascript" %}
 ### JavaScript
-[import:1-, unindent:"true", lang:"csharp"](code/javascript/Tree_example.js)
+[import:1-, unindent:"true", lang:"html"](code/javascript/Tree_example.js)
 {% sample lang="python2" %}
 ### Python 2
-[import:1-, unindent:"true", lang:"py"](code/python2/Tree_example.py)
+[import:1-, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="python3" %}
 ### Python 3
-[import:1-, unindent:"true", lang:"py"](code/python3/Tree_example.py)
+[import:1-, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
 ![scratch tree](code/scratch/scratch_tree.png)

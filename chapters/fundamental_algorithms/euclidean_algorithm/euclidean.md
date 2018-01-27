@@ -28,20 +28,24 @@ Computer science is (almost by definition) a science about computers -- a device
 The algorithm is a simple way to find the *greatest common divisor* (GCD) of two numbers, which is useful for a number of different applications (like reducing fractions). The first method (envisioned by Euclid) uses simple subtraction:
 
 {% method %}
-{% sample lang="pseudo" %}
-```python
-function euclid_sub(a::Int64, b::Int64)
-    while (a != b)
-        if (a > b)
-            a = a - b
-        else
-            b = b - a
-        end
-    end
-end
-```
+{% sample lang="C" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="C#" %}
-[import:6-17, unindent:"true", lang="csharp"](code/EuclideanAlgorithmMdAdditional.cs)
+[import:6-17, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+{% sample lang="C++" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="javascript" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="python" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="haskell" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="rust" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="ocaml" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="java" %}
+[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -51,19 +55,24 @@ Here, we simply line the two numbers up every step and subtract the lower value 
 Modern implementations, though, often use the modulus operator (%) like so
 
 {% method %}
-{% sample lang="pseudo" %}
-```python
-function euclid_mod(a::Int64, b::Int64)
-    temp = Int64
-    while (b != 0)
-        temp = b
-        b = a%b
-        a = temp
-    end
-end
-```
+{% sample lang="C" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="C#" %}
-[import:19-29, unindent:"true", lang="csharp"](code/EuclideanAlgorithmMdAdditional.cs)
+[import:19-29, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+{% sample lang="C++" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="javascript" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="python" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="haskell" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="rust" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="ocaml" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="java" %}
+[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -73,338 +82,35 @@ Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was las
 The Euclidean Algorithm is truly fundamental to many other algorithms throughout the history of computer science and will definitely be used again later. At least to me, it's amazing how such an ancient algorithm can still have modern use and appeal. That said, there are still other algorithms out there that can find the greatest common divisor of two numbers that are arguably better in certain cases than the Euclidean algorithm, but the fact that we are discussing Euclid two millenia after his death shows how timeless and universal mathematics truly is. I think that's pretty cool.
 
 # Example Code
-### C++
-```cpp
-// originally contributed by James Schloss (Leios)
-// restyled by Nicole Mazzuca (ubsan)
-#include <iostream>
-#include <cmath>
 
-// Euclidean algorithm using modulus
-int euclid_mod(int a, int b)
-{
-    a = std::abs(a);
-    b = std::abs(b);
-    while (b != 0) {
-        int temp = b;
-        b = a%b;
-        a = temp;
-    }
-
-    return a;
-}
-
-// Euclidean algorithm with subtraction
-int euclid_sub(int a, int b)
-{
-    a = std::abs(a);
-    b = std::abs(b);
-    while (a != b) {
-        if (a > b) {
-            a -= b;
-        }
-        else {
-            b -= a;
-        }
-    }
-
-    return a;
-}
-
-int main()
-{
-    auto check1 = euclid_mod(64*67, 64*81);
-    auto check2 = euclid_sub(128*12, 128*77);
-
-    std::cout << check1 << '\n';
-    std::cout << check2 << '\n';
-}
-
-```
-
+{% method %}
+{% sample lang="C" %}
 ### C
-```c
-#include <stdio.h>
-#include <math.h>
-
-int euclid_mod(int a, int b)
-{
-    a = abs(a);
-    b = abs(b);
-
-    while (b != 0){
-        int temp = b;
-        b = a%b;
-        a = temp;
-    }
-
-    return a;
-}
-
-int euclid_sub(int a, int b)
-{
-    a = abs(a);
-    b = abs(b);
-
-    while (a != b) {
-        if (a > b) {
-            a -= b;
-        }
-        else {
-            b -= a;
-        }
-    }
-
-    return a;
-}
-
-int main()
-{
-    int check1 = euclid_mod(64*67, 64*81);
-    int check2 = euclid_sub(128*12, 128*77);
-
-    printf("%d\n", check1);
-    printf("%d\n", check2);
-}
-
-```
-
-### JavaScript
-
-```html
-<!DOCTYPE html>
-<html>
-<body>
-<script>
-function euclid_mod(a, b){
-    a = Math.abs(a);
-    b = Math.abs(b);
-
-    var temp;
-    while (b != 0){
-        temp = b;
-        b = a%b;
-        a = temp;
-    }
-
-    return a;
-}
-
-function euclid_sub(a, b){
-    a = Math.abs(a);
-    b = Math.abs(b);
-
-    while (a != b){
-        if (a > b){
-            a = a - b;
-        }
-        else{
-            b = b - a;
-        }
-    }
-
-    return a;
-}
-
-document.write(euclid_mod(64*67, 64*81) + "<br>");
-document.write(euclid_sub(128*12, 128*77) + "<br>");
-</script>
-</body>
-</html>
-```
-
-### Python
-
-```python
-
-#  euclidean.py
-
-def euclid_mod(a, b):
-
-    a = abs(a)
-    b = abs(b)
-    temp = 0
-
-    while b > 0:
-        temp = b
-        b = a % b
-        a = temp
-
-    return a
-
-def euclid_sub(a, b):
-
-    a = abs(a)
-    b = abs(b)
-
-    while a != b:
-        if a > b:
-            a = a - b
-        else:
-            b = b - a
-
-    return a
-
-print euclid_mod(64 * 67, 64 * 81)
-print euclid_sub(128 * 12, 128 * 77)
-```
-
+[import:1-, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
+{% sample lang="C#" %}
 ### C# #
-
-```cs
-// submitted by Julian Schacher (jspp)
-
-using System;
-using ArcaneAlgorithmArchive.FundamentalAlgorithms.EuclideanAlgorithm;
-
-namespace ArcaneAlgorithmArchiveCLI
-{
-    class MainClass
-    {
-        public static void Main(string[] args)
-        {
-            int check = EuclideanAlgorithm.EuclidMod(64 * 67, 64 * 81);
-            int check2 = EuclideanAlgorithm.EuclidSub(128 * 12, 128 * 77);
-            
-            Console.WriteLine(check);
-            Console.WriteLine(check2);
-		}
-	}
-}
-```
-[import:2-, lang:"csharp"](code/EuclideanAlgorithm.cs)
-
+[import:2-, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+{% sample lang="C++" %}
+### C
+[import:3-, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
+{% sample lang="javascript" %}
+### JavaScript
+[import:1-, unindent:"true", lang="html"](code/javascript/euclidean_example.js)
+{% sample lang="python" %}
+### Python
+[import:1-, unindent:"true", lang="python"](code/python2/euclidean_example.py)
+{% sample lang="haskell" %}
 ### Haskell
-
-```haskell
--- contributed by Nicole Mazzuca (ubsan)
-
-euclidSub :: Integer -> Integer -> Integer
-euclidSub a b = inner (abs a) (abs b) where
-  inner a b =
-    if a == b then
-      a
-    else if a < b then
-      euclidSub a (b - a)
-    else
-      euclidSub (a - b) b
-
-euclidMod :: Integer -> Integer -> Integer
-euclidMod a b = inner (abs a) (abs b) where
-  inner a 0 = a
-  inner a b = inner b (a `mod` b)
-
-main :: IO ()
-main = do
-  let chk1 = euclidMod (64 * 67) (64 * 81)
-      chk2 = euclidSub (128 * 12) (128 * 77)
-  putStrLn (show chk1)
-  putStrLn (show chk2)
-  return ()
-```
-
+[import:3-, unindent:"true", lang="haskell"](code/haskell/euclidean_example.hs)
+{% sample lang="rust" %}
 ### Rust
-
-```rust
-// contributed by Nicole Mazzuca (ubsan)
-
-fn euclid_sub(mut a: i64, mut b: i64) -> i64 {
-    a = a.abs();
-    b = b.abs();
-    while a != b {
-        if a < b {
-            b -= a;
-        } else {
-            a -= b;
-        }
-    }
-
-    a
-}
-
-fn euclid_rem(mut a: i64, mut b: i64) -> i64 {
-    a = a.abs();
-    b = b.abs();
-    while b != 0 {
-        let tmp = b;
-        b = a % b;
-        a = tmp;
-    }
-
-    a
-}
-
-fn main() {
-    let chk1 = euclid_rem(64 * 67, 64 * 81);
-    let chk2 = euclid_sub(128 * 12, 128 * 77);
-    println!("{}", chk1);
-    println!("{}", chk2);
-}
-```
-
-### OCaml
-
-```ocaml
-(* contributed by Nicole Mazzuca (ubsan) *)
-
-let euclid_mod a b =
-  let rec inner a = function
-  | 0 -> a
-  | b -> inner b (a mod b)
-  in (inner (abs a) (abs b))
-
-let euclid_sub a b =
-  let rec inner a b =
-    if a = b then
-      a
-    else if a < b then
-      inner a (b - a)
-    else
-      inner (a - b) b
-  in (inner (abs a) (abs b))
-
-let chk1 = euclid_mod (64 * 67) (64 * 81)
-let chk2 = euclid_sub (128 * 12) (128 * 77)
-let () =
-  chk1 |> print_int |> print_newline;
-  chk2 |> print_int |> print_newline
-```
-
+[import:3-, unindent:"true", lang="rust"](code/rust/euclidean_example.rs)
+{% sample lang="ocaml" %}
+### Ocaml
+[import:3-, unindent:"true", lang="ocaml"](code/ocaml/euclidean_example.ml)
+{% sample lang="java" %}
 ### Java
-```java
-// sumbitted by lolatomroflsinnlos
-public static void main(String[] args) {
+[import:2-, unindent:"true", lang="java"](code/java/euclidean_example.jar)
+{% sample lang="C" %}
+{% endmethod %}
 
-    System.out.println(euclidSub(64 * 67, 64 * 81));
-    System.out.println(euclidMod(128 * 12, 128 * 77));
-
-}
-
-public static int euclidSub(int a, int b) {
-    a = Math.abs(a);
-    b = Math.abs(b);
-
-    while (a != b) {
-        if (a > b) {
-            a -=b;
-        } else {
-            b -=a;
-        }
-    }
-
-    return a;
-}
-
-public static int euclidMod(int a, int b) {
-    a = Math.abs(a);
-    b = Math.abs(b);
-
-    while (b != 0){
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-
-    return a;
-}
-```

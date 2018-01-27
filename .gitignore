@@ -19,5 +19,8 @@ _book
 *.mobi
 *.pdf
 
+# Other
+*.xcf
+
 # End of https://www.gitignore.io/api/gitbook
 
