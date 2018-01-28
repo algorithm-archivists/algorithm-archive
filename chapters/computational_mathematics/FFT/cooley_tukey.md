@@ -89,18 +89,20 @@ Where $$X_n$$ and $$x_n$$ are sequences of $$N$$ numbers in frequency and real s
 In principle, this is no easier to understand than the previous case! 
 For some reason, though, putting code to this transformation really helped me figure out what was actually going on.
 
-```
-function DFT(x::Array{Float64})
-    N = length(x)
-
-    # We want two vectors here for real space (n) and frequency space (k)
-    n = 0:N-1
-    k = n'
-    M = exp(-2im * pi *n *k / N)
-    return x * M
-
-end
-```
+{% method %}
+{% sample lang="Julia" %}
+[import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="C" %}
+[import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="C++" %}
+[import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="Haskell" %}
+[import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="Python" %}
+[import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="Scratch" %}
+[import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column. 
 We then set `k` to be the same thing, but in a row. 
@@ -132,29 +134,20 @@ We can also perform a similar re-ordering by using a bit reversal scheme, where 
 With recursion, we can reduce the complexity to $$\sim \mathcal{O}(n \log n)$$, which is a feasible operation. 
 
 In the end, the code looks like:
-```
-# Implementing the Cooley-Tukey Algorithm
-function cooley_tukey(x)
-    N = length(x)
-
-    if(N%2 !=0)
-        println("Must be a power of 2!")
-        exit(0)
-    end
-    if(N <= 2)
-        return DFT(x)
-    else
-        x_even = cooley_tukey(x[1:2:N])
-        x_odd = cooley_tukey(x[2:2:N])
-        n = 0:N-1
-        half = div(N,2)
-        factor = exp(-2im*pi*n/N)
-        return vcat(x_even + factor[1:half] .* x_odd,
-                     x_even + factor[half+1:N] .* x_odd) 
-    end
-    
-end
-```
+{% method %}
+{% sample lang="Julia" %}
+[import:14-31, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="C" %}
+[import:13-35, unindent:"true", lang:"c_cpp"](code/c/fft.c)
+{% sample lang="C++" %}
+[import:19-44, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
+{% sample lang="Haskell" %}
+[import:6-19, unindent:"true", lang:"haskell"](code/hs/fft.hs)
+{% sample lang="Python" %}
+[import:5-16, unindent:"true", lang:"python"](code/python2/fft.py)
+{% sample lang="Scratch" %}
+[import:14-31, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work. 
 This is a limitation of the fact that we are using recursion and dividing the array in 2 every time; however, if your array is not a power of 2, you can simply pad the leftover space with 0's until your array is a power of 2.
@@ -237,487 +230,24 @@ As before, pull requests are favoured.
 Note: I implemented this in Julia because the code seems more straightforward in Julia; however, if you wish to write better Julia code or better code in your own language, please feel free to do so!
 **I do not claim that this is the most efficient way to implement the Cooley-Tukey method, so if you have a better way to do it, feel free to implement it that way!**
 
-#### Julia
-
-```julia
-#simple DFT function
-function DFT(x)
-    N = length(x)
-
-    # We want two vectors here for real space (n) and frequency space (k)
-    n = 0:N-1
-    k = n'
-    transform_matrix = exp.(-2im * pi *n *k / N)
-    return transform_matrix*x
-
-end
-
-# Implementing the recursively Cooley-Tukey Algorithm
-function cooley_tukey(x)
-    N = length(x)
-
-    if (N > 2)
-        x_odd = cooley_tukey(x[1:2:N])
-        x_even = cooley_tukey(x[2:2:N])
-    else
-        x_odd = x[1]
-        x_even = x[2]
-    end
-    n = 0:N-1
-    half = div(N,2)
-    factor = exp.(-2im*pi*n/N)
-
-    return vcat(x_odd + x_even .* factor[1:half],
-                x_odd - x_even .* factor[1:half]) 
-
-end
-
-# Helper function for iterative Cooley Tukey
-function bitreverse(a::Array)
-    # First, we need to find the necessary number of bits
-    digits = convert(Int,ceil(log2(length(a))))
-
-    # Creating a range for the current element order
-    # To be odified later
-    indices = [i for i = 0:length(a)-1]
-
-    # Creating a list of all the bits to flip later
-    bit_indices = []
-    for i = 1:length(indices)
-        push!(bit_indices, bits(indices[i]))
-    end
-
-    # Now stripping the unnecessary numbers
-    for i = 1:length(bit_indices)
-        bit_indices[i] = bit_indices[i][end-digits:end]
-    end
-
-    # Flipping the bits
-    for i =1:length(bit_indices)
-        bit_indices[i] = reverse(bit_indices[i])
-    end
-
-    #replacing indices
-    for i = 1:length(indices)
-        indices[i] = 0
-        for j = 1:digits
-            indices[i] += 2^(j-1) * parse(string(bit_indices[i][end-j]))
-        end
-       indices[i] += 1
-    end
-
-    # replacing the elements as necessary
-    b = [float(i) for i = 1:length(a)]
-    for i = 1:length(indices)
-        b[i] = a[indices[i]]
-    end
-
-    return b
-end
-
-# Iterative FFT method, requires butterfly() and bit_reverse()
-function iterative_cooley_tukey(x)
-    N = length(x)
-    logN = convert(Int,ceil(log2(length(x))))
-
-    # Number of butterflies every iteration, starting at logN / 2
-    bnum = div(N,2)
-
-    # The distance between butterflies
-    stride = 0;
-
-    # Function found above
-    x = bitreverse(x)
-
-    z = [Complex(x[i]) for i = 1:length(x)]
-    for i = 1:logN
-       stride = div(N, bnum)
-       for j = 0:bnum-1
-           start_index = j*stride + 1
-           y = butterfly(z[start_index:start_index + stride - 1])
-           for k = 1:length(y)
-               z[start_index+k-1] = y[k]
-           end
-       end 
-
-       # Halving butterfly number every timestep
-       bnum = div(bnum,2)
-    end
-
-    return z
-end
-
-# Reads in an array and performs a butterfly operation over the array
-function butterfly(x)
-    N = length(x)
-    half = div(N,2)
-    n = [i for i = 0:N-1]
-    half = div(N,2)
-    factor = exp.(-2im*pi*n/N)
-
-    y = [0 + 0.0im for i = 1:length(x)]
-
-    for i = 1:half
-        y[i] = x[i] + x[half+i]*factor[i]
-        y[half+i] = x[i] - x[half+i]*factor[i]
-    end
-
-    return y
-end
-
-# Simple implementation of approximation function
-function approx(x, y)
-    val = true
-    for i = 1:length(x)
-        if (abs(x[i]) - abs(y[i]) > 1e-5)
-            val = false
-        end
-    end
-    println(val)
-end
-
-function main()
-    x = rand(128)
-    y = cooley_tukey(x)
-    z = iterative_cooley_tukey(x)
-    w = fft(x)
-    approx(w,y)
-    approx(w,z)
-end
-
-main()
-```
-
-#### Haskell
-
-```hs
---- submitted by Jie
-import Data.Complex
-import Data.Array
-import Data.Ratio
-import qualified Data.Map as M
-
-fft :: [Complex Double] -> [Complex Double]
-fft x = let n = length x
-            i = 0 :+ 1
-            w = M.fromList [(k%n, exp ((-2)*pi*i*(fromIntegral k)/(fromIntegral n)) ) | k<-[0..n-1]]
-            arr = fft' n w (listArray (0,n-1) x)
-        in [arr!k | k<-[0..n-1]]
-  where
-  fft' 1 _ x = x
-  fft' n w x = let n2 = div n 2
-                   e = fft' n2 w (listArray (0, n2-1) [x!k | k<-[0,2..n-1]])
-                   o = fft' n2 w (listArray (0, n2-1) [x!k | k<-[1,3..n-1]])
-               in array (0, n-1) $ concat [[(k, e!k + o!k * w M.!(k%n)),
-                                            (k + n2, e!k - o!k * w M.!(k%n))]
-                                                               | k <- [0..n2-1]]
-
-main = do
-  print $ fft [0,1,2,3]
-
-```
-
-#### Scratch
-
+{% method %}
+{% sample lang="Julia" %}
+### Julia
+[import:1-, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="C" %}
+### C
+[import:1-, unindent:"true", lang:"c_cpp"](code/c/fft.c)
+{% sample lang="C++" %}
+### C++
+[import:1-, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
+{% sample lang="Haskell" %}
+### Haskell
+[import:1-, unindent:"true", lang:"haskell"](code/hs/fft.hs)
+{% sample lang="Python" %}
+### Python
+[import:1-, unindent:"true", lang:"python"](code/python2/fft.py)
+{% sample lang="Scratch" %}
+### Scratch
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
+{% endmethod %}
 
-#### C
-
-```c
-// written by Gathros.
-
-#include <complex.h>
-#include <math.h>
-
-// These headers are for presentation not for the algorithm.
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-
-#define PI 3.1415926535897932384626
-
-void cooley_tukey(double complex *X, const size_t N){
-        if(N >= 2){
-                // Splits the array, so the top half are the odd elements 
-		// and the bottom half are the even ones.
-                double complex tmp [N/2];
-                for(size_t i = 0; i < N/2; ++i){
-                        tmp[i] = X[2*i + 1];
-                        X[i] = X[2*i];
-                }
-                for(size_t i = 0; i < N/2; ++i){
-                        X[i + N/2] = tmp[i];
-                }
-
-                // Recursion.
-                cooley_tukey(X, N/2);
-                cooley_tukey(X + N/2, N/2);
-
-                // Combine.
-                for(size_t i = 0; i < N/2; ++i){
-                        X[i + N/2] = X[i] - cexp(-2.0*I*PI*i/N)*X[i + N/2];
-                        X[i] -= (X[i + N/2]-X[i]);
-                }
-        }
-}
-
-void bit_reverse(double complex *X, size_t N){
-        // Bit reverses the array X[] but only if the size of the array is less then 2^32.
-                double complex temp;
-        unsigned int b;
-
-        for(unsigned int i = 0; i < N; ++i){
-                b = i;
-                b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
-                b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
-                b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
-                b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-                b = ((b >> 16) | (b << 16)) >> (32 - (unsigned int) log2((double)N));
-                if(b > i){
-                        temp = X[b];
-                        X[b] = X[i];
-                        X[i] = temp;
-                }
-        }
-}
-
-void iterative_cooley_tukey(double complex *X, size_t N){
-        int stride;
-        double complex v,w;
-
-        // Bit reverse the array.
-        bit_reverse(X, N);
-
-        // Preform the butterfly on the array.
-        for(int i = 1; i <= log2((double)N); ++i){
-                stride = pow(2, i);
-                w = cexp(-2.0*I*PI/stride);
-                for(size_t j = 0; j < N; j += stride){
-                        v = 1.0;
-                        for(size_t k = 0; k < stride/2; k++){
-                                X[k + j + stride/2] = X[k + j] - v*X[k + j + stride/2];
-                                X[k + j] -= (X[k + j + stride/2] - X[k + j]);
-                                v *= w;
-                        }
-                }
-        }
-}
-
-void approx(double complex *X, double complex *Y, size_t N){
-        // This is to show that the arrays are approximate.
-        for(size_t i = 0; i < N; ++i){
-                printf("%f\n", cabs(X[i]) - cabs(Y[i]));
-        }
-}
-
-int main(){
-        // Initalizing the arrays for FFT.
-        srand(time(NULL));
-        const size_t N = 64;
-        double complex x[N], y[N], z[N];
-        for(size_t i = 0; i < N; ++i){
-                x[i] = rand() / (double) RAND_MAX;
-                y[i] = x[i];
-                z[i] = x[i];
-        }
-
-        // Preform FFT.
-        cooley_tukey(y, N);
-        iterative_cooley_tukey(z, N);
-
-        // Check if the different methods are approximate.
-        approx(y, z, N);
-
-        return 0;
-}
-
-```
-
-#### C++
-
-```c++
-// written by Gathros, modernized by Nicole Mazzuca.
-
-#include <complex>
-#include <vector>
-#include <array>
-#include <cstdint>
-
-// These headers are for presentation not for the algorithm.
-#include <random>
-#include <iostream>
-#include <iomanip>
-
-using c64 = std::complex<double>;
-template <typename T>
-constexpr T pi() {
-  return 3.14159265358979323846264338327950288419716;
-}
-
-template <typename Iter, typename Iter_end>
-void cooley_tukey(Iter start, Iter_end end) {
-  auto size = end - start;
-  if (size >= 2) {
-    // Splits the array, so the top half are the odd elements and the bottom are the even ones.
-    auto temp = std::vector<c64>(size / 2);
-    for (std::size_t i = 0; i < size / 2; ++i) {
-      temp[i] = start[i * 2 + 1];
-      start[i] = start[i * 2];
-    }
-    for (std::size_t i = 0; i < size / 2; ++i) {
-      start[i + size / 2] = temp[i];
-    }
-
-    // Recursion.
-    cooley_tukey(start, start + size / 2);
-    cooley_tukey(start + size / 2, end);
-
-    // Combine.
-    for (std::size_t k = 0; k < size / 2; ++k) {
-      auto w = std::exp(c64(0, -2.0 * pi<double>() * k / size));
-      start[k + size / 2] = start[k] - w * start[k + size / 2];
-      start[k] -= (start[k + size / 2] - start[k]);
-    }
-  }
-}
-
-
-template <typename Iter, typename Iter_end>
-void bit_reverse(Iter start, Iter_end end) {
-  // Bit reverses the array X[] but only if the size of the array is less then 2^32.
-  auto size = end - start;
-
-  for (std::uint32_t i = 0; i < size; ++i) {
-    auto b = i;
-    b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
-    b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
-    b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
-    b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-    b = ((b >> 16) | (b << 16)) >> (32 - std::uint32_t(log2(size)));
-    if (b > i) {
-      std::swap(start[b], start[i]);
-    }
-  }
-}
-
-template <typename Iter, typename Iter_end>
-void iterative_cooley_tukey(Iter start, Iter_end end) {
-  // Bit reverse the array.
-  bit_reverse(start, end);
-
-  //Preform the butterfly on the array.
-  auto size = end - start;
-  for (std::size_t stride = 2; stride <= size; stride *= 2) {
-    auto w = exp(c64(0, -2.0 * pi<double>() / stride));
-    for (std::size_t j = 0; j < size; j += stride) {
-      auto v = c64(1.0);
-      for (std::size_t k = 0; k < stride / 2; k++) {
-        start[k + j + stride / 2] =
-          start[k + j] - v * start[k + j + stride / 2];
-        start[k + j] -= (start[k + j + stride / 2] - start[k + j]);
-        v *= w;
-      }
-    }
-  }
-}
-
-int main() {
-  // Initalizing the FFT inputs.
-  auto random_number_generator = std::mt19937_64();
-  auto generate_random_double = [&]() {
-    auto rn = random_number_generator();
-    return double(rn) / double(UINT64_MAX);
-  };
-
-  std::array<c64, 64> initial;
-
-  for (auto& el : initial) {
-    el = generate_random_double();
-  }
-
-  auto recursive = initial;
-  auto iterative = initial;
-
-  // Preform an FFT on the arrays.
-  cooley_tukey(recursive.begin(), recursive.end());
-  iterative_cooley_tukey(iterative.begin(), iterative.end());
-
-  // Check if the arrays are approximate.
-  std::cout
-    << std::right
-    << std::setw(16) << "idx"
-    << std::setw(16) << "rec"
-    << std::setw(16) << "it"
-    << std::setw(16) << "subtracted"
-    << '\n';
-  for (int i = 0; i < initial.size(); ++i) {
-    auto rec = recursive[i];
-    auto it = iterative[i];
-    std::cout
-      << std::setw(16) << i
-      << std::setw(16) << std::abs(rec)
-      << std::setw(16) << std::abs(it)
-      << std::setw(16) << (std::abs(rec) - std::abs(it))
-      << '\n';
-  }
-}
-
-```
-
-#### Python
-```python
-# Submitted by Gathros
-
-from random import random
-from cmath import exp, pi
-from math import log2
-
-def cooley_tukey(X):
-        N = len(X)
-        if N <= 1:
-                return X
-        even = cooley_tukey(X[0::2])
-        odd =  cooley_tukey(X[1::2])
-
-        temp = [i for i in range(N)]
-        for k in range(N//2):
-                temp[k] = even[k] + exp(-2j*pi*k/N) * odd[k]
-                temp[k+N//2] = even[k] - exp(-2j*pi*k/N)*odd[k]
-        return temp
-
-def bitReverse(X):
-        N = len(X)
-        temp = [i for i in range(N)]
-        for k in range(N):
-                b =  sum(1<<(int(log2(N))-1-i) for i in range(int(log2(N))) if k>>i&1)
-                temp[k] = X[b]
-                temp[b] = X[k]
-        return temp
-
-def iterative_cooley_tukey(X):
-        N = len(X)
-
-        X = bitReverse(X)
-
-        for i in range(1, int(log2(N)) + 1):
-                stride = 2**i
-                w = exp(-2j*pi/stride)
-                for j in range(0, N, stride):
-                        v = 1
-                        for k in range(stride//2):
-                                X[k + j + stride//2] = X[k + j] - v*X[k + j + stride//2];
-                                X[k + j] -= (X[k + j + stride//2] - X[k + j]);
-                                v *= w;
-        return X
-
-X = []
-
-for i in range(64):
-        X.append(random())
-
-Y = cooley_tukey(X)
-Z = iterative_cooley_tukey(X)
-
-print(all(abs([Y[i] - Z[i] for i in range(64)][j]) < 1 for j in range(64)))
-
-```

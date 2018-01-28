@@ -1,4 +1,4 @@
-Sruct node{
+struct node{
     std::vector<node> children;
     int ID;
 };
