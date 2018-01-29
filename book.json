@@ -38,6 +38,10 @@
 				{
 					"lang": "cs",
 					"name": "C#"	
+				},
+				{
+					"lang": "jl",
+					"name": "julia"
 				}
 			],
 			"split": true 
