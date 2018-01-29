@@ -26,17 +26,17 @@ $$
 Trees are naturally recursive data structures, and because of this, we cannot access their elements like we might access the elements of a vector or array. Instead, we need to use more interesting methods to work through each element. This is often called *Tree Traversal*, and there are many different ways to do this. For now, we will restrict the discussion to two common and related methods of tree traversal: *Depth-First* and *Breadth-First Search*. Note that trees vary greatly in shape and size depending on how they are used; however, they are composed primarily of nodes that house other, children nodes, like so:
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:1-4, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:11-15, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
@@ -45,17 +45,17 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:6-14, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:48-57, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 [import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 [import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
 [import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
@@ -71,17 +71,17 @@ Now, in this case the first element searched through is still the root of the tr
 
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:16-24, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:75-84, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 [import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 [import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
 [import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
@@ -93,17 +93,17 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:27-44, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:86-104, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 [import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 [import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
 [import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
@@ -123,17 +123,17 @@ Now, at this point, it might seem that the only way to search through a recursiv
 In code, it looks like this:
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:46-59, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:36-52, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
@@ -146,17 +146,17 @@ All this said, there are a few details about DFS that might not be idea, dependi
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:61-74, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:54-70, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:63-77, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:63-77, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
@@ -169,22 +169,22 @@ Do you think we should be using real code snippets in the main text or stick the
 
 # Example Code
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 ### C++
 [import:3-, unindent:"true", lang:"c_cpp"](code/c++/Tree_example.cpp)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 ### C# #
 [import:2-, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="C" %}
+{% sample lang="c" %}
 ### C
 [import:2-, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 ### JavaScript
 [import:1-, unindent:"true", lang:"html"](code/javascript/Tree_example.js)
-{% sample lang="python2" %}
+{% sample lang="py2" %}
 ### Python 2
 [import:1-, unindent:"true", lang:"python"](code/python2/Tree_example.py)
-{% sample lang="python3" %}
+{% sample lang="py3" %}
 ### Python 3
 [import:1-, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}

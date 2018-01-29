@@ -12,8 +12,28 @@
 					"default": true
 				},
 				{
-					"lang": "jl",
-					"name": "julia"
+					"lang": "js",
+					"name": "JavaScript"
+				},
+				{
+					"lang": "scratch",
+					"name": "SCRATCH"
+				},
+				{
+					"lang": "py3",
+					"name": "python 3"
+				},
+				{
+					"lang": "py2",
+					"name": "python 2"
+				},
+				{
+					"lang": "c",
+					"name": "C"
+				},
+				{
+					"lang": "cpp",
+					"name": "C++"
 				},
 				{
 					"lang": "cs",
