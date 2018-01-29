@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-<script>
 function euclid_mod(a, b){
     a = Math.abs(a);
     b = Math.abs(b);
@@ -32,9 +28,5 @@ function euclid_sub(a, b){
     return a;
 }
 
-document.write(euclid_mod(64*67, 64*81) + "<br>");
-document.write(euclid_sub(128*12, 128*77) + "<br>");
-</script>
-</body>
-</html>
-
+console.log(euclid_mod(64*67, 64*81));
+console.log(euclid_sub(128*12, 128*77));

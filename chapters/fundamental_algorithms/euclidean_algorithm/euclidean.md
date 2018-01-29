@@ -95,7 +95,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import:3-, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="javascript" %}
 ### JavaScript
-[import:1-, unindent:"true", lang="html"](code/javascript/euclidean_example.js)
+[import:1-, unindent:"true", lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="python" %}
 ### Python
 [import:1-, unindent:"true", lang="python"](code/python2/euclidean_example.py)

@@ -35,39 +35,10 @@ We keep repeating this process until we have returned to our priginal point.
 The set of points chosen in this simulation will be the convex hull. 
 Here is what this might look like in code:
 
-```julia
-type Pos
-    Float64 x,y
-end
-
-function jarvis_march(Vector{Pos} points)
-    Vector{Pos} hull
-    hull.append(leftmost(points))
-
-    Int64 i = 0
-    Pos curr_point = points[0]
-    Float64 curr_theta = angle({0,0}, hull[0], curr_point)
-    while (curr_point != hull[0])
-        for point in points
-            Float64 theta
-            if (i > 0)
-                theta = angle(hull[i-1], hull[i], point)
-            else
-                theta = angle({0,0}, hull[i], point)
-            end
-
-            if (theta > curr_theta)
-                curr_point = point
-                curr_theta = theta
-            end
-        end
-        hull.append(curr_point)
-        i++
-    end
-
-    return hull
-end
-```
+{% method %}
+{% sample lang="pseudo" %}
+[import:1-32, unindent:"true", lang:"julia"](code/pseudo/jarvis.pseudo)
+{% endmethod %}
 
 As we might expect, this algorithm is not incredibly efficient and has a runtime of $$\mathcal{O}(nh)$$, where $$n$$ is the number of points and $$h$$ is the size of the hull.
 As a note, the Jarvis March can be generalized to higher dimensions.

@@ -31,13 +31,13 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="C#" %}
 [import:11-15, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="C" %}
-[import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:6-10, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="javascript" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="python2" %}
-[import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:1-5, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="python3" %}
-[import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:5-10, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
 [import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% endmethod %}
@@ -50,11 +50,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="C#" %}
 [import:48-57, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="C" %}
-[import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:81-92, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="javascript" %}
-[import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:15-23, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="python2" %}
-[import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:8-16, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="python3" %}
 [import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% sample lang="scratch" %}
@@ -90,7 +90,6 @@ Now, in this case the first element searched through is still the root of the tr
 ![DFS ordering post](DFS_post.png)
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
-
 
 {% method %}
 {% sample lang="C++" %}
@@ -128,13 +127,15 @@ In code, it looks like this:
 {% sample lang="C#" %}
 [import:36-52, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="C" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:18-20, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import:37-48, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import:94-113, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="javascript" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:25-40, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="python2" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:25-36, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="python3" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:31-45, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% endmethod %}
@@ -151,21 +152,16 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="C#" %}
 [import:54-70, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="C" %}
-[import:63-77, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:115-135, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="javascript" %}
-[import:63-77, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:42-57, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="python2" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:38-49, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="python3" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:48-62, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
 [import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
 {% endmethod %}
-
-# Point of Discussion
-I have used C++ syntax for this chapter; however, this goes against my policy to keep the Algorithm Archive language-indifferent. On the one had, it's nice to see compilable code in the archive. On the other had, I don't want this to become a C++ book. I think I will try to come up with a clear psudocode scheme and use it throughout this book from now on, but I wanted to hear your thoughts.
-
-Do you think we should be using real code snippets in the main text or stick them at the end?
 
 # Example Code
 {% method %}
@@ -180,7 +176,7 @@ Do you think we should be using real code snippets in the main text or stick the
 [import:2-, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="javascript" %}
 ### JavaScript
-[import:1-, unindent:"true", lang:"html"](code/javascript/Tree_example.js)
+[import:1-, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="python2" %}
 ### Python 2
 [import:1-, unindent:"true", lang:"python"](code/python2/Tree_example.py)

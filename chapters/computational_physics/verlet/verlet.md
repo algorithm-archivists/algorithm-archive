@@ -126,6 +126,6 @@ Submitted by P. Mekhail
 ![Verlet LabVIEW](code/labview/verlet_labview.png)
 {% sample lang="javascript" %}
 ### JavaScript
-[import:2-, unindent:"true", lang:"html"](code/javascript/verlet.js)
+[import:2-, unindent:"true", lang:"javascript"](code/javascript/verlet.js)
 
 {% endmethod %}

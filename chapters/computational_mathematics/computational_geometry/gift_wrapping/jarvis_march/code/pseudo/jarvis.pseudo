@@ -1,0 +1,33 @@
+type Pos
+    Float64 x,y
+}
+
+function jarvis_march(Vector{Pos} points){
+    Vector{Pos} hull
+    hull.append(leftmost(points))
+
+    Int64 i = 0
+    Pos curr_point = points[0]
+    Float64 curr_theta = angle({0,0}, hull[0], curr_point)
+    while (curr_point != hull[0]){
+        for point in points
+            Float64 theta
+            if (i > 0){
+                theta = angle(hull[i-1], hull[i], point)
+            }
+            else{
+                theta = angle({0,0}, hull[i], point)
+            }
+
+            if (theta > curr_theta){
+                curr_point = point
+                curr_theta = theta
+            }
+        end
+        hull.append(curr_point)
+        i++
+    }
+
+    return hull
+}
+

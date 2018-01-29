@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<body>
-<script>
 function create_tree(n, num_row, num_child){
-        n.ID = num_row;
+    n.ID = num_row;
     n.children = [];
         if(num_row == 0){
                 return;
@@ -17,7 +13,7 @@ function create_tree(n, num_row, num_child){
 };
 
 function DFS_recursive(n){
-        document.write(n.ID + "<br>");
+    console.log(n.ID);
     if(n.children.length == 0){
         return;
     }
@@ -27,13 +23,13 @@ function DFS_recursive(n){
 }
 
 function DFS_stack(n){
-        var s = [];
+    var s = [];
     s.push(n);
     var temp;
     
     while(s.length > 0){
         temp = s.pop();
-        document.write(temp.ID + "<br>");
+        console.log(temp.ID);
         for(var i = 0; i < temp.children.length; ++i){
                 if(temp.children.length == 0){
                 break;
@@ -44,13 +40,13 @@ function DFS_stack(n){
 }
 
 function BFS_queue(n){
-        var q = [];
+    var q = [];
     q.push(n);
     var temp;
     
     while(q.length > 0){
         temp = q.shift();
-        document.write(temp.ID + "<br>");
+        console.log(temp.ID);
         for(var i = 0; i < temp.children.length; ++i){
                 if(temp.children.length == 0){
                 break;
@@ -65,7 +61,3 @@ create_tree(root, 3, 3);
 //DFS_recursive(root);
 //DFS_stack(root);
 BFS_queue(root);
-</script>
-</body>
-<html>
-

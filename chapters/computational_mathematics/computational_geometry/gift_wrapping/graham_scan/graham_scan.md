@@ -34,15 +34,10 @@ We do this by looking for counter-clockwise rotations.
 If an angle between three points turns inward, the shape is obviously not convex, so we can throw that result out.
 We can find whether a rotation is counter-clockwise with trigonometric functions or by using a cross-product, like so:
 
-```julia
-type Point
-    Float64 x,y
-end
-
-function ccw(Point a, Point b, Point c)
-    return (b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x - a.x)
-end
-```
+{% method %}
+{% sample lang="pseudo" %}
+[import:1-7, unindent=true, lang:"julia"](code/pseudo/graham.pseudo)
+{% endmethod %}
 
 If the output of this function is 0, the points are collinear.
 If the output is positive, then the points form a counter-clockwise "left" turn.
@@ -55,38 +50,10 @@ To save memory and expensive `append()` operations, we ultimately look for point
 If there are $$M$$ elements on the hull, then the first $$M$$ elements in our output random distribution of points will be the hull. 
 In the end, the code should look something like this:
 
-```julia
-function graham_scan(Vector{Point} points)
-    N = length(points)
-
-    # Place the lowest point at the start of the array
-    swap(points[0], lowest(points[0]))
-    
-    # Sort according to angle with that point
-    # Note: Not sure how to show lambda functions in psuedocode...
-    sort(points, points[c] -> angle({0,0}, points[0], c)
-
-    # M will be the point on the hull
-    Int64 M = 1
-    for i = 2:N
-        while (ccw(points[M-1], points[M], points[i]) <= 0)
-            # Removing the ccw point from the hull by skipping its index
-            if M > 1
-                M -= 1
-            # All points are collinear
-            else if (i == N)
-                break
-            else 
-                i++
-            end
-        end
-
-        # ccw point found, updating hull and swapping points
-        M++
-        swap(points[i], points[m])
-    end
-end
-```
+{% method %}
+{% sample lang="pseudo" %}
+[import:9-40, unindent=true, lang:"julia"](code/pseudo/graham.pseudo)
+{% endmethod %}
 
 ### Bibliography
 
