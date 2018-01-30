@@ -18,6 +18,30 @@
 				{
 					"lang": "cs",
 					"name": "C#"	
+				},
+				{
+					"lang": "cpp",
+					"name": "C++"
+				},
+				{
+					"lang": "c",
+					"name": "C"
+				},
+				{
+					"lang": "py2",
+					"name": "python 2"
+				},
+				{
+					"lang": "py3",
+					"name": "python 3"
+				},
+				{
+					"lang": "js",
+					"name": "JavaScript"
+				},
+				{
+					"lang": "scratch",
+					"name": "Scratch"
 				}
 			],
 			"split": true 
