@@ -90,17 +90,17 @@ In principle, this is no easier to understand than the previous case!
 For some reason, though, putting code to this transformation really helped me figure out what was actually going on.
 
 {% method %}
-{% sample lang="Julia" %}
+{% sample lang="jl" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="Haskell" %}
+{% sample lang="hs" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="Python" %}
+{% sample lang="py2" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="Scratch" %}
+{% sample lang="scratch" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
 {% endmethod %}
 
@@ -135,17 +135,17 @@ With recursion, we can reduce the complexity to $$\sim \mathcal{O}(n \log n)$$, 
 
 In the end, the code looks like:
 {% method %}
-{% sample lang="Julia" %}
+{% sample lang="jl" %}
 [import:14-31, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:13-35, unindent:"true", lang:"c_cpp"](code/c/fft.c)
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:19-44, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
-{% sample lang="Haskell" %}
+{% sample lang="hs" %}
 [import:6-19, unindent:"true", lang:"haskell"](code/hs/fft.hs)
-{% sample lang="Python" %}
+{% sample lang="py2" %}
 [import:5-16, unindent:"true", lang:"python"](code/python2/fft.py)
-{% sample lang="Scratch" %}
+{% sample lang="scratch" %}
 [import:14-31, unindent:"true", lang:"julia"](code/julia/fft.jl)
 {% endmethod %}
 
@@ -231,22 +231,22 @@ Note: I implemented this in Julia because the code seems more straightforward in
 **I do not claim that this is the most efficient way to implement the Cooley-Tukey method, so if you have a better way to do it, feel free to implement it that way!**
 
 {% method %}
-{% sample lang="Julia" %}
+{% sample lang="jl" %}
 ### Julia
 [import:1-, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="C" %}
+{% sample lang="c" %}
 ### C
 [import:1-, unindent:"true", lang:"c_cpp"](code/c/fft.c)
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 ### C++
 [import:1-, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
-{% sample lang="Haskell" %}
+{% sample lang="hs" %}
 ### Haskell
 [import:1-, unindent:"true", lang:"haskell"](code/hs/fft.hs)
-{% sample lang="Python" %}
+{% sample lang="py2" %}
 ### Python
 [import:1-, unindent:"true", lang:"python"](code/python2/fft.py)
-{% sample lang="Scratch" %}
+{% sample lang="scratch" %}
 ### Scratch
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
 {% endmethod %}
