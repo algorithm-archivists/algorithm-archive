@@ -26,6 +26,8 @@ $$
 Trees are naturally recursive data structures, and because of this, we cannot access their elements like we might access the elements of a vector or array. Instead, we need to use more interesting methods to work through each element. This is often called *Tree Traversal*, and there are many different ways to do this. For now, we will restrict the discussion to two common and related methods of tree traversal: *Depth-First* and *Breadth-First Search*. Note that trees vary greatly in shape and size depending on how they are used; however, they are composed primarily of nodes that house other, children nodes, like so:
 
 {% method %}
+{% sample lang="jl" %}
+[import:4-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:1-4, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
@@ -33,18 +35,20 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:6-10, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
-[import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:3-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
 [import:1-5, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
 [import:5-10, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:1-5, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:3-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
 
 {% method %}
+{% sample lang="jl" %}
+[import:11-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:6-14, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
@@ -56,9 +60,9 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="py2" %}
 [import:8-16, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
-[import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:10-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:7-15, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:10-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -71,20 +75,22 @@ Now, in this case the first element searched through is still the root of the tr
 
 
 {% method %}
+{% sample lang="jl" %}
+[import:21-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:16-24, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:75-84, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
-[import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py3" %}
-[import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:17-26, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 ![DFS ordering post](DFS_post.png)
@@ -92,20 +98,22 @@ Now, in this case the first element searched through is still the root of the tr
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
 
 {% method %}
+{% sample lang="jl" %}
+[import:32-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:27-44, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:86-104, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
-[import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py3" %}
-[import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:28-45, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 ![DFS ordering in](DFS_in.png)
@@ -122,6 +130,8 @@ Now, at this point, it might seem that the only way to search through a recursiv
 In code, it looks like this:
 
 {% method %}
+{% sample lang="jl" %}
+[import:50-61, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:46-59, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
@@ -137,7 +147,7 @@ In code, it looks like this:
 {% sample lang="py3" %}
 [import:31-45, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:49-61, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -147,6 +157,8 @@ All this said, there are a few details about DFS that might not be idea, dependi
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
 
 {% method %}
+{% sample lang="jl" %}
+[import:64-75, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:61-74, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
@@ -160,11 +172,13 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="py3" %}
 [import:48-62, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:47-61, unindent:"true", lang:"julia"](code/pseudo/Tree.pseudo)
+[import:63-75, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 # Example Code
 {% method %}
+### Julia
+[import:1-, unindent:"true", lang:"julia"](code/julia/Tree_example.jl)
 {% sample lang="cpp" %}
 ### C++
 [import:3-, unindent:"true", lang:"c_cpp"](code/c++/Tree_example.cpp)

@@ -7,13 +7,13 @@
 		"theme-api": {
 			"languages": [
 				{
-					"lang": "pseudo",
-					"name": "Pseudocode",
+					"lang": "jl",
+					"name": "Julia",
 					"default": true
 				},
 				{
-					"lang": "jl",
-					"name": "Julia"
+					"lang": "pseudo",
+					"name": "Pseudocode"
 				},
 				{
 					"lang": "cs",

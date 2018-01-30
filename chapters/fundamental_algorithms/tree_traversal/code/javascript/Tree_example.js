@@ -17,9 +17,9 @@ function DFS_recursive(n){
     if(n.children.length == 0){
         return;
     }
-        for(var i = 0; i < n.children.length; ++i){
-                DFS_recursive(n.children[i]);
-        }
+    for(var i = 0; i < n.children.length; ++i){
+            DFS_recursive(n.children[i]);
+    }
 }
 
 function DFS_stack(n){
