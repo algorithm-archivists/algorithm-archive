@@ -28,21 +28,21 @@ Computer science is (almost by definition) a science about computers -- a device
 The algorithm is a simple way to find the *greatest common divisor* (GCD) of two numbers, which is useful for a number of different applications (like reducing fractions). The first method (envisioned by Euclid) uses simple subtraction:
 
 {% method %}
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:6-17, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="python" %}
+{% sample lang="py2" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="haskell" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="rust" %}
+{% sample lang="rs" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="ocaml" %}
+{% sample lang="ml" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="java" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
@@ -55,21 +55,21 @@ Here, we simply line the two numbers up every step and subtract the lower value 
 Modern implementations, though, often use the modulus operator (%) like so
 
 {% method %}
-{% sample lang="C" %}
+{% sample lang="c" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 [import:19-29, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="python" %}
+{% sample lang="py2" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="haskell" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="rust" %}
+{% sample lang="rs" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
-{% sample lang="ocaml" %}
+{% sample lang="ml" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="java" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
@@ -84,33 +84,31 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 # Example Code
 
 {% method %}
-{% sample lang="C" %}
+{% sample lang="c" %}
 ### C
 [import:1-, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
-{% sample lang="C#" %}
+{% sample lang="cs" %}
 ### C# #
 [import:2-, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
-{% sample lang="C++" %}
+{% sample lang="cpp" %}
 ### C
 [import:3-, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 ### JavaScript
 [import:1-, unindent:"true", lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="python" %}
+{% sample lang="py2" %}
 ### Python
 [import:1-, unindent:"true", lang="python"](code/python2/euclidean_example.py)
 {% sample lang="haskell" %}
 ### Haskell
 [import:3-, unindent:"true", lang="haskell"](code/haskell/euclidean_example.hs)
-{% sample lang="rust" %}
+{% sample lang="rs" %}
 ### Rust
 [import:3-, unindent:"true", lang="rust"](code/rust/euclidean_example.rs)
-{% sample lang="ocaml" %}
+{% sample lang="ml" %}
 ### Ocaml
 [import:3-, unindent:"true", lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="java" %}
 ### Java
 [import:2-, unindent:"true", lang="java"](code/java/euclidean_example.jar)
-{% sample lang="C" %}
 {% endmethod %}
-

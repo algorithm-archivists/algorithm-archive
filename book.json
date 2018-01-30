@@ -13,11 +13,51 @@
 				},
 				{
 					"lang": "jl",
-					"name": "julia"
+					"name": "Julia"
 				},
 				{
 					"lang": "cs",
 					"name": "C#"	
+				},
+				{
+					"lang": "cpp",
+					"name": "C++"
+				},
+				{
+					"lang": "c",
+					"name": "C"
+				},
+				{
+					"lang": "py2",
+					"name": "Python 2"
+				},
+				{
+					"lang": "py3",
+					"name": "Python 3"
+				},
+				{
+					"lang": "js",
+					"name": "JavaScript"
+				},
+				{
+					"lang": "scratch",
+					"name": "Scratch"
+				},
+				{
+					"lang": "hs",
+					"name": "Haskell"
+				},
+				{
+					"lang": "rs",
+					"name": "Rust"
+				},
+				{
+					"lang": "ml",
+					"name": "OCaml"
+				},
+				{
+					"lang": "java",
+					"name": "Java"
 				}
 			],
 			"split": true 
