@@ -29,11 +29,11 @@
 				},
 				{
 					"lang": "py2",
-					"name": "python 2"
+					"name": "Python 2"
 				},
 				{
 					"lang": "py3",
-					"name": "python 3"
+					"name": "Python 3"
 				},
 				{
 					"lang": "js",
@@ -42,6 +42,22 @@
 				{
 					"lang": "scratch",
 					"name": "Scratch"
+				},
+				{
+					"lang": "hs",
+					"name": "Haskell"
+				},
+				{
+					"lang": "rs",
+					"name": "Rust"
+				},
+				{
+					"lang": "ml",
+					"name": "OCaml"
+				},
+				{
+					"lang": "java",
+					"name": "Java"
 				}
 			],
 			"split": true 
