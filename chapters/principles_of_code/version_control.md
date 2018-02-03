@@ -136,7 +136,7 @@ git status
 
 This will show that `CONTRIBUTORS.md` has been modified.
 If we want to save our changes, we need to add all of the files with changes to them to a package called a `commit`.
-To add the files, simple type:
+To add the files, simply type:
 
 ```
 git add CONTRIBUTORS.md

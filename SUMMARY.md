@@ -21,7 +21,7 @@
     * [Version Control](chapters/principles_of_code/version_control.md)
     * [Complexity Notation](chapters/principles_of_code/notation/notation.md)
 * [Mathematical Background](chapters/mathematical_background/mathematical_background.md)
-    * [Convolutions](chapters/mathematical_background/convolutions.md)
+    * [Convolutions](chapters/mathematical_background/convolutions/convolutions.md)
     * [Taylor Series](chapters/mathematical_background/taylor_series.md)
 * [Fundamental Algorithms](chapters/fundamental_algorithms/fundamental_algorithms.md)
     * [Sorting and Searching](chapters/fundamental_algorithms/sorting_searching/sorting_searching.md)
