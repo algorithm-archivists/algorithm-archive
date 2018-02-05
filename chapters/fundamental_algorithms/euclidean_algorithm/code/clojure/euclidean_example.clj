@@ -10,3 +10,8 @@
 	(if (zero? j)
 	    i
 	  (recur j (% i j)))))
+
+(print (euclid-sub (* 64 67)
+		   (* 64 81))
+       (euclid-mod (* 128 12)
+		   (* 128 77)))

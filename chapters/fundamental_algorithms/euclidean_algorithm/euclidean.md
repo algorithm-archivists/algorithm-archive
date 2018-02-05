@@ -94,8 +94,11 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="cs" %}
 ### C# #
 [import:2-, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+### Clojure
+{% sample lang="clojure" %}
+[import:1-, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
+### Cpp 
 {% sample lang="cpp" %}
-### C
 [import:3-, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 ### JavaScript
