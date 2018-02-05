@@ -61,6 +61,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="cs" %}
 [import:19-29, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+{% sample lang="clojure" %}
+[import:8-12, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="js" %}
