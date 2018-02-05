@@ -1,12 +1,12 @@
 (defn euclid-sub [a b]
-  (loop [a a b b]
-	(if (= a b)
-	    a
-	  (if (> a b)
-	      (recur (- a b) b)
-	    (recur a (- b a))))))
+  (loop [i (Math/abs a) j (Math/abs b)]
+	(if (= i j)
+	    i
+	  (if (> i j)
+	      (recur (- i j) j)
+	    (recur i (- j i))))))
 (defn euclid-mod [a b]
-  (loop [a a b b]
-	(if (zero? b)
-	    a
-	  (recur b (% a b)))))
+  (loop [i (Math/abs a) j (Math/abs b)]
+	(if (zero? j)
+	    i
+	  (recur j (% i j)))))
