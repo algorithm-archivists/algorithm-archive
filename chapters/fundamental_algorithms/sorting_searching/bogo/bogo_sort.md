@@ -46,6 +46,8 @@ end
 ```
 {% sample lang="cs" %}
 [import:29-35, unindent=true, lang:"csharp"](code/cs/bogo.cs)
+{% sample lang="clojure" %}
+[import:6-10, unindent=true, lang:"clojure"](code/clojure/bogo.clj)
 {% endmethod %}
 
 That's it.
