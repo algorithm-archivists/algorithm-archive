@@ -58,6 +58,10 @@
 				{
 					"lang": "java",
 					"name": "Java"
+				},
+				{
+					"lang": "clj",
+					"name": "Clojure"
 				}
 			],
 			"split": true 
