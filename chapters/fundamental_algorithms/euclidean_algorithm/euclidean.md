@@ -33,7 +33,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="cs" %}
 [import:6-17, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
-[import:1-7, unindent:"true", lang="clojure](code/clojure/euclidean_example.clj)
+[import:1-7, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="js" %}
