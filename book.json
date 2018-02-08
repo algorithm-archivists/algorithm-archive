@@ -64,7 +64,7 @@
 					"name": "Clojure"
 				}
 			],
-			"split": true 
+			"split": false 
 		}
 	}
 }
