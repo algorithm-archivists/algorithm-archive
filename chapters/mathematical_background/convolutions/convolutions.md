@@ -60,9 +60,9 @@ In code, this looks something like:
 
 {% method %}
 {% sample lang="jl" %}
-[import:1-17, unindent:"true", lang:"julia"](code/julia/conv.jl)
+[import:1-17, unindent:"true", lang:"jl"](code/julia/conv.jl)
 {% sample lang="hs" %}
-[import:1-5, unindent:"true", lang:"haskell"](code/haskell/convolution.hs)
+[import:1-5, unindent:"true", lang:"hs"](code/haskell/convolution.hs)
 {% endmethod %}
 
 Note that in this case, the output array will be the size of `f[n]` and `g[n]` put together.
@@ -102,7 +102,11 @@ Also: depending on the language used, we might need to read in a separate librar
 {% method %}
 {% sample lang="jl" %}
 That said, Julia has an in-built fft routine, so the code for this method not be simpler:
-[import:19-22, unindent:"true", lang:"julia"](code/julia/conv.jl)
+[import:19-22, unindent:"true", lang:"jl"](code/julia/conv.jl)
+Where the `.*` operator is an element-wise multiplication.
+{% sample lang="hs" %}
+The FFT-based convolution in Haskell is complicated, so here is some simple julia code:
+[import:19-22, unindent:"true", lang:"jl"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% endmethod %}
 
