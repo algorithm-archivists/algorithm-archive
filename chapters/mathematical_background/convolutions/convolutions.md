@@ -1,7 +1,7 @@
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}
@@ -24,13 +24,13 @@ $$
 # Convolutions
 Alright, I am going to come right out and say it: convolutions can be confusing.
 Not only are they hard to really describe, but if you do not see them in practice, it's hard to understand why you would ever want to use them.
-I'm going to do what I can to describe them in an intuitive way; however, I may need to come back to this in the future. 
+I'm going to do what I can to describe them in an intuitive way; however, I may need to come back to this in the future.
 Let me know if there is anything here that is unclear, and I'll do what I can to clear it up.
 
-If you take two functions $$f(x)$$ and $$g(x)$$, there are a number of ways you can combine them. 
+If you take two functions $$f(x)$$ and $$g(x)$$, there are a number of ways you can combine them.
 All basic operations can do this (addition, subtraction, multiplication, and division), but there are also special operations that only work with functions and do not work on standard variables or numbers.
 For example, $$f \circ g$$ is a *composition* of the two functions, where you plug $$g(x)$$ into $$f(x)$$.
-A convolution is another function-related operation, and is often notated with a star ($$*$$) operator, where 
+A convolution is another function-related operation, and is often notated with a star ($$*$$) operator, where
 
 $$f(x)*g(x)=c(x)$$
 
@@ -60,14 +60,16 @@ In code, this looks something like:
 
 {% method %}
 {% sample lang="jl" %}
-[import:1-17, unindent:"true", lang:"julia"](code/julia/conv.jl)
+[import:1-17, unindent:"true", lang:"jl"](code/julia/conv.jl)
+{% sample lang="hs" %}
+[import:1-5, unindent:"true", lang:"hs"](code/haskell/convolution.hs)
 {% endmethod %}
 
 Note that in this case, the output array will be the size of `f[n]` and `g[n]` put together.
 Sometimes, though, we have an large size for `f[n]` and a small size for `g[n]`.
 In this case `g[n]` is often called a *filter*, and often times when we are using a filter on an array (that might represent an image or some form of data), we want the output array to be the same size as the input.
 In this case, rather than outputting a larger array, we often do something special at the borders of the array.
-Depending on the situation, this may be necessary. 
+Depending on the situation, this may be necessary.
 Note that there are different methods to deal with the edges in this case, so it's best to do whatever seems right when the situation arises.
 
 ### Convolutional Theorem
@@ -76,9 +78,9 @@ Now, let me tell you about a bit of black computational magic:
 
 **Convolutions can be performed with Fourier Transforms!**
 
-That is crazy! 
+That is crazy!
 It's also incredibly hard to explain, so let me do my best.
-As described in the chapter on [Fourier Transforms](chapters/computational_mathematics/FFT/cooley_tukey.md), Fourier Tranforms allow programmers to move from real space to frequency space. 
+As described in the chapter on [Fourier Transforms](chapters/computational_mathematics/FFT/cooley_tukey.md), Fourier Tranforms allow programmers to move from real space to frequency space.
 When we transform a wave into frequency space, we see a single peak in frequency space related to the frequency of that wave.
 No matter what function we send into a Fourier Transform, the frequency-space image can be interpreted as a seires of different waves with a specified frequency.
 
@@ -100,7 +102,11 @@ Also: depending on the language used, we might need to read in a separate librar
 {% method %}
 {% sample lang="jl" %}
 That said, Julia has an in-built fft routine, so the code for this method not be simpler:
-[import:19-22, unindent:"true", lang:"julia"](code/julia/conv.jl)
+[import:19-22, unindent:"true", lang:"jl"](code/julia/conv.jl)
+Where the `.*` operator is an element-wise multiplication.
+{% sample lang="hs" %}
+The FFT-based convolution in Haskell is complicated, so here is some simple julia code:
+[import:19-22, unindent:"true", lang:"jl"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% endmethod %}
 
