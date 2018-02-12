@@ -40,6 +40,8 @@
             * [Graham Scan](chapters/computational_mathematics/computational_geometry/gift_wrapping/graham_scan/graham_scan.md)
             * [Chan's Algorithm](chapters/computational_mathematics/computational_geometry/gift_wrapping/chan/chans.md)
     * [FFT](chapters/computational_mathematics/FFT/cooley_tukey.md)
+    * [Decision Problems](chapters/computational_mathematics/decision_problems/decision_problems.md)
+        * [Stable Marriage Problem](chapters/computational_mathematics/decision_problems/stable_marriage/stable_marriage.md)
 * [Computational Physics](chapters/computational_physics/computational_physics.md)
     * [Euler Methods](chapters/computational_physics/euler.md)
     * [Verlet Integration](chapters/computational_physics/verlet/verlet.md)
