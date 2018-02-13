@@ -177,6 +177,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 
 # Example Code
 {% method %}
+{% sample lang="jl" %}
 ### Julia
 [import:1-, unindent:"true", lang:"julia"](code/julia/Tree_example.jl)
 {% sample lang="cpp" %}

@@ -104,6 +104,10 @@ Also: depending on the language used, we might need to read in a separate librar
 That said, Julia has an in-built fft routine, so the code for this method not be simpler:
 [import:19-22, unindent:"true", lang:"julia"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
+{% sample lang="hs" %}
+The FFT-based convolution in Haskell is complicated, so here is some simple julia code:
+[import:19-22, unindent:"true", lang:"julia"](code/julia/conv.jl)
+Where the `.*` operator is an element-wise multiplication.
 {% endmethod %}
 
 This method also has the added advantage that it will *always output an array of the size of your signal*; however, if your signals are not of equal size, we need to pad the smaller signal with zeros.
