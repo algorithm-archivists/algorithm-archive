@@ -97,21 +97,21 @@ Even though this method is more used than the simple Verlet method mentioned abo
 Both of these methods work simply by iterating timestep-by-timestep and can be written straightforwardly in any language. For reference, here are snippets of code that use both the classic and velocity Verlet methods to find the time it takes for a ball to hit the ground after being dropped from a given height.
 
 {% method %}
-{% sample lang="C++" %}
+{% sample lang="c_cpp" %}
 ### C++
-[import:1-, unindent:"true", lang:"c_cpp"](code/c++/verlet.cpp)
-{% sample lang="C" %}
+[import, unindent:"true", lang:"c_cpp"](code/c++/verlet.cpp)
+{% sample lang="c_cpp" %}
 ### C
-[import:2-, unindent:"true", lang:"c_cpp"](code/c/verlet.c)
+[import, unindent:"true", lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="Java" %}
 ### Java
-[import:2-, unindent:"true", lang:"java"](code/java/verlet.java)
+[import, unindent:"true", lang:"java"](code/java/verlet.java)
 {% sample lang="Python" %}
 ### Python
-[import:2-, unindent:"true", lang:"python"](code/python2/verlet.py)
+[import, unindent:"true", lang:"python"](code/python2/verlet.py)
 {% sample lang="Haskell" %}
 ### Haskell
-[import:2-, unindent:"true", lang:"haskell"](code/haskell/verlet.hs)
+[import, unindent:"true", lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 ### Scratch
 Submitted by Jie
@@ -119,13 +119,13 @@ Submitted by Jie
 Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
 {% sample lang="matlab" %}
 ### Matlab
-[import:2-, unindent:"true", lang:"matlab"](code/matlab/verlet.m)
+[import, unindent:"true", lang:"matlab"](code/matlab/verlet.m)
 {% sample lang="LabVIEW" %}
 ### LabVIEW
 Submitted by P. Mekhail
 ![Verlet LabVIEW](code/labview/verlet_labview.png)
 {% sample lang="javascript" %}
 ### JavaScript
-[import:2-, unindent:"true", lang:"javascript"](code/javascript/verlet.js)
+[import, unindent:"true", lang:"javascript"](code/javascript/verlet.js)
 
 {% endmethod %}

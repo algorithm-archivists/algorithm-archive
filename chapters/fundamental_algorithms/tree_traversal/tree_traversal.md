@@ -28,11 +28,11 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% method %}
 {% sample lang="jl" %}
 [import:4-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:1-4, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:11-15, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:6-10, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 [import:3-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
@@ -49,11 +49,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% method %}
 {% sample lang="jl" %}
 [import:11-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:6-14, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:48-57, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:81-92, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 [import:15-23, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
@@ -67,7 +67,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
-![DFS ordering pre](DFS_pre.png)
+![DFS ordering pre](res/DFS_pre.png)
 
 Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors! 
 
@@ -77,11 +77,11 @@ Now, in this case the first element searched through is still the root of the tr
 {% method %}
 {% sample lang="jl" %}
 [import:21-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:16-24, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:75-84, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
 [import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
@@ -93,18 +93,18 @@ Now, in this case the first element searched through is still the root of the tr
 [import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
-![DFS ordering post](DFS_post.png)
+![DFS ordering post](res/DFS_post.png)
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
 
 {% method %}
 {% sample lang="jl" %}
 [import:32-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:27-44, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:86-104, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
 [import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
@@ -116,7 +116,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
-![DFS ordering in](DFS_in.png)
+![DFS ordering in](res/DFS_in.png)
 
 The order here seems to be some mix of the other 2 methods and works through the binary tree from left to right.
 
@@ -132,11 +132,11 @@ In code, it looks like this:
 {% method %}
 {% sample lang="jl" %}
 [import:50-61, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:46-59, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:36-52, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:18-20, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 [import:37-48, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 [import:94-113, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
@@ -152,18 +152,18 @@ In code, it looks like this:
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
-![BFS ordering](BFS_simple.png)
+![BFS ordering](res/BFS_simple.png)
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
 
 {% method %}
 {% sample lang="jl" %}
 [import:64-75, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:61-74, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:54-70, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:115-135, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 [import:42-57, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
@@ -179,25 +179,25 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% method %}
 {% sample lang="jl" %}
 ### Julia
-[import:1-, unindent:"true", lang:"julia"](code/julia/Tree_example.jl)
-{% sample lang="cpp" %}
+[import, unindent:"true", lang:"julia"](code/julia/Tree_example.jl)
+{% sample lang="c_cpp" %}
 ### C++
-[import:3-, unindent:"true", lang:"c_cpp"](code/c++/Tree_example.cpp)
+[import, unindent:"true", lang:"c_cpp"](code/c++/Tree_example.cpp)
 {% sample lang="cs" %}
 ### C# #
-[import:2-, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="c" %}
+[import, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
+{% sample lang="c_cpp" %}
 ### C
-[import:2-, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 ### JavaScript
-[import:1-, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
+[import, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
 ### Python 2
-[import:1-, unindent:"true", lang:"python"](code/python2/Tree_example.py)
+[import, unindent:"true", lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
 ### Python 3
-[import:1-, unindent:"true", lang:"python"](code/python3/Tree_example.py)
+[import, unindent:"true", lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
 ![scratch tree](code/scratch/scratch_tree.png)

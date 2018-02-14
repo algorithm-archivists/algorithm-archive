@@ -44,10 +44,11 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% method %}
 {% sample lang="jl" %}
 ### Julia
-[import:1-, unindent:"true", lang:"julia"](code/julia/stable_marriage.jl)
+[import, unindent:"true", lang:"julia"](code/julia/stable_marriage.jl)
 {% sample lang="py" %}
 ### Python
-[import:1-, unindent:"true", lang:"python"](code/python/stable_marriage.py)
+[import, unindent:"true", lang:"python"](code/python/stable_marriage.py)
 {% sample lang="hs" %}
-[import:1-, unindent:"true", lang:"haskell"](code/haskell/stableMarriage.hs)
+### Haskell
+[import, unindent:"true", lang:"haskell"](code/haskell/stableMarriage.hs)
 {% endmethod %}

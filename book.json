@@ -1,4 +1,5 @@
 {
+    "gitbook": "3.x.x",
     "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock"],
     "lunr": {
         "maxIndexSize": 1000000000
@@ -64,7 +65,7 @@
 					"name": "Clojure"
 				}
 			],
-			"split": false 
-		}
+			"split": false
+        }
 	}
 }

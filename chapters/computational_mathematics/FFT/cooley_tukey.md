@@ -51,7 +51,7 @@ If we take a sum sinusoidal functions (like $$\sin(\omega t)$$ or $$\cos(\omega 
 Each constituent wave can be described by only one value: $$\omega$$.
 So, instead of representing these curves as seen above, we could instead describe them as peaks in frequency space, as shown below. 
 
-![Fourier Example](FT_example.png)
+![Fourier Example](res/FT_example.png)
 
 This is what the Fourier Transform does! 
 After performing the transform, it is now much, much easier to understand precisely which frequencies are in our waveform, which is essential to most areas of signal processing.
@@ -92,9 +92,9 @@ For some reason, though, putting code to this transformation really helped me fi
 {% method %}
 {% sample lang="jl" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
 {% sample lang="hs" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
@@ -137,9 +137,9 @@ In the end, the code looks like:
 {% method %}
 {% sample lang="jl" %}
 [import:14-31, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c" %}
+{% sample lang="c_cpp" %}
 [import:13-35, unindent:"true", lang:"c_cpp"](code/c/fft.c)
-{% sample lang="cpp" %}
+{% sample lang="c_cpp" %}
 [import:19-44, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, unindent:"true", lang:"haskell"](code/hs/fft.hs)
@@ -170,7 +170,7 @@ And at each step, we use the appropriate term.
 For example, imagine we need to perform an FFT of an array of only 2 elements. 
 We can represent this addition with the following (radix-2) butterfly:
 
-![Radix-2, positive W](radix-2screen_positive.jpg)
+![Radix-2, positive W](res/radix-2screen_positive.jpg)
 
 Here, the diagram means the following:
 
@@ -182,7 +182,7 @@ $$
 
 However, it turns out that the second half of our array of $$\omega$$ values is always the negative of the first half, so $$\omega_2^0 = -\omega_2^1$$, so we can use the following butterfly diagram:
 
-![Radix-2](radix-2screen.jpg)
+![Radix-2](res/radix-2screen.jpg)
 
 With the following equations:
 
@@ -197,14 +197,14 @@ Now imagine we need to combine more elements.
 In this case, we start with simple butterflies, as shown above, and then sum butterflies of butterflies.
 For example, if we have 8 elements, this might look like this:
 
-![Radix-8](radix-8screen.jpg)
+![Radix-8](res/radix-8screen.jpg)
 
 Note that we can perform a DFT directly before using any butterflies, if we so desire, but we need to be careful with how we shuffle our array if that's the case.
 In the code snippet provided in the previous section, the subdivision was performed in the same function as the concatenation, so the ordering was always correct; however, if we were to re-order with bit-reversal, this might not be the case.
 
 For example, take a look at the ordering of FFT ([found on wikipedia](https://en.wikipedia.org/wiki/Butterfly_diagram)) that performs the DFT shortcut:
 
-![Butterfly Diagram](butterfly_diagram.png)
+![Butterfly Diagram](res/butterfly_diagram.png)
 
 Here, the ordering of the array was simply divided into even and odd elements once, but they did not recursively divide the arrays of even and odd elements again because they knew they would perform a DFT soon thereafter.
 
@@ -233,19 +233,19 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% method %}
 {% sample lang="jl" %}
 ### Julia
-[import:1-, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c" %}
+[import, unindent:"true", lang:"julia"](code/julia/fft.jl)
+{% sample lang="c_cpp" %}
 ### C
-[import:1-, unindent:"true", lang:"c_cpp"](code/c/fft.c)
-{% sample lang="cpp" %}
+[import, unindent:"true", lang:"c_cpp"](code/c/fft.c)
+{% sample lang="c_cpp" %}
 ### C++
-[import:1-, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
+[import, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 ### Haskell
-[import:1-, unindent:"true", lang:"haskell"](code/hs/fft.hs)
+[import, unindent:"true", lang:"haskell"](code/hs/fft.hs)
 {% sample lang="py2" %}
 ### Python
-[import:1-, unindent:"true", lang:"python"](code/python2/fft.py)
+[import, unindent:"true", lang:"python"](code/python2/fft.py)
 {% sample lang="scratch" %}
 ### Scratch
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
