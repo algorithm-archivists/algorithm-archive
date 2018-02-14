@@ -29,13 +29,13 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 
 {% method %}
 {% sample lang="c" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:18-33, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 [import:6-17, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 [import:1-7, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:21-35, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
@@ -52,19 +52,19 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
 
-![Subtraction-based Euclidean algorithm](subtraction.png)
+![Subtraction-based Euclidean algorithm](res/subtraction.png)
 
 Modern implementations, though, often use the modulus operator (%) like so
 
 {% method %}
 {% sample lang="c" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:4-16, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 [import:19-29, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 [import:8-12, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:7-18, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
@@ -81,7 +81,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
 
-![Modulus-based Euclidean algorithm](modulus.png)
+![Modulus-based Euclidean algorithm](res/modulus.png)
 
 The Euclidean Algorithm is truly fundamental to many other algorithms throughout the history of computer science and will definitely be used again later. At least to me, it's amazing how such an ancient algorithm can still have modern use and appeal. That said, there are still other algorithms out there that can find the greatest common divisor of two numbers that are arguably better in certain cases than the Euclidean algorithm, but the fact that we are discussing Euclid two millenia after his death shows how timeless and universal mathematics truly is. I think that's pretty cool.
 
@@ -90,32 +90,32 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% method %}
 {% sample lang="c" %}
 ### C
-[import:1-, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
+[import, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 ### C# #
-[import:2-, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+[import, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 ### Clojure
-[import:1-, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
+[import, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 ### Cpp 
-[import:3-, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 ### JavaScript
-[import:1-, unindent:"true", lang="javascript"](code/javascript/euclidean_example.js)
+[import, unindent:"true", lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py2" %}
 ### Python
-[import:1-, unindent:"true", lang="python"](code/python2/euclidean_example.py)
+[import, unindent:"true", lang="python"](code/python2/euclidean_example.py)
 {% sample lang="haskell" %}
 ### Haskell
-[import:3-, unindent:"true", lang="haskell"](code/haskell/euclidean_example.hs)
+[import, unindent:"true", lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 ### Rust
-[import:3-, unindent:"true", lang="rust"](code/rust/euclidean_example.rs)
+[import, unindent:"true", lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
 ### Ocaml
-[import:3-, unindent:"true", lang="ocaml"](code/ocaml/euclidean_example.ml)
+[import, unindent:"true", lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="java" %}
 ### Java
-[import:2-, unindent:"true", lang="java"](code/java/euclidean_example.jar)
+[import, unindent:"true", lang="java"](code/java/euclidean_example.jar)
 {% endmethod %}
