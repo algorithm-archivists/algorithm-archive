@@ -28,11 +28,11 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% method %}
 {% sample lang="jl" %}
 [import:4-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:1-4, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:11-15, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:6-10, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 [import:3-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
@@ -49,11 +49,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% method %}
 {% sample lang="jl" %}
 [import:11-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:6-14, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:48-57, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:81-92, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 [import:15-23, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
@@ -77,11 +77,11 @@ Now, in this case the first element searched through is still the root of the tr
 {% method %}
 {% sample lang="jl" %}
 [import:21-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:16-24, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:75-84, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
 [import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
@@ -100,11 +100,11 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% method %}
 {% sample lang="jl" %}
 [import:32-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:27-44, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:86-104, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
 [import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
@@ -132,11 +132,11 @@ In code, it looks like this:
 {% method %}
 {% sample lang="jl" %}
 [import:50-61, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:46-59, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:36-52, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:18-20, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 [import:37-48, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 [import:94-113, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
@@ -159,11 +159,11 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% method %}
 {% sample lang="jl" %}
 [import:64-75, unindent:"true", lang:"julia"](code/julia/Tree.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:61-74, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:54-70, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:115-135, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 [import:42-57, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
@@ -180,13 +180,13 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="jl" %}
 ### Julia
 [import, unindent:"true", lang:"julia"](code/julia/Tree_example.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 ### C++
 [import, unindent:"true", lang:"c_cpp"](code/c++/Tree_example.cpp)
 {% sample lang="cs" %}
 ### C# #
 [import, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 ### C
 [import, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}

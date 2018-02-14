@@ -97,10 +97,10 @@ Even though this method is more used than the simple Verlet method mentioned abo
 Both of these methods work simply by iterating timestep-by-timestep and can be written straightforwardly in any language. For reference, here are snippets of code that use both the classic and velocity Verlet methods to find the time it takes for a ball to hit the ground after being dropped from a given height.
 
 {% method %}
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 ### C++
 [import, unindent:"true", lang:"c_cpp"](code/c++/verlet.cpp)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 ### C
 [import, unindent:"true", lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="Java" %}

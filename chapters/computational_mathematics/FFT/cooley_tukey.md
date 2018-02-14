@@ -92,9 +92,9 @@ For some reason, though, putting code to this transformation really helped me fi
 {% method %}
 {% sample lang="jl" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
 {% sample lang="hs" %}
 [import:2-11, unindent:"true", lang:"julia"](code/julia/fft.jl)
@@ -137,9 +137,9 @@ In the end, the code looks like:
 {% method %}
 {% sample lang="jl" %}
 [import:14-31, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 [import:13-35, unindent:"true", lang:"c_cpp"](code/c/fft.c)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 [import:19-44, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, unindent:"true", lang:"haskell"](code/hs/fft.hs)
@@ -234,10 +234,10 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="jl" %}
 ### Julia
 [import, unindent:"true", lang:"julia"](code/julia/fft.jl)
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 ### C
 [import, unindent:"true", lang:"c_cpp"](code/c/fft.c)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 ### C++
 [import, unindent:"true", lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}

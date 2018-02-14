@@ -28,14 +28,14 @@ Computer science is (almost by definition) a science about computers -- a device
 The algorithm is a simple way to find the *greatest common divisor* (GCD) of two numbers, which is useful for a number of different applications (like reducing fractions). The first method (envisioned by Euclid) uses simple subtraction:
 
 {% method %}
-{% sample lang="c_cpp" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="c" %}
+[import:18-33, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 [import:6-17, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 [import:1-7, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
-{% sample lang="c_cpp" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="cpp" %}
+[import:21-35, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 [import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
@@ -57,14 +57,14 @@ Here, we simply line the two numbers up every step and subtract the lower value 
 Modern implementations, though, often use the modulus operator (%) like so
 
 {% method %}
-{% sample lang="c_cpp" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="c" %}
+[import:4-16, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 [import:19-29, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 [import:8-12, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
-{% sample lang="c_cpp" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+{% sample lang="cpp" %}
+[import:7-18, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 [import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
@@ -88,7 +88,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 # Example Code
 
 {% method %}
-{% sample lang="c_cpp" %}
+{% sample lang="c" %}
 ### C
 [import, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
@@ -97,7 +97,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="clj" %}
 ### Clojure
 [import, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
-{% sample lang="c_cpp" %}
+{% sample lang="cpp" %}
 ### Cpp 
 [import, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
