@@ -49,5 +49,5 @@ I am incredibly interested to see what you guys do and how you implement the alg
 ### Python
 [import:1-, unindent:"true", lang:"python"](code/python/stable_marriage.py)
 {% sample lang="hs" %}
-[import:1-, unindent:"true", lang:"haskell"](code/haskell/stableMarriage.jl)
+[import:1-, unindent:"true", lang:"haskell"](code/haskell/stableMarriage.hs)
 {% endmethod %}

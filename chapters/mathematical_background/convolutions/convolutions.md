@@ -64,9 +64,9 @@ In code, this looks something like:
 {% sample lang="hs" %}
 [import:1-5, unindent:"true", lang:"haskell"](code/haskell/convolution.hs)
 {% sample lang="c"%}
-[import:46-58, unindent:"true", lang:"c_cpp"](code/c/convolution.c)
+[import:46-58, unindent:"true", lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
-[import:62-79, unindent:"true", lang:"c_cpp"](code/c++/convolution.cpp)
+[import:62-79, unindent:"true", lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
 
 Note that in this case, the output array will be the size of `f[n]` and `g[n]` put together.
@@ -113,9 +113,9 @@ The FFT-based convolution in Haskell is complicated, so here is some simple juli
 [import:19-22, unindent:"true", lang:"julia"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="c"%}
-[import:60-69, unindent:"true", lang:"c_cpp"](code/c/convolution.c)
+[import:60-69, unindent:"true", lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
-[import:81-92, unindent:"true", lang:"c_cpp"](code/c++/convolution.cpp)
+[import:81-92, unindent:"true", lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
 
 This method also has the added advantage that it will *always output an array of the size of your signal*; however, if your signals are not of equal size, we need to pad the smaller signal with zeros.
