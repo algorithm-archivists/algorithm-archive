@@ -27,42 +27,42 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 
 {% method %}
 {% sample lang="jl" %}
-[import:4-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:4-8, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:1-4, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
+[import:1-4, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
-[import:11-15, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
+[import:11-15, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:6-10, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import:6-10, lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
-[import:3-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:3-8, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:1-5, unindent:"true", lang:"python"](code/python2/Tree_example.py)
+[import:1-5, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
-[import:5-10, unindent:"true", lang:"python"](code/python3/Tree_example.py)
+[import:5-10, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:3-8, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:3-8, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
 
 {% method %}
 {% sample lang="jl" %}
-[import:11-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:11-18, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:6-14, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
+[import:6-14, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
-[import:48-57, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
+[import:48-57, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:81-92, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import:81-92, lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
-[import:15-23, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
+[import:15-23, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
-[import:8-16, unindent:"true", lang:"python"](code/python2/Tree_example.py)
+[import:8-16, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
-[import:10-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:10-18, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:10-18, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:10-18, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -76,21 +76,21 @@ Now, in this case the first element searched through is still the root of the tr
 
 {% method %}
 {% sample lang="jl" %}
-[import:21-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:21-29, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:16-24, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
+[import:16-24, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
-[import:75-84, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
+[import:75-84, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:20-29, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
-[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:20-29, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:20-29, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py3" %}
-[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:20-29, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:20-29, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:20-29, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 ![DFS ordering post](res/DFS_post.png)
@@ -99,21 +99,21 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 
 {% method %}
 {% sample lang="jl" %}
-[import:32-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:32-47, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:27-44, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
+[import:27-44, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
-[import:86-104, unindent:"true", lang:"csharp"](code/cs/TreeMdAdditional.cs)
+[import:86-104, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:31-47, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
-[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:31-47, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:31-47, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py3" %}
-[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:31-47, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:31-47, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:31-47, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 ![DFS ordering in](res/DFS_in.png)
@@ -131,23 +131,23 @@ In code, it looks like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:50-61, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:50-61, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:46-59, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
+[import:46-59, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
-[import:36-52, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
+[import:36-52, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
-[import:18-20, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
-[import:37-48, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
-[import:94-113, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import:18-20, lang:"c_cpp"](code/c/Tree_example.c)
+[import:37-48, lang:"c_cpp"](code/c/Tree_example.c)
+[import:94-113, lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
-[import:25-40, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
+[import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
-[import:25-36, unindent:"true", lang:"python"](code/python2/Tree_example.py)
+[import:25-36, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
-[import:31-45, unindent:"true", lang:"python"](code/python3/Tree_example.py)
+[import:31-45, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:49-61, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:49-61, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -158,46 +158,46 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 
 {% method %}
 {% sample lang="jl" %}
-[import:64-75, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:64-75, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:61-74, unindent:"true", lang:"c_cpp"](code/c++/Tree.cpp)
+[import:61-74, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
-[import:54-70, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
+[import:54-70, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
-[import:115-135, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import:115-135, lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
-[import:42-57, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
+[import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
-[import:38-49, unindent:"true", lang:"python"](code/python2/Tree_example.py)
+[import:38-49, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
-[import:48-62, unindent:"true", lang:"python"](code/python3/Tree_example.py)
+[import:48-62, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:63-75, unindent:"true", lang:"julia"](code/julia/Tree.jl)
+[import:63-75, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 # Example Code
 {% method %}
 {% sample lang="jl" %}
 ### Julia
-[import, unindent:"true", lang:"julia"](code/julia/Tree_example.jl)
+[import, lang:"julia"](code/julia/Tree_example.jl)
 {% sample lang="cpp" %}
 ### C++
-[import, unindent:"true", lang:"c_cpp"](code/c++/Tree_example.cpp)
+[import, lang:"c_cpp"](code/c++/Tree_example.cpp)
 {% sample lang="cs" %}
 ### C# #
-[import, unindent:"true", lang:"csharp"](code/cs/Tree.cs)
+[import, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 ### C
-[import, unindent:"true", lang:"c_cpp"](code/c/Tree_example.c)
+[import, lang:"c_cpp"](code/c/Tree_example.c)
 {% sample lang="js" %}
 ### JavaScript
-[import, unindent:"true", lang:"javascript"](code/javascript/Tree_example.js)
+[import, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
 ### Python 2
-[import, unindent:"true", lang:"python"](code/python2/Tree_example.py)
+[import, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
 ### Python 3
-[import, unindent:"true", lang:"python"](code/python3/Tree_example.py)
+[import, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
 ![scratch tree](code/scratch/scratch_tree.png)

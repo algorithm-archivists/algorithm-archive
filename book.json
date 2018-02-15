@@ -6,7 +6,8 @@
     },
 	"pluginsConfig": {
 		"include-codeblock": {
-		  "fixlang": true
+			"fixlang": true,
+			"unindent": true
 		},
 		"theme-api": {
 			"languages": [

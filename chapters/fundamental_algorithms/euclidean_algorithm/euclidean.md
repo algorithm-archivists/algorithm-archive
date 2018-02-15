@@ -29,25 +29,25 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 
 {% method %}
 {% sample lang="c" %}
-[import:18-33, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
+[import:18-33, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
-[import:6-17, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+[import:6-17, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
-[import:1-7, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
+[import:1-7, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:21-35, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import:21-35, lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="haskell" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="rs" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="ml" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="java" %}
-[import:1-11, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -58,25 +58,25 @@ Modern implementations, though, often use the modulus operator (%) like so
 
 {% method %}
 {% sample lang="c" %}
-[import:4-16, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
+[import:4-16, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
-[import:19-29, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+[import:19-29, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
-[import:8-12, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
+[import:8-12, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:7-18, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import:7-18, lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="haskell" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="rs" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="ml" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="java" %}
-[import:13-21, unindent:"true", lang="julia"](code/pseudo/euclidean.pseudo)
+[import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -90,32 +90,32 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% method %}
 {% sample lang="c" %}
 ### C
-[import, unindent:"true", lang="c_cpp"](code/c/euclidean_example.c)
+[import, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 ### C# #
-[import, unindent:"true", lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+[import, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 ### Clojure
-[import, unindent:"true", lang="clojure"](code/clojure/euclidean_example.clj)
+[import, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 ### Cpp 
-[import, unindent:"true", lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import, lang="c_cpp"](code/c++/euclidean_example.cpp)
 {% sample lang="js" %}
 ### JavaScript
-[import, unindent:"true", lang="javascript"](code/javascript/euclidean_example.js)
+[import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py2" %}
 ### Python
-[import, unindent:"true", lang="python"](code/python2/euclidean_example.py)
+[import, lang="python"](code/python2/euclidean_example.py)
 {% sample lang="haskell" %}
 ### Haskell
-[import, unindent:"true", lang="haskell"](code/haskell/euclidean_example.hs)
+[import, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 ### Rust
-[import, unindent:"true", lang="rust"](code/rust/euclidean_example.rs)
+[import, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
 ### Ocaml
-[import, unindent:"true", lang="ocaml"](code/ocaml/euclidean_example.ml)
+[import, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="java" %}
 ### Java
-[import, unindent:"true", lang="java"](code/java/euclidean_example.jar)
+[import, lang="java"](code/java/euclidean_example.jar)
 {% endmethod %}
