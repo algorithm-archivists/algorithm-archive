@@ -99,19 +99,19 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% method %}
 {% sample lang="cpp" %}
 ### C++
-[import, unindent:"true", lang:"c_cpp"](code/c++/verlet.cpp)
+[import, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 ### C
-[import, unindent:"true", lang:"c_cpp"](code/c/verlet.c)
+[import, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="Java" %}
 ### Java
-[import, unindent:"true", lang:"java"](code/java/verlet.java)
+[import, lang:"java"](code/java/verlet.java)
 {% sample lang="Python" %}
 ### Python
-[import, unindent:"true", lang:"python"](code/python2/verlet.py)
+[import, lang:"python"](code/python2/verlet.py)
 {% sample lang="Haskell" %}
 ### Haskell
-[import, unindent:"true", lang:"haskell"](code/haskell/verlet.hs)
+[import, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 ### Scratch
 Submitted by Jie
@@ -119,13 +119,13 @@ Submitted by Jie
 Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
 {% sample lang="matlab" %}
 ### Matlab
-[import, unindent:"true", lang:"matlab"](code/matlab/verlet.m)
+[import, lang:"matlab"](code/matlab/verlet.m)
 {% sample lang="LabVIEW" %}
 ### LabVIEW
 Submitted by P. Mekhail
 ![Verlet LabVIEW](code/labview/verlet_labview.png)
 {% sample lang="javascript" %}
 ### JavaScript
-[import, unindent:"true", lang:"javascript"](code/javascript/verlet.js)
+[import, lang:"javascript"](code/javascript/verlet.js)
 
 {% endmethod %}

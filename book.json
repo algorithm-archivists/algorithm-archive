@@ -5,6 +5,10 @@
         "maxIndexSize": 1000000000
     },
 	"pluginsConfig": {
+		"include-codeblock": {
+			"fixlang": true,
+			"unindent": true
+		},
 		"theme-api": {
 			"languages": [
 				{
