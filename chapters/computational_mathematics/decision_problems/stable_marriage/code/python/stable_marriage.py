@@ -13,7 +13,7 @@ def main():
         num_pairs = 5
 
     # There are only 26 possible names
-    if num_paris > 13:
+    if num_pairs > 13:
         print('You can\' have more than 13 pairs.')
         return
 
