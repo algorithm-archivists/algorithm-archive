@@ -51,4 +51,7 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/stableMarriage.hs)
+{% sample lang="c" %}
+### C
+[import, lang:"c_cpp"](code/c/stable_marriage.c)
 {% endmethod %}
