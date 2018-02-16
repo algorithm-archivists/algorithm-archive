@@ -54,4 +54,7 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/stable_marriage.c)
+{% sample lang="cpp" %}
+### C++
+[import, lang:"c_cpp"](code/c++/stable_marriage.cpp)
 {% endmethod %}
