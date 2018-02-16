@@ -23,11 +23,13 @@ constexpr T pi() {
   return 3.14159265358979323846264338327950288419716;
 }
 
-template <typename Iter, typename Iter_last>
-void cooley_tukey(Iter first, Iter_last last) {
+// `cooley_tukey` does the cooley-tukey algorithm, recursively
+template <typename Iter>
+void cooley_tukey(Iter first, Iter last) {
   auto size = last - first;
   if (size >= 2) {
-    // Splits the array, so the top half are the odd elements and the bottom are the even ones.
+    // split the range, with even indices going in the first half,
+    // and odd indices going in the last half.
     auto temp = std::vector<c64>(size / 2);
     for (size_t i = 0; i < size / 2; ++i) {
       temp[i] = first[i * 2 + 1];
@@ -37,12 +39,12 @@ void cooley_tukey(Iter first, Iter_last last) {
       first[i + size / 2] = temp[i];
     }
 
-    // Recursion.
+    // recurse the splits and butterflies in each half of the range
     auto split = first + size / 2;
     cooley_tukey(first, split);
     cooley_tukey(split, last);
 
-    // Combine.
+    // now combine each of those halves with the butterflies
     for (size_t k = 0; k < size / 2; ++k) {
       auto w = std::exp(c64(0, -2.0 * pi<double>() * k / size));
 
@@ -58,7 +60,8 @@ void cooley_tukey(Iter first, Iter_last last) {
 // note: (last - first) must be less than 2**32 - 1
 template <typename Iter>
 void sort_by_bit_reverse(Iter first, Iter last) {
-  // sorts the range [first, last) in bit-reversed order
+  // sorts the range [first, last) in bit-reversed order,
+  // by the method suggested by the FFT
   auto size = last - first;
 
   for (std::uint32_t i = 0; i < size; ++i) {
@@ -74,11 +77,12 @@ void sort_by_bit_reverse(Iter first, Iter last) {
   }
 }
 
-template <typename Iter, typename Iter_last>
-void iterative_cooley_tukey(Iter first, Iter_last last) {
+// `iterative_cooley_tukey` does the cooley-tukey algorithm iteratively
+template <typename Iter>
+void iterative_cooley_tukey(Iter first, Iter last) {
   sort_by_bit_reverse(first, last);
 
-  // Perform the butterfly on the array.
+  // perform the butterfly on the range
   auto size = last - first;
   for (size_t stride = 2; stride <= size; stride *= 2) {
     auto w = exp(c64(0, -2.0 * pi<double>() / stride));
@@ -95,7 +99,7 @@ void iterative_cooley_tukey(Iter first, Iter_last last) {
 }
 
 int main() {
-  // Initalizing the FFT inputs
+  // initalize the FFT inputs
   std::random_device random_device;
   std::mt19937 rng(random_device());
   std::uniform_real_distribution<double> distribution(0.0, 1.0);
