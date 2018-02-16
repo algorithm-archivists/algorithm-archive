@@ -49,7 +49,6 @@ void create_ppl(person *grp, size_t grp_size){
 void stable_matching(person *men, person *women, size_t grp_size){
     int cont = 1;
     while(cont){
-        printf("1\n");
         for(size_t i = 0; i < grp_size; i++){
             if(men[i].prtnr == (grp_size + 1)){
                 size_t wmn_id = men[i].prefs[men[i].pref_ind];
@@ -90,7 +89,6 @@ int main(){
 
     stable_matching(men, women, grp_size);
 
-    printf("asdfgfdg\n");
     for(size_t i = 0; i < grp_size; i++){
         printf("preferences of man %zu \n", i);
         for(size_t j = 0; j < grp_size; j++){
