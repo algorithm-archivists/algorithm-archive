@@ -41,7 +41,7 @@ struct person {
 */
 std::vector<person> make_person_list(size_t number_of_partners) {
   auto random_pref_list = [&] {
-    auto ret = std::vector<size_t>(number_of_partners);
+    std::vector<size_t> ret(number_of_partners);
     std::iota(begin(ret), end(ret), size_t(0));
     std::shuffle(begin(ret), end(ret), global_rng);
 
@@ -91,7 +91,7 @@ int main() {
     // for each follow, we'll look at their preference list
     for (size_t i = 0; i < number_of_partners; ++i) {
       for (size_t pref: follows[i].preference_list) {
-        for (auto proposal: proposals[i]) {
+        for (size_t proposal: proposals[i]) {
           // and, if they were given a proposal, then they'll choose their
           // favorite here
           if (pref == proposal and not follows[i].finished) {
