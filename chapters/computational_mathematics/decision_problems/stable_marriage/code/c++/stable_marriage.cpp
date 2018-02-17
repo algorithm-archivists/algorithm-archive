@@ -57,13 +57,8 @@ std::vector<person> make_person_list(size_t number_of_partners) {
   return ret;
 }
 
-int main() {
-  // these are the number of partners in each group
-  size_t const number_of_partners = 5;
-
-  // in this case, the leads shall propose to the follows
-  auto leads = make_person_list(number_of_partners);
-  auto follows = make_person_list(number_of_partners);
+void stable_match(std::vector<person>& leads, std::vector<person>& follows,
+  size_t number_of_partners){
 
   // for each index in the leads' preference list, we'll go through this
   for (
@@ -105,6 +100,17 @@ int main() {
       }
     }
   }
+}
+
+int main() {
+  // these are the number of partners in each group
+  size_t const number_of_partners = 5;
+
+  // in this case, the leads shall propose to the follows
+  auto leads = make_person_list(number_of_partners);
+  auto follows = make_person_list(number_of_partners);
+
+  stable_match(leads, follows, number_of_partners);
 
   // the happy marriages are announced to the console here :)
   for (size_t i = 0; i < number_of_partners; ++i) {
