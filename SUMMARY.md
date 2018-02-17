@@ -43,7 +43,7 @@
     * [Decision Problems](chapters/computational_mathematics/decision_problems/decision_problems.md)
         * [Stable Marriage Problem](chapters/computational_mathematics/decision_problems/stable_marriage/stable_marriage.md)
 * [Computational Physics](chapters/computational_physics/computational_physics.md)
-    * [Euler Methods](chapters/computational_physics/euler.md)
+    * [Euler Methods](chapters/computational_physics/euler/euler.md)
     * [Verlet Integration](chapters/computational_physics/verlet/verlet.md)
     * [Barnes-Hut](chapters/computational_physics/barnes_hut.md)
 * [Computational Biology](chapters/computational_biology/computational_biology.md)

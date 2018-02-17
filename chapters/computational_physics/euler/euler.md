@@ -21,16 +21,10 @@ $$
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
 
-##### Dependencies
-
-* [Differential Equations](../mathematical_background/differential_equations.md)
-* [Taylor Series Expansions](../mathematical_background/taylor_series.md)
-* [Thomas Algorithm](../computational_mathematics/matrix_methods/thomas.md)
-  * [Gaussian Elimination](../computational_mathematics/matrix_methods/gaussian_elimination.md)
-
 # Euler Method
 
-The Euler methods are some of the simplest methods to solve ordinary differential equations numerically. These methods introduce a new set of methods called the [Runge Kutta](runge_kutta.md) methods, which will be discussed in the near future! 
+The Euler methods are some of the simplest methods to solve ordinary differential equations numerically. 
+They introduce a new set of methods called the [Runge Kutta](runge_kutta.md) methods, which will be discussed in the near future! 
 
 As a physicist, I tend to understand things through methods that I have learned before. In this case, it makes sense for me to see Euler methods as extensions of the [Taylor Series Expansion](../mathematical_background/taylor_series.md). These expansions basically approximate functions based on their derivatives, like so:
 
