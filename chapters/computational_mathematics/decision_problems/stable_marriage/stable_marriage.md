@@ -57,4 +57,14 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% sample lang="cpp" %}
 ### C++
 [import, lang:"c_cpp"](code/c++/stable_marriage.cpp)
+{% sample lang="cs" %}
+### C# #
+GaleShapleyAlgorithm.cs
+[import, lang:"csharp"](code/cs/GaleShapleyAlgorithm.cs)
+Person.cs
+[import, lang:"csharp"](code/cs/Person.cs)
+Program.cs
+[import, lang:"csharp"](code/cs/Program.cs)
+Output
+[import](code/cs/Output.txt)
 {% endmethod %}
