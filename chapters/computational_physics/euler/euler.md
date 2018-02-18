@@ -21,7 +21,7 @@ $$
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
 
-# Euler Method
+# The Forward Euler Method
 
 The Euler methods are some of the simplest methods to solve ordinary differential equations numerically. 
 They introduce a new set of methods called the [Runge Kutta](../runge_kutta/runge_kutta.md) methods, which will be discussed in the near future! 
@@ -71,12 +71,12 @@ $$
 $$
 
 Now, solving this set of equations in this way is known as the *forward* Euler Method. 
-In fact, there is another method known as the *backward* Euler Method, which we will get to soon enough. 
+In fact, there is another method known as the [*backward* Euler Method](backward_euler.md), which we will get to soon enough. 
 For now, it is important to note that the error of these methods depend on the timestep chosen. 
 
 <div style="text-align:center"><img src ="rec/error.png" /></div>
 
-For example, here we see dramatically different results for different timesteps for solving the ODE $$y' = frac{x^3}{6}$$, whose solution is $$y = \frac{x^2}{2}$$. 
+For example, here we see dramatically different results for different timesteps for solving the ODE $$y' = \frac{x^3}{6}$$, whose solution is $$y = \frac{x^2}{2}$$. 
 The blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a timestep of 1.
 To be clear: the larger the timestep, the worse the error becomes; however, there is at least one more problem with using the forward Euler method on real problems: instabilities.
 
@@ -102,7 +102,7 @@ $$
 $$
 Which means that the forward Euler method is actually unstable for most values! 
 If we want to stick to using the forward Euler method exclusively, the only solution is to decrease the timestep until it is within this stability region, and that's not necessarily easy for all cases.
-So now it might be obvious that another, more stable method should be used instead; however, many other stable methods are *implicit*, which means that in order to find the solution, we need to solve a system of equations via the [Thomas Algorithm](../../computational_mathematics/matrix_methods/thomas.md) or [Gaussian Elimination](../../computational_mathematics/matrix_methods/gaussian_elimination.md).
+So now it might be obvious that another, more stable method should be used instead; however, many other stable methods are *implicit*, which means that in order to find the solution, we need to solve a system of equations via the [Thomas Algorithm](../../computational_mathematics/matrix_methods/thomas/thomas.md) or [Gaussian Elimination](../../computational_mathematics/matrix_methods/gaussian_elimination/gaussian_elimination.md).
 Which is an entire layer of complexity that most people don't want to mess with!
 
 Now, here is where we might want to relate the method to another algorithm that is sometimes used for a similar use-case: [Verlet Integration](../verlet/verlet.md). 

@@ -153,37 +153,45 @@ In the end, reducing large systems of equations boils down to a game you play on
 
 That's it. Before continuing, I suggest you try to recreate the Row Eschelon matrix we made above. That is, do the following:
 
-$$\left[
+$$
+\left[
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 1 & 2 & 3 & 4 \\
 3 & -4 & 0 & 10 
 \end{array}
-\right]$$ $$\rightarrow$$ $$\left[
+\right] 
+\quad \rightarrow \quad 
+\left[
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 0 & 1 & 2 & 2 \\
 0 & 0 & 11 & 18 
 \end{array}
-\right]$$
+\right]
+$$
 
 There are plenty of different strategies you could use to do this, and no one strategy is better than the rest. Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows. I then do the same thing for the following columns.
 
 After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Eschelon Form. In other words, we do the following:
 
-$$\left[
+$$
+\left[
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 0 & 1 & 2 & 2 \\
 0 & 0 & 11 & 18 
 \end{array}
-\right]$$ $$\rightarrow$$ $$\left[
+\right] 
+\quad \rightarrow \quad 
+\left[
 \begin{array}{ccc|c}
 11 & 0 & 0 & 18 \\
 0 & 11 & 0 & -14 \\
 0 & 0 & 11 & 18 
 \end{array}
-\right]$$
+\right]
+$$
 
 Here, the idea is similar to above. You can do basically anything you want. My strategy is usually the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
 
@@ -269,69 +277,32 @@ $$
 
 In code, this looks like:
 
-```python
-# Matrix of size rows, cols
-Matrix A[rows,cols]
-
-# Main loop going through all columns
-for k = 1:min(rows,cols):
-
-    # Step 1: finding the maximum element for each column
-    max_index = max(abs(A[:,k])
-
-    # Check to make sure matrix is good!
-    if A[max_index,k] == 0:
-          matrix is singular! End!  
-    end
-
-    # Step 2: swap row with highest value for that column to the top
-    swap(A[k, :],A[max_index, :])
-
-    # Loop for all remaining rows
-    for i = k+1:rows
-
-        # Step 3: finding fraction
-        fraction = A[i,k]/A[k,k]
-
-        # loop through all columns for that row
-        for j = k+1:cols
-
-             # Step 4: re-evaluate each element
-            A[i,j] = A[i,j] - A[k,j]*fraction
-
-        end
-
-        # Step 5: Set lower elements to 0
-        A[i,k] = 0
-    end
-end
-```
+{% method %}
+{% sample lang="jl" %}
+[import:1-42, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
 
 As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above psuedocode with the necessary steps. Let me know if anything is unclear!
 
 Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Eschelon Form*, not * **Reduced** Row Eschelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
 
-The back-substitution method is precisely what we said above. If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$! Even though this seems straightforward, the pseudocode might not be as simple as you thought!
+The back-substitution method is precisely what we said above. 
+If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$! 
+Even though this seems straightforward, the pseudocode might not be as simple as you thought!
 
-
-```python
-# Initializing an array of size rows, cols. 
-# Note this include the right-hand of the set of equations
-A(rows, cols}
-
-# This is our solutions vector, of size 'rows'
-soln(rows)
-
-# initializing the last element
-soln(rows-1)
-
-# Stepping backwards through the solutions vector
-for i = rows - 2:-1
-    for j = rows-1:i
-    end
-end
-
-```
+{% method %}
+{% sample lang="jl" %}
+[import:44-64, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
 
 Now, as for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
+
+### Example Code
+
+The full code can be seen here:
+
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
 
