@@ -62,29 +62,9 @@ $$
 
 In code, this will look like this:
 
-```julia
-function(a::Vector{Float64}, b::Vector{Float64}, c::Vector{Float64},
-         d::Vector{Float64}, soln::Vector{Float64})
-    # Setting initial elements
-    c[0] = c[0] / b[0]
-    d[0] = d[0] / b[0]
-
-    for i = 1:n
-        # Scale factor is for c and d
-        scale = 1 / (b[i] - c[i-1]*a[i])
-        c[i] = c[i] * scale
-        d[i] = (d[i] - a[i] * d[i-1]) * scale
-    end
-
-    # Set the last solution for back-substitution
-    soln[n-1] = d[n-1]
-
-    # Back-substitution
-    for i = n-2:0
-        soln[i] = d[i] - c[i] * soln[i+1]
-    end
-    
-end
-```
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/thomas.jl)
+{% endmethod %}
 
 This is a much simpler implementation than Gaussian Elimination and only has one for loop before back-substitution, which is why it has a better complexity case.
