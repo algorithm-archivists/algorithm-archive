@@ -1,38 +1,32 @@
-﻿// Submitted by Julian Schacher (jspp) with help and enhancements by Marius Becker and gustorn.
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleShapley
 {
-    public class GaleShapleyAlgorithm<follow, lead>
-        where follow : Person<follow, lead>
-        where lead : Person<lead, follow>
+    public static class GaleShapleyAlgorithm<TFollow, TLead>
+        where TFollow : Person<TFollow, TLead>
+        where TLead : Person<TLead, TFollow>
     {
-        public List<follow> Follows { get; set; }
-        public List<lead> Leads { get; set; }
-
-        private List<follow> _lonelyFollows;
-
-        public void RunGaleShapleyAlgorithm()
+        public static void RunGaleShapleyAlgorithm(List<TFollow> follows, List<TLead> leads)
         {
-            CheckRequirements();
+            CheckRequirements(follows, leads);
             
             // All follows are lonely.
-            _lonelyFollows = new List<follow>(Follows);
+            var lonelyFollows = new List<TFollow>(follows);
             // Carry on until there are no lonely follows anymore.
-            while (_lonelyFollows.Count > 0)
+            while (lonelyFollows.Count > 0)
             {
                 // Let the lead choose again and again.
-                foreach (var lead in Leads)
+                foreach (var lead in leads)
                 {
-                    ChoosePartner(lead);
+                    ChoosePartner(lead, lonelyFollows);
                 }
             }
         }
 
-        private void ChoosePartner(lead lead)
+        private static void ChoosePartner(TLead lead, List<TFollow> lonelyFollows)
         {
-            // Get the follow who want the lead (bachelors).
-            var bachelors = GetBachelors(lead);
+            // Get the follows who want the lead (bachelors).
+            var bachelors = GetBachelors(lead, lonelyFollows);
 
             if (bachelors.Count > 0)
             {
@@ -40,7 +34,7 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                 if (lead.Partner != null)
                 {
                     bachelors.Push(lead.Partner);
-                    _lonelyFollows.Add(lead.Partner);
+                    lonelyFollows.Add(lead.Partner);
                     lead.Partner = null;
                 }
                 
@@ -49,7 +43,7 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                 // Let the lead choose.
                 foreach (var bachelor in bachelors)
                 {
-                    foreach (var choice in lead.Choices.Values)
+                    foreach (var choice in lead.Choices)
                     {
                         if (choice == lead.Partner)
                             break;
@@ -60,15 +54,15 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                         }
                     }
                 }
-                _lonelyFollows.Remove(lead.Partner);
+                lonelyFollows.Remove(lead.Partner);
             }
         }
         
-        private Stack<follow> GetBachelors(lead lead)
+        private static Stack<TFollow> GetBachelors(TLead lead, List<TFollow> lonelyFollows)
         {
-            var bachelors = new Stack<follow>();
+            var bachelors = new Stack<TFollow>();
 
-            foreach (var lonelyFollow in _lonelyFollows)
+            foreach (var lonelyFollow in lonelyFollows)
             {
                 // Look if the lonely follow's top choice matches.
                 if (lonelyFollow.IsCurrentTopChoice(lead))
@@ -83,17 +77,17 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
         
         // Check some requirements for the algorithm.
         // Not actually a part of the algorithm.
-        public void CheckRequirements()
+        public static void CheckRequirements(List<TFollow> follows, List<TLead> leads)
         {
-            if (Follows.Count != Leads.Count)
+            if (follows.Count != leads.Count)
                 throw new System.Exception("Lead and Follows are not of the same count.");
 
-            for (int i = 0; i < Follows.Count; i++)
+            for (int i = 0; i < follows.Count; i++)
             {
-                if (Follows[i].Choices.Count != Leads.Count)
+                if (follows[i].Choices.Count != leads.Count)
                     throw new System.Exception(
                         $"The count of choices by the follow at index {i} in Follows is not equal to the count of Leads.");
-                if (Leads[i].Choices.Count != Follows.Count)
+                if (leads[i].Choices.Count != follows.Count)
                     throw new System.Exception(
                         $"The count of choices by the lead at index {i} in Leads is not equal to the count of Follows.");
             }

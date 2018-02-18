@@ -26,35 +26,30 @@ namespace ArcaneAlgorithmArchiveCLI
                 new Woman("I"),
                 new Woman("J"),
             };
-            men[0].SetChoicesWithList(new List<Woman>() { women[3], women[2],
-                women[4], women[1], women[0]});
-            men[1].SetChoicesWithList(new List<Woman>() { women[0], women[2],
-                women[4], women[1], women[3]});
-            men[2].SetChoicesWithList(new List<Woman>() { women[2], women[1],
-                women[4], women[0], women[3]});
-            men[3].SetChoicesWithList(new List<Woman>() { women[2], women[3],
-                women[0], women[4], women[1]});
-            men[4].SetChoicesWithList(new List<Woman>() { women[4], women[0],
-                women[2], women[1], women[3]});
+            men[0].Choices = new List<Woman>() { women[3], women[2],
+                women[4], women[1], women[0]};
+            men[1].Choices = new List<Woman>() { women[0], women[2],
+                women[4], women[1], women[3]};
+            men[2].Choices = new List<Woman>() { women[2], women[1],
+                women[4], women[0], women[3]};
+            men[3].Choices = new List<Woman>() { women[2], women[3],
+                women[0], women[4], women[1]};
+            men[4].Choices = new List<Woman>() { women[4], women[0],
+                women[2], women[1], women[3]};
                 
             
-            women[0].SetChoicesWithList(new List<Man>() { men[1], men[4],
-                men[2], men[0], men[3]});
-            women[1].SetChoicesWithList(new List<Man>() { men[3], men[4],
-                men[2], men[0], men[1]});
-            women[2].SetChoicesWithList(new List<Man>() { men[4], men[2],
-                men[3], men[0], men[1]});
-            women[3].SetChoicesWithList(new List<Man>() { men[1], men[4],
-                men[2], men[3], men[0]});
-            women[4].SetChoicesWithList(new List<Man>() { men[3], men[2],
-                men[1], men[0], men[4]});
+            women[0].Choices = new List<Man>() { men[1], men[4],
+                men[2], men[0], men[3]};
+            women[1].Choices = new List<Man>() { men[3], men[4],
+                men[2], men[0], men[1]};
+            women[2].Choices = new List<Man>() { men[4], men[2],
+                men[3], men[0], men[1]};
+            women[3].Choices = new List<Man>() { men[1], men[4],
+                men[2], men[3], men[0]};
+            women[4].Choices = new List<Man>() { men[3], men[2],
+                men[1], men[0], men[4]};
 
-            var galeShapley = new GaleShapleyAlgorithm<Man, Woman>
-            {
-                Follows = men,
-                Leads = women
-            };
-            galeShapley.RunGaleShapleyAlgorithm();
+            GaleShapleyAlgorithm<Woman, Man>.RunGaleShapleyAlgorithm(women, men);
             
             foreach (var woman in women)
             {

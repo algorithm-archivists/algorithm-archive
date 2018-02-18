@@ -32,7 +32,7 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                 }
             }
         }
-        public SortedList<int, TPref> Choices { get; set; }
+        public IList<TPref> Choices { get; set; }
 
         // CurrentTopChoice equals the Choice in Choices that is the TopChoice,
         // if already tried Womans are not counted.
@@ -43,7 +43,7 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
         public Person(string name) => Name = name;
 
         // Returns the CurrentTopChoice based on CurrentTopChoiceIndex.
-        public TPref GetCurrentTopChoice() => Choices[Choices.IndexOfKey(CurrentTopChoiceIndex)];
+        public TPref GetCurrentTopChoice() => Choices[CurrentTopChoiceIndex];
         // Returns whether or not the given woman is the CurrentTopChoice
         public bool IsCurrentTopChoice(TPref woman)
         {
@@ -51,16 +51,6 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                 return true;
             else
                 return false;
-        }
-
-        // Set the sorted list by providing a normal one. The first element of
-        // the list will get the lowest index in the sorted one.
-        public void SetChoicesWithList(List<TPref> unsortedChoices)
-        {
-            var choices = new SortedList<int, TPref>();
-            for (int i = 0; i < unsortedChoices.Count; i++)
-                choices.Add(i, unsortedChoices[i]);
-            Choices = choices;
         }
     }
 }
