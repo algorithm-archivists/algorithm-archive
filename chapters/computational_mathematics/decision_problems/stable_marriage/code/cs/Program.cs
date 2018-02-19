@@ -1,4 +1,5 @@
-﻿using System;
+﻿// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
+using System;
 using System.Collections.Generic;
 using ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleShapley;
 

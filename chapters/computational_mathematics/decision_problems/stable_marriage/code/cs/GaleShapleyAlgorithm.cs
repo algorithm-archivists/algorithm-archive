@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
+using System.Collections.Generic;
 
 namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleShapley
 {
