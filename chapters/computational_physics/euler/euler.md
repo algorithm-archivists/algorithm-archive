@@ -118,5 +118,12 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 
 {% method %}
 {% sample lang="jl" %}
+### Julia
 [import, lang:"julia"](code/julia/euler.jl)
+{% sample lang="c" %}
+### C
+[import, lang:"c"](code/c/euler.c)
+{% sample lang="cpp" %}
+### C++
+[import, lang:"cpp"](code/c++/euler.cpp)
 {% endmethod %}
