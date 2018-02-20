@@ -9,88 +9,37 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
     {
         public static void RunGaleShapleyAlgorithm(List<TFollow> follows, List<TLead> leads)
         {
-            CheckRequirements(follows, leads);
-            
             // All follows are lonely.
             var lonelyFollows = new List<TFollow>(follows);
+            
             // Carry on until there are no lonely follows anymore.
             while (lonelyFollows.Count > 0)
             {
-                // Let the lead choose again and again.
-                foreach (var lead in leads)
+                // Let every lonely follow propose to their current top choice.
+                foreach (var lonelyFollow in lonelyFollows)
                 {
-                    ChoosePartner(lead, lonelyFollows);
-                }
-            }
-        }
-
-        private static void ChoosePartner(TLead lead, List<TFollow> lonelyFollows)
-        {
-            // Get the follows who want the lead (bachelors).
-            var bachelors = GetBachelors(lead, lonelyFollows);
-
-            if (bachelors.Count > 0)
-            {
-                // Give the existing partner a chance to prove theirself.
-                if (lead.Partner != null)
-                {
-                    bachelors.Push(lead.Partner);
-                    lonelyFollows.Add(lead.Partner);
-                    lead.Partner = null;
-                }
-                
-                // One partner for the beginning.
-                lead.Partner = bachelors.Pop();
-                // Let the lead choose.
-                foreach (var bachelor in bachelors)
-                {
-                    foreach (var choice in lead.Choices)
-                    {
-                        if (choice == lead.Partner)
-                            break;
-                        if (choice == bachelor)
-                        {
-                            lead.Partner = bachelor;
-                            break;
-                        }
-                    }
-                }
-                lonelyFollows.Remove(lead.Partner);
-            }
-        }
-        
-        private static Stack<TFollow> GetBachelors(TLead lead, List<TFollow> lonelyFollows)
-        {
-            var bachelors = new Stack<TFollow>();
-
-            foreach (var lonelyFollow in lonelyFollows)
-            {
-                // Look if the lonely follow's top choice matches.
-                if (lonelyFollow.IsCurrentTopChoice(lead))
-                {
-                    bachelors.Push(lonelyFollow);
+                    ProcessProposal(lonelyFollow, lonelyFollow.GetCurrentTopChoice());
                     lonelyFollow.CurrentTopChoiceIndex++;
                 }
+                
+                // Look which follows have a partner now and which don't.
+                var newLonelyFollows = new List<TFollow>();
+                foreach (var follow in follows)
+                {
+                    if (follow.Partner == null)
+                        newLonelyFollows.Add(follow);
+                }
+                lonelyFollows = newLonelyFollows;
             }
-            
-            return bachelors;
         }
         
-        // Check some requirements for the algorithm.
-        // Not actually a part of the algorithm.
-        public static void CheckRequirements(List<TFollow> follows, List<TLead> leads)
+        // Process proposal.
+        private static void ProcessProposal(TFollow follow, TLead lead)
         {
-            if (follows.Count != leads.Count)
-                throw new System.Exception("Lead and Follows are not of the same count.");
-
-            for (int i = 0; i < follows.Count; i++)
+            if (lead.Partner == null || 
+                lead.Choices.IndexOf(follow) < lead.Choices.IndexOf(lead.Partner))
             {
-                if (follows[i].Choices.Count != leads.Count)
-                    throw new System.Exception(
-                        $"The count of choices by the follow at index {i} in Follows is not equal to the count of Leads.");
-                if (leads[i].Choices.Count != follows.Count)
-                    throw new System.Exception(
-                        $"The count of choices by the lead at index {i} in Leads is not equal to the count of Follows.");
+                lead.Partner = follow;
             }
         }
     }

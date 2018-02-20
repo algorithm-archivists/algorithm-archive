@@ -36,7 +36,7 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
         public IList<TPref> Choices { get; set; }
 
         // CurrentTopChoice equals the Choice in Choices that is the TopChoice,
-        // if already tried Womans are not counted.
+        // if already tried women are not counted.
         public int CurrentTopChoiceIndex { get; set; } = 0;
 
         public string Name { get; set; }
@@ -45,7 +45,5 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
 
         // Returns the CurrentTopChoice based on CurrentTopChoiceIndex.
         public TPref GetCurrentTopChoice() => Choices[CurrentTopChoiceIndex];
-        // Returns whether or not the given woman is the CurrentTopChoice
-        public bool IsCurrentTopChoice(TPref woman) => (woman == GetCurrentTopChoice());
     }
 }
