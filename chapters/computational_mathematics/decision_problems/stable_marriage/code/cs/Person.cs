@@ -46,12 +46,6 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
         // Returns the CurrentTopChoice based on CurrentTopChoiceIndex.
         public TPref GetCurrentTopChoice() => Choices[CurrentTopChoiceIndex];
         // Returns whether or not the given woman is the CurrentTopChoice
-        public bool IsCurrentTopChoice(TPref woman)
-        {
-            if (woman == GetCurrentTopChoice())
-                return true;
-            else
-                return false;
-        }
+        public bool IsCurrentTopChoice(TPref woman) => (woman == GetCurrentTopChoice());
     }
 }
