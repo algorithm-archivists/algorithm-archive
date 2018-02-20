@@ -50,7 +50,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="jl" %}
 [import:11-18, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:6-14, lang:"c_cpp"](code/c++/Tree.cpp)
+[import:6-13, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:48-57, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
@@ -78,7 +78,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="jl" %}
 [import:21-29, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:16-24, lang:"c_cpp"](code/c++/Tree.cpp)
+[import:15-22, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:75-84, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
@@ -101,7 +101,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="jl" %}
 [import:32-47, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:27-44, lang:"c_cpp"](code/c++/Tree.cpp)
+[import:25-38, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:86-104, lang:"csharp"](code/cs/TreeMdAdditional.cs)
 {% sample lang="c" %}
@@ -133,7 +133,7 @@ In code, it looks like this:
 {% sample lang="jl" %}
 [import:50-61, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:46-59, lang:"c_cpp"](code/c++/Tree.cpp)
+[import:40-53, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:36-52, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
@@ -160,7 +160,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="jl" %}
 [import:64-75, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:61-74, lang:"c_cpp"](code/c++/Tree.cpp)
+[import:55-68, lang:"c_cpp"](code/c++/Tree.cpp)
 {% sample lang="cs" %}
 [import:54-70, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}

@@ -4,7 +4,6 @@ struct node {
 };
 
 void DFS_recursive(const node& n) {
-
   // Here we are doing something...
   std::cout << n.ID << '\n';
 
@@ -14,7 +13,6 @@ void DFS_recursive(const node& n) {
 }
 
 void DFS_recursive_postorder(const node& n) {
-
   for (int i = 0; i < n.children.size(); ++i) {
     DFS_recursive_postorder(n.children[i]);
   }
@@ -25,7 +23,6 @@ void DFS_recursive_postorder(const node& n) {
 
 // This assumes only 2 children
 void DFS_recursive_inorder_btree(const node& n) {
-
   if (n.children.size() > 2) {
     std::cout << "Not binary tree!" << '\n';
     exit(1);
