@@ -18,8 +18,7 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                 // Let every lonely follow propose to their current top choice.
                 foreach (var lonelyFollow in lonelyFollows)
                 {
-                    ProcessProposal(lonelyFollow, lonelyFollow.GetCurrentTopChoice());
-                    lonelyFollow.CurrentTopChoiceIndex++;
+                    lonelyFollow.ProposeToNext();
                 }
                 
                 // Look which follows have a partner now and which don't.
@@ -30,16 +29,6 @@ namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleS
                         newLonelyFollows.Add(follow);
                 }
                 lonelyFollows = newLonelyFollows;
-            }
-        }
-        
-        // Process proposal.
-        private static void ProcessProposal(TFollow follow, TLead lead)
-        {
-            if (lead.Partner == null || 
-                lead.Choices.IndexOf(follow) < lead.Choices.IndexOf(lead.Partner))
-            {
-                lead.Partner = follow;
             }
         }
     }
