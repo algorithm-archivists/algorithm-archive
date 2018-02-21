@@ -60,11 +60,6 @@ In code, this looks something like:
 
 {% method %}
 {% sample lang="jl" %}
-<<<<<<< HEAD
-[import:1-17, unindent:"true", lang:"julia"](code/julia/conv.jl)
-{% sample lang="hs" %}
-[import:1-5, unindent:"true", lang:"haskell"](code/haskell/convolution.hs)
-=======
 [import:1-17, lang:"julia"](code/julia/conv.jl)
 {% sample lang="hs" %}
 [import:1-5, lang:"haskell"](code/haskell/convolution.hs)
@@ -72,7 +67,6 @@ In code, this looks something like:
 [import:46-58, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
 [import:62-79, lang:"c_cpp"](code/c++/convolutions.cpp)
->>>>>>> bfb730499cb82da72d9d0e63234497512ba335cd
 {% endmethod %}
 
 Note that in this case, the output array will be the size of `f[n]` and `g[n]` put together.
