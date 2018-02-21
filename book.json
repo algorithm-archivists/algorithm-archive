@@ -1,9 +1,14 @@
 {
+    "gitbook": "3.x.x",
     "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock"],
     "lunr": {
         "maxIndexSize": 1000000000
     },
 	"pluginsConfig": {
+		"include-codeblock": {
+			"fixlang": true,
+			"unindent": true
+		},
 		"theme-api": {
 			"languages": [
 				{
@@ -58,9 +63,13 @@
 				{
 					"lang": "java",
 					"name": "Java"
+				},
+				{
+					"lang": "clj",
+					"name": "Clojure"
 				}
 			],
-			"split": true 
-		}
+			"split": false
+        }
 	}
 }
