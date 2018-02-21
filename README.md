@@ -2,6 +2,8 @@
 The Arcane Algorithm Archive for all our adventures on LeiosOS / simuleios <br/>
 The book can be found here: https://www.gitbook.com/book/leios/algorithm-archive/details.
 The github repository can be found here: https://github.com/leios/algorithm-archive.
+Most algorithms have been covered on the youtube channel LeiosOS: https://www.youtube.com/user/LeiosOS
+and livecoded on Twitch: https://www.twitch.tv/simuleios
 
 Note that the this project is is essentially a book about algorithms collaboratively written by an online community. 
 Fortunately, there are a lot of algorithms out there, which means that there is a lot of content material available.
