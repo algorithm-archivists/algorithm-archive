@@ -112,7 +112,7 @@ That said, variations of this method *are* certainly used (for example Crank-Nic
 
 ### Interactive Visualization
 
-You can see [here](./code/euler-elm.html) an interactive visualization of the Euler method for a particle solving the ODE $$x' = -2x$$ written in Elm, where the timestep and initial position can be modified.
+You can see [here](./code/elm/euler-elm.html) an interactive visualization of the Euler method for a particle solving the ODE $$x' = -2x$$ written in Elm, where the timestep and initial position can be modified. The full code for the visualization is shown below when the Elm language is selected.
 
 ### Example Code
 
@@ -135,4 +135,7 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 ### Elm
 [import:44-54, lang:"elm"](code/elm/euler.elm)
 [import:193-210, lang:"elm"](code/elm/euler.elm)
+
+Full code for the visualization follows:
+[import, lang:"elm"](code/elm/euler.elm)
 {% endmethod %}
