@@ -43,6 +43,7 @@ I am incredibly interested to see what you guys do and how you implement the alg
 
 {% method %}
 {% sample lang="jl" %}
+<<<<<<< HEAD
 ### Julia
 [import, lang:"julia"](code/julia/stable_marriage.jl)
 {% sample lang="py" %}
