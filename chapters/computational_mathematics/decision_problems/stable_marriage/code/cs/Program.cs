@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleShapley;
+using ArcaneAlgorithmArchive.Extensions;
 
 namespace ArcaneAlgorithmArchiveCLI
 {
@@ -27,35 +28,33 @@ namespace ArcaneAlgorithmArchiveCLI
                 new Woman("I"),
                 new Woman("J"),
             };
-            men[0].Choices = new List<Woman>() { women[3], women[2],
-                women[4], women[1], women[0]};
-            men[1].Choices = new List<Woman>() { women[0], women[2],
-                women[4], women[1], women[3]};
-            men[2].Choices = new List<Woman>() { women[2], women[1],
-                women[4], women[0], women[3]};
-            men[3].Choices = new List<Woman>() { women[2], women[3],
-                women[0], women[4], women[1]};
-            men[4].Choices = new List<Woman>() { women[4], women[0],
-                women[2], women[1], women[3]};
-                
-            
-            women[0].Choices = new List<Man>() { men[1], men[4],
-                men[2], men[0], men[3]};
-            women[1].Choices = new List<Man>() { men[3], men[4],
-                men[2], men[0], men[1]};
-            women[2].Choices = new List<Man>() { men[4], men[2],
-                men[3], men[0], men[1]};
-            women[3].Choices = new List<Man>() { men[1], men[4],
-                men[2], men[3], men[0]};
-            women[4].Choices = new List<Man>() { men[3], men[2],
-                men[1], men[0], men[4]};
 
+            var random = new Random();
+            
+            foreach (var man in men)
+            {
+                man.Choices = new List<Woman>(women).Shuffle(random);
+                Console.WriteLine(man.Name + ":");
+                foreach (var choice in man.Choices)
+                    Console.Write(choice.Name);
+                Console.WriteLine();
+            }
+            foreach (var woman in women)
+            {
+                woman.Choices = new List<Man>(men).Shuffle(random);
+                Console.WriteLine(woman.Name + ":");
+                foreach (var choice in woman.Choices)
+                    Console.Write(choice.Name);
+                Console.WriteLine();
+            }
+            
             GaleShapleyAlgorithm<Woman, Man>.RunGaleShapleyAlgorithm(women, men);
             
             foreach (var woman in women)
             {
                 Console.WriteLine(woman.Name + " : " + woman?.Partner.Name);
             }
+            Console.WriteLine();
         }
     }
     
