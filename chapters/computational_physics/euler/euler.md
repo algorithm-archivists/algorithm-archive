@@ -130,4 +130,7 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 ### Elm
 [import:44-54, lang:"elm"](code/elm/euler.elm)
 [import:193-210, lang:"elm"](code/elm/euler.elm)
+
+Full code for the visualization follows:
+[import, lang:"elm"](code/elm/euler.elm)
 {% endmethod %}
