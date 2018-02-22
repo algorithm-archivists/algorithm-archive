@@ -66,7 +66,7 @@ For any timestep $$dt$$. This means that if we are solving the kinematic equatio
 $$
 \begin{align}
     x_{n+1} &= x_n + v dt \\
-    v_{n+1} &= a t_n
+    v_{n+1} &= a (t_n)
 \end{align}
 $$
 
@@ -80,8 +80,8 @@ For example, here we see dramatically different results for different timesteps 
 The blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a timestep of 1.
 To be clear: the larger the timestep, the worse the error becomes; however, there is at least one more problem with using the forward Euler method on real problems: instabilities.
 
-As we mentioned, the forward Euler method approximates the solutuion to an Ordinary Differential Equation (ODE) by using only the first derivative.
-This is (rather expextedly) a poor approximation.
+As we mentioned, the forward Euler method approximates the solution to an Ordinary Differential Equation (ODE) by using only the first derivative.
+This is (rather expectedly) a poor approximation.
 In fact, the approximation is so poor that the error associated with running this algorithm can add up and result in incredibly incorrect results.
 As you might imagine, the only solution to this is decreasing the timestep and hoping for the best or using a similar method with different stability regions, like the backward Euler method.
 
@@ -94,7 +94,7 @@ If we were to take the Euler method's solution as valid, we would incorrectly as
 
 Like above, the blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a tiemstep of 1.
 Here, it's interesting that we see 2 different instability patterns.
-The green is initially instable, but converges onto the correct solution, but the red is wrong from the get-go and only gets more wrong as time goes on.
+The green is initially unstable, but converges onto the correct solution, but the red is wrong from the get-go and only gets more wrong as time goes on.
 
 In truth, the stability region of the forward Euler method for the case where $$y' = ky$$ can be found with the following inequality:
 $$
@@ -110,11 +110,16 @@ Verlet integration has a distinct advantage over the forward Euler method in bot
 That said, in practice, due to the instability of the forward Euler method and the error with larger timesteps, this method is rarely used in practice.
 That said, variations of this method *are* certainly used (for example Crank-Nicolson and [Runge-Kutta](../runge_kutta/runge_kutta.md), so the time spent reading this chapter is not a total waste!
 
+### Interactive Visualization
+
+You can see [here](./code/euler-elm.html) an interactive visualization of the Euler method for a particle solving the ODE $$x' = -2x$$ written in Elm, where the timestep and initial position can be modified.
+
 ### Example Code
 
 Like in the case of [Verlet Integration](../verlet/verlet.md), the easiest way to test to see if this method works is to test it against a simple test-case.
 Here, the most obvious test-case would be dropping a ball from 5 meters, which is my favorite example, but proved itself to be slightly less enlightening than I would have thought.
-So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y' = 5y$$.
+So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y' = 5y$$. Note that in this case, the velocity is directly given by the ODE and the acceleration is not part of the model.
+
 
 {% method %}
 {% sample lang="jl" %}
@@ -126,6 +131,8 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 {% sample lang="cpp" %}
 ### C++
 [import, lang:"cpp"](code/c++/euler.cpp)
+{% sample lang="elm" %}
+### Elm
+[import:44-54, lang:"elm"](code/elm/euler.elm)
+[import:193-210, lang:"elm"](code/elm/euler.elm)
 {% endmethod %}
-
-[Link to the project](./euler-elm.html)

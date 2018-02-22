@@ -67,6 +67,10 @@
 				{
 					"lang": "clj",
 					"name": "Clojure"
+				},
+				{
+					"lang": "elm",
+					"name": "Elm"
 				}
 			],
 			"split": false
