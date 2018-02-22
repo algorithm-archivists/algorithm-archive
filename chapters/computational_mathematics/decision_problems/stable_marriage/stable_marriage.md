@@ -65,6 +65,6 @@ Person.cs
 [import, lang:"csharp"](code/cs/Person.cs)
 Program.cs
 [import, lang:"csharp"](code/cs/Program.cs)
-IListExtensions.cs
-[import, lang:"csharp"](code/cs/IListExtensions.cs)
+ListExtensions.cs
+[import, lang:"csharp"](code/cs/ListExtensions.cs)
 {% endmethod %}

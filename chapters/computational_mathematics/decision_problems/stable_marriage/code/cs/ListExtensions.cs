@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ArcaneAlgorithmArchive.Extensions
 {
-    public static class IListExtensions
+    public static class ListExtensions
     {
         public static IList<T> Shuffle<T>(this IList<T> list, Random rng)
         {
