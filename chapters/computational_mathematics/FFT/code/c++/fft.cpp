@@ -1,15 +1,15 @@
 // written by Gathros, modernized by Nicole Mazzuca.
 
-#include <complex>
-#include <vector>
-#include <array>
-#include <cstdint>
 #include <algorithm>
+#include <array>
+#include <complex>
+#include <cstdint>
+#include <vector>
 
 // These headers are for presentation not for the algorithm.
-#include <random>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
+#include <random>
 
 using std::begin;
 using std::end;
@@ -51,11 +51,10 @@ void cooley_tukey(Iter first, Iter last) {
       auto& bottom = first[k];
       auto& top = first[k + size / 2];
       top = bottom - w * top;
-      bottom -= (top - bottom);
+      bottom -= top - bottom;
     }
   }
 }
-
 
 // note: (last - first) must be less than 2**32 - 1
 template <typename Iter>
@@ -90,7 +89,7 @@ void iterative_cooley_tukey(Iter first, Iter last) {
       auto v = c64(1.0);
       for (size_t k = 0; k < stride / 2; k++) {
         first[k + j + stride / 2] =
-          first[k + j] - v * first[k + j + stride / 2];
+            first[k + j] - v * first[k + j + stride / 2];
         first[k + j] -= (first[k + j + stride / 2] - first[k + j]);
         v *= w;
       }
@@ -106,9 +105,7 @@ int main() {
 
   std::array<c64, 64> initial;
   std::generate(
-    begin(initial),
-    end(initial),
-    [&] { return distribution(rng); });
+      begin(initial), end(initial), [&] { return distribution(rng); });
 
   auto recursive = initial;
   auto iterative = initial;
@@ -118,21 +115,13 @@ int main() {
   iterative_cooley_tukey(begin(iterative), end(iterative));
 
   // Check if the arrays are approximately equivalent
-  std::cout
-    << std::right
-    << std::setw(16) << "idx"
-    << std::setw(16) << "rec"
-    << std::setw(16) << "it"
-    << std::setw(16) << "subtracted"
-    << '\n';
+  std::cout << std::right << std::setw(16) << "idx" << std::setw(16) << "rec"
+            << std::setw(16) << "it" << std::setw(16) << "subtracted" << '\n';
   for (int i = 0; i < initial.size(); ++i) {
     auto rec = recursive[i];
     auto it = iterative[i];
-    std::cout
-      << std::setw(16) << i
-      << std::setw(16) << std::abs(rec)
-      << std::setw(16) << std::abs(it)
-      << std::setw(16) << (std::abs(rec) - std::abs(it))
-      << '\n';
+    std::cout << std::setw(16) << i << std::setw(16) << std::abs(rec)
+              << std::setw(16) << std::abs(it) << std::setw(16)
+              << (std::abs(rec) - std::abs(it)) << '\n';
   }
 }

@@ -1,9 +1,9 @@
-#include <vector>
 #include <algorithm>
-#include <numeric>
-#include <iterator>
-#include <random>
 #include <iostream>
+#include <iterator>
+#include <numeric>
+#include <random>
+#include <vector>
 
 // this header is so that we can use `not` and `and` on MSVC
 #include <ciso646>
@@ -49,10 +49,9 @@ std::vector<person> make_person_list(size_t number_of_partners) {
   };
 
   std::vector<person> ret;
-  std::generate_n(
-    std::back_inserter(ret),
-    number_of_partners,
-    [&] { return person{false, 0, random_pref_list()}; });
+  std::generate_n(std::back_inserter(ret), number_of_partners, [&] {
+    return person{false, 0, random_pref_list()};
+  });
 
   return ret;
 }
@@ -61,11 +60,8 @@ template <typename LeadIter, typename FollowIter>
 void stable_match(LeadIter leads, LeadIter leads_end, FollowIter follows) {
   // for each index in the leads' preference list, we'll go through this
   size_t const number_of_partners = leads_end - leads;
-  for (
-    size_t proposal_index = 0;
-    proposal_index < number_of_partners;
-    ++proposal_index)
-  {
+  for (size_t proposal_index = 0; proposal_index < number_of_partners;
+       ++proposal_index) {
     /*
       each follow will get their own vector of proposals to them
       for each entry in the leads' proposal list
@@ -85,8 +81,8 @@ void stable_match(LeadIter leads, LeadIter leads_end, FollowIter follows) {
 
     // for each follow, we'll look at their preference list
     for (size_t i = 0; i < number_of_partners; ++i) {
-      for (size_t pref: follows[i].preference_list) {
-        for (size_t proposal: proposals[i]) {
+      for (size_t pref : follows[i].preference_list) {
+        for (size_t proposal : proposals[i]) {
           // and, if they were given a proposal, then they'll choose their
           // favorite here
           if (pref == proposal and not follows[i].finished) {
@@ -114,11 +110,7 @@ int main() {
 
   // the happy marriages are announced to the console here :)
   for (size_t i = 0; i < number_of_partners; ++i) {
-    std::cout
-      << "the partnership of lead "
-      << i
-      << " and follow "
-      << leads[i].preference
-      << " shall commence forthwith!\n";
+    std::cout << "the partnership of lead " << i << " and follow "
+              << leads[i].preference << " shall commence forthwith!\n";
   }
 }
