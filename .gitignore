@@ -495,3 +495,6 @@ __pycache__/
 
 
 # End of https://www.gitignore.io/api/vim,linux,emacs,macos,windows,gitbook,sublimetext,visualstudio,visualstudiocode
+
+-# Other
+-*.xcf
