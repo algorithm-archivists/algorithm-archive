@@ -1,0 +1,80 @@
+root = true
+
+# This file
+[.editorconfig]
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Pretty much everything should trim whitespace and have a final EOL
+[*.{c,clj,cpp,cs,css,elm,go,hs,html,jl,js,md,py,rs}]
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# C
+[*.c]
+indent_style = space
+indent_size = 4
+
+# Clojure
+[*.clj]
+indent_style = space
+indent_size = 2
+
+# C++
+[*.cpp]
+indent_style = space
+indent_size = 2
+
+# C#
+[*.cs]
+indent_style = space
+indent_size = 4
+
+# CSS
+[*.css]
+indent_style = space
+indent_size = 2
+
+# Elm
+[*.elm]
+indent_style = space
+indent_size = 2
+
+# Go
+[*.go]
+indent_style = tab
+
+# Haskell
+[*.hs]
+indent_style = space
+indent_size = 2
+
+# HTML
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Julia
+[*.jl]
+indent_style = space
+indent_size = 4
+
+# JavaScript
+[*.js]
+indent_style = space
+indent_size = 2
+
+# Markdown
+[*.md]
+indent_style = space
+indent_size = 2
+
+# Python
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Rust
+[*.rs]
+indent_style = space
+indent_size = 4
