@@ -2,15 +2,15 @@
 // restyled by Nicole Mazzuca (ubsan)
 #include <cmath>
 #include <iostream>
+#include <utility>
 
 // Euclidean algorithm using modulus
 int euclid_mod(int a, int b) {
   a = std::abs(a);
   b = std::abs(b);
+
   while (b != 0) {
-    int temp = b;
-    b = a % b;
-    a = temp;
+    a = std::exchange(b, a % b);
   }
 
   return a;
@@ -20,6 +20,7 @@ int euclid_mod(int a, int b) {
 int euclid_sub(int a, int b) {
   a = std::abs(a);
   b = std::abs(b);
+
   while (a != b) {
     if (a > b) {
       a -= b;

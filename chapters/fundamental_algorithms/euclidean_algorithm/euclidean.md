@@ -99,7 +99,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 ### Cpp 
-[import, lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
 ### JavaScript
 [import, lang="javascript"](code/javascript/euclidean_example.js)
