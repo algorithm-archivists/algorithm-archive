@@ -37,7 +37,7 @@ This problem is solved by the Gale-Shapley algorithm, which can be simply descri
 3. All rejected men propose to their next choice, and the women again select whichever man they prefer, possibly rejecting the one they were already engaged to.
 
 This process continues until all individuals are paired, which means that this algorithm guarantees stable matching and also has a $$\mathcal{O}(n^2)$$ runtime.
-To be clear, even though this algorithm seems conceptually simple, it is rather tricky to implement correctly. 
+To be clear, even though this algorithm seems conceptually simple, it is rather tricky to implement correctly.
 I do not at all claim that the code provided here is efficient and we will definitely be coming back to this problem in the future when we have more tools under our belt.
 I am incredibly interested to see what you guys do and how you implement the algorithm.
 
