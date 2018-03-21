@@ -127,5 +127,7 @@ Submitted by P. Mekhail
 {% sample lang="javascript" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/verlet.js)
-
+{% sample lang="rs" %}
+### Rust
+[import, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
