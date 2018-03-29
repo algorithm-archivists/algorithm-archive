@@ -66,7 +66,7 @@ In code, this looks something like:
 {% sample lang="c"%}
 [import:46-58, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
-[import:62-79, lang:"c_cpp"](code/c++/convolutions.cpp)
+[import:68-88, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
 
 Note that in this case, the output array will be the size of `f[n]` and `g[n]` put together.
@@ -115,7 +115,7 @@ Where the `.*` operator is an element-wise multiplication.
 {% sample lang="c"%}
 [import:60-69, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
-[import:81-92, lang:"c_cpp"](code/c++/convolutions.cpp)
+[import:90-105, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
 
 This method also has the added advantage that it will *always output an array of the size of your signal*; however, if your signals are not of equal size, we need to pad the smaller signal with zeros.
