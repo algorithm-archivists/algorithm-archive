@@ -157,7 +157,7 @@ In code, it looks like this:
 {% sample lang="scratch" %}
 [import:49-61, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
-[import:17-24, lang:"rust"](code/rust/Tree.rs)
+[import:17-24, lang:"rust"](code/rust/tree.rs)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -184,7 +184,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="scratch" %}
 [import:63-75, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
-[import:26-34, lang:"rust"](code/rust/Tree.rs)
+[import:26-34, lang:"rust"](code/rust/tree.rs)
 {% endmethod %}
 
 # Example Code
@@ -215,5 +215,5 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 ![scratch tree](code/scratch/scratch_tree.png)
 {% sample lang="rs"%}
 ### Rust
-[import, lang:"rust"](code/rust/Tree.rs)
+[import, lang:"rust"](code/rust/tree.rs)
 {% endmethod %}

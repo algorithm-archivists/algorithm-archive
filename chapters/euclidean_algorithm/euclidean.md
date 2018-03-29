@@ -35,7 +35,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="clj" %}
 [import:1-7, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:20-32, lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import:20-32, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
 [import:1-11, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}
@@ -64,7 +64,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="clj" %}
 [import:8-12, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:7-17, lang="c_cpp"](code/c++/euclidean_example.cpp)
+[import:7-17, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
 [import:13-21, lang="julia"](code/pseudo/euclidean.pseudo)
 {% sample lang="py2" %}

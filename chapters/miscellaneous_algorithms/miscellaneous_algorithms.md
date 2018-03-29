@@ -1,3 +1,0 @@
-# Miscellaneous Algorithms
-
-I'll be honest here. I don't really know the best way to organize this archive yet. I need some way of combining similar algorithms together while also providing them their own autonomy. Because we have so few algorithms at this point, I think it's alright to put the algorithms temporarily into the "Miscellaneous" category and then disperse them as necessary. For example, I know at some point we will need a chapter on computational Geometry methods, another on Spectral Methods, another on Cryptography and so on; however, these chapters will come with time and because this is an active, ever-growing project, I think the best way to grow the archive is to allow for future expansion.

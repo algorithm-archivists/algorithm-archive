@@ -1,3 +1,0 @@
-# Mathematical Background
-
-I learned algebra around the age of 12 or 13 in school. Depending on the project you are working on, programming may not require much more mathematical knowledge; however, in many cases, it will require a lot more. The purpose of this chapter is to build all of the necessary mathematical tools you will need throughout the book. For now, it might seem a little barren, but I'll add more to it as we go along!
