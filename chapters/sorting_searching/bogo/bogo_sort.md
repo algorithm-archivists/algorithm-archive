@@ -45,7 +45,7 @@ function bogo_sort(Vector{Type} a)
 end
 ```
 {% sample lang="cs" %}
-[import:29-35, lang:"csharp"](code/cs/bogo.cs)
+[import:9-15, lang:"csharp"](code/cs/BogoSort.cs)
 {% sample lang="clj" %}
 [import:6-10, lang:"clojure"](code/clojure/bogo.clj)
 {% endmethod %}
