@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
+namespace TreeTraversalMdAdditional
 {
     // This class recreates Tree and inlcudes changed or new methods needed for in-text-code.
     // Therefor this file disregards coding standards and best practices.
