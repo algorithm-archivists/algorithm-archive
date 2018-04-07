@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ArcaneAlgorithmArchive.Extensions
+namespace StableMarriageProblem
 {
     public static class ListExtensions
     {
