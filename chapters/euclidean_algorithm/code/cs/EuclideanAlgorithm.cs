@@ -1,6 +1,7 @@
-﻿using System;
+﻿// submitted by Julian Schacher (jspp)
+using System;
 
-namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.EuclideanAlgorithm
+namespace EuclideanAlgorithm
 {
     public static class EuclideanAlgorithm
     {
