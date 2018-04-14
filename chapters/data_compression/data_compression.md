@@ -142,4 +142,4 @@ L_2 &= 0.1\times 3 + 0.2 \times 3 + 0.3 \times 2 + 0.4 \times 1 = 1.9
 $$
 
 Here, it's clear that $$L_2 < L_1$$, and thus the second set of codewords compresses our data more than the first. 
-This measure can be used as a direct test of certain simple data compression techniques, notably those created by Shannon, Fano, and Huffman, which will be covered soon!
+This measure can be used as a direct test of certain simple data compression techniques, notably those created by Shannon, Fano, and [Huffman](huffman/huffman.md), which will be covered soon!
