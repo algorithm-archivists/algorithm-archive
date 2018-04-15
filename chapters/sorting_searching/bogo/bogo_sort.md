@@ -36,14 +36,8 @@ In the best case, this algorithm runs with a complexity of $$\Omega(1)$$, and in
 In code, it looks something like this:
 
 {% method %}
-{% sample lang="pseudo" %}
-```julia
-function bogo_sort(Vector{Type} a)
-    while(!is_sorted(a))
-        shuffle(a)
-    end
-end
-```
+{% sample lang="jl" %}
+[import:1-14, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
 [import:29-35, lang:"csharp"](code/cs/bogo.cs)
 {% sample lang="clj" %}

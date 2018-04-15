@@ -31,19 +31,8 @@ In this way, we sweep through the array $$n$$ times for each element and continu
 This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with code similar to the following:
 
 {% method %}
-{% sample lang="pseudo" %}
-```julia
-function bubble_sort(Vector{Type} a)
-    n = length(a)
-    for i = 0:n
-        for j = 1:n
-            if(a[j-1] > a[j])
-                swap(a[j-1], a[j])
-            end
-        end
-    end
-end
-```
+{% sample lang="jl" %}
+[import:1-10, lang:"julia"](code/julia/bubble.jl)
 {% sample lang="cs" %}
 [import:9-27, lang:"csharp"](code/cs/Sorting.cs)
 {% endmethod %}
