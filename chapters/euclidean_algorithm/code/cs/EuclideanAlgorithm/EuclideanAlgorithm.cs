@@ -1,10 +1,16 @@
 ﻿// submitted by Julian Schacher (jspp)
-namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.EuclideanAlgorithm
+using System;
+
+namespace EuclideanAlgorithm
 {
-    public class EuclideanAlgorithmMdAdditional
+    public static class EuclideanAlgorithm
     {
         public static int EuclidSub(int a, int b)
         {
+            // Math.Abs for negative number support
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+
             while (a != b)
             {
                 if (a > b)
@@ -18,6 +24,10 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.EuclideanAlgorithm
 
         public static int EuclidMod(int a, int b)
         {
+            // Math.Abs for negative number support
+            a = Math.Abs(a);
+            b = Math.Abs(b);
+
             while (b != 0)
             {
                 var temp = b;
@@ -26,17 +36,6 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.EuclideanAlgorithm
             }
 
             return a;
-        }
-    }
-    class MainClass
-    {
-        public static void Main(string[] args)
-        {
-            int check = EuclideanAlgorithm.EuclidMod(64 * 67, 64 * 81);
-            int check2 = EuclideanAlgorithm.EuclidSub(128 * 12, 128 * 77);
-            
-            Console.WriteLine(check);
-            Console.WriteLine(check2);
         }
     }
 }

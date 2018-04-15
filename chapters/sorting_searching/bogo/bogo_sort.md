@@ -39,7 +39,7 @@ In code, it looks something like this:
 {% sample lang="jl" %}
 [import:1-14, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
-[import:29-35, lang:"csharp"](code/cs/bogo.cs)
+[import:9-15, lang:"csharp"](code/cs/BogoSort.cs)
 {% sample lang="clj" %}
 [import:6-10, lang:"clojure"](code/clojure/bogo.clj)
 {% endmethod %}

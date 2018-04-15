@@ -31,7 +31,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="c" %}
 [import:18-33, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
-[import:6-17, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+[import:6-17, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 [import:1-7, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
@@ -62,7 +62,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="c" %}
 [import:4-16, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
-[import:19-29, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+[import:19-29, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
 [import:8-12, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
@@ -97,7 +97,10 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
 ### C# #
-[import, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional.cs)
+EuclideanAlgorithm.cs
+[import, lang="csharp"](code/cs/EuclideanAlgorithm/EuclideanAlgorithm.cs)
+Program.cs
+[import, lang="csharp"](code/cs/EuclideanAlgorithm/Program.cs)
 {% sample lang="clj" %}
 ### Clojure
 [import, lang="clojure"](code/clojure/euclidean_example.clj)

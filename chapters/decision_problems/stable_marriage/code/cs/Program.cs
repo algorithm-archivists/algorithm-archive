@@ -1,16 +1,14 @@
 ﻿// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
 using System;
 using System.Collections.Generic;
-using ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleShapley;
-using ArcaneAlgorithmArchive.Extensions;
 
-namespace ArcaneAlgorithmArchiveCLI
+namespace StableMarriageProblem
 {
-    class MainClass
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("GaleShapley");
+            Console.WriteLine("GaleShapleyAlgorithm");
             // Using men and women as an example.
             var men = new List<Man>()
             {
@@ -54,11 +52,9 @@ namespace ArcaneAlgorithmArchiveCLI
             {
                 Console.WriteLine(woman.Name + " : " + woman?.Partner.Name);
             }
-            Console.WriteLine();
         }
     }
-    
-    // for GaleShapley
+
     public class Man : Person<Man, Woman>
     {
         public Man(string name) : base(name) { }

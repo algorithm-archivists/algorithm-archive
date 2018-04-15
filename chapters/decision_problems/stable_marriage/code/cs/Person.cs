@@ -1,7 +1,7 @@
 ﻿// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
 using System.Collections.Generic;
 
-namespace ArcaneAlgorithmArchive.ComputationalMathematics.DecisionProblems.GaleShapley
+namespace StableMarriageProblem
 {
     public class Person<TSelf, TPref>
         where TSelf : Person<TSelf, TPref>

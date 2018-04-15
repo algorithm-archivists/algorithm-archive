@@ -34,7 +34,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="jl" %}
 [import:1-10, lang:"julia"](code/julia/bubble.jl)
 {% sample lang="cs" %}
-[import:9-27, lang:"csharp"](code/cs/Sorting.cs)
+[import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

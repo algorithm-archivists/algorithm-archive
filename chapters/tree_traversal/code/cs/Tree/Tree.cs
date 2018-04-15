@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
+namespace TreeTraversal
 {
     public class Tree
     {
@@ -92,20 +92,6 @@ namespace ArcaneAlgorithmArchive.FundamentalAlgorithms.TreeTraversal
             {
                 DFSRecursive(c);
             }
-        }
-    }
-
-    class MainClass
-    {
-        public static void Main(string[] args)
-        {
-            var tree = new Tree(3, 3);
-            Console.WriteLine("StartDFSRecursive:");
-            tree.StartDFSRecursive();
-            Console.WriteLine("DFSStack:");
-            tree.DFSStack();
-            Console.WriteLine("DFSQueue");
-            tree.BFSQueue();
         }
     }
 }
