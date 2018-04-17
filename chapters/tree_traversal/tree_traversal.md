@@ -212,7 +212,7 @@ Program.cs
 [import, lang:"csharp"](code/cs/Tree/Program.cs)
 {% sample lang="c" %}
 ### C
-[import, lang:"c_cpp"](code/c/Tree_example.c)
+[import, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/Tree_example.js)
