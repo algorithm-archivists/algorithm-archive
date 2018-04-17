@@ -1,13 +1,11 @@
 import qualified Data.Map as M
 import           Data.List (insert, sort)
 
-data Tree a = Nil
-            | Leaf Int a
+data Tree a = Leaf Int a
             | Node Int (Tree a) (Tree a)
                    deriving (Show, Eq)
 
 freq :: Tree a -> Int
-freq Nil          = 0
 freq (Leaf i _)   = i
 freq (Node i _ _) = i
 
@@ -19,10 +17,10 @@ getFrequencies = toSortedList . M.fromListWith (+) . flip zip (repeat 1)
   where toSortedList = sort . map swap . M.toList
         swap (a, i) = (i, a)
 
-buildTree :: (Ord a) => [a] -> Tree a
+buildTree :: (Ord a) => [a] -> Maybe (Tree a)
 buildTree = build . map (uncurry Leaf) . getFrequencies
-  where build []         = Nil
-        build [t]        = t
+  where build []         = Nothing
+        build [t]        = Just t
         build (t1:t2:ts) = build $ insert (Node (freq t1 + freq t2) t1 t2) ts
 
 data Bit = Zero | One
@@ -31,18 +29,20 @@ instance Show Bit where
   show Zero = "0"
   show One = "1"
 
-encode :: (Ord a) => [a] -> (Tree a, [Bit])
+encode :: (Ord a) => [a] -> (Maybe (Tree a), [Bit])
 encode s = (tree, msg)
   where
   tree = buildTree s
   msg = concatMap (table M.!) s
-  table = M.fromList $ mkTable (tree, [])
-  mkTable (Nil, _)          = []
+  table = case tree of
+    Nothing -> M.empty
+    Just t  -> M.fromList $ mkTable (t, [])
   mkTable (Leaf _ a, p)     = [(a, reverse p)]
   mkTable (Node _ t1 t2, p) = concatMap mkTable [(t1,  Zero:p), (t2, One:p)]
 
-decode :: (Ord a) => Tree a -> [Bit] -> [a]
-decode t = path t
+decode :: (Ord a) => Maybe (Tree a) -> [Bit] -> [a]
+decode Nothing _ = []
+decode (Just t) m = path t m
   where path (Leaf _ a) m            = a : path t m
         path (Node _ t1 _) (Zero: m) = path t1 m
         path (Node _ _ t2) (One: m)  = path t2 m
