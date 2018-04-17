@@ -48,16 +48,13 @@ void bit_reverse(double complex *X, size_t N) {
 }
 
 void iterative_cooley_tukey(double complex *X, size_t N) {
-    int stride;
-    double complex v,w;
-
     bit_reverse(X, N);
 
     for (int i = 1; i <= log2((double)N); ++i) {
-        stride = pow(2, i);
-        w = cexp(-2.0 * I * PI / stride);
+        int stride = pow(2, i);
+        double complex w = cexp(-2.0 * I * PI / stride);
         for (size_t j = 0; j < N; j += stride) {
-            v = 1.0;
+            double complex v = 1.0;
             for (size_t k = 0; k < stride / 2; ++k) {
                 X[k + j + stride / 2] = X[k + j] - v * X[k + j + stride / 2];
                 X[k + j] -= (X[k + j + stride / 2] - X[k + j]);
@@ -75,18 +72,17 @@ void approx(double complex *X, double complex *Y, size_t N) {
 
 int main() {
     srand(time(NULL));
-    const size_t N = 64;
-    double complex x[N], y[N], z[N];
-    for (size_t i = 0; i < N; ++i) {
+    double complex x[64], y[64], z[64];
+    for (size_t i = 0; i < 64; ++i) {
         x[i] = rand() / (double) RAND_MAX;
         y[i] = x[i];
         z[i] = x[i];
     }
 
-    cooley_tukey(y, N);
-    iterative_cooley_tukey(z, N);
+    cooley_tukey(y, 64);
+    iterative_cooley_tukey(z, 64);
 
-    approx(y, z, N);
+    approx(y, z, 64);
 
     return 0;
 }
