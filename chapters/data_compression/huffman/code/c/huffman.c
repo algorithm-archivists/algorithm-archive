@@ -1,7 +1,8 @@
-/* Made by Guston and edited by Gathros */
+// Made by Guston and edited by Gathros
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 struct tree {
     struct tree* left;
@@ -26,7 +27,7 @@ struct heap {
     int capacity;
 };
 
-int is_leaf(const struct tree* t) {
+bool is_leaf(const struct tree* t) {
     return !t->left && !t->right;
 }
 
