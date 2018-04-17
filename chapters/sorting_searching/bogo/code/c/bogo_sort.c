@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-int is_sorted(int *array, int n) {
+bool is_sorted(int *array, int n) {
     while (--n >= 1) {
         if (array[n] < array[n - 1]) {
-            return 0;
+            return false;
         }
     }
 
-    return 1;
+    return true;
 }
 
 void shuffle(int *array, int n) {
