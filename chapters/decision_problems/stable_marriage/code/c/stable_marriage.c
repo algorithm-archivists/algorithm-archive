@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct person {
     size_t id;
@@ -19,12 +20,12 @@ void shuffle(size_t *x, size_t n) {
     }
 }
 
-int prefers(size_t *prefs, size_t prtnr_id, size_t prop_id, size_t pref_size) {
+bool prefers(size_t *prefs, size_t prtnr_id, size_t prop_id, size_t pref_size) {
     for (size_t i = 0; i < pref_size; ++i) {
         if (prefs[i] == prtnr_id) {
-            return 0;
+            return false;
         } else if(prefs[i] == prop_id) {
-            return 1;
+            return true;
         }
     }
 }
@@ -47,7 +48,7 @@ void create_ppl(person *grp, size_t grp_size) {
 }
 
 void stable_matching(person *men, person *women, size_t grp_size) {
-    int cont = 1;
+    bool cont = true;
     while (cont) {
         for (size_t i = 0; i < grp_size; ++i) {
             if (men[i].prtnr == (grp_size + 1)) {
@@ -67,10 +68,10 @@ void stable_matching(person *men, person *women, size_t grp_size) {
             }
         }
 
-        cont = 0;
+        cont = false;
         for (size_t i = 0; i < grp_size; ++i) {
             if (men[i].prtnr == (grp_size + 1)) {
-                cont = 1;
+                cont = true;
                 break;
             }
         }
