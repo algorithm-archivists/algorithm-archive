@@ -66,7 +66,7 @@ This will create a codebook that looks like this:
 | _o_       | 1110               |
 | ___       | 1111               |
 
-and `bibbity bobbity` becomes `01000010010111011110111000100101110`.
+and `bibbity_bobbity` becomes `01000010010111011110111000100101110`.
 As mentioned this uses the minimum number of bits possible for encoding.
 The fact that this algorithm is both conceptually simple and provably useful is rather extraordinary to me and is why Huffman encoding will always hold a special place in my heart.
 
