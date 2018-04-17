@@ -42,6 +42,8 @@ In code, it looks something like this:
 [import:9-15, lang:"csharp"](code/cs/BogoSort.cs)
 {% sample lang="clj" %}
 [import:6-10, lang:"clojure"](code/clojure/bogo.clj)
+{% sample lang="c" %}
+[import:4-27, lang:"c_cpp"](code/c/bogo_sort.c)
 {% endmethod %}
 
 That's it.
