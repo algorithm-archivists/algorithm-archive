@@ -84,5 +84,6 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 ### Rust
 [import, lang:"rust"](code/rust/huffman.rs)
 {% endmethod %}
-
-
+{% sample lang="c" %}
+### C
+[import, lang:"c"](code/c/huffman.c)
