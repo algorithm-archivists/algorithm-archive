@@ -95,14 +95,14 @@ int main() {
 
     for (size_t i = 0; i < grp_size; ++i) {
         printf("preferences of man %zu \n", i);
-        for (size_t j = 0; j < grp_size; j++) {
+        for (size_t j = 0; j < grp_size; ++j) {
             printf("%zu \n", men[i].prefs[j]);
         }
     }
 
     for (size_t i = 0; i < grp_size; ++i) {
         printf("preferences of woman %zu \n", i);
-        for (size_t j = 0; j < grp_size; j++) {
+        for (size_t j = 0; j < grp_size; ++j) {
             printf("%zu \n", women[i].prefs[j]);
         }
     }
