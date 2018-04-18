@@ -44,6 +44,8 @@ In code, it looks something like this:
 [import:6-10, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
 [import:4-27, lang:"c_cpp"](code/c/bogo_sort.c)
+{% sample lang="js" %}
+[import:1-16, lang:"javascript"](code/js/bogo.js)
 {% endmethod %}
 
 That's it.
