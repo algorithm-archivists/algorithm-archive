@@ -27,7 +27,7 @@ The Euler methods are some of the simplest methods to solve ordinary differentia
 They introduce a new set of methods called the [Runge Kutta](../runge_kutta/runge_kutta.md) methods, which will be discussed in the near future!
 
 As a physicist, I tend to understand things through methods that I have learned before.
-In this case, it makes sense for me to see Euler methods as extensions of the [Taylor Series Expansion](../../mathematical_background/taylor_series.md).
+In this case, it makes sense for me to see Euler methods as extensions of the [Taylor Series Expansion](../../taylor/taylor_series.md).
 These expansions basically approximate functions based on their derivatives, like so:
 
 $$
@@ -102,17 +102,17 @@ $$
 $$
 Which means that the forward Euler method is actually unstable for most values!
 If we want to stick to using the forward Euler method exclusively, the only solution is to decrease the timestep until it is within this stability region, and that's not necessarily easy for all cases.
-So now it might be obvious that another, more stable method should be used instead; however, many other stable methods are *implicit*, which means that in order to find the solution, we need to solve a system of equations via the [Thomas Algorithm](../../computational_mathematics/matrix_methods/thomas/thomas.md) or [Gaussian Elimination](../../computational_mathematics/matrix_methods/gaussian_elimination/gaussian_elimination.md).
+So now it might be obvious that another, more stable method should be used instead; however, many other stable methods are *implicit*, which means that in order to find the solution, we need to solve a system of equations via the [Thomas Algorithm](../../matrix_methods/thomas/thomas.md) or [Gaussian Elimination](../../matrix_methods/gaussian_elimination/gaussian_elimination.md).
 Which is an entire layer of complexity that most people don't want to mess with!
 
-Now, here is where we might want to relate the method to another algorithm that is sometimes used for a similar use-case: [Verlet Integration](../verlet/verlet.md).
+Now, here is where we might want to relate the method to another algorithm that is sometimes used for a similar use-case: [Verlet Integration](../../physics_solvers/verlet/verlet.md).
 Verlet integration has a distinct advantage over the forward Euler method in both error and stability with more coarse-grained timesteps; however, Euler methods are powerful in that they may be used for cases other than simple kinematics.
 That said, in practice, due to the instability of the forward Euler method and the error with larger timesteps, this method is rarely used in practice.
 That said, variations of this method *are* certainly used (for example Crank-Nicolson and [Runge-Kutta](../runge_kutta/runge_kutta.md), so the time spent reading this chapter is not a total waste!
 
 ### Example Code
 
-Like in the case of [Verlet Integration](../verlet/verlet.md), the easiest way to test to see if this method works is to test it against a simple test-case.
+Like in the case of [Verlet Integration](../../physics_solvers/verlet/verlet.md), the easiest way to test to see if this method works is to test it against a simple test-case.
 Here, the most obvious test-case would be dropping a ball from 5 meters, which is my favorite example, but proved itself to be slightly less enlightening than I would have thought.
 So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y' = 5y$$. Note that in this case, the velocity is directly given by the ODE and the acceleration is not part of the model.
 

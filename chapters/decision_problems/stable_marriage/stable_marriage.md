@@ -26,7 +26,7 @@ Imagine you have two groups, each of size $$n$$.
 Each individual within a group has an internal ranking associated with all members of the opposing group.
 The *Stable Matching Problem* attempts to unite both groups into stable pairs.
 In this case, a set of pairs is considered stable if there are no pairs that like each other more than their current partners.
-This doesn't mean that everyone gets their top choices, but if an individual prefers someone else who also prefers them back, the set set of pairs is not stable.
+This doesn't mean that everyone gets their top choices, but if an individual prefers someone else who also prefers them back, the set of pairs is not stable.
 
 Now, this is often told as a story.
 One group is male, the other is female, and everyone gets married, hence the name the *Stable Marriage Problem*.
