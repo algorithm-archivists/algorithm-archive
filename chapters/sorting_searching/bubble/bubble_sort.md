@@ -1,7 +1,7 @@
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}
@@ -25,7 +25,7 @@ $$
 When it comes to sorting algorithms, Bubble Sort is usually the first that comes to mind.
 Though it might not be the fastest tool in the shed, it's definitely straightforward to implement and is often the first sorting method new programmers think of when trying to implement a sorting method on their own.
 
-Here's how it works: we go through each element in our vector and check to see if it is larger than the element to it's right. 
+Here's how it works: we go through each element in our vector and check to see if it is larger than the element to it's right.
 If it is, we swap the elements and then move to the next element.
 In this way, we sweep through the array $$n$$ times for each element and continually swap any two adjacent elements that are improperly ordered.
 This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with code similar to the following:
@@ -35,6 +35,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:1-10, lang:"julia"](code/julia/bubble.jl)
 {% sample lang="cs" %}
 [import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
+{% sample lang="c" %}
+[import:3-21, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="js" %}
 [import:1-11, lang:"javascript"](code/js/bubble.js)
 {% endmethod %}
