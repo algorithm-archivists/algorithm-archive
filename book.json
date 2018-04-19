@@ -71,7 +71,12 @@
 				{
 					"lang": "elm",
 					"name": "Elm"
+				},
+				{
+					"lang": "LabVIEW",
+					"name": "LabVIEW"
 				}
+                                
 			],
 			"split": false
         }
