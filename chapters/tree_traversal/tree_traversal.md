@@ -33,7 +33,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="cs" %}
 [import:11-15, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:6-10, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:5-10, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:3-8, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
@@ -56,7 +56,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="cs" %}
 [import:48-57, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:81-92, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:77-86, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:15-23, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -152,9 +152,9 @@ In code, it looks like this:
 {% sample lang="cs" %}
 [import:36-52, lang:"csharp"](code/cs/Tree/Tree.cs)
 {% sample lang="c" %}
-[import:18-20, lang:"c_cpp"](code/c/tree_traversal.c)
-[import:37-48, lang:"c_cpp"](code/c/tree_traversal.c)
-[import:94-113, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:20-33, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:35-47, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:88-106, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -183,7 +183,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cs" %}
 [import:54-70, lang:"csharp"](code/cs/Tree/Tree.cs)
 {% sample lang="c" %}
-[import:115-135, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:108-126, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
