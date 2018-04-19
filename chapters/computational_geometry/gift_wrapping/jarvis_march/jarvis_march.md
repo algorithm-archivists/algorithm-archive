@@ -38,6 +38,8 @@ Here is what this might look like in code:
 {% method %}
 {% sample lang="pseudo" %}
 [import:1-32, lang:"julia"](code/pseudo/jarvis.pseudo)
+{% sample lang="cs" %}
+[import:22-76, lang:"csharp"](code/cs/JarvisMarch.cs)
 {% endmethod %}
 
 As we might expect, this algorithm is not incredibly efficient and has a runtime of $$\mathcal{O}(nh)$$, where $$n$$ is the number of points and $$h$$ is the size of the hull.
@@ -50,4 +52,11 @@ Since this algorithm, there have been many other algorithms that have advanced t
 
 ### Example Code
 
-To be added later!
+{% method %}
+{% sample lang="cs" %}
+### C# #
+JarvisMarch.cs
+[import, lang="csharp"](code/cs/JarvisMarch.cs)
+Program.cs
+[import, lang="csharp"](code/cs/Program.cs)
+{% endmethod %}
