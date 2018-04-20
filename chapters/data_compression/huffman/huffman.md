@@ -86,4 +86,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/huffman.hs)
+{% sample lang="cpp" %}
+### C++
+[import, lang:"cpp"](code/c++/huffman.cpp)
 {% endmethod %}
