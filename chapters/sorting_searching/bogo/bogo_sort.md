@@ -1,7 +1,7 @@
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}
@@ -22,7 +22,7 @@ $$
 $$
 
 # Bogo Sort
-Look, Bogo Sort doesn't really sort anything out. 
+Look, Bogo Sort doesn't really sort anything out.
 In fact, it should never be used in practice for any reason I can think of and really only serves as a joke in the programming community.
 As far as jokes go, though, this one's pretty good.
 
@@ -46,6 +46,8 @@ In code, it looks something like this:
 [import:4-27, lang:"c_cpp"](code/c/bogo_sort.c)
 {% sample lang="js" %}
 [import:1-16, lang:"javascript"](code/js/bogo.js)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% endmethod %}
 
 That's it.
