@@ -46,5 +46,7 @@
 * [Physics Solvers](chapters/physics_solvers/physics_solvers.md)
     * [Verlet Integration](chapters/physics_solvers/verlet/verlet.md)
     * [Barnes-Hut](chapters/physics_solvers/barnes_hut.md)
+    * [Quantum Systems](chapters/physics_solvers/quantum/quantum.md)
 * [Data Compression](chapters/data_compression/data_compression.md)
     * [Huffman Encoding](chapters/data_compression/huffman/huffman.md)
+* [Quantum Information](chapters/QI/QI.md)
