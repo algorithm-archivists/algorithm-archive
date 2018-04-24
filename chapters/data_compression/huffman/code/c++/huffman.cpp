@@ -63,13 +63,13 @@ class codebook {
   std::shared_ptr<data const> underlying_;
 
 public:
-  template <class Iter>
+  template <typename Iter>
   codebook(Iter const first, Iter const last);
 
-  template <class Iter>
+  template <typename Iter>
   std::vector<bool> encode(Iter first, Iter last) const;
 
-  template <class Iter>
+  template <typename Iter>
   std::string decode(Iter first, Iter last) const;
 };
 
@@ -96,7 +96,7 @@ inline std::vector<bool> with_new_bit(std::vector<bool> bits, bool b) {
   return bits;
 }
 
-template <class Iter>
+template <typename Iter>
 codebook::codebook(Iter const first, Iter const last) {
   struct helper {
     static node_ptr make_decoder(Iter const first, Iter const last) {
@@ -180,7 +180,7 @@ codebook::codebook(Iter const first, Iter const last) {
       data{std::move(decoder), std::move(encoder)});
 }
 
-template <class Iter>
+template <typename Iter>
 std::vector<bool> codebook::encode(Iter const first, Iter const last) const {
   std::vector<bool> ret;
 
@@ -202,7 +202,7 @@ std::vector<bool> codebook::encode(Iter const first, Iter const last) const {
   return ret;
 }
 
-template <class Iter>
+template <typename Iter>
 std::string codebook::decode(Iter const first, Iter const last) const {
   std::string ret;
 

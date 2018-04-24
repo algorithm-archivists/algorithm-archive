@@ -83,13 +83,17 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="rs" %}
 ### Rust
 [import, lang:"rust"](code/rust/huffman.rs)
+{% sample lang="c" %}
+### C
+[import, lang:"c"](code/c/huffman.c)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/huffman.hs)
 {% sample lang="cpp" %}
 ### C++
-[import, lang:"cpp"](code/c++/huffman.cpp)
+[import, lang:"c_cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
 ### Clojure
 [import, lang:"clj"](code/clojure/huffman.clj)
+
 {% endmethod %}
