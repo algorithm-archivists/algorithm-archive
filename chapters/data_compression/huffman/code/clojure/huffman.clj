@@ -1,4 +1,5 @@
-(ns expriments.core)
+;; earthfail
+(ns experiments.core)
 
 ;; get a vector with chars and frequencies
 
