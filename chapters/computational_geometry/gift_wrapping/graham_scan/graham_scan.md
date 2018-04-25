@@ -35,8 +35,8 @@ If an angle between three points turns inward, the shape is obviously not convex
 We can find whether a rotation is counter-clockwise with trigonometric functions or by using a cross-product, like so:
 
 {% method %}
-{% sample lang="pseudo" %}
-[import:1-7, lang:"julia"](code/pseudo/graham.pseudo)
+{% sample lang="jl" %}
+[import:30-32, lang:"julia"](code/julia/graham.jl)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -51,8 +51,8 @@ If there are $$M$$ elements on the hull, then the first $$M$$ elements in our ou
 In the end, the code should look something like this:
 
 {% method %}
-{% sample lang="pseudo" %}
-[import:9-40, lang:"julia"](code/pseudo/graham.pseudo)
+{% sample lang="jl" %}
+[import:34-69, lang:"julia"](code/julia/graham.jl)
 {% endmethod %}
 
 ### Bibliography
@@ -61,6 +61,7 @@ In the end, the code should look something like this:
 
 ### Example Code
 
-To be added later!
-
-
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/graham.jl)
+{% endmethod %}
