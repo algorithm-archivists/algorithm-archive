@@ -244,7 +244,7 @@ int main() {
     struct tree* tree;
     struct codebook codebook;
 
-    char* encoded = encode("Hello, World", &tree, &codebook);
+    char* encoded = encode("bibbity bobbity", &tree, &codebook);
     char* decoded = decode(encoded, tree);
 
     printf("Codebook:\n");
