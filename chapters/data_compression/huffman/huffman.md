@@ -85,7 +85,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"rust"](code/rust/huffman.rs)
 {% sample lang="c" %}
 ### C
-[import, lang:"c"](code/c/huffman.c)
+[import, lang:"c_cpp"](code/c/huffman.c)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/huffman.hs)
@@ -94,5 +94,5 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
 ### Clojure
-[import 2-117, lang:"clj"](code/clojure/huffman.clj)
+[import 2-117, lang:"clojure"](code/clojure/huffman.clj)
 {% endmethod %}

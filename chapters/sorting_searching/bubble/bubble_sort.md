@@ -41,6 +41,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:1-11, lang:"javascript"](code/js/bubble.js)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/bubblesort.cpp)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

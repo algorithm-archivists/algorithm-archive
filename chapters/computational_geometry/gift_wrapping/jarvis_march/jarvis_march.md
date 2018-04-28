@@ -28,17 +28,13 @@ Though other convex hull algorithms exist, this algorithm is often called *the* 
 
 The idea behind this algorithm is simple.
 If we start with a random distribution of points, we can find the convex hull by first starting with the left-most point and using the origin to calculate an angle between every other point in the simulation.
+As a note, the "angle" can be roughly approximated with a cross-product or a dot product, which is common for some implementations here.
 Whichever point has the largest interior angle is chosen as the next point in the convex hull and we draw a line between the two points.
 From there, we use the two known points to again calculate the angle between all other points in the simulation.
 We then choose the point with the largest interior angle and move the simulation forward.
-We keep repeating this process until we have returned to our priginal point.
+We keep repeating this process until we have returned to our original point.
 The set of points chosen in this simulation will be the convex hull. 
 Here is what this might look like in code:
-
-{% method %}
-{% sample lang="pseudo" %}
-[import:1-32, lang:"julia"](code/pseudo/jarvis.pseudo)
-{% endmethod %}
 
 As we might expect, this algorithm is not incredibly efficient and has a runtime of $$\mathcal{O}(nh)$$, where $$n$$ is the number of points and $$h$$ is the size of the hull.
 As a note, the Jarvis March can be generalized to higher dimensions.
@@ -50,4 +46,15 @@ Since this algorithm, there have been many other algorithms that have advanced t
 
 ### Example Code
 
-To be added later!
+{% method %}
+{% sample lang="jl" %}
+### Julia
+[import, lang:"julia"](code/julia/jarvis.jl)
+{% sample lang="hs" %}
+### Haskell
+[import, lang:"haskell"](code/haskell/jarvisMarch.hs)
+{% sample lang="c" %}
+### C
+[import, lang:"c_cpp"](code/c/jarvis_march.c)
+{% endmethod %}
+
