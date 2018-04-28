@@ -92,4 +92,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="cpp" %}
 ### C++
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
+{% sample lang="clj" %}
+### Clojure
+[import 2-117, lang:"clj"](code/clojure/huffman.clj)
 {% endmethod %}

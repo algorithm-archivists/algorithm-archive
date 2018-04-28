@@ -33,7 +33,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="cs" %}
 [import:6-17, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
-[import:1-7, lang="clojure"](code/clojure/euclidean_example.clj)
+[import:2-8, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:20-32, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
@@ -64,7 +64,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="cs" %}
 [import:19-29, lang="csharp"](code/cs/EuclideanAlgorithmMdAdditional/EuclideanAlgorithmMdAdditional.cs)
 {% sample lang="clj" %}
-[import:8-12, lang="clojure"](code/clojure/euclidean_example.clj)
+[import:9-13, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:7-17, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
@@ -103,7 +103,7 @@ Program.cs
 [import, lang="csharp"](code/cs/EuclideanAlgorithm/Program.cs)
 {% sample lang="clj" %}
 ### Clojure
-[import, lang="clojure"](code/clojure/euclidean_example.clj)
+[import 2-20, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 ### Cpp 
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
