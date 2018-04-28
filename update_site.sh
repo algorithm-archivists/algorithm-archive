@@ -33,11 +33,11 @@ if [ $# -ge 1 ]; then
         exit 1
     fi
 
-    cp /tmp/algorithm-archivists.github.io/* .
+    cp -r /tmp/algorithm-archivists.github.io/* .
     rm -r /tmp/algorithm-archivists.github.io
     git add .
     git commit -m "$1"
-    git push upstream master
+    git push origin master
 
 else
     echo "No commit message specified"
