@@ -25,6 +25,6 @@ Now, there are not too many languages that can compile quantum code.
 A while ago, we tried to make a quantum circuit compiler, which was modelled after the SPICE circuit simulator, but this was far from a computer language.
 At this point in time, it is impossible to tell what quantum computing languages will look like when we finally have a truly quantum machine, so for the time being, we will not ask for community code for the chapters related to quantum information.
 
-It's hard to imagine how you would adequately implement Shor's algorithm in C.
+basically, it's hard to imagine how to would adequately implement Shor's algorithm in C.
 As always, this section will be updated as we add more algorithms to the list.
 
