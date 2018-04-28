@@ -22,7 +22,8 @@ namespace JarvisMarch
                 new Vector(3, 4),
                 new Vector(3, 1),
             };
-            var giftWrap = JarvisMarch.RunJarvisMarch(points);
+            var jarvisMarch = new JarvisMarch();
+            var giftWrap = jarvisMarch.Run(points);
 
             // Print the points of the gift wrap.
             foreach (var point in giftWrap)

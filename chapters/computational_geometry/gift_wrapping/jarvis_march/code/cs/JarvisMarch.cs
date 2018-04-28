@@ -13,11 +13,13 @@ namespace JarvisMarch
             this.X = xValue;
             this.Y = yValue;
         }
+
+        public int ScalarProduct(Vector otherVector) => (this.X * otherVector.X) + (this.Y * otherVector.Y);
     }
 
-    public static class JarvisMarch
+    public class JarvisMarch
     {
-        public static List<Vector> RunJarvisMarch(List<Vector> points)
+        public List<Vector> Run(List<Vector> points)
         {
             // Set the intial point to the first point of the list.
             var initialPoint = points[0];
@@ -55,7 +57,7 @@ namespace JarvisMarch
                     var secondVector = new Vector(points[i].X - currentPoint.X, points[i].Y - currentPoint.Y);
 
                     // Calculate the current scalar product.
-                    var tempScalarProduct = (firstVector.X * secondVector.X) + (firstVector.Y * secondVector.Y);
+                    var tempScalarProduct = firstVector.ScalarProduct(secondVector);
 
                     // If there's currently no next Point or the current scalar product is smaller, set nextPoint to point[i].
                     if (nextPoint == null || tempScalarProduct < scalarProduct)
