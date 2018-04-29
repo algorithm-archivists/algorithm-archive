@@ -1,4 +1,4 @@
-﻿// submitted by Julian Schacher (jspp)
+﻿// submitted by Julian Schacher (jspp) with help by gustorn
 using System;
 using System.Collections.Generic;
 
@@ -27,7 +27,7 @@ namespace JarvisMarch
 
             // Print the points of the gift wrap.
             foreach (var point in giftWrap)
-                System.Console.WriteLine($"{point.X}, {point.Y}");
+                System.Console.WriteLine($"{point.x}, {point.y}");
         }
     }
 }
