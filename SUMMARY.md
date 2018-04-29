@@ -1,6 +1,6 @@
 # Summary
 
-* [README](README.md)
+* [Algorithm Archive](README.md)
 * [TODO](TODO.md)
 * [Introduction](chapters/introduction.md)
 * [A Personal Note](chapters/getting_started.md)
