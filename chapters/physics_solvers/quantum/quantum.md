@@ -46,7 +46,7 @@ This section is devoted to all the different methods currently used to solve com
 Here is the easiest one to explain:
 
 $$
-i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \left[\frac{-\hbar}{2m} \nabla^2 + V(\mathbf{r},t) \right] \Psi(\mathbf{r},t)
+i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \left[-\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r},t) \right] \Psi(\mathbf{r},t)
 $$
 
 Where $$\Psi(\mathbf{r},t)$$ is your quantum _wavefunction_, $$V(\mathbf{r},t)$$ is a _trapping potential_, $$\nabla^2$$ is a _laplacian_, $$\mathbf{r}$$ is some sort of spatial component, and $$t$$ is time.
