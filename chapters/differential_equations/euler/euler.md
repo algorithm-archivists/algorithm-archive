@@ -122,10 +122,10 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 [import, lang:"julia"](code/julia/euler.jl)
 {% sample lang="c" %}
 ### C
-[import, lang:"c"](code/c/euler.c)
+[import, lang:"c_cpp"](code/c/euler.c)
 {% sample lang="cpp" %}
 ### C++
-[import, lang:"cpp"](code/c++/euler.cpp)
+[import, lang:"c_cpp"](code/c++/euler.cpp)
 {% sample lang="elm" %}
 ### Elm
 [import:44-54, lang:"elm"](code/elm/euler.elm)
