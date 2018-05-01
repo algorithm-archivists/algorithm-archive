@@ -103,7 +103,7 @@ def main():
     print('huffman tree: ' + str(tree))
     print('codebook: ' + str(codebook))
     print('encoded message: ' + encoded_message)
-    print('decoding: ' + decoded_message)
+    print('decoded message: ' + decoded_message)
 
     # prints the following:
     #
