@@ -3,5 +3,9 @@
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .hljs-meta-string {
-  color: #718c00; 
+  color: #718c00;
+}
+
+.book .book-body .page-wrapper {
+  margin-bottom: 15em;
 }
