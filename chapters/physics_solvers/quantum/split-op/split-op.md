@@ -19,7 +19,16 @@ At it's heart, the split-op method is nothing more than a pseudo-spectral differ
 In fact, there is a large class of spectral and pseudo-spectral methods used to solve a number of different physical systems, and we'll definitely be covering those in the future.
 
 For now, let's answer the obvious question, "How on Earth can FFT's be used to solve quantum systems?"
-That is precisely the question we will answer here!
+Well, looking at the equation above and using a bit of analyical differential equation knowledge, we can assume the solution will be divided into a number of basis functions like :
+
+$$
+\Psi(\mathbf{r},t) = \frac{1}{\sqrt{2 \pi}}\sum_n c_n(t) e^{2 \pi i n \mathbf{r}}
+$$
+
+where $$c_n$$ are some constants depending on "how much" of that basis function exists in the solved system.
+
+As a small concession here, using this method enforces periodic boundary conditions, where the wavefunction will simply slide from one side of your simulation box to the other, but that's fine for most cases.
+In fact, for many cases (such as large-scale turbulence models) it's ideal.
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
