@@ -1,6 +1,7 @@
-// submitted by Julian Schacher (jspp) with help by gustorn
+// submitted by Julian Schacher (jspp) with great help by gustorn
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace JarvisMarch
 {
@@ -15,7 +16,8 @@ namespace JarvisMarch
             this.y = yValue;
         }
 
-        public int ScalarProduct(Vector otherVector) => (this.x * otherVector.x) + (this.y * otherVector.y);
+        public override bool Equals(object obj) => obj is Vector v && this.x == v.x && this.y == v.y;
+        public override int GetHashCode() => (17 * 23 + this.x) * 23 + this.y;
 
         public static bool operator==(Vector a, Vector b) => a.Equals(b);
         public static bool operator!=(Vector a, Vector b) => !(a == b);
@@ -27,63 +29,41 @@ namespace JarvisMarch
     {
         public List<Vector> Run(List<Vector> points)
         {
-            // Set the intial point to the first point of the list.
-            var initialPoint = points[0];
-            // Search for a better initial point. One where the x-position is the lowest.
-            for (int i = 1; i < points.Count; i++)
-            {
-                if (points[i].x < initialPoint.x)
-                {
-                    initialPoint = points[i];
-                }
-            }
-            // Add the initial point as the first point of the gift wrap.
-            var giftWrap = new List<Vector>()
-            {
-                initialPoint
-            };
+            var convexHull = new List<Vector>();
 
-            // Set previous point first to some point below the first initial point.
-            var previousPoint = new Vector(initialPoint.x, initialPoint.y - 1);
+            // Set the intial point to the point of the list, where the x-position is the lowest.
+            var initialPoint = points.Aggregate((leftmost, current) => leftmost.x < current.x ? leftmost : current);
+
+            convexHull.Add(initialPoint);
             var currentPoint = initialPoint;
+            var nextPoint = currentPoint;
 
-            var notWrapped = true;
-            // Continue searching for the next point of the wrap until the wrap is completed.
-            while (notWrapped)
+            // Continue searching for the next point of the convex hull until the next point of the convex hull is equal to the first point of the convex hull.
+            do
             {
-                // Search for next Point.
-                // Set the first vector, which is currentPoint -> previousPoint.
-                var firstVector = previousPoint - currentPoint;
 
-                Vector? nextPoint = null;
-                int scalarProduct = 0;
-                for (int i = 1; i < points.Count; i++)
+                // Search for the next point by looking which of the remaining points is the next most outer point (or left point if viewed from currentPoint).
+                nextPoint = points.Aggregate((potentialNextPoint, current) =>
                 {
-                    // Set the second vector, which is currentPoint -> points[i](potential nextPoint).
-                    var secondVector = points[i] - currentPoint;
+                    if (IsLeftOf(currentPoint, potentialNextPoint, current))
+                        return current;
+                    return potentialNextPoint;
+                });
 
-                    // Calculate the current scalar product.
-                    var tempScalarProduct = firstVector.ScalarProduct(secondVector);
+                convexHull.Add(nextPoint);
+                points.Remove(nextPoint);
+                currentPoint = nextPoint;
 
-                    // If there's currently no next Point or the current scalar product is smaller, set nextPoint to point[i].
-                    if (nextPoint == null || tempScalarProduct < scalarProduct)
-                    {
-                        nextPoint = points[i];
-                        scalarProduct = tempScalarProduct;
-                    }
-                }
-
-                // Shift points and add/remove them from lists.
-                previousPoint = currentPoint;
-                currentPoint = nextPoint.Value;
-                points.Remove(nextPoint.Value);
-                giftWrap.Add(nextPoint.Value);
                 // Check if the gift wrap is completed.
-                if (nextPoint == giftWrap[0])
-                    notWrapped = false;
-            }
+            } while (nextPoint != convexHull[0]);
 
-            return giftWrap;
+            return convexHull;
+        }
+
+        // Returns true, if p is more left than b, if viewed from a.
+        private bool IsLeftOf(Vector a, Vector b, Vector p)
+        {
+            return (b.x - a.x) * (p.y - a.y) > (p.x - a.x) * (b.y - a.y);
         }
     }
 }
