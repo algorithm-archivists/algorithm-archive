@@ -57,6 +57,16 @@ $$
 \int_{-\infty}^{+\infty}|\Psi(\mathbf{r},t)|^2 d\mathbf{r} = 1
 $$
 
+As another note: Just like position space can be parameterized by a position vector $$\textbf{x}$$, wavefunctions can be parameterized by a _wave_vector $$\textbf{k}$$ in frequency space.
+Often times, the wavevector space is called _momentum_ space, which makes sense when considering the de Broglie formula:
+
+$$
+p = \frac{h}{\lambda}
+$$
+
+where $$h$$ is Planck's constant and $$\lambda$$ is the wavelength.
+This means that we can ultimately move between real and momentum space by using [Fourier Transforms](../../FFT/cooley_tukey.md), which is incredibly useful in a number of cases!
+
 Unfortunately, the interpretation of quantum simulation is rather tricky and is ultimately easier to understand with slightly different notation. 
 This notation is called _braket_ notation, where a _ket_ looks like this:
 
