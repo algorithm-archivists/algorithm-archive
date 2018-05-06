@@ -21,8 +21,6 @@ namespace JarvisMarch
 
         public static bool operator==(Vector a, Vector b) => a.Equals(b);
         public static bool operator!=(Vector a, Vector b) => !(a == b);
-        public static Vector operator+(Vector a, Vector b) => new Vector(a.x + b.x, a.y + b.y);
-        public static Vector operator-(Vector a, Vector b) => new Vector(a.x - b.x, a.y - b.y);
     }
 
     public class JarvisMarch
@@ -31,39 +29,30 @@ namespace JarvisMarch
         {
             var convexHull = new List<Vector>();
 
-            // Set the intial point to the point of the list, where the x-position is the lowest.
-            var initialPoint = points.Aggregate((leftmost, current) => leftmost.x < current.x ? leftmost : current);
+            // Set the intial pointOnHull to the point of the list, where the x-position is the lowest.
+            var pointOnHull = points.Aggregate((leftmost, current) => leftmost.x < current.x ? leftmost : current);
 
-            convexHull.Add(initialPoint);
-            var currentPoint = initialPoint;
-            var nextPoint = currentPoint;
-
-            // Continue searching for the next point of the convex hull until the next point of the convex hull is equal to the first point of the convex hull.
+            // Continue searching for the next pointOnHull until the next pointOnHull is equal to the first point of the convex hull.
             do
             {
+                convexHull.Add(pointOnHull);
 
-                // Search for the next point by looking which of the remaining points is the next most outer point (or left point if viewed from currentPoint).
-                nextPoint = points.Aggregate((potentialNextPoint, current) =>
+                // Search for the next pointOnHull by looking which of the points is the next most outer point.
+                pointOnHull = points.Aggregate((potentialNextPointOnHull, current) =>
                 {
-                    if (IsLeftOf(currentPoint, potentialNextPoint, current))
+                    // Returns true, if potentialNextPointOnHull is equal to the current pointOnHull or if the current point is left of the line defined by pointOnHull and potentialNextPointOnHull.
+                    if (potentialNextPointOnHull == pointOnHull || IsLeftOf(pointOnHull, potentialNextPointOnHull, current))
                         return current;
-                    return potentialNextPoint;
+                    return potentialNextPointOnHull;
                 });
 
-                convexHull.Add(nextPoint);
-                points.Remove(nextPoint);
-                currentPoint = nextPoint;
-
                 // Check if the gift wrap is completed.
-            } while (nextPoint != convexHull[0]);
+            } while (pointOnHull != convexHull[0]);
 
             return convexHull;
         }
 
-        // Returns true, if p is more left than b, if viewed from a.
-        private bool IsLeftOf(Vector a, Vector b, Vector p)
-        {
-            return (b.x - a.x) * (p.y - a.y) > (p.x - a.x) * (b.y - a.y);
-        }
+        // Returns true, if p is left of the line defined by a and b.
+        private bool IsLeftOf(Vector a, Vector b, Vector p) => (b.x - a.x) * (p.y - a.y) > (p.x - a.x) * (b.y - a.y);
     }
 }

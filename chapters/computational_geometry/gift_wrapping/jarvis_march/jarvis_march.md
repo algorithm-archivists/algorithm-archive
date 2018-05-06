@@ -39,7 +39,7 @@ Here is what this might look like in code:
 {% sample lang="pseudo" %}
 [import:1-32, lang:"julia"](code/pseudo/jarvis.pseudo)
 {% sample lang="cs" %}
-[import:32-58, lang:"csharp"](code/cs/JarvisMarch.cs)
+[import:30-50, lang:"csharp"](code/cs/JarvisMarch.cs)
 {% endmethod %}
 
 As we might expect, this algorithm is not incredibly efficient and has a runtime of $$\mathcal{O}(nh)$$, where $$n$$ is the number of points and $$h$$ is the size of the hull.
