@@ -1,17 +1,17 @@
-// submitted by Julian Schacher (jspp)
+// submitted by Julian Schacher (jspp) with help by gustorn.
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace HuffmanCoding
 {
-    public class EncodeResult 
+    public class EncodingResult 
     {
         public List<bool> BitString { get; set; }
         public Dictionary<char, List<bool>> Dictionary { get; set; }
         public HuffmanCoding.Node Tree { get; set; }
 
-        public EncodeResult(List<bool> bitString, Dictionary<char, List<bool>> dictionary, HuffmanCoding.Node tree)
+        public EncodingResult(List<bool> bitString, Dictionary<char, List<bool>> dictionary, HuffmanCoding.Node tree)
         {
             this.BitString = bitString;
             this.Dictionary = dictionary;
@@ -64,16 +64,16 @@ namespace HuffmanCoding
             }
         }
 
-        public static EncodeResult Encode(string input)
+        public static EncodingResult Encode(string input)
         {
             var root = CreateTree(input);
             var dictionary = CreateDictionary(root);
             var bitString = CreateBitString(input, dictionary);
 
-            return new EncodeResult(bitString, dictionary, root);
+            return new EncodingResult(bitString, dictionary, root);
         }
 
-        public static string Decode(EncodeResult result)
+        public static string Decode(EncodingResult result)
         {
             var output = "";
             Node currentNode = result.Tree;
@@ -126,8 +126,6 @@ namespace HuffmanCoding
                     nodes.RemoveAt(nodes.Count - 1);
                 };
                 nodePriorityList.AddNode(parentNode);
-                if (parentNode.Weight > 100)
-                    throw new Exception();
             }
 
             return nodePriorityList.Nodes[0];
