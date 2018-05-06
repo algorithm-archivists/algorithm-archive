@@ -1,3 +1,48 @@
+# Graham Scan
+
+At around the same time of the [Jarvis March](jarvis_march.md), R. L. Graham was also developing an algorithm to find the convex hull of a random set of points {{ "gs1972" | cite }}.
+Unlike the Jarvis March, which is an $$\mathcal{O}(nh)$$ operation, the Graham Scan is $$\mathcal{O}(n\log(n))$$, where $$n$$ is the number of points and $$h$$ is the size fo the hull. 
+This means that the complexity of the Graham Scan is not output-sensitive; moreover, there are some cases where the Jarvis March is more optimal, depending on the size of the hull and the number of points to wrap.
+
+Rather than starting at the leftmost point like the Jarvis March, the Graham scan starts at the bottom. 
+We then sort the distribution of points based on the angle between the bottom-most point, the origin, and each other point.
+After sorting, we go through point-by-point, searching for points that are on the convex hull and throwing out any other points.
+We do this by looking for counter-clockwise rotations.
+If an angle between three points turns inward, the shape is obviously not convex, so we can throw that result out.
+We can find whether a rotation is counter-clockwise with trigonometric functions or by using a cross-product, like so:
+
+{% method %}
+{% sample lang="jl" %}
+[import:30-32, lang:"julia"](code/julia/graham.jl)
+{% endmethod %}
+
+If the output of this function is 0, the points are collinear.
+If the output is positive, then the points form a counter-clockwise "left" turn.
+If the output is negative, then the points form a clockwise "right" turn.
+We basically do not want clockwise rotations, because this means we are at an interior angle.
+
+<!---ADD FIGURE--->
+
+To save memory and expensive `append()` operations, we ultimately look for points that should be on the hull and swap them with the first elements in the array.
+If there are $$M$$ elements on the hull, then the first $$M$$ elements in our output random distribution of points will be the hull. 
+In the end, the code should look something like this:
+
+{% method %}
+{% sample lang="jl" %}
+[import:34-69, lang:"julia"](code/julia/graham.jl)
+{% endmethod %}
+
+### Bibliography
+
+{% references %} {% endreferences %}
+
+### Example Code
+
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/graham.jl)
+{% endmethod %}
+
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
@@ -20,47 +65,4 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
-# Graham Scan
-
-At around the same time of the [Jarvis March](jarvis_march.md), R. L. Graham was also developing an algorithm to find the convex hull of a random set of points {{ "gs1972" | cite }}.
-Unlike the Jarvis March, which is an $$\mathcal{O}(nh)$$ operation, the Graham Scan is $$\mathcal{O}(n\log(n))$$, where $$n$$ is the number of points and $$h$$ is the size fo the hull. 
-This means that the complexity of the Graham Scan is not output-sensitive; moreover, there are some cases where the Jarvis March is more optimal, depending on the size of the hull and the number of points to wrap.
-
-Rather than starting at the leftmost point like the Jarvis March, the Graham scan starts at the bottom. 
-We then sort the distribution of points based on the angle between the bottom-most point, the origin, and each other point.
-After sorting, we go through point-by-point, searching for points that are on the convex hull and throwing out any other points.
-We do this by looking for counter-clockwise rotations.
-If an angle between three points turns inward, the shape is obviously not convex, so we can throw that result out.
-We can find whether a rotation is counter-clockwise with trigonometric functions or by using a cross-product, like so:
-
-{% method %}
-{% sample lang="pseudo" %}
-[import:1-7, lang:"julia"](code/pseudo/graham.pseudo)
-{% endmethod %}
-
-If the output of this function is 0, the points are collinear.
-If the output is positive, then the points form a counter-clockwise "left" turn.
-If the output is negative, then the points form a clockwise "right" turn.
-We basically do not want clockwise rotations, because this means we are at an interior angle.
-
-<!---ADD FIGURE--->
-
-To save memory and expensive `append()` operations, we ultimately look for points that should be on the hull and swap them with the first elements in the array.
-If there are $$M$$ elements on the hull, then the first $$M$$ elements in our output random distribution of points will be the hull. 
-In the end, the code should look something like this:
-
-{% method %}
-{% sample lang="pseudo" %}
-[import:9-40, lang:"julia"](code/pseudo/graham.pseudo)
-{% endmethod %}
-
-### Bibliography
-
-{% references %} {% endreferences %}
-
-### Example Code
-
-To be added later!
-
 

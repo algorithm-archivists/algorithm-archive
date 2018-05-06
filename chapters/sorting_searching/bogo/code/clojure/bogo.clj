@@ -1,3 +1,4 @@
+;; earthfail
 (defn is-sorted [col func]
   "return true of col is sorted in respect to func role
    like <,>,<=,>="
