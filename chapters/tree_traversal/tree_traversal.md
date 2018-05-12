@@ -4,7 +4,6 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 
 {% method %}
 {% sample lang="jl" %}
-This is some text
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:15-18, lang:"c_cpp"](code/c++/tree_example.cpp)
