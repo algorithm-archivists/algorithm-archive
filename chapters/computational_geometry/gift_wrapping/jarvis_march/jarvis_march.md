@@ -11,7 +11,6 @@ From there, we use the two known points to again calculate the angle between all
 We then choose the point with the largest interior angle and move the simulation forward.
 We keep repeating this process until we have returned to our original point.
 The set of points chosen in this simulation will be the convex hull. 
-Here is what this might look like in code:
 
 As we might expect, this algorithm is not incredibly efficient and has a runtime of $$\mathcal{O}(nh)$$, where $$n$$ is the number of points and $$h$$ is the size of the hull.
 As a note, the Jarvis March can be generalized to higher dimensions.
@@ -24,6 +23,12 @@ Since this algorithm, there have been many other algorithms that have advanced t
 ### Example Code
 
 {% method %}
+{% sample lang="cs" %}
+### C# #
+JarvisMarch.cs
+[import, lang="csharp"](code/cs/JarvisMarch.cs)
+Program.cs
+[import, lang="csharp"](code/cs/Program.cs)
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/jarvis.jl)
@@ -57,4 +62,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
