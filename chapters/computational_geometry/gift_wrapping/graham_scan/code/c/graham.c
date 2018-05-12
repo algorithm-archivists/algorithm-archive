@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,20 +10,17 @@ struct point {
 };
 
 int cmp_points(const void *a, const void *b) {
-    struct point point1 = *(struct point*)a;
-    struct point point2 = *(struct point*)b;
-
-    if (point1.y > point2.y) {
+    if (((struct point*)a)->y > ((struct point*)b)->y) {
         return 1;
-    } else if (point1.y < point2.y) {
+    } else if (((struct point*)a)->y < ((struct point*)b)->y) {
         return -1;
     } else {
         return 0;
     }
 }
 
-double ccw(struct point a, struct point b, struct point c) {
-    return (b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x - a.x);
+bool is_left_of(struct point a, struct point b, struct point c) {
+    return (b.x - a.x) * (c.y - a.y) < (b.y - a.y) * (c.x - a.x);
 }
 
 double polar_angle(struct point origin, struct point p) {
@@ -72,7 +70,7 @@ size_t graham_scan(struct point *points, size_t size) {
 
     size_t m = 1;
     for (size_t i = 2; i <= size; ++i) {
-        while (ccw(tmp_points[m - 1], tmp_points[m], tmp_points[i]) <= 0) {
+        while (is_left_of(tmp_points[m - 1], tmp_points[m], tmp_points[i])) {
             if (m > 1) {
                 m--;
                 continue;
