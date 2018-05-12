@@ -4,7 +4,8 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 
 {% method %}
 {% sample lang="jl" %}
-[import:4-8, lang:"julia"](code/julia/Tree.jl)
+This is some text
+[import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:15-18, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
@@ -12,13 +13,15 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:5-10, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:3-8, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
 [import:1-5, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
 [import:5-10, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:3-8, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
 {% endmethod %}
@@ -27,7 +30,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 
 {% method %}
 {% sample lang="jl" %}
-[import:11-18, lang:"julia"](code/julia/Tree.jl)
+[import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:20-27, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
@@ -39,9 +42,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="py2" %}
 [import:8-16, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
-[import:10-18, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:10-18, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
 {% endmethod %}
@@ -59,23 +64,30 @@ Now, in this case the first element searched through is still the root of the tr
 
 {% method %}
 {% sample lang="jl" %}
-[import:21-29, lang:"julia"](code/julia/Tree.jl)
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cs" %}
 [import:75-84, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py3" %}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
-[import:20-29, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 <p align="center">
@@ -86,23 +98,30 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 
 {% method %}
 {% sample lang="jl" %}
-[import:32-47, lang:"julia"](code/julia/Tree.jl)
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cs" %}
 [import:86-104, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="js" %}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py2" %}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py3" %}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
-[import:31-47, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 <p align="center">
@@ -123,7 +142,7 @@ In code, it looks like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:50-61, lang:"julia"](code/julia/Tree.jl)
+[import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:29-45, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
@@ -139,7 +158,8 @@ In code, it looks like this:
 {% sample lang="py3" %}
 [import:31-45, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:49-61, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
 {% endmethod %}
@@ -154,7 +174,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 
 {% method %}
 {% sample lang="jl" %}
-[import:64-75, lang:"julia"](code/julia/Tree.jl)
+[import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
 [import:47-61, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
@@ -168,7 +188,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="py3" %}
 [import:48-62, lang:"python"](code/python3/Tree_example.py)
 {% sample lang="scratch" %}
-[import:63-75, lang:"julia"](code/julia/Tree.jl)
+This has not been implemented in your chosen language, so here is the Julia code
+[import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:26-34, lang:"rust"](code/rust/tree.rs)
 {% endmethod %}
