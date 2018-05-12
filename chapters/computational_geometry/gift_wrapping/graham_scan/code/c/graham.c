@@ -10,9 +10,12 @@ struct point {
 };
 
 int cmp_points(const void *a, const void *b) {
-    if (((struct point*)a)->y > ((struct point*)b)->y) {
+    struct point* pa = (struct point*) a;
+    struct point* pb = (struct point*) b;
+
+    if (pa->y > pb->y) {
         return 1;
-    } else if (((struct point*)a)->y < ((struct point*)b)->y) {
+    } else if (pa->y < pb->y) {
         return -1;
     } else {
         return 0;
