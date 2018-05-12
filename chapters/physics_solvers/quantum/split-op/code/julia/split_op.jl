@@ -1,13 +1,3 @@
-#-------------split-op.jl------------------------------------------------------#
-#
-# Purpose: A simple split-operator method for solving the schrodinger equation
-#          The split operator method involves continuous transformations from
-#              real space to phase space, before each tranformation, we multiply
-#              by operators that exist either completely in real space or in
-#              phase space. This allows us to solve Psi = Psi_0*e^(iHt)
-#
-#------------------------------------------------------------------------------#
-
 using Plots
 pyplot()
 
@@ -34,7 +24,6 @@ end
 # Function to initialize the wfc and potential
 function init(voffset::Float64, wfcoffset::Float64)
     V = 0.5 * (Par.x - voffset).^2
-    #V = 5 * sin(Par.x*voffset) + 5
     wfc = 3* exp.(-(Par.x-wfcoffset).^2/2)
     PE = exp.(-0.5*im*V*Par.dt)
     KE = exp.(-0.5*im*Par.k.^2*Par.dt)
@@ -72,7 +61,7 @@ end
 
 # main function
 function main()
-    opr = init(0.0, 0.0)
+    opr = init(0.0, 1.0)
     split_op(opr)
 end
 

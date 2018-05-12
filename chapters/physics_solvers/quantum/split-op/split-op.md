@@ -42,13 +42,51 @@ We can then address each part of this solution in chunks, first in real space, t
 Which looks something like this:
 
 $$
-\Psi(\mathcal{r}, t+dt) = \left[\hat{U}_R(\frac{dt}{2})\mathcal{F}\left[\hat{U}_M(dt) \mathcal{F} \left(\hat{U}_R(\frac{dt}{2}) \Psi(\mathbf{r},t) \right] \right] \right] + \mathcal{O}(dt^3)
+\Psi(\mathcal{r}, t+dt) = \left[\hat{U}_R(\frac{dt}{2})\mathcal{F}\left[\hat{U}_M(dt) \mathcal{F} \left[\hat{U}_R(\frac{dt}{2}) \Psi(\mathbf{r},t) \right] \right] \right] + \mathcal{O}(dt^3)
 $$
 
 where $$\hat{U}_R = e^{-\frac{i\hat{H}_Rdt}{\hbar}}$$, $$\hat{U}_M = e^{-\frac{i\hat{H}_Mdt}{\hbar}}$$, and $$\mathcal{F}$$ and $$\mathcal{F}^{-1}$$ indicate forward and inverse Fourier Transforms.
 
 As a small concession here, using this method enforces periodic boundary conditions, where the wavefunction will simply slide from one side of your simulation box to the other, but that's fine for most cases.
 In fact, for many cases (such as large-scale turbulence models) it's ideal.
+
+Luckily, the code in this case is pretty straightforward.
+Frist, we need to set all the initial parameters, including the initial grids in real and momentum space:
+
+{% method %}
+{% sample lang="jl" %}
+[import:4-22, lang:"julia"](code/julia/split_op.jl)
+{% endmethod %}
+
+As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
+This is simply because the FFT will naturally assume that the `0` in our grid is at the left side of the simulation, so we shift k-space to match this expectation.
+Afterwards, we turn them into operators:
+
+{% method %}
+{% sample lang="jl" %}
+[import:24-32, lang:"julia"](code/julia/split_op.jl)
+{% endmethod %}
+
+Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
+As a note, if we run this simulation in _imaginary time_, by simply setting $$\tau = it$$ and stepping through $$\tau$$, we will no longer see an "real-world" example of how the atoms should behave, but will instead see an exponential decay of higher-energy states.
+This means that we can find the ground state of our system by running the simulation in imaginary time, which is an incredibly useful feature!
+
+And finally go step-by-step through the simulation:
+
+{% method %}
+{% sample lang="jl" %}
+[import:34-60, lang:"julia"](code/julia/split_op.jl)
+{% endmethod %}
+
+And that's it.
+The Split-Operator method is one of the most commonly used quantum simulation algorithms because of how straightforward it is to code and how quickly you can start really digging into the physics of the simulation results!
+
+# Example Code
+{% method %}
+{% sample lang="jl" %}
+### Julia
+[import, lang:"julia"](code/julia/split_op.jl)
+{% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
