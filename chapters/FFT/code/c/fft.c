@@ -9,12 +9,10 @@
 void dft(double complex *X, const size_t N) {
     double complex tmp[N];
     for (size_t i = 0; i < N; ++i) {
-        double complex sum = 0 + 0 * I;
+        tmp[i] = 0;
         for (size_t j = 0; j < N; ++j) {
-            sum += X[j] * cexp(-2.0 * PI * I * j * i / N);
+            tmp[i] += X[j] * cexp(-2.0 * PI * I * j * i / N);
         }
-
-        tmp[i] = sum;
     }
 
     for (size_t i = 0; i < N; ++i) {
