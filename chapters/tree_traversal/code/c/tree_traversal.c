@@ -5,7 +5,7 @@
 typedef struct node {
     struct node *children;
     int children_num;
-    int ID;
+    int id;
 } node;
 
 typedef struct node_list {
@@ -60,8 +60,9 @@ void queue_pop(node_points *np) {
 }
 
 void create_tree(node *n, int num_row, int num_child) {
-    n->ID = num_row;
+    n->id = num_row;
     if (num_row == 0) {
+        n->children_num = 0;
         return;
     }
 
@@ -74,18 +75,41 @@ void create_tree(node *n, int num_row, int num_child) {
     }
 }
 
-void DFS_recursive(node n) {
-    printf("%d\n", n.ID);
+void dfs_recursive(node n) {
+    printf("%d\n", n.id);
     if (!n.children) {
         return;
     }
 
     for (int i = 0; i < n.children_num; ++i) {
-        DFS_recursive(n.children[i]);
+        dfs_recursive(n.children[i]);
     }
 }
 
-void DFS_stack(node n) {
+void dfs_recursive_postorder(node n) {
+    for (int i = 0; i < n.children_num; ++i) {
+        dfs_recursive_postorder(n.children[i]);
+    }
+
+    printf("%d\n", n.id);
+}
+
+void dfs_recursive_inorder_btree(node n) {
+    if (n.children_num > 2) {
+        printf("This is not a binary tree.\n");
+        return;
+    }
+
+    if (n.children_num > 0) {
+        dfs_recursive_inorder_btree(n.children[0]);
+        printf("%d\n", n.id);
+        dfs_recursive_inorder_btree(n.children[1]);
+    } else {
+        printf("%d\n", n.id);
+    }
+}
+
+void dfs_stack(node n) {
     node_points stack;
     memset(&stack, 0, sizeof(node_points));
     push(&stack, n);
@@ -93,7 +117,7 @@ void DFS_stack(node n) {
 
     while (stack.start_point != NULL) {
         temp = stack.end_point->n;
-        printf("%d\n", temp.ID);
+        printf("%d\n", temp.id);
         stack_pop(&stack);
         for (int i = 0; i < temp.children_num; ++i) {
             if (!temp.children) {
@@ -105,7 +129,7 @@ void DFS_stack(node n) {
     }
 }
 
-void BFS_queue(node n) {
+void bfs_queue(node n) {
     node_points queue;
     memset(&queue, 0, sizeof(node_points));
     push(&queue, n);
@@ -113,7 +137,7 @@ void BFS_queue(node n) {
 
     while (queue.start_point != NULL) {
         temp = queue.start_point->n;
-        printf("%d\n", temp.ID);
+        printf("%d\n", temp.id);
         queue_pop(&queue);
         for (int i = 0; i < temp.children_num; ++i) {
             if (!temp.children) {
@@ -126,7 +150,7 @@ void BFS_queue(node n) {
 }
 
 void destroy_tree(node *n) {
-    if (n->ID == 0) {
+    if (n->id == 0) {
         return;
     }
 
@@ -140,11 +164,10 @@ void destroy_tree(node *n) {
 int main() {
     node root;
     create_tree(&root, 3, 3);
-    DFS_recursive(root);
-    //DFS_stack(root);
-    //BFS_queue(root);
+    //dfs_recursive(root);
+    //dfs_stack(root);
+    //bfs_queue(root);
     destroy_tree(&root);
 
     return 0;
 }
-
