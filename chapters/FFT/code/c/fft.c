@@ -1,10 +1,26 @@
 #include <complex.h>
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
 
 #define PI 3.1415926535897932384626
+
+void dft(double complex *X, const size_t N) {
+    double complex tmp[N];
+    for (size_t i = 0; i < N; ++i) {
+        double complex sum = 0 + 0 * I;
+        for (size_t j = 0; j < N; ++j) {
+            sum += X[j] * cexp(-2.0 * PI * I * j * i / N);
+        }
+
+        tmp[i] = sum;
+    }
+
+    for (size_t i = 0; i < N; ++i) {
+        X[i] = tmp[i];
+    }
+}
 
 void cooley_tukey(double complex *X, const size_t N) {
     if (N >= 2) {
@@ -28,23 +44,22 @@ void cooley_tukey(double complex *X, const size_t N) {
 }
 
 void bit_reverse(double complex *X, size_t N) {
-        double complex temp;
-        unsigned int b;
+    double complex temp;
+    unsigned int b;
 
-        for (unsigned int i = 0; i < N; ++i) {
-                b = i;
-                b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
-                b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
-                b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
-                b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-                b = ((b >> 16) | (b << 16)) >>
-                        (32 - (unsigned int) log2((double)N));
-                if (b > i) {
-                        temp = X[b];
-                        X[b] = X[i];
-                        X[i] = temp;
-                }
+    for (unsigned int i = 0; i < N; ++i) {
+        b = i;
+        b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
+        b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
+        b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
+        b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
+        b = ((b >> 16) | (b << 16)) >> (32 - (unsigned int) log2((double)N));
+        if (b > i) {
+            temp = X[b];
+            X[b] = X[i];
+            X[i] = temp;
         }
+    }
 }
 
 void iterative_cooley_tukey(double complex *X, size_t N) {
@@ -80,7 +95,8 @@ int main() {
     }
 
     cooley_tukey(y, 64);
-    iterative_cooley_tukey(z, 64);
+    //iterative_cooley_tukey(z, 64);
+    dft(z, 64);
 
     approx(y, z, 64);
 
