@@ -95,17 +95,22 @@ void dfs_recursive_postorder(node n) {
 }
 
 void dfs_recursive_inorder_btree(node n) {
-    if (n.children_num > 2) {
-        printf("This is not a binary tree.\n");
-        return;
-    }
-
-    if (n.children_num > 0) {
+    switch (n.children_num) {
+    case 2:
         dfs_recursive_inorder_btree(n.children[0]);
         printf("%d\n", n.id);
         dfs_recursive_inorder_btree(n.children[1]);
-    } else {
+        break;
+    case 1:
+        dfs_recursive_inorder_btree(n.children[0]);
         printf("%d\n", n.id);
+        break;
+    case 0:
+        printf("%d\n", n.id);
+        break;
+    default:
+        printf("This is not a binary tree.\n");
+        break;
     }
 }
 
@@ -164,7 +169,7 @@ void destroy_tree(node *n) {
 int main() {
     node root;
     create_tree(&root, 3, 3);
-    //dfs_recursive(root);
+    dfs_recursive(root);
     //dfs_stack(root);
     //bfs_queue(root);
     destroy_tree(&root);
