@@ -22,7 +22,7 @@ In the hamiltonian shown above, we can split our system into real-space componen
 If we assume a somewhat general solution to our quantum system:
 
 $$
-\Psi(\mathbf{r},t + dt) = \left[e^{-\frac{i\hat{H}dt}{\hbar}}\Psi(\mathbf{r},t) = e^{-\frac{i(\hat{H}_R + \hat{H}_M)dt}{\hbar}}\right]\Psi(\mathbf{r},t)
+\Psi(\mathbf{r},t + dt) = \left[e^{-\frac{i\hat{H}dt}{\hbar}}\right]\Psi(\mathbf{r},t) = \left[e^{-\frac{i(\hat{H}_R + \hat{H}_M)dt}{\hbar}}\right]\Psi(\mathbf{r},t)
 $$
 
 and assume we are simulating our system by a series of small tiemsteps ($$dt$$), we can perform similar splitting by using the Baker-Campbell-Housdorff formula:
