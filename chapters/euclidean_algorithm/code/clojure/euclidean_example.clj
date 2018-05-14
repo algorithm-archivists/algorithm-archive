@@ -1,3 +1,4 @@
+;; earthfail
 (defn euclid-sub [a b]
   (loop [i (Math/abs a) j (Math/abs b)]
     (if (= i j)

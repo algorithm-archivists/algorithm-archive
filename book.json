@@ -1,6 +1,6 @@
 {
     "gitbook": "3.x.x",
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock"],
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock", "ga"],
     "lunr": {
         "maxIndexSize": 1000000000
     },
@@ -9,6 +9,9 @@
 			"fixlang": true,
 			"unindent": true
 		},
+                "ga": {
+                     "token": "UA-118252470-1"
+                 },
 		"theme-api": {
 			"languages": [
 				{
@@ -71,7 +74,12 @@
 				{
 					"lang": "elm",
 					"name": "Elm"
+				},
+				{
+					"lang": "LabVIEW",
+					"name": "LabVIEW"
 				}
+                                
 			],
 			"split": false
         }

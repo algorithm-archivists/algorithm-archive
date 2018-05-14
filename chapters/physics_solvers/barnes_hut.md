@@ -1,3 +1,13 @@
+##### Dependencies
+* [Verlet Integration](verlet.md)
+
+# Barnes Hut Algorithm
+
+The Barnes-Hut algorithm divides space into an octree in order to cut computational time without losing much precision in n-body simulations. If you want to learn more soon, bug me about it! 
+
+TODO
+
+ 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
@@ -20,13 +30,4 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
-##### Dependencies
-* [Verlet Integration](verlet.md)
-
-# Barnes Hut Algorithm
-
-The Barnes-Hut algorithm divides space into an octree in order to cut computational time without losing much precision in n-body simulations. If you want to learn more soon, bug me about it! 
-
-TODO
 

@@ -1,13 +1,11 @@
 using DataStructures
 
-# This has not been implemented in your chosen language, so here's Julia code
 struct Node
     children::Vector{Node}
     ID::Int64
     Node(ID::Int64) = new(Vector{Node}(), ID)
 end
 
-# This has not been implemented in your chosen language, so here's Julia code
 function DFS_recursive(n::Node)
     # Here we are doing something...
     println(n.ID)
@@ -17,7 +15,6 @@ function DFS_recursive(n::Node)
     end
 end
 
-# This has not been implemented in your chosen language, so here's Julia code
 function DFS_recursive_postorder(n::Node)
 
     for child in n.children
@@ -28,7 +25,6 @@ function DFS_recursive_postorder(n::Node)
     println(n.ID)
 end
 
-# This has not been implemented in your chosen language, so here's Julia code
 # This assumes only 2 children
 function DFS_recursive_inorder_btree(n::Node)
 
@@ -46,7 +42,6 @@ function DFS_recursive_inorder_btree(n::Node)
     end
 end
 
-# This has not been implemented in your chosen language, so here's Julia code
 function DFS_stack(n::Node)
     s = Stack(Node)
     push!(s, n)
@@ -60,7 +55,6 @@ function DFS_stack(n::Node)
     end
 end
 
-# This has not been implemented in your chosen language, so here's Julia code
 function BFS_queue(n::Node)
     q = Queue(Node)
     enqueue!(q, n)
@@ -102,7 +96,6 @@ function main()
 
     println("Using queue-based BFS:")
     BFS_queue(root);
-    
 end
 
 main()
