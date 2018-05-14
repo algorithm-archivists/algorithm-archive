@@ -1,9 +1,6 @@
-##### Dependencies
-* [Gaussian Elimination](gaussian_elimination.md)
-
 # Thomas Algorithm
 
-As alluded to in the Gaussian Elimination Chapter, the Thomas Algorithm (or TDMA -- Tri-Diagonal Matrix Algorithm) allows for programmers to **massively** cut the computational cost of their code from $$\sim O(n^3) \rightarrow \sim O(n)$$! This is done by exploiting a particular case of Gaussian Elimination, particularly the case where our matrix looks like:
+As alluded to in the [Gaussian Elimination chapter](../gaussian_elimination/gaussian_elimination.md), the Thomas Algorithm (or TDMA -- Tri-Diagonal Matrix Algorithm) allows for programmers to **massively** cut the computational cost of their code from $$\sim O(n^3) \rightarrow \sim O(n)$$! This is done by exploiting a particular case of Gaussian Elimination, particularly the case where our matrix looks like:
 
 $$
 \left[
@@ -19,7 +16,8 @@ $$
 
 By this, I mean that our matrix is *Tri-Diagonal* (excluding the right-hand side of our system of equations, of course!). Now, at first, it might not be obvious how this helps; however, we may divide this array into separate vectors corresponding to $$a$$, $$b$$, $$c$$, and $$d$$ and then solve for $$x$$ with back-substitution, like before. 
 
-In particular, we need to find an optimal scale factor for each row and use that. What is the scale factor? Well, it is the diagonal $$-$$ the multiplicative sum of the off-diagonal elements. In the end, we will update $$c$$ and $$d$$ to be$$c'$$ and $$d'$$ like so:
+In particular, we need to find an optimal scale factor for each row and use that. What is the scale factor? Well, it is the diagonal $$-$$ the multiplicative sum of the off-diagonal elements.
+In the end, we will update $$c$$ and $$d$$ to be $$c'$$ and $$d'$$ like so:
 
 $$
 \begin{align}
