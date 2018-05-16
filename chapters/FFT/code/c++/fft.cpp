@@ -23,6 +23,24 @@ constexpr T pi() {
   return 3.14159265358979323846264338327950288419716;
 }
 
+template <typename Iter>
+void dft(Iter first, Iter last) {
+  auto size = last - first;
+  auto temp = std::vector<c64>(size);
+
+  for (size_t i = 0; i < size; ++i) {
+    temp[i] = 0;
+    for (size_t j = 0; j < size; ++j) {
+      temp[i] +=
+          first[j] * std::exp(c64(0, -2.0 * pi<double>() * j * i / size));
+    }
+  }
+
+  for (size_t i = 0; i < size; ++i) {
+    first[i] = temp[i];
+  }
+}
+
 // `cooley_tukey` does the cooley-tukey algorithm, recursively
 template <typename Iter>
 void cooley_tukey(Iter first, Iter last) {
@@ -56,22 +74,26 @@ void cooley_tukey(Iter first, Iter last) {
   }
 }
 
-// note: (last - first) must be less than 2**32 - 1
 template <typename Iter>
 void sort_by_bit_reverse(Iter first, Iter last) {
   // sorts the range [first, last) in bit-reversed order,
   // by the method suggested by the FFT
-  auto size = last - first;
 
-  for (std::uint32_t i = 0; i < size; ++i) {
-    auto b = i;
-    b = (((b & 0xaaaaaaaa) >> 1) | ((b & 0x55555555) << 1));
-    b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
-    b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
-    b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-    b = ((b >> 16) | (b << 16)) >> (32 - std::uint32_t(log2(size)));
-    if (b > i) {
-      swap(first[b], first[i]);
+  for (int i = 0; i < last - first; ++i) {
+    int n = i;
+    int a = i;
+    int count = static_cast<int>(std::log2(last - first)) - 1;
+
+    n >>= 1;
+    while (n > 0) {
+      a = (a << 1) | (n & 1);
+      count--;
+      n >>= 1;
+    }
+    n = (a << count) & ((1 << static_cast<int>(std::log2(last - first))) - 1);
+
+    if (n > i) {
+      swap(first[i], first[n]);
     }
   }
 }
@@ -112,7 +134,7 @@ int main() {
 
   // Preform an FFT on the arrays.
   cooley_tukey(begin(recursive), end(recursive));
-  iterative_cooley_tukey(begin(iterative), end(iterative));
+  dft(begin(iterative), end(iterative));
 
   // Check if the arrays are approximately equivalent
   std::cout << std::right << std::setw(16) << "idx" << std::setw(16) << "rec"
