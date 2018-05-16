@@ -26,6 +26,33 @@ void dfs_recursive(node const& n) {
   }
 }
 
+void dfs_recursive_postorder(node const& n) {
+  for (auto const& child : n.children) {
+    dfs_recursive_postorder(child);
+  }
+  std::cout << n.value << '\n';
+}
+
+void dfs_recursive_inorder_btree(node const& n) {
+  switch (n.children.size()) {
+  case 2:
+    dfs_recursive_inorder_btree(n.children[0]);
+    std::cout << n.value << '\n';
+    dfs_recursive_inorder_btree(n.children[1]);
+    break;
+  case 1:
+    dfs_recursive_inorder_btree(n.children[0]);
+    std::cout << n.value << '\n';
+    break;
+  case 0:
+    std::cout << n.value << '\n';
+    break;
+  default:
+    std::cout << "This is not a binary tree.\n";
+    break;
+  }
+}
+
 // Simple non-recursive scheme for DFS
 void dfs_stack(node const& n) {
   // this stack holds pointers into n's `children` vector,
@@ -67,7 +94,7 @@ node create_tree(size_t num_row, size_t num_child) {
 
   std::vector<node> vec;
   std::generate_n(std::back_inserter(vec), num_child, [&] {
-    return create_node(num_row - 1, num_child);
+    return create_tree(num_row - 1, num_child);
   });
 
   return node{std::move(vec), num_row};
@@ -75,8 +102,8 @@ node create_tree(size_t num_row, size_t num_child) {
 
 int main() {
   // Creating Tree in main
-  auto root = create_node(3, 3);
+  auto root = create_tree(3, 2);
   dfs_recursive(root);
-  dfs_stack(root);
-  bfs_queue(root);
+  //dfs_stack(root);
+  //bfs_queue(root);
 }
