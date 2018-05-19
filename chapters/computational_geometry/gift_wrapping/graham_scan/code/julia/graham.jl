@@ -3,10 +3,6 @@ type Point
     y::Float64
 end
 
-function dist(point1::Point, point2::Point)
-    return sqrt((point1.x - point2.x)^2 + (point1.y - point2.y)^2)
-end
-
 function ccw(a::Point, b::Point, c::Point)
     return ((b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x - a.x))
 end
