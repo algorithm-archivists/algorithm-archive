@@ -75,6 +75,7 @@ void sort_by_bit_reverse(Iter first, Iter last) {
     auto a = i;
     auto current_count = count;
 
+    // this left shifts i and right shifts the shifted bit to n by bitwise or
     n >>= 1;
     while (n > 0) {
       a = (a << 1) | (n & 1);
