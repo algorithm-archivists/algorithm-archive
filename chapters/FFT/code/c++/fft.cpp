@@ -111,26 +111,37 @@ void iterative(Iter first, Iter last) {
   }
 }
 
-template <typename Iter>
-void discrete(Iter first, Iter last) {
-  auto size = last - first;
-  auto temp = std::vector<c64>(size);
+template <typename It, typename F>
+auto sum(It const first, It const last, F f) {
+  using return_type = decltype(f(0, *first));
+  auto ret = return_type(0);
 
   std::size_t i = 0;
-  std::generate(begin(temp), end(temp), [&i, size, first, last] {
-    std::size_t j = 0;
+  for (auto it = first; it < last; ++it, ++i) {
+    ret += f(i, *it);
+  }
 
-    auto ret = std::accumulate(
-        first, last, c64(0), [i, &j, size](auto& acc, auto& it) {
-          auto res = it * std::exp(c64(0, -2.0 * pi<double>() * j * i / size));
-          ++j;
-          return acc + res;
+  return ret;
+}
+
+template <typename Iter>
+void discrete(Iter const first, Iter const last) {
+  using namespace std::literals;
+
+  auto const original = std::vector<c64>(first, last);
+  auto const size = original.size();
+
+  auto const i2pi = -2.0i * pi<double>();
+
+  for (std::size_t i = 0; i < size; ++i) {
+  for (std::size_t i = 0; i < size; ++i) {
+    first[i] =
+        sum(begin(original), end(original), [&](auto const k, auto const el) {
+          return el * std::exp(i2pi * double(i * k) / double(size));
         });
-    ++i;
-    return ret;
-  });
+  }
 
-  std::copy(begin(temp), end(temp), first);
+  }
 }
 
 } // namespace ct
