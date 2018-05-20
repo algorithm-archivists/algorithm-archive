@@ -1,4 +1,4 @@
-# Tree Traversal 
+# Tree Traversal
 
 Trees are naturally recursive data structures, and because of this, we cannot access their elements like we might access the elements of a vector or array. Instead, we need to use more interesting methods to work through each element. This is often called *Tree Traversal*, and there are many different ways to do this. For now, we will restrict the discussion to two common and related methods of tree traversal: *Depth-First* and *Breadth-First Search*. Note that trees vary greatly in shape and size depending on how they are used; however, they are composed primarily of nodes that house other, children nodes, like so:
 
@@ -10,7 +10,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="cs" %}
 [import:11-15, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:5-10, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
@@ -35,7 +35,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="cs" %}
 [import:48-57, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-[import:77-86, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:15-23, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -70,8 +70,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="cs" %}
 [import:75-84, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+[import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
@@ -104,8 +103,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="cs" %}
 [import:86-104, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
 {% sample lang="c" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
+[import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -147,9 +145,7 @@ In code, it looks like this:
 {% sample lang="cs" %}
 [import:36-52, lang:"csharp"](code/cs/Tree/Tree.cs)
 {% sample lang="c" %}
-[import:20-33, lang:"c_cpp"](code/c/tree_traversal.c)
-[import:35-47, lang:"c_cpp"](code/c/tree_traversal.c)
-[import:88-106, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -179,7 +175,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cs" %}
 [import:54-70, lang:"csharp"](code/cs/Tree/Tree.cs)
 {% sample lang="c" %}
-[import:108-126, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -209,6 +205,9 @@ Program.cs
 [import, lang:"csharp"](code/cs/Tree/Program.cs)
 {% sample lang="c" %}
 ### C
+utility.h
+[import, lang:"c_cpp"](code/c/utility.h)
+tree_traversal.c
 [import, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 ### JavaScript
