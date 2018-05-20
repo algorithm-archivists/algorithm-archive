@@ -4,6 +4,7 @@
 #include <array>
 #include <complex>
 #include <cstdint>
+#include <numeric>
 #include <vector>
 
 // These headers are for presentation not for the algorithm.
@@ -23,51 +24,36 @@ constexpr T pi() {
   return 3.14159265358979323846264338327950288419716;
 }
 
+namespace ct {
+
+// `recursive` does the cooley-tukey algorithm, recursively
 template <typename Iter>
-void dft(Iter first, Iter last) {
-  auto size = last - first;
-  auto temp = std::vector<c64>(size);
-
-  for (size_t i = 0; i < size; ++i) {
-    temp[i] = 0;
-    for (size_t j = 0; j < size; ++j) {
-      temp[i] +=
-          first[j] * std::exp(c64(0, -2.0 * pi<double>() * j * i / size));
-    }
-  }
-
-  for (size_t i = 0; i < size; ++i) {
-    first[i] = temp[i];
-  }
-}
-
-// `cooley_tukey` does the cooley-tukey algorithm, recursively
-template <typename Iter>
-void cooley_tukey(Iter first, Iter last) {
-  auto size = last - first;
-  if (size >= 2) {
+void recursive(Iter first, Iter last) {
+  std::size_t size = last - first;
+  auto half_size = size / 2;
+  if (half_size >= 1) {
     // split the range, with even indices going in the first half,
     // and odd indices going in the last half.
-    auto temp = std::vector<c64>(size / 2);
-    for (size_t i = 0; i < size / 2; ++i) {
+    auto temp = std::vector<c64>(half_size);
+    for (std::size_t i = 0; i < half_size; ++i) {
       temp[i] = first[i * 2 + 1];
       first[i] = first[i * 2];
     }
-    for (size_t i = 0; i < size / 2; ++i) {
+    for (std::size_t i = 0; i < half_size; ++i) {
       first[i + size / 2] = temp[i];
     }
 
     // recurse the splits and butterflies in each half of the range
-    auto split = first + size / 2;
-    cooley_tukey(first, split);
-    cooley_tukey(split, last);
+    auto split = first + half_size;
+    recursive(first, split);
+    recursive(split, last);
 
     // now combine each of those halves with the butterflies
-    for (size_t k = 0; k < size / 2; ++k) {
+    for (std::size_t k = 0; k < half_size; ++k) {
       auto w = std::exp(c64(0, -2.0 * pi<double>() * k / size));
 
       auto& bottom = first[k];
-      auto& top = first[k + size / 2];
+      auto& top = first[k + half_size];
       top = bottom - w * top;
       bottom -= top - bottom;
     }
@@ -79,18 +65,23 @@ void sort_by_bit_reverse(Iter first, Iter last) {
   // sorts the range [first, last) in bit-reversed order,
   // by the method suggested by the FFT
 
-  for (int i = 0; i < last - first; ++i) {
-    int n = i;
-    int a = i;
-    int count = static_cast<int>(std::log2(last - first)) - 1;
+  std::size_t size = last - first;
+  auto log = static_cast<std::size_t>(std::log2(size));
+  auto count = log - 1;
+  auto bitmask = (1 << log) - 1;
+
+  for (std::size_t i = 0; i < size; ++i) {
+    auto n = i;
+    auto a = i;
+    auto current_count = count;
 
     n >>= 1;
     while (n > 0) {
       a = (a << 1) | (n & 1);
-      count--;
+      --current_count;
       n >>= 1;
     }
-    n = (a << count) & ((1 << static_cast<int>(std::log2(last - first))) - 1);
+    n = (a << current_count) & bitmask;
 
     if (n > i) {
       swap(first[i], first[n]);
@@ -98,18 +89,18 @@ void sort_by_bit_reverse(Iter first, Iter last) {
   }
 }
 
-// `iterative_cooley_tukey` does the cooley-tukey algorithm iteratively
+// `iterative` does the cooley-tukey algorithm iteratively
 template <typename Iter>
-void iterative_cooley_tukey(Iter first, Iter last) {
+void iterative(Iter first, Iter last) {
   sort_by_bit_reverse(first, last);
 
   // perform the butterfly on the range
-  auto size = last - first;
-  for (size_t stride = 2; stride <= size; stride *= 2) {
+  std::size_t size = last - first;
+  for (std::size_t stride = 2; stride <= size; stride *= 2) {
     auto w = exp(c64(0, -2.0 * pi<double>() / stride));
-    for (size_t j = 0; j < size; j += stride) {
+    for (std::size_t j = 0; j < size; j += stride) {
       auto v = c64(1.0);
-      for (size_t k = 0; k < stride / 2; k++) {
+      for (std::size_t k = 0; k < stride / 2; k++) {
         first[k + j + stride / 2] =
             first[k + j] - v * first[k + j + stride / 2];
         first[k + j] -= (first[k + j + stride / 2] - first[k + j]);
@@ -118,6 +109,30 @@ void iterative_cooley_tukey(Iter first, Iter last) {
     }
   }
 }
+
+template <typename Iter>
+void discrete(Iter first, Iter last) {
+  auto size = last - first;
+  auto temp = std::vector<c64>(size);
+
+  std::size_t i = 0;
+  std::generate(begin(temp), end(temp), [&i, size, first, last] {
+    std::size_t j = 0;
+
+    auto ret = std::accumulate(
+        first, last, c64(0), [i, &j, size](auto& acc, auto& it) {
+          auto res = it * std::exp(c64(0, -2.0 * pi<double>() * j * i / size));
+          ++j;
+          return acc + res;
+        });
+    ++i;
+    return ret;
+  });
+
+  std::copy(begin(temp), end(temp), first);
+}
+
+} // namespace ct
 
 int main() {
   // initalize the FFT inputs
@@ -131,19 +146,30 @@ int main() {
 
   auto recursive = initial;
   auto iterative = initial;
+  auto discrete = initial;
 
   // Preform an FFT on the arrays.
-  cooley_tukey(begin(recursive), end(recursive));
-  dft(begin(iterative), end(iterative));
+  ct::recursive(begin(recursive), end(recursive));
+  ct::iterative(begin(iterative), end(iterative));
+  ct::discrete(begin(discrete), end(discrete));
 
   // Check if the arrays are approximately equivalent
-  std::cout << std::right << std::setw(16) << "idx" << std::setw(16) << "rec"
-            << std::setw(16) << "it" << std::setw(16) << "subtracted" << '\n';
-  for (int i = 0; i < initial.size(); ++i) {
+  std::cout << std::right << std::setw(12) << "idx";
+  std::cout << std::setw(12) << "|recursive|";
+  std::cout << std::setw(12) << "|iterative|";
+  std::cout << std::setw(12) << "|discrete|";
+  std::cout << std::setw(12) << "error" << '\n';
+  for (std::size_t i = 0; i < initial.size(); ++i) {
     auto rec = recursive[i];
     auto it = iterative[i];
-    std::cout << std::setw(16) << i << std::setw(16) << std::abs(rec)
-              << std::setw(16) << std::abs(it) << std::setw(16)
-              << (std::abs(rec) - std::abs(it)) << '\n';
+    auto disc = discrete[i];
+    std::cout << std::setw(12) << i;
+    std::cout << std::setw(12) << std::abs(rec);
+    std::cout << std::setw(12) << std::abs(it);
+    std::cout << std::setw(12) << std::abs(disc);
+
+    auto err = std::max(
+        {std::abs(rec - it), std::abs(it - disc), std::abs(disc - rec)});
+    std::cout << std::setw(12) << err << '\n';
   }
 }

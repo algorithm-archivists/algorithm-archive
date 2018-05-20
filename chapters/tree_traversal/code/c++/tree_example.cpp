@@ -34,22 +34,19 @@ void dfs_recursive_postorder(node const& n) {
 }
 
 void dfs_recursive_inorder_btree(node const& n) {
-  switch (n.children.size()) {
-  case 2:
+  auto size = n.children.size();
+
+  if (size > 2) {
+    std::cerr << "This is not a binary tree.\n";
+    std::abort();
+  }
+
+  if (size > 0) {
     dfs_recursive_inorder_btree(n.children[0]);
-    std::cout << n.value << '\n';
+  }
+  std::cout << n.value << '\n';
+  if (size > 1) {
     dfs_recursive_inorder_btree(n.children[1]);
-    break;
-  case 1:
-    dfs_recursive_inorder_btree(n.children[0]);
-    std::cout << n.value << '\n';
-    break;
-  case 0:
-    std::cout << n.value << '\n';
-    break;
-  default:
-    std::cout << "This is not a binary tree.\n";
-    break;
   }
 }
 
