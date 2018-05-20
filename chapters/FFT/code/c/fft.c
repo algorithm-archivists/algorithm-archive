@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 void dft(double complex *X, const size_t N) {
@@ -13,9 +14,7 @@ void dft(double complex *X, const size_t N) {
         }
     }
 
-    for (size_t i = 0; i < N; ++i) {
-        X[i] = tmp[i];
-    }
+    memcpy(X, tmp, N * sizeof(*X));
 }
 
 void cooley_tukey(double complex *X, const size_t N) {
