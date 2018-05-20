@@ -39,7 +39,6 @@ each point is tested to see whether it's in the circle or not:
 {% method %}
 {% sample lang="jl" %}
 [import:2-8, lang:"julia"](code/julia/monte_carlo.jl)
-{% sample lang="cpp" %}
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -81,7 +80,6 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/monte_carlo.jl)
-{% sample lang="cpp" %}
 {% endmethod %}
 
 
