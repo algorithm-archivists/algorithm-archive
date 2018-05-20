@@ -50,15 +50,8 @@ $$
 If we use a small number of points, this will only give us a rough approximation, but as we start adding more and more points, the approximation becomes much, much better (as shown below)!
 
 <p align="center">
-    <img src="res/31.png" width="500"/>
+    <img src="res/monte_carlo.gif" width="400"/>
 </p>
-<p align="center">
-    <img src="res/13311.png" width="500"/>
-</p>
-<p align="center">
-    <img src="res/195583.png" width="500"/>
-</p>
-
 
 The true power of monte carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
 As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use monte carlo integration!
