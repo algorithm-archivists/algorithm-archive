@@ -15,7 +15,9 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="jl" %}
 [import:30-32, lang:"julia"](code/julia/graham.jl)
 {% sample lang="hs" %}
-[import:15-16, lang:"haskell"](code/haskell/grahamScan.hs)
+[import:6-7, lang:"haskell"](code/haskell/grahamScan.hs)
+{% sample lang="c" %}
+[import:24-26, lang:"c_cpp"](code/c/graham.c)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -33,7 +35,9 @@ In the end, the code should look something like this:
 {% sample lang="jl" %}
 [import:34-69, lang:"julia"](code/julia/graham.jl)
 {% sample lang="hs" %}
-[import:18-27, lang:"haskell"](code/haskell/grahamScan.hs)
+[import:9-18, lang:"haskell"](code/haskell/grahamScan.hs)
+{% sample lang="c" %}
+[import:65-95, lang:"c_cpp"](code/c/graham.c)
 {% endmethod %}
 
 ### Bibliography
@@ -49,6 +53,8 @@ In the end, the code should look something like this:
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/grahamScan.hs)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/graham.c)
 {% endmethod %}
 
 <script>

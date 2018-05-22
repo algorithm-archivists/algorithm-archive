@@ -26,7 +26,7 @@ if [ $# -ge 1 ]; then
     cd "$out_dir"
     git reset --hard && \
       git clean -dfx && \
-      git pull
+      git pull origin master
 
     if [ $? -ne 0 ]; then
         echo "Failed to prepare repository"
