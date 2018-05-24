@@ -63,7 +63,7 @@ Monte carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
 Here, we are just integrating a circle, like we described above; however, there is a small twist and trick.
 Instead of calculating the area of the circle, we are instead trying to find the value of $$\pi$$, and
-rather than integrating the entire circle, we are only integrating the upper left quadrant of the circle from $$0 < x,y < 1$$.
+rather than integrating the entire circle, we are only integrating the upper right quadrant of the circle from $$0 < x,y < 1$$.
 This saves a bit of computation time, but also requires us to multiply our output by $$4$$.
 
 That's all there is to it!

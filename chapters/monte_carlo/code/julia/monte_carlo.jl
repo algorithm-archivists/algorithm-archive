@@ -21,7 +21,7 @@ function monte_carlo(n::Int64, radius::Float64)
     end
 
     pi_estimate = 4*pi_count/(n*radius^2)
-    println("Percent error is: ", signif(100*(pi - pi_estimate), 3), " %")
+    println("Percent error is: ", signif(100*(pi - pi_estimate)/pi, 3), " %")
 end
 
 monte_carlo(10000000, 0.5)
