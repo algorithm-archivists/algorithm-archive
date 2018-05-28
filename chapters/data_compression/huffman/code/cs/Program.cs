@@ -9,29 +9,14 @@ namespace HuffmanCoding
         static void Main(string[] args)
         {
             var result = HuffmanCoding.Encode("aaaabbbccd");
+            // The bitStrings are just strings and provide no compression. Look in HuffmanCoding.cs for explanation.
             // Print dictionary.
             foreach (var entry in result.Dictionary)
             {
-                var bitString = "";
-                foreach (var value in entry.Value)
-                {
-                    if (value)
-                        bitString += "1";
-                    else
-                        bitString += "0";
-                }
-                System.Console.WriteLine(entry.Key + " " + bitString);
+                System.Console.WriteLine($"{entry.Key} {entry.Value}");
             }
-            // Print bitString.
-            var readableBitString = "";
-            foreach (var boolean in result.BitString)
-            {
-                if (boolean)
-                    readableBitString += "1";
-                else
-                    readableBitString += "0";
-            }
-            System.Console.WriteLine($"{readableBitString} count: {readableBitString.Length}");
+            // Print BitString.
+            System.Console.WriteLine($"{result.BitString} count: {result.BitString.Length}");
 
             var originalString = HuffmanCoding.Decode(result);
             System.Console.WriteLine(originalString);
