@@ -31,7 +31,7 @@ namespace HuffmanCoding
                 else
                     readableBitString += "0";
             }
-            System.Console.WriteLine(readableBitString);
+            System.Console.WriteLine($"{readableBitString} count: {readableBitString.Length}");
 
             var originalString = HuffmanCoding.Decode(result);
             System.Console.WriteLine(originalString);

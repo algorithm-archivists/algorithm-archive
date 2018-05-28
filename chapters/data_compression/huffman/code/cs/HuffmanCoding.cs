@@ -22,45 +22,60 @@ namespace HuffmanCoding
     public static class HuffmanCoding
     {
         // The Node class used for the Huffman Tree.
-        public class Node
+        public class Node : IComparable<Node>
         {
-            public Node[] Children { get; set; } = new Node[2];
+            public Node LeftChild { get; set; }
+            public Node RightChild { get; set; }
             public List<bool> BitString { get; set; } = new List<bool>();
             public int Weight { get; set; }
             public string Key { get; set; }
-
-            public Node(string key, int weight)
+            
+            // Creates a leaf. So just a node is created with the given values.
+            public static Node CreateLeaf(char key, int weight) => new Node(key.ToString(), weight, null, null);
+            // Creates a branch. Here a node is created by adding the keys and weights of both childs together.
+            public static Node CreateBranch(Node leftChild, Node rightChild) => new Node(leftChild.Key + rightChild.Key, leftChild.Weight + rightChild.Weight, leftChild, rightChild);
+            private Node(string key, int weight, Node leftChild, Node rightChild)
             {
                 this.Key = key;
                 this.Weight =  weight;
+                this.LeftChild = leftChild;
+                this.RightChild = rightChild;
             }
+
+            public int CompareTo(Node other) => this.Weight - other.Weight;
         }
 
         // Node with biggest value at the top.
         class NodePriorityList
         {
-            public List<Node> Nodes { get; private set; } = new List<Node>();
+            public int Count => nodes.Count;
+
+            private List<Node> nodes = new List<Node>();
 
             public NodePriorityList() { }
-            public NodePriorityList(List<Node> nodes) => Nodes = nodes.OrderByDescending(n => n.Weight).ToList();
-
-            public void AddNode(Node newNode)
+            public NodePriorityList(List<Node> givenNodes)
             {
-                if (Nodes.Count == 0)
+                this.nodes = givenNodes.ToList();
+                this.nodes.Sort();
+            }
+
+            public void Add(Node newNode)
+            {
+                var index = ~this.nodes.BinarySearch(newNode);
+                if (index == this.nodes.Count)
                 {
-                    Nodes.Add(newNode);
+                    this.nodes.Add(newNode);
                     return;
                 }
-                for (int i = Nodes.Count - 1; i >= 0; i--)
-                {
-                    if (Nodes[i].Weight > newNode.Weight)
-                    {
-                        Nodes.Insert(i + 1, newNode);
-                        return;
-                    }
-                    else if (i == 0)
-                        Nodes.Insert(0, newNode);
-                }
+                this.nodes.Insert(~index, newNode);
+            }
+
+            public Node Pop()
+            {
+                var first = this.nodes.First();
+                if (first != null)
+                    this.nodes.Remove(first);
+                return first;
             }
         }
 
@@ -81,9 +96,9 @@ namespace HuffmanCoding
             {
                 // Go down the tree.
                 if (!boolean)
-                    currentNode = currentNode.Children[0];
+                    currentNode = currentNode.LeftChild;
                 else
-                    currentNode = currentNode.Children[1];
+                    currentNode = currentNode.RightChild;
 
                 // Check if it's a leaf node.
                 if (currentNode.Key.Count() == 1)
@@ -98,37 +113,26 @@ namespace HuffmanCoding
         private static Node CreateTree(string input)
         {
             // Create a List of all characters and their count in input by putting them into nodes.
-            var nodes = new List<Node>();
-            foreach (var character in input)
-            {
-                var result = nodes.Where(n => n.Key[0] == character).SingleOrDefault();
+            var nodes = input
+                .GroupBy(c => c)
+                .Select(n => Node.CreateLeaf(n.Key, n.Count()))
+                .ToList();
 
-                if (result == null)
-                    nodes.Add(new Node(character.ToString(), 1));
-                else
-                    result.Weight++;
-            }
             // Convert list of nodes to a NodePriorityList.
             var nodePriorityList = new NodePriorityList(nodes);
-            nodes = nodePriorityList.Nodes;
 
             // Create Tree.
-            while (nodes.Count > 1)
+            while (nodePriorityList.Count > 1)
             {
-                var parentNode = new Node("", 0);
-                // Add the two nodes with the smallest weight to the parent node and remove them from the tree.
-                for (int i = 0; i < 2; i++)
-                {
-                    parentNode.Children[i] = nodes.Last();
-                    parentNode.Key += nodes.Last().Key;
-                    parentNode.Weight += nodes.Last().Weight;
+                // Pop the two nodes with the smallest weights from the nodePriorityList and create a parentNode with the CreateBranch method. (This method adds the keys and weights of the childs together.)
+                var leftChild = nodePriorityList.Pop();
+                var rightChild = nodePriorityList.Pop();
+                var parentNode = Node.CreateBranch(leftChild, rightChild);
 
-                    nodes.RemoveAt(nodes.Count - 1);
-                };
-                nodePriorityList.AddNode(parentNode);
+                nodePriorityList.Add(parentNode);
             }
 
-            return nodePriorityList.Nodes[0];
+            return nodePriorityList.Pop();
         }
 
         private static Dictionary<char, List<bool>> CreateDictionary(Node root)
@@ -147,23 +151,17 @@ namespace HuffmanCoding
                     dictionary.Add(temp.Key[0], temp.BitString);
                 else
                 {
-                    for (int i = 0; i < temp.Children.Count(); i++)
+                    if (temp.LeftChild != null)
                     {
-                        if (temp.Children[i] != null)
-                        {
-                            if (i == 0)
-                            {
-                                temp.Children[i].BitString.AddRange(temp.BitString);
-                                temp.Children[i].BitString.Add(false);
-                            }
-                            else
-                            {
-                                temp.Children[i].BitString.AddRange(temp.BitString);
-                                temp.Children[i].BitString.Add(true);
-                            }
-
-                            stack.Push(temp.Children[i]);
-                        }
+                        temp.LeftChild.BitString.AddRange(temp.BitString);
+                        temp.LeftChild.BitString.Add(false);
+                        stack.Push(temp.LeftChild);
+                    }
+                    if (temp.RightChild != null)
+                    {
+                        temp.RightChild.BitString.AddRange(temp.BitString);
+                        temp.RightChild.BitString.Add(true);
+                        stack.Push(temp.RightChild);
                     }
                 }
            }
