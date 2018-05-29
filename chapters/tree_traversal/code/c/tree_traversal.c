@@ -1,150 +1,121 @@
-#include <stdio.h>
+#include "utility.h"
+
+#include <stddef.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
-typedef struct node {
+struct node {
     struct node *children;
-    int children_num;
-    int ID;
-} node;
+    size_t children_size;
+    int id;
+};
 
-typedef struct node_list {
-    node n;
-    struct node_list *last_list, *next_list;
-} node_list;
+struct node create_tree(int rows, size_t num_children) {
+    struct node n = {NULL, 0, rows};
 
-typedef struct node_points {
-    node_list *start_point, *end_point;
-} node_points;
-
-void push(node_points *np, node n) {
-    node_list *temp = (node_list*)malloc(sizeof(node_list));
-    temp->n = n;
-    temp->last_list = temp->next_list = NULL;
-
-    if (!np->end_point) {
-        np->start_point = temp;
-    } else {
-        np->end_point->next_list = temp;
-        temp->last_list = np->end_point;
+    if (rows > 0) {
+        n.children = (struct node*)malloc(num_children * sizeof(struct node));
+        n.children_size = num_children;
+        for (size_t i = 0; i < num_children; ++i) {
+            n.children[i] = create_tree(rows - 1, num_children);
+        }
     }
 
-    np->end_point = temp;
+    return n;
 }
 
-void stack_pop(node_points *np) {
-    node_list *temp;
-    temp = np->end_point;
-
-    if (temp) {
-        np->end_point = temp->last_list;
-        if (!np->end_point) {
-            np->start_point = NULL;
+void destroy_tree(struct node n) {
+    if (n.id > 0) {
+        for (size_t i = 0; i < n.children_size; ++i) {
+            destroy_tree(n.children[i]);
         }
 
-        free(temp);
+        free(n.children);
     }
 }
 
-void queue_pop(node_points *np) {
-    node_list *temp;
-    temp = np->start_point;
-    if (temp) {
-        np->start_point = temp->next_list;
-        if (!np->start_point) {
-            np->end_point = NULL;
-        }
+void dfs_recursive(struct node n) {
+    printf("%d\n", n.id);
 
-        free(temp);
-    }
-}
-
-void create_tree(node *n, int num_row, int num_child) {
-    n->ID = num_row;
-    if (num_row == 0) {
-        return;
-    }
-
-    n->children = (node *)malloc(num_child * sizeof(*n->children));
-    n->children_num = num_child;
-    for (int i = 0; i < num_child; ++i) {
-        node child;
-        create_tree(&child, num_row - 1, num_child);
-        *(n->children + i) = child;
-    }
-}
-
-void DFS_recursive(node n) {
-    printf("%d\n", n.ID);
-    if (!n.children) {
-        return;
-    }
-
-    for (int i = 0; i < n.children_num; ++i) {
-        DFS_recursive(n.children[i]);
-    }
-}
-
-void DFS_stack(node n) {
-    node_points stack;
-    memset(&stack, 0, sizeof(node_points));
-    push(&stack, n);
-    node temp;
-
-    while (stack.start_point != NULL) {
-        temp = stack.end_point->n;
-        printf("%d\n", temp.ID);
-        stack_pop(&stack);
-        for (int i = 0; i < temp.children_num; ++i) {
-            if (!temp.children) {
-                break;
-            }
-
-            push(&stack, temp.children[i]);
+    if (n.children) {
+        for (size_t i = 0; i < n.children_size; ++i) {
+            dfs_recursive(n.children[i]);
         }
     }
 }
 
-void BFS_queue(node n) {
-    node_points queue;
-    memset(&queue, 0, sizeof(node_points));
-    push(&queue, n);
-    node temp;
+void dfs_recursive_postorder(struct node n) {
+    for (size_t i = 0; i < n.children_size; ++i) {
+        dfs_recursive_postorder(n.children[i]);
+    }
 
-    while (queue.start_point != NULL) {
-        temp = queue.start_point->n;
-        printf("%d\n", temp.ID);
-        queue_pop(&queue);
-        for (int i = 0; i < temp.children_num; ++i) {
-            if (!temp.children) {
-                break;
-            }
+    printf("%d\n", n.id);
+}
 
-            push(&queue, temp.children[i]);
-        }
+void dfs_recursive_inorder_btree(struct node n) {
+    switch (n.children_size) {
+    case 2:
+        dfs_recursive_inorder_btree(n.children[0]);
+        printf("%d\n", n.id);
+        dfs_recursive_inorder_btree(n.children[1]);
+        break;
+    case 1:
+        dfs_recursive_inorder_btree(n.children[0]);
+        printf("%d\n", n.id);
+        break;
+    case 0:
+        printf("%d\n", n.id);
+        break;
+    default:
+        printf("This is not a binary tree.\n");
+        break;
     }
 }
 
-void destroy_tree(node *n) {
-    if (n->ID == 0) {
-        return;
+void dfs_stack(struct node n) {
+    struct stack stk = get_stack(sizeof(struct node*));
+    stack_push(&stk, &n);
+    struct node *tmp;
+
+    while (!stack_empty(&stk)) {
+        tmp = (struct node*)stack_pop(&stk);
+        if (!tmp) {
+            break;
+        }
+
+        printf("%d\n", tmp->id);
+        for (size_t i = 0; i < tmp->children_size; ++i) {
+            stack_push(&stk, &tmp->children[i]);
+        }
     }
 
-    for (int i = 0; i < n->children_num; ++i) {
-        destroy_tree(n->children + i);
+    free_stack(stk);
+}
+
+void bfs_queue(struct node n) {
+    struct queue q = get_queue(sizeof(struct node*));
+    enqueue(&q, &n);
+    struct node *tmp;
+
+    while (!queue_empty(&q)) {
+        tmp = (struct node*)dequeue(&q);
+        if (!tmp) {
+            break;
+        }
+
+        printf("%d\n", tmp->id);
+        for (size_t i = 0; i < tmp->children_size; ++i) {
+            enqueue(&q, &tmp->children[i]);
+        }
     }
 
-    free(n->children);
+    free_queue(q);
 }
 
 int main() {
-    node root;
-    create_tree(&root, 3, 3);
-    DFS_recursive(root);
-    //DFS_stack(root);
-    //BFS_queue(root);
-    destroy_tree(&root);
+    struct node root = create_tree(3, 3);
+    bfs_queue(root);
+    destroy_tree(root);
 
     return 0;
 }
-

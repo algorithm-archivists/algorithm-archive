@@ -1,6 +1,6 @@
 # Summary
 
-* [README](README.md)
+* [Algorithm Archive](README.md)
 * [TODO](TODO.md)
 * [Introduction](chapters/introduction.md)
 * [A Personal Note](chapters/getting_started.md)
@@ -28,6 +28,7 @@
 * [Tree Traversal](chapters/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](chapters/euclidean_algorithm/euclidean.md)
 * [Multiplication](chapters/multiplication/multiplication.md)
+* [Monte Carlo](chapters/monte_carlo/monte_carlo.md)
 * [Matrix Methods](chapters/matrix_methods/matrix_methods.md)
     * [Gaussian Elimination](chapters/matrix_methods/gaussian_elimination/gaussian_elimination.md)
     * [Thomas Algorithm](chapters/matrix_methods/thomas/thomas.md)
@@ -46,5 +47,8 @@
 * [Physics Solvers](chapters/physics_solvers/physics_solvers.md)
     * [Verlet Integration](chapters/physics_solvers/verlet/verlet.md)
     * [Barnes-Hut](chapters/physics_solvers/barnes_hut.md)
+    * [Quantum Systems](chapters/physics_solvers/quantum/quantum.md)
+        * [Split-Operator Method](chapters/physics_solvers/quantum/split-op/split-op.md)
 * [Data Compression](chapters/data_compression/data_compression.md)
     * [Huffman Encoding](chapters/data_compression/huffman/huffman.md)
+* [Quantum Information](chapters/QI/QI.md)
