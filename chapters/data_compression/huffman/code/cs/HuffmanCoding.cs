@@ -139,36 +139,23 @@ namespace HuffmanCoding
         {
             // We're using a string instead of a actual bits here, since it makes the code somewhat more readable and this is an educational example. 
             var dictionary = new Dictionary<char, string>();
+            CreateDictionary(root, "", dictionary);
+            return dictionary;
 
-            var stack = new Stack<Node>();
-            stack.Push(root);
-            Node temp;
-
-            while (stack.Count != 0)
+            void CreateDictionary(Node node, string bitString, Dictionary<char, string> localDictionary)
             {
-                temp = stack.Pop();
-
-                if (temp.IsLeaf)
-                    dictionary.Add(temp.Key[0], temp.BitString);
+                if (node.IsLeaf)
+                    localDictionary.Add(node.Key[0], bitString);
                 else
                 {
-                    if (temp.LeftChild != null)
-                    {
-                        temp.LeftChild.BitString  += temp.BitString;
-                        temp.LeftChild.BitString += 0;
-                        stack.Push(temp.LeftChild);
-                    }
-                    if (temp.RightChild != null)
-                    {
-                        temp.RightChild.BitString += temp.BitString;
-                        temp.RightChild.BitString += 1;
-                        stack.Push(temp.RightChild);
-                    }
+                    if (node.LeftChild != null)
+                        CreateDictionary(node.LeftChild, bitString + '0', localDictionary);
+                    if (node.RightChild != null)
+                        CreateDictionary(node.RightChild, bitString + '1', localDictionary);
                 }
-           }
-
-           return dictionary;
+            }
         }
+
 
         private static string CreateBitString(string input, Dictionary<char, string> dictionary)
         {
