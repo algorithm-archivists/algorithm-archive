@@ -77,7 +77,7 @@ function makeQueue(iterable) {
   };
 }
 
-const encoded = encode("Hello, World!");
+const encoded = encode("bibbity bobbity");
 const decoded = decode(encoded.string, encoded.tree);
 console.log(encoded.string);
 console.log(decoded);
