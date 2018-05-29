@@ -32,4 +32,5 @@ Also note that depending on the algorithm, there might be in-text code snippets 
 
 I'll update this page as the project grows. Basically, when you submit code, it will be under an MIT license. Please keep the code clean and put your name (or username) in the `CONTRIBUTORS.md` file. 
 
+If you would like to be a part of the ongoing discussion, please feel free to join our discord server: https://discord.gg/pb976sY.
 Thanks for all the support and considering contributing to the Algorithm Archive!
