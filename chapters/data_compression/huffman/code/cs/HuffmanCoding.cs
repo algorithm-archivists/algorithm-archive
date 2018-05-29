@@ -19,7 +19,7 @@ namespace HuffmanCoding
         }
     }
 
-    public static class HuffmanCoding
+    public class HuffmanCoding
     {
         // The Node class used for the Huffman Tree.
         public class Node : IComparable<Node>
@@ -63,13 +63,11 @@ namespace HuffmanCoding
 
             public void Add(Node newNode)
             {
-                var index = ~this.nodes.BinarySearch(newNode);
-                if (index == this.nodes.Count)
-                {
-                    this.nodes.Add(newNode);
-                    return;
-                }
-                this.nodes.Insert(~index, newNode);
+                var index = this.nodes.BinarySearch(newNode);
+                if (index < 0)
+                    this.nodes.Insert(~index, newNode);
+                else
+                    this.nodes.Insert(index, newNode);
             }
 
             public Node Pop()
@@ -80,7 +78,7 @@ namespace HuffmanCoding
             }
         }
 
-        public static EncodingResult Encode(string input)
+        public EncodingResult Encode(string input)
         {
             var root = CreateTree(input);
             var dictionary = CreateDictionary(root);
@@ -89,7 +87,7 @@ namespace HuffmanCoding
             return new EncodingResult(bitString, dictionary, root);
         }
 
-        public static string Decode(EncodingResult result)
+        public string Decode(EncodingResult result)
         {
             var output = "";
             Node currentNode = result.Tree;
@@ -110,7 +108,7 @@ namespace HuffmanCoding
             return output;
         }
 
-        private static Node CreateTree(string input)
+        private Node CreateTree(string input)
         {
             // Create a List of all characters and their count in input by putting them into nodes.
             var nodes = input
@@ -135,7 +133,7 @@ namespace HuffmanCoding
             return nodePriorityList.Pop();
         }
 
-        private static Dictionary<char, string> CreateDictionary(Node root)
+        private Dictionary<char, string> CreateDictionary(Node root)
         {
             // We're using a string instead of a actual bits here, since it makes the code somewhat more readable and this is an educational example. 
             var dictionary = new Dictionary<char, string>();
@@ -157,7 +155,7 @@ namespace HuffmanCoding
         }
 
 
-        private static string CreateBitString(string input, Dictionary<char, string> dictionary)
+        private string CreateBitString(string input, Dictionary<char, string> dictionary)
         {
             // We're using a string right here. While no compression is achieved with a string, it's the easiest way to display what the compressed result looks like. Also this is just an educational example.
             var bitString = "";
