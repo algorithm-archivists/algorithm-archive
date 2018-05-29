@@ -54,7 +54,7 @@ Because of this, you may want to create a repository under your own github usern
 IMAGE OF FORK
 
 Note that if you have a fork of a particular code repository, you can ask the owner of the original code repository to pull your changes into their version of the code with a *pull request*, but we are getting ahead of ourselves here. 
-If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/leios/algorithm-archive) and modify that.
+If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/algorithm-archivists/algorithm-archive) and modify that.
 
 Regardless, as long as there is a repository under your username on github, we can continue by linking the remote github location to our local git directory. First, we need to find the url of the github repository, as shown here:
 
@@ -68,7 +68,7 @@ Once you have the url, there are 2 ways to proceed:
 
 **The easy way:**
 ```
-git clone https://github.com/leios/algorithm-archive
+git clone https://github.com/algorithm-archivists/algorithm-archive
 ```
 
 **The not-so-easy way:**
@@ -76,7 +76,7 @@ git clone https://github.com/leios/algorithm-archive
 mkdir algorithm_archive
 cd algorithm_archive
 git init
-git remote add origin https://github.com/leios/algorithm-archive
+git remote add origin https://github.com/algorithm-archivists/algorithm-archive
 git fetch
 git merge origin/master
 ```
@@ -90,8 +90,8 @@ No matter how you initialize your git repository, you will link your local direc
 
 ```
 git remote -v
-origin	git@github.com:leios/algorithm-archive.git (fetch)
-origin	git@github.com:leios/algorithm-archive.git (push)
+origin	git@github.com:algorithm-archivists/algorithm-archive.git (fetch)
+origin	git@github.com:algorithm-archivists/algorithm-archive.git (push)
 ```
 
 This provides information on different `remote`s. We'll talk about `fetch` and `push` a bit later. 
@@ -99,7 +99,7 @@ Now, you might be asking yourself: If I am only connected to the url I forked ea
 The solution here is simple: Add another `remote` like so:
 
 ```
-git remote add upstream https://github.com/leios/algorithm-archive
+git remote add upstream https://github.com/algorithm-archivists/algorithm-archive
 ```
 
 ### Committing to git
