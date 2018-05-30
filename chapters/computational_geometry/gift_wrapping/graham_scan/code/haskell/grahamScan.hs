@@ -18,5 +18,7 @@ grahamScan pts = wrap sortedPts [p0]
           | otherwise       = wrap ss (s:p1:p2:ps)
 
 main = do
+  -- We build the set of points of integer coordinates within a circle of radius 5
   let pts = [(x,y) | x<-[-5..5], y<-[-5..5], x^2+y^2<=5^2]
+  -- And extract the convex hull
   print $ grahamScan pts
