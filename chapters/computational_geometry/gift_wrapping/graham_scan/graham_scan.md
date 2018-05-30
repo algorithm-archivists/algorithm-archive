@@ -54,6 +54,7 @@ In the end, the code should look something like this:
 ### Haskell
 [import, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
+### C
 [import, lang:"c_cpp"](code/c/graham.c)
 {% endmethod %}
 
