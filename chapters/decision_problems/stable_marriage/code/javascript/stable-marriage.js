@@ -24,7 +24,7 @@ class Person {
 function stableMarriage(guys, girls) {
   const bachelors = [...guys];
   while (bachelors.length > 0) {
-    const [guy] = bachelors.splice(0, 1);
+    const guy = bachelors.shift();
     for (const girl of guy.preferences) {
       if (!girl.hasFiance) {
         guy.engageTo(girl);

@@ -11,11 +11,11 @@ function createTree(rows, children) {
 
 function dfsPreorder(tree) {
   console.log(tree.id);
-  tree.children.forEach(dfs);
+  tree.children.forEach(dfsPreorder);
 }
 
 function dfsPostorder(tree) {
-  tree.children.forEach(dfs);
+  tree.children.forEach(dfsPostorder);
   console.log(tree.id);
 }
 
@@ -45,13 +45,14 @@ function dfsIterative(tree) {
 function bfs(tree) {
   const queue = [tree];
   while (queue.length > 0) {
-    const [current] = queue.splice(0, 1);
+    const current = queue.shift();
     console.log(current.id);
     queue.push(...current.children);
   }
 }
 
 const root = createTree(3, 3);
-dfsRecursive(root);
+dfsPreorder(root);
+dfsPostorder(root);
 dfsIterative(root);
 bfs(root);

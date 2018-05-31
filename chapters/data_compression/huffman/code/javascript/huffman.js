@@ -2,7 +2,7 @@ function encode(str) {
   const tree = createTree(str);
   const codebook = createCodebook(tree);
   return {
-    string: [...str].map(c => codebook[c]).join(""),
+    string: Array.from(str, c => codebook[c]).join(""),
     tree,
     codebook
   };
@@ -25,7 +25,9 @@ function encode(str) {
   }
 
   function createCodebook(tree) {
-    return function recurse(node, bitstring, dict) {
+    return recurse(tree, "", {});
+
+    function recurse(node, bitstring, dict) {
       if (!node.left && !node.right) {
         dict[node.key] = bitstring;
       } else {
@@ -38,7 +40,7 @@ function encode(str) {
         }
       }
       return dict;
-    }(tree, "", {});
+    }
   }
 }
 
@@ -71,8 +73,7 @@ function makeQueue(iterable) {
       }
     },
     dequeue() {
-      const [result] = this.data.splice(0, 1);
-      return result;
+      return this.data.shift();
     }
   };
 }
