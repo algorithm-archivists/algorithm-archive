@@ -5,7 +5,7 @@ function createTree(rows, children) {
 
   return {
     id: rows,
-    children: Array.from(Array(children).keys(), () => createTree(rows - 1, children))
+    children: [...Array(children).keys()].map(() => createTree(rows - 1, children))
   };
 }
 

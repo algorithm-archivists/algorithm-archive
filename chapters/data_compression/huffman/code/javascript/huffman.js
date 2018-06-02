@@ -2,7 +2,7 @@ function encode(str) {
   const tree = createTree(str);
   const codebook = createCodebook(tree);
   return {
-    string: Array.from(str, c => codebook[c]).join(""),
+    string: [...str].map(c => codebook[c]).join(""),
     tree,
     codebook
   };
@@ -82,4 +82,3 @@ const encoded = encode("bibbity bobbity");
 const decoded = decode(encoded.string, encoded.tree);
 console.log(encoded.string);
 console.log(decoded);
-
