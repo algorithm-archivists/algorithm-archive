@@ -138,7 +138,7 @@ impl Codebook {
 }
 
 fn main() {
-    let input = "hello, world";
+    let input = "bibbity bobbity";
 
     let tree = HuffmanTree::from(input);
     let codebook = tree.make_codebook();

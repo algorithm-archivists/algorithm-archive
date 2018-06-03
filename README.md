@@ -1,10 +1,12 @@
 # The Arcane Algorithm Archive
 The Arcane Algorithm Archive is a collaborative effort to create a guide for all important algorithms in all languages. 
 This goal is obviously too ambitious for a book of any size, but it is a great project to learn from and work on and will hopefully become an incredible resource for programmers in the future.
-The book can be found here: https://www.gitbook.com/book/leios/algorithm-archive/details.
-The github repository can be found here: https://github.com/leios/algorithm-archive.
+The book can be found here: https://www.algorithm-archive.org/.
+The github repository can be found here: https://github.com/algorithm-archivists/algorithm-archive.
 Most algorithms have been covered on the youtube channel LeiosOS: https://www.youtube.com/user/LeiosOS
-and livecoded on Twitch: https://www.twitch.tv/simuleios
+and livecoded on Twitch: https://www.twitch.tv/simuleios.
+If you would like to communicate more directly, please feel free to go to our discord: https://discord.gg/Pr2E9S6.
+
 
 Note that the this project is is essentially a book about algorithms collaboratively written by an online community. 
 Fortunately, there are a lot of algorithms out there, which means that there is a lot of content material available.

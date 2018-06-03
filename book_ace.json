@@ -1,0 +1,36 @@
+{
+
+    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock", "ace"],
+    "lunr": {
+        "maxIndexSize": 1000000000
+    },
+	"pluginsConfig": {
+		"theme-api": {
+			"languages": [
+				{
+					"lang": "pseudo",
+					"name": "Pseudocode",
+					"default": true
+				},
+				{
+					"lang": "jl",
+					"name": "julia"
+				},
+				{
+					"lang": "cs",
+					"name": "C#"	
+				},
+				{
+					"lang": "c",
+					"name": "C"	
+				}
+			],
+			"split": true 
+		},
+		"include-codeblock": {
+			"template": "ace",
+			"unindent": true,
+			"theme": "coffee"
+		}
+	}
+}
