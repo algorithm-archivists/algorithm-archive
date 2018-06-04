@@ -10,27 +10,63 @@ namespace TreeTraversal
         {
             public List<Node> Children { get; set; } = new List<Node>();
             public int Id { get; set; }
+
+            public Node(int id) => this.Id = id;
         }
 
         private Node root;
 
         public Tree(int depthCount, int childrenCount)
         {
-            CreateTree(depthCount, childrenCount);
-        }
-
-        public void CreateTree(int depthCount, int childrenCount)
-        {
-            root = new Node
-            {
-                Id = 1
-            };
+            root = new Node(1);
             CreateAllChildren(root, depthCount, childrenCount);
         }
 
-        public void StartDFSRecursive()
+        public void DFSRecursive()
         {
             DFSRecursive(root);
+
+            void DFSRecursive(Node node)
+            {
+                Console.WriteLine(node.Id);
+
+                foreach (var c in node.Children)
+                    DFSRecursive(c);
+            }
+        }
+
+        public void DFSRecursivePostorder()
+        {
+            DFSRecursivePostorder(root);
+
+            void DFSRecursivePostorder(Node node)
+            {
+                foreach (var c in node.Children)
+                    DFSRecursivePostorder(c);
+
+                Console.WriteLine(node.Id);
+            }
+        }
+
+        public void DFSRecursiveInorderBinary()
+        {
+            DFSRecursiveInorderBinary(root);
+
+            // This assumes only 2 children
+            void DFSRecursiveInorderBinary(Node node)
+            {
+                if (node.Children.Count > 2)
+                     throw new Exception("Not binary tree!");
+
+                if (node.Children.Count > 0)
+                {
+                    DFSRecursiveInorderBinary(node.Children[0]);
+                    Console.WriteLine(node.Id);
+                    DFSRecursiveInorderBinary(node.Children[1]);
+                }
+                else
+                    Console.WriteLine(node.Id);
+            }
         }
 
         public void DFSStack()
@@ -45,9 +81,7 @@ namespace TreeTraversal
                 temp = stack.Pop();
 
                 foreach (var c in temp.Children)
-                {
                     stack.Push(c);
-                }
             }
         }
 
@@ -63,9 +97,7 @@ namespace TreeTraversal
                 temp = queue.Dequeue();
 
                 foreach (var c in temp.Children)
-                {
                     queue.Enqueue(c);
-                }
             }
         }
 
@@ -76,21 +108,8 @@ namespace TreeTraversal
 
             for (int i = 0; i < childrenCount; i++)
             {
-                node.Children.Add(new Node
-                {
-                    Id = node.Id * 10 + i + 1
-                });
+                node.Children.Add(new Node(node.Id * 10 + i + 1));
                 CreateAllChildren(node.Children[i], rowCount - 1, childrenCount);
-            }
-        }
-
-        private void DFSRecursive(Node node)
-        {
-            Console.WriteLine(node.Id);
-
-            foreach (var c in node.Children)
-            {
-                DFSRecursive(c);
             }
         }
     }
