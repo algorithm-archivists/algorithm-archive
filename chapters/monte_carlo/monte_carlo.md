@@ -73,6 +73,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="c" %}
+### C
+[import, lang:"c_cpp"](code/c/monte_carlo.c)
 {% endmethod %}
 
 
