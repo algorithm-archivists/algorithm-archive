@@ -41,7 +41,7 @@ In code, this looks something like:
 {% sample lang="hs" %}
 [import:1-5, lang:"haskell"](code/haskell/convolution.hs)
 {% sample lang="c"%}
-[import:44-57, lang:"c_cpp"](code/c/convolutions.c)
+[import:5-18, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
 [import:68-88, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
@@ -90,7 +90,7 @@ The FFT-based convolution in Haskell is complicated, so here is some simple juli
 [import:19-22, lang:"julia"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="c"%}
-[import:59-69, lang:"c_cpp"](code/c/convolutions.c)
+[import:20-30, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
 [import:90-105, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
