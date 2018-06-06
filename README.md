@@ -11,7 +11,7 @@ If you would like to communicate more directly, please feel free to go to our di
 Note that the this project is is essentially a book about algorithms collaboratively written by an online community. 
 Fortunately, there are a lot of algorithms out there, which means that there is a lot of content material available.
 Unfortunately, this means that we will probably never cover every algorithm ever created and instead need to focus on what the community sees as useful and necessary.
-That said, we'll still cover a few algorithms for fun that have very litte, if any practical purpose.
+That said, we'll still cover a few algorithms for fun that have very little, if any practical purpose.
 
 If you would like to contribute, feel free to go to any chapter with code associated with it and implement that algorithm in your favorite language,
 and then submit the code via pull request, following the submission guidelines found in `chapters/how_to_contribute.md` (or [here](chapters/how_to_contribute.md) if you are reading this on gitbook).
