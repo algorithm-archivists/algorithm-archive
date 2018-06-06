@@ -57,7 +57,7 @@ void stable_marriage(struct person *men, struct person *women, size_t size) {
         struct person *man = bachelors[bachelors_size - 1];
         struct person *woman = &women[man->prefers[man->index]];
 
-        if (woman->partner == NULL) {
+        if (!woman->partner) {
             woman->partner = man;
             man->partner = woman;
             bachelors[--bachelors_size] = NULL;
