@@ -1,118 +1,121 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <string.h>
+#include <time.h>
 
-typedef struct person {
-    size_t id;
-    size_t prtnr;
-    size_t *prefs;
-    size_t pref_ind;
-} person;
+struct person {
+    int id;
+    struct person *partner;
+    size_t *prefers;
+    size_t index;
+};
 
-void shuffle(size_t *x, size_t n) {
-    if (n > 1) {
-        for (size_t i = 0; i < n - 1; ++i) {
-            size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
-            size_t t = x[j];
-            x[j] = x[i];
-            x[i] = t;
-        }
+void shuffle(size_t *array, size_t size) {
+    for (size_t i = size - 1; i > 0; --i) {
+        size_t j = rand() % (i + 1);
+        size_t tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 }
 
-bool prefers(size_t *prefs, size_t prtnr_id, size_t prop_id, size_t pref_size) {
-    for (size_t i = 0; i < pref_size; ++i) {
-        if (prefs[i] == prtnr_id) {
-            return false;
-        } else if(prefs[i] == prop_id) {
+void create_group(struct person *group, size_t size, bool are_men) {
+    for (size_t i = 0; i < size; ++i) {
+        group[i].id = i;
+        group[i].partner = NULL;
+        group[i].prefers = (size_t*)malloc(sizeof(size_t) * size);
+        group[i].index = 0;
+
+        for (size_t j = 0; j < size; ++j) {
+            group[i].prefers[j] = j;
+        }
+
+        shuffle(group[i].prefers, size);
+    }
+}
+
+bool prefers_partner(size_t *prefers, size_t partner, size_t id, size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        if (prefers[i] == partner) {
             return true;
+        } else if(prefers[i] == id) {
+            return false;
         }
     }
 }
 
-void create_ppl(person *grp, size_t grp_size) {
-    for (size_t i = 0; i < grp_size; ++i) {
-        person prn;
-        prn.id = i;
-        prn.prtnr = grp_size + 1;
-        prn.pref_ind = 0;
-        prn.prefs = (size_t *) malloc(sizeof(size_t) * grp_size);
+void stable_marriage(struct person *men, struct person *women, size_t size) {
+    struct person *bachelors[size];
+    size_t bachelors_size = size;
 
-        for (size_t j = 0; j < grp_size; ++j) {
-            prn.prefs[j] = j;
-        }
-
-        shuffle(prn.prefs, grp_size);
-        grp[i] = prn;
+    for (size_t i = 0; i < size; ++i) {
+        bachelors[i] = &men[i];
     }
-}
 
-void stable_matching(person *men, person *women, size_t grp_size) {
-    bool cont = true;
-    while (cont) {
-        for (size_t i = 0; i < grp_size; ++i) {
-            if (men[i].prtnr == (grp_size + 1)) {
-                size_t wmn_id = men[i].prefs[men[i].pref_ind];
+    while (bachelors_size > 0) {
+        struct person *man = bachelors[bachelors_size - 1];
+        struct person *woman = &women[man->prefers[man->index]];
 
-                if (women[wmn_id].prtnr == (grp_size + 1)) {
-                    men[i].prtnr = wmn_id;
-                    women[wmn_id].prtnr = i;
-                } else if(prefers(women[wmn_id].prefs, women[wmn_id].prtnr, i,
-                                    grp_size)) {
-                    men[women[wmn_id].prtnr].prtnr = grp_size + 1;
-                    women[wmn_id].prtnr = i;
-                    men[i].prtnr = wmn_id;
-                }
+        if (woman->partner == NULL) {
+            woman->partner = man;
+            man->partner = woman;
+            bachelors[--bachelors_size] = NULL;
+        } else if (!prefers_partner(woman->prefers, woman->partner->id, man->id,
+                                   size)) {
 
-                men[i].pref_ind++;
-            }
-        }
-
-        cont = false;
-        for (size_t i = 0; i < grp_size; ++i) {
-            if (men[i].prtnr == (grp_size + 1)) {
-                cont = true;
-                break;
-            }
+            woman->partner->index++;
+            bachelors[bachelors_size - 1] = woman->partner;
+            woman->partner = man;
+            man->partner = woman;
+        } else {
+            man->index++;
         }
     }
 }
 
-void kill(person *grp, size_t grp_size) {
-    for (size_t i = 0; i < grp_size; ++i) {
-        free(grp[i].prefs);
+void free_group(struct person *group, size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        free(group[i].prefers);
     }
 }
 
 int main() {
-    int grp_size = 5;
-    person men[grp_size], women[grp_size];
+    srand(time(NULL));
 
-    create_ppl(men, grp_size);
-    create_ppl(women, grp_size);
+    struct person men[5], women[5];
 
-    stable_matching(men, women, grp_size);
+    create_group(men, 5, true);
+    create_group(women, 5, false);
 
-    for (size_t i = 0; i < grp_size; ++i) {
-        printf("preferences of man %zu \n", i);
-        for (size_t j = 0; j < grp_size; ++j) {
-            printf("%zu \n", men[i].prefs[j]);
+    for (size_t i = 0; i < 5; ++i) {
+        printf("preferences of man %zu: ", i);
+        for (size_t j = 0; j < 5; ++j) {
+            printf("%zu ", men[i].prefers[j]);
         }
+
+        printf("\n");
     }
 
-    for (size_t i = 0; i < grp_size; ++i) {
-        printf("preferences of woman %zu \n", i);
-        for (size_t j = 0; j < grp_size; ++j) {
-            printf("%zu \n", women[i].prefs[j]);
+    printf("\n");
+
+    for (size_t i = 0; i < 5; ++i) {
+        printf("preferences of woman %zu: ", i);
+        for (size_t j = 0; j < 5; ++j) {
+            printf("%zu ", women[i].prefers[j]);
         }
+
+        printf("\n");
     }
 
-    for (size_t i = 0; i < grp_size; ++i) {
-        printf("partners of man %zu is woman %zu\n", i, men[i].prtnr);
+    stable_marriage(men, women, 5);
+
+    printf("\n");
+
+    for (size_t i = 0; i < 5; ++i) {
+        printf("the partner of man %zu is woman %d\n", i, men[i].partner->id);
     }
 
-    kill(men, grp_size);
-    kill(women, grp_size);
-
-    return 0;
+    kill_group(men, 5);
+    kill_group(women, 5);
 }
