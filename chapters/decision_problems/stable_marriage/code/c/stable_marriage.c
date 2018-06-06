@@ -116,6 +116,6 @@ int main() {
         printf("the partner of man %zu is woman %d\n", i, men[i].partner->id);
     }
 
-    kill_group(men, 5);
-    kill_group(women, 5);
+    free_group(men, 5);
+    free_group(women, 5);
 }
