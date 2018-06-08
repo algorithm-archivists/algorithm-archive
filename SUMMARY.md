@@ -28,6 +28,7 @@
 * [Tree Traversal](chapters/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](chapters/euclidean_algorithm/euclidean.md)
 * [Multiplication](chapters/multiplication/multiplication.md)
+* [Monte Carlo](chapters/monte_carlo/monte_carlo.md)
 * [Matrix Methods](chapters/matrix_methods/matrix_methods.md)
     * [Gaussian Elimination](chapters/matrix_methods/gaussian_elimination/gaussian_elimination.md)
     * [Thomas Algorithm](chapters/matrix_methods/thomas/thomas.md)

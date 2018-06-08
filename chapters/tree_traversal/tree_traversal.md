@@ -23,6 +23,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
+{% sample lang="hs"%}
+[import:1-3, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -48,6 +50,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
+{% sample lang="hs"%}
+[import:5-6, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -56,7 +60,7 @@ At least to me, this makes a lot of sense. We fight recursion with recursion! Fi
     <img src="res/DFS_pre.png" width="500" height="500" />
 </p>
 
-Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors! 
+Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors!
 
 Now, in this case the first element searched through is still the root of the tree. This type of tree traversal is known as *pre-order* DFS. We perform an action (output the ID) *before* searching through the children. If we shift the function around and place the data output at the end of the function, we can modify the order in which we search through the tree to be *post-order* and look something like this:
 
@@ -86,6 +90,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
+{% sample lang="hs"%}
+[import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 <p align="center">
@@ -119,6 +125,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
+{% sample lang="hs"%}
+[import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 <p align="center">
@@ -128,7 +136,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 
 The order here seems to be some mix of the other 2 methods and works through the binary tree from left to right.
 
-Now, at this point, it might seem that the only way to search through a recursive data structure is with recusion, but this is not necessarily the case! Rather surprisingly, we can perform a DFS non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
+Now, at this point, it might seem that the only way to search through a recursive data structure is with recursion, but this is not necessarily the case! Rather surprisingly, we can perform a DFS non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
 
 1. Put the root node in the stack
 2. Take it out and put in its children
@@ -157,6 +165,9 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
+{% sample lang="hs"%}
+This has not been implemented in your chosen language, so here is the Julia code
+[import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -187,6 +198,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="rs"%}
 [import:26-34, lang:"rust"](code/rust/tree.rs)
+{% sample lang="hs"%}
+[import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 # Example Code
@@ -224,13 +237,16 @@ tree_traversal.c
 {% sample lang="rs"%}
 ### Rust
 [import, lang:"rust"](code/rust/tree.rs)
+### Haskell
+{% sample lang="hs"%}
+[import, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}
@@ -249,4 +265,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-

@@ -13,7 +13,7 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 
 {% method %}
 {% sample lang="jl" %}
-[import:30-32, lang:"julia"](code/julia/graham.jl)
+[import:6-8, lang:"julia"](code/julia/graham.jl)
 {% sample lang="hs" %}
 [import:6-7, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
@@ -33,7 +33,7 @@ In the end, the code should look something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:34-69, lang:"julia"](code/julia/graham.jl)
+[import:10-46, lang:"julia"](code/julia/graham.jl)
 {% sample lang="hs" %}
 [import:9-18, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}

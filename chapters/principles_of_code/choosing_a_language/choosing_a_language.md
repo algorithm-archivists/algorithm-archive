@@ -21,7 +21,7 @@ So there I was, struggling to figure out what to do and where to go.
 I decided to do what any teenage boy would do in that situation: go to the bookstore and see what books were actually available for purchase at the time. 
 Now, I think the first book I picked up really describes the desperate pit I had dug for myself. 
 It was a book on how to make websites in HTML. 
-That was about as far away as I could have gotten from my gola of making video games. 
+That was about as far away as I could have gotten from my goal of making video games. 
 I will refrain from commenting further on that book for now because a much more important decision was ahead of me. 
 There before me was an aisle with all the key players I had heard about online: C, C++, C#, Java, Python, Ruby, and so on. 
 They were there just waiting to be chosen. 
@@ -34,7 +34,7 @@ At some point, a store employee walked by and I asked if he knew anything about 
 He said he did, so I asked the only question that popped into my head at the time, "What's the difference between C, C++, and C#?" 
 
 The employee said that C# was the newest of the three languages, but that all three were used regularly and if I wanted to learn programming, any would do. 
-Like the experts online, he then suggested python because it was easy for beginners and I was clearly a novice. 
+Like the experts online, he then suggested Python because it was easy for beginners and I was clearly a novice. 
 I thanked him for his time and began thumbing through the book on C#. 
 I remember thinking, *C must be the original language. C+ must be the next generation, followed by C++, then C+++, and then they stylistically changed C++++ to C# by placing the 4 plusses in a pound sign. I guess this means that C will be a little too outdated, but C# might be a little too new. I'll go with C++.*
 

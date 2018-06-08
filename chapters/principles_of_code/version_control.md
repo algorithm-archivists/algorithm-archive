@@ -63,7 +63,7 @@ Because of this, you may want to create a repository under your own github usern
 ![How to fork](fork.png)
 
 Note that if you have a fork of a particular code repository, you can ask the owner of the original code repository to pull your changes into their version of the code with a *pull request*, but we are getting ahead of ourselves here. 
-If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/leios/algorithm-archive) and modify that!
+If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/algorithm-archivists/algorithm-archive) and modify that!
 
 Regardless, as long as there is a repository under your username on github, we can continue by linking that remote github location to your local git directory. First, we need to find the url of the github repository, as shown here:
 
@@ -77,7 +77,7 @@ Once you have the url, there are 2 ways to proceed:
 
 **The easy way:**
 ```
-git clone https://github.com/leios/algorithm-archive
+git clone https://github.com/algorithm-archivists/algorithm-archive
 ```
 
 **The not-so-easy way:**
@@ -85,7 +85,7 @@ git clone https://github.com/leios/algorithm-archive
 mkdir algorithm_archive
 cd algorithm_archive
 git init
-git remote add origin https://github.com/leios/algorithm-archive
+git remote add origin https://github.com/algorithm-archivists/algorithm-archive
 git fetch
 git merge origin/master
 ```
@@ -95,7 +95,7 @@ For now, we will breifly describe each of the commands; however, we will definit
 So, here it is, step-by-step:
 1. `mkdir algorithm_archive`: make a directory. We can call this directory anything, but we'll call it algorithm_archive for now.
 2. `git init`: initialize git
-3. `git remote add origin https://github.com/leios/algorithm-archive`: add a remote location (the github url we found just a second ago). Again, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that. 
+3. `git remote add origin https://github.com/algorithm-archivists/algorithm-archive`: add a remote location (the github url we found just a second ago). Again, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that. 
 4. `git fetch`: update the local directory with the information from the remote online repository
 5. `git merge origin/master`: merge those updates. Right now, the `origin/master` part of this command might seem like a bit of black octocat magic, but we will cover it in just a bit!
 
@@ -113,7 +113,7 @@ Actually, you probably were not asking that question. It's not an obvious questi
 The solution is simple: Add another `remote` like so:
 
 ```
-git remote add upstream https://github.com/leios/algorithm-archive
+git remote add upstream https://github.com/algorithm-archivists/algorithm-archive
 ```
 
 Obviously, you can call the remote anything. I kinda arbitrarily chose to call it `upstream`. By adding this in, you can easily interact with the same codebase from multiple remote locations.
@@ -322,7 +322,7 @@ Now let's talk about something that will certainly happen in your programming ca
 
 ### Dealing with mistakes
 
-I cannot help with programming mistakes (typos and such), but when it comes to version control there are two times in which mistakes can be made: **before a commit** and **after a commit**.
+I cannot help with programming mistakes (typos and such), but when it comes to version control there are two times during which mistakes can be made: **before a commit** and **after a commit**.
 Each of these have a different solution and have different repercussions depending on how you want to proceed with code development. 
 Note that these solutions can be quite complicated and may easily move beyond the scope of this text. 
 Because of this, I will link to appropriate documentation as necessary.

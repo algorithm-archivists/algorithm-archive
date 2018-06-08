@@ -23,7 +23,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
-Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so We'll come back to this in the future and talk about how to optimize it.
+Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so we'll come back to this in the future and talk about how to optimize it.
 For now, it's fine to just bask in the simplicity that is bubble sort.
 Trust me, there are plenty of more complicated algorithms that do precisely the same thing, only much, much better (for most cases).
 
