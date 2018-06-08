@@ -322,7 +322,7 @@ Now let's talk about something that will certainly happen in your programming ca
 
 ### Dealing with mistakes
 
-I cannot help with programming mistakes (typos and such), but when it comes to version control there are two times in which mistakes can be made: **before a commit** and **after a commit**.
+I cannot help with programming mistakes (typos and such), but when it comes to version control there are two times during which mistakes can be made: **before a commit** and **after a commit**.
 Each of these have a different solution and have different repercussions depending on how you want to proceed with code development. 
 Note that these solutions can be quite complicated and may easily move beyond the scope of this text. 
 Because of this, I will link to appropriate documentation as necessary.

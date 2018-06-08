@@ -1,7 +1,7 @@
 ### Functions
 
 Functions make sense from a mathematical point of view. 
-$$f(x) = 2x+5$$ returns a value for x at any point you want. 
+$$f(x) = 2x+5$$ returns a value for $$f(x)$$ at any point $$x$$ that you want. 
 For example $$f(5) = 15$$, or $$f(10) = 25$$.
 Often times, the function is graphed for *every point* indicating the precise nature of how the function and variable relate to one another, but that is another matter entirely. 
 For the most part, functions in programming work exactly the same way. 

@@ -63,9 +63,9 @@ Now, how is this actually implemented on your computer?
 Well, one way is with the IEE 754 Floating-point Arithmetic Standard. 
 For 32 bits, the first bit is the *sign bit*, the next 8 bits tell us about the number's exponent, and the next 23 are called the *mantissa* and hold the binary string, itself. Now, there are a few points to keep in mind:
 
-1. Because the exponent is being represented in 8 bits, we only have 256 values to play with. This means that the largest exponent we can represent (in single precision) is 128 and the smallest is -127. For this reason, we will add 127 to the power of every floating-point number. So, $$1 = 1 \times 10^{127}$$.
+1. Because the exponent is being represented in 8 bits, we only have 256 values to play with. This means that the largest exponent we can represent (in single precision) is 128 and the smallest is -127. For this reason, we will add 127 to the power of every floating-point number. So, $$1 = 1 \times 2^{0}$$. The exponent stored is $$0+127 = 127$$.
 
-2. We normalize every bitstring to the first 1 available. For example: $$9.125 = 1.001001 \times 10^{130}$$, $$8.25 = 1.00001 \times 10^{130}$$, $$0.5 = 1 \times 10^{126}$$ $$\ldots$$ This means that *there will always be a leading 1 in our bitstring*. This means that the first 1 is redundant and can be removed from the mantissa.
+2. We normalize every bitstring to the first 1 available. For example: $$9.125 = 1.001001 \times 2^{3}$$ and the biased exponent is $$3+127=130$$, $$8.25 = 1.00001 \times 2^{130}$$, $$0.5 = 1 \times 2^{126}$$ $$\ldots$$ This means that *there will always be a leading 1 in our bitstring*. This means that the first 1 is redundant and can be removed from the mantissa.
 
 So here are a few floating-point numbers and their corresponding bitstrings:
 

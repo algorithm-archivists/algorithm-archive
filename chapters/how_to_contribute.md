@@ -19,7 +19,7 @@ Now for some specifics on submissions:
 
 For this project, we allow submissions in every language. 
 To submit code, simply go to the code directory of whatever chapter you want and add a directory for your language of choice. 
-We use two gitbook plugins to allow users to flip between languages on differend algorithms.
+We use two gitbook plugins to allow users to flip between languages on different algorithms.
 One is the theme-api, and the other is the include-codeblock api.
 We need the following statements in the markdown file for these to work together:
 

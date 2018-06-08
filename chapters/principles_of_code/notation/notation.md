@@ -73,7 +73,7 @@ Let's consider the following function:
 
 ```julia
 function linear(a::Array{Float64})
-    for i = 0:length(a)
+    for i = 1:length(a)
         println(a[i])
     end
 end
