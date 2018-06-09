@@ -1,12 +1,7 @@
 root = true
 
-# This file
-[.editorconfig]
-trim_trailing_whitespace = true
-insert_final_newline = true
-
-# Pretty much everything should trim whitespace and have a final EOL
-[*.{c,clj,cpp,cs,css,elm,go,hs,html,jl,js,md,py,rs}]
+# Base for all text files
+[*]
 trim_trailing_whitespace = true
 insert_final_newline = true
 
