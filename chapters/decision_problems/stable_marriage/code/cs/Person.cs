@@ -1,4 +1,4 @@
-﻿// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
+// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
 using System.Collections.Generic;
 
 namespace StableMarriageProblem
