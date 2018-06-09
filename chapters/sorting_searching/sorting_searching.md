@@ -13,7 +13,7 @@ Right now, there are only a few (straightforward) examples, so expect some more 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

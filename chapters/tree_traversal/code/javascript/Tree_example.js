@@ -26,7 +26,7 @@ function DFS_stack(n){
     var s = [];
     s.push(n);
     var temp;
-    
+
     while(s.length > 0){
         temp = s.pop();
         console.log(temp.ID);
@@ -43,7 +43,7 @@ function BFS_queue(n){
     var q = [];
     q.push(n);
     var temp;
-    
+
     while(q.length > 0){
         temp = q.shift();
         console.log(temp.ID);

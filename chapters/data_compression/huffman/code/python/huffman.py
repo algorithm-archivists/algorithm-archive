@@ -1,23 +1,23 @@
 # Huffman Encoding
 # Python 2.7+
-# Submitted by Matthew Giallourakis 
+# Submitted by Matthew Giallourakis
 
 from collections import Counter
 
 # constructs the tree
 def build_huffman_tree(message):
-    
+
     # get sorted list of character and frequency pairs
     frequencies = Counter(message)
     trees = frequencies.most_common()
 
     # while there is more than one tree
     while len(trees) > 1:
-        
+
         # pop off the two trees of least weight from the trees list
         tree_left,weight_left = trees.pop()
         tree_right,weight_right = trees.pop()
-        
+
         # combine the nodes and add back to the nodes list
         new_tree = [tree_left, tree_right]
         new_weight = weight_left + weight_right
@@ -25,7 +25,7 @@ def build_huffman_tree(message):
         # find the first tree that has a weight smaller than new_weight and returns its index in the list
         # If no such tree can be found, use len(trees) instead to append
         index = next((i for i, tree in enumerate(trees) if tree[1] < new_weight), len(trees))
-        
+
         # insert the new tree there
         trees.insert(index, (new_tree, new_weight))
 
@@ -41,14 +41,14 @@ def build_codebook(tree, code=''):
     left_tree, right_tree = tree
 
     # if the left node has children, find the mapping of those children
-    # else pair the character with the current code + 0 
+    # else pair the character with the current code + 0
     if type(left_tree) is list:
         codebook += build_codebook(left_tree, code+'0')
     else:
         codebook.append((left_tree, code+'0'))
 
     # if the right node has children, find the mapping of those children
-    # else pair the character with the current code + 1 
+    # else pair the character with the current code + 1
     if type(right_tree) is list:
         codebook += build_codebook(right_tree, code+'1')
     else:
@@ -57,7 +57,7 @@ def build_codebook(tree, code=''):
 
 # encodes the message
 def huffman_encode(codebook, message):
-    
+
     encoded_message = ''
 
     # build a char -> code dictionary
@@ -66,12 +66,12 @@ def huffman_encode(codebook, message):
     # replace each character with its code
     for char in message:
         encoded_message += forward_dict[char]
-    
+
     return encoded_message
 
 # decodes a message
 def huffman_decode(codebook, encoded_message):
-    
+
     decoded_message = ''
     key = ''
 
@@ -87,7 +87,7 @@ def huffman_decode(codebook, encoded_message):
         if key in inverse_dict:
             decoded_message += inverse_dict[key]
             key = ''
-    
+
     return decoded_message
 
 def main():
@@ -113,6 +113,6 @@ def main():
     #             ('y', '101'), ('t', '110'), ('i', '111')]
     #  encoded_message: 01110011111010110000100100111110101
     #  decoded_message: bibbity_bobbity
-    
+
 if __name__ == '__main__':
     main()

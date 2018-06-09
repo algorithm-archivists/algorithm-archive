@@ -15,14 +15,14 @@ namespace StableMarriageProblem
         public int CurrentTopChoiceIndex { get; set; } = 0;
 
         public Person(string name) => Name = name;
-        
+
         public void ProposeToNext()
         {
             var interest = GetNextTopChoice();
-            
+
             // If the interest has no partner or prefers this person,
             // change interest's partner to this person.
-            if (interest.Partner == null || 
+            if (interest.Partner == null ||
                 interest.Choices.IndexOf(this as TSelf) < interest.Choices.IndexOf(interest.Partner))
             {
                 // Should the interest already have a partner, set the partner

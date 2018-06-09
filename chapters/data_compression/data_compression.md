@@ -1,6 +1,6 @@
 # Data Compression
 
-I'll be honest, data compression used to be an incredibly hot topic, but kids these days usually have incredibly powerful devices that do not seem to be memory-limited at all. 
+I'll be honest, data compression used to be an incredibly hot topic, but kids these days usually have incredibly powerful devices that do not seem to be memory-limited at all.
 Because of this, it seems odd to talk about data compression as a field of intense debate and development.
 It would naively seem that better hardware means that there are less restrictions on programmers and less of a need to search for new and unique ways to compress their data; however, this is far from the case.
 
@@ -23,19 +23,19 @@ As your mother slips food under your door one day, you reach out to her and ask,
 Overjoyed at the prospect of her child finally leaving their room, your mother might say, "It's bright, sunny and warm. A perfect day to go outside and relax!"
 This provides you a lot of information, and to some degree of certainty you can conclude it is summer.
 
-Of course, after this interaction you do not acknowledge your mother's existence after her answer and go back to coding. 
+Of course, after this interaction you do not acknowledge your mother's existence after her answer and go back to coding.
 You have the information you need.
 No reason to overcomplicate things with further human contact.
 
-See, information is defined in a number of different places for a number of different reasons, so for our purposes, we will define the unit of information to be the *bit*, a simple binary 1 or 0. 
+See, information is defined in a number of different places for a number of different reasons, so for our purposes, we will define the unit of information to be the *bit*, a simple binary 1 or 0.
 Taking the example mentioned before (assuming you can take your mother at face-value), you were provided 3 true statements:
 
 1. It is bright
 2. It is sunny
 3. It is warm
 
-With this information, you assumed that it was probably summer. 
-Unfortunately, your assumption about it being summer is not information. 
+With this information, you assumed that it was probably summer.
+Unfortunately, your assumption about it being summer is not information.
 It might be a logical conclusion, but it was not provided as a "fact."
 This is an important distinction between what we might colloquially describe as information and what information theory requires.
 Information theory works with measurements -- binary absolutes.
@@ -50,7 +50,7 @@ In this case, there are plenty of ways you can represent these characters in bit
 | _a_       | 0                  |
 | _b_       | 1                  |
 
-So long as you don't add any new characters to the mix, this is a perfectly valid set of codewords. 
+So long as you don't add any new characters to the mix, this is a perfectly valid set of codewords.
 If you get the bitstring 0111101, you can easily decode it as _abbbbab_.
 
 But what if you wanted to add a third character, _c_?
@@ -75,7 +75,7 @@ If we wanted a good, prefix-free set of codewords for 4 characters (_a_, _b_, _c
 | _c_       | 10                 |
 | _d_       | 11                 |
 
-We can decode any even bitstring with this set. 
+We can decode any even bitstring with this set.
 0100101010110100 is _bacccdba_.
 This is great, but now we have another question: given a string of characters, can we construct a set of codewords that *minimizes* the number of bits in its corresponding bitstring?
 
@@ -118,14 +118,14 @@ L_2 &= 0.1\times 3 + 0.2 \times 3 + 0.3 \times 2 + 0.4 \times 1 = 1.9
 \end{align}
 $$
 
-Here, it's clear that $$L_2 < L_1$$, and thus the second set of codewords compresses our data more than the first. 
+Here, it's clear that $$L_2 < L_1$$, and thus the second set of codewords compresses our data more than the first.
 This measure can be used as a direct test of certain simple data compression techniques, notably those created by Shannon, Fano, and [Huffman](huffman/huffman.md), which will be covered soon!
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

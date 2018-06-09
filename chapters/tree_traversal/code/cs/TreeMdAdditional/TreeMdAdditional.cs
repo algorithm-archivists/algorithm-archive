@@ -78,11 +78,11 @@ namespace TreeTraversalMdAdditional
             {
                 DFSRecursivePostorder(c);
             }
-            
+
             // Here we are doing something...
             Console.WriteLine(node.Id);
         }
-        
+
         // This assumes only 2 children
         public void DFSRecursiveInorderBinary(Node node)
         {

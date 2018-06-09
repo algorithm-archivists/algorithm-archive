@@ -79,7 +79,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

@@ -37,7 +37,7 @@ fn create_tree(num_row: u64, num_child: u64) -> Node {
     if num_row == 0 {
         return Node { children: vec![], value: 0 };
     }
-    
+
     let children = (0..num_child)
         .map(|_| create_tree(num_row - 1, num_child))
         .collect();

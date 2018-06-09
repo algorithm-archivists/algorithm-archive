@@ -10,7 +10,7 @@ namespace BogoSort
         {
             while (!IsSorted(list))
                 list = Shuffle(list, new Random());
-            
+
             return list;
         }
 

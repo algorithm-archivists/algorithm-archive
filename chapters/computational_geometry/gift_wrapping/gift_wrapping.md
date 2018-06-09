@@ -9,7 +9,7 @@ Strictly speaking, though, the term is not entirely accurate for all convex hull
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

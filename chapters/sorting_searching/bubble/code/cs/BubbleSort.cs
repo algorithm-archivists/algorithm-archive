@@ -9,7 +9,7 @@ namespace BubbleSort
         public static List<T> RunBubbleSort<T>(List<T> list) where T : IComparable<T>
         {
             var length = list.Count;
-            
+
             for (int i = 0; i < length; i++)
             {
                 for (int j = 1; j < length; j++)

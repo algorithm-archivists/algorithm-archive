@@ -28,7 +28,7 @@ fn stormer_verlet(mut pos: f64, acc: f64, dt: f64) {
 
 fn velocity_verlet(mut pos: f64, acc: f64, dt: f64) {
     let mut time = 0.0;
-    let mut vel = 0.0;  
+    let mut vel = 0.0;
 
     while pos > 0.0 {
         time += dt;
