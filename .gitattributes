@@ -1,0 +1,2 @@
+# Force C# source files to have LF line endings
+*.cs text eol=lf
