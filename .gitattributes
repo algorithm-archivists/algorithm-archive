@@ -11,6 +11,7 @@
 *.jl text eol=lf
 *.js text eol=lf
 *.md text eol=lf
+*.ml text eol=lf
 *.py text eol=lf
 *.rs text eol=lf
 

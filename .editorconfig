@@ -64,6 +64,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# OCAML
+[*.ml]
+indent_style = space
+indent_size = 2
+
 # Python
 [*.py]
 indent_style = space
