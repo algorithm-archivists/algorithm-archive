@@ -1,19 +1,2 @@
 # Force all text files to have LF line endings
-*.c text eol=lf
-*.clj text eol=lf
-*.cpp text eol=lf
-*.cs text eol=lf
-*.css text eol=lf
-*.elm text eol=lf
-*.go text eol=lf
-*.hs text eol=lf
-*.html text eol=lf
-*.jl text eol=lf
-*.js text eol=lf
-*.md text eol=lf
-*.ml text eol=lf
-*.py text eol=lf
-*.rs text eol=lf
-
-# Assume that dotfiles are always text files
-.* text eol=lf
+* text=auto eol=lf
