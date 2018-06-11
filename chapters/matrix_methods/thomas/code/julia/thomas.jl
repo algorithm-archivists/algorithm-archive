@@ -18,6 +18,6 @@ function(a::Vector{Float64}, b::Vector{Float64}, c::Vector{Float64},
     for i = n-2:0
         soln[i] = d[i] - c[i] * soln[i+1]
     end
-    
+
 end
 

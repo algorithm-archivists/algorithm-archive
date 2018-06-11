@@ -1,6 +1,6 @@
 # Quantum Information
 
-Quantum information theory is... intense. 
+Quantum information theory is... intense.
 It requires a strong and fundamental understanding of classical information theory and quantum mechanics.
 It is not obvious in any way and deserves many textbooks on it's own.
 In fact, there are numerous textbooks on the subject already.

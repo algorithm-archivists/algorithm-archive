@@ -1,14 +1,14 @@
 # Depth-First and Breadth-First Traversal
-# Submitted by Matthew Giallourakis 
+# Submitted by Matthew Giallourakis
 from collections import deque
- 
+
 class node():
     "Create the node structure"
     def __init__(self, value, left, right):
         self.value = value
         self.left = left
         self.right = right
- 
+
 def make_tree(root,nums):
     "Makes a binary search tree from a list of numbers"
     for num in nums:
@@ -27,7 +27,7 @@ def make_tree(root,nums):
                     break
                 else:
                     temp_node = temp_node.right
- 
+
 def depth_first_search(root):
     "Traverses through a tree depth-first by putting nodes on a stack"
     stack = deque()
@@ -43,8 +43,8 @@ def depth_first_search(root):
         if temp_node.left is not None:
             stack.append(temp_node.left)
     return result_list
- 
- 
+
+
 def breadth_first_search(root):
     "Traverses through a tree breadth-first by putting nodes into a queue"
     queue = deque()
@@ -60,8 +60,8 @@ def breadth_first_search(root):
         if temp_node.right is not None:
             queue.appendleft(temp_node.right)
     return result_list
- 
- 
+
+
 def main():
     nums = [5,8,6,9,2,1,3]
     root = node(value=nums.pop(0),left=None,right=None)
@@ -70,15 +70,15 @@ def main():
     #           5
     #       2       8
     #     1   3   6   9
-    #              
- 
+    #
+
     print("Depth First:",depth_first_search(root))
     # prints [5, 2, 1, 3, 8, 6, 9]
-     
+
     print("Breadth First:",breadth_first_search(root))
     # prints [5, 2, 8, 1, 3, 6, 9]
-     
- 
+
+
 if __name__ == '__main__':
     main()
 

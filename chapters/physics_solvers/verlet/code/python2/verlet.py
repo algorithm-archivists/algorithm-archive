@@ -26,7 +26,7 @@ class Simulation:
 
 
 class Verlet(Simulation):
-    
+
     def step(self):
         temp_pos = self.obj.pos
         self.obj.pos = self.obj.pos * 2 - self.prev_pos + self.obj.acc * self.dt * self.dt

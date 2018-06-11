@@ -59,7 +59,7 @@ end
 function main()
 
     # These points are chosen such that there is a clearly defined hull with
-    # several interior points. As a note, these will be generated either 
+    # several interior points. As a note, these will be generated either
     # randomly or via some mesh in practice.
     points = [Pos(2,1.5), Pos(1, 1), Pos(2, 4), Pos(3, 1), Pos(2,2), Pos(2,0.5)]
     hull = jarvis_march(points)

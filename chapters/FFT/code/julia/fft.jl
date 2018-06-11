@@ -25,7 +25,7 @@ function cooley_tukey(x)
     half = div(N,2)
     factor = exp.(-2im*pi*n/N)
     return vcat(x_odd + x_even .* factor[1:half],
-                x_odd - x_even .* factor[1:half]) 
+                x_odd - x_even .* factor[1:half])
 
 end
 
@@ -84,7 +84,7 @@ function iterative_cooley_tukey(x)
            for k = 1:length(y)
                z[start_index+k-1] = y[k]
            end
-       end 
+       end
        bnum = div(bnum,2)
     end
 

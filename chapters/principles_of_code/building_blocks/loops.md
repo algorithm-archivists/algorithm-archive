@@ -1,9 +1,9 @@
 ### Loops
 
-Loops are weird. I'm not going to lie, it took me a super long time to figure out how and when to use them appropriately. 
-Nowadays, I see them as essential elements to almost any program I write. 
+Loops are weird. I'm not going to lie, it took me a super long time to figure out how and when to use them appropriately.
+Nowadays, I see them as essential elements to almost any program I write.
 There two basic loop types: `for` and `while`, which are syntactically similar and reasonably intuitive.
-Let's say you want to walk out of a room with a closed door. 
+Let's say you want to walk out of a room with a closed door.
 In code, this might look something like:
 
 ```julia
@@ -32,12 +32,12 @@ In this case $$i$$ is an interable variable that steps through the range of `1:1
 To be clear, $$i$$ does not need to iterate through integers and could instead iterate through any number of types held in some other container.
 
 Ultimately, loops allow programmers to repeat the same operation multiple times and are the heart most programs and simulations I have seen.
- 
+
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

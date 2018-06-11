@@ -1,4 +1,4 @@
-﻿// submitted by Julian Schacher (jspp), thanks to gustorn for the help
+// submitted by Julian Schacher (jspp), thanks to gustorn for the help
 using System.Collections;
 using System.Collections.Generic;
 

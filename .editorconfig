@@ -1,14 +1,10 @@
 root = true
 
-# This file
-[.editorconfig]
+# Base for all text files
+[*]
 trim_trailing_whitespace = true
 insert_final_newline = true
-
-# Pretty much everything should trim whitespace and have a final EOL
-[*.{c,clj,cpp,cs,css,elm,go,hs,html,jl,js,md,py,rs}]
-trim_trailing_whitespace = true
-insert_final_newline = true
+end_of_line = lf
 
 # C
 [*.c]
@@ -66,6 +62,11 @@ indent_size = 2
 
 # Markdown
 [*.md]
+indent_style = space
+indent_size = 2
+
+# OCAML
+[*.ml]
 indent_style = space
 indent_size = 2
 
