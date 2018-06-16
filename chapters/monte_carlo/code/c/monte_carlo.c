@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -19,8 +20,10 @@ void monte_carlo(int samples, double radius) {
         }
     }
 
-    printf("the estimate of pi is %f\n",
-           4.0 * count / (samples * radius * radius));
+    double estimate = 4.0 * count / (samples * radius * radius);
+
+    printf("The estimate of pi is %f\n", estimate);
+    printf("Which has an error of %0.2f%\n", 100 * (M_PI - estimate) / M_PI);
 }
 
 int main() {
