@@ -1,48 +1,9 @@
+#include "fft.h"
+
 #include <stdio.h>
-#include <complex.h>
-
-// This section is not a part of the algorithm
-
-#include <math.h>
-
-void fft(double complex *X, size_t N) {
-    if (N >= 2) {
-        double complex tmp [N / 2];
-        for (size_t i = 0; i < N / 2; ++i) {
-            tmp[i] = X[2 * i + 1];
-            X[i] = X[2 * i];
-        }
-
-        for (size_t i = 0; i < N / 2; ++i) {
-            X[i + N / 2] = tmp[i];
-        }
-
-        fft(X, N / 2);
-        fft(X + N / 2, N / 2);
-
-        for (size_t i = 0; i < N / 2; ++i) {
-            X[i + N/2] = X[i] - cexp(-2.0 * I * M_PI * i / N) * X[i + N / 2];
-            X[i] -= (X[i + N / 2] - X[i]);
-        }
-    }
-}
-
-void ifft(double complex *x, size_t n) {
-    for (size_t i = 0; i < n; ++i) {
-        x[i] = conj(x[i]);
-    }
-
-    fft(x, n);
-
-    for (size_t i = 0; i < n; ++i) {
-        x[i] = conj(x[i]) / n;
-    }
-}
-
-// This section is a part of the algorithm
 
 void conv(double complex *signal1, double complex *signal2, double complex* out,
-            size_t n1, size_t n2) {
+          size_t n1, size_t n2) {
     double complex sum = 0;
 
     for (size_t i = 0; i < (n1 < n2? n2 : n1); ++i) {
@@ -57,7 +18,7 @@ void conv(double complex *signal1, double complex *signal2, double complex* out,
 }
 
 void conv_fft(double complex *signal1, double complex *signal2,
-                double complex* out, size_t n) {
+              double complex* out, size_t n) {
     fft(signal1, n);
     fft(signal2, n);
 
