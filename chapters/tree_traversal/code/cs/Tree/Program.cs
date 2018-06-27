@@ -7,14 +7,15 @@ namespace TreeTraversal
     {
         static void Main(string[] args)
         {
+            Node root;
             Console.WriteLine("TreeTraversal");
             var tree = new Tree(3, 3);
             Console.WriteLine("StartDFSRecursive:");
-            tree.StartDFSRecursive();
+            tree.StartDFSRecursive(root);
             Console.WriteLine("DFSStack:");
-            tree.DFSStack();
+            tree.DFSStack(root);
             Console.WriteLine("DFSQueue:");
-            tree.BFSQueue();
+            tree.BFSQueue(root);
         }
     }
 }
