@@ -15,7 +15,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="c" %}
 [import:3-21, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
-[import:1-11, lang:"java"](code/java/bubble.java)
+[import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
 [import:1-11, lang:"javascript"](code/js/bubble.js)
 {% sample lang="hs" %}
@@ -52,4 +52,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-

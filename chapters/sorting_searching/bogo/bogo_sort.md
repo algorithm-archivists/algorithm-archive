@@ -21,6 +21,8 @@ In code, it looks something like this:
 [import:2-10, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
 [import:4-27, lang:"c_cpp"](code/c/bogo_sort.c)
+{% sample lang="java" %}
+[import:2-17, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
 [import:1-16, lang:"javascript"](code/js/bogo.js)
 {% sample lang="hs" %}
@@ -56,4 +58,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
