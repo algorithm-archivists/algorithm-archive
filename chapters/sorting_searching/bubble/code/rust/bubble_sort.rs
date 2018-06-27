@@ -9,7 +9,7 @@ fn bubble_sort(a: &mut Vec<u32>) {
     for _ in 0..n {
         for j in 1..n {
             if a[j - 1] > a[j] {
-                // Swaps values at indicies j - 1 and j 
+                // Swaps values at indices j - 1 and j 
                 let temp = a[j - 1]; 
                 a[j - 1] = a[j];
                 a[j] = temp;
