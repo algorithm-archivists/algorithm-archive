@@ -27,5 +27,6 @@ public class Bubble {
         for (int i = 0; i < test.length; i++) {
             System.out.print(test[i] + " ");
         }
+        System.out.println("");
     }
 }
