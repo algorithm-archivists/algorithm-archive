@@ -15,8 +15,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:20-33, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="py2" %}
-[import:14-25, lang="python"](code/python2/euclidean_example.py)
+{% sample lang="py" %}
+[import:17-28, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
 [import:3-11, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
@@ -46,8 +46,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:7-17, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="py2" %}
-[import:1-12, lang="python"](code/python2/euclidean_example.py)
+{% sample lang="py" %}
+[import:4-15, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
 [import:13-24, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
@@ -89,7 +89,7 @@ Program.cs
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py2" %}
 ### Python
-[import, lang="python"](code/python2/euclidean_example.py)
+[import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
 ### Haskell
 [import, lang="haskell"](code/haskell/euclidean_example.hs)
