@@ -12,14 +12,12 @@ namespace TreeTraversal
             public int Id { get; set; }
         }
 
-        private Node root;
-
-        public Tree(int depthCount, int childrenCount)
+        public Tree(int depthCount, int childrenCount, Node root)
         {
-            CreateTree(depthCount, childrenCount);
+            CreateTree(depthCount, childrenCount, root);
         }
 
-        public void CreateTree(int depthCount, int childrenCount)
+        public void CreateTree(int depthCount, int childrenCount, Node root)
         {
             root = new Node
             {
@@ -28,12 +26,12 @@ namespace TreeTraversal
             CreateAllChildren(root, depthCount, childrenCount);
         }
 
-        public void StartDFSRecursive()
+        public void StartDFSRecursive(Node root)
         {
             DFSRecursive(root);
         }
 
-        public void DFSStack()
+        public void DFSStack(Node root)
         {
             var stack = new Stack<Node>();
             stack.Push(root);
@@ -51,7 +49,7 @@ namespace TreeTraversal
             }
         }
 
-        public void BFSQueue()
+        public void BFSQueue(Node root)
         {
             var queue = new Queue<Node>();
             queue.Enqueue(root);
