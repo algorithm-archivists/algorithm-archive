@@ -42,7 +42,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% sample lang="py3" %}
-[import:3-5, lang:"python"](code/python3/monte_carlo.py)
+[import:5-7, lang:"python"](code/python3/monte_carlo.py)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
