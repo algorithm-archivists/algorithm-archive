@@ -43,6 +43,8 @@ each point is tested to see whether it's in the circle or not:
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
+{% sample lang="rs" %}
+[import:7-9, lang:"rust"](code/rust/monte_carlo.rs)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
