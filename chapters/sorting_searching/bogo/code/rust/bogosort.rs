@@ -2,16 +2,14 @@
 
 extern crate rand;
 
-fn shuffle(arr : &mut Vec<i32>) {
+fn shuffle(arr : &mut [i32]) {
     for i in 0..arr.len() {
-        let t = arr[i];
         let r : usize = rand::random::<usize>() % arr.len();
-        arr[i] = arr[r];
-        arr[r] = t;
+        arr.swap(r,i);
     }
 }
 
-fn is_sorted(arr : &Vec<i32>) -> bool {
+fn is_sorted(arr : &[i32]) -> bool {
     for i in 1..arr.len() {
         if arr[i-1] > arr[i] {
             return false;
@@ -20,7 +18,7 @@ fn is_sorted(arr : &Vec<i32>) -> bool {
     true
 }
 
-fn bogo_sort(arr : &mut Vec<i32>) {
+fn bogo_sort(arr : &mut [i32]) {
     while !is_sorted(arr) {
         shuffle(arr)
     }
