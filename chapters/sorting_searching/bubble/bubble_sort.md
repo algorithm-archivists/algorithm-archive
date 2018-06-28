@@ -21,7 +21,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bubblesort.cpp)
 {% sample lang="d" %}
-[import, lang:"d"](code/d/bubble_sort.d)
+[import:3-18, lang:"d"](code/d/bubble_sort.d)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
