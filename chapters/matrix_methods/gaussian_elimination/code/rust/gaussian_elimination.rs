@@ -20,6 +20,12 @@ impl Matrix {
     fn set(&mut self, row: usize, col: usize, value: f64) {
         self.data[row * self.cols + col] = value;
     }
+
+    fn swap_rows(&mut self, a: usize, b: usize) {
+        for col in 0..self.cols {
+            self.data.swap(a * self.cols + col, b * self.cols + col);
+        }
+    }
 }
 
 impl fmt::Display for Matrix {
@@ -43,6 +49,8 @@ fn main() {
             mat.set(i, j, (i*j) as f64);
         }
     }
+
+    mat.swap_rows(0, 1);
 
     println!("{}", mat);
 }
