@@ -2,12 +2,7 @@
 
 extern crate rand;
 
-fn shuffle(arr : &mut [i32]) {
-    for i in 0..arr.len() {
-        let r : usize = rand::random::<usize>() % arr.len();
-        arr.swap(r,i);
-    }
-}
+use rand::{thread_rng, Rng};
 
 fn is_sorted(arr : &[i32]) -> bool {
     for i in 1..arr.len() {
@@ -20,13 +15,13 @@ fn is_sorted(arr : &[i32]) -> bool {
 
 fn bogo_sort(arr : &mut [i32]) {
     while !is_sorted(arr) {
-        shuffle(arr)
+        thread_rng().shuffle(arr);
     }
 }
 
 fn main() {
-    let mut v = vec!(1,2,3,4,5);
-    shuffle(&mut v);
+    let mut v = vec![1, 2, 3, 4, 5];
+    thread_rng().shuffle(&mut v);
     println!("Original array: {:?}", v);
     bogo_sort(&mut v);
     println!("Sorted array: {:?}", v);
