@@ -3,16 +3,14 @@ extern crate rand; // External crate that provides random number generation tool
 use rand::{thread_rng, Rng}; // Used for random number generation
 use rand::distributions::Uniform; // Used for a uniform distribution
 
-fn bubble_sort(a: &mut Vec<u32>) {
+fn bubble_sort(a: &mut [u32]) {
     let n = a.len();
 
     for _ in 0..n {
         for j in 1..n {
             if a[j - 1] > a[j] {
-                // Swaps values at indices j - 1 and j 
-                let temp = a[j - 1]; 
-                a[j - 1] = a[j];
-                a[j] = temp;
+                // Swaps values at indicies j - 1 and j 
+                a.swap(j, j - 1);
             }
         }
     }
