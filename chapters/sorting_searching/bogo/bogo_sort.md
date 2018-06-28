@@ -25,6 +25,8 @@ In code, it looks something like this:
 [import:2-17, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
 [import:1-16, lang:"javascript"](code/js/bogo.js)
+{% sample lang="py" %}
+[import:4-12, lang:"python"](code/python/bogo.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="cpp" %}
