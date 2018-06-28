@@ -18,6 +18,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
 [import:1-11, lang:"javascript"](code/js/bubble.js)
+{% sample lang="py" %}
+[import:5-10, lang:"python"](code/python/bubblesort.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
