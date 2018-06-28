@@ -12,7 +12,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:1-4, lang:"java"](code/java/individual_examples/treetrav.java)
+[import:105-121, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
@@ -41,7 +41,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="c" %}
 [import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:7-14, lang:"java"](code/java/individual_examples/treetrav.java)
+[import:17-23, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:15-23, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -80,7 +80,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="c" %}
 [import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:17-24, lang:"java"](code/java/individual_examples/treetrav.java)
+[import:25-32, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
@@ -117,7 +117,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="c" %}
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:27-41, lang:"java"](code/java/individual_examples/treetrav.java)
+[import:34-49, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -163,7 +163,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:44-58, lang:"java"](code/java/individual_examples/treetrav.java)
+[import:51-65, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -198,7 +198,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:61-76, lang:"java"](code/java/individual_examples/treetrav.java)
+[import:67-83, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -237,9 +237,9 @@ tree_traversal.c
 {% sample lang="java" %}
 ### Java
 Tree.java
-[import, lang:"java"](code/java/demo_code/Tree.java)
+[import, lang:"java"](code/java/Tree.java)
 MainClass.java
-[import, lang:"java"](code/java/demo_code/MainClass.java)
+[import, lang:"java"](code/java/MainClass.java)
 {% sample lang="js" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/Tree_example.js)
