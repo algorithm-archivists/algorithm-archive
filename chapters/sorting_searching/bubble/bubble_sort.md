@@ -8,20 +8,20 @@ In this way, we sweep through the array $$n$$ times for each element and continu
 This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with code similar to the following:
 
 {% method %}
-{% sample lang="jl" %}
-[import:1-10, lang:"julia"](code/julia/bubble.jl)
-{% sample lang="cs" %}
-[import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
 {% sample lang="c" %}
 [import:3-21, lang:"c_cpp"](code/c/bubble_sort.c)
-{% sample lang="js" %}
-[import:1-11, lang:"javascript"](code/js/bubble.js)
-{% sample lang="hs" %}
-[import, lang:"haskell"](code/haskell/bubbleSort.hs)
+{% sample lang="cs" %}
+[import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bubblesort.cpp)
-{% sample lang="d" %}
-[import, lang:"d"](code/d/bubble_sort.d)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/bubbleSort.hs)
+{% sample lang="js" %}
+[import:1-11, lang:"javascript"](code/js/bubble.js)
+{% sample lang="jl" %}
+[import:1-10, lang:"julia"](code/julia/bubble.jl)
+{% sample lang="py" %}
+[import:1-23, lang:"python"](code/python/bubble.py)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
