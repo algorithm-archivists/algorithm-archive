@@ -60,7 +60,7 @@ The idea is similar to before: Each digit represents a power of 2; however, this
 So for 9.125, we have 1 $$2^3 = 8$$, 1 $$2^0 = 1$$, and 1 $$2^{-3} = \frac{1}{8}$$.
 
 Now, how is this actually implemented on your computer?
-Well, one way is with the IEE 754 Floating-point Arithmetic Standard.
+Well, one way is with the IEEE 754 Floating-point Arithmetic Standard.
 For 32 bits, the first bit is the *sign bit*, the next 8 bits tell us about the number's exponent, and the next 23 are called the *mantissa* and hold the binary string, itself. Now, there are a few points to keep in mind:
 
 1. Because the exponent is being represented in 8 bits, we only have 256 values to play with. This means that the largest exponent we can represent (in single precision) is 128 and the smallest is -127. For this reason, we will add 127 to the power of every floating-point number. So, $$1 = 1 \times 2^{0}$$. The exponent stored is $$0+127 = 127$$.

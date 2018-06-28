@@ -34,6 +34,9 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% sample lang="cpp" %}
 ### C++
 [import, lang:"c_cpp"](code/c++/stable_marriage.cpp)
+{% sample lang="js" %}
+### JavaScript
+[import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}
 ### C# #
 GaleShapleyAlgorithm.cs
