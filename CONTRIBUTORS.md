@@ -5,3 +5,4 @@ Gathros
 Jeremie Gillet (- Jie -)
 Salim Khatib
 Hitesh C
+Hugo Granström
