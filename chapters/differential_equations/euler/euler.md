@@ -111,7 +111,7 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 Full code for the visualization follows:
 [import, lang:"elm"](code/elm/euler.elm)
 {% endmethod %}
- 
+
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>

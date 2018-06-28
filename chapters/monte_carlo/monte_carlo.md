@@ -41,6 +41,8 @@ each point is tested to see whether it's in the circle or not:
 [import:2-8, lang:"julia"](code/julia/monte_carlo.jl)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="hs" %}
+[import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -58,14 +60,14 @@ If we use a small number of points, this will only give us a rough approximation
 The true power of monte carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
 As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use monte carlo integration!
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
-I can gaurantee that we will see similar methods crop up all over the place in the future!
+I can guarantee that we will see similar methods crop up all over the place in the future!
 
 # Example Code
 Monte carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
 Here, we are just integrating a circle, like we described above; however, there is a small twist and trick.
 Instead of calculating the area of the circle, we are instead trying to find the value of $$\pi$$, and
-rather than integrating the entire circle, we are only integrating the upper right quadrant of the circle from $$0 < x,y < 1$$.
+rather than integrating the entire circle, we are only integrating the upper right quadrant of the circle from $$0 < x, y < 1$$.
 This saves a bit of computation time, but also requires us to multiply our output by $$4$$.
 
 That's all there is to it!
@@ -78,13 +80,19 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="hs" %}
+### Haskell
+[import, lang:"haskell"](code/haskell/monteCarlo.hs)
+{%sample lang="rs" %}
+### Rust
+[import, lang:"rust"](code/rust/monte_carlo.rs)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

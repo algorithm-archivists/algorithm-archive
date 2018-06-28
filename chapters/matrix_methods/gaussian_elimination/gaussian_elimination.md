@@ -7,7 +7,7 @@ $$
 \begin{align}
 2x + 3y + 4z &= 6 \\
 x + 2y + 3z &= 4 \\
-3x - 4y &= 10 
+3x - 4y &= 10
 \end{align}
 $$
 
@@ -26,7 +26,7 @@ $$
 \left[
 \begin{array}{c}
 x \\
-y \\ 
+y \\
 z
 \end{array}
 \right]
@@ -34,7 +34,7 @@ z
 \left[
 \begin{array}{c}
 6 \\
-4 \\ 
+4 \\
 10
 \end{array}
 \right]
@@ -49,7 +49,7 @@ $$
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 1 & 2 & 3 & 4 \\
-3 & -4 & 0 & 10 
+3 & -4 & 0 & 10
 \end{array}
 \right]
 $$
@@ -62,7 +62,7 @@ $$
 \begin{align}
 2x + 3y + 4z &= 6 \\
 y + 2z &= 2 \\
-11z &= 18 
+11z &= 18
 \end{align}
 $$
 
@@ -75,7 +75,7 @@ $$
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 0 & 1 & 2 & 2 \\
-0 & 0 & 11 & 18 
+0 & 0 & 11 & 18
 \end{array}
 \right]
 $$
@@ -93,7 +93,7 @@ $$
 \begin{align}
 11x &= 18 \\
 11y &= -14 \\
-11z &= 18 
+11z &= 18
 \end{align}
 $$
 
@@ -106,7 +106,7 @@ $$
 \begin{array}{ccc|c}
 11 & 0 & 0 & 18 \\
 0 & 11 & 0 & -14 \\
-0 & 0 & 11 & 18 
+0 & 0 & 11 & 18
 \end{array}
 \right]
 $$
@@ -135,15 +135,15 @@ $$
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 1 & 2 & 3 & 4 \\
-3 & -4 & 0 & 10 
+3 & -4 & 0 & 10
 \end{array}
-\right] 
-\quad \rightarrow \quad 
+\right]
+\quad \rightarrow \quad
 \left[
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 0 & 1 & 2 & 2 \\
-0 & 0 & 11 & 18 
+0 & 0 & 11 & 18
 \end{array}
 \right]
 $$
@@ -157,15 +157,15 @@ $$
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 0 & 1 & 2 & 2 \\
-0 & 0 & 11 & 18 
+0 & 0 & 11 & 18
 \end{array}
-\right] 
-\quad \rightarrow \quad 
+\right]
+\quad \rightarrow \quad
 \left[
 \begin{array}{ccc|c}
 11 & 0 & 0 & 18 \\
 0 & 11 & 0 & -14 \\
-0 & 0 & 11 & 18 
+0 & 0 & 11 & 18
 \end{array}
 \right]
 $$
@@ -184,7 +184,7 @@ $$
 \begin{array}{ccc|c}
 2 & 3  & 4 & 6 \\
 1 & 2 & 3 & 4 \\
-\mathbf{3} & -4 & 0 & 10 
+\mathbf{3} & -4 & 0 & 10
 \end{array}
 \right]
 $$
@@ -194,7 +194,7 @@ $$
 \begin{array}{ccc|c}
 \mathbf{2} & \mathbf{3}  & \mathbf{4} & \mathbf{6} \\
 1 & 2 & 3 & 4 \\
-\mathbf{3} & \mathbf{-4} & \mathbf{0} & \mathbf{10} 
+\mathbf{3} & \mathbf{-4} & \mathbf{0} & \mathbf{10}
 \end{array}
 \right]
 \rightarrow
@@ -202,7 +202,7 @@ $$
 \begin{array}{ccc|c}
 \mathbf{3} & \mathbf{-4} & \mathbf{0} & \mathbf{10} \\
 1 & 2 & 3 & 4 \\
-\mathbf{2} & \mathbf{3}  & \mathbf{4} & \mathbf{6} 
+\mathbf{2} & \mathbf{3}  & \mathbf{4} & \mathbf{6}
 \end{array}
 \right]
 $$
@@ -213,9 +213,9 @@ $$
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
 \mathbf{1} & 2 & 3 & 4 \\
-2 & 3  & 4 & 6 
+2 & 3  & 4 & 6
 \end{array}
-\right] \\ 
+\right] \\
 \begin{align}
     f &= A(\text{pivot}_{\text{row}}, \text{pivot}_{\text{col}}) / A(\text{curr_row}_{\text{row}}, \text{pivot}_{\text{col}}) \\
       &= \frac{1}{3}
@@ -223,12 +223,12 @@ $$
 $$
 4. Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
 $$
-A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\ 
+A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
 \mathbf{1} & \mathbf{2} & \mathbf{3} & \mathbf{4} \\
-2 & 3  & 4 & 6 
+2 & 3  & 4 & 6
 \end{array}
 \right]
 \rightarrow
@@ -236,7 +236,7 @@ A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\te
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
 \mathbf{\frac{1}{3}} & \mathbf{\frac{2}{3}} & \mathbf{1} & \mathbf{\frac{4}{3}} \\
-2 & 3  & 4 & 6 
+2 & 3  & 4 & 6
 \end{array}
 \right]
 $$
@@ -246,7 +246,7 @@ $$
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
 0 & 2 & 3 & 4 \\
-2 & 3  & 4 & 6 
+2 & 3  & 4 & 6
 \end{array}
 \right]
 
@@ -263,8 +263,8 @@ As with all code, it takes time to fully absorb what is going on and why everyth
 
 Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Eschelon Form*, not * **Reduced** Row Eschelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
 
-The back-substitution method is precisely what we said above. 
-If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$! 
+The back-substitution method is precisely what we said above.
+If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
 Even though this seems straightforward, the pseudocode might not be as simple as you thought!
 
 {% method %}
@@ -283,11 +283,11 @@ The full code can be seen here:
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% endmethod %}
 
- 
+
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

@@ -1,4 +1,4 @@
-﻿// submitted by Julian Schacher (jspp)
+// submitted by Julian Schacher (jspp)
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ namespace BogoSort
         {
             while (!IsSorted(list))
                 list = Shuffle(list, new Random());
-            
+
             return list;
         }
 

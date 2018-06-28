@@ -13,7 +13,7 @@ function genpreferences(mannames::Vector{String}, womannames::Vector{String})
     return men, women
 end
 
-# Returns if `person` prefers the `first` candidate over the `second` one. 
+# Returns if `person` prefers the `first` candidate over the `second` one.
 # This translates to `first` appearing *sooner* in the preference list
 prefers(prefs, person, first, second) =
     findfirst(m -> m == first, prefs[person]) <

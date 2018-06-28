@@ -1,6 +1,6 @@
 # Verlet Integration
 
-Verlet Integration is essentially a solution to the kinematic equation for the motion of any object, 
+Verlet Integration is essentially a solution to the kinematic equation for the motion of any object,
 
 $$
 x = x_0 + v_0t + \frac{1}{2}at^2 + \frac{1}{6}bt^3 + \cdots
@@ -206,12 +206,12 @@ Submitted by P. Mekhail
 ### Rust
 [import, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
- 
+
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

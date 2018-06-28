@@ -40,7 +40,7 @@ Another method is to "roll over" to negative numbers when the bit count gets too
 | -------------- | ------------- |
 | 126 | `01111110` |
 | 127 | `01111111` |
-| -128 | `10000000` | 
+| -128 | `10000000` |
 | -127 | `10000001` |
 
 Ultimately, integer numbers are not that difficult to deal with in binary, so let's move onto something more complicated: *floating-point numbers!*
@@ -60,12 +60,12 @@ The idea is similar to before: Each digit represents a power of 2; however, this
 So for 9.125, we have 1 $$2^3 = 8$$, 1 $$2^0 = 1$$, and 1 $$2^{-3} = \frac{1}{8}$$.
 
 Now, how is this actually implemented on your computer?
-Well, one way is with the IEE 754 Floating-point Arithmetic Standard. 
+Well, one way is with the IEEE 754 Floating-point Arithmetic Standard.
 For 32 bits, the first bit is the *sign bit*, the next 8 bits tell us about the number's exponent, and the next 23 are called the *mantissa* and hold the binary string, itself. Now, there are a few points to keep in mind:
 
-1. Because the exponent is being represented in 8 bits, we only have 256 values to play with. This means that the largest exponent we can represent (in single precision) is 128 and the smallest is -127. For this reason, we will add 127 to the power of every floating-point number. So, $$1 = 1 \times 10^{127}$$.
+1. Because the exponent is being represented in 8 bits, we only have 256 values to play with. This means that the largest exponent we can represent (in single precision) is 128 and the smallest is -127. For this reason, we will add 127 to the power of every floating-point number. So, $$1 = 1 \times 2^{0}$$. The exponent stored is $$0+127 = 127$$.
 
-2. We normalize every bitstring to the first 1 available. For example: $$9.125 = 1.001001 \times 10^{130}$$, $$8.25 = 1.00001 \times 10^{130}$$, $$0.5 = 1 \times 10^{126}$$ $$\ldots$$ This means that *there will always be a leading 1 in our bitstring*. This means that the first 1 is redundant and can be removed from the mantissa.
+2. We normalize every bitstring to the first 1 available. For example: $$9.125 = 1.001001 \times 2^{3}$$ and the biased exponent is $$3+127=130$$, $$8.25 = 1.00001 \times 2^{130}$$, $$0.5 = 1 \times 2^{126}$$ $$\ldots$$ This means that *there will always be a leading 1 in our bitstring*. This means that the first 1 is redundant and can be removed from the mantissa.
 
 So here are a few floating-point numbers and their corresponding bitstrings:
 
@@ -73,12 +73,12 @@ So here are a few floating-point numbers and their corresponding bitstrings:
 | ----- | ---- | -------- | -------- |
 | 9.125 | `0` | `10000010` | `00100100000000000000000`|
 | - 5.25 | `1` | `10000001` | `01010000000000000000000`|
-| - 4096.625 | `1` | `10001011` | `00000000000010100000000` | 
+| - 4096.625 | `1` | `10001011` | `00000000000010100000000` |
 
 Now that we know how to represent integers and floating-point numbers, let's move on to operations, starting with *bitshift operators*
 
 #### Bitshift Operators: <<,>>
-Bitshift operators do what their name implies: they shift a string of bits one digit to the left (<<) or right (>>). 
+Bitshift operators do what their name implies: they shift a string of bits one digit to the left (<<) or right (>>).
 This has the somewhat profound effect of multiplying or dividing the value by 2, which makes sense when you consider that each digit represents a power of 2.
 Because of the somewhat complicated nature of floating-point numbers, bitshift operators usually only work on integer numbers, like so:
 
@@ -92,7 +92,7 @@ There are more complicated things that can be done with the bitshift operators; 
 
 #### Logic gates
 In addition to the bitshift operations, there are a number of logical operations that can be performed on one or two bits together.
-These operations are called *gates*, and follow soemwhat straightforward logic. 
+These operations are called *gates*, and follow soemwhat straightforward logic.
 The *AND* gate, for example, reads in 2 bits and will only output a 1 value if both inputs are 1. This can be seen in the corresponding truth table:
 ![AND Truth Table](and.jpg)
 
@@ -119,11 +119,11 @@ And NOT and OR create *NOR*:
 There are a few other gates, but this is enough for most things. We'll add more as the need arises!
 
 That's about it for bitlogic. I realize it was a bit long, but this is absolutely essential to understanding how computers think and how to use programming as an effective tool!
- 
+
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

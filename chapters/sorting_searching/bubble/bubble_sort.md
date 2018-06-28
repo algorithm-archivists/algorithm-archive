@@ -20,10 +20,14 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bubblesort.cpp)
+{% sample lang="rs" %}
+[import:6-19, lang:"rust"](code/rust/bubble_sort.rs)
+{% sample lang="d" %}
+[import:3-18, lang:"d"](code/d/bubble_sort.d)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
-Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so We'll come back to this in the future and talk about how to optimize it.
+Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so we'll come back to this in the future and talk about how to optimize it.
 For now, it's fine to just bask in the simplicity that is bubble sort.
 Trust me, there are plenty of more complicated algorithms that do precisely the same thing, only much, much better (for most cases).
 

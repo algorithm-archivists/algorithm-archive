@@ -1,4 +1,4 @@
-﻿// submitted by Julian Schacher (jspp)
+// submitted by Julian Schacher (jspp)
 using System;
 
 namespace TreeTraversalMdAdditional

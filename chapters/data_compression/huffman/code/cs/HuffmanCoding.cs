@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace HuffmanCoding
 {
-    public class EncodingResult 
+    public class EncodingResult
     {
         public string BitString { get; set; }
         public Dictionary<char, string> Dictionary { get; set; }
@@ -31,7 +31,7 @@ namespace HuffmanCoding
             public string Key { get; set; }
 
             public bool IsLeaf => LeftChild == null && RightChild == null;
-            
+
             // Creates a leaf. So just a node is created with the given values.
             public static Node CreateLeaf(char key, int weight) => new Node(key.ToString(), weight, null, null);
             // Creates a branch. Here a node is created by adding the keys and weights of both childs together.
@@ -100,7 +100,7 @@ namespace HuffmanCoding
                     currentNode = currentNode.RightChild;
 
                 if (currentNode.IsLeaf)
-                {                    
+                {
                     output += currentNode.Key;
                     currentNode = result.Tree;
                 }
@@ -135,7 +135,7 @@ namespace HuffmanCoding
 
         private Dictionary<char, string> CreateDictionary(Node root)
         {
-            // We're using a string instead of a actual bits here, since it makes the code somewhat more readable and this is an educational example. 
+            // We're using a string instead of a actual bits here, since it makes the code somewhat more readable and this is an educational example.
             var dictionary = new Dictionary<char, string>();
             CreateDictionary(root, "", dictionary);
             return dictionary;

@@ -12,7 +12,7 @@ function graham_scan(points::Vector{Point})
 
     # Place the lowest point at the start of the array
     sort!(points, by = item -> item.y)
-    
+
     # Sort all other points according to angle with that point
     other_points = sort(points[2:end], by = item -> atan2(item.y - points[1].y,
                                                           item.x - points[1].x))

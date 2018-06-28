@@ -1,4 +1,4 @@
-﻿// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
+// submitted by Julian Schacher (jspp) with great help by gustorn and Marius Becker
 using System;
 using System.Collections.Generic;
 
@@ -28,7 +28,7 @@ namespace StableMarriageProblem
             };
 
             var random = new Random();
-            
+
             foreach (var man in men)
             {
                 man.Choices = new List<Woman>(women).Shuffle(random);
@@ -45,9 +45,9 @@ namespace StableMarriageProblem
                     Console.Write(choice.Name);
                 Console.WriteLine();
             }
-            
+
             GaleShapleyAlgorithm<Woman, Man>.RunGaleShapleyAlgorithm(women, men);
-            
+
             foreach (var woman in women)
             {
                 Console.WriteLine(woman.Name + " : " + woman?.Partner.Name);
@@ -59,7 +59,7 @@ namespace StableMarriageProblem
     {
         public Man(string name) : base(name) { }
     }
-    
+
     public class Woman : Person<Woman, Man>
     {
         public Woman(string name) : base(name) { }

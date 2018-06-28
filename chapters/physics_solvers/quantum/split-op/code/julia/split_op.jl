@@ -17,7 +17,7 @@ struct Param
                    pi / 10.0,
                   Vector{Float64}(vcat(0:512/2 - 1, -512/2 : -1) * pi/10.0))
     Param(xmax::Float64, res::Int64, dt::Float64, timesteps::Int64) = new(
-              xmax, res, dt, timesteps, 
+              xmax, res, dt, timesteps,
               2*xmax/res, Vector{Float64}(-xmax+xmax/res:2*xmax/res:xmax),
               pi/xmax, Vector{Float64}(vcat(0:res/2-1, -res/2:-1)*pi/xmax)
           )

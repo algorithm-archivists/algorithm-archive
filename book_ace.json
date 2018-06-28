@@ -18,14 +18,14 @@
 				},
 				{
 					"lang": "cs",
-					"name": "C#"	
+					"name": "C#"
 				},
 				{
 					"lang": "c",
-					"name": "C"	
+					"name": "C"
 				}
 			],
-			"split": true 
+			"split": true
 		},
 		"include-codeblock": {
 			"template": "ace",

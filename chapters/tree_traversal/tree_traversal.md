@@ -39,7 +39,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="c" %}
 [import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:15-23, lang:"javascript"](code/javascript/Tree_example.js)
+[import:12-15, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 [import:8-16, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
@@ -76,8 +76,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="c" %}
 [import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+[import:17-20, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
@@ -111,8 +110,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="c" %}
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
+[import:22-34, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -155,7 +153,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
+[import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 [import:25-36, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
@@ -188,7 +186,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
+[import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 [import:38-49, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
@@ -224,7 +222,7 @@ tree_traversal.c
 [import, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 ### JavaScript
-[import, lang:"javascript"](code/javascript/Tree_example.js)
+[import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 ### Python 2
 [import, lang:"python"](code/python2/Tree_example.py)

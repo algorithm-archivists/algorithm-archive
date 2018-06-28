@@ -46,7 +46,7 @@ function back_substitution(A::Array{Float64,2})
     rows = size(A,1)
     cols = size(A,2)
 
-    # Creating the solution Vector 
+    # Creating the solution Vector
     soln = Vector{Float64}(rows)
 
     # initialize the final element
