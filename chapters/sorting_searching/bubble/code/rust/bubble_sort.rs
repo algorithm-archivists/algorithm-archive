@@ -9,7 +9,7 @@ fn bubble_sort(a: &mut [u32]) {
     for _ in 0..n {
         for j in 1..n {
             if a[j - 1] > a[j] {
-                a.swap(j, j - 1); // Swaps values at indicies j - 1 and j 
+                a.swap(j, j - 1);
             }
         }
     }
