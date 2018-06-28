@@ -9,11 +9,10 @@ def monte_carlo(n, radius):
     count = 0
     for i in range(n):
         count += in_circle(random.uniform(0,radius),random.uniform(0,radius),radius)
-    estimated_area = 4*(count/n)*radius**2
-    exact_area = math.pi*radius**2
-    print("percent error: %.10f%%"%(abs(estimated_area-exact_area)/exact_area*100))
-    return estimated_area
+    return 4*(count/n)*radius**2
 
 #estimate pi by integrating the unit circle
-estimated_area = monte_carlo(10**6, 1)
-print("Estimation for pi: %.10f"%estimated_area)
+estimated_pi = monte_carlo(10**6, 1)
+
+print("percent error: {:%}".format(abs(estimated_pi-math.pi)/math.pi))
+print("Estimation for pi: {:f}".format(estimated_pi))
