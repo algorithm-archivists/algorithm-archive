@@ -78,6 +78,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
+{%sample lang="rs" %}
+### Rust
+[import, lang:"rust"](code/rust/monte_carlo.rs)
 {% endmethod %}
 
 
