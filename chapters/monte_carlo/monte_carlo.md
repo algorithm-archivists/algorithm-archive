@@ -41,6 +41,8 @@ each point is tested to see whether it's in the circle or not:
 [import:2-8, lang:"julia"](code/julia/monte_carlo.jl)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
+{% sample lang="py3" %}
+[import:3-5, lang:"python"](code/python3/monte_carlo.py)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -78,6 +80,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
+{% sample lang="py3" %}
+### Python 3
+[import, lang:"python"](code/python3/monte_carlo.py)
 {% endmethod %}
 
 
