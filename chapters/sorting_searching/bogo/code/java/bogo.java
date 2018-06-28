@@ -43,6 +43,6 @@ public class Bogo {
         for (int i = 0; i < test.length; i++) {
             System.out.print(test[i] + " ");
         }
-	System.out.println("\n");
+	System.out.println("");
     }
 }
