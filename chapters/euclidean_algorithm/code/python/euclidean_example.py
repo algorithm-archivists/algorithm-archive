@@ -24,6 +24,8 @@ def euclid_sub(a, b):
 
     return a
 
-print euclid_mod(64 * 67, 64 * 81)
-print euclid_sub(128 * 12, 128 * 77)
+def main():
+    print(euclid_mod(64 * 67, 64 * 81))
+    print(euclid_sub(128 * 12, 128 * 77))
 
+main()
