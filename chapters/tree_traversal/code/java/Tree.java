@@ -82,11 +82,9 @@ public class Tree {
         Queue<Node> queue = new PriorityQueue<Node>();
         queue.add(this.root);
 
-        Node temp;
-
         while (queue.size() != 0) {
             System.out.println(queue.peek().id);
-            temp = queue.poll(); // return null if the queue is empty
+            Node temp = queue.poll(); // return null if the queue is empty
 
             if (temp != null) {
                 for (Node c : temp.children) {
