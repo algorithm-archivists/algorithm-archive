@@ -82,6 +82,10 @@
 				{
 					"lang": "d",
 					"name": "D"
+				},
+				{
+					"lang": "go",
+					"name": "Go"
 				}
 
 			],
