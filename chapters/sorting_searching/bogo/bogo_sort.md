@@ -32,7 +32,7 @@ In code, it looks something like this:
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/bogosort.rs)
 {% endmethod %}
-{% sample lang="rs" %}
+{% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bogoSort.swift)
 {% endmethod %}
 
