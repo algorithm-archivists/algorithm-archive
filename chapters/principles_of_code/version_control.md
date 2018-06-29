@@ -60,14 +60,18 @@ If you just want to get the feel for how git works, I suggest going to [github.c
 Note that you will not be able to contribute to any old directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
 Because of this, you may want to create a repository under your own github username or make your own copy of someone elses code on github by clicking the *fork* button:
 
-![How to fork](fork.png)
+<p align="center">
+    <img src="res/fork.png" />
+</p>
 
 Note that if you have a fork of a particular code repository, you can ask the owner of the original code repository to pull your changes into their version of the code with a *pull request*, but we are getting ahead of ourselves here.
 If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/algorithm-archivists/algorithm-archive) and modify that!
 
 Regardless, as long as there is a repository under your username on github, we can continue by linking that remote github location to your local git directory. First, we need to find the url of the github repository, as shown here:
 
-![How to clone](clone.png)
+<p align="center">
+    <img src="res/clone.png" />
+</p>
 
 Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
 Now, you will probably be interacting with github a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/).
