@@ -2,7 +2,7 @@
 
 Monte Carlo methods were some of the first methods I ever used for research, and when I learned about them, they seemed like some sort of magic.
 Their premise is simple: random numbers can be used to integrate arbitrary shapes embedded into other objects.
-Nowadays, "monte carlo" has become a bit of a catch-all term for methods that use random numbers to produce real results, but it all started as a straightforward method to integrate objects.
+Nowadays, "Monte Carlo" has become a bit of a catch-all term for methods that use random numbers to produce real results, but it all started as a straightforward method to integrate objects.
 No matter how you slice it, the idea seems a bit crazy at first.
 After all, random numbers are random.
 How could they possibly be used to find non-random values?
