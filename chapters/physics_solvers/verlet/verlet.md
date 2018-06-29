@@ -38,8 +38,8 @@ Here is what it looks like in code:
 [import:3-16, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:2-18, lang:"java"](code/java/verlet.java)
-{% sample lang="py2" %}
-[import:28-33, lang:"python"](code/python2/verlet.py)
+{% sample lang="py" %}
+[import:28-33, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
@@ -84,8 +84,8 @@ Here's what it looks like in code:
 [import:18-33, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:21-40, lang:"java"](code/java/verlet.java)
-{% sample lang="py2" %}
-[import:35-42, lang:"python"](code/python2/verlet.py)
+{% sample lang="py" %}
+[import:35-42, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
@@ -141,8 +141,8 @@ Here is the velocity Verlet method in code:
 [import:35-46, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:43-57, lang:"java"](code/java/verlet.java)
-{% sample lang="py2" %}
-[import:44-48, lang:"python"](code/python2/verlet.py)
+{% sample lang="py" %}
+[import:44-48, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
@@ -181,9 +181,9 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="java" %}
 ### Java
 [import, lang:"java"](code/java/verlet.java)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 ### Python
-[import, lang:"python"](code/python2/verlet.py)
+[import, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/verlet.hs)
