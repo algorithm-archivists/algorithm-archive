@@ -5,118 +5,132 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class Tree {
-    // root node of the Tree
     public Node root;
 
-    public Tree(int numberRow, int numberChild) {
-        root = createTree(numberRow, numberChild);
+    public Tree(int rowCount, int childrenCount) {
+        // this.root is the root node of the Tree
+        this.root = new Node(1);
+        this.createAllChildren(this.root, rowCount, childrenCount);
     }
 
 
 
-	 public void DFSRecursive(Node node) {
-	     System.out.println(node.id);
+    public void dfsRecursive() {
+        this.dfsRecursive(this.root);
+    }
 
-	     for (Node n : node.children) {
-	         DFSRecursive(n);
-	     }
-	 }
+    private void dfsRecursive(Node node) {
+        System.out.println(node.id);
 
-	 public void DFSRecursivePostOrder(Node node) {
-	     for (Node n : node.children) {
-	         DFSRecursivePostOrder(n);
-	     }
-
-	     // Here we are doing something ...
-	     System.out.println(node.id);
-	 }
-
-	 // This assumes only 2 children
-	 public void DFSRecursiveInOrderBTree(Node node) {
-	     if(node.children.size() > 2) {
-	         System.out.println("Not a binary tree!");
-	         System.exit(1);
-	     }
-
-	     if(node.children.size() > 0) {
-	         DFSRecursiveInOrderBTree(node.children.get(0));
-	         System.out.println(node.id);
-	         DFSRecursiveInOrderBTree(node.children.get(1));
-	     }
-	     else {
-	         System.out.println(node.id);
-	     }
-	 }
-
-	 public void DFSStack() {
-	     Stack<Node> stack = new Stack<Node>();
-	     stack.push(this.root);
-
-	     Node tmp;
-
-	     while(stack.size() != 0) {
-	         System.out.println(stack.peek().id);
-	         tmp = stack.pop();
-
-	         for (Node c : tmp.children) {
-	             stack.push(c);
-	         }
-	     }
-	 }
-
-	 public void BFSQueue() {
-	     Queue<Node> queue = new PriorityQueue<Node>();
-	     queue.add(this.root);
-
-	     Node temp;
-
-	     while(queue.size() != 0) {
-	         System.out.println(queue.peek().id);
-	         temp = queue.poll(); // return null if the queue is empty
-
-	         if(temp != null) {
-	             for (Node c : temp.children) {
-	                 queue.add(c);
-	             }
-	         }
-	     }
-	 }
+        for (Node n : node.children) {
+            dfsRecursive(n);
+        }
+    }
 
 
 
+    public void dfsRecursivePostOrder() {
+        this.dfsRecursivePostOrder(this.root);
+    }
 
-     public Node createTree(int numberRow, int numberChild) {
-	     Node ret = new Node(numberRow);
+    private void dfsRecursivePostOrder(Node node) {
+        for (Node n : node.children) {
+            dfsRecursivePostOrder(n);
+        }
 
-	     if(numberRow == 0) {
-	         return ret;
-	     }
-
-	     for (int i = 1; i < numberChild; i++) {
-	         Node child = createTree(numberRow - 1, numberChild);
-	         ret.children.add(child);
-	     }
-
-		 return ret;
-	 }
+        // Here we are doing something ...
+        System.out.println(node.id);
+    }
 
 
 
-     private class Node implements Comparable<Node> {
-	     public ArrayList<Node> children;
-	     public int id;
+    public void dfsRecursiveInOrderBinary() {
+        dfsRecursiveInOrderBinary(this.root);
+    }
 
-	     public Node(int id) {
-	         this.children = new ArrayList<Node>();
-	         this.id = id;
-	     }
+    // This assumes only 2 children
+    private void dfsRecursiveInOrderBinary(Node node) {
+        if(node.children.size() > 2) {
+            System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
+            return;
+        }
 
-	     @Override
-	     public int compareTo(Node other) {
-	         // Need to implement Comparable<Node> and override this
-	         // method because of the method BFSQueue() which uses Queues
-	         // and must know how to check if two nodes are the same or not
-	         return Integer.compare(this.id, other.id);
-	     }
-	 }
+        if(node.children.size() > 1) {
+            dfsRecursiveInOrderBinary(node.children.get(0));
+            System.out.println(node.id);
+            dfsRecursiveInOrderBinary(node.children.get(1));
+        }
+        else {
+            System.out.println(node.id);
+        }
+    }
+
+
+
+    public void dfsStack() {
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(this.root);
+
+        Node tmp;
+
+        while(stack.size() != 0) {
+            System.out.println(stack.peek().id);
+            tmp = stack.pop();
+
+            for (Node c : tmp.children) {
+                stack.push(c);
+            }
+        }
+    }
+
+    public void bfsQueue() {
+        Queue<Node> queue = new PriorityQueue<Node>();
+        queue.add(this.root);
+
+        Node temp;
+
+        while(queue.size() != 0) {
+            System.out.println(queue.peek().id);
+            temp = queue.poll(); // return null if the queue is empty
+
+            if(temp != null) {
+                for (Node c : temp.children) {
+                    queue.add(c);
+                }
+            }
+        }
+    }
+
+
+
+
+    private void createAllChildren(Node node, int rowCount, int childrenCount) {
+        if(rowCount <= 1)
+        return;
+
+        for (int i = 0; i < childrenCount; i++) {
+            node.children.add(new Node(node.id * 10 + i + 1));
+            createAllChildren(node.children.get(i), rowCount - 1, childrenCount);
+        }
+    }
+
+
+
+    private class Node implements Comparable<Node> {
+        public ArrayList<Node> children;
+        public int id;
+
+        public Node(int id) {
+            this.children = new ArrayList<Node>();
+            this.id = id;
+        }
+
+        @Override
+        public int compareTo(Node other) {
+            // Need to implement Comparable<Node> and override this
+            // method because of the method BFSQueue() which uses Queues
+            // and must know how to check if two nodes are the same or not
+            return Integer.compare(this.id, other.id);
+        }
+    }
 }
