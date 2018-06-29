@@ -8,7 +8,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="cpp" %}
 [import:15-18, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:11-15, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
+[import:9-15, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
@@ -35,11 +35,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="cpp" %}
 [import:20-27, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:48-57, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
+[import:25-36, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:15-23, lang:"javascript"](code/javascript/Tree_example.js)
+[import:12-15, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 [import:8-16, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
@@ -72,12 +72,11 @@ Now, in this case the first element searched through is still the root of the tr
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cs" %}
-[import:75-84, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
+[import:38-49, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+[import:17-20, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
@@ -107,12 +106,11 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cs" %}
-[import:86-104, lang:"csharp"](code/cs/TreeMdAdditional/TreeMdAdditional.cs)
+[import:51-70, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
+[import:22-34, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -151,11 +149,11 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:29-45, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:36-52, lang:"csharp"](code/cs/Tree/Tree.cs)
+[import:72-86, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
+[import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 [import:25-36, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
@@ -184,11 +182,11 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import:47-61, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:54-70, lang:"csharp"](code/cs/Tree/Tree.cs)
+[import:88-102, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
-[import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
+[import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 [import:38-49, lang:"python"](code/python2/Tree_example.py)
 {% sample lang="py3" %}
@@ -213,9 +211,9 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="cs" %}
 ### C# #
 Tree.cs
-[import, lang:"csharp"](code/cs/Tree/Tree.cs)
+[import, lang:"csharp"](code/cs/Tree.cs)
 Program.cs
-[import, lang:"csharp"](code/cs/Tree/Program.cs)
+[import, lang:"csharp"](code/cs/Program.cs)
 {% sample lang="c" %}
 ### C
 utility.h
@@ -224,7 +222,7 @@ tree_traversal.c
 [import, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 ### JavaScript
-[import, lang:"javascript"](code/javascript/Tree_example.js)
+[import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
 ### Python 2
 [import, lang:"python"](code/python2/Tree_example.py)
