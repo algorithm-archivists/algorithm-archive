@@ -171,7 +171,7 @@ All this said, there are a few details about DFS that might not be idea, dependi
     <img src="res/BFS_simple.png" width="500" height="500" />
 </p>
 
-And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
+And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, except that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
 
 {% method %}
 {% sample lang="jl" %}
