@@ -29,6 +29,8 @@ In code, it looks something like this:
 [import:4-12, lang:"python"](code/python/bogo.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/bogosort.m)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
