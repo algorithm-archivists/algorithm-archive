@@ -1,14 +1,13 @@
+# submitted by KerimovEmil
 def euclid_mod(a, b):
     a = abs(a)
     b = abs(b)
-    temp = 0
 
     while b > 0:
-        temp = b
-        b = a % b
-        a = temp
+        a, b = b, a % b
 
     return a
+
 
 def euclid_sub(a, b):
     a = abs(a)
@@ -22,6 +21,6 @@ def euclid_sub(a, b):
 
     return a
 
-print euclid_mod(64 * 67, 64 * 81)
-print euclid_sub(128 * 12, 128 * 77)
 
+print(euclid_mod(64 * 67, 64 * 81))
+print(euclid_sub(128 * 12, 128 * 77))
