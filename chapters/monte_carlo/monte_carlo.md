@@ -46,9 +46,9 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="rs" %}
 [import:7-9, lang:"rust"](code/rust/monte_carlo.rs)
 {% sample lang="d" %}
-[import:2-5, lang:"d"](code/rust/monte_carlo.d)
+[import:2-5, lang:"d"](code/d/monte_carlo.d)
 {% sample lang="go" %}
-[import:12-14, lang:"go"](code/go/monteCarlo.go)
+[import:12-14, lang:"golang"](code/go/monteCarlo.go)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -97,7 +97,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"d"](code/d/monte_carlo.d)
 ### Go
 {%sample lang="go" %}
-[import, lang:"go"](code/go/monteCarlo.go)
+[import, lang:"golang"](code/go/monteCarlo.go)
 {% endmethod %}
 
 
