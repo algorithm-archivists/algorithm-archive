@@ -95,6 +95,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 ### D
 {%sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
+### Go
 {%sample lang="go" %}
 [import, lang:"go"](code/go/monteCarlo.go)
 {% endmethod %}
