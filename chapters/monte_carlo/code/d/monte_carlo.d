@@ -1,21 +1,21 @@
 ///Returns true if a point (x, y) is in the circle with radius r
-bool inCircle(double x, double y, double r = 1.0)
+bool inCircle(real x, real y)
 {
-    return x ^^ 2 + y ^^ 2 < r ^^ 2;
+    return x ^^ 2 + y ^^ 2 < 1.0;
 }
 
 ///Calculate pi using monte carlo
 real monteCarloPI(ulong n)
 {
     import std.algorithm : count;
-    import std.random : Random, uniform01, unpredictableSeed;
+    import std.random : uniform01;
     import std.range : generate, take;
     import std.typecons : tuple;
 
-    auto rnd = Random(unpredictableSeed);
-    return generate(() => tuple!("x", "y")(rnd.uniform01, rnd.uniform01))
+    auto piCount =  generate(() => tuple!("x", "y")(uniform01, uniform01))
         .take(n)
-        .count!(a => inCircle(a.x, a.y)) / cast(real) n * 4.0;
+        .count!(a => inCircle(a.x, a.y));
+    return piCount * 4.0 / n;
 }
 
 void main()
