@@ -15,6 +15,7 @@ func isSorted(inputArray: [Int]) -> Bool {
 
 
 func shuffle(inputArray: inout [Int]) -> [Int] {
+    
     var shuffledArray = [Int]()
 
     for _ in 0..<inputArray.count {
