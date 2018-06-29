@@ -21,12 +21,20 @@ In code, it looks something like this:
 [import:2-10, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
 [import:4-27, lang:"c_cpp"](code/c/bogo_sort.c)
+{% sample lang="java" %}
+[import:2-17, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
 [import:1-16, lang:"javascript"](code/js/bogo.js)
+{% sample lang="py" %}
+[import:4-12, lang:"python"](code/python/bogo.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/bogosort.m)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/bogosort.rs)
 {% endmethod %}
 
 That's it.
@@ -56,4 +64,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-

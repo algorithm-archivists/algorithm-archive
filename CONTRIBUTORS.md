@@ -5,3 +5,9 @@ Gathros
 Jeremie Gillet (- Jie -)
 Salim Khatib
 Hitesh C
+Maxime Dherbécourt
+Jess 3Jane
+Pen Pal
+Chinmaya Mahesh
+Kjetil Johannessen
+Unlambder

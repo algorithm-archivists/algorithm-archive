@@ -6,7 +6,7 @@ It would naively seem that better hardware means that there are less restriction
 
 That said, there will always be new devices on the market that require minimizing data storage.
 In fact, some of the most revolutionary algorithms and methods in existence today fall in the category of data compression.
-From lossless data compression with [Huffman encoding](huffman/huffman.md) to genetic compression algorithms and machien learning, there is a lot to learn about this field, and we'll go through it piece-by-piece.
+From lossless data compression with [Huffman encoding](huffman/huffman.md) to genetic compression algorithms and machine learning, there is a lot to learn about this field, and we'll go through it piece-by-piece.
 
 All that said, no discussion about data compression is complete without first discussing the information, itself -- specifically how information is represented in computer systems.
 Now, we've discussed this in some depth before with [bitlogic](../principles_of_code/building_blocks/bitlogic.md), but there is much more to the story than what we let on before.
