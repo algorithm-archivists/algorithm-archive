@@ -1,6 +1,3 @@
-from __future__ import print_function
-
-
 def euclid_mod(a, b):
 
     a = abs(a)

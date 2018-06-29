@@ -15,7 +15,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py" %}
-[import:4-8, lang:"python"](code/python/Tree_example.py)
+[import:1-5, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
@@ -39,7 +39,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="js" %}
 [import:12-15, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py2" %}
-[import:10-18, lang:"python"](code/python/Tree_example.py)
+[import:7-15, lang:"python"](code/python/Tree_example.py)
 {% sample lang="py3" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
@@ -153,7 +153,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:27-38, lang:"python"](code/python/Tree_example.py)
+[import:24-35, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
@@ -184,7 +184,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:40-51, lang:"python"](code/python/Tree_example.py)
+[import:37-48, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
