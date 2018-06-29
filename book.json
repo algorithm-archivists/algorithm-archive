@@ -86,8 +86,8 @@
 				{
 					"lang": "swift",
 					"name": "Swift"
-       	},
-      	{
+     			},
+      			{
 					"lang": "racket",
 					"name": "Racket"
 				},
