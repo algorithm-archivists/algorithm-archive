@@ -22,17 +22,9 @@ func bubbleSort(array []int) {
 
 func main() {
 	array := [10]int{1, 45, 756, 4569, 56, 3, 8, 5, -10, -4}
-	fmt.Println("Unsorted array:")
-	for i := 0; i < len(array); i++ {
-		fmt.Print(array[i], " ")
-	}
-	fmt.Println()
+	fmt.Println("Unsorted array:", array)
 
 	bubbleSort(array[:])
 
-	fmt.Println("Sorted array:")
-	for i := 0; i < len(array); i++ {
-		fmt.Print(array[i], " ")
-	}
-	fmt.Println()
+	fmt.Println("Sorted array:", array)
 }
