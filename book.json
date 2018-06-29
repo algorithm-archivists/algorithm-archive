@@ -86,6 +86,10 @@
 				{
 					"lang": "go",
 					"name": "Go"
+				},
+				{
+					"lang": "swift",
+					"name": "Swift"
 				}
 
 			],
