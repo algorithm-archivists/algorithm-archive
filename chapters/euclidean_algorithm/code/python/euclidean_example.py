@@ -2,12 +2,9 @@ def euclid_mod(a, b):
 
     a = abs(a)
     b = abs(b)
-    temp = 0
 
     while b > 0:
-        temp = b
-        b = a % b
-        a = temp
+        a, b = b, a % b
 
     return a
 
