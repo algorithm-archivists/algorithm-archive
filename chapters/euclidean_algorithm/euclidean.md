@@ -25,6 +25,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:9-17, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="java" %}
 [import:9-22, lang="java"](code/java/euclidean_example.java)
+{% sample lang="go" %}
+[import:9-22, lang="go"](code/go/euclidean.go)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
