@@ -47,17 +47,16 @@ public class Tree {
 
     // This assumes only 2 children
     private void dfsRecursiveInOrderBinary(Node node) {
-        if(node.children.size() > 2) {
+        if (node.children.size() > 2) {
             System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
             return;
         }
 
-        if(node.children.size() > 1) {
+        if (node.children.size() > 1) {
             dfsRecursiveInOrderBinary(node.children.get(0));
             System.out.println(node.id);
             dfsRecursiveInOrderBinary(node.children.get(1));
-        }
-        else {
+        } else {
             System.out.println(node.id);
         }
     }
@@ -69,7 +68,7 @@ public class Tree {
 
         Node tmp;
 
-        while(stack.size() != 0) {
+        while (stack.size() != 0) {
             System.out.println(stack.peek().id);
             tmp = stack.pop();
 
@@ -85,11 +84,11 @@ public class Tree {
 
         Node temp;
 
-        while(queue.size() != 0) {
+        while (queue.size() != 0) {
             System.out.println(queue.peek().id);
             temp = queue.poll(); // return null if the queue is empty
 
-            if(temp != null) {
+            if (temp != null) {
                 for (Node c : temp.children) {
                     queue.add(c);
                 }
@@ -99,8 +98,9 @@ public class Tree {
 
 
     private void createAllChildren(Node node, int rowCount, int childrenCount) {
-        if(rowCount <= 1)
-        return;
+        if (rowCount <= 1) {
+           return; 
+        }
 
         for (int i = 0; i < childrenCount; i++) {
             node.children.add(new Node(node.id * 10 + i + 1));
