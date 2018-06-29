@@ -13,7 +13,7 @@ where $$f(x)$$ is some function along real or complex space, $$a$$ is the point 
 From this perspective, the expansion just looks like a bunch of derivatives strung together! Where's the physics? Well, let's expand this series for the first few derivatives:
 
 $$
-f(x) \simeq f(a) + \frac{df(a)}{dx}(x-a) 
+f(x) \simeq f(a) + \frac{df(a)}{dx}(x-a)
     + \frac{1}{2}\frac{d^2f(a)}{dx^2}(x-a)^2
 $$
 
@@ -29,7 +29,7 @@ $$
 The Taylor series expansion turns into one of the most common formulas in classical physics, the *kinematic equation*!
 
 $$
-x(t) \simeq x_0 + v_0t 
+x(t) \simeq x_0 + v_0t
     + \frac{1}{2}at^2
 $$
 
@@ -47,7 +47,7 @@ This shows the true power of the Taylor Series Expansion. It allows us to more e
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

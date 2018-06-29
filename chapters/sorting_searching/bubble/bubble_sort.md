@@ -14,16 +14,30 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
 {% sample lang="c" %}
 [import:3-21, lang:"c_cpp"](code/c/bubble_sort.c)
+{% sample lang="java" %}
+[import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
 [import:1-11, lang:"javascript"](code/js/bubble.js)
+{% sample lang="py" %}
+[import:4-9, lang:"python"](code/python/bubblesort.py)
+{% sample lang="m" %}
+[import:11-23, lang:"matlab"](code/matlab/bubblesort.m)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bubblesort.cpp)
+{% sample lang="rs" %}
+[import:6-19, lang:"rust"](code/rust/bubble_sort.rs)
+{% sample lang="d" %}
+[import:3-18, lang:"d"](code/d/bubble_sort.d)
+{% sample lang="go" %}
+[import:7-21, lang:"golang"](code/go/bubbleSort.go)
+{% sample lang="racket" %}
+[import:5-19, lang:"racket"](code/racket/bubbleSort.rkt)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
-Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so We'll come back to this in the future and talk about how to optimize it.
+Now, as you might imagine, computer scientists have optimized this to the fiery lakes of Michigan and back, so we'll come back to this in the future and talk about how to optimize it.
 For now, it's fine to just bask in the simplicity that is bubble sort.
 Trust me, there are plenty of more complicated algorithms that do precisely the same thing, only much, much better (for most cases).
 
@@ -50,4 +64,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
