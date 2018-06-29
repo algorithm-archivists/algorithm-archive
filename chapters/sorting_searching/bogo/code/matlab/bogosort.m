@@ -3,7 +3,7 @@ function main()
     disp('Before Sorting:')
     disp(array)
 
-    array = bogoe_sort(array);
+    array = bogo_sort(array);
     disp('After Sorting')
     disp(array)
 end
@@ -18,7 +18,7 @@ function retval = is_sorted(array)
     retval = true;
 end
 
-function sorted_array = bogoe_sort(array)
+function sorted_array = bogo_sort(array)
     while ~is_sorted(array)
         % create a list of random permutation indices
         i = randperm(length(array));
