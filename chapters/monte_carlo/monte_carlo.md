@@ -92,11 +92,11 @@ Feel free to submit your version via pull request, and thanks for reading!
 {%sample lang="rs" %}
 ### Rust
 [import, lang:"rust"](code/rust/monte_carlo.rs)
-### D
 {%sample lang="d" %}
+### D
 [import, lang:"d"](code/d/monte_carlo.d)
-### Go
 {%sample lang="go" %}
+### Go
 [import, lang:"golang"](code/go/monteCarlo.go)
 {% endmethod %}
 
