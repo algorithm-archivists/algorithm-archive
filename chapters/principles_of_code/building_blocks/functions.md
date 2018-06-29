@@ -1,11 +1,11 @@
 ### Functions
 
-Functions make sense from a mathematical point of view. 
-$$f(x) = 2x+5$$ returns a value for x at any point you want. 
+Functions make sense from a mathematical point of view.
+$$f(x) = 2x+5$$ returns a value for $$f(x)$$ at any point $$x$$ that you want.
 For example $$f(5) = 15$$, or $$f(10) = 25$$.
-Often times, the function is graphed for *every point* indicating the precise nature of how the function and variable relate to one another, but that is another matter entirely. 
-For the most part, functions in programming work exactly the same way. 
-They are dependent on certain variables and return something at the end. 
+Often times, the function is graphed for *every point* indicating the precise nature of how the function and variable relate to one another, but that is another matter entirely.
+For the most part, functions in programming work exactly the same way.
+They are dependent on certain variables and return something at the end.
 In code, the above function might look like:
 
 ```
@@ -21,9 +21,9 @@ In a sense, functions make understanding code much, much easier.
 
 ### Recursion
 
-Simply put, recursion is the process of putting a function inside itself. 
-Now, I know what you are thinking, "Why does this deserve a special name?" 
-That is a very good question and one that tooke me a while to understand. 
+Simply put, recursion is the process of putting a function inside itself.
+Now, I know what you are thinking, "Why does this deserve a special name?"
+That is a very good question and one that tooke me a while to understand.
 Let's take a simple example:
 
 ```julia
@@ -60,7 +60,7 @@ I guess the main point is this: *recursion is powerful, but with great power com
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$ 
+$$
 \newcommand{\d}{\mathrm{d}}
 \newcommand{\bff}{\boldsymbol{f}}
 \newcommand{\bfg}{\boldsymbol{g}}

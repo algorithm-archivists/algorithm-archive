@@ -1,11 +1,11 @@
-﻿// submitted by Julian Schacher (jspp)
+// submitted by Julian Schacher (jspp)
 using System;
 
 namespace EuclideanAlgorithm
 {
-    public static class EuclideanAlgorithm
+    public class EuclideanAlgorithm
     {
-        public static int EuclidSub(int a, int b)
+        public int EuclidSub(int a, int b)
         {
             // Math.Abs for negative number support
             a = Math.Abs(a);
@@ -22,7 +22,7 @@ namespace EuclideanAlgorithm
             return a;
         }
 
-        public static int EuclidMod(int a, int b)
+        public int EuclidMod(int a, int b)
         {
             // Math.Abs for negative number support
             a = Math.Abs(a);

@@ -9,7 +9,7 @@
   ;; vector of [character frequency] pair
   ;; for every char in string, added it to hash-map
   ;; with value one if it doesn't exist or increment its value
-  (def cf-vec (vec               
+  (def cf-vec (vec
                (reduce (fn [m c]
                          (assoc m c (inc (get m c 0))))
                        {}
@@ -53,7 +53,7 @@
   (cond
     (char? tree) {"" tree}
     :else
-    (let [left-map (hash-tree (first tree)) 
+    (let [left-map (hash-tree (first tree))
           right-map (hash-tree (second tree))
           func #(apply hash-map         ; apply hash-map because
                                         ; interleave return a seq
@@ -80,12 +80,12 @@
                    (if-let  [letter (get hash-decoder new-code)]
                      ;; if there is a letter then add it to :message
                      ;; and revert :code to empty
-                     (assoc (update m :message #(str % letter)) 
+                     (assoc (update m :message #(str % letter))
                             :code "")
                      ;; if there is not a letter then just add the
                      ;; code letter to the :code
                      (update m :code #(str % code)))))
-               {:message "",:code ""} 
+               {:message "",:code ""}
                s)
        :message))           ;extract :message  value
 ;; ----------------EXAMPLE----------------

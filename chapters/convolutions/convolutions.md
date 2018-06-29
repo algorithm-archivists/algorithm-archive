@@ -41,7 +41,7 @@ In code, this looks something like:
 {% sample lang="hs" %}
 [import:1-5, lang:"haskell"](code/haskell/convolution.hs)
 {% sample lang="c"%}
-[import:44-57, lang:"c_cpp"](code/c/convolutions.c)
+[import:5-18, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
 [import:68-88, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
@@ -61,28 +61,28 @@ Now, let me tell you about a bit of black computational magic:
 
 That is crazy!
 It's also incredibly hard to explain, so let me do my best.
-As described in the chapter on [Fourier Transforms](chapters/computational_mathematics/FFT/cooley_tukey.md), Fourier Tranforms allow programmers to move from real space to frequency space.
+As described in the chapter on [Fourier Transforms](chapters/FFT/cooley_tukey.md), Fourier Tranforms allow programmers to move from real space to frequency space.
 When we transform a wave into frequency space, we see a single peak in frequency space related to the frequency of that wave.
 No matter what function we send into a Fourier Transform, the frequency-space image can be interpreted as a seires of different waves with a specified frequency.
 
-So here's the idea: if we take two functions $$f(x)$$ and $$g(x)$$ and move them to frequency space to be $$\hat f(\xi)$$ and $$\hat g(\xi)$$, we can then multiply those two functions and transform them back into a third function to blend teh signals together.
+So here's the idea: if we take two functions $$f(x)$$ and $$g(x)$$ and move them to frequency space to be $$\hat f(\xi)$$ and $$\hat g(\xi)$$, we can then multiply those two functions and transform them back into a third function to blend the signals together.
 In this way, we will have a third function that relates the frequency-space images of the two input functions.
 *This is precisely a convolution!*
 
 Don't believe me?
-Well, this is because of something known as the *convolutional theorem* which looks something like this:
+Well, this is because of something known as the *convolution theorem* which looks something like this:
 
 $$\mathcal{F}(f*g) = \mathcal{F}(f) \cdot \mathcal{F}(g)$$
 
 Where $$\mathcal{F}$$ denotes the Fourier Transform.
 Now, by using a Fast Fourier Transform (fft) in code, this can take a standard convolution on two arrays of length $$n$$, which is an $$\mathcal{O}(n^2)$$ process, to $$\mathcal{O}(n\log(n))$$.
-This means that the convolutional theorem is fundamental to creating fast convolutional methods for large inputs, assuming that both input signals are of the similar sizes.
-That said, it is debatable whether the convolutional theorem will be faster when the filter size is small.
+This means that the convolution theorem is fundamental to creating fast convolutional methods for large inputs, assuming that both of the input signals are similar sizes.
+That said, it is debatable whether the convolution theorem will be faster when the filter size is small.
 Also: depending on the language used, we might need to read in a separate library for FFT's.
 
 {% method %}
 {% sample lang="jl" %}
-That said, Julia has an in-built fft routine, so the code for this method not be simpler:
+That said, Julia has an in-built fft routine, so the code for this method could not be simpler:
 [import:19-22, lang:"julia"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="hs" %}
@@ -90,7 +90,7 @@ The FFT-based convolution in Haskell is complicated, so here is some simple juli
 [import:19-22, lang:"julia"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="c"%}
-[import:59-69, lang:"c_cpp"](code/c/convolutions.c)
+[import:20-30, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
 [import:90-105, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% endmethod %}
@@ -98,10 +98,10 @@ Where the `.*` operator is an element-wise multiplication.
 This method also has the added advantage that it will *always output an array of the size of your signal*; however, if your signals are not of equal size, we need to pad the smaller signal with zeros.
 Also note that the Fourier Transform is a periodic or cyclical operation, so there are no real edges in this method, instead the arrays "wrap around" to the other side.
 For this reason, this convolution is often called a *cyclic convolution* instead of a *linear convolution* like above.
-Note that cyclical convolutions can definitely still be done without Fourier Transforms and we can do linear convolutions with Fourier Transforms, but it makes the code slightly more complicated than described above.
+Note that cyclic convolutions can definitely still be done without Fourier Transforms and we can do linear convolutions with Fourier Transforms, but it makes the code slightly more complicated than described above.
 
 <!---
-If you are still having trouble wrapping your head around what the convolutional theorem actually means, maybe this graphic will help:
+If you are still having trouble wrapping your head around what the convolution theorem actually means, maybe this graphic will help:
 
 ADD IMAGE
 

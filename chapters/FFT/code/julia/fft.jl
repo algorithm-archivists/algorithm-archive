@@ -5,7 +5,7 @@ function DFT(x)
     # We want two vectors here for real space (n) and frequency space (k)
     n = 0:N-1
     k = n'
-    transform_matrix = exp.(-2im * pi *n *k / N)
+    transform_matrix = exp.(-2im*pi*n*k/N)
     return transform_matrix*x
 
 end
@@ -22,11 +22,10 @@ function cooley_tukey(x)
         x_even = x[2]
     end
     n = 0:N-1
-    #n = n'
     half = div(N,2)
     factor = exp.(-2im*pi*n/N)
     return vcat(x_odd + x_even .* factor[1:half],
-                x_odd - x_even .* factor[1:half]) 
+                x_odd - x_even .* factor[1:half])
 
 end
 
@@ -85,7 +84,7 @@ function iterative_cooley_tukey(x)
            for k = 1:length(y)
                z[start_index+k-1] = y[k]
            end
-       end 
+       end
        bnum = div(bnum,2)
     end
 

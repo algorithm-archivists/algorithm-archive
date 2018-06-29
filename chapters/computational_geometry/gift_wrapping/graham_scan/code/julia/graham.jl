@@ -3,30 +3,6 @@ type Point
     y::Float64
 end
 
-function dist(point1::Point, point2::Point)
-    return sqrt((point1.x - point2.x)^2 + (point1.y - point2.y)^2)
-end
-
-function graham_angle(point1::Point, point2::Point, point3::Point)
-    # Find distances between all points
-    a = dist(point3, point2)
-    b = dist(point3, point1)
-    c = dist(point1, point2)
-
-    ret_angle = acos((b*b - a*a - c*c)/(2*a*c))
-
-    if(sign(point1.x - point2.x) != sign(point1.x - point3.x))
-        ret_angle += 0.5*pi
-    end
-
-    if (isnan(ret_angle))
-        exit(1)
-    end
-
-    return ret_angle
-
-end
-
 function ccw(a::Point, b::Point, c::Point)
     return ((b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x - a.x))
 end
@@ -36,9 +12,10 @@ function graham_scan(points::Vector{Point})
 
     # Place the lowest point at the start of the array
     sort!(points, by = item -> item.y)
-    
+
     # Sort all other points according to angle with that point
-    other_points = sort(points[2:end], by = item -> graham_angle(Point(points[1].x - 1,points[1].y), points[1], item))
+    other_points = sort(points[2:end], by = item -> atan2(item.y - points[1].y,
+                                                          item.x - points[1].x))
 
     # Place points sorted by angle back into points vector
     for i in 1:length(other_points)
@@ -69,6 +46,7 @@ function graham_scan(points::Vector{Point})
 end
 
 function main()
+    # This hull is just a simple test so we know what the output should be
     points = [Point(2,1.9), Point(1, 1), Point(2, 4), Point(3, 1), Point(2, 0)]
     hull = graham_scan(points)
     println(hull)

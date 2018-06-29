@@ -1,6 +1,6 @@
 ### Classes and Structs
 
-A while ago, one of my friends asked me the purpose of classes in programming. 
+A while ago, one of my friends asked me the purpose of classes in programming.
 No matter what I did or how I tried to reason with him, I could not convince him that classes were useful and necessary programming constructs.
 To put it simply, classes are data types that allow programmers to store multiple data types within them.
 That said, depending on the language, classes might look slightly different.
@@ -21,6 +21,6 @@ The truth is that there is a philosophical difference between how languages impl
 *Object-Oriented* languages argue that certain data types (like Human, above), should be able to *do* things, so it makes sense to put functions within classes.
 There is merit to both of these arguments, so it's best to go with whatever you feel comfortable with.
 
-In the case of object-oriented languages, classes have an additional layer of complexity associated with them that should definitely be discussed. 
-That said, I would like to forgo that discussion at this time and come back to it in the near future. 
+In the case of object-oriented languages, classes have an additional layer of complexity associated with them that should definitely be discussed.
+That said, I would like to forgo that discussion at this time and come back to it in the near future.
 Please bug me if you think I might have forgotten!

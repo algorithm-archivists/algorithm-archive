@@ -25,7 +25,7 @@
 				},
 				{
 					"lang": "cs",
-					"name": "C#"	
+					"name": "C#"
 				},
 				{
 					"lang": "cpp",
@@ -78,8 +78,12 @@
 				{
 					"lang": "LabVIEW",
 					"name": "LabVIEW"
+				},
+				{
+					"lang": "d",
+					"name": "D"
 				}
-                                
+
 			],
 			"split": false
         }
