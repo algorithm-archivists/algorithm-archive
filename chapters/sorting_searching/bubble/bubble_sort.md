@@ -14,14 +14,18 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
 {% sample lang="c" %}
 [import:3-21, lang:"c_cpp"](code/c/bubble_sort.c)
+{% sample lang="java" %}
+[import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
 [import:1-11, lang:"javascript"](code/js/bubble.js)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bubblesort.cpp)
+{% sample lang="rs" %}
+[import:6-19, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
-[import, lang:"d"](code/d/bubble_sort.d)
+[import:3-18, lang:"d"](code/d/bubble_sort.d)
 {% sample lang="go" %}
 [import:7-21, lang:"go"](code/go/bubbleSort.go)
 {% endmethod %}
@@ -54,4 +58,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
