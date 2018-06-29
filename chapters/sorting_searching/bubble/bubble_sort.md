@@ -26,6 +26,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:6-19, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
 [import:3-18, lang:"d"](code/d/bubble_sort.d)
+{% sample lang="go" %}
+[import:7-21, lang:"go"](code/go/bubbleSort.go)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
