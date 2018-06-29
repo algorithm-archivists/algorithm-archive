@@ -82,6 +82,10 @@
 				{
 					"lang": "go",
 					"name": "Go"
+				},
+				{
+					"lang": "racket",
+					"name": "Racket"
 				}
 				{
 					"lang": "m",
