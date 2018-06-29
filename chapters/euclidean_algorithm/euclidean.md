@@ -87,7 +87,7 @@ Program.cs
 {% sample lang="js" %}
 ### JavaScript
 [import, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 ### Python
 [import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}

@@ -38,11 +38,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:12-15, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 [import:7-15, lang:"python"](code/python/Tree_example.py)
-{% sample lang="py3" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
@@ -75,10 +72,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:17-20, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
-{% sample lang="py3" %}
+{% sample lang="py" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
@@ -109,10 +103,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="js" %}
 [import:22-34, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
-{% sample lang="py3" %}
+{% sample lang="py" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
