@@ -12,7 +12,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:112-128, lang:"java"](code/java/Tree.java)
+[import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
@@ -117,7 +117,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="c" %}
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:48-63, lang:"java"](code/java/Tree.java)
+[import:48-62, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -163,7 +163,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:66-80, lang:"java"](code/java/Tree.java)
+[import:65-79, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:25-40, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
@@ -198,7 +198,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:82-98, lang:"java"](code/java/Tree.java)
+[import:81-95, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:42-57, lang:"javascript"](code/javascript/Tree_example.js)
 {% sample lang="py2" %}
