@@ -14,7 +14,6 @@ public class Tree {
     }
 
 
-
     public void dfsRecursive() {
         this.dfsRecursive(this.root);
     }
@@ -26,7 +25,6 @@ public class Tree {
             dfsRecursive(n);
         }
     }
-
 
 
     public void dfsRecursivePostOrder() {
@@ -41,7 +39,6 @@ public class Tree {
         // Here we are doing something ...
         System.out.println(node.id);
     }
-
 
 
     public void dfsRecursiveInOrderBinary() {
@@ -64,7 +61,6 @@ public class Tree {
             System.out.println(node.id);
         }
     }
-
 
 
     public void dfsStack() {
@@ -102,8 +98,6 @@ public class Tree {
     }
 
 
-
-
     private void createAllChildren(Node node, int rowCount, int childrenCount) {
         if(rowCount <= 1)
         return;
@@ -113,7 +107,6 @@ public class Tree {
             createAllChildren(node.children.get(i), rowCount - 1, childrenCount);
         }
     }
-
 
 
     private class Node implements Comparable<Node> {
