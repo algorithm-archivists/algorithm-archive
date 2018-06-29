@@ -10,11 +10,7 @@ import (
 )
 
 func inCircle(x, y float64) bool {
-	if x*x+y*y < 1.0 { // the radius of an unit circle is 1.0
-		return true
-	} else {
-		return false
-	}
+	return x*x+y*y < 1.0 // the radius of an unit circle is 1.0
 }
 
 func monteCarlo(samples int) {
@@ -29,9 +25,8 @@ func monteCarlo(samples int) {
 			count += 1
 		}
 	}
-
-	var estimate float64
-	estimate = 4.0 * float64(count) / float64(samples)
+	
+	estimate := 4.0 * float64(count) / float64(samples)
 
 	fmt.Println("The estimate of pi is", estimate)
 	fmt.Printf("Which has an error of %f%%\n", 100*math.Abs(math.Pi-estimate)/math.Pi)
