@@ -77,7 +77,7 @@ For some reason, though, putting code to this transformation really helped me fi
 [import:2-11, lang:"julia"](code/julia/fft.jl)
 {% sample lang="hs" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
 {% sample lang="scratch" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
@@ -122,8 +122,8 @@ In the end, the code looks like:
 [import:27-57, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, lang:"haskell"](code/hs/fft.hs)
-{% sample lang="py2" %}
-[import:5-16, lang:"python"](code/python2/fft.py)
+{% sample lang="py" %}
+[import:5-16, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:14-31, lang:"julia"](code/julia/fft.jl)
 {% endmethod %}
@@ -230,9 +230,9 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/hs/fft.hs)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 ### Python
-[import, lang:"python"](code/python2/fft.py)
+[import, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 ### Scratch
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor

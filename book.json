@@ -36,12 +36,8 @@
 					"name": "C"
 				},
 				{
-					"lang": "py2",
-					"name": "Python 2"
-				},
-				{
-					"lang": "py3",
-					"name": "Python 3"
+					"lang": "py",
+					"name": "Python"
 				},
 				{
 					"lang": "js",
@@ -78,6 +74,26 @@
 				{
 					"lang": "LabVIEW",
 					"name": "LabVIEW"
+				},
+				{
+					"lang": "d",
+					"name": "D"
+				},
+				{
+					"lang": "go",
+					"name": "Go"
+				},
+				{
+					"lang": "swift",
+					"name": "Swift"
+				},
+				{
+					"lang": "racket",
+					"name": "Racket"
+				},
+				{
+					"lang": "m",
+					"name": "Matlab"
 				}
 
 			],
