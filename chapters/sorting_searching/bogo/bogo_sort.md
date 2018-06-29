@@ -35,7 +35,6 @@ In code, it looks something like this:
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/bogosort.rs)
-{% endmethod %}
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bogosort.swift)
 {% endmethod %}
