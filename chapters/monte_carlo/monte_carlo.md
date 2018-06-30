@@ -41,6 +41,8 @@ each point is tested to see whether it's in the circle or not:
 [import:2-7, lang:"julia"](code/julia/monte_carlo.jl)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="js" %}
+[import:2-6, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% sample lang="rs" %}
@@ -86,6 +88,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="js" %}
+### Javascript
+[import, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
