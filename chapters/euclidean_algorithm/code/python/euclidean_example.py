@@ -1,5 +1,5 @@
+# submitted by KerimovEmil
 def euclid_mod(a, b):
-
     a = abs(a)
     b = abs(b)
 
@@ -8,8 +8,8 @@ def euclid_mod(a, b):
 
     return a
 
-def euclid_sub(a, b):
 
+def euclid_sub(a, b):
     a = abs(a)
     b = abs(b)
 
