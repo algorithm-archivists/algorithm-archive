@@ -34,6 +34,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:7-21, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
 [import:5-19, lang:"racket"](code/racket/bubbleSort.rkt)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/bogosort.swift)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
