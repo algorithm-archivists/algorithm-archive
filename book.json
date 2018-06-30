@@ -84,9 +84,13 @@
 					"name": "Go"
 				},
 				{
+					"lang": "swift",
+					"name": "Swift"
+				},
+				{
 					"lang": "racket",
 					"name": "Racket"
-				}
+				},
 				{
 					"lang": "m",
 					"name": "Matlab"
