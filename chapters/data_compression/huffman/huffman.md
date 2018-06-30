@@ -81,6 +81,9 @@ Program.cs
 {% sample lang="py" %}
 ### Python
 [import, lang:"python"](code/python/huffman.py)
+{% sample lang="js" %}
+### JavaScript
+[import, lang:"javascript"](code/javascript/huffman.js)
 {% endmethod %}
 
 

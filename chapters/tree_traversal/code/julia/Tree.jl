@@ -25,20 +25,20 @@ function DFS_recursive_postorder(n::Node)
     println(n.ID)
 end
 
-# This assumes only 2 children
+# This assumes only 2 children, but accounts for other possibilities
 function DFS_recursive_inorder_btree(n::Node)
 
-    if (length(n.children) > 2)
-        println("Not a binary tree!")
-        exit(1)
-    end
-
-    if (length(n.children) > 0)
-        DFS_recursive_inorder_btree(n.children[0])
-        println(n.ID)
+    if (length(n.children) == 2)
         DFS_recursive_inorder_btree(n.children[1])
-    else
         println(n.ID)
+        DFS_recursive_inorder_btree(n.children[2])
+    elseif (length(n.children) == 1)
+        DFS_recursive_inorder_btree(n.children[1])
+        println(n.ID)
+    elseif (length(n.children) == 0)
+        println(n.ID)
+    else
+        println("Not a binary tree!")
     end
 end
 
@@ -96,6 +96,11 @@ function main()
 
     println("Using queue-based BFS:")
     BFS_queue(root);
+
+    println("Creating binary tree to test in-order traversal.")
+    root_binary = create_tree(3,2)
+    println("Using In-order DFS:")
+    DFS_recursive_inorder_btree(root_binary)    
 end
 
 main()

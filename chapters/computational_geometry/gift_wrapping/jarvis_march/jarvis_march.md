@@ -38,6 +38,9 @@ Program.cs
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/jarvis_march.c)
+{% sample lang="js" %}
+### JavaScript
+[import, lang:"javascript"](code/javascript/jarvis-march.js)
 {% endmethod %}
 
 <script>
