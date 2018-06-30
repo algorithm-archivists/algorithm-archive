@@ -7,8 +7,7 @@ public class EuclideanAlgo {
         while (a != b) {
             if (a > b) {
                 a -= b;
-            }
-            else {
+            } else {
                 b -= a;
             }
         }
