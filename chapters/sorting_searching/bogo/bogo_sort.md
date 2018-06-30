@@ -8,7 +8,7 @@ imagine you have an array of $$n$$ elements that you want sorted.
 One way to do it is to shuffle the array at random and hope that all the elements will be magically in order after shuffling.
 If they are not in order, just shuffle everything again.
 And then again. And again.
-In the best case, this algorithm runs with a complexity of $$\Omega(1)$$, and in the worst, $$\mathcal{O}(\infty)$$.
+In the best case, this algorithm runs with a complexity of $$\Omega(n)$$, and in the worst, $$\mathcal{O}(\infty)$$.
 
 In code, it looks something like this:
 
