@@ -39,10 +39,18 @@ each point is tested to see whether it's in the circle or not:
 {% method %}
 {% sample lang="jl" %}
 [import:2-8, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="c" %}
+[import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
 [import:2-8, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
+{% sample lang="rs" %}
+[import:7-9, lang:"rust"](code/rust/monte_carlo.rs)
+{% sample lang="d" %}
+[import:2-5, lang:"d"](code/d/monte_carlo.d)
+{% sample lang="go" %}
+[import:12-14, lang:"golang"](code/go/monteCarlo.go)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -77,12 +85,24 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="c" %}
+### C
+[import, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
 ### Javascript
 [import, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
+{%sample lang="rs" %}
+### Rust
+[import, lang:"rust"](code/rust/monte_carlo.rs)
+{%sample lang="d" %}
+### D
+[import, lang:"d"](code/d/monte_carlo.d)
+{%sample lang="go" %}
+### Go
+[import, lang:"golang"](code/go/monteCarlo.go)
 {% endmethod %}
 
 

@@ -1,10 +1,6 @@
 // submitted by xam4lor
 function inCircle(xPos, yPos, radius) {
-    if(xPos * xPos + yPos * yPos < radius * radius) {
-        return true;
-    } else {
-        return false;
-    }
+    return xPos * xPos + yPos * yPos < radius * radius;
 }
 
 function monteCarlo(n, radius) {
