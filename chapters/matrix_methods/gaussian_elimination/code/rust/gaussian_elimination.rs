@@ -10,9 +10,7 @@ pub struct Matrix {
 
 impl Matrix {
     fn new(rows: usize, cols: usize) -> Matrix {
-        let mut data = Vec::with_capacity(rows*cols);
-        for _ in 0..rows*cols { data.push(0.0); }
-        Matrix { rows, cols, data }
+        Matrix { rows, cols, data: vec![0.0; rows * cols] }
     }
 
     fn get(&self, row: usize, col: usize) -> f64 {
@@ -33,9 +31,9 @@ impl Matrix {
 fn gaussian_elimination(a: &mut Matrix) {
     for k in 0..min(a.cols, a.rows) {
         // Step 1: find the maximum element for this kumn
-        let mut max_row = 0;
-        let mut max_value = 0.0;
-        for row in k..a.rows {
+        let mut max_row = k;
+        let mut max_value = a.get(k, k).abs();
+        for row in (k+1)..a.rows {
             if max_value < a.get(row, k).abs() {
                 max_value = a.get(row, k).abs();
                 max_row = row;
@@ -70,8 +68,7 @@ fn gaussian_elimination(a: &mut Matrix) {
 }
 
 fn back_substitution(a: &Matrix) -> Vec<f64> {
-    let mut soln = Vec::with_capacity(a.rows);
-    for _ in 0..a.rows { soln.push(0.0); }
+    let mut soln = vec![0.0; a.rows];
     
     soln[a.rows - 1] = a.get(a.rows - 1, a.cols - 1) / a.get(a.rows - 1, a.cols - 2);
 
