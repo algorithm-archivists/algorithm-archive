@@ -1,6 +1,7 @@
 // submitted by jess 3jane
 
 use std::cmp::min;
+use std::ops::{IndexMut, Index};
 
 pub struct Matrix {
     rows: usize,
@@ -10,17 +11,7 @@ pub struct Matrix {
 
 impl Matrix {
     fn new(rows: usize, cols: usize) -> Matrix {
-        let mut data = Vec::with_capacity(rows*cols);
-        for _ in 0..rows*cols { data.push(0.0); }
-        Matrix { rows, cols, data }
-    }
-
-    fn get(&self, row: usize, col: usize) -> f64 {
-        self.data[row * self.cols + col]
-    }
-
-    fn set(&mut self, row: usize, col: usize, value: f64) {
-        self.data[row * self.cols + col] = value;
+        Matrix { rows, cols, data: vec![0.0; rows * cols] }
     }
 
     fn swap_rows(&mut self, a: usize, b: usize) {
@@ -30,20 +21,35 @@ impl Matrix {
     }
 }
 
+impl Index<(usize, usize)> for Matrix {
+    type Output = f64;
+    fn index<'a>(&'a self, index: (usize, usize)) -> &'a f64 {
+        let (row, col) = index;
+        &self.data[row * self.cols + col]
+    }
+}
+
+impl IndexMut<(usize, usize)> for Matrix {
+    fn index_mut<'a>(&'a mut self, index: (usize, usize)) -> &'a mut f64 {
+        let (row, col) = index;
+        &mut self.data[row * self.cols + col]
+    }
+}
+
 fn gaussian_elimination(a: &mut Matrix) {
     for k in 0..min(a.cols, a.rows) {
         // Step 1: find the maximum element for this kumn
-        let mut max_row = 0;
-        let mut max_value = 0.0;
-        for row in k..a.rows {
-            if max_value < a.get(row, k).abs() {
-                max_value = a.get(row, k).abs();
+        let mut max_row = k;
+        let mut max_value = a[(k, k)].abs();
+        for row in (k+1)..a.rows {
+            if max_value < a[(row, k)].abs() {
+                max_value = a[(row, k)].abs();
                 max_row = row;
             }
         }
 
         // Check to make sure the matrix is good
-        if a.get(max_row, k) == 0.0 {
+        if a[(max_row, k)] == 0.0 {
             println!("Matrix is singular, aborting");
             return;
         }
@@ -54,33 +60,31 @@ fn gaussian_elimination(a: &mut Matrix) {
         // Loop over all remaining rows
         for i in k+1..a.rows {
             // Step 3: find the fraction
-            let fraction = a.get(i, k)/a.get(k, k);
+            let fraction = a[(i, k)]/a[(k, k)];
 
             // Loop through all columns for that row
             for j in (k+1)..a.cols {
                 // Step 4: re-evaluate each element
-                let val = a.get(i, j) - a.get(k, j)*fraction;
-                a.set(i, j, val);
+                a[(i, j)] -= a[(k, j)]*fraction;
             }
 
             // Step 5: set lower elements to 0 
-            a.set(i, k, 0.0);
+            a[(i, k)] = 0.0;
         }
     }
 }
 
 fn back_substitution(a: &Matrix) -> Vec<f64> {
-    let mut soln = Vec::with_capacity(a.rows);
-    for _ in 0..a.rows { soln.push(0.0); }
+    let mut soln = vec![0.0; a.rows];
     
-    soln[a.rows - 1] = a.get(a.rows - 1, a.cols - 1) / a.get(a.rows - 1, a.cols - 2);
+    soln[a.rows - 1] = a[(a.rows - 1, a.cols - 1)] / a[(a.rows - 1, a.cols - 2)];
 
     for i in (0..a.rows - 1).rev() {
         let mut sum = 0.0;
         for j in (i..a.rows).rev() {
-            sum += soln[j] * a.get(i, j);
+            sum += soln[j] * a[(i, j)];
         }
-        soln[i] = (a.get(i, a.cols - 1) - sum) / a.get(i,i);
+        soln[i] = (a[(i, a.cols - 1)] - sum) / a[(i, i)];
     }
 
     soln
