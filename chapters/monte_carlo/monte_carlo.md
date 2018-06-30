@@ -50,7 +50,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="go" %}
 [import:12-14, lang:"golang"](code/go/monteCarlo.go)
 {% sample lang="java" %}
-[import:11-12, lang:"java"](code/java/MonteCarlo.java)
+[import:11-13, lang:"java"](code/java/MonteCarlo.java)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
