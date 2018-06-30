@@ -32,13 +32,13 @@ class HuffmanTree {
     public void createTree() {
         for (int i = 0; i < s.length(); i++) {
             String key = Character.toString(s.charAt(i));
-            if (!key.equals(" ")) {
-                if (!map.containsKey(key)) map.put(key, 1);
-                else {
-                    int frequency = map.get(key) + 1;
-                    map.replace(key, frequency);
-                }
+
+            if (!map.containsKey(key)) map.put(key, 1);
+            else {
+                int frequency = map.get(key) + 1;
+                map.replace(key, frequency);
             }
+            
         }
 
         Comparator<TreeNode> nodeComparator = Comparator.comparingInt(o -> o.value);
