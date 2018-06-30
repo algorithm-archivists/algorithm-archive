@@ -11,4 +11,5 @@ Pen Pal
 Chinmaya Mahesh
 Unlambder
 Kjetil Johannessen
-CDsigmaGuyPozner
+CDsigma
+GuyPozner
