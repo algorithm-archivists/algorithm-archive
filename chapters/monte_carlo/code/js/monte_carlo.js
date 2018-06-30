@@ -10,16 +10,16 @@ function inCircle(xPos, yPos, radius) {
 function monteCarlo(n, radius) {
     let piCount = 0;
 
-    for (var i = 1; i < n; i++) {
-        let pointX = Math.random();
-        let pointY = Math.random();
+    for (let i = 0; i < n; i++) {
+        const pointX = Math.random();
+        const pointY = Math.random();
 
-        if(inCircle(pointX, pointY, radius)) {
+        if (inCircle(pointX, pointY, radius)) {
             piCount++;
         }
     }
 
-    let piEstimate = 4 * Math.PI / (n * (radius * radius));
+    const piEstimate = 4 * Math.PI / (n * (radius * radius));
     console.log('Percent error is: %s%', piEstimate);
 }
 
