@@ -38,7 +38,9 @@ each point is tested to see whether it's in the circle or not:
 
 {% method %}
 {% sample lang="jl" %}
-[import:2-7, lang:"julia"](code/julia/monte_carlo.jl)
+[import:2-8, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="clj" %}
+[import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
@@ -94,6 +96,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
+{% sample lang="clj" %}
+### Clojure
+[import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {%sample lang="rs" %}
 ### Rust
 [import, lang:"rust"](code/rust/monte_carlo.rs)
