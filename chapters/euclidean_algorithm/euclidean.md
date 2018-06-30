@@ -13,6 +13,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:2-8, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:20-33, lang="c_cpp"](code/c++/euclidean.cpp)
+{% sample lang="java" %}
+[import:3-16, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py" %}
@@ -23,8 +25,6 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:3-15, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
 [import:9-17, lang="ocaml"](code/ocaml/euclidean_example.ml)
-{% sample lang="java" %}
-[import:9-22, lang="java"](code/java/euclidean_example.java)
 {% sample lang="go" %}
 [import:25-38, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
@@ -46,6 +46,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:9-13, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:7-17, lang="c_cpp"](code/c++/euclidean.cpp)
+{% sample lang="java" %}
+[import:18-26, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py" %}
@@ -56,8 +58,6 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:17-27, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
 [import:3-7, lang="ocaml"](code/ocaml/euclidean_example.ml)
-{% sample lang="java" %}
-[import:24-35, lang="java"](code/java/euclidean_example.java)
 {% sample lang="go" %}
 [import:14-23, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
@@ -88,6 +88,12 @@ Program.cs
 {% sample lang="cpp" %}
 ### Cpp
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
+{% sample lang="java" %}
+### Java
+EuclideanAlgo.java
+[import, lang="java"](code/java/EuclideanAlgo.java)
+MainClass.java
+[import, lang="java"](code/java/MainClass.java)
 {% sample lang="js" %}
 ### JavaScript
 [import, lang="javascript"](code/javascript/euclidean_example.js)
@@ -103,10 +109,6 @@ Program.cs
 {% sample lang="ml" %}
 ### Ocaml
 [import, lang="ocaml"](code/ocaml/euclidean_example.ml)
-{% sample lang="java" %}
-### Java
-[import, lang="java"](code/java/euclidean_example.java)
-{% sample lang="go" %}
 ### Go
 [import, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
