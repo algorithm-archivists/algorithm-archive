@@ -103,6 +103,9 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 {% sample lang="cpp" %}
 ### C++
 [import, lang:"c_cpp"](code/c++/euler.cpp)
+{% sample lang="rs" %}
+### Rust
+[import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}
 ### Elm
 [import:44-54, lang:"elm"](code/elm/euler.elm)
