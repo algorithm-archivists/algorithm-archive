@@ -13,7 +13,7 @@ Oh boy was I wrong.
 The Schönhage–Strassen algorithm was actually the most efficient method to multiply two numbers until around 2007 when it was dethroned by the Fürer's algorithm.
 Even so, the Schönhage–Strassen is still used in practice by the math libraries of many languages due to its straightforward implementation and a few other factors.
 
-Here's the point: through time, computer science researchers have managed to take some of the simplist operations imaginable, overcomplicate them, and make them incredibly impressive.
+Here's the point: through time, computer science researchers have managed to take some of the simplest operations imaginable, overcomplicate them, and make them incredibly impressive.
 Sometimes it's even worth looking at trivial operations through a new lens.
 
 
