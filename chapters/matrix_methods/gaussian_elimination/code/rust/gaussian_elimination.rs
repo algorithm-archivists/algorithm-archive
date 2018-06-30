@@ -1,4 +1,5 @@
-use std::fmt;
+// submitted by jess 3jane
+
 use std::cmp::min;
 
 pub struct Matrix {
@@ -29,19 +30,6 @@ impl Matrix {
     }
 }
 
-impl fmt::Display for Matrix {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        for row in 0..self.rows {
-            if row != 0 { writeln!(f, "")?; }
-            for col in 0..self.cols {
-                if col != 0 { write!(f, " ")?; }
-                write!(f, "{:3}", self.get(row, col))?;
-            }
-        }
-        Ok(())
-    }
-}
-
 fn gaussian_elimination(a: &mut Matrix) {
     for k in 0..min(a.cols, a.rows) {
         // Step 1: find the maximum element for this kumn
@@ -62,7 +50,6 @@ fn gaussian_elimination(a: &mut Matrix) {
 
         // Step 2: swap the row with the highest value for this kumn to the top
         a.swap_rows(k, max_row);
-        println!("{}:\n{}", k, a);
 
         // Loop over all remaining rows
         for i in k+1..a.rows {
@@ -88,11 +75,10 @@ fn back_substitution(a: &Matrix) -> Vec<f64> {
     
     soln[a.rows - 1] = a.get(a.rows - 1, a.cols - 1) / a.get(a.rows - 1, a.cols - 2);
 
-    for i in (0..a.rows - 2).rev() {
+    for i in (0..a.rows - 1).rev() {
         let mut sum = 0.0;
-        for j in (i..a.rows - 1).rev() {
+        for j in (i..a.rows).rev() {
             sum += soln[j] * a.get(i, j);
-            println!("{}, {}", i, j);
         }
         soln[i] = (a.get(i, a.cols - 1) - sum) / a.get(i,i);
     }
@@ -107,13 +93,7 @@ fn main() {
                   1.0,  2.0, 3.0,  4.0,
                   3.0, -4.0, 0.0, 10.0,];
     
-    println!("Original:");
-    println!("{}", a);
-
     gaussian_elimination(&mut a);
-    println!("Reduced:");
-    println!("{}", a);
-
     let soln = back_substitution(&a);
     println!("Solution: {:?}", soln);
 }
