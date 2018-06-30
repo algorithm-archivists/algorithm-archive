@@ -28,15 +28,9 @@
 
 * [Decision Problems](chapters/decision_problems/decision_problems.md)
     * [Stable Marriage Problem](chapters/decision_problems/stable_marriage/stable_marriage.md)
-
-### Sorting Algorithms
-
 * [Sorting and Searching](chapters/sorting_searching/sorting_searching.md)
     * [Bubble Sort](chapters/sorting_searching/bubble/bubble_sort.md)
     * [Bogo Sort](chapters/sorting_searching/bogo/bogo_sort.md)
-
-### Graph Search
-
 * [Tree Traversal](chapters/tree_traversal/tree_traversal.md)
 
 ## Computational mathematics
@@ -47,21 +41,12 @@
     * [Runge Kutta](chapters/differential_equations/runge_kutta/runge_kutta.md)
 * [Convolutions](chapters/convolutions/convolutions.md)
 * [Taylor Series](chapters/taylor/taylor_series.md)
-
-### Number Theory
-
 * [Euclidean Algorithm](chapters/euclidean_algorithm/euclidean.md)
 * [Multiplication](chapters/multiplication/multiplication.md)
-
-### Numerical
-
 * [Monte Carlo](chapters/monte_carlo/monte_carlo.md)
 * [Matrix Methods](chapters/matrix_methods/matrix_methods.md)
     * [Gaussian Elimination](chapters/matrix_methods/gaussian_elimination/gaussian_elimination.md)
     * [Thomas Algorithm](chapters/matrix_methods/thomas/thomas.md)
-
-### Geometrical
-
 * [Computational Geometry](chapters/computational_geometry/computational_geometry.md)
     * [Gift Wrapping](chapters/computational_geometry/gift_wrapping/gift_wrapping.md)
         * [Jarvis March](chapters/computational_geometry/gift_wrapping/jarvis_march/jarvis_march.md)
