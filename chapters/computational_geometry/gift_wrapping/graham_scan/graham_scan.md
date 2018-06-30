@@ -20,6 +20,8 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 [import:24-26, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
 [import:36-38, lang:"javascript"](code/javascript/graham-scan.js)
+{% sample lang="py" %}
+[import:31-32, lang:"python"](code/python/graham-scan.py)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -42,6 +44,8 @@ In the end, the code should look something like this:
 [import:65-95, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
+{% sample lang="py" %}
+[import:7-22, lang:"python"](code/python/graham-scan.py)
 {% endmethod %}
 
 ### Bibliography
@@ -62,7 +66,11 @@ In the end, the code should look something like this:
 [import, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/graham-scan.js)
+{% sample lang="py" %}
+### Python
+[import:7-28, lang:"python"](code/python/graham-scan.py)
 {% endmethod %}
+### 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

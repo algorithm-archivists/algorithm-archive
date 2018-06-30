@@ -170,11 +170,7 @@ Session.vim
 tags
 
 ### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode
 .history
 
 ### Windows ###
@@ -498,3 +494,8 @@ __pycache__/
 
 -# Other
 -*.xcf
+
+# Pipfiles
+Pipfile
+Pipfile.lock
+.venv
