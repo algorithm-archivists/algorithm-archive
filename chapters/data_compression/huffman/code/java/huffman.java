@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 class TreeNode {
@@ -16,7 +15,6 @@ class TreeNode {
         this.left = left;
         this.right = right;
     }
-
 }
 
 class HuffmanTree {
@@ -38,32 +36,31 @@ class HuffmanTree {
                 int frequency = frequencyMap.get(key) + 1;
                 frequencyMap.replace(key, frequency);
             }
-
         }
-
-        Comparator<TreeNode> nodeComparator = Comparator.comparingInt(o -> o.frequency);
-
-        Queue<TreeNode> priorityQueue = new PriorityQueue<>(nodeComparator);
+        Queue<TreeNode> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(o -> o.frequency));
         for (Map.Entry<String, Integer> m : frequencyMap.entrySet()) {
             priorityQueue.add(new TreeNode(m.getKey(), m.getValue()));
         }
-
-
         while (priorityQueue.size() > 1) {
             TreeNode left = priorityQueue.remove();
             TreeNode right = priorityQueue.remove();
             priorityQueue.add(new TreeNode(left.frequency + right.frequency, left, right));
         }
         root = priorityQueue.remove();
-
     }
 
-    private void traverse(TreeNode temp, String code) {
-        if (temp.left == null && temp.right == null)
-            codeBook.put(temp.letter, code);
-        if (temp.left != null) traverse(temp.left, code + 0);
-        if (temp.right != null) traverse(temp.right, code + 1);
-
+    private void traverse(TreeNode node, StringBuilder code) {
+        if (node.left == null && node.right == null) {
+            codeBook.put(node.letter, code.toString());
+        }
+        if (node.left != null) {
+            traverse(node.left, code.append(0));
+            code.deleteCharAt(code.length() - 1);
+        }
+        if (node.right != null) {
+            traverse(node.right, code.append(1));
+            code.deleteCharAt(code.length() - 1);
+        }
     }
 
     public void printCodeBook() {
@@ -81,7 +78,7 @@ class HuffmanTree {
     }
 
     public String encode() {
-        traverse(root, "");
+        traverse(root, new StringBuilder());
         StringBuilder encode = new StringBuilder();
         for (int i = 0; i < stringToEncode.length(); i++) {
             String k = Character.toString(stringToEncode.charAt(i));
@@ -94,7 +91,6 @@ class HuffmanTree {
     public String decode(String encoded) {
         StringBuilder decoded = new StringBuilder(), key = new StringBuilder();
         CodeBookReverse();
-
         for (int i = 0; i < encoded.length(); i++) {
             key = key.append(encoded.charAt(i));
             if (reverseCodeBook.containsKey(key.toString())) {
@@ -104,19 +100,14 @@ class HuffmanTree {
         }
         return decoded.toString();
     }
-
-
 }
 
 class Huffman {
-
     public static void main(String[] args) {
         HuffmanTree huffmanTree = new HuffmanTree("bibbity_bobbity");
         huffmanTree.createTree();
         String encoded = huffmanTree.encode();
         System.out.println("Encoded String: " + encoded);
         System.out.println("Decoded String: " + huffmanTree.decode(encoded));
-
-
     }
 }
