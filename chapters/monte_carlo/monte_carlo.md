@@ -42,7 +42,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
-[import:2-8, lang:"js"](code/js/monte_carlo.js)
+[import:2-6, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% sample lang="rs" %}
