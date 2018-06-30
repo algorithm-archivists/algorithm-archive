@@ -3,12 +3,13 @@ fn main() {
     let threshold = 0.01;
     let timestep = 0.01;
 
-    solve_euler(timestep, &mut result, 100);
-    println!("{}", check_result(&result, 100, threshold, timestep));
+    solve_euler(timestep, &mut result);
+    println!("{}", check_result(&result, threshold, timestep));
 }
 
 
-fn solve_euler(timestep: f64, result: &mut [f64], n: usize) {
+fn solve_euler(timestep: f64, result: &mut [f64]) {
+    let n = result.len();
     if n != 0 {
         result[0] = 1.0;
         for i in 1..n {
@@ -18,12 +19,12 @@ fn solve_euler(timestep: f64, result: &mut [f64], n: usize) {
 }
 
 
-fn check_result(result: &[f64],  n: usize,  threshold: f64,  timestep: f64) -> bool {
+fn check_result(result: &[f64],  threshold: f64,  timestep: f64) -> bool {
     let mut is_approx: bool = true;
-    for i in 0..n {
+    for (i, val) in result.iter().enumerate() {
         let solution = (-3.0 * i as f64 * timestep).exp();
-        if (result[i] - solution).abs() > threshold {
-            println!("{}    {}", result[i], solution);
+        if (val - solution).abs() > threshold {
+            println!("{}    {}", val, solution);
             is_approx = false;
         }
     }
