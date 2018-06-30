@@ -13,18 +13,20 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:2-8, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:20-33, lang="c_cpp"](code/c++/euclidean.cpp)
+{% sample lang="java" %}
+[import:3-16, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="py2" %}
-[import:14-25, lang="python"](code/python2/euclidean_example.py)
+{% sample lang="py" %}
+[import:11-22, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
 [import:3-11, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 [import:3-15, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
 [import:9-17, lang="ocaml"](code/ocaml/euclidean_example.ml)
-{% sample lang="java" %}
-[import:9-22, lang="java"](code/java/euclidean_example.java)
+{% sample lang="go" %}
+[import:25-38, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -44,18 +46,20 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:9-13, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import:7-17, lang="c_cpp"](code/c++/euclidean.cpp)
+{% sample lang="java" %}
+[import:18-26, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="py2" %}
-[import:1-12, lang="python"](code/python2/euclidean_example.py)
+{% sample lang="py" %}
+[import:1-9, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
 [import:13-24, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 [import:17-27, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
 [import:3-7, lang="ocaml"](code/ocaml/euclidean_example.ml)
-{% sample lang="java" %}
-[import:24-35, lang="java"](code/java/euclidean_example.java)
+{% sample lang="go" %}
+[import:14-23, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -84,12 +88,18 @@ Program.cs
 {% sample lang="cpp" %}
 ### Cpp
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
+{% sample lang="java" %}
+### Java
+EuclideanAlgo.java
+[import, lang="java"](code/java/EuclideanAlgo.java)
+MainClass.java
+[import, lang="java"](code/java/MainClass.java)
 {% sample lang="js" %}
 ### JavaScript
 [import, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 ### Python
-[import, lang="python"](code/python2/euclidean_example.py)
+[import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
 ### Haskell
 [import, lang="haskell"](code/haskell/euclidean_example.hs)
@@ -99,9 +109,8 @@ Program.cs
 {% sample lang="ml" %}
 ### Ocaml
 [import, lang="ocaml"](code/ocaml/euclidean_example.ml)
-{% sample lang="java" %}
-### Java
-[import, lang="java"](code/java/euclidean_example.java)
+### Go
+[import, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
 
 

@@ -22,3 +22,11 @@ pi"
                  (if (in-circle? (rand-point r) r)
                    (inc count)
                    count))))))
+(defn -main []
+  (let [constant-pi Math/PI
+        computed-pi (monte-carlo 10000000 2) ;; this may take some time on lower end machines
+        difference (Math/abs (- constant-pi computed-pi))
+        error (* 100 (/ difference constant-pi))]
+    (println "world's PI: " constant-pi
+             ",our PI: "    (double computed-pi)
+             ",error: "     error)))

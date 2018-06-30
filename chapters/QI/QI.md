@@ -18,11 +18,11 @@ There are many places to start an introduction to quantum information theory, so
 3. **Quantum computers in the wild:** Current experimental techniques to create a quantum computer and what makes them ill-suited as real quantum computers
 4. **A survey of current quantum algorithms:** There are a number of algorithms that promise fantastic advantages when performed on quantum computers and should really shake up the industry when they are finally experimentally realized.
 
-As a note, item 3 might seem out of place for a book on algorithms, and I would tend to agree; however, at this point there is a phenominal amount of research being done to realize the first truly quantum computer and there are a number of potential systems that could work for this purpose.
+As a note, item 3 might seem out of place for a book on algorithms, and I would tend to agree; however, at this point there is a phenomenal amount of research being done to realize the first truly quantum computer and there are a number of potential systems that could work for this purpose.
 These systems will change how we think about and interface with quantum computation in the future and it is important to discuss where the field might be heading and when we can expect quantum computers at home.
 
 Now, there are not too many languages that can compile quantum code.
-A while ago, we tried to make a quantum circuit compiler, which was modelled after the SPICE circuit simulator, but this was far from a computer language.
+A while ago, we tried to make a quantum circuit compiler, which was modeled after the SPICE circuit simulator, but this was far from a computer language.
 At this point in time, it is impossible to tell what quantum computing languages will look like when we finally have a truly quantum machine, so for the time being, we will not ask for community code for the chapters related to quantum information.
 
 basically, it's hard to imagine how to would adequately implement Shor's algorithm in C.

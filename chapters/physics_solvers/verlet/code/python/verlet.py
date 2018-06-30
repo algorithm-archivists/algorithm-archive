@@ -52,17 +52,17 @@ def main():
     sim = Verlet(Ball(pos = 5.0, acc = -10))
     sim.run()
 
-    print "Verlet:", sim.time
+    print("Verlet:", sim.time)
 
     sim = Stormer_Verlet(Ball(pos = 5.0, acc = -10))
     sim.run()
 
-    print "Stormer Verlet:", sim.time
+    print("Stormer Verlet:", sim.time)
 
     sim = Velocity_Verlet(Ball(pos = 5.0, acc = -10))
     sim.run()
 
-    print "Velocity Verlet:", sim.time
+    print("Velocity Verlet:", sim.time)
 
 
 if __name__ == "__main__":

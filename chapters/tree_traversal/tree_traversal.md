@@ -11,13 +11,13 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 [import:9-15, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+[import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
-{% sample lang="py2" %}
-[import:1-5, lang:"python"](code/python2/Tree_example.py)
-{% sample lang="py3" %}
-[import:5-10, lang:"python"](code/python3/Tree_example.py)
+{% sample lang="py" %}
+[import:1-5, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
@@ -38,13 +38,12 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:25-36, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+[import:21-27, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:12-15, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-[import:8-16, lang:"python"](code/python2/Tree_example.py)
-{% sample lang="py3" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:9-16, lang:"julia"](code/julia/Tree.jl)
+{% sample lang="py" %}
+[import:7-15, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
@@ -75,12 +74,11 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:38-49, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+[import:34-41, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:17-20, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
-{% sample lang="py3" %}
+{% sample lang="py" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
@@ -109,12 +107,11 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:51-70, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+[import:48-62, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:22-34, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
-{% sample lang="py3" %}
+{% sample lang="py" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="scratch" %}
@@ -152,12 +149,12 @@ In code, it looks like this:
 [import:72-86, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+[import:65-79, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:36-43, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-[import:25-36, lang:"python"](code/python2/Tree_example.py)
-{% sample lang="py3" %}
-[import:31-45, lang:"python"](code/python3/Tree_example.py)
+{% sample lang="py" %}
+[import:24-35, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
@@ -174,7 +171,7 @@ All this said, there are a few details about DFS that might not be idea, dependi
     <img src="res/BFS_simple.png" width="500" height="500" />
 </p>
 
-And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
+And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, except that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
 
 {% method %}
 {% sample lang="jl" %}
@@ -185,12 +182,12 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:88-102, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+[import:81-95, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-[import:38-49, lang:"python"](code/python2/Tree_example.py)
-{% sample lang="py3" %}
-[import:48-62, lang:"python"](code/python3/Tree_example.py)
+{% sample lang="py" %}
+[import:37-48, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
@@ -220,15 +217,18 @@ utility.h
 [import, lang:"c_cpp"](code/c/utility.h)
 tree_traversal.c
 [import, lang:"c_cpp"](code/c/tree_traversal.c)
+{% sample lang="java" %}
+### Java
+Tree.java
+[import, lang:"java"](code/java/Tree.java)
+MainClass.java
+[import, lang:"java"](code/java/MainClass.java)
 {% sample lang="js" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/tree.js)
-{% sample lang="py2" %}
-### Python 2
-[import, lang:"python"](code/python2/Tree_example.py)
-{% sample lang="py3" %}
-### Python 3
-[import, lang:"python"](code/python3/Tree_example.py)
+{% sample lang="py" %}
+### Python 
+[import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
 ![scratch tree](code/scratch/scratch_tree.png)
