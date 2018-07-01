@@ -2,7 +2,7 @@
 
 Monte Carlo methods were some of the first methods I ever used for research, and when I learned about them, they seemed like some sort of magic.
 Their premise is simple: random numbers can be used to integrate arbitrary shapes embedded into other objects.
-Nowadays, "monte carlo" has become a bit of a catch-all term for methods that use random numbers to produce real results, but it all started as a straightforward method to integrate objects.
+Nowadays, "Monte Carlo" has become a bit of a catch-all term for methods that use random numbers to produce real results, but it all started as a straightforward method to integrate objects.
 No matter how you slice it, the idea seems a bit crazy at first.
 After all, random numbers are random.
 How could they possibly be used to find non-random values?
@@ -38,9 +38,13 @@ each point is tested to see whether it's in the circle or not:
 
 {% method %}
 {% sample lang="jl" %}
-[import:2-8, lang:"julia"](code/julia/monte_carlo.jl)
+[import:2-7, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="clj" %}
+[import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="js" %}
+[import:2-6, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% sample lang="rs" %}
@@ -83,9 +87,15 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="clj" %}
+### Clojure
+[import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="js" %}
+### Javascript
+[import, lang:"js"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)

@@ -1,6 +1,6 @@
 # My Introduction to Hobby Programming
 
-Here's the thing. I love programming. I know it's fun, interactive, and addictive, but it's hard to see that when you are looking through a pair of spectacles that sees the world ever-so-slightly differently than mine. For that reason, I feel I should start with my own introduction to the world of computer science, with the hope of inspiring you to share your own story. Full disclosure: this story is a decade old and involved linux. In fact, the open source community was one of the main reasons I ever became interested in hobby programming to begin with. Regardless, let's start at the start.
+Here's the thing. I love programming. I know it's fun, interactive, and addictive, but it's hard to see that when you are looking through a pair of spectacles that sees the world ever-so-slightly differently than mine. For that reason, I feel I should start with my own introduction to the world of computer science, with the hope of inspiring you to share your own story. Full disclosure: this story is a decade old and involved Linux. In fact, the open source community was one of the main reasons I ever became interested in hobby programming to begin with. Regardless, let's start at the start.
 
 I don't know if you guys had a similar childhood to mine or not, but I found that no matter who I spoke to, there was one central theme in all of our lives -- something so fundamental to the way we communicated with each other that it was nearly impossible to have a discussion without bringing it up: **Video Games**.
 
@@ -12,11 +12,11 @@ Being the curious kid I was, I asked what I should do to avoid Vista and they sa
 
 My friends could have just said, "It's the thing that operates your hardware. It brings up the UI elements and stuff you work with." Sure, it's not quite the whole story, but as a computer novice, it would have been just fine for me. That said, they took it a step further and said, "Nowadays, there are many operating systems to choose from, including Windows, Mac, and Linux." I may have been a complete novice, but I at least knew about Windows and Mac. Linux, though? What the heck was that?
 
-Of course I asked about it, but this was early high school. My friends may have been smarter than I was, but there was a limit to their knowledge. Apparently, the only thing they knew about linux was that it was supposedly faster and couldn't catch viruses. That caught me.
+Of course I asked about it, but this was early high school. My friends may have been smarter than I was, but there was a limit to their knowledge. Apparently, the only thing they knew about Linux was that it was supposedly faster and couldn't catch viruses. That caught me.
 
 Remember how I said I couldn't get the virus software to work on my computer? Yeah. At this point, I was thinking, *What? A computer that couldn't catch viruses? No way! That's gotta be **leagues** easier to use than Windows!*
 
-*Oh ho* I was... well... I was downright naive. I had no idea what I was doing. That night, I ran home, super excited to learn about linux and operating systems, and spent the entire night browsing the internet, trying to find whatever information was out there. At the time, my google-fu was weak and my internet was slow. The first thing I learned was that there were apparently different types of linuxes called "distributions." At that point, I probably searched "What is the best linux?" or something to that effect. Somehow, I managed to find [distrowatch](https://distrowatch.com/), which had a list of all the most popular distros on the side.
+*Oh ho* I was... well... I was downright naive. I had no idea what I was doing. That night, I ran home, super excited to learn about Linux and operating systems, and spent the entire night browsing the internet, trying to find whatever information was out there. At the time, my google-fu was weak and my internet was slow. The first thing I learned was that there were apparently different types of linuxes called "distributions." At that point, I probably searched "What is the best Linux?" or something to that effect. Somehow, I managed to find [distrowatch](https://distrowatch.com/), which had a list of all the most popular distros on the side.
 
 I don't remember the exact order, but I knew the key players were there: Ubuntu, Mint, Fedora, Debian, and Arch. Now, here's where my years of gaming experience came in. I personified each distribution as a class in a game world. Ubuntu was the easy to use axe-wielding warrior that would get the job done. Fedora was the Archer in the back with a feather in his cap and a quick quip for everything. Debian was the grandmotherly spellcaster just trying to keep everyone alive. Then there was Arch, the one who rushed into combat without any armor and uses only the environment as a weapon.
 
@@ -36,7 +36,7 @@ In my head, I knew what this meant. I needed to create my username, right? So I 
 
 **root**
 
-Now, at the time, I didn't realize what I was doing. I didn't know that root was the god of my computer -- the user who decides all other user disputes. At the time, I thought it was an odd, quircky word chosen by the Arch developers in the same way they were talking about cheese graters before. I suppose that knowledge would come in time. At that moment, I was celebrating what might have been the most difficult thing I had done to that point in my life: typing in a 4 letter word.
+Now, at the time, I didn't realize what I was doing. I didn't know that root was the god of my computer -- the user who decides all other user disputes. At the time, I thought it was an odd, quirky word chosen by the Arch developers in the same way they were talking about cheese graters before. I suppose that knowledge would come in time. At that moment, I was celebrating what might have been the most difficult thing I had done to that point in my life: typing in a 4 letter word.
 
 #### Step 3: The blue screen of death
 
