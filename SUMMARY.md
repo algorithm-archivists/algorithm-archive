@@ -2,53 +2,81 @@
 
 * [Algorithm Archive](README.md)
 * [TODO](TODO.md)
+
+## General
+
 * [Introduction](chapters/introduction.md)
 * [A Personal Note](chapters/getting_started.md)
 * [How To Contribute](chapters/how_to_contribute.md)
 * [Principles of Code](chapters/principles_of_code/principles_of_code.md)
-    * [Choosing A Language](chapters/principles_of_code/choosing_a_language/choosing_a_language.md)
-        * [Compiled Languages](chapters/principles_of_code/choosing_a_language/compiled/compiled.md)
-            * [Makefiles](chapters/principles_of_code/choosing_a_language/compiled/makefiles.md)
-            * [FORTRAN](chapters/principles_of_code/choosing_a_language/compiled/FORTRAN.md)
-    * [Building Blocks](chapters/principles_of_code/building_blocks/building_blocks.md)
-        * [Variables and Types](chapters/principles_of_code/building_blocks/variables.md)
-        * [Conditions](chapters/principles_of_code/building_blocks/conditions.md)
-        * [Loops](chapters/principles_of_code/building_blocks/loops.md)
-        * [Functions](chapters/principles_of_code/building_blocks/functions.md)
-        * [Classes](chapters/principles_of_code/building_blocks/classes.md)
-        * [Stacks and Queues](chapters/principles_of_code/building_blocks/stacks.md)
-        * [Bit Logic](chapters/principles_of_code/building_blocks/bitlogic.md)
-    * [Version Control](chapters/principles_of_code/version_control.md)
-    * [Complexity Notation](chapters/principles_of_code/notation/notation.md)
+  * [Choosing A Language](chapters/principles_of_code/choosing_a_language/choosing_a_language.md)
+    * [Compiled Languages](chapters/principles_of_code/choosing_a_language/compiled/compiled.md)
+      * [Makefiles](chapters/principles_of_code/choosing_a_language/compiled/makefiles.md)
+      * [FORTRAN](chapters/principles_of_code/choosing_a_language/compiled/FORTRAN.md)
+  * [Building Blocks](chapters/principles_of_code/building_blocks/building_blocks.md)
+    * [Variables and Types](chapters/principles_of_code/building_blocks/variables.md)
+    * [Conditions](chapters/principles_of_code/building_blocks/conditions.md)
+    * [Loops](chapters/principles_of_code/building_blocks/loops.md)
+    * [Functions](chapters/principles_of_code/building_blocks/functions.md)
+    * [Classes](chapters/principles_of_code/building_blocks/classes.md)
+    * [Stacks and Queues](chapters/principles_of_code/building_blocks/stacks.md)
+    * [Bit Logic](chapters/principles_of_code/building_blocks/bitlogic.md)
+  * [Version Control](chapters/principles_of_code/version_control.md)
+  * [Complexity Notation](chapters/principles_of_code/notation/notation.md)
+
+## Combinatorial Algorithms
+
+* [Decision Problems](chapters/decision_problems/decision_problems.md)
+  * [Stable Marriage Problem](chapters/decision_problems/stable_marriage/stable_marriage.md)
+* [Sorting and Searching](chapters/sorting_searching/sorting_searching.md)
+  * [Bubble Sort](chapters/sorting_searching/bubble/bubble_sort.md)
+  * [Bogo Sort](chapters/sorting_searching/bogo/bogo_sort.md)
+* [Tree Traversal](chapters/tree_traversal/tree_traversal.md)
+
+## Computational Mathematics
+
+* [Differential Equation Solvers](chapters/differential_equations/differential_equations.md)
+  * [Forward Euler Method](chapters/differential_equations/euler/euler.md)
+  * [Backward Euler Methods](chapters/differential_equations/euler/backward_euler.md)
+  * [Runge Kutta](chapters/differential_equations/runge_kutta/runge_kutta.md)
 * [Convolutions](chapters/convolutions/convolutions.md)
 * [Taylor Series](chapters/taylor/taylor_series.md)
-* [Sorting and Searching](chapters/sorting_searching/sorting_searching.md)
-    * [Bubble Sort](chapters/sorting_searching/bubble/bubble_sort.md)
-    * [Bogo Sort](chapters/sorting_searching/bogo/bogo_sort.md)
-* [Tree Traversal](chapters/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](chapters/euclidean_algorithm/euclidean.md)
 * [Multiplication](chapters/multiplication/multiplication.md)
 * [Monte Carlo](chapters/monte_carlo/monte_carlo.md)
 * [Matrix Methods](chapters/matrix_methods/matrix_methods.md)
-    * [Gaussian Elimination](chapters/matrix_methods/gaussian_elimination/gaussian_elimination.md)
-    * [Thomas Algorithm](chapters/matrix_methods/thomas/thomas.md)
+  * [Gaussian Elimination](chapters/matrix_methods/gaussian_elimination/gaussian_elimination.md)
+  * [Thomas Algorithm](chapters/matrix_methods/thomas/thomas.md)
 * [Computational Geometry](chapters/computational_geometry/computational_geometry.md)
-    * [Gift Wrapping](chapters/computational_geometry/gift_wrapping/gift_wrapping.md)
-        * [Jarvis March](chapters/computational_geometry/gift_wrapping/jarvis_march/jarvis_march.md)
-        * [Graham Scan](chapters/computational_geometry/gift_wrapping/graham_scan/graham_scan.md)
-        * [Chan's Algorithm](chapters/computational_geometry/gift_wrapping/chan/chans.md)
-* [FFT](chapters/FFT/cooley_tukey.md)
-* [Decision Problems](chapters/decision_problems/decision_problems.md)
-    * [Stable Marriage Problem](chapters/decision_problems/stable_marriage/stable_marriage.md)
-* [Differential Equation Solvers](chapters/differential_equations/differential_equations.md)
-    * [Forward Euler Method](chapters/differential_equations/euler/euler.md)
-    * [Backward Euler Methods](chapters/differential_equations/euler/backward_euler.md)
-    * [Runge Kutta](chapters/differential_equations/runge_kutta/runge_kutta.md)
+  * [Gift Wrapping](chapters/computational_geometry/gift_wrapping/gift_wrapping.md)
+    * [Jarvis March](chapters/computational_geometry/gift_wrapping/jarvis_march/jarvis_march.md)
+    * [Graham Scan](chapters/computational_geometry/gift_wrapping/graham_scan/graham_scan.md)
+    * [Chan's Algorithm](chapters/computational_geometry/gift_wrapping/chan/chans.md)
+
+## Computational Science
+
 * [Physics Solvers](chapters/physics_solvers/physics_solvers.md)
-    * [Verlet Integration](chapters/physics_solvers/verlet/verlet.md)
-    * [Barnes-Hut](chapters/physics_solvers/barnes_hut.md)
-    * [Quantum Systems](chapters/physics_solvers/quantum/quantum.md)
-        * [Split-Operator Method](chapters/physics_solvers/quantum/split-op/split-op.md)
-* [Data Compression](chapters/data_compression/data_compression.md)
-    * [Huffman Encoding](chapters/data_compression/huffman/huffman.md)
+  * [Verlet Integration](chapters/physics_solvers/verlet/verlet.md)
+  * [Barnes-Hut](chapters/physics_solvers/barnes_hut.md)
+  * [Quantum Systems](chapters/physics_solvers/quantum/quantum.md)
+    * [Split-Operator Method](chapters/physics_solvers/quantum/split-op/split-op.md)
+
+## Computer Science
+
 * [Quantum Information](chapters/QI/QI.md)
+
+## Information Theory and Signal Processing
+
+* [FFT](chapters/FFT/cooley_tukey.md)
+* [Data Compression](chapters/data_compression/data_compression.md)
+  * [Huffman Encoding](chapters/data_compression/huffman/huffman.md)
+
+## Software Engineering
+
+## Database Algorithms
+
+## Distributed systems Algorithms
+
+## Networking Algorithms
+
+## Operating Systems Algorithms

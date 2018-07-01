@@ -227,7 +227,7 @@ MainClass.java
 ### JavaScript
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-### Python 
+### Python
 [import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
