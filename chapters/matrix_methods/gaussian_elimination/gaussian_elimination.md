@@ -81,12 +81,12 @@ $$
 $$
 
 
-and it has a particular name: _Row Eschelon Form_. Basically, any matrix can be considered in row eschelon form if
+and it has a particular name: _Row Echelon Form_. Basically, any matrix can be considered in row echelon form if
 
 1. All non-zero rows are above rows of all zeros
 2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-Now, Row Eschelon Form is nice, but wouldn't it be even better if our system of equations looked simply like this
+Now, Row Echelon Form is nice, but wouldn't it be even better if our system of equations looked simply like this
 
 
 $$
@@ -112,9 +112,9 @@ $$
 $$
 
 
-And again has a special name * **Reduced** Row Eschelon Form*. Now, it seems obvious to point out that if we remove the values to the right of the equals sign \($$=$$\), Row Eschelon Form is an upper triangular matrix, while Reduced Row Eschelon Form is diagonal. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
+And again has a special name * **Reduced** Row Echelon Form*. Now, it seems obvious to point out that if we remove the values to the right of the equals sign \($$=$$\), Row Echelon Form is an upper triangular matrix. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
 
-For now, I hope the motivation is clear: we want to convert a matrix into Row Eschelon and (potentially) Reduced Row Eschelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
+For now, I hope the motivation is clear: we want to convert a matrix into Row Echelon and (potentially) Reduced Row Echelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
 
 That's right! _Gaussian Elimination_
 
@@ -128,7 +128,7 @@ In the end, reducing large systems of equations boils down to a game you play on
 2. You can multiply any row by a non-zero scale value
 3. You can add any row to a multiple of any other row
 
-That's it. Before continuing, I suggest you try to recreate the Row Eschelon matrix we made above. That is, do the following:
+That's it. Before continuing, I suggest you try to recreate the Row Echelon matrix we made above. That is, do the following:
 
 $$
 \left[
@@ -150,7 +150,7 @@ $$
 
 There are plenty of different strategies you could use to do this, and no one strategy is better than the rest. Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows. I then do the same thing for the following columns.
 
-After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Eschelon Form. In other words, we do the following:
+After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Echelon Form. In other words, we do the following:
 
 $$
 \left[
@@ -170,7 +170,7 @@ $$
 \right]
 $$
 
-Here, the idea is similar to above. You can do basically anything you want. My strategy is usually the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
+Here, the idea is similar to above. The strategy is the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
 
 ## The Algorithm
 
@@ -257,19 +257,23 @@ In code, this looks like:
 {% method %}
 {% sample lang="jl" %}
 [import:1-42, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="hs" %}
+[import:4-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
-As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above psuedocode with the necessary steps. Let me know if anything is unclear!
+As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above pseudocode with the necessary steps. Let me know if anything is unclear!
 
-Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Eschelon Form*, not * **Reduced** Row Eschelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
+Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
 
 The back-substitution method is precisely what we said above.
-If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
+If we have a matrix in Row Echelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
 Even though this seems straightforward, the pseudocode might not be as simple as you thought!
 
 {% method %}
 {% sample lang="jl" %}
 [import:44-64, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="hs" %}
+[import:35-43, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 Now, as for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
@@ -281,6 +285,8 @@ The full code can be seen here:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 
@@ -306,4 +312,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
