@@ -84,8 +84,10 @@ Program.cs
 {% sample lang="js" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/huffman.js)
+{% sample lang="java" %}
+### Java
+[import, lang:"java"](code/java/huffman.java)
 {% endmethod %}
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
