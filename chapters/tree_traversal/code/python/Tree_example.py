@@ -19,30 +19,30 @@ def DFS_recursive(node):
     if node.data != None:
         print(node.data)
 
-	for child in node.children:
-		DFS_recursive(child)
+    for child in node.children:
+        DFS_recursive(child)
 
 
 def DFS_recursive_postorder(node):
     for child in node.children:
-		DFS_recursive(child)
+        DFS_recursive(child)
 
     if node.data != None:
         print(node.data)
 
-		
+
 # This assumes only 2 children, but accounts for other possibilities
-def DFS_recursive_inorder_btree(node)
-    if (len(node.children) == 2)
+def DFS_recursive_inorder_btree(node):
+    if (len(node.children) == 2):
         DFS_recursive_inorder_btree(node.children[1])
-        println(n.data)
+        print(node.data)
         DFS_recursive_inorder_btree(node.children[2])
-    elif (len(n.children) == 1)
+    elif (len(node.children) == 1):
         DFS_recursive_inorder_btree(node.children[1])
         print(node.data)
-    elif (len(n.children) == 0)
+    elif (len(node.children) == 0):
         print(node.data)
-    else
+    else:
         print("Not a binary tree!")
 
 
@@ -86,7 +86,7 @@ def main():
     print("Queue:")
     BFS_queue(tree)
 
-	
+
 if __name__ == '__main__':
-	main()
+    main()
 
