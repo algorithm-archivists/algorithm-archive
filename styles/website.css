@@ -9,3 +9,9 @@
 .book .book-body .page-wrapper {
   margin-bottom: 12em;
 }
+
+img.center {
+  display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
