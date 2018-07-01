@@ -40,6 +40,8 @@ In code, this will look like this:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/thomas.jl)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/thomas.c)
 {% endmethod %}
 
 This is a much simpler implementation than Gaussian Elimination and only has one for loop before back-substitution, which is why it has a better complexity case.
