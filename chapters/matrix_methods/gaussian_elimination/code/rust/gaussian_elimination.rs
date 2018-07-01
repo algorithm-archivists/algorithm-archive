@@ -1,7 +1,7 @@
 // submitted by jess 3jane
 
 use std::cmp::min;
-use std::ops::{IndexMut, Index};
+use std::ops::{Index, IndexMut};
 
 pub struct Matrix {
     rows: usize,
@@ -11,7 +11,11 @@ pub struct Matrix {
 
 impl Matrix {
     fn new(rows: usize, cols: usize) -> Matrix {
-        Matrix { rows, cols, data: vec![0.0; rows * cols] }
+        Matrix {
+            rows,
+            cols,
+            data: vec![0.0; rows * cols],
+        }
     }
 
     fn swap_rows(&mut self, a: usize, b: usize) {
@@ -23,25 +27,24 @@ impl Matrix {
 
 impl Index<(usize, usize)> for Matrix {
     type Output = f64;
-    fn index<'a>(&'a self, index: (usize, usize)) -> &'a f64 {
+    fn index(&self, index: (usize, usize)) -> &f64 {
         let (row, col) = index;
         &self.data[row * self.cols + col]
     }
 }
 
 impl IndexMut<(usize, usize)> for Matrix {
-    fn index_mut<'a>(&'a mut self, index: (usize, usize)) -> &'a mut f64 {
-        let (row, col) = index;
+    fn index_mut<'a>(&'a mut self, (row, col): (usize, usize)) -> &'a mut f64 {
         &mut self.data[row * self.cols + col]
     }
 }
 
 fn gaussian_elimination(a: &mut Matrix) {
     for k in 0..min(a.cols, a.rows) {
-        // Step 1: find the maximum element for this kumn
+        // Step 1: find the maximum element for this column
         let mut max_row = k;
         let mut max_value = a[(k, k)].abs();
-        for row in (k+1)..a.rows {
+        for row in (k + 1)..a.rows {
             if max_value < a[(row, k)].abs() {
                 max_value = a[(row, k)].abs();
                 max_row = row;
@@ -58,17 +61,17 @@ fn gaussian_elimination(a: &mut Matrix) {
         a.swap_rows(k, max_row);
 
         // Loop over all remaining rows
-        for i in k+1..a.rows {
+        for i in k + 1..a.rows {
             // Step 3: find the fraction
-            let fraction = a[(i, k)]/a[(k, k)];
+            let fraction = a[(i, k)] / a[(k, k)];
 
             // Loop through all columns for that row
-            for j in (k+1)..a.cols {
+            for j in (k + 1)..a.cols {
                 // Step 4: re-evaluate each element
-                a[(i, j)] -= a[(k, j)]*fraction;
+                a[(i, j)] -= a[(k, j)] * fraction;
             }
 
-            // Step 5: set lower elements to 0 
+            // Step 5: set lower elements to 0
             a[(i, k)] = 0.0;
         }
     }
@@ -76,7 +79,7 @@ fn gaussian_elimination(a: &mut Matrix) {
 
 fn back_substitution(a: &Matrix) -> Vec<f64> {
     let mut soln = vec![0.0; a.rows];
-    
+
     soln[a.rows - 1] = a[(a.rows - 1, a.cols - 1)] / a[(a.rows - 1, a.cols - 2)];
 
     for i in (0..a.rows - 1).rev() {
@@ -92,11 +95,9 @@ fn back_substitution(a: &Matrix) -> Vec<f64> {
 
 fn main() {
     // The example matrix from the text
-    let mut a = Matrix::new(3,4);
-    a.data = vec![2.0,  3.0, 4.0,  6.0,
-                  1.0,  2.0, 3.0,  4.0,
-                  3.0, -4.0, 0.0, 10.0,];
-    
+    let mut a = Matrix::new(3, 4);
+    a.data = vec![2.0, 3.0, 4.0, 6.0, 1.0, 2.0, 3.0, 4.0, 3.0, -4.0, 0.0, 10.0];
+
     gaussian_elimination(&mut a);
     let soln = back_substitution(&a);
     println!("Solution: {:?}", soln);
