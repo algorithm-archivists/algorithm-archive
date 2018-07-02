@@ -37,12 +37,11 @@ Note that here, we assume the acceleration to be constant, but it could technica
 
 Truth be told, the Taylor Series Expansion can be found in the most unusual places and is used as the foundation of many different algorithms throughout this book. At first, it might not seem obvious why, but we can approximate almost any smooth function with a Taylor Series Expansion, and the more terms we include, the better our approximation becomes! For example, take Figure 1. Any function can be approximated as a sum of all the derivatives for that function. If we evaluate these derivatives at any point, we closely approximate the actual function.
 
-![Function sum][function_sum]
+<p>
+    <img src="res/function_sum.png" />
+</p>
 
 This shows the true power of the Taylor Series Expansion. It allows us to more easily tackle complicated functions by approximating them as functions we can actually use and imagine!
-
-[function_sum]: function_sum.png
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
