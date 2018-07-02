@@ -18,6 +18,10 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
 [import:1-11, lang:"javascript"](code/js/bubble.js)
+{% sample lang="py" %}
+[import:4-9, lang:"python"](code/python/bubblesort.py)
+{% sample lang="m" %}
+[import:11-23, lang:"matlab"](code/matlab/bubblesort.m)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
@@ -26,6 +30,10 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:6-19, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
 [import:3-18, lang:"d"](code/d/bubble_sort.d)
+{% sample lang="go" %}
+[import:7-21, lang:"golang"](code/go/bubbleSort.go)
+{% sample lang="racket" %}
+[import:5-19, lang:"racket"](code/racket/bubbleSort.rkt)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
