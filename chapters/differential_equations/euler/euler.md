@@ -110,6 +110,10 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 
 Full code for the visualization follows:
 [import, lang:"elm"](code/elm/euler.elm)
+
+{% sample lang="py" %}
+### Python
+[import, lang:"python"](code/python/euler.py)
 {% endmethod %}
 
 <script>
