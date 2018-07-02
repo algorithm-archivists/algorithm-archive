@@ -20,7 +20,7 @@ public extension Double {
 
 func isInCircle(x: Double, y: Double, radius: Double) -> Bool {
 
-    return (x*x) + (y*y) < Double(radius*radius)
+    return (x*x) + (y*y) < radius*radius
 }
 
 
