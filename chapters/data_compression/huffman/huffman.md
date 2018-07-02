@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
@@ -22,8 +23,6 @@ $$
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
 
-=======
->>>>>>> upstream/master
 # Huffman Encoding
 
 If there were ever a data compression method to take the world by storm, it would be Huffman encoding.
@@ -87,11 +86,14 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 ### Rust
 [import, lang:"rust"](code/rust/huffman.rs)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/huffman.hs)
 {% endmethod %}
 =======
+=======
+>>>>>>> refs/remotes/origin/master
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/huffman.c)
@@ -142,4 +144,3 @@ $$
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
 
->>>>>>> upstream/master
