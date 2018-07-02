@@ -29,7 +29,7 @@ Each constituent wave can be described by only one value: $$\omega$$.
 So, instead of representing these curves as seen above, we could instead describe them as peaks in frequency space, as shown below.
 
 <p>
-    <img src="res/FT_example.png" width="500" height="250" />
+    <img src="res/FT_example.png" width="500" />
 </p>
 
 This is what the Fourier Transform does!
@@ -150,7 +150,7 @@ For example, imagine we need to perform an FFT of an array of only 2 elements.
 We can represent this addition with the following (radix-2) butterfly:
 
 <p>
-    <img src="res/radix-2screen_positive.jpg" width="400" height="225" />
+    <img src="res/radix-2screen_positive.jpg" width="400" />
 </p>
 
 Here, the diagram means the following:
@@ -181,7 +181,7 @@ In this case, we start with simple butterflies, as shown above, and then sum but
 For example, if we have 8 elements, this might look like this:
 
 <p>
-    <img src="res/radix-8screen.jpg" width="500" height="500" />
+    <img src="res/radix-8screen.jpg" width="500" />
 </p>
 
 Note that we can perform a DFT directly before using any butterflies, if we so desire, but we need to be careful with how we shuffle our array if that's the case.
@@ -190,7 +190,7 @@ In the code snippet provided in the previous section, the subdivision was perfor
 For example, take a look at the ordering of FFT ([found on wikipedia](https://en.wikipedia.org/wiki/Butterfly_diagram)) that performs the DFT shortcut:
 
 <p>
-    <img src="res/butterfly_diagram.png" width="600" height="500" />
+    <img src="res/butterfly_diagram.png" width="600" />
 </p>
 
 Here, the ordering of the array was simply divided into even and odd elements once, but they did not recursively divide the arrays of even and odd elements again because they knew they would perform a DFT soon thereafter.

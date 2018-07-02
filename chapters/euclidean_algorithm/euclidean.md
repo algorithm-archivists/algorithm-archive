@@ -32,7 +32,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
 
 <p>
-    <img src="res/subtraction.png" width="500" height="500" />
+    <img src="res/subtraction.png" width="500" />
 </p>
 
 Modern implementations, though, often use the modulus operator (%) like so
@@ -65,7 +65,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
 
 <p>
-    <img src="res/modulus.png" width="500" height="500" />
+    <img src="res/modulus.png" width="500" />
 </p>
 
 The Euclidean Algorithm is truly fundamental to many other algorithms throughout the history of computer science and will definitely be used again later. At least to me, it's amazing how such an ancient algorithm can still have modern use and appeal. That said, there are still other algorithms out there that can find the greatest common divisor of two numbers that are arguably better in certain cases than the Euclidean algorithm, but the fact that we are discussing Euclid two millenia after his death shows how timeless and universal mathematics truly is. I think that's pretty cool.
