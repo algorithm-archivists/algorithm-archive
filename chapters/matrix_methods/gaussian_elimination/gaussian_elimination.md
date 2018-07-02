@@ -281,6 +281,8 @@ The full code can be seen here:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 
