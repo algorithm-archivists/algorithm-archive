@@ -171,7 +171,7 @@ We've outlined the most common complexity cases of different algorithms here, bu
 Which is better: $$O(n^2)$$ or $$O(log(n))$$?
 Well, let's plot all the different cases out, and the answer should become obvious.
 
-<p align="center">
+<p>
     <img src="res/cplot.png" />
 </p>
 

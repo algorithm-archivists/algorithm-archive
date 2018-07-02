@@ -28,7 +28,7 @@ If we take a sum sinusoidal functions (like $$\sin(\omega t)$$ or $$\cos(\omega 
 Each constituent wave can be described by only one value: $$\omega$$.
 So, instead of representing these curves as seen above, we could instead describe them as peaks in frequency space, as shown below.
 
-<p align="center">
+<p>
     <img src="res/FT_example.png" width="500" height="250" />
 </p>
 
@@ -149,7 +149,7 @@ And at each step, we use the appropriate term.
 For example, imagine we need to perform an FFT of an array of only 2 elements.
 We can represent this addition with the following (radix-2) butterfly:
 
-<p align="center">
+<p>
     <img src="res/radix-2screen_positive.jpg" width="400" height="225" />
 </p>
 
@@ -163,7 +163,7 @@ $$
 
 However, it turns out that the second half of our array of $$\omega$$ values is always the negative of the first half, so $$\omega_2^0 = -\omega_2^1$$, so we can use the following butterfly diagram:
 
-<p align="center">
+<p>
     <img src="res/radix-2screen.jpg" width="400" />
 </p>
 
@@ -180,7 +180,7 @@ Now imagine we need to combine more elements.
 In this case, we start with simple butterflies, as shown above, and then sum butterflies of butterflies.
 For example, if we have 8 elements, this might look like this:
 
-<p align="center">
+<p>
     <img src="res/radix-8screen.jpg" width="500" height="500" />
 </p>
 
@@ -189,7 +189,7 @@ In the code snippet provided in the previous section, the subdivision was perfor
 
 For example, take a look at the ordering of FFT ([found on wikipedia](https://en.wikipedia.org/wiki/Butterfly_diagram)) that performs the DFT shortcut:
 
-<p align="center">
+<p>
     <img src="res/butterfly_diagram.png" width="600" height="500" />
 </p>
 

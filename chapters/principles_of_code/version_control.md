@@ -60,7 +60,7 @@ If you just want to get the feel for how git works, I suggest going to [github.c
 Note that you will not be able to contribute to any old directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
 Because of this, you may want to create a repository under your own github username or make your own copy of someone elses code on github by clicking the *fork* button:
 
-<p align="center">
+<p>
     <img src="res/fork.png" />
 </p>
 
@@ -69,7 +69,7 @@ If you cannot think of what repository to work on and want to collaborate on thi
 
 Regardless, as long as there is a repository under your username on github, we can continue by linking that remote github location to your local git directory. First, we need to find the url of the github repository, as shown here:
 
-<p align="center">
+<p>
     <img src="res/clone.png" />
 </p>
 

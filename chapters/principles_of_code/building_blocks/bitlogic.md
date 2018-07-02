@@ -95,37 +95,37 @@ In addition to the bitshift operations, there are a number of logical operations
 These operations are called *gates*, and follow soemwhat straightforward logic.
 The *AND* gate, for example, reads in 2 bits and will only output a 1 value if both inputs are 1. This can be seen in the corresponding truth table:
 
-<p align="center">
+<p>
     <img src="res/and.jpg" height="350" />
 </p>
 
 The *OR* gate will output 1 if either input bits are 1:
 
-<p align="center">
+<p>
     <img src="res/or.jpg" height="350" />
 </p>
 
 The *exclusive OR* or *XOR* gate is the same as the *OR* gate, but will not output 1 if both bits are 1:
 
-<p align="center">
+<p>
     <img src="res/xor.jpg" height="350" />
 </p>
 
 The *NOT* gate simply flips the input bit:
 
-<p align="center">
+<p>
     <img src="res/not.jpg" height="350" />
 </p>
 
 By combining the NOT and AND gates, we get the *NAND* gate:
 
-<p align="center">
+<p>
     <img src="res/nand.jpg" height="350" />
 </p>
 
 And NOT and OR create *NOR*:
 
-<p align="center">
+<p>
     <img src="res/nor.jpg" height="350" />
 </p>
 

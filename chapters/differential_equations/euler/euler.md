@@ -51,7 +51,7 @@ Now, solving this set of equations in this way is known as the *forward* Euler M
 In fact, there is another method known as the [*backward* Euler Method](backward_euler.md), which we will get to soon enough.
 For now, it is important to note that the error of these methods depend on the timestep chosen.
 
-<p align="center">
+<p>
     <img src="res/error.png" />
 </p>
 
@@ -69,7 +69,7 @@ The solution here is $$y(t) = e^{-3t}$$ and we can find this solution somewhat e
 That said, by choosing a larger timestep, we see the Euler method's solution oscillate above and below 0, which should *never* happen.
 If we were to take the Euler method's solution as valid, we would incorrectly assume that $$e^{-3t}$$ will become negative!
 
-<p align="center">
+<p>
     <img src="res/instability.png" />
 </p>
 

@@ -51,7 +51,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
-<p align="center">
+<p>
     <img src="res/DFS_pre.png" width="500" height="500" />
 </p>
 
@@ -85,7 +85,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
-<p align="center">
+<p>
     <img src="res/DFS_post.png" width="500" height="500" />
 </p>
 
@@ -116,7 +116,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
-<p align="center">
+<p>
     <img src="res/DFS_in.png" width="500" height="500" />
 </p>
 
@@ -157,7 +157,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
-<p align="center">
+<p>
     <img src="res/BFS_simple.png" width="500" height="500" />
 </p>
 
@@ -209,7 +209,7 @@ tree_traversal.c
 ### JavaScript
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-### Python 
+### Python
 [import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
