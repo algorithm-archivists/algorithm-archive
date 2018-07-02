@@ -261,13 +261,13 @@ In code, this looks like:
 [import:4-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
-As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above pseudocode with the necessary steps. Let me know if anything is unclear!
+As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment with the necessary steps. Let me know if anything is unclear!
 
 Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
 
 The back-substitution method is precisely what we said above.
 If we have a matrix in Row Echelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
-Even though this seems straightforward, the pseudocode might not be as simple as you thought!
+Even though this seems straightforward, the code might not be as simple as you thought!
 
 {% method %}
 {% sample lang="jl" %}
