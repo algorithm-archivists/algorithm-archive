@@ -213,7 +213,9 @@ tree_traversal.c
 [import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
-![scratch tree](code/scratch/scratch_tree.png)
+<p>
+    <img src="code/scratch/scratch_tree.png" />
+</p>
 {% sample lang="rs"%}
 ### Rust
 [import, lang:"rust"](code/rust/tree.rs)
