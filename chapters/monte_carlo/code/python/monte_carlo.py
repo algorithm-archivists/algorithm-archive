@@ -3,8 +3,8 @@ import random
 
 
 def in_circle(x, y):
-	radius = 1.0
 	"""Return True if the point is in the circle and False otherwise."""
+	radius = 1.0
 	return (x*x + y*y) < radius*radius
 
 def monte_carlo(n_samples):
