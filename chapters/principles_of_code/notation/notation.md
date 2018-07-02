@@ -172,7 +172,7 @@ Which is better: $$O(n^2)$$ or $$O(log(n))$$?
 Well, let's plot all the different cases out, and the answer should become obvious.
 
 <p>
-    <img src="res/cplot.png" />
+    <img  class="center" src="res/cplot.png" />
 </p>
 
 Here, we see each of the complexity cases as $$n$$ increases.

@@ -52,7 +52,7 @@ In fact, there is another method known as the [*backward* Euler Method](backward
 For now, it is important to note that the error of these methods depend on the timestep chosen.
 
 <p>
-    <img src="res/error.png" />
+    <img  class="center" src="res/error.png" />
 </p>
 
 For example, here we see dramatically different results for different timesteps for solving the ODE $$y' = \frac{x^3}{6}$$, whose solution is $$y = \frac{x^2}{2}$$.
@@ -70,7 +70,7 @@ That said, by choosing a larger timestep, we see the Euler method's solution osc
 If we were to take the Euler method's solution as valid, we would incorrectly assume that $$e^{-3t}$$ will become negative!
 
 <p>
-    <img src="res/instability.png" />
+    <img  class="center" src="res/instability.png" />
 </p>
 
 Like above, the blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a tiemstep of 1.

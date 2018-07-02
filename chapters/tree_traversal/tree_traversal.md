@@ -52,7 +52,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
 <p>
-    <img src="res/DFS_pre.png" width="500" />
+    <img  class="center" src="res/DFS_pre.png" width="500" />
 </p>
 
 Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors!
@@ -86,7 +86,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% endmethod %}
 
 <p>
-    <img src="res/DFS_post.png" width="500" />
+    <img  class="center" src="res/DFS_post.png" width="500" />
 </p>
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
@@ -117,7 +117,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% endmethod %}
 
 <p>
-    <img src="res/DFS_in.png" width="500" />
+    <img  class="center" src="res/DFS_in.png" width="500" />
 </p>
 
 
@@ -158,7 +158,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
 <p>
-    <img src="res/BFS_simple.png" width="500" />
+    <img  class="center" src="res/BFS_simple.png" width="500" />
 </p>
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, exept that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
@@ -214,7 +214,7 @@ tree_traversal.c
 {% sample lang="scratch" %}
 ### Scratch
 <p>
-    <img src="code/scratch/scratch_tree.png" />
+    <img  class="center" src="code/scratch/scratch_tree.png" />
 </p>
 {% sample lang="rs"%}
 ### Rust

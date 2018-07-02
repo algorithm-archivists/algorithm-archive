@@ -191,7 +191,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 ### Scratch
 Submitted by Jie
 <p>
-    <img src="code/scratch/verlet_scratch.png" />
+    <img  class="center" src="code/scratch/verlet_scratch.png" />
 </p>
 Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
 {% sample lang="matlab" %}
@@ -201,7 +201,7 @@ Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/proj
 ### LabVIEW
 Submitted by P. Mekhail
 <p>
-    <img src="code/labview/verlet_labview.png" />
+    <img  class="center" src="code/labview/verlet_labview.png" />
 </p>
 {% sample lang="javascript" %}
 ### JavaScript

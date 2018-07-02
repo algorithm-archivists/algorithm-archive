@@ -14,7 +14,7 @@ If we embed a circle into the square with a radius $$r = \text{length}$$ (shown 
 For simplicity, we can also say that $$\text{Area}_{\text{square}}=4r^2$$.
 
 <p>
-    <img src="res/square_circle.png" width="300"/>
+    <img  class="center" src="res/square_circle.png" width="300"/>
 </p>
 
 Now, let's say we want to find the area of the circle without an equation.
@@ -60,7 +60,7 @@ $$
 If we use a small number of points, this will only give us a rough approximation, but as we start adding more and more points, the approximation becomes much, much better (as shown below)!
 
 <p>
-    <img src="res/monte_carlo.gif" width="400"/>
+    <img  class="center" src="res/monte_carlo.gif" width="400"/>
 </p>
 
 The true power of monte carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.

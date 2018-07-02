@@ -29,7 +29,7 @@ And that's it.
 Here's an image of what this might look like for the phrase `bibbity_bobbity`:
 
 <p>
-    <img src="res/huffman_tree.png" width="500" />
+    <img  class="center" src="res/huffman_tree.png" width="500" />
 </p>
 
 This will create a codebook that looks like this:
