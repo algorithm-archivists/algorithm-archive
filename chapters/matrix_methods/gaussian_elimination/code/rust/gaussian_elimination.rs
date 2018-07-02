@@ -10,11 +10,11 @@ pub struct Matrix {
 }
 
 impl Matrix {
-    fn new(rows: usize, cols: usize) -> Matrix {
+    fn new(rows: usize, cols: usize, data: &[f64]) -> Matrix {
         Matrix {
             rows,
             cols,
-            data: vec![0.0; rows * cols],
+            data: data.to_vec(),
         }
     }
 
@@ -27,14 +27,13 @@ impl Matrix {
 
 impl Index<(usize, usize)> for Matrix {
     type Output = f64;
-    fn index(&self, index: (usize, usize)) -> &f64 {
-        let (row, col) = index;
+    fn index(&self, (row, col): (usize, usize)) -> &f64 {
         &self.data[row * self.cols + col]
     }
 }
 
 impl IndexMut<(usize, usize)> for Matrix {
-    fn index_mut<'a>(&'a mut self, (row, col): (usize, usize)) -> &'a mut f64 {
+    fn index_mut(&mut self, (row, col): (usize, usize)) -> &mut f64 {
         &mut self.data[row * self.cols + col]
     }
 }
@@ -95,8 +94,11 @@ fn back_substitution(a: &Matrix) -> Vec<f64> {
 
 fn main() {
     // The example matrix from the text
-    let mut a = Matrix::new(3, 4);
-    a.data = vec![2.0, 3.0, 4.0, 6.0, 1.0, 2.0, 3.0, 4.0, 3.0, -4.0, 0.0, 10.0];
+    let mut a = Matrix::new(
+        3,
+        4,
+        &vec![2.0, 3.0, 4.0, 6.0, 1.0, 2.0, 3.0, 4.0, 3.0, -4.0, 0.0, 10.0],
+    );
 
     gaussian_elimination(&mut a);
     let soln = back_substitution(&a);
