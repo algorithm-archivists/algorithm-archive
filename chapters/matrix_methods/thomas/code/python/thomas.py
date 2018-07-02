@@ -38,3 +38,6 @@ def main():
     d=[7,5,3]
     soln = thomas(a,b,c,d)
     print(soln)
+
+if __name__ == '__main__':
+    main()
