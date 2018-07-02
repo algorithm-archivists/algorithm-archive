@@ -5,4 +5,12 @@ Gathros
 Jeremie Gillet (- Jie -)
 Salim Khatib
 Hitesh C
-Emil Kerimov
+Shaurya
+Maxime Dherbécourt
+Jess 3Jane
+Pen Pal
+Chinmaya Mahesh
+Unlambder
+Kjetil Johannessen
+CDsigma
+DominikRafacz

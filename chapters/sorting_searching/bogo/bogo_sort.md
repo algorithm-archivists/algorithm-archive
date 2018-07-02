@@ -8,7 +8,7 @@ imagine you have an array of $$n$$ elements that you want sorted.
 One way to do it is to shuffle the array at random and hope that all the elements will be magically in order after shuffling.
 If they are not in order, just shuffle everything again.
 And then again. And again.
-In the best case, this algorithm runs with a complexity of $$\Omega(1)$$, and in the worst, $$\mathcal{O}(\infty)$$.
+In the best case, this algorithm runs with a complexity of $$\Omega(n)$$, and in the worst, $$\mathcal{O}(\infty)$$.
 
 In code, it looks something like this:
 
@@ -18,15 +18,25 @@ In code, it looks something like this:
 {% sample lang="cs" %}
 [import:9-15, lang:"csharp"](code/cs/BogoSort.cs)
 {% sample lang="clj" %}
-[import:2-10, lang:"clojure"](code/clojure/bogo.clj)
+[import:2-11, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
-[import:4-27, lang:"c_cpp"](code/c/bogo_sort.c)
+[import:4-29, lang:"c_cpp"](code/c/bogo_sort.c)
+{% sample lang="java" %}
+[import:2-17, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
 [import:1-16, lang:"javascript"](code/js/bogo.js)
+{% sample lang="py" %}
+[import:4-12, lang:"python"](code/python/bogo.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/bogosort.m)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/bogosort.rs)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/bogosort.swift)
 {% endmethod %}
 
 That's it.
@@ -56,4 +66,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-

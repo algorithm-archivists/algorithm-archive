@@ -58,11 +58,11 @@ Truth be told, I didn't understand it fully until I discretized real and frequen
 
 In principle, the Discrete Fourier Transform (DFT) is simply the Fourier transform with summations instead of integrals:
 
-$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-2 \pi k n / N}$$
+$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-2 \pi i k n / N}$$
 
 and
 
-$$x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k \cdot e^{2 \pi k n / N}$$
+$$x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k \cdot e^{2 \pi i k n / N}$$
 
 Where $$X_n$$ and $$x_n$$ are sequences of $$N$$ numbers in frequency and real space, respectively.
 In principle, this is no easier to understand than the previous case!
@@ -72,12 +72,12 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="jl" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:7-19, lang:"c_cpp"](code/c/fft.c)
+[import:8-19, lang:"c_cpp"](code/c/fft.c)
 {% sample lang="cpp" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
 {% sample lang="hs" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
 {% sample lang="scratch" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
@@ -117,13 +117,13 @@ In the end, the code looks like:
 {% sample lang="jl" %}
 [import:14-31, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:21-40, lang:"c_cpp"](code/c/fft.c)
+[import:20-39, lang:"c_cpp"](code/c/fft.c)
 {% sample lang="cpp" %}
 [import:27-57, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, lang:"haskell"](code/hs/fft.hs)
-{% sample lang="py2" %}
-[import:5-16, lang:"python"](code/python2/fft.py)
+{% sample lang="py" %}
+[import:5-16, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:14-31, lang:"julia"](code/julia/fft.jl)
 {% endmethod %}
@@ -138,12 +138,12 @@ Butterfly Diagrams show where each element in the array goes before, during, and
 As mentioned, the FFT must perform a DFT.
 This means that even though we need to be careful about how we add elements together, we are still ultimately performing the following operation:
 
-$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-2 \pi k n / N}$$
+$$X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-2 \pi i k n / N}$$
 
 However, after shuffling the initial array (by bit reversing or recursive subdivision), we perform the matrix multiplication of the $$e^{-2 \pi k n / N}$$ terms in pieces.
 Basically, we split the array into a series of omega values:
 
-$$\omega_N^k = e^{-2 \pi k / N}$$
+$$\omega_N^k = e^{-2 \pi i k / N}$$
 
 And at each step, we use the appropriate term.
 For example, imagine we need to perform an FFT of an array of only 2 elements.
@@ -230,9 +230,9 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/hs/fft.hs)
-{% sample lang="py2" %}
+{% sample lang="py" %}
 ### Python
-[import, lang:"python"](code/python2/fft.py)
+[import, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 ### Scratch
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
