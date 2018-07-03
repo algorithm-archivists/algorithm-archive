@@ -17,9 +17,9 @@ swapRows r1 r2 m
 multRow :: (Num a) => Int -> a -> Matrix a -> Matrix a
 multRow r a m = m // [((r, k), a * m ! (r, k)) | k <- cols m]
 
-combRows ::
+combineRows ::
      (Eq a, Fractional a) => (Int, Int) -> a -> Int -> Matrix a -> Matrix a
-combRows (r, c) a t m
+combineRows (r, c) a t m
   | m ! (t, c) == 0 = m
   | otherwise =
     m // [((t, k), a * m ! (t, k) / (m ! (t, c)) - m ! (r, k)) | k <- cols m]
@@ -33,7 +33,7 @@ toEchelon mat = go (r1, c1) mat
       | pivot == 0 = go (r, c + 1) m
       | otherwise =
         go (r + 1, c + 1) $
-        foldr (combRows (r, c) pivot) (swapRows r target m) [r + 1 .. rn]
+        foldr (combineRows (r, c) pivot) (swapRows r target m) [r + 1 .. rn]
       where
         (pivot, target) = maximum [(m ! (k, c), k) | k <- [r .. rn]]
 
@@ -46,7 +46,10 @@ toReducedEchelon mat = foldr go mat (echelonPath (r1, c1))
       | mat ! (r, c) == 0 = echelonPath (r, c + 1)
       | otherwise = (r, c) : echelonPath (r + 1, c + 1)
     go (r, c) m =
-      foldr (combRows (r, c) 1) (multRow r (1 / (m ! (r, c))) m) [r1 .. r - 1]
+      foldr
+        (combineRows (r, c) 1)
+        (multRow r (1 / (m ! (r, c))) m)
+        [r1 .. r - 1]
 
 printM :: (Show a) => Matrix a -> String
 printM m =

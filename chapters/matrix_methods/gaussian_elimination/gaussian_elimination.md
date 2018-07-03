@@ -80,13 +80,7 @@ $$
 \right]
 $$
 
-
-and it has a particular name: _Row Echelon Form_. Basically, any matrix can be considered in row echelon form if
-
-1. All non-zero rows are above rows of all zeros
-2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
-
-Now, Row Echelon Form is nice, but wouldn't it be even better if our system of equations looked simply like this
+Remember this one, we'll come back to it. Now, this is nice, but wouldn't it be even better if our system of equations looked simply like this
 
 
 $$
@@ -111,10 +105,91 @@ $$
 \right]
 $$
 
+And that's where we really want to get to for obvious reasons.
 
-And again has a special name * **Reduced** Row Echelon Form*. Now, it seems obvious to point out that if we remove the values to the right of the equals sign \($$=$$\), Row Echelon Form is an upper triangular matrix. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
+Remember the earlier matrix form? It has a particular name: _Row Echelon Form_. Basically, any matrix can be considered in row echelon form if
 
-For now, I hope the motivation is clear: we want to convert a matrix into Row Echelon and (potentially) Reduced Row Echelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
+1. All non-zero rows are above rows of all zeros
+2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
+
+All the following examples are in the Row Echelon Form:
+
+$$
+\left[
+\begin{array}{ccc|c}
+2 & 3  & 4 & 6 \\
+0 & 1 & 2 & 2 \\
+0 & 0 & 11 & 18
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{ccc|c}
+5 & 4  & 0 & 10 \\
+0 & 0 & 5 & 7 \\
+0 & 0 & 0 & 1
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{ccccc}
+1 & -3 & 4 & 1 & 6 \\
+0 & 3 & 3 & 5 & 0 \\
+0 & 0 & 0 & 2 & 0
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+0 & 0
+\end{array}
+\right]
+$$
+
+Out of all of these, only the first two one make sense if you're talking about a system of linear equations, as the last two don't even have the right dimensions. Additionally, if you translate the last row of second matrix into a system, you get $$0=1$$, which is a contradiction. This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these are in Row Echelon Form.
+
+Now, it seems obvious to point out that if we ignore the last column, Row Echelon Form is an upper triangular matrix. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
+
+As we discussed before, Row Echelon Form is not the terminus. Cue the * **Reduced** Row Echelon Form*.  A matrix is in Reduced Row Echelon form if it satisfies the following conditions:
+
+1. It is in row echelon form.
+2. Every pivot is 1 and is the only nonzero entry in its column.
+
+All the following examples are in the Reduced Row Echelon Form:
+
+$$
+\left[
+\begin{array}{ccc|c}
+1 & 0 & 0 & 8 \\
+0 & 1 & 0 & -3 \\
+0 & 0 & 1 & 9
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{ccc|c}
+1 & 4  & 0 & 9 \\
+0 & 0 & 1 & 7 \\
+0 & 0 & 0 & 1
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+0 & 0
+\end{array}
+\right]
+$$
+
+Again, only the first one (the identity matrix looking guy) is desirable in the context of solving a system of equations, but transforming a matrix in this form gives us an immediate and definitive answer at the question: can I solve my system?
+
+Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as the rank.
+
+For now, I hope the motivation is clear: we want to convert a matrix into Row Echelon and then Reduced Row Echelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
 
 That's right! _Gaussian Elimination_
 
@@ -150,7 +225,7 @@ $$
 
 There are plenty of different strategies you could use to do this, and no one strategy is better than the rest. Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows. I then do the same thing for the following columns.
 
-After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Echelon Form. In other words, we do the following:
+After you get an upper triangular matrix, the next step is creating the Reduced Row Echelon Form. In other words, we do the following:
 
 $$
 \left[
@@ -176,19 +251,22 @@ Here, the idea is similar to above. The strategy is the same as before, but star
 
 Now, the analytical method may seem straightforward, but the algorithm does not obviously follow from the game we were playing before, so we'll go through it step-by-step.
 
-In general, do the following process:
+Row by row, do the following process:
 
-1. For each column `col`, find the highest value
+1. Find the highest value in the column below the pivot candidate
 $$
 \left[
 \begin{array}{ccc|c}
-2 & 3  & 4 & 6 \\
+\mathbf{2} & 3  & 4 & 6 \\
 1 & 2 & 3 & 4 \\
 \mathbf{3} & -4 & 0 & 10
 \end{array}
 \right]
 $$
-2. Swap the row with the highest valued element with the `col`th row.
+
+If that value is $$0$$, the matrix is singular and the system has no solutions. Feel free to exit here, but I'm powering through by moving on to the next column, baby!
+
+2. Swap the row with the highest valued element with the current row.
 $$
 \left[
 \begin{array}{ccc|c}
@@ -206,7 +284,7 @@ $$
 \end{array}
 \right]
 $$
-3. For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
+3. For all remaining rows below the pivot, find a fraction that corresponds to the ratio of the lower value in that column to the pivot \(the one you swapped to the top\)
 $$
 \rightarrow
 \left[
@@ -223,7 +301,7 @@ $$
 $$
 4. Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
 $$
-A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
+A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{-}=  f \times A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}}) \\
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
@@ -235,22 +313,21 @@ A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\te
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
-\mathbf{\frac{1}{3}} & \mathbf{\frac{2}{3}} & \mathbf{1} & \mathbf{\frac{4}{3}} \\
+\mathbf{1-\frac{3}{3}} & \mathbf{2-\frac{-4}{3}} & \mathbf{3 -\frac{0}{3}} & \mathbf{4-\frac{10}{3}} \\
 2 & 3  & 4 & 6
 \end{array}
 \right]
-$$
-5. Set the value of that row's pivot column to 0.
-$$
+\rightarrow
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
-0 & 2 & 3 & 4 \\
+\mathbf{0} & \mathbf{\frac{10}{3}} & \mathbf{3} & \mathbf{\frac{2}{3}} \\
 2 & 3  & 4 & 6
 \end{array}
 \right]
-
 $$
+You may set the values below the pivot to 0 for numerical reasons.
+
 
 In code, this looks like:
 
@@ -261,13 +338,13 @@ In code, this looks like:
 [import:4-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
-As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above pseudocode with the necessary steps. Let me know if anything is unclear!
+As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above code with the necessary steps. Let me know if anything is unclear!
 
-Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
+Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*! So what do we do from here? Well, we continue further reducing the matrix, but with a twist: using the *Back-Substitution*.
 
-The back-substitution method is precisely what we said above.
+The back-substitution method is precisely what we said above, but for every pivot starting from the bottom right one.
 If we have a matrix in Row Echelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
-Even though this seems straightforward, the pseudocode might not be as simple as you thought!
+Even though this seems straightforward, the code might not be as simple as you thought, especially if your matrix is singular.
 
 {% method %}
 {% sample lang="jl" %}
