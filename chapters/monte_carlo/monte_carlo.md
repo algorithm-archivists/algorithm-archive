@@ -117,7 +117,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
 ### Swift
-[import, lang:"swift"](code/java/monte_carlo.swift)
+[import, lang:"swift"](code/swift/monte_carlo.swift)
 {% endmethod %}
 
 
