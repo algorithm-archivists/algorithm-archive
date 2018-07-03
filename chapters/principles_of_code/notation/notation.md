@@ -171,7 +171,9 @@ We've outlined the most common complexity cases of different algorithms here, bu
 Which is better: $$O(n^2)$$ or $$O(log(n))$$?
 Well, let's plot all the different cases out, and the answer should become obvious.
 
-![Complexity plot](cplot.png)
+<p>
+    <img  class="center" src="res/cplot.png" />
+</p>
 
 Here, we see each of the complexity cases as $$n$$ increases.
 Clearly, linear time is not bad when compared to polynomial or exponential time; however, if you can manage something in logarithmic or constant time, do it!

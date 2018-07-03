@@ -13,7 +13,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="cs" %}
 [import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
 {% sample lang="c" %}
-[import:3-21, lang:"c_cpp"](code/c/bubble_sort.c)
+[import:4-22, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
@@ -34,6 +34,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:7-21, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
 [import:5-19, lang:"racket"](code/racket/bubbleSort.rkt)
+{% sample lang="swift" %}
+[import:1-15, lang:"swift"](code/swift/bubblesort.swift)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

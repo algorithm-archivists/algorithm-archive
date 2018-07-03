@@ -28,8 +28,8 @@ Well, here we build it from the bottom up like so:
 And that's it.
 Here's an image of what this might look like for the phrase `bibbity_bobbity`:
 
-<p align="center">
-    <img src="res/huffman_tree.png" width="500" height="500" />
+<p>
+    <img  class="center" src="res/huffman_tree.png" width="500" />
 </p>
 
 This will create a codebook that looks like this:
@@ -84,8 +84,10 @@ Program.cs
 {% sample lang="js" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/huffman.js)
+{% sample lang="java" %}
+### Java
+[import, lang:"java"](code/java/huffman.java)
 {% endmethod %}
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
