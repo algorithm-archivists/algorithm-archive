@@ -1,6 +1,6 @@
-#Author: gammison
+# Author: gammison
 
-#note this example is inplace and destructive
+# note this example is inplace and destructive
 def thomas(a, b, c, d):
     
     #set the initial elements
@@ -16,21 +16,21 @@ def thomas(a, b, c, d):
         d[i] = (d[i] -a[i] * d[i-1]) * scale
 
     
-    #do the back substitution
+    # do the back substitution
     for i in range(n-2,-1,-1):
         d[i] = d[i] - c[i]*d[i+1]
     
     return d
 
 def main():
-    #example for matrix
-    #[1  4  0][x]   [7]
-    #[2  3  5][y] = [5]
-    #[0  3  6][z]   [3]
-    #                [.8666]
-    #soln will equal [1.533]
-    #                [-.266]
-    #note we index a from 1 and c from 0
+    # example for matrix
+    # [1  4  0][x]   [7]
+    # [2  3  5][y] = [5]
+    # [0  3  6][z]   [3]
+    #                 [.8666]
+    # soln will equal [1.533]
+    #                 [-.266]
+    # note we index a from 1 and c from 0
     a = [0, 2, 3]
     b = [1, 3, 6]
     c = [4, 5, 0]
