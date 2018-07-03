@@ -31,11 +31,11 @@ def main():
     #soln will equal [1.533]
     #                [-.266]
     #note we index a from 1 and c from 0
-    a = [0,2,3]
-    b = [1,3,6]
-    c = [4,5,0]
-    d = [7,5,3]
-    soln = thomas(a,b,c,d)
+    a = [0, 2, 3]
+    b = [1, 3, 6]
+    c = [4, 5, 0]
+    d = [7, 5, 3]
+    soln = thomas(a, b, c, d)
     print(soln)
 
 if __name__ == '__main__':
