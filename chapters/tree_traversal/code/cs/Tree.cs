@@ -6,110 +6,107 @@ namespace TreeTraversal
 {
     public class Tree
     {
-        private class Node
-        {
-            public List<Node> Children { get; set; } = new List<Node>();
-            public int Id { get; set; }
-
-            public Node(int id) => this.Id = id;
-        }
-
-        private Node root;
+        public int Id { get; private set; }
+        private List<Tree> _children = new List<Tree>();
 
         public Tree(int depthCount, int childrenCount)
         {
-            root = new Node(1);
-            CreateAllChildren(root, depthCount, childrenCount);
+            this.Id = 1;
+
+            if (!(depthCount <= 1))
+            {
+                for (int i = 0; i < childrenCount; i++)
+                    this._children.Add(new Tree(this.Id * 10 + i + 1, depthCount - 1, childrenCount));
+            }
+        }
+
+        private Tree(int id, int depthCount, int childrenCount)
+        {
+            this.Id = id;
+
+            if (!(depthCount <= 1))
+            {
+                for (int i = 0; i < childrenCount; i++)
+                    this._children.Add(new Tree(this.Id * 10 + i + 1, depthCount - 1, childrenCount));
+            }
         }
 
         public void DFSRecursive()
         {
-            DFSRecursive(root);
+            DFSRecursive(this);
 
-            void DFSRecursive(Node node)
+            void DFSRecursive(Tree tree)
             {
-                Console.WriteLine(node.Id);
+                Console.WriteLine(tree.Id);
 
-                foreach (var c in node.Children)
+                foreach (var c in tree._children)
                     DFSRecursive(c);
             }
         }
 
         public void DFSRecursivePostorder()
         {
-            DFSRecursivePostorder(root);
+            DFSRecursivePostorder(this);
 
-            void DFSRecursivePostorder(Node node)
+            void DFSRecursivePostorder(Tree tree)
             {
-                foreach (var c in node.Children)
+                foreach (var c in tree._children)
                     DFSRecursivePostorder(c);
 
-                Console.WriteLine(node.Id);
+                Console.WriteLine(tree.Id);
             }
         }
 
         public void DFSRecursiveInorderBinary()
         {
-            DFSRecursiveInorderBinary(root);
+            DFSRecursiveInorderBinary(this);
 
             // This assumes only 2 children
-            void DFSRecursiveInorderBinary(Node node)
+            void DFSRecursiveInorderBinary(Tree tree)
             {
-                if (node.Children.Count > 2)
-                     throw new Exception("Not binary tree!");
+                if (tree._children.Count > 2)
+                    throw new Exception("Not binary tree!");
 
-                if (node.Children.Count > 0)
+                if (tree._children.Count > 0)
                 {
-                    DFSRecursiveInorderBinary(node.Children[0]);
-                    Console.WriteLine(node.Id);
-                    DFSRecursiveInorderBinary(node.Children[1]);
+                    DFSRecursiveInorderBinary(tree._children[0]);
+                    Console.WriteLine(tree.Id);
+                    DFSRecursiveInorderBinary(tree._children[1]);
                 }
                 else
-                    Console.WriteLine(node.Id);
+                    Console.WriteLine(tree.Id);
             }
         }
 
         public void DFSStack()
         {
-            var stack = new Stack<Node>();
-            stack.Push(root);
-            Node temp;
+            var stack = new Stack<Tree>();
+            stack.Push(this);
+            Tree temp;
 
             while (stack.Count != 0)
             {
                 Console.WriteLine(stack.Peek().Id);
                 temp = stack.Pop();
 
-                foreach (var c in temp.Children)
+                foreach (var c in temp._children)
                     stack.Push(c);
             }
         }
 
         public void BFSQueue()
         {
-            var queue = new Queue<Node>();
-            queue.Enqueue(root);
-            Node temp;
+            var queue = new Queue<Tree>();
+            queue.Enqueue(this);
+            Tree temp;
 
             while (queue.Count != 0)
             {
                 Console.WriteLine(queue.Peek().Id);
                 temp = queue.Dequeue();
 
-                foreach (var c in temp.Children)
+                foreach (var c in temp._children)
                     queue.Enqueue(c);
-            }
-        }
-
-        private void CreateAllChildren(Node node, int rowCount, int childrenCount)
-        {
-            if (rowCount <= 1)
-                return;
-
-            for (int i = 0; i < childrenCount; i++)
-            {
-                node.Children.Add(new Node(node.Id * 10 + i + 1));
-                CreateAllChildren(node.Children[i], rowCount - 1, childrenCount);
             }
         }
     }
