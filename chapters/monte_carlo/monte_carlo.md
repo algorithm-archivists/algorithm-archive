@@ -54,7 +54,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="go" %}
 [import:12-14, lang:"golang"](code/go/monteCarlo.go)
 {% sample lang="java" %}
-[import:11-13, lang:"java"](code/java/MonteCarlo.java)
+[import:13-15, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
 [import:21-25, lang:"swift"](code/swift/monte_carlo.swift)
 {% endmethod %}
