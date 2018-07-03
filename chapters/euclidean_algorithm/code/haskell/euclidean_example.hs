@@ -19,4 +19,3 @@ main = do
       chk2 = euclidSub (128 * 12) (128 * 77)
   print chk1
   print chk2
-  return ()
