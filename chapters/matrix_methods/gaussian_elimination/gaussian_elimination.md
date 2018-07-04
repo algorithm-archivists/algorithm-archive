@@ -142,17 +142,17 @@ $$
 \left[
 \begin{array}{cc}
 0 & 0 \\
-0 & 0 \\
+0 & 2 \\
 0 & 0
 \end{array}
 \right]
 $$
 
-Out of all of these, only the first two one make sense if you're talking about a system of linear equations, as the last two don't even have the right dimensions. Additionally, if you translate the last row of second matrix into a system, you get $$0=1$$, which is a contradiction. This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these are in Row Echelon Form.
+The first two are probably the ones we are interested in, at the very least they have the right dimensions. The last two systems are either under- or over-constrained. However, if you translate the last row of second matrix into a system, you get $$0=1$$, which is a contradiction. This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these matrices are in Row Echelon Form.
 
 Now, it seems obvious to point out that if we ignore the last column, Row Echelon Form is an upper triangular matrix. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
 
-As we discussed before, Row Echelon Form is not the terminus. Cue the * **Reduced** Row Echelon Form*.  A matrix is in Reduced Row Echelon form if it satisfies the following conditions:
+As we discussed before, Row Echelon Form is not the end of the road. Cue the * **Reduced** Row Echelon Form*.  A matrix is in Reduced Row Echelon form if it satisfies the following conditions:
 
 1. It is in row echelon form.
 2. Every pivot is 1 and is the only nonzero entry in its column.
@@ -185,9 +185,9 @@ $$
 \right]
 $$
 
-Again, only the first one (the identity matrix looking guy) is desirable in the context of solving a system of equations, but transforming a matrix in this form gives us an immediate and definitive answer at the question: can I solve my system?
+Again, only the first one (the identity matrix looking guy) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system?
 
-Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as the rank.
+Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as the rank. The rank of a matrix is the maximal number of linearly independent columns, in Reduced Row Echelon Form, the rank is simply the number of pivots.
 
 For now, I hope the motivation is clear: we want to convert a matrix into Row Echelon and then Reduced Row Echelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
 
