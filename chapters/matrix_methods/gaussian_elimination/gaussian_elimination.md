@@ -1,6 +1,6 @@
 # Gaussian Elimination
 
-So, how exactly do we go about solving a system of linear equations? Well, one way is _Gaussian Elimination_, which you may have encountered before in a math class or two. The basic idea is that we take a system of equations,
+How exactly do we go about solving a system of linear equations? Well, one way is _Gaussian Elimination_, which you may have encountered before in a math class or two. The basic idea is that we take a system of equations,
 
 
 $$
@@ -195,7 +195,7 @@ That's right! _Gaussian Elimination_
 
 ## The Method
 
-Here I should point out that Gaussian elimination makes sense from a purely analytical point of view. That is to say that for small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution. For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
+Here I should point out that Gaussian elimination makes sense from a purely analytical point of view. For small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution. For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
 
 In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix where you have the following moves available:
 
@@ -263,7 +263,6 @@ $$
 \end{array}
 \right]
 $$
-
 If that value is $$0$$, the matrix is singular and the system has no solutions. Feel free to exit here, but I'm powering through by moving on to the next column, baby!
 
 2. Swap the row with the highest valued element with the current row.
@@ -337,8 +336,6 @@ In code, this looks like:
 {% sample lang="hs" %}
 [import:4-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
-
-As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above code with the necessary steps. Let me know if anything is unclear!
 
 Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*! So what do we do from here? Well, we continue further reducing the matrix, but with a twist: using the *Back-Substitution*.
 
