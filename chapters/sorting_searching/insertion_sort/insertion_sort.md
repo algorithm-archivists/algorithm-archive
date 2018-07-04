@@ -5,7 +5,7 @@ The algorithm starts from the second element in the array, in this point the sub
 
 {% method %}
 {% sample lang="c" %}
-[import:5-21, lang:"c"](code/c/insertion_sort.c)
+[import:21-22, lang:"c"](code/c/insertion_sort.c)
 {% sample lang="py" %}
 [import:5-6, lang:"python"](code/python/insertion_sort.py)
 {% endmethod %}
@@ -13,6 +13,8 @@ The algorithm starts from the second element in the array, in this point the sub
 In each iteration the current , j-th, element of A, A[j], is inserted into the correct position in the subarray A[1...j], moving each element that is bigger that A[j] one position to the right, leaving room for A[j].
 
 {% method %}
+{% sample lang="c" %}
+[import:26-31, lang:"c"](code/c/insertion_sort.c)
 {% sample lang="py" %}
 [import:10-15, lang:"python"](code/python/insertion_sort.py)
 {% endmethod %}
@@ -22,6 +24,8 @@ The worst input for insertion sort is the reverse sorted array, since in each it
 
 And the full code:
 {% method %}
+{% sample lang="c" %}
+[import:15-44, lang:"c"](code/python/insertion_sort.c)
 {% sample lang="py" %}
 [import:1-24, lang:"python"](code/python/insertion_sort.py)
 {% endmethod %}
