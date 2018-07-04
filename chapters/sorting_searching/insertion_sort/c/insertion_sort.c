@@ -13,7 +13,6 @@ void print_array(int *array, int arr_len){
 
 /*Insertion sort sorts the array inplace*/
 void insertion_sort(int *array, int arr_len){
-	int i;
 
 	/*loop through array[1:n], array[0] is already sorted*/
 	for(int j = 1; j < arr_len; ++j){
@@ -21,7 +20,7 @@ void insertion_sort(int *array, int arr_len){
 
 		/*Place the j-th element to the correct position in the sub array array[0...j]
 		 Keeping array[0...j] sorted*/
-		i = j - 1;
+		int i = j - 1;
 		while((i >= 0) && (array[i] > current_element)){
 			array[i + 1] = array[i];
 			i -= 1;
