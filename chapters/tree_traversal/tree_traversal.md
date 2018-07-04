@@ -144,7 +144,7 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:29-45, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:81-95, lang:"csharp"](code/cs/Tree.cs)
+[import:81-94, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -177,7 +177,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import:47-61, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:97-111, lang:"csharp"](code/cs/Tree.cs)
+[import:96-109, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}

@@ -82,12 +82,11 @@ namespace TreeTraversal
         {
             var stack = new Stack<Tree>();
             stack.Push(this);
-            Tree temp;
 
             while (stack.Count != 0)
             {
                 Console.WriteLine(stack.Peek().Id);
-                temp = stack.Pop();
+                var temp = stack.Pop();
 
                 foreach (var c in temp._children)
                     stack.Push(c);
@@ -98,12 +97,11 @@ namespace TreeTraversal
         {
             var queue = new Queue<Tree>();
             queue.Enqueue(this);
-            Tree temp;
 
             while (queue.Count != 0)
             {
                 Console.WriteLine(queue.Peek().Id);
-                temp = queue.Dequeue();
+                var temp = queue.Dequeue();
 
                 foreach (var c in temp._children)
                     queue.Enqueue(c);
