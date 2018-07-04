@@ -257,6 +257,8 @@ In code, this looks like:
 {% method %}
 {% sample lang="jl" %}
 [import:1-42, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="c" %}
+[import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above psuedocode with the necessary steps. Let me know if anything is unclear!
@@ -270,6 +272,8 @@ Even though this seems straightforward, the pseudocode might not be as simple as
 {% method %}
 {% sample lang="jl" %}
 [import:44-64, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="c" %}
+[import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 Now, as for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
@@ -281,6 +285,8 @@ The full code can be seen here:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}

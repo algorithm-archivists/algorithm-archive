@@ -40,6 +40,8 @@ In code, this will look like this:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/thomas.jl)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
 {% endmethod %}
