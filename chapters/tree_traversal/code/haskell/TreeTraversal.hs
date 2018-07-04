@@ -14,30 +14,26 @@ dfsInOrder (Node x [l])    = dfsInOrder l ++ [x] -- Single branch assumed to be 
 dfsInOrder (Node x [l, r]) = dfsInOrder l ++ [x] ++ dfsInOrder r
 dfsInOrder _               = error "Not a binary tree"
 
+dfsStack :: Tree a -> [a]
+dfsStack (Node x ts) = x : concatMap dfsStack ts
+
 bfs :: Tree a -> [a]
 bfs (Node x ts) = x : go ts
   where go [] = []
         go ts = map node ts ++ go (concatMap forest ts)
 
-toBin :: Tree a -> Tree a
-toBin (Node x ts) = Node x (map toBin $ take 2 ts)
 
+createTree :: Int -> Int -> Tree Int
+createTree 0 _ = Node 0 []
+createTree n c = Node n children
+  where children = replicate c (createTree (n-1) c)
+
+
+root = createTree 2 3
+rootBinary = createTree 3 2
 main = do
-  print $ dfs testTree
-  print $ dfsPostOrder testTree
-  print $ dfsInOrder $ toBin testTree
-  print $ bfs testTree
-
-testTree :: Tree Int
-testTree = Node 1 [ Node 2 [ Node 3 []
-                           , Node 4 [ Node 5 []]
-                           ]
-                  , Node 6 [ Node 7 []
-                           , Node 8 [ Node 9 [ Node 10 [ Node 11 []]
-                                             , Node 12 []
-                                             ]
-                                    ]
-                           , Node 13 [ Node 14 []]
-                           ]
-                   , Node 15 []
-                   ]
+  print $ dfs root
+  print $ dfsPostOrder root
+  print $ dfsStack root
+  print $ bfs root
+  print $ dfsInOrder rootBinary

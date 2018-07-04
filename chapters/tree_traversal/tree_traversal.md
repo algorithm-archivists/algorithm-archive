@@ -159,8 +159,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="rs"%}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:45-56, lang:"julia"](code/julia/Tree.jl)
+[import:17-18, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -192,7 +191,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="rs"%}
 [import:26-34, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:20-23, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
 # Example Code
