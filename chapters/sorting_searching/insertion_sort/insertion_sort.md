@@ -10,7 +10,7 @@ The algorithm starts from the second element in the array, in this point the sub
 [import:5-6, lang:"python"](code/python/insertion_sort.py)
 {% endmethod %}
 
-In each iteration the current , j-th, element of A, A[j], is inserted into the correct position in the subarray A[1...j], moving each element that is bigger that A[j] one position to the right, leaving room for A[j].
+In each iteration the current , j-th, element of A, A[j], is inserted into the correct position in the subarray A[1...j], moving each element that is bigger than A[j] one position to the right, leaving room for A[j].
 
 {% method %}
 {% sample lang="c" %}
