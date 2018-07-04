@@ -121,6 +121,9 @@ Full code for the visualization follows:
 {% sample lang="py" %}
 ### Python
 [import, lang:"python"](code/python/euler.py)
+{% sample lang="hs" %}
+### Haskell
+[import, lang:"haskell"](code/haskell/euler.hs)
 {% endmethod %}
 
 <script>
@@ -145,4 +148,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
