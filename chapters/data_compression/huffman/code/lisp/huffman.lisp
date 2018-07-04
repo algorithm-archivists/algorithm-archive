@@ -33,13 +33,17 @@ When called on a leaf returns a list containing the one symbol."
 	      (encode (rest message) tree))))
 
 (defun encode-symbol (symbol tree)
-  "Encodes a symbol into a list of bits using tree."
-  (let ((left (code-tree-left tree))
-	(right (code-tree-right tree)))
-    (cond ((member symbol (symbols left))
-	   (if (leaf-p left) '(0) (cons 0 (encode-symbol symbol left))))
-	  ((member symbol (symbols right))
-	   (if (leaf-p right) '(1) (cons 1 (encode-symbol symbol right)))))))
+  "Encodes a symbol into a list of bits using tree.
+If the tree is a single leaf, all bits are 0."
+  (if (leaf-p tree)
+      (if (eq symbol (leaf-symbol tree)) '(0))
+      (let ((left (code-tree-left tree))
+	  (right (code-tree-right tree)))
+      (cond ((member symbol (symbols left))
+	     (if (leaf-p left) '(0) (cons 0 (encode-symbol symbol left))))
+	    ((member symbol (symbols right))
+	     (if (leaf-p right) '(1) (cons 1 (encode-symbol symbol right))))
+	    (t (error "Symbol ~S is not represented in code-tree ~S." symbol tree))))))
 
 (defun decode-to-string (bits tree)
   "Decodes a list of bits into a string using tree."
@@ -59,9 +63,11 @@ When called on a leaf returns a list containing the one symbol."
   (decode% bits tree))
 
 (defun choose-branch (bit branch)
-  "Returns left branch on 0 bit and right branch on 1 bit."
-  (cond ((= bit 0) (code-tree-left branch))
-	((= bit 1) (code-tree-right branch))))
+  "Returns left branch on 0 bit and right branch on 1 bit.
+If branch is already a leaf, it simply returns branch."
+  (if (leaf-p branch) branch
+      (cond ((= bit 0) (code-tree-left branch))
+	 ((= bit 1) (code-tree-right branch)))))
 
 (defun generate-huffman-tree-from-string (message)
   "Generates a huffman tree using the frequencies of characters
