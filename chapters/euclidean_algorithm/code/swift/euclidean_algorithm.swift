@@ -1,7 +1,7 @@
 func euclidSub(a: Int, b: Int) -> Int {
     var A = abs(a)
     var B = abs(b)
-
+    
     while (A != B) {
         if (A > B) {
             A -= B
@@ -9,7 +9,7 @@ func euclidSub(a: Int, b: Int) -> Int {
             B -= A
         }
     }
-
+    
     return A
 }
 
@@ -17,13 +17,13 @@ func euclidSub(a: Int, b: Int) -> Int {
 func euclidMod(a: Int, b: Int) -> Int {
     var A = abs(a);
     var B = abs(b);
-
+    
     while (B != 0) {
         let temp = B
         B = A % B
         A = temp
     }
-
+    
     return A
 }
 
@@ -31,8 +31,8 @@ func euclidMod(a: Int, b: Int) -> Int {
 
 
 func main() {
-    print(euclidSub(a: 24, b: 27))
-    print(euclidMod(a: 40, b: 252))
+    print(euclidMod(a: 64 * 67, b: 64 * 81))
+    print(euclidSub(a: 128 * 12, b: 128 * 77))
 }
 
 
