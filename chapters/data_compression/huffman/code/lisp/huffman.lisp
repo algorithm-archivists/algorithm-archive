@@ -38,12 +38,12 @@ If the tree is a single leaf, all bits are 0."
   (if (leaf-p tree)
       (if (eq symbol (leaf-symbol tree)) '(0))
       (let ((left (code-tree-left tree))
-	  (right (code-tree-right tree)))
-      (cond ((member symbol (symbols left))
-	     (if (leaf-p left) '(0) (cons 0 (encode-symbol symbol left))))
-	    ((member symbol (symbols right))
-	     (if (leaf-p right) '(1) (cons 1 (encode-symbol symbol right))))
-	    (t (error "Symbol ~S is not represented in code-tree ~S." symbol tree))))))
+	    (right (code-tree-right tree)))
+	(cond ((member symbol (symbols left))
+	       (if (leaf-p left) '(0) (cons 0 (encode-symbol symbol left))))
+	      ((member symbol (symbols right))
+	       (if (leaf-p right) '(1) (cons 1 (encode-symbol symbol right))))
+	      (t (error "Symbol ~S is not represented in code-tree ~S." symbol tree))))))
 
 (defun decode-to-string (bits tree)
   "Decodes a list of bits into a string using tree."
@@ -67,7 +67,7 @@ If the tree is a single leaf, all bits are 0."
 If branch is already a leaf, it simply returns branch."
   (if (leaf-p branch) branch
       (cond ((= bit 0) (code-tree-left branch))
-	 ((= bit 1) (code-tree-right branch)))))
+	    ((= bit 1) (code-tree-right branch)))))
 
 (defun generate-huffman-tree-from-string (message)
   "Generates a huffman tree using the frequencies of characters
@@ -93,7 +93,7 @@ in a position sorted by weight."
   (cond ((null set) (list x))
 	((< (weight x) (weight (first set))) (cons x set))
 	(t (cons (first set)
-		    (adjoin-set x (rest set))))))
+		 (adjoin-set x (rest set))))))
 
 (defun make-leaf-set (pairs)
   "Returns a list of leaves constructed from a list
