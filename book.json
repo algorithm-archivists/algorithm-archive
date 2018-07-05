@@ -103,6 +103,10 @@
         {
           "lang": "m",
           "name": "Matlab"
+        },
+        {
+          "lang": "R",
+          "name": "R"
         }
       ]
     }
