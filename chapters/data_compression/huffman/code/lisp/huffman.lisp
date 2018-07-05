@@ -43,7 +43,7 @@ If the tree is a single leaf, all bits are 0."
 	       (if (leaf-p left) '(0) (cons 0 (encode-symbol symbol left))))
 	      ((member symbol (symbols right))
 	       (if (leaf-p right) '(1) (cons 1 (encode-symbol symbol right))))
-	      (t (error "Symbol ~S is not represented in code-tree ~S." symbol tree))))))
+	      (t (error "Symbol ~S is not represented in code-tree." symbol tree))))))
 
 (defun decode-to-string (bits tree)
   "Decodes a list of bits into a string using tree."
