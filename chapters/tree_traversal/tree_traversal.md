@@ -8,7 +8,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="cpp" %}
 [import:15-18, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:9-15, lang:"csharp"](code/cs/Tree.cs)
+[import:7-11, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -17,7 +17,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="py" %}
-[import:1-5, lang:"python"](code/python/Tree_example.py)
+[import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
@@ -35,7 +35,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="cpp" %}
 [import:20-27, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:25-36, lang:"csharp"](code/cs/Tree.cs)
+[import:34-45, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -43,7 +43,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="js" %}
 [import:12-15, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:7-15, lang:"python"](code/python/Tree_example.py)
+[import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
@@ -55,8 +55,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
-<p align="center">
-    <img src="res/DFS_pre.png" width="500" height="500" />
+<p>
+    <img  class="center" src="res/DFS_pre.png" width="500" />
 </p>
 
 Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors!
@@ -71,7 +71,7 @@ Now, in this case the first element searched through is still the root of the tr
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cs" %}
-[import:38-49, lang:"csharp"](code/cs/Tree.cs)
+[import:47-58, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -79,8 +79,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="js" %}
 [import:17-20, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+[import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
@@ -91,8 +90,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
-<p align="center">
-    <img src="res/DFS_post.png" width="500" height="500" />
+<p>
+    <img  class="center" src="res/DFS_post.png" width="500" />
 </p>
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
@@ -104,7 +103,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cs" %}
-[import:51-70, lang:"csharp"](code/cs/Tree.cs)
+[import:60-79, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -112,8 +111,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="js" %}
 [import:22-34, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
+[import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -124,8 +122,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
-<p align="center">
-    <img src="res/DFS_in.png" width="500" height="500" />
+<p>
+    <img  class="center" src="res/DFS_in.png" width="500" />
 </p>
 
 
@@ -146,7 +144,7 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:29-45, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:72-86, lang:"csharp"](code/cs/Tree.cs)
+[import:81-94, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -154,7 +152,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:24-35, lang:"python"](code/python/Tree_example.py)
+[import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
@@ -167,8 +165,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
-<p align="center">
-    <img src="res/BFS_simple.png" width="500" height="500" />
+<p>
+    <img  class="center" src="res/BFS_simple.png" width="500" />
 </p>
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, except that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
@@ -179,7 +177,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import:47-61, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:88-102, lang:"csharp"](code/cs/Tree.cs)
+[import:96-109, lang:"csharp"](code/cs/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -187,7 +185,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:37-48, lang:"python"](code/python/Tree_example.py)
+[import:63-74, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
@@ -227,11 +225,13 @@ MainClass.java
 ### JavaScript
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-### Python 
+### Python
 [import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 ### Scratch
-![scratch tree](code/scratch/scratch_tree.png)
+<p>
+    <img  class="center" src="code/scratch/scratch_tree.png" />
+</p>
 {% sample lang="rs"%}
 ### Rust
 [import, lang:"rust"](code/rust/tree.rs)

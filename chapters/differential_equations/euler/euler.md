@@ -51,7 +51,9 @@ Now, solving this set of equations in this way is known as the *forward* Euler M
 In fact, there is another method known as the [*backward* Euler Method](backward_euler.md), which we will get to soon enough.
 For now, it is important to note that the error of these methods depend on the timestep chosen.
 
-<div style="text-align:center"><img src ="res/error.png" /></div>
+<p>
+    <img  class="center" src="res/error.png" />
+</p>
 
 For example, here we see dramatically different results for different timesteps for solving the ODE $$y' = \frac{x^3}{6}$$, whose solution is $$y = \frac{x^2}{2}$$.
 The blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a timestep of 1.
@@ -67,7 +69,9 @@ The solution here is $$y(t) = e^{-3t}$$ and we can find this solution somewhat e
 That said, by choosing a larger timestep, we see the Euler method's solution oscillate above and below 0, which should *never* happen.
 If we were to take the Euler method's solution as valid, we would incorrectly assume that $$e^{-3t}$$ will become negative!
 
-<div style="text-align:center"><img src ="res/instability.png" /></div>
+<p>
+    <img  class="center" src="res/instability.png" />
+</p>
 
 Like above, the blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a tiemstep of 1.
 Here, it's interesting that we see 2 different instability patterns.
@@ -103,6 +107,9 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 {% sample lang="cpp" %}
 ### C++
 [import, lang:"c_cpp"](code/c++/euler.cpp)
+{% sample lang="rs" %}
+### Rust
+[import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}
 ### Elm
 [import:44-54, lang:"elm"](code/elm/euler.elm)
@@ -110,6 +117,10 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 
 Full code for the visualization follows:
 [import, lang:"elm"](code/elm/euler.elm)
+
+{% sample lang="py" %}
+### Python
+[import, lang:"python"](code/python/euler.py)
 {% endmethod %}
 
 <script>

@@ -13,8 +13,8 @@ Since it's a square, the $$\text{length}$$ and $$\text{width}$$ are the same, so
 If we embed a circle into the square with a radius $$r = \text{length}$$ (shown below), then it's area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
 For simplicity, we can also say that $$\text{Area}_{\text{square}}=4r^2$$.
 
-<p align="center">
-    <img src="res/square_circle.png" width="300"/>
+<p>
+    <img  class="center" src="res/square_circle.png" width="300"/>
 </p>
 
 Now, let's say we want to find the area of the circle without an equation.
@@ -39,8 +39,12 @@ each point is tested to see whether it's in the circle or not:
 {% method %}
 {% sample lang="jl" %}
 [import:2-7, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="clj" %}
+[import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="js" %}
+[import:2-6, lang:"javascript"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% sample lang="rs" %}
@@ -51,6 +55,10 @@ each point is tested to see whether it's in the circle or not:
 [import:12-14, lang:"golang"](code/go/monteCarlo.go)
 {% sample lang="R" %}
 [import:2-6, lang:"R"](code/R/monte_carlo.R)
+{% sample lang="java" %}
+[import:13-15, lang:"java"](code/java/MonteCarlo.java)
+{% sample lang="swift" %}
+[import:21-25, lang:"swift"](code/swift/monte_carlo.swift)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -61,8 +69,8 @@ $$
 
 If we use a small number of points, this will only give us a rough approximation, but as we start adding more and more points, the approximation becomes much, much better (as shown below)!
 
-<p align="center">
-    <img src="res/monte_carlo.gif" width="400"/>
+<p>
+    <img  class="center" src="res/monte_carlo.gif" width="400"/>
 </p>
 
 The true power of monte carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
@@ -85,9 +93,15 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/monte_carlo.jl)
+{% sample lang="clj" %}
+### Clojure
+[import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 ### C
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="js" %}
+### Javascript
+[import, lang:"javascript"](code/js/monte_carlo.js)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
@@ -102,6 +116,12 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"golang"](code/go/monteCarlo.go)
 ### R
 [import, lang:"R"](code/R/monte_carlo.R)
+{% sample lang="java" %}
+### Java
+[import, lang:"java"](code/java/MonteCarlo.java)
+{% sample lang="swift" %}
+### Swift
+[import, lang:"swift"](code/swift/monte_carlo.swift)
 {% endmethod %}
 
 
