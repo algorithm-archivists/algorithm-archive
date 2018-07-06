@@ -16,7 +16,7 @@ In code, it looks something like this:
 {% sample lang="jl" %}
 [import:1-14, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
-[import:9-15, lang:"csharp"](code/cs/BogoSort.cs)
+[import:9-15, lang:"csharp"](code/csharp/BogoSort.cs)
 {% sample lang="clj" %}
 [import:2-11, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
