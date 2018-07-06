@@ -1,11 +1,9 @@
-solveEuler :: Num a => (a -> a) -> a -> Int -> [a]
-solveEuler func initVal n = take n $ iterate func initVal
+solveEuler :: Num a => (a -> a) -> a -> [a]
+solveEuler = iterate
 
-checkResult :: (Num a, Ord a, Enum a) => [a] -> (a -> a) -> a -> Bool
-checkResult results checkFunc threshold =
-    and $ zipWith check' results (fmap checkFunc [0 ..])
-    where
-        check' result solution = abs (result - solution) < threshold
+checkResult :: (Ord a, Num a, Num t, Enum t) => a -> (t -> a) -> [a] -> Bool
+checkResult thresh check =
+    and . zipWith (\i k -> abs (check i - k) < thresh) [0..]
 
 kinematics :: Double -> Double -> Double
 kinematics timestep x = x - 3 * x * timestep
@@ -16,8 +14,8 @@ main =
         n = 100
         threshold = 0.01
         kinematics' = kinematics timestep
-        checkFunc'  = exp . kinematics'
+        checkResult' = checkResult threshold $ exp . kinematics'
     in  putStrLn $
-        if checkResult (solveEuler kinematics' 1 n) checkFunc' threshold
+        if checkResult' (take n $ solveEuler kinematics' 1)
         then "All values within threshold"
         else "Value(s) not in threshold"
