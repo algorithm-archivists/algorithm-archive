@@ -4,10 +4,10 @@ def CCW(p1, p2, p3):
 
 
 #Find the leftmost point in the list
-def leftmost(S):
-    leftmost = S[0]
-    for s in S[1:]:
-        if s[0]<leftmost[0]: leftmost=s
+def leftmost(gift):
+    leftmost = gift[0]
+    for point in gift[1:]:
+        if point[0]<leftmost[0]: leftmost=point
     return leftmost
 
 
@@ -16,26 +16,26 @@ def equal(p1,p2):
     return p1[0]==p2[0] and p1[1]==p2[1]
 
 
-def jarvisMarch(S):
-    n = len(S)  #Number of points in list
-    P = [(None,None)] * n #The hull, initially empty points
-    pointOnHull = leftmost(S) #leftmost point is guranteeded to be in hull
+def jarvisMarch(gift):
+    n = len(gift)  #Number of points in list
+    hull = [(None,None)] * n #The hull, initially empty points
+    pointOnHull = leftmost(gift) #leftmost point is guranteeded to be in hull
     
     i = 0
     while True:
-        P[i] = pointOnHull
-        endpoint = S[0]
+        hull[i] = pointOnHull
+        endpoint = gift[0]
         for j in range(1,n):
-            if equal(endpoint,pointOnHull) or not CCW(S[j],P[i],endpoint):
-                endpoint = S[j]
+            if equal(endpoint,pointOnHull) or not CCW(gift[j],hull[i],endpoint):
+                endpoint = gift[j]
         i+=1
         pointOnHull = endpoint
-        if equal(P[0],endpoint):
+        if equal(hull[0],endpoint):
             break
         
     for i in range(n):
-        if P[-1] == (None,None):
-            del P[-1]
+        if hull[-1] == (None,None):
+            del hull[-1]
 
-    P.append(P[0])
-    return P
+    hull.append(hull[0])
+    return hull
