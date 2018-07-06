@@ -121,7 +121,7 @@ In the end, the code looks like:
 {% sample lang="cpp" %}
 [import:27-57, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
-[import:6-19, lang:"haskell"](code/hs/fft.hs)
+[import:6-19, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:5-16, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
@@ -229,7 +229,7 @@ Note: I implemented this in Julia because the code seems more straightforward in
 [import, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 ### Haskell
-[import, lang:"haskell"](code/hs/fft.hs)
+[import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 ### Python
 [import, lang:"python"](code/python/fft.py)
