@@ -11,13 +11,13 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="jl" %}
 [import:1-10, lang:"julia"](code/julia/bubble.jl)
 {% sample lang="cs" %}
-[import:9-27, lang:"csharp"](code/cs/BubbleSort.cs)
+[import:9-27, lang:"csharp"](code/csharp/BubbleSort.cs)
 {% sample lang="c" %}
 [import:4-22, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
-[import:1-11, lang:"javascript"](code/js/bubble.js)
+[import:1-11, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
 [import:4-9, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}
