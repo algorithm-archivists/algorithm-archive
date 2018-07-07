@@ -6,16 +6,14 @@ def CCW(p1, p2, p3):
 def jarvisMarch(gift):
     n = len(gift)  #Number of points in list
     pointOnHull = min(gift) #leftmost point in gift
-    hull = [pointOnHull] #leftmost point guranteed to be in hull
+    hull = [pointOnHull] #leftmost point guaranteed to be in hull
     
-    i = 0
     while True:
-        endpoint = gift[0]
+        endpoint = gift[0]  #Candidate for next point in hull
         for j in range(1,n):
-            if endpoint==pointOnHull or not CCW(gift[j],hull[i],endpoint):
+            if endpoint==pointOnHull or not CCW(gift[j],hull[-1],endpoint):
                 endpoint = gift[j]
                 
-        i+=1
         pointOnHull = endpoint        
                 
         #Check if we have completely wrapped gift
@@ -37,6 +35,4 @@ def main():
     for point in hull:
         print(point)
 
-        
-if __name__=="__main__":
-    main()
+main()
