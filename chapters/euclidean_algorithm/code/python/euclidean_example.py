@@ -15,14 +15,12 @@ def euclid_sub(a, b):
 
     while a != b:
         if a > b:
-            a = a - b
+            a -= b
         else:
-            b = b - a
+            b -= a
 
     return a
 
-def main():
-    print(euclid_mod(64 * 67, 64 * 81))
-    print(euclid_sub(128 * 12, 128 * 77))
-
-main()
+if __name__=="__main__":
+    print('Euclidean mod: ', euclid_mod(64 * 67, 64 * 81))
+    print('Euclidean sub: ', euclid_sub(128 * 12, 128 * 77))
