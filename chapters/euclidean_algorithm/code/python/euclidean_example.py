@@ -21,8 +21,12 @@ def euclid_sub(a, b):
 
     return a
 
+def eulid_recur(a,b):
+    return gcd(b,a%b) if b else a
+
 def main():
     print(euclid_mod(64 * 67, 64 * 81))
+    print(euclid_recur(58 * 23, 58*19))
     print(euclid_sub(128 * 12, 128 * 77))
 
 main()
