@@ -44,7 +44,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
-[import:2-6, lang:"javascript"](code/js/monte_carlo.js)
+[import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
 [import:7-7, lang:"haskell"](code/haskell/monteCarlo.hs)
 {% sample lang="rs" %}
@@ -54,7 +54,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="go" %}
 [import:12-14, lang:"golang"](code/go/monteCarlo.go)
 {% sample lang="r" %}
-[import:2-6, lang:"r"](code/R/monte_carlo.R)
+[import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
 [import:13-15, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
@@ -101,7 +101,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
 ### Javascript
-[import, lang:"javascript"](code/js/monte_carlo.js)
+[import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
 ### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
@@ -116,7 +116,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"golang"](code/go/monteCarlo.go)
 {%sample lang="r" %}
 ### R
-[import, lang:"r"](code/R/monte_carlo.R)
+[import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
 ### Java
 [import, lang:"java"](code/java/MonteCarlo.java)

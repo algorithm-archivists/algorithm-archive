@@ -26,9 +26,9 @@ Since this algorithm, there have been many other algorithms that have advanced t
 {% sample lang="cs" %}
 ### C# #
 JarvisMarch.cs
-[import, lang="csharp"](code/cs/JarvisMarch.cs)
+[import, lang="csharp"](code/csharp/JarvisMarch.cs)
 Program.cs
-[import, lang="csharp"](code/cs/Program.cs)
+[import, lang="csharp"](code/csharp/Program.cs)
 {% sample lang="jl" %}
 ### Julia
 [import, lang:"julia"](code/julia/jarvis.jl)
