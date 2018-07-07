@@ -24,7 +24,6 @@ def jarvisMarch(gift):
         else:
             hull.append(pointOnHull)
         
-
     return hull
 
 
