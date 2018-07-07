@@ -42,7 +42,9 @@ Program.cs
 ### JavaScript
 [import, lang:"javascript"](code/javascript/jarvis-march.js)
 {% endmethod %}
-
+### Python
+[import, lang:"python"](code/py/jarvisMarch.py)
+{% sample lang="js" %}
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
