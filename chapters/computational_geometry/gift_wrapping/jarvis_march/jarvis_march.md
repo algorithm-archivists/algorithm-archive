@@ -41,6 +41,9 @@ Program.cs
 {% sample lang="js" %}
 ### JavaScript
 [import, lang:"javascript"](code/javascript/jarvis-march.js)
+{% sample lang="py" %}
+### Python
+[import, lang:"python"](code/py/jarvisMarch.py)
 {% endmethod %}
 
 <script>
