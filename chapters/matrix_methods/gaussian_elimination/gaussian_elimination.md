@@ -353,9 +353,11 @@ In code, this looks like:
 
 {% method %}
 {% sample lang="jl" %}
-[import:1-42, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:2-46, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="rs" %}
+[import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
@@ -375,9 +377,13 @@ Even though this seems straightforward, the code might not be as simple as you t
 
 {% method %}
 {% sample lang="jl" %}
-[import:44-64, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:71-108, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-[import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
+This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
+[import:71-108, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="rs" %}
+This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
+[import:71-108, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% endmethod %}
 
 ## Back-substitution
@@ -401,9 +407,11 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 
 {% method %}
 {% sample lang="jl" %}
-[import:1-42, lang:"julia"](code/julia/gaussian_elimination.jl)
-{% sample lang="hs" %}
-This code does not yet exist in Haskell, so here's Julia code!
+[import:48-68, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="c" %}
+[import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="rs" %}
+[import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 ## Conclusions

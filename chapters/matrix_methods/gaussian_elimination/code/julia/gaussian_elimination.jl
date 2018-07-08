@@ -50,6 +50,29 @@ function back_substitution(A::Array{Float64,2})
     rows = size(A,1)
     cols = size(A,2)
 
+    # Creating the solution Vector
+    soln = Vector{Float64}(rows)
+
+    # initialize the final element
+    soln[rows] = A[rows, cols] / A[rows, cols-1]
+
+    for i = (rows - 1):-1:1
+        sum = 0.0
+        for j = rows:-1:i
+            sum += soln[j]*A[i,j]
+        end
+        soln[i] = (A[i, cols] - sum) / A[i, i]
+    end
+
+    return soln
+end
+
+
+function gauss_jordan(A::Array{Float64,2})
+
+    rows = size(A,1)
+    cols = size(A,2)
+
 
     # Creating a stack with pivot locations
     s = Stack(Int64)
@@ -91,9 +114,12 @@ function main()
 
     gaussian_elimination(A)
     println(A)
-    soln = back_substitution(A)
 
-    println(A)
+    reduced = gauss_jordan(A)
+    println(reduced)
+
+    soln = back_substitution(A)
+    println(soln)
 
 end
 
