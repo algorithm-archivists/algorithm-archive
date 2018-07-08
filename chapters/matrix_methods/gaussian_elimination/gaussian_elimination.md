@@ -80,20 +80,63 @@ $$
 \right]
 $$
 
-
-and it has a particular name: _Row Eschelon Form_. Basically, any matrix can be considered in row eschelon form if
+This matrix form has a particular name: _Row Echelon Form_.
+Basically, any matrix can be considered in row echelon form if
 
 1. All non-zero rows are above rows of all zeros
 2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-Now, Row Eschelon Form is nice, but wouldn't it be even better if our system of equations looked simply like this
+All the following examples are in the Row Echelon Form:
+
+$$
+\left[
+\begin{array}{ccc|c}
+2 & 3  & 4 & 6 \\
+0 & 1 & 2 & 2 \\
+0 & 0 & 11 & 18
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{ccc|c}
+5 & 4  & 0 & 10 \\
+0 & 0 & 5 & 7 \\
+0 & 0 & 0 & 1
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{ccccc}
+1 & -3 & 4 & 1 & 6 \\
+0 & 3 & 3 & 5 & 0 \\
+0 & 0 & 0 & 2 & 0
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{cc}
+0 & 0 \\
+0 & 2 \\
+0 & 0
+\end{array}
+\right]
+$$
+
+The first two are probably the ones we are interested in, at the very least they have the right dimensions to solve a system of equations.
+The last two systems are either under- or over-constrained; however, if you translate the last row of second matrix into a system, you get $$0=1$$, which is a contradiction.
+This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these matrices are in Row Echelon Form.
+
+Now, it seems obvious to point out that if we ignore the last column, Row Echelon Form is an upper triangular matrix.
+This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
+
+Now, row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this
 
 
 $$
 \begin{align}
-11x &= 18 \\
-11y &= -14 \\
-11z &= 18
+x &= \frac{18}{11} \\
+y &= \frac{-14}{11} \\
+z &= \frac{18}{11}
 \end{align}
 $$
 
@@ -104,23 +147,69 @@ Then we would know exactly what $$x$$, $$y$$, and $$z$$ are without any fuss! In
 $$
 \left[
 \begin{array}{ccc|c}
-11 & 0 & 0 & 18 \\
-0 & 11 & 0 & -14 \\
-0 & 0 & 11 & 18
+1 & 0 & 0 & \frac{18}{11} \\
+0 & 1 & 0 & \frac{-14}{11} \\
+0 & 0 & 1 & \frac{18}{11} 
 \end{array}
 \right]
 $$
 
+And that's where we really want to get to for obvious reasons.
+This introduces yet another matrix configuration: * **Reduced** Row Echelon Form*.
+A matrix is in Reduced Row Echelon form if it satisfies the following conditions:
 
-And again has a special name * **Reduced** Row Eschelon Form*. Now, it seems obvious to point out that if we remove the values to the right of the equals sign \($$=$$\), Row Eschelon Form is an upper triangular matrix, while Reduced Row Eschelon Form is diagonal. This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
+1. It is in row echelon form.
+2. Every pivot is 1 and is the only nonzero entry in its column.
 
-For now, I hope the motivation is clear: we want to convert a matrix into Row Eschelon and (potentially) Reduced Row Eschelon Form to make large systems of equations trivial to solve, so we need some method to do that. What is that method called? \(Hint: It's the title of this section\)
+All the following examples are in the Reduced Row Echelon Form:
 
-That's right! _Gaussian Elimination_
+$$
+\left[
+\begin{array}{ccc|c}
+1 & 0 & 0 & 8 \\
+0 & 1 & 0 & -3 \\
+0 & 0 & 1 & 9
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{ccc|c}
+1 & 4  & 0 & 9 \\
+0 & 0 & 1 & 7 \\
+0 & 0 & 0 & 1
+\end{array}
+\right]
+\;,\;
+\left[
+\begin{array}{cc}
+0 & 0 \\
+0 & 0 \\
+0 & 0
+\end{array}
+\right]
+$$
+
+Again, only the first one (the identity matrix looking guy) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system?
+
+Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as the rank.
+The rank of a matrix is the maximal number of linearly independent columns, in reduced row echelon Form, the rank is simply the number of pivots.
+
+For now, I hope the motivation is clear: we want to convert a matrix into Row Echelon and then Reduced Row Echelon form to make large systems of equations trivial to solve, so we need some method to do that.
+In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a Row Echelon matrix into Reduced Row Echelon is called *Gauss-Jordan Elimination*.
+That said, the notation here is sometimes inconsistent.
+Several authors use the term *Gaussian Elimination* to include Gauss-Jordan elimination as well.
+In addition, the process of Gauss-Jordan elimination is sometimes called *Back-substitution*, which is also confusing because the term can also be used to mean solving a system of equations from row echelon form, without simplifying to reduced row echelon form.
+For this reason, we will be using the following definitions in this chapter:
+
+* **Gaussian Elimination:** The process of transforming a matrix into row echelon form
+* **Gauss-Jordan Elimination:** The process of transforming a row echelon matrix into *reduced* row echelon form
+* **Back-substitution:** The process of directly solving a row echelon matrix, *without transforming into reduced row echelon form*
 
 ## The Method
 
-Here I should point out that Gaussian elimination makes sense from a purely analytical point of view. That is to say that for small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution. For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
+Here I should point out that Gaussian elimination makes sense from a purely analytical point of view.
+For small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution.
+For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
 
 In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix where you have the following moves available:
 
@@ -128,7 +217,9 @@ In the end, reducing large systems of equations boils down to a game you play on
 2. You can multiply any row by a non-zero scale value
 3. You can add any row to a multiple of any other row
 
-That's it. Before continuing, I suggest you try to recreate the Row Eschelon matrix we made above. That is, do the following:
+That's it.
+Before continuing, I suggest you try to recreate the Row Echelon matrix we made above.
+That is, do the following:
 
 $$
 \left[
@@ -148,7 +239,9 @@ $$
 \right]
 $$
 
-There are plenty of different strategies you could use to do this, and no one strategy is better than the rest. Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows. I then do the same thing for the following columns.
+There are plenty of different strategies you could use to do this, and no one strategy is better than the rest.
+Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows.
+I then do the same thing for the following columns.
 
 After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Eschelon Form. In other words, we do the following:
 
@@ -163,14 +256,15 @@ $$
 \quad \rightarrow \quad
 \left[
 \begin{array}{ccc|c}
-11 & 0 & 0 & 18 \\
-0 & 11 & 0 & -14 \\
-0 & 0 & 11 & 18
+1 & 0 & 0 & \frac{18}{11} \\
+0 & 1 & 0 & \frac{-14}{11} \\
+0 & 0 & 1 & \frac{18}{11}
 \end{array}
 \right]
 $$
 
-Here, the idea is similar to above. You can do basically anything you want. My strategy is usually the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
+Here, the idea is similar to above.
+The strategy is the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
 
 ## The Algorithm
 
@@ -188,7 +282,10 @@ $$
 \end{array}
 \right]
 $$
-2. Swap the row with the highest valued element with the `col`th row.
+If that value is $$0$$, the matrix is singular and the system has no solutions.
+Feel free to exit here, but if we want to be as general as possible the algorithm can continue even in that case.
+
+2. Swap the row with the highest valued element with the current row.
 $$
 \left[
 \begin{array}{ccc|c}
@@ -261,13 +358,20 @@ In code, this looks like:
 [import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
-As with all code, it takes time to fully absorb what is going on and why everything is happening; however, I have tried to comment the above psuedocode with the necessary steps. Let me know if anything is unclear!
+Now, to be clear: this algorithm creates an upper-triangular matrix.
+In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*!
+So what do we do from here? Well, we continue further reducing the matrix; however, there are two ways to do this:
 
-Now, to be clear: this algorithm creates an upper-triangular matrix. In other words, it only creates a matrix in *Row Eschelon Form*, not * **Reduced** Row Eschelon Form*! So what do we do from here? Well, we could create another step to further reduce the matrix, but another method would be to use *Back-Substitution*.
+1. Reduce the matrix further into *Reduced* Row Echelon form with Gauss-Jordan elimination
+2. Solve the system directly with *Back-substitution* if the matrix is allows for such solutions
 
-The back-substitution method is precisely what we said above.
-If we have a matrix in Row-Eschelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
-Even though this seems straightforward, the pseudocode might not be as simple as you thought!
+Let's start with Gauss-Jordan Elimination and then Back-substitution
+
+## Gauss-Jordan Elimination
+
+Gauss-Jordan Elimination is precisely what we said above, but for every pivot starting from the bottom right one.
+If we have a matrix in Row Echelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
+Even though this seems straightforward, the code might not be as simple as you thought, especially if your matrix is singular.
 
 {% method %}
 {% sample lang="jl" %}
@@ -276,7 +380,40 @@ Even though this seems straightforward, the pseudocode might not be as simple as
 [import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
-Now, as for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
+## Back-substitution
+
+The idea of Back-substitution is straightforward: we create a matrix of solutions and iteratively solve for each variable by plugging in all variables before it.
+For example, if our matrix looks like this:
+
+$$
+\left[
+\begin{array}{ccc|c}
+2 & 3  & 4 & 6 \\
+0 & 1 & 2 & 2 \\
+0 & 0 & 11 & 18
+\end{array}
+\right]
+$$
+
+We can quickly solve $$11z = 18$$ for $$z$$, and then use that to solve $$y + 2z = 2$$ for $$y$$ by plugging in for $$z$$.
+After that, we simply need to solve $$2x + 3y + 4z = 6$$ for $$x$$ in a similar fashion.
+In code, this involves keeping a rolling sum of all the values we substitute in like so:
+
+{% method %}
+{% sample lang="jl" %}
+[import:1-42, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="hs" %}
+This code does not yet exist in Haskell, so here's Julia code!
+{% endmethod %}
+
+## Conclusions
+
+And with that, we have two possible ways to reduce our system of equations.
+If we are sure our matrix is not singular and that a solution exists, it's fastest to use Back-substitution to find our solution.
+If no solution exists or we are trying to find a Reduced Row Echelon matrix, then Gauss-Jordan elimination is best.
+As we said at the start, the notation for Gaussian Elimination is rather ambiguous in the literature, so we are hoping that the definitions provided here are clear and consistent enough to cover all the bases.
+
+As for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
 
 ### Example Code
 
