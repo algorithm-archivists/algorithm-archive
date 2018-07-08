@@ -361,7 +361,12 @@ In code, this looks like:
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
-In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*!
+In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*.
+If the matrix is found to be singular during this process, the system of equations is either over or under-determined and no general solution exists.
+For this reason, many implementations of this method will stop the moment the matrix is found to be singular.
+In this implementation, we allowed for the more general case and opted to simply output when the matrix is singular instead.
+If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no general solution, so some small modification might be necessary!
+
 So what do we do from here? Well, we continue further reducing the matrix; however, there are two ways to do this:
 
 1. Reduce the matrix further into *Reduced* Row Echelon form with Gauss-Jordan elimination
