@@ -376,19 +376,20 @@ Let's start with Gauss-Jordan Elimination and then Back-substitution
 
 ## Gauss-Jordan Elimination
 
-Gauss-Jordan Elimination is precisely what we said above, but for every pivot starting from the bottom right one.
-If we have a matrix in Row Echelon Form, we can directly solve for $$z$$, and then plug that value in to find $$y$$ and then plug both of those values in to find $$x$$!
-Even though this seems straightforward, the code might not be as simple as you thought, especially if your matrix is singular.
+Gauss-Jordan Elimination is precisely what we said above.
+We basically need to find the pivot of every row and set that value to 1.
+Afterwards, we subtract upwards until all values above the pivot are 0 before moving on to the next column.
+Here it is in code:
 
 {% method %}
 {% sample lang="jl" %}
-[import:71-108, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:71-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
-[import:71-108, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:71-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
-[import:71-108, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:71-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% endmethod %}
 
 ## Back-substitution

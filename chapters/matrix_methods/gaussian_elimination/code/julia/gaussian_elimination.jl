@@ -74,34 +74,25 @@ function gauss_jordan(A::Array{Float64,2})
     cols = size(A,2)
 
 
-    # Creating a stack with pivot locations
-    s = Stack(Int64)
-    row = 1
-    for col = 1:cols-1
-        if A[row, col] != 0
-            push!(s, col)
-            row += 1
-        end
-    end 
-
     # After this, we know what row to start on (r-1)
     # to go back through the matrix
-    row -= 1
-    while (length(s) > 0)
-        col = pop!(s)
+    row = 1
+    for col = 1:cols-1
+        if (A[row, col] != 0)
 
-        # dividing row by pivot and leaving pivot as 1
-        for i = cols:-1:col
-            A[row,i] /= A[row,col]
-        end
-
-        # subtracting value from above row and setting values above pivot to 0
-        for i = 1:row-1
-            for j = cols:-1:col
-                A[i,j] -= A[i,col]*A[row,j]
+            # divide row by pivot and leaving pivot as 1
+            for i = cols:-1:col
+                A[row,i] /= A[row,col]
             end
+    
+            # subtract value from above row and set values above pivot to 0
+            for i = 1:row-1
+                for j = cols:-1:col
+                    A[i,j] -= A[i,col]*A[row,j]
+                end
+            end
+            row += 1
         end
-        row -= 1
     end
 
     return A
