@@ -13,7 +13,7 @@ main =
     let timestep = 0.01
         n = 100
         threshold = 0.01
-        checkResult' = checkResult threshold $ exp . (\x -> x - 3 * x * timestep)
+        checkResult' = checkResult threshold $ exp . (\x -> -3 * x * timestep)
     in  putStrLn $
         if checkResult' (take n $ solveEuler kinematics timestep 1)
         then "All values within threshold"
