@@ -109,6 +109,7 @@ MainClass.java
 {% sample lang="ml" %}
 ### Ocaml
 [import, lang="ocaml"](code/ocaml/euclidean_example.ml)
+{% sample lang="go" %}
 ### Go
 [import, lang="golang"](code/go/euclidean.go)
 {% endmethod %}
