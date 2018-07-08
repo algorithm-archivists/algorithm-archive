@@ -45,7 +45,7 @@ In the end, the code should look something like this:
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
-[import19-32, lang:"python"](code/python/grahamScan.py)
+[import:19-32, lang:"python"](code/python/grahamScan.py)
 {% endmethod %}
 
 ### Bibliography
