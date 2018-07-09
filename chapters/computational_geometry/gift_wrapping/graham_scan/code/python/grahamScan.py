@@ -11,11 +11,6 @@ def polar_Angle(ref, point):
     return atan2(point[1]-ref[0],point[0]-ref[0])
 
 
-#Sort the list of point by their polar angle
-def sort_By_Polar(ref, points):
-    return [x for _,x in sorted(zip(polar_Angles(ref,points),points))]
-
-
 def graham_Scan(gift):
     start = min(gift, key=lambda p: (p[1],p[0])) #Must be in hull
     gift.remove(start)
