@@ -6,9 +6,9 @@ def counter_Clockwise(p1, p2, p3):
     return (p3[1]-p1[1])*(p2[0]-p1[0]) >= (p2[1]-p1[1])*(p3[0]-p1[0])
 
 
-#Find the polar angle of each point in list relative to a reference point
-def polar_Angles(ref, points):
-    return [atan2(point[1]-ref[0],point[0]-ref[0]) for point in points]
+#Find the polar angle of a point relative to a reference point
+def polar_Angle(ref, point):
+    return atan2(point[1]-ref[0],point[0]-ref[0])
 
 
 #Sort the list of point by their polar angle
@@ -17,10 +17,10 @@ def sort_By_Polar(ref, points):
 
 
 def graham_Scan(gift):
-    start = min(gift, key=lambda p (p[1],p[0])) #Must be in hull
+    start = min(gift, key=lambda p: (p[1],p[0])) #Must be in hull
     gift.remove(start)
 
-    S = sort_By_Polar(start,gift)
+    S = sorted(gift,key=lambda point: polar_Angle(start,point))
     hull = [start,S[0],S[1]]
 
     #Remove points from hull that make the hull concave
