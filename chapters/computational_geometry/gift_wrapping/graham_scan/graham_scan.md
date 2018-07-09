@@ -21,7 +21,7 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="js" %}
 [import:36-38, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
-[import:5-6, lang:"python"](code/python/grahamScan.py)
+[import:4-6, lang:"python"](code/python/grahamScan.py)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -45,7 +45,7 @@ In the end, the code should look something like this:
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
-[import:19-32, lang:"python"](code/python/grahamScan.py)
+[import:14-27, lang:"python"](code/python/grahamScan.py)
 {% endmethod %}
 
 ### Bibliography
