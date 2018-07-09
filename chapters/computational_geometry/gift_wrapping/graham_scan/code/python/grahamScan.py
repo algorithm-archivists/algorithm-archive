@@ -17,7 +17,7 @@ def sort_By_Polar(ref, points):
 
 
 def graham_Scan(gift):
-    start = min(gift, key=lambda pL (p[1],p[0])) #Must be in hull
+    start = min(gift, key=lambda p (p[1],p[0])) #Must be in hull
     gift.remove(start)
 
     S = sort_By_Polar(start,gift)
