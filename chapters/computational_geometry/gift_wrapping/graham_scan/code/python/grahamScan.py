@@ -8,7 +8,7 @@ def counter_Clockwise(p1, p2, p3):
 
 #Find the polar angle of a point relative to a reference point
 def polar_Angle(ref, point):
-    return atan2(point[1]-ref[0],point[0]-ref[0])
+    return atan2(point[1]-ref[1],point[0]-ref[0])
 
 
 def graham_Scan(gift):
