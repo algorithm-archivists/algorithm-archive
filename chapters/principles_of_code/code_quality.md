@@ -2,7 +2,7 @@
 
 I am a computational physicist. Industry programmers give researchers a hard time for their programming capabilities, not because they cannot code, but because (for the most part) research code looks bad.
 Programming, like any other form of creative expression, is limited by the artist's ability to creatively express themselves.
-For many computational researchers, the code is not their art. Science is.
+For many computational researchers, the code is not their art, but science is.
 Programming is simply the brush they use to stroke the canvas of reality.
 Many times, they become so consumed with their painting that they ignore their tools. Now, truth be told, I have seen some pretty repulsive industry code, too, so this complaint is not exclusively biased towards researchers.
 
@@ -10,7 +10,7 @@ No matter what the intended goal might be, it is important to be able to read an
 
 ### Comments / style
 
-Comments. Every language has a different way to introduce them. Some use the noble #, others the //, still others the ! or $ or C. Regardless of your language of choice, every single language offers you the ability to tell readers what you are intending to do with your code. This is a necessary component to programming. In fact, I would argue that it is one of the most useful part of any code. Sure, the code has to work. It's gotta compile and do something useful, but I cannot tell you how many times I have had to fix broken code that no one had looked at for years. Sometimes this is a long and laborious process, taking every ounce of my mental abilities, and other times it only takes a few minutes. What's the difference? Comments and documentation.
+Every language has a different way to introduce Comments. Some languages use the noble # whereas others use the //, the !, $, or C. Regardless of your choice of language, every single language offers you the ability to tell readers what you are intending to do with your code. This is a necessary component to programming. In fact, I would argue that it is one of the most useful part of any code. Sure, the code has to work. It must compile and do something useful, but I cannot tell you how many times I have had to fix broken code that no one had looked at for years. Sometimes this is a long and laborious process, taking every ounce of my mental abilities, and other times it only takes a few minutes. What's the difference? Comments and documentation.
 
 I remember the first time I learned to program, I found commenting tedious. I remember thinking, "Hah. This is completely useless. Any programmer worth their salt will be able to figure out what I am trying to do in no time!" Turns out, I wasn't worth my salt because after trying to figure out my code a month later, I couldn't figure out what on Earth I was trying to do. Here's the truth: when it comes to programming, you are often your own audience. Trust me, I know it seems like a good idea to keep the code short -- to go for witty one-liners that make you feel brilliant, but these make your code impossible to read.
 
