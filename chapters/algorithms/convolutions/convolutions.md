@@ -61,7 +61,7 @@ Now, let me tell you about a bit of black computational magic:
 
 That is crazy!
 It's also incredibly hard to explain, so let me do my best.
-As described in the chapter on [Fourier Transforms](chapters/FFT/cooley_tukey.md), Fourier Transforms allow programmers to move from real space to frequency space.
+As described in the chapter on [Fourier Transforms](../cooley_turkey/cooley_tukey.md), Fourier Transforms allow programmers to move from real space to frequency space.
 When we transform a wave into frequency space, we see a single peak in frequency space related to the frequency of that wave.
 No matter what function we send into a Fourier Transform, the frequency-space image can be interpreted as a series of different waves with a specified frequency.
 
