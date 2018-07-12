@@ -48,7 +48,7 @@ In the end, the code should look something like this:
 
 {% references %} {% endreferences %}
 
-### Example Code
+# Example Code
 
 {% method %}
 {% sample lang="jl" %}

@@ -20,7 +20,7 @@ Since this algorithm, there have been many other algorithms that have advanced t
 
 {% references %} {% endreferences %}
 
-### Example Code
+# Example Code
 
 {% method %}
 {% sample lang="cs" %}
