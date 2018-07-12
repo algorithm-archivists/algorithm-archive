@@ -91,7 +91,7 @@ Verlet integration has a distinct advantage over the forward Euler method in bot
 That said, in practice, due to the instability of the forward Euler method and the error with larger timesteps, this method is rarely used in practice.
 That said, variations of this method *are* certainly used (for example Crank-Nicolson and [Runge-Kutta](../runge_kutta/runge_kutta.md), so the time spent reading this chapter is not a total waste!
 
-# Example Code
+## Example Code
 
 Like in the case of [Verlet Integration](../../physics_solvers/verlet/verlet.md), the easiest way to test to see if this method works is to test it against a simple test-case.
 Here, the most obvious test-case would be dropping a ball from 5 meters, which is my favorite example, but proved itself to be slightly less enlightening than I would have thought.

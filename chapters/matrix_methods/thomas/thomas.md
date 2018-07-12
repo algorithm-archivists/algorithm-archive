@@ -35,7 +35,7 @@ d'_0 = \frac{d_0}{b_0}
 \end{align}
 $$
 
-# Example Code
+## Example Code
 
 {% method %}
 {% sample lang="jl" %}

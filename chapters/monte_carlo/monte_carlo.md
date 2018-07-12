@@ -78,7 +78,7 @@ As long as you can write some function to tell whether the provided point is ins
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
 
-# Example Code
+## Example Code
 Monte carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
 Here, we are just integrating a circle, like we described above; however, there is a small twist and trick.

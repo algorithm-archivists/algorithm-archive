@@ -47,7 +47,7 @@ and `bibbity_bobbity` becomes `01000010010111011110111000100101110`.
 As mentioned this uses the minimum number of bits possible for encoding.
 The fact that this algorithm is both conceptually simple and provably useful is rather extraordinary to me and is why Huffman encoding will always hold a special place in my heart.
 
-# Example Code
+## Example Code
 In code, this can be a little tricky. It requires a method to continually sort the nodes as you add more and more nodes to the system.
 The most straightforward way to do this in some languages is with a priority queue, but depending on the language, this might be more or less appropriate.
 In addition, to read the tree backwards, some sort of [Depth First Search](../../tree_traversal/tree_traversal.md) needs to be implemented.
