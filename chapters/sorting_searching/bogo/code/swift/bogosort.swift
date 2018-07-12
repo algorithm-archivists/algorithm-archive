@@ -37,3 +37,10 @@ func bogoSort(sortArray: inout [Int]) -> [Int] {
 
     return sortArray
 }
+
+func main() {
+    var testArray = [4,5,123,24,34,-5]
+    print(bogoSort(sortArray: &testArray))
+}
+
+main()
