@@ -82,7 +82,7 @@
     },
     {
       "from": "chapters/FFT/cooley_tukey.html",
-      "to": "chapters/algorithms/cooley_turkey/cooley_tukey.html"
+      "to": "chapters/algorithms/cooley_tukey/cooley_tukey.html"
     },
     {
       "from": "chapters/decision_problems/decision_problems.html",

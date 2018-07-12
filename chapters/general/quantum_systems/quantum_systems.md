@@ -65,7 +65,7 @@ p = \frac{h}{\lambda}
 $$
 
 where $$h$$ is Planck's constant and $$\lambda$$ is the wavelength.
-This means that we can ultimately move between real and momentum space by using [Fourier Transforms](../../algorithms/cooley_turkey/cooley_tukey.md), which is incredibly useful in a number of cases!
+This means that we can ultimately move between real and momentum space by using [Fourier Transforms](../../algorithms/cooley_tukey/cooley_tukey.md), which is incredibly useful in a number of cases!
 
 Unfortunately, the interpretation of quantum simulation is rather tricky and is ultimately easier to understand with slightly different notation.
 This notation is called _braket_ notation, where a _ket_ looks like this:
