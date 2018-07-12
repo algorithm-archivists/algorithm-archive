@@ -18,6 +18,8 @@ To be clear, even though this algorithm seems conceptually simple, it is rather 
 I do not at all claim that the code provided here is efficient and we will definitely be coming back to this problem in the future when we have more tools under our belt.
 I am incredibly interested to see what you guys do and how you implement the algorithm.
 
+# Example Code
+
 {% method %}
 {% sample lang="jl" %}
 ### Julia
