@@ -35,8 +35,6 @@ d'_0 = \frac{d_0}{b_0}
 \end{align}
 $$
 
-In code, this will look like this:
-
 # Example Code
 
 {% method %}

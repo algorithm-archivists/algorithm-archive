@@ -284,8 +284,6 @@ Now, as for what's next... Well, we are in for a treat! The above algorithm clea
 
 # Example Code
 
-The full code can be seen here:
-
 {% method %}
 {% sample lang="jl" %}
 ### Julia
