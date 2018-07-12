@@ -15,7 +15,7 @@ $$
 
 This is the system I studied for most of my PhD (granted, we played a few tricks with parallelization and such, so it was _slightly_ more complicated).
 
-At it's heart, the split-op method is nothing more than a pseudo-spectral differential equation solver... That is to say, it solves the Schrodinger equation with [FFT's](../cooley_turkey/cooley_tukey.md).
+At it's heart, the split-op method is nothing more than a pseudo-spectral differential equation solver... That is to say, it solves the Schrodinger equation with [FFT's](../cooley_tukey/cooley_tukey.md).
 In fact, there is a large class of spectral and pseudo-spectral methods used to solve a number of different physical systems, and we'll definitely be covering those in the future.
 As mentioned in the [quantum systems](../../general/quantum_systems/quantum_systems.md) section, we can represent a a quantum wavefunction in momentum space, which is parameterized with the wavevector $$k$$.
 In the hamiltonian shown above, we can split our system into real-space components, $$\hat{H}_R = \left[V(\mathbf{r}) + g|\Psi(\mathbf{r},t)|^2 \right] \Psi(\mathbf{r},t)$$, and momentum space components, $$\hat{H}_M = \left[-\frac{\hbar^2}{2m}\nabla^2 \right]\Psi(\mathbf{r},t)$$.
@@ -38,7 +38,7 @@ $$
 \Psi(\mathbf{r},t+dt) = \left[e^{-\frac{i\hat{H}_Rdt}{2\hbar}}e^{-\frac{i\hat{H}_Mdt}{\hbar}}e^{-\frac{i\hat{H}_Rdt}{2\hbar}} \right]\Psi(\mathbf{r},t) + \mathcal{O}(dt^3)
 $$
 
-We can then address each part of this solution in chunks, first in real space, then in momentum space, then in real space again by using [Fourier Transforms](../cooley_turkey/cooley_tukey.md).
+We can then address each part of this solution in chunks, first in real space, then in momentum space, then in real space again by using [Fourier Transforms](../cooley_tukey/cooley_tukey.md).
 Which looks something like this:
 
 $$

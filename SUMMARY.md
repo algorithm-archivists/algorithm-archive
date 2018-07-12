@@ -37,7 +37,7 @@
         * [Jarvis March](chapters/algorithms/jarvis_march/jarvis_march.md)
         * [Graham Scan](chapters/algorithms/graham_scan/graham_scan.md)
         * [Chan's Algorithm](chapters/algorithms/chans_algorithm/chans_algorithm.md)
-* [FFT](chapters/algorithms/cooley_turkey/cooley_tukey.md)
+* [FFT](chapters/algorithms/cooley_tukey/cooley_tukey.md)
 * [Decision Problems](chapters/general/decision_problems/decision_problems.md)
     * [Stable Marriage Problem](chapters/algorithms/stable_marriage_problem/stable_marriage_problem.md)
 * [Differential Equation Solvers](chapters/general/differential_equations/differential_equations.md)
