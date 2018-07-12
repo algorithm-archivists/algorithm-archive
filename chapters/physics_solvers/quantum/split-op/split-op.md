@@ -81,7 +81,7 @@ And finally go step-by-step through the simulation:
 And that's it.
 The Split-Operator method is one of the most commonly used quantum simulation algorithms because of how straightforward it is to code and how quickly you can start really digging into the physics of the simulation results!
 
-# Example Code
+## Example Code
 {% method %}
 {% sample lang="jl" %}
 ### Julia

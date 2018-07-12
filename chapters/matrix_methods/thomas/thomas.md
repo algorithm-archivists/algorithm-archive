@@ -35,14 +35,17 @@ d'_0 = \frac{d_0}{b_0}
 \end{align}
 $$
 
-In code, this will look like this:
+## Example Code
 
 {% method %}
 {% sample lang="jl" %}
+### Julia
 [import, lang:"julia"](code/julia/thomas.jl)
 {% sample lang="c" %}
+### C
 [import, lang:"c_cpp"](code/c/thomas.c)
 {% sample lang="py" %}
+### Python
 [import, lang:"python"](code/python/thomas.py)
 {% endmethod %}
 

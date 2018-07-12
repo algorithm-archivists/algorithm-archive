@@ -282,16 +282,17 @@ Even though this seems straightforward, the pseudocode might not be as simple as
 
 Now, as for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
 
-### Example Code
-
-The full code can be seen here:
+## Example Code
 
 {% method %}
 {% sample lang="jl" %}
+### Julia
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
+### C
 [import, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
+### Rust
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 

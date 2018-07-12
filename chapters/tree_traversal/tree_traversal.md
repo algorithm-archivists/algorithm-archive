@@ -195,7 +195,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
-# Example Code
+## Example Code
 {% method %}
 {% sample lang="jl" %}
 ### Julia

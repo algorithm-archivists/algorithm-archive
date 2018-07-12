@@ -48,7 +48,7 @@ In the end, the code should look something like this:
 
 {% references %} {% endreferences %}
 
-### Example Code
+## Example Code
 
 {% method %}
 {% sample lang="jl" %}
@@ -61,6 +61,7 @@ In the end, the code should look something like this:
 ### C
 [import, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
+### Javascript
 [import, lang:"javascript"](code/javascript/graham-scan.js)
 {% endmethod %}
 
