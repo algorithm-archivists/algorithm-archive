@@ -120,8 +120,11 @@ In the end, the code looks like:
 [import:14-31, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
 [import:20-39, lang:"c_cpp"](code/c/fft.c)
+<<<<<<< HEAD:chapters/algorithms/cooley_tukey/cooley_tukey.md
 {% sample lang="clj" %}
 [import:32-59, lang:"clojure"](code/clojure/fft.clj)
+=======
+>>>>>>> 6dcdf85d1dbeeda2e60d566b397af66c7ca4a7d3:chapters/algorithms/cooley_tukey/cooley_tukey.md
 {% sample lang="cpp" %}
 [import:27-57, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
