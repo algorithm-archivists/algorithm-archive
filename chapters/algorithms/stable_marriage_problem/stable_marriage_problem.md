@@ -22,25 +22,18 @@ I am incredibly interested to see what you guys do and how you implement the alg
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/stable_marriage.jl)
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/python/stable_marriage.py)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/stableMarriage.hs)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/stable_marriage.c)
 {% sample lang="cpp" %}
-### C++
 [import, lang:"c_cpp"](code/c++/stable_marriage.cpp)
 {% sample lang="js" %}
-### JavaScript
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}
-### C# #
 GaleShapleyAlgorithm.cs
 [import, lang:"csharp"](code/csharp/GaleShapleyAlgorithm.cs)
 Person.cs

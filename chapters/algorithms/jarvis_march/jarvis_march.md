@@ -24,25 +24,19 @@ Since this algorithm, there have been many other algorithms that have advanced t
 
 {% method %}
 {% sample lang="cs" %}
-### C# #
 JarvisMarch.cs
 [import, lang="csharp"](code/csharp/JarvisMarch.cs)
 Program.cs
 [import, lang="csharp"](code/csharp/Program.cs)
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/jarvis.jl)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/jarvisMarch.hs)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/jarvis_march.c)
 {% sample lang="js" %}
-### JavaScript
 [import, lang:"javascript"](code/javascript/jarvis-march.js)
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/py/jarvisMarch.py)
 {% endmethod %}
 

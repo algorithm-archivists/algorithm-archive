@@ -170,25 +170,18 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-### C++
 [import, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-### Java
 [import, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
-### Scratch
 Submitted by Jie
 <p>
     <img  class="center" src="code/scratch/verlet_scratch.png" />

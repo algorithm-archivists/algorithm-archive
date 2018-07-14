@@ -198,37 +198,30 @@ This has not been implemented in your chosen language, so here is the Julia code
 ## Example Code
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-### C++
 [import, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-### C# #
 Tree.cs
 [import, lang:"csharp"](code/csharp/Tree.cs)
 Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
-### C
 utility.h
 [import, lang:"c_cpp"](code/c/utility.h)
 tree_traversal.c
 [import, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-### Java
 Tree.java
 [import, lang:"java"](code/java/Tree.java)
 MainClass.java
 [import, lang:"java"](code/java/MainClass.java)
 {% sample lang="js" %}
-### JavaScript
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-### Scratch
+
 <p>
     <img  class="center" src="code/scratch/scratch_tree.png" />
 </p>
