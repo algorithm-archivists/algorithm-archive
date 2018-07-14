@@ -24,4 +24,9 @@ public class EuclideanAlgo {
 
         return a;
     }
+    
+    public static void main(String[] args) {
+        System.out.println(euclidMod(64 * 67, 64 * 81));
+        System.out.println(euclidSub(128 * 12, 128 * 77));
+    }
 }
