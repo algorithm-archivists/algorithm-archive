@@ -99,19 +99,14 @@ So, this time, let's remove ourselves from any physics and instead solve the fol
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/euler.jl)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/euler.c)
 {% sample lang="cpp" %}
-### C++
 [import, lang:"c_cpp"](code/c++/euler.cpp)
 {% sample lang="rs" %}
-### Rust
 [import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}
-### Elm
 [import:44-54, lang:"elm"](code/elm/euler.elm)
 [import:193-210, lang:"elm"](code/elm/euler.elm)
 
@@ -119,10 +114,8 @@ Full code for the visualization follows:
 [import, lang:"elm"](code/elm/euler.elm)
 
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/python/euler.py)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/euler.hs)
 {% endmethod %}
 

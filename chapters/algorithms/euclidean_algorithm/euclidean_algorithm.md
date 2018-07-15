@@ -78,43 +78,31 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 
 {% method %}
 {% sample lang="c" %}
-### C
 [import, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
-### C# #
 EuclideanAlgorithm.cs
 [import, lang="csharp"](code/csharp/EuclideanAlgorithm.cs)
 Program.cs
 [import, lang="csharp"](code/csharp/Program.cs)
 {% sample lang="clj" %}
-### Clojure
 [import 2-20, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-### Cpp
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
-### Java
 [import, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
-### JavaScript
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py" %}
-### Python
 [import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
-### Haskell
 [import, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
-### Rust
 [import, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
-### Ocaml
 [import, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-### Go
 [import, lang="golang"](code/go/euclidean.go)
 {% sample lang="swift" %}
-### Swift
 [import, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% endmethod %}
 

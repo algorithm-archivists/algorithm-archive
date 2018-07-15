@@ -286,13 +286,10 @@ Now, as for what's next... Well, we are in for a treat! The above algorithm clea
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
-### Rust
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
