@@ -1,4 +1,3 @@
-# struct to hold all parameters for simulation
 struct Param
     xmax::Float64
     res::Int64
@@ -24,7 +23,6 @@ struct Param
           )
 end
 
-# struct to hold all operators
 mutable struct Operators
     V::Vector{Complex{Float64}}
     PE::Vector{Complex{Float64}}
