@@ -55,37 +55,27 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/huffman.jl)
 {% sample lang="rs" %}
-### Rust
 [import, lang:"rust"](code/rust/huffman.rs)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/huffman.c)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/huffman.hs)
 {% sample lang="cs" %}
-### C# #
 HuffmanCoding.cs
 [import, lang:"csharp"](code/csharp/HuffmanCoding.cs)
 Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="cpp" %}
-### C++
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
-### Clojure
 [import 2-117, lang:"clojure"](code/clojure/huffman.clj)
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/python/huffman.py)
 {% sample lang="js" %}
-### JavaScript
 [import, lang:"javascript"](code/javascript/huffman.js)
 {% sample lang="java" %}
-### Java
 [import, lang:"java"](code/java/huffman.java)
 {% endmethod %}
 

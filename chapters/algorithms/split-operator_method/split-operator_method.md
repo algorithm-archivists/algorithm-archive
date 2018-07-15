@@ -84,7 +84,6 @@ The Split-Operator method is one of the most commonly used quantum simulation al
 ## Example Code
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/split_op.jl)
 {% endmethod %}
 

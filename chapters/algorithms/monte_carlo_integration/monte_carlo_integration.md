@@ -91,37 +91,26 @@ Feel free to submit your version via pull request, and thanks for reading!
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/monte_carlo.jl)
 {% sample lang="clj" %}
-### Clojure
 [import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
 {% sample lang="js" %}
-### Javascript
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
 {%sample lang="rs" %}
-### Rust
 [import, lang:"rust"](code/rust/monte_carlo.rs)
 {%sample lang="d" %}
-### D
 [import, lang:"d"](code/d/monte_carlo.d)
 {%sample lang="go" %}
-### Go
 [import, lang:"golang"](code/go/monteCarlo.go)
 {%sample lang="r" %}
-### R
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
-### Java
 [import, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
-### Swift
 [import, lang:"swift"](code/swift/monte_carlo.swift)
 {% endmethod %}
 
