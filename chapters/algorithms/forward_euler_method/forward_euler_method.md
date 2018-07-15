@@ -117,6 +117,8 @@ Full code for the visualization follows:
 [import, lang:"python"](code/python/euler.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/euler.hs)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/euler.m)
 {% endmethod %}
 
 <script>
