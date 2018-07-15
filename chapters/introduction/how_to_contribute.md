@@ -2,7 +2,7 @@
 
 The *Algorithm Archive* is an effort to learn about and teach algorithms as a community.
 As such, it requires a certain level of trust between community members.
-For the most part, the collaboration can be done via GitHub and gitbook, so it is important to understand the basics of [version control](version_control.md).
+For the most part, the collaboration can be done via GitHub and gitbook, so it is important to understand the basics of [version control](../principles_of_code/version_control.md).
 Ideally, all code provided by the community will be submitted via pull requests and discussed accordingly; however, I understand that many individuals are new to collaborative projects, so I will allow submissions by other means (comments, tweets, etc...).
 As this project grows in size, it will be harder and harder to facilitate these submissions.
 In addition, by submitting in any way other than pull requests, I cannot guarantee I will be able to list you as a collaborator (though I will certainly do my best to update the `CONTRIBUTORS.md` file accordingly).
