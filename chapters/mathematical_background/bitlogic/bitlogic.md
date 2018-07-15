@@ -1,10 +1,10 @@
-### Bit Logic
+# Bit Logic
 
 We write code in a language that makes a little sense to us, but does not make sense at all to our computer without a compiler to transform the code we write into a language the computer can understand.
 In the end, whenever we write code, all of the data structures we write are transformed into binary strings of 1's and 0's to be interpreted by our computer.
 That said, it's not always obvious how this happens, so let's start the simple case of integer numbers.
 
-#### Integers
+## Integers
 For integer numbers, 0 is still 0 and 1 is still 1; however, for 2, we need to use 2 digits because binary only has 0's and 1's. When we get to 4, we'll need 3 digits and when we get to 8, we'll need 4. Ever time we cross a power of 2, we'll need to add a new digit. Here's a table of the first 10 integers in binary:
 
 | Integer Number | Binary Number |
@@ -45,7 +45,7 @@ Another method is to "roll over" to negative numbers when the bit count gets too
 
 Ultimately, integer numbers are not that difficult to deal with in binary, so let's move onto something more complicated: *floating-point numbers!*
 
-#### Floating-point Numbers
+## Floating-point Numbers
 Floats are numbers with a decimal point.
 9.125 is a float. 9.000 is a float. 9 is an integer.
 Here are a few floats and their integer representations:
