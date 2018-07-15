@@ -89,10 +89,7 @@ Program.cs
 {% sample lang="cpp" %}
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
-EuclideanAlgo.java
 [import, lang="java"](code/java/EuclideanAlgo.java)
-MainClass.java
-[import, lang="java"](code/java/MainClass.java)
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="py" %}
