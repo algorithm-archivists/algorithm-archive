@@ -1,3 +1,11 @@
+#------------split_op.jl-------------------------------------------------------#
+#
+# Plotting: to plot individual timesteps, use gnuplot like so:
+#               p "output00000.dat" u 1:2 w l
+#               rep "output00000.dat" u 1:3 w l
+#
+#------------------------------------------------------------------------------#
+
 struct Param
     xmax::Float64
     res::Int64
@@ -93,14 +101,14 @@ function split_op(par::Param, opr::Operators)
 
             # Outputting for gnuplot. Any plotter will do.
             for j = 1:length(density)
-                write(outfile, "$j\t" * string(density[j]) * '\t'
-                               * string(real(opr.V[j])) * '\n')
+                write(outfile, string(par.x[j]) * "\t"
+                               * string(density[j]) * "\t"
+                               * string(real(opr.V[j])) * "\n")
             end
 
             close(outfile)
             println("Outputting step: ", i)
         end
-
     end
 end
 

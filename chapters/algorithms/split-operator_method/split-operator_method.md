@@ -66,7 +66,7 @@ Regardless, we first need to set all the initial parameters, including the initi
 
 {% method %}
 {% sample lang="jl" %}
-[import:1-24, lang:"julia"](code/julia/split_op.jl)
+[import:9-32, lang:"julia"](code/julia/split_op.jl)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
@@ -78,7 +78,7 @@ Afterwards, we turn them into operators:
 
 {% method %}
 {% sample lang="jl" %}
-[import:26-52, lang:"julia"](code/julia/split_op.jl)
+[import:34-60, lang:"julia"](code/julia/split_op.jl)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
@@ -90,7 +90,7 @@ The final step is to do the iteration, itself.
 
 {% method %}
 {% sample lang="jl" %}
-[import:54-105, lang:"julia"](code/julia/split_op.jl)
+[import:62-113, lang:"julia"](code/julia/split_op.jl)
 {% endmethod %}
 
 And that's it.
