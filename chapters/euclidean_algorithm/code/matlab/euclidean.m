@@ -1,3 +1,5 @@
+//submitted by Max Weinstein
+
 function gcd = euclidSub(a,b)
     
     a = abs(a);
@@ -16,8 +18,8 @@ end
 
 function gcd = euclidMod(a,b)
     
-    a=abs(a);
-    b=abs(b);
+    a = abs(a);
+    b = abs(b);
     
     while b > 0
         temp = b;
