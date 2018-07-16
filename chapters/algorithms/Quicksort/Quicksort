@@ -1,0 +1,11 @@
+# Quicksort
+
+Quicksort is the fastest algorithm we cover so far and its based on the stament "divide and conquer".
+The best way to explain how this algorithm works is with a quick example, lets take rhe first 5 odd numbers in a random order.
+
+[3,7,5,9,1]
+
+The first step is to take a number (any number) and lets call it a "pivot". Then we proced to compare this number with every other number and decide for each one if it should be on the right or left side of out pivot.
+Continuin with my example i will take the number 7 as my pivot and ones compared with overy other number i get:
+
+[3,5,1] S
