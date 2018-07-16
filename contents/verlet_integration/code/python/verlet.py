@@ -4,7 +4,8 @@ def verlet(pos, acc, dt):
 
     while pos > 0:
         time += dt
-        prev_pos, pos = pos, pos * 2 - prev_pos + acc * dt * dt
+        next_pos = pos * 2 - prev_pos + acc * dt * dt
+        prev_pos, pos = pos, next_pos
 
     return time
 
@@ -15,7 +16,8 @@ def stormer_verlet(pos, acc, dt):
 
     while pos > 0:
         time += dt
-        prev_pos, pos = pos, pos * 2 - prev_pos + acc * dt * dt
+        next_pos = pos * 2 - prev_pos + acc * dt * dt
+        prev_pos, pos = pos, next_pos
         vel += acc * dt
 
     return time, vel
