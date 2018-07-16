@@ -13,3 +13,17 @@ function gcd = euclidSub(a,b)
     
     gcd = a;
 end
+
+function gcd = euclidMod(a,b)
+    
+    a=abs(a);
+    b=abs(b);
+    
+    while b > 0
+        temp = b;
+        b = mod(a,b);
+        a = temp;
+    end
+    
+    gcd = a;
+end
