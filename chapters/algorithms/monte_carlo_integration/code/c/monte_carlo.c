@@ -8,7 +8,8 @@ bool in_circle(double x, double y, double radius) {
     return x * x + y * y < radius * radius;
 }
 
-void monte_carlo(int samples, double radius) {
+void monte_carlo(int samples) {
+    double radius = 1.0;
     int count = 0;
 
     for (int i = 0; i < samples; ++i) {
@@ -29,7 +30,7 @@ void monte_carlo(int samples, double radius) {
 int main() {
     srand(time(NULL));
 
-    monte_carlo(1000000, 1.0);
+    monte_carlo(1000000);
 
     return 0;
 }
