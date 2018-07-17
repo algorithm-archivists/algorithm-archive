@@ -24,7 +24,6 @@ function graham_scan(points::Vector{Point})
 
     # M will be the point on the hull
     M = 2
-    i = 3
     for i = 1:N
         while (ccw(points[M-1], points[M], points[i]) <= 0)
             if (M > 2)

@@ -202,7 +202,7 @@ I'll definitely come back to this at some point, so let me know what you liked a
 
 {% references %} {% endreferences %}
 
-### Example Code
+## Example Code
 
 To be clear, the example code this time will be complicated and requires the following functions:
 
@@ -219,22 +219,16 @@ Note: I implemented this in Julia because the code seems more straightforward in
 
 {% method %}
 {% sample lang="jl" %}
-### Julia
 [import, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-### C
 [import, lang:"c_cpp"](code/c/fft.c)
 {% sample lang="cpp" %}
-### C++
 [import, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
-### Haskell
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
-### Python
 [import, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
-### Scratch
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
 {% endmethod %}
 
