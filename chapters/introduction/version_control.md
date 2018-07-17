@@ -1,4 +1,4 @@
-## Git and Version Control
+# Git and Version Control
 
 I am a fan of open-source software. It allows users to see inside the code running on their system and mess around with it if they like.
 Unlike proprietary software, open source software allows any user to learn the entire codebase from the ground up, and that's an incredibly exciting prospect!

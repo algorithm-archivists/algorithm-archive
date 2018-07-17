@@ -1,4 +1,4 @@
-### Physics Solvers
+# Physics Solvers
 
 There are certain algorithms that have been uniquely created to solve particular physical systems.
 For example, the kinematic equation can be solved with Verlet integration and also with more general differential equation solvers.

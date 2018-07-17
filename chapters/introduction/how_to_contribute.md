@@ -1,4 +1,4 @@
-## How to Contribute to the Algorithm Archive
+# How to Contribute to the Algorithm Archive
 
 The *Algorithm Archive* is an effort to learn about and teach algorithms as a community.
 As such, it requires a certain level of trust between community members.
