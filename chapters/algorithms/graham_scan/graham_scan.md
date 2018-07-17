@@ -35,7 +35,7 @@ In the end, the code should look something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:10-46, lang:"julia"](code/julia/graham.jl)
+[import:10-45, lang:"julia"](code/julia/graham.jl)
 {% sample lang="hs" %}
 [import:9-18, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
