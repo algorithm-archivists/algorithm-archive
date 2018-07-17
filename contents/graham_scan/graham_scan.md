@@ -18,6 +18,8 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 [import:6-7, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
 [import:24-26, lang:"c_cpp"](code/c/graham.c)
+{% sample lang="cpp" %}
+[import:11-13, lang:"c_cpp"](code/c++/graham.cpp)
 {% sample lang="js" %}
 [import:36-38, lang:"javascript"](code/javascript/graham-scan.js)
 {% endmethod %}
@@ -40,6 +42,8 @@ In the end, the code should look something like this:
 [import:9-18, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
 [import:65-95, lang:"c_cpp"](code/c/graham.c)
+{% sample lang="cpp" %}
+[import:15-55, lang:"c_cpp"](code/c++/graham.cpp)
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
 {% endmethod %}
@@ -57,6 +61,8 @@ In the end, the code should look something like this:
 [import, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/graham.c)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/graham.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/graham-scan.js)
 {% endmethod %}
