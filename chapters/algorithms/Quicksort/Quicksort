@@ -8,4 +8,8 @@ The best way to explain how this algorithm works is with a quick example, lets t
 The first step is to take a number (any number) and lets call it a "pivot". Then we proced to compare this number with every other number and decide for each one if it should be on the right or left side of out pivot.
 Continuin with my example i will take the number 7 as my pivot and ones compared with overy other number i get:
 
-[3,5,1] S
+[3,5,1] Numbers that should be on the left of my pivot
+[7] Pivot
+[9] Numbers that should be on the right of my pivot
+
+Notice how the first group (numbers that should be on the left) keeps 
