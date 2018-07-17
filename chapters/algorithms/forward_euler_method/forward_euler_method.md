@@ -1,7 +1,7 @@
 # The Forward Euler Method
 
 The Euler methods are some of the simplest methods to solve ordinary differential equations numerically.
-They introduce a new set of methods called the [Runge Kutta](../runge_kutta_methods/runge_kutta_methods.md) methods, which will be discussed in the near future!
+They introduce a new set of methods called the Runge Kutta methods, which will be discussed in the near future!
 
 As a physicist, I tend to understand things through methods that I have learned before.
 In this case, it makes sense for me to see Euler methods as extensions of the [Taylor Series Expansion](../general/taylor_series_expansion/taylor_series_expansion.md).
@@ -48,7 +48,7 @@ $$
 $$
 
 Now, solving this set of equations in this way is known as the *forward* Euler Method.
-In fact, there is another method known as the [*backward* Euler Method](../backward_euler_method/backward_euler_method.md), which we will get to soon enough.
+In fact, there is another method known as the *backward* Euler Method, which we will get to soon enough.
 For now, it is important to note that the error of these methods depend on the timestep chosen.
 
 <p>

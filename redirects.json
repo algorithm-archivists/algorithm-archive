@@ -1,12 +1,24 @@
 {
   "redirects": [
     {
-      "from": "chapters/introduction.html",
-      "to": "chapters/introduction/introduction.html"
+      "from": "chapters/principles_of_code/building_blocks/stacks.html",
+      "to": "chapters/data_structures/stacks_and_queues/stacks_and_queues.html"
     },
     {
-      "from": "chapters/getting_started.html",
-      "to": "chapters/introduction/my_introduction_to_hobby_programming.html"
+      "from": "chapters/principles_of_code/building_blocks/bitlogic.html",
+      "to": "chapters/general/bitlogic.html"
+    },
+    {
+      "from": "chapters/principles_of_code/notation/notation.html",
+      "to": "chapters/general/notation.html"
+    },
+    {
+      "from": "chapters/principles_of_code/version_control.html",
+      "to": "chapters/introduction/version_control.html"
+    },
+    {
+      "from": "chapters/introduction.html",
+      "to": "chapters/introduction/introduction.html"
     },
     {
       "from": "chapters/how_to_contribute.html",
@@ -39,10 +51,6 @@
     {
       "from": "chapters/euclidean_algorithm/euclidean.html",
       "to": "chapters/algorithms/euclidean_algorithm/euclidean_algorithm.html"
-    },
-    {
-      "from": "chapters/multiplication/multiplication.html",
-      "to": "chapters/general/multiplication/multiplication.html"
     },
     {
       "from": "chapters/monte_carlo/monte_carlo.html",
@@ -111,10 +119,6 @@
     {
       "from": "chapters/physics_solvers/verlet/verlet.html",
       "to": "chapters/algorithms/verlet_integration/verlet_integration.html"
-    },
-    {
-      "from": "chapters/physics_solvers/barnes_hut.html",
-      "to": "chapters/algorithms/barnes_hut_algorithm/barnes_hut_algorithm.html"
     },
     {
       "from": "chapters/physics_solvers/quantum/quantum.html",

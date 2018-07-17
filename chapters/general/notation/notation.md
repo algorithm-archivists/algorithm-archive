@@ -1,4 +1,4 @@
-### Complexity Notation
+# Complexity Notation
 
 Algorithms are designed to solve problems.
 Over time, new algorithms are created to solve problems that old algorithms have already solved.
@@ -25,7 +25,7 @@ Of the three Big $$O$$ is used the most, and is used in conversation to mean tha
 Unfortunately, at this point, these notations might be a little vague.
 In fact, it was incredibly vague for me for a long time, and it wasn't until I saw the notations in action that it all started to make sense, so that's what this section is about: providing concrete examples to better understand computational complexity notation.
 
-### Constant Time
+## Constant Time
 
 Let's write some code that reads in an array of length `n` and runs with constant time:
 
@@ -66,7 +66,7 @@ Just because this is common practice does not mean it's the *best* practice.
 I have run into several situation where knowing the constants has saved me hours of run-time, so keep in mind that all of these notations are somewhat vague and dependent on a number of auxiliary factors.
 Still, that doesn't mean the notation is completely useless. For now, let's keep moving forward with some more complicated (and useful) examples!
 
-### Linear Time
+## Linear Time
 
 Now we are moving into interesting territory!
 Let's consider the following function:
@@ -127,7 +127,7 @@ That said, there have been several cases throughout the history of algorithms wh
 For this reason, if you can avoid writing nested `for` loops, you certainly should!
 However, there are several cases where this cannot be avoided, so don't spend too much time worrying about it unless runtime becomes an issue!
 
-### Exponential and Logarithmic Time
+## Exponential and Logarithmic Time
 These are two more cases that come up all the time and often require a common theme: *recursion*.
 Generally speaking, logarithmic algorithms are some of the fastest algorithms out there, while exponential algorithms are some of the slowest.
 Unfortunately, this means that recursion can be either the most useful tool in existence for realizing certain algorithms or the most harmful one, depending on your problem.
@@ -165,7 +165,7 @@ If we split these new arrays, we have 4 arrays of 2, and if we split these by tw
 This is as far as we can go, and we ended up dividing the array 3 times to get to this point.
 $$3 = \log_2(8)$$, so this function runs with a logarithmic number of operations.
 
-### Putting it all together
+## Putting it all together
 
 We've outlined the most common complexity cases of different algorithms here, but at this point things might still be unclear.
 Which is better: $$O(n^2)$$ or $$O(log(n))$$?
