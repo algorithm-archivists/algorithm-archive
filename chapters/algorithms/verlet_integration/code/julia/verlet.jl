@@ -9,7 +9,7 @@ function verlet(pos::Float64, acc::Float64, dt::Float64)
         prev_pos = temp_pos
     end
 
-    println(time)
+    return time
 end
 
 function stormer_verlet(pos::Float64, acc::Float64, dt::Float64)
@@ -27,7 +27,7 @@ function stormer_verlet(pos::Float64, acc::Float64, dt::Float64)
         vel += acc*dt
     end
 
-    println(time)
+    return time, vel
 end
 
 function velocity_verlet(pos::Float64, acc::Float64, dt::Float64)
@@ -41,13 +41,20 @@ function velocity_verlet(pos::Float64, acc::Float64, dt::Float64)
         vel += acc * dt;
     end
 
-    println(time)
+    return time, vel
 end
 
 function main()
-    verlet(5.0, -10.0, 0.01);
-    stormer_verlet(5.0, -10.0, 0.01);
-    velocity_verlet(5.0, -10.0, 0.01);
+    time = verlet(5.0, -10.0, 0.01);
+    println("Time for Verlet integration is: $(time)\n")
+
+    time, vel = stormer_verlet(5.0, -10.0, 0.01);
+    println("Time for Stormer Verlet integration is: $(time)")
+    println("Velocity for Stormer Verlet integration is: $(vel)\n")
+
+    time, vel = velocity_verlet(5.0, -10.0, 0.01);
+    println("Time for velocity Verlet integration is: $(time)")
+    println("Velocity for velocity Verlet integration is: $(vel)\n")
 end
 
 main()
