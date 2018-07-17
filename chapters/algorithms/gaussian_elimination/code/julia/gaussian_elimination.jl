@@ -1,4 +1,3 @@
-using DataStructures
 function gaussian_elimination(A::Array{Float64,2})
 
     rows = size(A,1)

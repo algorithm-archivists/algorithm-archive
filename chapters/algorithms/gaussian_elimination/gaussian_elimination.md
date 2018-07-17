@@ -86,7 +86,7 @@ Basically, any matrix can be considered in row echelon form if
 1. All non-zero rows are above rows of all zeros
 2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-All the following examples are in the Row Echelon Form:
+All the following examples are in the row echelon form:
 
 $$
 \left[
@@ -124,9 +124,9 @@ $$
 
 The first two are probably the ones we are interested in, at the very least they have the right dimensions to solve a system of equations.
 The last two systems are either under- or over-constrained; however, if you translate the last row of second matrix into a system, you get $$0=1$$, which is a contradiction.
-This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these matrices are in Row Echelon Form.
+This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these matrices are in row echelon form.
 
-Now, it seems obvious to point out that if we ignore the last column, Row Echelon Form is an upper triangular matrix.
+Now, it seems obvious to point out that if we ignore the last column, row echelon form is an upper triangular matrix.
 This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
 
 Now, row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this
@@ -156,12 +156,12 @@ $$
 
 And that's where we really want to get to for obvious reasons.
 This introduces yet another matrix configuration: * **Reduced** Row Echelon Form*.
-A matrix is in Reduced Row Echelon form if it satisfies the following conditions:
+A matrix is in reduced row echelon form if it satisfies the following conditions:
 
 1. It is in row echelon form.
 2. Every pivot is 1 and is the only nonzero entry in its column.
 
-All the following examples are in the Reduced Row Echelon Form:
+All the following examples are in the reduced row echelon form:
 
 $$
 \left[
@@ -192,10 +192,10 @@ $$
 Again, only the first one (the identity matrix looking guy) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system?
 
 Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as the rank.
-The rank of a matrix is the maximal number of linearly independent columns, in reduced row echelon Form, the rank is simply the number of pivots.
+The rank of a matrix is the maximal number of linearly independent columns, in reduced row echelon form, the rank is simply the number of pivots.
 
-For now, I hope the motivation is clear: we want to convert a matrix into Row Echelon and then Reduced Row Echelon form to make large systems of equations trivial to solve, so we need some method to do that.
-In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a Row Echelon matrix into Reduced Row Echelon is called *Gauss-Jordan Elimination*.
+For now, I hope the motivation is clear: we want to convert a matrix into row echelon and then reduced row echelon form to make large systems of equations trivial to solve, so we need some method to do that.
+In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a row echelon matrix into reduced row echelon is called *Gauss-Jordan Elimination*.
 That said, the notation here is sometimes inconsistent.
 Several authors use the term *Gaussian Elimination* to include Gauss-Jordan elimination as well.
 In addition, the process of Gauss-Jordan elimination is sometimes called *Back-substitution*, which is also confusing because the term can also be used to mean solving a system of equations from row echelon form, without simplifying to reduced row echelon form.
@@ -218,7 +218,7 @@ In the end, reducing large systems of equations boils down to a game you play on
 3. You can add any row to a multiple of any other row
 
 That's it.
-Before continuing, I suggest you try to recreate the Row Echelon matrix we made above.
+Before continuing, I suggest you try to recreate the row echelon matrix we made above.
 That is, do the following:
 
 $$
@@ -243,7 +243,7 @@ There are plenty of different strategies you could use to do this, and no one st
 Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows.
 I then do the same thing for the following columns.
 
-After you get an upper triangular matrix, the next step is diagonalizing to create the Reduced Row Eschelon Form. In other words, we do the following:
+After you get an upper triangular matrix, the next step is diagonalizing to create the reduced row echelon form. In other words, we do the following:
 
 $$
 \left[
@@ -353,7 +353,7 @@ In code, this looks like:
 
 {% method %}
 {% sample lang="jl" %}
-[import:2-46, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:1-45, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
@@ -361,7 +361,7 @@ In code, this looks like:
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
-In other words, it only creates a matrix in *Row Echelon Form*, not * **Reduced** Row Echelon Form*.
+In other words, it only creates a matrix in *row echelon form*, not * **reduced** row echelon form*.
 If the matrix is found to be singular during this process, the system of equations is either over or under-determined and no general solution exists.
 For this reason, many implementations of this method will stop the moment the matrix is found to be singular.
 In this implementation, we allowed for the more general case and opted to simply output when the matrix is singular instead.
@@ -369,10 +369,10 @@ If you intend to solve a system of equations, then it makes sense to stop the me
 
 So what do we do from here? Well, we continue further reducing the matrix; however, there are two ways to do this:
 
-1. Reduce the matrix further into *Reduced* Row Echelon form with Gauss-Jordan elimination
-2. Solve the system directly with *Back-substitution* if the matrix is allows for such solutions
+1. Reduce the matrix further into *reduced* row echelon form with Gauss-Jordan elimination
+2. Solve the system directly with *back-substitution* if the matrix is allows for such solutions
 
-Let's start with Gauss-Jordan Elimination and then Back-substitution
+Let's start with Gauss-Jordan Elimination and then back-substitution
 
 ## Gauss-Jordan Elimination
 
@@ -383,18 +383,18 @@ Here it is in code:
 
 {% method %}
 {% sample lang="jl" %}
-[import:71-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
-[import:71-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
-[import:71-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% endmethod %}
 
 ## Back-substitution
 
-The idea of Back-substitution is straightforward: we create a matrix of solutions and iteratively solve for each variable by plugging in all variables before it.
+The idea of back-substitution is straightforward: we create a matrix of solutions and iteratively solve for each variable by plugging in all variables before it.
 For example, if our matrix looks like this:
 
 $$
@@ -413,7 +413,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 
 {% method %}
 {% sample lang="jl" %}
-[import:48-68, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:47-67, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
@@ -423,8 +423,8 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 ## Conclusions
 
 And with that, we have two possible ways to reduce our system of equations.
-If we are sure our matrix is not singular and that a solution exists, it's fastest to use Back-substitution to find our solution.
-If no solution exists or we are trying to find a Reduced Row Echelon matrix, then Gauss-Jordan elimination is best.
+If we are sure our matrix is not singular and that a solution exists, it's fastest to use back-substitution to find our solution.
+If no solution exists or we are trying to find a reduced row echelon matrix, then Gauss-Jordan elimination is best.
 As we said at the start, the notation for Gaussian Elimination is rather ambiguous in the literature, so we are hoping that the definitions provided here are clear and consistent enough to cover all the bases.
 
 As for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
