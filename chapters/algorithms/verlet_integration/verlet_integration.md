@@ -188,19 +188,15 @@ Submitted by Jie
 </p>
 Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
 {% sample lang="matlab" %}
-### Matlab
 [import, lang:"matlab"](code/matlab/verlet.m)
 {% sample lang="LabVIEW" %}
-### LabVIEW
 Submitted by P. Mekhail
 <p>
     <img  class="center" src="code/labview/verlet_labview.png" />
 </p>
 {% sample lang="javascript" %}
-### JavaScript
 [import, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
-### Rust
 [import, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
 
