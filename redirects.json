@@ -30,7 +30,7 @@
     },
     {
       "from": "chapters/taylor/taylor_series.html",
-      "to": "chapters/general/taylor_series/taylor_series.html"
+      "to": "chapters/general/taylor_series_expansion/taylor_series_expansion.html"
     },
     {
       "from": "chapters/sorting_searching/sorting_searching.html",
