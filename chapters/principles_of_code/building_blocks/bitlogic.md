@@ -94,27 +94,40 @@ There are more complicated things that can be done with the bitshift operators; 
 In addition to the bitshift operations, there are a number of logical operations that can be performed on one or two bits together.
 These operations are called *gates*, and follow soemwhat straightforward logic.
 The *AND* gate, for example, reads in 2 bits and will only output a 1 value if both inputs are 1. This can be seen in the corresponding truth table:
-![AND Truth Table](and.jpg)
+
+<p>
+    <img  class="center" src="res/and.jpg" width="423" />
+</p>
 
 The *OR* gate will output 1 if either input bits are 1:
 
-![OR Truth Table](or.jpg)
+<p>
+    <img  class="center" src="res/or.jpg" width="423" />
+</p>
 
 The *exclusive OR* or *XOR* gate is the same as the *OR* gate, but will not output 1 if both bits are 1:
 
-![XOR Truth Table](xor.jpg)
+<p>
+    <img  class="center" src="res/xor.jpg" width="423" />
+</p>
 
 The *NOT* gate simply flips the input bit:
 
-![NOT Truth Table](not.jpg)
+<p>
+    <img  class="center" src="res/not.jpg" width="423" />
+</p>
 
 By combining the NOT and AND gates, we get the *NAND* gate:
 
-![NAND Truth Table](nand.jpg)
+<p>
+    <img  class="center" src="res/nand.jpg" width="423" />
+</p>
 
 And NOT and OR create *NOR*:
 
-![NOR Truth Table](nor.jpg)
+<p>
+    <img  class="center" src="res/nor.jpg" width="423" />
+</p>
 
 There are a few other gates, but this is enough for most things. We'll add more as the need arises!
 
