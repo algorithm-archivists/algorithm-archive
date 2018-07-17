@@ -226,10 +226,8 @@ MainClass.java
     <img  class="center" src="code/scratch/scratch_tree.png" />
 </p>
 {% sample lang="rs"%}
-### Rust
 [import, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-### Haskell
 [import, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
 
