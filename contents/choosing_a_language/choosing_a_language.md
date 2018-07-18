@@ -1,4 +1,4 @@
-## Choosing a Language
+# Choosing a Language
 
 I'm not going to beat around the bush here.
 Every single time I try something new, I fail at it.
