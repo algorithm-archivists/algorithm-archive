@@ -383,13 +383,13 @@ Here it is in code:
 
 {% method %}
 {% sample lang="jl" %}
-[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:70-96, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
-[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:70-96, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
-[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:70-96, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% endmethod %}
 
 ## Back-substitution
