@@ -5,7 +5,9 @@
 
 branch=`git symbolic-ref HEAD`
 if [ "$branch" = "refs/heads/master" ]; then
-    echo "pre-commit hook: Can not commit to the local master branch."
+    echo "pre-commit hook: Cannot commit to the local master branch."
+    echo "Please make all your changes in a new feature branch:"
+    echo "$ git checkout -b my-new-feature-branch"
     exit 1
 fi
 
