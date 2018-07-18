@@ -1,0 +1,17 @@
+:"LENGTH OF LIST"
+:dim(L1)→L
+:"IS SORTED?"
+:0→S
+:While not(S)
+:1→S
+:For(X,1,L-1)
+:If L1(X)>L1(X+1)
+:Then
+:L1(X)→Y
+:L1(X+1)→L1(X)
+:Y→L1(X+1)
+:0→S
+:End
+:End
+:End
+:Disp L1
