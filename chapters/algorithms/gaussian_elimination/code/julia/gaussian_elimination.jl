@@ -67,7 +67,7 @@ function back_substitution(A::Array{Float64,2})
 end
 
 
-function gauss_jordan(A::Array{Float64,2})
+function gauss_jordan_elimination(A::Array{Float64,2})
 
     rows = size(A,1)
     cols = size(A,2)
@@ -83,7 +83,7 @@ function gauss_jordan(A::Array{Float64,2})
             for i = cols:-1:col
                 A[row,i] /= A[row,col]
             end
-    
+
             # subtract value from above row and set values above pivot to 0
             for i = 1:row-1
                 for j = cols:-1:col
@@ -93,8 +93,6 @@ function gauss_jordan(A::Array{Float64,2})
             row += 1
         end
     end
-
-    return A
 end
 
 function main()
@@ -105,8 +103,8 @@ function main()
     gaussian_elimination(A)
     println(A)
 
-    reduced = gauss_jordan(A)
-    println(reduced)
+    gauss_jordan_elimination(A)
+    println(A)
 
     soln = back_substitution(A)
     println(soln)
