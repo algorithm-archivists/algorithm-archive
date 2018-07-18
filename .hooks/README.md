@@ -3,7 +3,6 @@
 These are scripts executed by Git at specific steps of the version control workflow, depending on their name.
 
 - `pre-commit` runs before attempting to commit, and prevents committing to the local master branch.
-- `pre-push` runs before attempting to push, and prevents pushing to the remote master branch.
 
 To install,
 ```bash
