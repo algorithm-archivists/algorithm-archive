@@ -21,7 +21,7 @@ Unfortunately, this means that we will probably never cover every algorithm ever
 That said, we'll still cover a few algorithms for fun that have very little, if any practical purpose.
 
 If you would like to contribute, feel free to go to any chapter with code associated with it and implement that algorithm in your favorite language,
-and then submit the code via pull request, following the submission guidelines found in `chapters/how_to_contribute.md` (or [here](chapters/introduction/how_to_contribute.md) if you are reading this on gitbook).
+and then submit the code via pull request, following the submission guidelines found in `contents/how_to_contribute/how_to_contribute.md` (or [here](contents/how_to_contribute/how_to_contribute.md) if you are reading this on gitbook).
 
 Hopefully, this project will grow and allow individuals to learn about and try their hand at implementing different algorithms for fun and (potentially) useful projects.
 If nothing else, it will be an enjoyable adventure for our community.

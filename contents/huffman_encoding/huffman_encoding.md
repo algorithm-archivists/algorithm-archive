@@ -8,7 +8,7 @@ He managed to rip the heart out of the methods described by leaders of the field
 It was in that moment, I knew I would never amount to anything.
 I have since accepted that fact and moved on.
 
-Huffman encoding follows from the problem described in the [Data Compression](../../general/data_compression/data_compression.md) section.
+Huffman encoding follows from the problem described in the [Data Compression](../data_compression/data_compression.md) section.
 We have a string that we want to encode into bits.
 Huffman encoding ensures that our encoded bitstring is as small as possible without losing any information.
 Because it is both lossless and guarantees the smallest possible bit length, it outright replaces both Shannon and Shannon-Fano encoding in most cases, which is a little weird because the method was devised while Huffman was taking a course from Fano, himself!

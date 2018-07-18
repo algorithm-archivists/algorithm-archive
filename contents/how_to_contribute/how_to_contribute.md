@@ -2,7 +2,7 @@
 
 The *Algorithm Archive* is an effort to learn about and teach algorithms as a community.
 As such, it requires a certain level of trust between community members.
-For the most part, the collaboration can be done via GitHub and gitbook, so it is important to understand the basics of [version control](version_control.md).
+For the most part, the collaboration can be done via GitHub and gitbook, so it is important to understand the basics of [version control](../git_and_version_control/git_and_version_control.md).
 Ideally, all code provided by the community will be submitted via pull requests and discussed accordingly; however, I understand that many individuals are new to collaborative projects, so I will allow submissions by other means (comments, tweets, etc...).
 As this project grows in size, it will be harder and harder to facilitate these submissions.
 In addition, by submitting in any way other than pull requests, I cannot guarantee I will be able to list you as a collaborator (though I will certainly do my best to update the `CONTRIBUTORS.md` file accordingly).
@@ -23,7 +23,7 @@ We use two gitbook plugins to allow users to flip between languages on different
 One is the theme-api, and the other is the include-codeblock api.
 We need the following statements in the markdown file for these to work together:
 
-[import](codeblock.txt)
+[import](res/codeblock.txt)
 
 For this example, we are starting the theme-api `method` and importing lines 1-17 from a sample Julia snippet from the code directory.
 Note that to standardize the language capitalization schemes, we ask that each language's `sample lang` is the file extension for their code, `cpp` for C++, `hs` for Haskell, etc...

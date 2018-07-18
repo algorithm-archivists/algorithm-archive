@@ -6,7 +6,7 @@ It would naively seem that better hardware means that there are less restriction
 
 That said, there will always be new devices on the market that require minimizing data storage.
 In fact, some of the most revolutionary algorithms and methods in existence today fall in the category of data compression.
-From lossless data compression with [Huffman encoding](../../algorithms/huffman_encoding/huffman_encoding.md) to genetic compression algorithms and machine learning, there is a lot to learn about this field, and we'll go through it piece-by-piece.
+From lossless data compression with [Huffman encoding](../huffman_encoding/huffman_encoding.md) to genetic compression algorithms and machine learning, there is a lot to learn about this field, and we'll go through it piece-by-piece.
 
 All that said, no discussion about data compression is complete without first discussing the information, itself -- specifically how information is represented in computer systems.
 Now, we've discussed this in some depth before with [bitlogic](../../principles_of_code/building_blocks/bitlogic.md), but there is much more to the story than what we let on before.
@@ -119,7 +119,7 @@ L_2 &= 0.1\times 3 + 0.2 \times 3 + 0.3 \times 2 + 0.4 \times 1 = 1.9
 $$
 
 Here, it's clear that $$L_2 < L_1$$, and thus the second set of codewords compresses our data more than the first.
-This measure can be used as a direct test of certain simple data compression techniques, notably those created by Shannon, Fano, and [Huffman](../../algorithms/huffman_encoding/huffman_encoding.md), which will be covered soon!
+This measure can be used as a direct test of certain simple data compression techniques, notably those created by Shannon, Fano, and [Huffman](../huffman_encoding/huffman_encoding.md), which will be covered soon!
 
 
 <script>
