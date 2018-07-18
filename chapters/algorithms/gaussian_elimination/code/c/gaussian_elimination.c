@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-void swap_rows(double * const a, size_t i, size_t pivot, size_t cols) {
+void swap_rows(double * a, const size_t i, const size_t pivot,
+               const size_t cols) {
+
     for (size_t j = 0; j < cols; ++j) {
         double tmp = a[i * cols + j];
         a[i * cols + j] = a[pivot * cols + j];
@@ -10,41 +12,43 @@ void swap_rows(double * const a, size_t i, size_t pivot, size_t cols) {
     }
 }
 
-void gaussian_elimination(double *a, const size_t rows, const size_t cols) {
-    size_t min_dim = (rows < cols)? rows: cols;
+void gaussian_elimination(double * a, const size_t rows, const size_t cols) {
+    size_t row = 0;
 
-    for (size_t k = 0; k < min_dim; ++k) {
-        size_t pivot = k;
+    for (size_t col = 0; col < cols; ++col) {
+        size_t pivot = row;
 
-        for (size_t i = k + 1; i < rows; ++i) {
-            if (fabs(a[i * cols + k]) > fabs(a[pivot * cols + k])) {
+        for (size_t i = row + 1; i < rows; ++i) {
+            if (fabs(a[i * cols + col]) > fabs(a[pivot * cols + col])) {
                 pivot = i;
             }
         }
 
-        if (a[pivot * cols + k] == 0) {
+        if (a[pivot * cols + col] == 0) {
             printf("The matrix is singular.\n");
-            exit(0);
+            continue;
         }
 
-        if (k != pivot) {
-            swap_rows(a, k, pivot, cols);
+        if (col != pivot) {
+            swap_rows(a, col, pivot, cols);
         }
 
-        for (size_t i = k + 1; i < rows; ++i) {
-            double scale = a[i * cols + k] / a[k * cols + k];
+        for (size_t i = row + 1; i < rows; ++i) {
+            double scale = a[i * cols + col] / a[row * cols + col];
 
-            for (size_t j = k + 1; j < cols; ++j) {
-                a[i * cols + j] -= a[k * cols + j] * scale;
+            for (size_t j = col + 1; j < cols; ++j) {
+                a[i * cols + j] -= a[row * cols + j] * scale;
             }
 
-            a[i * cols + k] = 0;
+            a[i * cols + col] = 0;
         }
+
+        row++;
     }
 }
 
-void back_substitution(const double * const a, double * const x,
-                       const size_t rows, const size_t cols) {
+void back_substitution(const double * a, double * x, const size_t rows,
+                       const size_t cols) {
 
     for (int i = rows - 1; i >= 0; --i) {
         double sum = 0.0;
@@ -57,12 +61,45 @@ void back_substitution(const double * const a, double * const x,
     }
 }
 
+void gauss_jordan(double *a, const size_t rows, const size_t cols) {
+    size_t row = 0;
+
+    for (size_t col = 0; col < cols - 1; ++col) {
+        if (a[row * cols + col] != 0) {
+            for (int i = cols - 1; i > col - 1; --i) {
+                a[row * cols + i] /= a[row * cols + col];
+            }
+
+            for (size_t i = 0; i < row; ++i) {
+                for (int j = cols - 1; j > col - 1; --j) {
+                    a[i * cols + j] -= a[i * cols + col] * a[row * cols + j];
+                }
+            }
+
+            row++;
+        }
+    }
+}
+
 int main() {
     double a[3][4] = {{3.0, 2.0, -4.0, 3.0},
                       {2.0, 3.0, 3.0, 15.0},
                       {5.0, -3.0, 1.0, 14.0}};
 
     gaussian_elimination((double *)a, 3, 4);
+
+    printf("Gaussian elimination:\n");
+    for (size_t i = 0; i < 3; ++i) {
+        printf("[");
+        for (size_t j = 0; j < 4; ++j) {
+            printf("%f ", a[i][j]);
+        }
+        printf("]\n");
+    }
+
+    printf("\nGauss-Jordan:\n");
+
+    gauss_jordan((double *)a, 3, 4);
 
     for (size_t i = 0; i < 3; ++i) {
         printf("[");
@@ -72,7 +109,7 @@ int main() {
         printf("]\n");
     }
 
-    printf("\n");
+    printf("\nSolutions are:\n");
 
     double x[3] = {0, 0, 0};
     back_substitution((double *)a, x, 3, 4);

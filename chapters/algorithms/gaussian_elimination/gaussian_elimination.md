@@ -355,7 +355,7 @@ In code, this looks like:
 {% sample lang="jl" %}
 [import:1-45, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-[import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:15-48, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
@@ -385,8 +385,7 @@ Here it is in code:
 {% sample lang="jl" %}
 [import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
-[import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:64-82, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
 [import:70-98, lang:"julia"](code/julia/gaussian_elimination.jl)
@@ -415,7 +414,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 {% sample lang="jl" %}
 [import:47-67, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-[import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:50-62, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
