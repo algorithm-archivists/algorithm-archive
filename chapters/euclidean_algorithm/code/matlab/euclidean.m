@@ -29,3 +29,9 @@ function gcd = euclidMod(a,b)
     
     gcd = a;
 end
+
+function euclid()
+
+    ['gcd(520,420) via euclidSub: ',num2str(euclidSub(520,420))]
+    ['gcd(183,244) via euclidMod: ',num2str(euclidMod(183,244))]
+end
