@@ -15,26 +15,22 @@ using std::begin;
 using std::end;
 using std::swap;
 
-using std::ptrdiff_t;
 using std::size_t;
 
-using c64 = std::complex<double>;
-template <typename T>
-constexpr T pi() {
-  return 3.14159265358979323846264338327950288419716;
-}
+using complex = std::complex<double>;
+static const double pi = 3.14159265358979323846264338327950288419716;
 
 // This section is not a part of the algorithm
 template <typename Iter>
 void fft(Iter const first, Iter const last) {
   auto const size = last - first;
   if (size >= 2) {
-    auto temp = std::vector<c64>(size / 2);
-    for (ptrdiff_t i = 0; i < size / 2; ++i) {
+    auto temp = std::vector<complex>(size / 2);
+    for (int i = 0; i < size / 2; ++i) {
       temp[i] = first[i * 2 + 1];
       first[i] = first[i * 2];
     }
-    for (ptrdiff_t i = 0; i < size / 2; ++i) {
+    for (int i = 0; i < size / 2; ++i) {
       first[i + size / 2] = temp[i];
     }
 
@@ -42,8 +38,8 @@ void fft(Iter const first, Iter const last) {
     fft(first, split);
     fft(split, last);
 
-    for (ptrdiff_t k = 0; k < size / 2; ++k) {
-      auto w = std::exp(c64(0, -2.0 * pi<double>() * k / size));
+    for (int k = 0; k < size / 2; ++k) {
+      auto w = std::exp(complex(0, -2.0 * pi * k / size));
 
       auto& bottom = first[k];
       auto& top = first[k + size / 2];
@@ -55,16 +51,17 @@ void fft(Iter const first, Iter const last) {
 
 template <typename Iter>
 void inverse_fft(Iter const first, Iter const last) {
-  std::for_each(first, last, [](auto& it) { it = std::conj(it); });
+  for (auto it = first; it != last; ++it)
+    *it = std::conj(*it);
 
   fft(first, last);
 
-  auto const size = static_cast<c64>(last - first);
-  std::for_each(first, last, [&](auto& it) { it = std::conj(it) / size; });
+  auto const size = static_cast<complex>(last - first);
+  for (auto it = first; it != last; ++it)
+    *it = std::conj(*it) / size;
 }
 
 // This section is a part of the algorithm
-
 template <typename S1, typename S2, typename Out>
 void conv(
     S1 const s1,
@@ -76,9 +73,9 @@ void conv(
   auto const size2 = s2_last - s2;
   auto const size = size1 + size2;
 
-  for (ptrdiff_t i = 0; i < size; ++i) {
-    c64 sum = 0;
-    for (ptrdiff_t j = 0; j < i; ++j) {
+  for (int i = 0; i < size; ++i) {
+    complex sum = 0;
+    for (int j = 0; j < i; ++j) {
       if (j < size1) {
         sum += s1[j] * s2[i - j];
       }
@@ -105,19 +102,19 @@ void conv_fft(S1 const s1, S1 const s1_last, S2 const s2, Out const out) {
 }
 
 int main() {
-  auto signal1 = std::array<c64, 64>();
+  auto signal1 = std::array<complex, 64>();
   std::fill(begin(signal1) + 16, begin(signal1) + 48, 1);
 
   auto signal2 = signal1;
 
-  auto out1 = std::array<c64, 128>();
+  auto out1 = std::array<complex, 128>();
   conv(begin(signal1), end(signal1), begin(signal2), end(signal2), begin(out1));
 
-  auto signal3 = std::array<c64, 128>();
+  auto signal3 = std::array<complex, 128>();
   std::copy(begin(signal1), end(signal1), begin(signal3));
   auto signal4 = signal3;
 
-  auto out2 = std::array<c64, 128>();
+  auto out2 = std::array<complex, 128>();
   conv_fft(begin(signal3), end(signal3), begin(signal4), begin(out2));
 
   std::cout << std::right << std::setw(16) << "i" << std::setw(16)
