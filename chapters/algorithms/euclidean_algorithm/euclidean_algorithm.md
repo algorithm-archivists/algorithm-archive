@@ -29,7 +29,6 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:25-38, lang="golang"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:1-15, lang="swift"](code/swift/euclidean_algorithm.swift)
-{% endmethod %}
 {% sample lang="matlab" %}
 [import:3-17, lang="matlab"](code/matlab/euclidean.m)
 {% endmethod %}
