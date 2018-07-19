@@ -36,3 +36,4 @@
 * [Data Compression](chapters/general/data_compression/data_compression.md)
     * [Huffman Encoding](chapters/algorithms/huffman_encoding/huffman_encoding.md)
 * [Quantum Information](chapters/general/quantum_information/quantum_information.md)
+* [Cryptography](chapters/general/cryptography/cryptography.md)
