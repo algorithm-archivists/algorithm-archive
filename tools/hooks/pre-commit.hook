@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# prevent commit to local master branch
+# taken from https://gist.github.com/aaronhoffman/ffbfd36928f9336be2436cffe39feaec#file-pre-commit
+
+branch=`git symbolic-ref HEAD`
+if [ "$branch" = "refs/heads/master" ]; then
+    echo "pre-commit hook: Cannot commit to the local master branch."
+    echo "Please make all your changes in a new feature branch:"
+    echo "$ git checkout -b my-new-feature-branch"
+    exit 1
+fi
+
+exit 0
