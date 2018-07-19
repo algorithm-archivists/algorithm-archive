@@ -1,4 +1,11 @@
+> **IMPORTANT NOTE FOR NEW CONTRIBUTORS:**
+>
+> We do **not** yet accept entirely new chapters by everyone. If you would like to start work on one, get in contact with Leios first. If you create a full chapter, including text, and submit it as a pull request it is most likely going to get rejected.
+>
+> If you want to help, it is best to write language examples for *existing* chapters. You can also try to find spelling or other mistakes in existing chapters and submit fixes for those.
+
 # The Arcane Algorithm Archive
+
 The Arcane Algorithm Archive is a collaborative effort to create a guide for all important algorithms in all languages.
 This goal is obviously too ambitious for a book of any size, but it is a great project to learn from and work on and will hopefully become an incredible resource for programmers in the future.
 The book can be found here: https://www.algorithm-archive.org/.
