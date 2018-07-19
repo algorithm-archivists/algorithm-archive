@@ -124,7 +124,6 @@ MainClass.java
 ### Swift
 [import, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
-### Matlab
 [import, lang="matlab"](code/matlab/euclidean.m)
 {% endmethod %}
 
