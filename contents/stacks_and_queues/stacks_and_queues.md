@@ -1,4 +1,4 @@
-### Stacks and Queues
+# Stacks and Queues
 
 Stacks and Queues are two sides of the same coin in computer science. They are both simple data structures that hold multiple elements, but allow you to use a single element at a time. The biggest difference between the two structures is the order in which you can access the elements in the data structure.
 

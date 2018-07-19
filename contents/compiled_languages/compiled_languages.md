@@ -1,4 +1,4 @@
-## Compiled Languages
+# Compiled Languages
 
 Programming is hard because we need to write instructions for our computer.
 The computer then reads this set of instructions and executes them accordingly.
