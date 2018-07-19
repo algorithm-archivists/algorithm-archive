@@ -89,7 +89,7 @@ EuclideanAlgorithm.cs
 Program.cs
 [import, lang="csharp"](code/csharp/Program.cs)
 {% sample lang="clj" %}
-[import 2-20, lang="clojure"](code/clojure/euclidean_example.clj)
+[import, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}

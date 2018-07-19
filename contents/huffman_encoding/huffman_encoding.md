@@ -70,7 +70,7 @@ Program.cs
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
-[import 2-117, lang:"clojure"](code/clojure/huffman.clj)
+[import, lang:"clojure"](code/clojure/huffman.clj)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/huffman.py)
 {% sample lang="js" %}
