@@ -2,8 +2,6 @@
 #include <iostream>
 #include <algorithm>
 
-#define NUMPOINTS 64
-
 struct Point
 {
     double x, y;
