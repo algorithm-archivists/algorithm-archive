@@ -9,7 +9,7 @@ These two names are very common when reading about cryptography.
 A third and (usually) evil person is also needed and that person is called Charlie. 
 The way these three people are set up are so that Alice and Bob want to exchange messages without Charlie knowing what they said.
 
-### General principles of Cryptography
+## General principles of Cryptography
 
 * Don't underestimate the attacker. 
 This is important because you don't know what resources an attacker has. 
@@ -22,7 +22,7 @@ This does not include any pre-shared or secret keys.
 * Always account for wrong design, implementation and usage of cryptosystems.
 A good example for a wrong implementation is WPA2 (the algorithm which encrypts WiFi traffic). This algorithm was mathematically proven to be safe yet an error in the implementaion allowed for the "Krack" attack.   
 
-### Symmetric Cryptography
+## Symmetric Cryptography
 
 Symmetric cryptography is called symmetric because the way you encrypt a message is the same as the way to decrypt a message. 
 For this to work Alice and Bob both need the same key, which they have to share before communicating. 
@@ -37,7 +37,7 @@ It has since been deemed unsecure and is superseded by AES.
 Like with XOR or DES you generate a bit string (depending on which AES you use 128/192 or 256 bit long) which is your key.
 * Blowfish. This algorithm also was a good contender for the AES but lost to Rijndael.
 
-### Asymmetric Cryptography
+## Asymmetric Cryptography
 
 Asymmetric Cryptography is sometimes called "Public key cryptography" because Bob and Alice both need a public and a private key of which they only share the public key. 
 This makes these algorithms asymmetric because what is encrypted with the public key can only be decrypted with the private key and vice versa. 
