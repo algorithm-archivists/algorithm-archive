@@ -12,6 +12,7 @@ def polar_angle(ref, point):
 
 
 def graham_scan(gift):
+    gift = list(set(gift)) #Remove duplicate points
     start = min(gift, key=lambda p: (p[1], p[0])) #Must be in hull
     gift.remove(start)
 
