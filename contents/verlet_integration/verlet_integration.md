@@ -56,6 +56,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:1-16, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import:1-15, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
@@ -102,6 +104,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:18-35, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-27, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import:17-34, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
@@ -159,6 +163,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:37-50, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:29-40, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import:36-49, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
@@ -198,6 +204,8 @@ Submitted by P. Mekhail
 [import, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
