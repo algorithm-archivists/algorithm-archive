@@ -40,3 +40,7 @@ GuyPozner
 <br>
 William Boyles
 <br>
+Max Weinstein
+<br>
+Gibus Wearing Brony
+<br>

@@ -1,0 +1,14 @@
+:"SUBMITTED BY GIBUS WEARING BRONY"
+:"L IS LENGTH OF LIST"
+:dim(L1)→L
+:For(A,1,L)
+:For(X,1,L-1)
+:If L1(X)>L1(X+1)
+:Then
+:L1(X)→Y
+:L1(X+1)→L1(X)
+:Y→L1(X+1)
+:End
+:End
+:End
+:Disp L1
