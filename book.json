@@ -8,7 +8,8 @@
     "wordcount",
     "api-language-selector",
     "include-codeblock",
-    "ga"
+    "ga",
+    "bulk-redirect"
   ],
   "lunr": {
     "maxIndexSize": 1000000000
@@ -17,6 +18,10 @@
     "include-codeblock": {
       "fixlang": true,
       "unindent": true
+    },
+    "bulk-redirect": {
+      "basepath": "/",
+      "redirectsFile": "redirects.json"
     },
     "ga": {
       "token": "UA-118252470-1"
@@ -107,6 +112,10 @@
         {
           "lang": "r",
           "name": "R"
+        },
+        {
+          "lang": "ti83b",
+          "name": "TI-83 Basic"
         }
       ]
     }
