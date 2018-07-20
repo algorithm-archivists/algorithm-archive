@@ -36,6 +36,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:5-19, lang:"racket"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bubblesort.swift)
+{% sample lang="ti83b" %}
+[import:2-13, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

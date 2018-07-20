@@ -112,6 +112,10 @@
         {
           "lang": "r",
           "name": "R"
+        },
+        {
+          "lang": "ti83b",
+          "name": "TI-83 Basic"
         }
       ]
     }
