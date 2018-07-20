@@ -23,8 +23,8 @@ subRows (r, c) (r1, rn) (c1, cn) m =
               , j <- [c1..cn]
               ]
 
-toEchelon :: (Fractional a, Ord a) => Matrix a -> Matrix a
-toEchelon mat = go (r1, c1) mat
+gaussianElimination :: (Fractional a, Ord a) => Matrix a -> Matrix a
+gaussianElimination mat = go (r1, c1) mat
   where
   ((r1, c1), (rn, cn)) = bounds mat
   go (r, c) m
@@ -35,8 +35,8 @@ toEchelon mat = go (r1, c1) mat
             = maximumBy (compare `on` abs . snd) [ (k, m!(k, c)) | k <- [r..rn]]
           m' = swapRows r target m
 
-toReducedEchelon :: (Fractional a, Eq a) => Matrix a -> Matrix a
-toReducedEchelon mat = go (r1, c1) mat
+gaussJordan :: (Fractional a, Eq a) => Matrix a -> Matrix a
+gaussJordan mat = go (r1, c1) mat
   where
   ((r1, c1), (rn, cn)) = bounds mat
   go (r, c) m
@@ -68,8 +68,8 @@ main = do
   putStrLn "Original Matrix:"
   putStrLn $ printM m
   putStrLn "Echelon form"
-  putStrLn $ printM $ toEchelon m
+  putStrLn $ printM $ gaussianElimination m
   putStrLn "Reduced echelon form"
-  putStrLn $ printM $ toReducedEchelon $ toEchelon m
+  putStrLn $ printM $ gaussJordan $ gaussianElimination m
   putStrLn "Solution from back substitution"
-  putStrLn $ printV $ backSubstitution $ toEchelon m
+  putStrLn $ printV $ backSubstitution $ gaussianElimination m
