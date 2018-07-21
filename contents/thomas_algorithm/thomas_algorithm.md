@@ -46,7 +46,6 @@ $$
 [import, lang:"python"](code/python/thomas.py)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/thomas.java)
-
 {% endmethod %}
 
 This is a much simpler implementation than Gaussian Elimination and only has one for loop before back-substitution, which is why it has a better complexity case.
