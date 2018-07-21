@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-void swap_rows(double * a, const size_t i, const size_t pivot,
+void swap_rows(double *a, const size_t i, const size_t pivot,
                const size_t cols) {
 
     for (size_t j = 0; j < cols; ++j) {
@@ -12,7 +12,7 @@ void swap_rows(double * a, const size_t i, const size_t pivot,
     }
 }
 
-void gaussian_elimination(double * a, const size_t rows, const size_t cols) {
+void gaussian_elimination(double *a, const size_t rows, const size_t cols) {
     size_t row = 0;
 
     for (size_t col = 0; col < cols - 1; ++col) {
@@ -47,7 +47,7 @@ void gaussian_elimination(double * a, const size_t rows, const size_t cols) {
     }
 }
 
-void back_substitution(const double * a, double * x, const size_t rows,
+void back_substitution(const double *a, double *x, const size_t rows,
                        const size_t cols) {
 
     for (int i = rows - 1; i >= 0; --i) {
