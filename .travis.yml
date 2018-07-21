@@ -18,3 +18,7 @@ before_script:
 
 script:
   - gitbook build . "${TRAVIS_BUILD_DIR}"/build
+  - |
+    if [[ "${TRAVIS_BRANCH}" == master ]]; then
+        bash "${TRAVIS_BUILD_DIR}"/tools/deploy/update_site_travis.bash
+    fi
