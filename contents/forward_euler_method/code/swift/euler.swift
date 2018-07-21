@@ -6,6 +6,7 @@ func solveEuler(timeStep: Double, n: Int) -> [Double] {
     for i in 1...n {
         result.append(result[i - 1] - 3 * result[i - 1] * timeStep)
     }
+    
     return result
 }
 
@@ -19,6 +20,7 @@ func checkResult(result: [Double], threshold: Double, timeStep: Double) -> Bool 
             isApprox = false
         }
     }
+    
     return isApprox
 }
 
