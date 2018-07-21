@@ -119,6 +119,8 @@ Full code for the visualization follows:
 [import, lang:"haskell"](code/haskell/euler.hs)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/euler.m)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/euler.swift)
 {% endmethod %}
 
 <script>
