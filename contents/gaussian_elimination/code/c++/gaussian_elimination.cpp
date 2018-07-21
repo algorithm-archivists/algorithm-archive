@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 void gaussian_elimination(std::vector<double>& a, int cols) {
   assert(a.size() % cols == 0);
@@ -13,16 +14,12 @@ void gaussian_elimination(std::vector<double>& a, int cols) {
   // Main loop going through all columns
   for (int col = 0; col < cols - 1; ++col) {
     // Step 1: finding the maximum element for each column
-    int max_index = [&]() {
-      int res = row;
-      int max_element = a[col + row * cols];
-      for (int r = row + 1; r < rows; ++r)
-        if (max_element < std::abs(a[col + r * cols])) {
-          max_element = std::abs(a[col + r * cols]);
-          res = r;
-        }
-      return res;
-    }();
+    int max_index = row;
+    for (int r = row + 1; r < rows; ++r) {
+      if (a[col + max_index * cols] < std::abs(a[col + r * cols])) {
+        max_index = r;
+      }
+    }
 
     // Check to make sure matrix is good!
     if (a[col + max_index * cols] == 0) {
@@ -61,10 +58,6 @@ std::vector<double> back_substitution(const std::vector<double>& a, int cols) {
   // Creating the solution Vector
   std::vector<double> soln(rows);
 
-  // initialize the final element
-  soln[rows - 1] =
-      a[cols - 1 + (rows - 1) * cols] / a[cols - 1 - 1 + (rows - 1) * cols];
-
   for (int i = rows - 1; i >= 0; --i) {
     auto sum = 0.0;
     for (int j = cols - 2; j > i; --j) {
@@ -86,12 +79,12 @@ void gauss_jordan_elimination(std::vector<double>& a, int cols) {
     if (a[col + row * cols] != 0) {
 
       // divide row by pivot and leaving pivot as 1
-      for (int i = cols - 1; i >= static_cast<int>(col); --i)
+      for (int i = cols - 1; i >= col; --i)
         a[i + row * cols] /= a[col + row * cols];
 
       // subtract value from above row and set values above pivot to 0
-      for (int i = 0; i < static_cast<int>(row - 1); ++i)
-        for (int j = cols - 1; j >= static_cast<int>(col); --j)
+      for (int i = 0; i < row; ++i)
+        for (int j = cols - 1; j >= col; --j)
           a[j + i * cols] -= a[col + i * cols] * a[j + row * cols];
       ++row;
     }
@@ -104,16 +97,22 @@ void print_matrix(const std::vector<double>& a, int cols) {
   for (int i = 0; i < rows; ++i) {
     std::cout << "[";
     for (int j = 0; j < cols; ++j) {
-      std::cout << a[j + i * cols] << " ";
+      std::cout << std::fixed << a[j + i * cols] << "\t";
     }
     std::cout << "]\n";
   }
 }
 
 int main() {
-  std::vector<double> a = {2, 3, 4, 6, 1, 2, 3, 4, 3, -4, 0, 10};
+  std::vector<double> a = { 2, 3, 4, 6,
+                            1, 2, 3, 4,
+                            3, -4, 0, 10 };
   const int cols = 4;
-  assert(a.size() % cols == 0);
+  if (a.size() % cols != 0)
+  {
+    std::cout << "The input dimentions are incorrect\n";
+    return 1;
+  }
 
   gaussian_elimination(a, cols);
   print_matrix(a, cols);
