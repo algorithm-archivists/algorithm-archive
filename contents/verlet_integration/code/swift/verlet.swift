@@ -1,13 +1,13 @@
 func verlet(pos: Double, acc: Double, dt: Double) -> Double {
+    var pos = pos
     var temp_pos, time: Double
-    var paramPos = pos
     var prev_pos = pos
     time = 0.0
     
-    while (paramPos > 0){
+    while (pos > 0) {
         time += dt
-        temp_pos = paramPos
-        paramPos = paramPos*2 - prev_pos + acc * dt * dt
+        temp_pos = pos
+        pos = pos*2 - prev_pos + acc * dt * dt
         prev_pos = temp_pos
     }
     
@@ -15,16 +15,16 @@ func verlet(pos: Double, acc: Double, dt: Double) -> Double {
 }
 
 func stormerVerlet(pos: Double, acc: Double, dt: Double) -> (time: Double, vel: Double) {
+    var pos = pos
     var temp_pos, time, vel: Double
-    var paramPos = pos
     var prev_pos = pos
     vel = 0
     time = 0
     
-    while (paramPos > 0) {
+    while (pos > 0) {
         time += dt
-        temp_pos = paramPos
-        paramPos = paramPos*2 - prev_pos + acc * dt * dt
+        temp_pos = pos
+        pos = pos*2 - prev_pos + acc * dt * dt
         prev_pos = temp_pos
         
         vel += acc*dt
@@ -34,14 +34,14 @@ func stormerVerlet(pos: Double, acc: Double, dt: Double) -> (time: Double, vel: 
 }
 
 func velocityVerlet(pos: Double, acc: Double, dt: Double) -> (time: Double, vel: Double) {
+    var pos = pos
     var time, vel : Double
-    var paramPos = pos
     vel = 0
     time = 0
     
-    while (paramPos > 0){
+    while (pos > 0) {
         time += dt
-        paramPos += vel*dt + 0.5*acc * dt * dt
+        pos += vel*dt + 0.5*acc * dt * dt
         vel += acc*dt
     }
     
