@@ -1,72 +1,55 @@
-# KingFredrickVI
-class Ball:
+def verlet(pos, acc, dt):
+    prev_pos = pos
+    time = 0
 
-    def __init__(self, pos=0, vel=0, acc=0):
-        self.pos = pos
-        self.vel = vel
-        self.acc = acc
+    while pos > 0:
+        time += dt
+        next_pos = pos * 2 - prev_pos + acc * dt * dt
+        prev_pos, pos = pos, next_pos
 
+    return time
 
-class Simulation:
+def stormer_verlet(pos, acc, dt):
+    prev_pos = pos
+    time = 0
+    vel = 0
 
-    def __init__(self, obj, dt = 0.01):
-        self.obj = obj
-        self.dt = dt
-        self.prev_pos = self.obj.pos
+    while pos > 0:
+        time += dt
+        next_pos = pos * 2 - prev_pos + acc * dt * dt
+        prev_pos, pos = pos, next_pos
+        vel += acc * dt
 
-    def run(self):
-        self.time = 0
+    return time, vel
 
-        while self.obj.pos > 0:
-            self.time += self.dt
-            self.step()
+def velocity_verlet(pos, acc, dt):
+    time = 0
+    vel = 0
 
-    def step(self):
-        pass
+    while pos > 0:
+        time += dt
+        pos += vel * dt + 0.5 * acc * dt * dt
+        vel += acc * dt
 
-
-class Verlet(Simulation):
-
-    def step(self):
-        temp_pos = self.obj.pos
-        self.obj.pos = self.obj.pos * 2 - self.prev_pos + self.obj.acc * self.dt * self.dt
-        self.prev_pos = temp_pos
-
-class Stormer_Verlet(Simulation):
-
-    def step(self):
-        temp_pos = self.obj.pos
-        self.obj.pos = self.obj.pos * 2 - self.prev_pos + self.obj.acc * self.dt * self.dt
-        self.prev_pos = temp_pos
-
-        self.obj.vel += self.obj.acc * self.dt
-
-class Velocity_Verlet(Simulation):
-
-    def step(self):
-        self.obj.pos += self.obj.vel * self.dt + 0.5 * self.obj.acc * self.dt * self.dt
-        self.obj.vel += self.obj.acc * self.dt
-
+    return time, vel
 
 def main():
-    sim = Verlet(Ball(pos = 5.0, acc = -10))
-    sim.run()
+    time = verlet(5, -10, 0.01)
+    print("Verlet")
+    print("Time: {:.10f}".format(time))
+    print()
 
-    print("Verlet:", sim.time)
+    time, vel = stormer_verlet(5, -10, 0.01)
+    print("Stormer-Verlet")
+    print("Time: {:.10f}".format(time))
+    print("Velocity: {:.10f}".format(vel))
+    print()
 
-    sim = Stormer_Verlet(Ball(pos = 5.0, acc = -10))
-    sim.run()
+    time, vel = velocity_verlet(5, -10, 0.01)
+    print("Velocity Verlet")
+    print("Time: {:.10f}".format(time))
+    print("Velocity: {:.10f}".format(vel))
+    print()
 
-    print("Stormer Verlet:", sim.time)
-
-    sim = Velocity_Verlet(Ball(pos = 5.0, acc = -10))
-    sim.run()
-
-    print("Velocity Verlet:", sim.time)
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
-
-
-
