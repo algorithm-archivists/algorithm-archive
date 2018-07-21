@@ -22,7 +22,7 @@ Because supercomputers are not great at performing quantum computations, certain
 A _universal quantum simulator_ is often called a quantum computer for this reason.
 
 The truth is that quantum simulators are hard to make in laboratories, so simulating quantum systems on classical hardware is as good as we can do in most cases.
-This section is devoted to all the different methods currently used to solve complex quantum systems, so let's start with the Schrodinger Equation, which has many different fomulations.
+This section is devoted to all the different methods currently used to solve complex quantum systems, so let's start with the Schrodinger Equation, which has many different formulations.
 Here is the easiest one to explain:
 
 $$
@@ -39,7 +39,7 @@ $$
 
 where $$D$$ is some positive definite matrix and $$\phi(\mathbf{r},t)$$ is the density (or temperature) of the system.
 In fact, this is why one of the most common types of quantum simulation is sometimes called  _diffusion monte carlo_.
-There really isn't that much of a difference between the two systems in terms of how they are simulated on classical hardware... but we are gettign ahead of ourselves.
+There really isn't that much of a difference between the two systems in terms of how they are simulated on classical hardware... but we are getting ahead of ourselves.
 For now, let's talk about how quantum mechanics differs from classical mechanics and how we can use this to our advantage.
 
 ## Probability Density
@@ -71,7 +71,7 @@ Any wavevector $$\textbf{k}$$ has the same units as reciprocal space and is thus
 Often times, the wavevector space is called _momentum_ space, which makes sense when considering the de Broglie formula:
 
 $$
-p = \frac{h}{\lambda}
+p = \frac{h}{\lambda} = \frac{2 \pi h}{2 \pi \lambda} = \hbar k
 $$
 
 where $$h$$ is Planck's constant and $$\lambda$$ is the wavelength.
@@ -90,24 +90,24 @@ $$
 \sigma_x \sigma_p \geq \frac{\hbar}{2} 
 $$
 
-where $$\hbar$$ is Planck's constant and $$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i-\mu)}$$.
-In this case, $$\sigma$$ is the standard deviation, $$\mu$$ is the statistical mean of your distribution, $$N$$ is the number of points sampled, and $$x_i$$ is the value for each point $$i$$.
+where $$\hbar$$ is Planck's constant and $$\sigma_q = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(q_i-\mu)^2}$$.
+In this case, $$\sigma$$ is the standard deviation, $$\mu$$ is the statistical mean of your distribution, $$N$$ is the number of points sampled, $$q_i$$ is the value for each point $$i$$, and $$q$$ stands for $$x$$ or $$p$$..
 Ultimately, this means that if we have a higher precision in position space, we will have a lower precision in momentum space.
 The converse is also true: a higher precision in momentum space will lead to a lower precision in position space.
 
 This makes the most sense if we imagine having a gaussian-like probability density ($$|\Psi(x)|^2$$) in position space, which will provide a gaussian-like density when in momentum space.
-Here, we see that if we have a broader distribution in one space, we must have a thinner distribution in the opposite space.
+Here, we see that if we have a broader distribution in one space, we must have a thinner distribution in the opposite space, as shown here:
 
-ADD IMAGES
-1. Gaussian in position to similar gaussian in momentum
-2. Large gaussian in position to small in momentum
-3. Small position, large momentum
+<p>
+    <img  class="center" src="res/gaussian.gif" width="500" />
+</p>
+
 
 Because the density can be interpreted as "the probability of finding a quantum particle at any provided location in position ($$x_i$$) or momentum ($$k_i$$) space, the interpretation is clear: the more we understand about a particle's position, the less we understand about it's momentum.
 This is a powerful statement and should be given some thought.
 
 To me, the most interesting part of this description is not the physical interpretation, but the fact that this act of transforming between larger and smaller gaussians is precisely what Fourier transforms do!
-This further strengthens our arguement from before.
+This further strengthens our argument from before.
 Position and momentum space are related by the Fourier transform!
 
 This is the heart of several algorithms for simulating quantum systems, including the [Split-operator method](../../algorithms/split-operator_method/split-operator_method).
@@ -127,7 +127,7 @@ We described it in the initial section of this chapter.
 For the most part, when we are trying to solve this equation the left-hand side does not change.
 It's always $$i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t}$$.
 On the other hand, the right-hand side can change a lot depending on the situation.
-That is to say that we can easily simplify the Schrodinger equation by using a notational trick called the _Hamiltonian_.
+That is to say that we can easily simplify the Schrodinger equation by using a mathematical formalism known as the _Hamiltonian_.
 
 To be clear, Hamiltonian mechanics is not a quantum-specific idea.
 It's everywhere in statistical physics and is often taught in classical physics courses as an analogue to another notational form known as Lagrangian mechanics.
@@ -135,11 +135,11 @@ For simplicity, we will restrict our discussion here to interpreting Hamiltonian
 We can basically say that the Hamiltonian is a measure of the energy of our quantum system.
 More specifically, we can say that the Hamiltonian is a set of energy _operators_ that act on our wavefunction.
 
-In the case of the example provided here, we might use the following definitions:
+In the case of a 1D particle in a harmonic trap, we might use the following definitions:
 
 $$
 \begin{align}
-\hat H &= T + V \\
+\hat H &= \hat T + \hat V \\
 \hat T &= \frac{p^2}{2m} \\
 \hat V &= \frac{1}{2}\omega x^2
 \end{align}
@@ -172,7 +172,7 @@ $$
 $$
 
 In other words, we can derive a function by performing a Fourier transform on the function, multiplying by some momentum-space grid, and then inverse-transforming it back.
-Because this operation inherently involves a tranform into momentum space before transformation, it is a momentum-space operator.
+Because this operation inherently involves a transform into momentum space before transformation, it is a momentum-space operator.
 
 This is the most intuitive reasoning I can find; however, I am sure there are more intuitive explanations of why the derivatives are always momentum-space operations.
 This section will be updated further when we discuss spectral methods, but if you have better descriptions, please let me know!
@@ -226,7 +226,7 @@ This ultimately looks like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import, lang:"julia"](../../algorithms/quantum_energy/code/julia/energy.jl)
+[import, lang:"julia"](code/julia/energy.jl)
 {% endmethod %}
 
 This calculation will be used in many different simulations of quantum systems to check our results.
@@ -242,7 +242,7 @@ Quantum mechanics is one of those areas of physics that really does push the bou
 In fact, [quantum information theory](../quantum_information/quantum_information.md) is currently set to be the next innovation to radically change the landscape of modern computation as we know it!
 Of course, because of the large-scale effects that this will likely have on the industry, it deserved it's own section.
 
-As always, if there is something that you feel is missing from this section, please feel free to contact me or create an issue on github and we'll get to it as soon as we can!
+As always, if there is something that you feel is missing from this section, please feel free to contact me or create an issue on GitHub and we'll get to it as soon as we can!
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

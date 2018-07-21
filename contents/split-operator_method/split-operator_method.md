@@ -12,7 +12,7 @@ This is the system I studied for most of my PhD (granted, we played a few tricks
 
 At it's heart, the split-op method is nothing more than a pseudo-spectral differential equation solver... That is to say, it solves the Schrodinger equation with [FFT's](../cooley_tukey/cooley_tukey.md).
 In fact, there is a large class of spectral and pseudo-spectral methods used to solve a number of different physical systems, and we'll definitely be covering those in the future.
-As mentioned in the [quantum systems](../../general/quantum_systems/quantum_systems.md) section, we can represent a quantum wavefunction in momentum space, which is parameterized with the wavevector $$k$$.
+As mentioned in the [quantum systems](../quantum_systems/quantum_systems.md) section, we can represent a quantum wavefunction in momentum space, which is parameterized with the wavevector $$k$$.
 In the Hamiltonian shown above, we can split our system into position space components, $$\hat{H}_R = \left[V(\mathbf{r}) + g|\Psi(\mathbf{r},t)|^2 \right] \Psi(\mathbf{r},t)$$, and momentum space components, $$\hat{H}_M = \left[-\frac{\hbar^2}{2m}\nabla^2 \right]\Psi(\mathbf{r},t)$$.
 I'll be honest, I didn't know what notation to use for $$\hat H_R$$.
 After all, $$p$$ is used to describe momentum.
@@ -49,20 +49,35 @@ $$
 where $$\hat{U}_R = e^{-\frac{i\hat{H}_Rdt}{\hbar}}$$, $$\hat{U}_M = e^{-\frac{i\hat{H}_Mdt}{\hbar}}$$, and $$\mathcal{F}$$ and $$\mathcal{F}^{-1}$$ indicate forward and inverse Fourier Transforms.
 Here's a flowchart of what we are looking for every timestep:
 
-ADD IMAGE
+<p>
+    <img  class="center" src="res/split_op_method.svg" width="500" />
+</p>
+
 
 For the most part, that's it.
 Flip to momentum space. Multiply.
 Flip to position space. Multiply again.
+If we guess that our initial wavefunction is gaussian-like and is slightly offset from the center or the trap, this should allow us to see our wavefunction "sloshing" back and forth in our trap, like so:
+
+<p>
+    <img  class="center" src="res/real_time.gif" width="500" />
+</p>
+
 As a small concession, using this method enforces periodic boundary conditions, where the wavefunction will simply slide from one side of your simulation box to the other, but that's fine for most cases.
 In fact, for many cases (such as large-scale turbulence models) it's ideal.
 
 That said, there is more to the story.
-As we mentioned in the [quantum systems](../../general/quantum_systems/quantum_systems.md) section, many simulations of quantum systems desire to find the ground state of our system.
+As we mentioned in the [quantum systems](../quantum_systems/quantum_systems.md) section, many simulations of quantum systems desire to find the ground state of our system.
 The split-operator method can be used for that too!
 If we run this simulation in _imaginary time_, by simply setting $$\tau = it$$ and stepping through $$\tau$$ instead of $$t$$, we will no longer see an "real-world" example of how the atoms should behave, but will instead see an exponential decay of higher-energy states.
 If we run the simulation for long enough with a small enough timestep, all higher energy states will vanish.
 This means that we can find the ground state of our system by running the simulation in imaginary time, which is an incredibly useful feature!
+If we run the same simulation as above in imaginary time, we should see our wavefunction smoothly move to the center of our trap (the lowest energy position), like so:
+
+<p>
+    <img  class="center" src="res/imaginary_time.gif" width="500" />
+</p>
+
 
 ## The Algorithm
 
