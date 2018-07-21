@@ -15,7 +15,7 @@ void swap_rows(double * a, const size_t i, const size_t pivot,
 void gaussian_elimination(double * a, const size_t rows, const size_t cols) {
     size_t row = 0;
 
-    for (size_t col = 0; col < cols; ++col) {
+    for (size_t col = 0; col < cols - 1; ++col) {
         size_t pivot = row;
 
         for (size_t i = row + 1; i < rows; ++i) {
@@ -62,15 +62,15 @@ void back_substitution(const double * a, double * x, const size_t rows,
 }
 
 void gauss_jordan(double *a, const size_t rows, const size_t cols) {
-    size_t row = 0;
+    int row = 0;
 
-    for (size_t col = 0; col < cols - 1; ++col) {
+    for (int col = 0; col < cols - 1; ++col) {
         if (a[row * cols + col] != 0) {
             for (int i = cols - 1; i > col - 1; --i) {
                 a[row * cols + i] /= a[row * cols + col];
             }
 
-            for (size_t i = 0; i < row; ++i) {
+            for (int i = 0; i < row; ++i) {
                 for (int j = cols - 1; j > col - 1; --j) {
                     a[i * cols + j] -= a[i * cols + col] * a[row * cols + j];
                 }
