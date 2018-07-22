@@ -12,7 +12,6 @@ function bogoSort(arr) {
   while (!isSorted(arr)) {
     shuffle(arr);
   }
-  return arr;
 }
 
 function shuffle(arr) {
@@ -25,8 +24,9 @@ function shuffle(arr) {
 }
 
 function main() {
-  var testArray = [4,5,123,24,34,-5];
-  print(bogoSort(testArray));
+  let testArray = [4, 5, 123, 24, 34, -5];
+  bogoSort(testArray);
+  console.log(testArray);
 }
 
 main();
