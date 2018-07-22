@@ -1,5 +1,4 @@
 public class Bogo {
-    // The shuffle() function can be found in code/java/bogo.java
     static void bogoSort(int[] arr) {
         while(!isSorted(arr)) {
             shuffle(arr);
@@ -26,7 +25,6 @@ public class Bogo {
     }
 
 
-    // main function (for testing)
     public static void main(String[] args) {
         int[] test = new int[]{20, -3, 50, 1, -6, 59};
 

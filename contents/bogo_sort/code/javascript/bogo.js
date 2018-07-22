@@ -8,7 +8,6 @@ function isSorted(arr) {
   return true;
 }
 
-// The shuffle() function can be found in code/javascript/bogo.js
 function bogoSort(arr) {
   while (!isSorted(arr)) {
     shuffle(arr);

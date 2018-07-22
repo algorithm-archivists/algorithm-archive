@@ -20,6 +20,8 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 [import:24-26, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
 [import:36-38, lang:"javascript"](code/javascript/graham-scan.js)
+{% sample lang="py" %}
+[import:4-6, lang:"python"](code/python/grahamScan.py)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -42,6 +44,8 @@ In the end, the code should look something like this:
 [import:65-95, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
+{% sample lang="py" %}
+[import:14-27, lang:"python"](code/python/grahamScan.py)
 {% endmethod %}
 
 ### Bibliography
@@ -59,6 +63,8 @@ In the end, the code should look something like this:
 [import, lang:"c_cpp"](code/c/graham.c)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/graham-scan.js)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/grahamScan.py)
 {% endmethod %}
 
 <script>
