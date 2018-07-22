@@ -10,6 +10,11 @@ struct Point
     {
         return x == b.x && y == b.y;
     }
+
+    bool operator!=(const Point& b) const
+    {
+        return !(*this == b);
+    }
 };
 
 std::vector<Point> jarvis_march(const std::vector<Point>& points)
@@ -38,13 +43,14 @@ std::vector<Point> jarvis_march(const std::vector<Point>& points)
             }
         );
     }
-    while(next_point_it != first_point_it);
+    while(*next_point_it != *first_point_it);
 
     return hull_points;
 }
 
 int main() {
     std::vector<Point> points = {
+        { 1.0, 3.0 },
         { 1.0, 3.0 },
         { 2.0, 4.0 },
         { 4.0, 0.0 },
