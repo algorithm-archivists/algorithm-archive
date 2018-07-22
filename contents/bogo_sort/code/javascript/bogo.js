@@ -24,7 +24,7 @@ function shuffle(arr) {
 }
 
 function main() {
-  let testArray = [4, 5, 123, 24, 34, -5];
+  const testArray = [4, 5, 123, 24, 34, -5];
   bogoSort(testArray);
   console.log(testArray);
 }
