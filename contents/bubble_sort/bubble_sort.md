@@ -25,7 +25,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
-[import:33-56, lang:"c_cpp"](code/c++/bubblesort.cpp)
+[import:13-23, lang:"c_cpp"](code/c++/bubblesort.cpp)
 {% sample lang="rs" %}
 [import:6-16, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
