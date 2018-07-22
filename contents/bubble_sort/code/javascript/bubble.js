@@ -11,7 +11,7 @@ function bubbleSort(arr) {
 }
 
 function main() {
-  let testArray = [4, 5, 123, 759, -132, 8940, 24, 34, -5];
+  const testArray = [4, 5, 123, 759, -132, 8940, 24, 34, -5];
   bubbleSort(testArray);
   console.log(testArray);
 }
