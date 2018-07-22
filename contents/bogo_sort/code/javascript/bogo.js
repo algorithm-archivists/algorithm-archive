@@ -12,6 +12,7 @@ function bogoSort(arr) {
   while (!isSorted(arr)) {
     shuffle(arr);
   }
+  return arr;
 }
 
 function shuffle(arr) {
@@ -22,3 +23,10 @@ function shuffle(arr) {
     arr[r] = tmp;
   }
 }
+
+function main() {
+  var testArray = [4,5,123,24,34,-5];
+  print(bogoSort(testArray));
+}
+
+main();
