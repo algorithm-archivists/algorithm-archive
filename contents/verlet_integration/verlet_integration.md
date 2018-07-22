@@ -140,7 +140,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="c" %}
 [import:35-46, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:43-57, lang:"java"](code/java/verlet.java)
+[import:43-57, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:44-48, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -176,7 +176,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-[import, lang:"java"](code/java/verlet.java)
+[import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
