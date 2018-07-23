@@ -116,6 +116,10 @@
         {
           "lang": "ti83b",
           "name": "TI-83 Basic"
+        },
+        {
+          "lang": "lua",
+          "name": "Lua"
         }
       ]
     }
