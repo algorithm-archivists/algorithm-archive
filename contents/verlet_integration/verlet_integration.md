@@ -1,12 +1,12 @@
 # Verlet Integration
 
-Verlet Integration is essentially a solution to the kinematic equation for the motion of any object,
+Verlet integration is essentially a solution to the kinematic equation for the motion of any object,
 
 $$
 x = x_0 + v_0t + \frac{1}{2}at^2 + \frac{1}{6}bt^3 + \cdots
 $$
 
-Where $$x$$ is the position, $$v$$ is the velocity, $$a$$ is the acceleration, $$b$$ is the often forgotten jerk term, and $$t$$ is time. This equation is a central equation to almost every Newtonian physics solver and brings up a class of algorithms known as *force integrators*. One of the first force integrators to work with is *Verlet Integration*.
+where $$x$$ is the position, $$v$$ is the velocity, $$a$$ is the acceleration, $$b$$ is the often forgotten jerk term, and $$t$$ is time. This equation is a central equation to almost every Newtonian physics solver and brings up a class of algorithms known as *force integrators*. One of the first force integrators to work with is *Verlet Integration*.
 
 So, let's say we want to solve for the next timestep in $$x$$. To a close approximation (actually performing a Taylor Series Expansion about $$x(t\pm \Delta t)$$), that might look like this:
 
@@ -20,13 +20,13 @@ $$
 x(t-\Delta t) = x(t) - v(t)\Delta t + \frac{1}{2}a(t)\Delta t^2 - \frac{1}{6}b(t) \Delta t^3 + \mathcal{O}(\Delta t^4)
 $$
 
-Now, we have two equations to solve for two different timesteps in x, one of which we already have. If we add the two equations together and solve for $$x(t+\Delta t)$$, we find
+Now, we have two equations to solve for two different timesteps in x, one of which we already have. If we add the two equations together and solve for $$x(t+\Delta t)$$, we find that
 
 $$
 x(t+ \Delta t) = 2x(t) - x(t-\Delta t) + a(t)\Delta t^2 + \mathcal{O}(\Delta t^4)
 $$
 
-So, this means, we can find our next $$x$$ simply by knowing our current $$x$$, the $$x$$ before that, and the acceleration! No velocity necessary! In addition, this drops the error to $$\mathcal{O}(\Delta t^4)$$, which is great!
+So, this means we can find our next $$x$$ simply by knowing our current $$x$$, the $$x$$ before that, and the acceleration! No velocity necessary! In addition, this drops the error to $$\mathcal{O}(\Delta t^4)$$, which is great!
 Here is what it looks like in code:
 
 {% method %}
@@ -58,9 +58,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
 
-
-
-Now, obviously this poses a problem, what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
+Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
 
 $$
 v(t) = \frac{x(t+\Delta t) - x(t-\Delta t)}{2\Delta t} + \mathcal{O}(\Delta t^2)
@@ -72,8 +70,7 @@ $$
 v(t+\Delta t) = \frac{x(t+\Delta t) - x(t)}{\Delta t} + \mathcal{O}(\Delta t)
 $$
 
-However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, but get's the job done in a pinch.
-Here's what it looks like in code:
+However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, but it gets the job done in a pinch.  Here's what it looks like in code:
 
 {% method %}
 {% sample lang="jl" %}
@@ -109,7 +106,7 @@ Now, let's say we actually need the velocity to calculate out next timestep. Wel
 
 # Velocity Verlet
 
-In some ways, this algorithm is even simpler than above. We can calculate everything like so
+In some ways, this algorithm is even simpler than above. We can calculate everything like
 
 $$
 \begin{align}
@@ -119,7 +116,7 @@ v(t+\Delta t) &= v(t) + \frac{1}{2}(a(t) + a(t+\Delta t))\Delta t
 \end{align}
 $$
 
-Which is literally the kinematic equation above, solving for $$x$$, $$v$$, and $$a$$ every timestep. You can also split up the equations like so
+which is literally the kinematic equation above, solving for $$x$$, $$v$$, and $$a$$ every timestep. You can also split up the equations like so
 
 $$
 \begin{align}
@@ -161,8 +158,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
 
-
-Even though this method is more used than the simple Verlet method mentioned above, it unfortunately has an error term of $$\mathcal{O} \Delta t^2$$, which is two orders of magnitude worse. That said, if you want to have a simulation with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulations are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$
+Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
 
 ## Example Code
 
