@@ -18,9 +18,7 @@ function euclidMod (a, b)
   local b = math.abs(b)
 
   while b ~= 0 do
-    local temp = b
-    b = a % b
-    a = temp
+    a, b = b, a%b
   end
 
   return a
