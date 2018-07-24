@@ -31,6 +31,11 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
+# D
+[*.d]
+indent_style = space
+indent_size = 4
+
 # Elm
 [*.elm]
 indent_style = space
@@ -65,6 +70,16 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
+# JSON
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Matlab
+[*.m]
+indent_style = space
+indent_size = 4
+
 # Markdown
 [*.md]
 indent_style = space
@@ -79,6 +94,11 @@ indent_size = 2
 [*.py]
 indent_style = space
 indent_size = 4
+
+# Racket
+[*.rkt]
+indent_style = space
+indent_size = 2
 
 # Rust
 [*.rs]
