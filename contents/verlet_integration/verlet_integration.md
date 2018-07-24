@@ -33,7 +33,7 @@ Here is what it looks like in code:
 {% sample lang="jl" %}
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:4-17, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:7-20, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 [import:3-14, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
@@ -79,7 +79,7 @@ Here's what it looks like in code:
 {% sample lang="jl" %}
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:20-36, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:22-39, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 [import:16-31, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
@@ -136,7 +136,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="jl" %}
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:38-49, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:41-52, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 [import:33-43, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
