@@ -20,7 +20,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/struct.svg" width="200" />
+  <img  class="center" src="code/scratch/struct.svg" width="250" />
 </p>
 {% sample lang="rs"%}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
@@ -47,8 +47,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs.svg" width="200" />
-  <img  class="center" src="code/scratch/df.svg" width="200" />
+  <img  class="center" src="code/scratch/dfs.svg" width="250" />
+  <img  class="center" src="code/scratch/dfs-from.svg" width="250" />
 </p>
 {% sample lang="rs"%}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
@@ -59,7 +59,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
 <p>
-    <img  class="center" src="res/DFS_pre.png" width="500" />
+    <img  class="center" src="res/DFS_pre.png" width="400" />
 </p>
 
 Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors!
@@ -85,7 +85,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs-post.svg" width="200" />
+  <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
 </p>
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
@@ -95,7 +95,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% endmethod %}
 
 <p>
-    <img  class="center" src="res/DFS_post.png" width="500" />
+    <img  class="center" src="res/DFS_post.png" width="400" />
 </p>
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
@@ -118,7 +118,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs-in.svg" width="200" />
+  <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
 </p>
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
@@ -128,7 +128,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% endmethod %}
 
 <p>
-    <img  class="center" src="res/DFS_in.png" width="500" />
+    <img  class="center" src="res/DFS_in.png" width="400" />
 </p>
 
 
@@ -160,7 +160,7 @@ In code, it looks like this:
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs-stack.svg" width="200" />
+  <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
 </p>
 {% sample lang="rs"%}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
@@ -172,7 +172,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
 <p>
-    <img  class="center" src="res/BFS_simple.png" width="500" />
+    <img  class="center" src="res/BFS_simple.png" width="400" />
 </p>
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, except that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
@@ -194,7 +194,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:63-74, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/bfs.svg" width="200" />
+  <img  class="center" src="code/scratch/bfs.svg" width="400" />
 </p>
 {% sample lang="rs"%}
 [import:26-34, lang:"rust"](code/rust/tree.rs)
