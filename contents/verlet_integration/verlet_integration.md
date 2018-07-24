@@ -101,7 +101,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="javascript" %}
 [import:18-35, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
-[import:15-27, lang:"rust"](code/rust/verlet.rs)
+[import:15-32, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
 
 
@@ -158,7 +158,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="javascript" %}
 [import:37-50, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
-[import:29-40, lang:"rust"](code/rust/verlet.rs)
+[import:34-45, lang:"rust"](code/rust/verlet.rs)
 {% endmethod %}
 
 
