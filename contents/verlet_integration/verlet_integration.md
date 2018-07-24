@@ -81,7 +81,7 @@ Here's what it looks like in code:
 {% sample lang="cpp" %}
 [import:20-36, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:16-30, lang:"c_cpp"](code/c/verlet.c)
+[import:16-31, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:21-40, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
@@ -138,7 +138,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="cpp" %}
 [import:38-49, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:32-41, lang:"c_cpp"](code/c/verlet.c)
+[import:33-43, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:43-57, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
