@@ -71,7 +71,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="matlab" %}
 [import:19-31, lang="matlab"](code/matlab/euclidean.m)
 {% sample lang="lua" %}
-[import:16-27, lang="lua"](code/lua/euclidean.lua)
+[import:16-25, lang="lua"](code/lua/euclidean.lua)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
