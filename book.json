@@ -1,103 +1,119 @@
 {
-    "gitbook": "3.x.x",
-    "plugins": ["mathjax", "bibtex-cite", "creativecommons", "wordcount", "theme-api", "include-codeblock", "ga"],
-    "lunr": {
-        "maxIndexSize": 1000000000
+  "gitbook": "3.x.x",
+  "plugins": [
+    "fontsettings",
+    "mathjax",
+    "bibtex-cite",
+    "creativecommons",
+    "wordcount",
+    "api-language-selector",
+    "include-codeblock",
+    "ga",
+    "bulk-redirect"
+  ],
+  "lunr": {
+    "maxIndexSize": 1000000000
+  },
+  "pluginsConfig": {
+    "include-codeblock": {
+      "fixlang": true,
+      "unindent": true
     },
-	"pluginsConfig": {
-		"include-codeblock": {
-			"fixlang": true,
-			"unindent": true
-		},
-                "ga": {
-                     "token": "UA-118252470-1"
-                 },
-		"theme-api": {
-			"languages": [
-				{
-					"lang": "jl",
-					"name": "Julia",
-					"default": true
-				},
-				{
-					"lang": "pseudo",
-					"name": "Pseudocode"
-				},
-				{
-					"lang": "cs",
-					"name": "C#"
-				},
-				{
-					"lang": "cpp",
-					"name": "C++"
-				},
-				{
-					"lang": "c",
-					"name": "C"
-				},
-				{
-					"lang": "py",
-					"name": "Python"
-				},
-				{
-					"lang": "js",
-					"name": "JavaScript"
-				},
-				{
-					"lang": "scratch",
-					"name": "Scratch"
-				},
-				{
-					"lang": "hs",
-					"name": "Haskell"
-				},
-				{
-					"lang": "rs",
-					"name": "Rust"
-				},
-				{
-					"lang": "ml",
-					"name": "OCaml"
-				},
-				{
-					"lang": "java",
-					"name": "Java"
-				},
-				{
-					"lang": "clj",
-					"name": "Clojure"
-				},
-				{
-					"lang": "elm",
-					"name": "Elm"
-				},
-				{
-					"lang": "LabVIEW",
-					"name": "LabVIEW"
-				},
-				{
-					"lang": "d",
-					"name": "D"
-				},
-				{
-					"lang": "go",
-					"name": "Go"
-				},
-				{
-					"lang": "swift",
-					"name": "Swift"
-				},
-				{
-					"lang": "racket",
-					"name": "Racket"
-				},
-				{
-					"lang": "m",
-					"name": "Matlab"
-				}
-
-			],
-			"split": false
+    "bulk-redirect": {
+      "basepath": "/",
+      "redirectsFile": "redirects.json"
+    },
+    "ga": {
+      "token": "UA-118252470-1"
+    },
+    "api-language-selector": {
+      "languages": [
+        {
+          "lang": "jl",
+          "name": "Julia",
+          "default": true
+        },
+        {
+          "lang": "cs",
+          "name": "C#"
+        },
+        {
+          "lang": "cpp",
+          "name": "C++"
+        },
+        {
+          "lang": "c",
+          "name": "C"
+        },
+        {
+          "lang": "py",
+          "name": "Python"
+        },
+        {
+          "lang": "js",
+          "name": "JavaScript"
+        },
+        {
+          "lang": "scratch",
+          "name": "Scratch"
+        },
+        {
+          "lang": "hs",
+          "name": "Haskell"
+        },
+        {
+          "lang": "rs",
+          "name": "Rust"
+        },
+        {
+          "lang": "ml",
+          "name": "OCaml"
+        },
+        {
+          "lang": "java",
+          "name": "Java"
+        },
+        {
+          "lang": "clj",
+          "name": "Clojure"
+        },
+        {
+          "lang": "elm",
+          "name": "Elm"
+        },
+        {
+          "lang": "LabVIEW",
+          "name": "LabVIEW"
+        },
+        {
+          "lang": "d",
+          "name": "D"
+        },
+        {
+          "lang": "go",
+          "name": "Go"
+        },
+        {
+          "lang": "swift",
+          "name": "Swift"
+        },
+        {
+          "lang": "racket",
+          "name": "Racket"
+        },
+        {
+          "lang": "m",
+          "name": "Matlab"
+        },
+        {
+          "lang": "r",
+          "name": "R"
+        },
+        {
+          "lang": "ti83b",
+          "name": "TI-83 Basic"
         }
-	}
+      ]
+    }
+  }
 }
