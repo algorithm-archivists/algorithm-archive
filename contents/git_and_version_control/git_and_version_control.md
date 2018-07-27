@@ -51,7 +51,7 @@ git config --global user.email name@email.com
 Obviously, use your own name and e-mail... unless your name is actually *name* and your e-mail is actually *name@email.com*, in which case the above commands are correct.
 In the rare case that a user named "name" with the e-mail "name@email.com" is reading this, I apologize for spoiling your anonymity.
 For everyone else, remember that git is meant to facilitate collaborative code development, so we need to know who is submitting code so we can communicate more effectively later.
-That said, it is alright to use a username and e-mail address that does not spoil your identity in the real world, so long as you are reachable by the information provided.
+That said, it is alright to use an username and e-mail address that does not spoil your identity in the real world, so long as you are reachable by the information provided.
 
 ### Finding some code
 
@@ -73,7 +73,7 @@ Regardless, as long as there is a repository under your username on github, we c
     <img  class="center" src="res/clone.png" />
 </p>
 
-Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
+Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both an username and password.
 Now, you will probably be interacting with github a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/).
 If you want, we can discuss the set-up in more detail later (just let me know!), but for now, we'll stick with https because it's more familiar to new users.
 
@@ -139,7 +139,7 @@ git status
 ```
 
 This will show that `CONTRIBUTORS.md` has been modified.
-If we want to save our changes, we need to add all of the files with changes to them to a package called a `commit`.
+If we want to save our changes, we need to add all the files with changes to them to a package called a `commit`.
 To add the files, simply type:
 
 ```
@@ -214,7 +214,7 @@ To switch branches, use
 git checkout branch
 ```
 
-And this will change all of the files on your local directory to match the branch you have swapped to.
+And this will change all the files on your local directory to match the branch you have swapped to.
 Note that if you have local changes that will be overwritten when changing branches, git will note these changes and tell you to do something about them before switching to a new branch.
 If you want to get rid of the changes, you could delete any files that are causing conflicts; however, this is barbaric and should be avoided in civilized society.
 Another solution is to use a feature of git called the `stash`.
@@ -276,12 +276,12 @@ The easiest way to do this (in my opinion) can be found here: [https://help.gith
 Note that there are a lot of good tools for this and everyone has their favorite choice.
 I don't expect for too many users to run into merge conflicts while working with the Algorithm Archive, so I will omit much more discussion here, but let me know if you think I should cover this in more detail.
 It's an incredibly difficult aspect of using git and will drive you nuts the first tie you see it, but after that, it will be much more straightforward.
-Also: let me know if there's any tools you like, and I'll add them to this guide here.
+Also, let me know if there's any tools you like, and I'll add them to this guide here.
 
 ### Interacting with github
 
 To this point, we have introduced the concept of `remote`s and how to set them up, but we have not discussed how to interact with them.
-For the most part, there are only a few commands to keep in mind. the easiest one to explain is
+For the most part, there are only a few commands to keep in mind. The easiest one to explain is
 
 ```
 git push
@@ -349,14 +349,14 @@ One way to reverse the commit completely is with
 git revert commit
 ```
 
-where `commit` is whatever commit you want to undo from your `git log`.
+Where `commit` is whatever commit you want to undo from your `git log`.
 Assuming you are working with a small team and don't mind having a somewhat dirty commit history where your mistakes haunt you forever in your `git log`, this is fine; however, if you want to remove the commit completely, you might need to think about using another command:
 
 ```
 git rebase
 ```
 
-the problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately.
+The problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately.
 Because of this, I often just live with my mistakes; however, in rare cases, having a clean `git log` is incredibly important.
 I am not a git magician (yet), so I will not delve into what is essentially black magic to me. Instead, I'll link a guide: [https://git-scm.com/book/en/v2/Git-Branching-Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
 

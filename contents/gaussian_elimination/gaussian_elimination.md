@@ -213,9 +213,9 @@ For this reason, I have split this section into two parts. One will cover the an
 
 In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix where you have the following moves available:
 
-1. You can swap any two rows
-2. You can multiply any row by a non-zero scale value
-3. You can add any row to a multiple of any other row
+1. swap any two rows
+2. multiply any row by a non-zero scale value
+3. add any row to a multiple of any other row
 
 That's it.
 Before continuing, I suggest you try to recreate the row echelon matrix we made above.
