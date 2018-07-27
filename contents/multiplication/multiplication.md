@@ -7,7 +7,7 @@ In some sense, this is what I love about computer science research!
 It takes operations that everyone knows and loves, abstracts them, and transforms them into fast and efficient methods for the computer to implement.
 Sometimes these algorithms are completely baffling.
 I remember laughing for ten minutes after I heard that fft convolutions could be used to calculate a simple integer multiplicationing the Schönhage–Strassen algorithm.
-I thought, "Why would you ever want to use an fft to do something to trivial? This has to be a joke!"
+I thought, "Why would you ever want to use a fft to do something to trivial? This has to be a joke!"
 
 Oh boy was I wrong.
 The Schönhage–Strassen algorithm was actually the most efficient method to multiply two numbers until around 2007 when it was dethroned by the Fürer's algorithm.
