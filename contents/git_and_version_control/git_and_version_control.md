@@ -51,7 +51,7 @@ git config --global user.email name@email.com
 Obviously, use your own name and e-mail... unless your name is actually *name* and your e-mail is actually *name@email.com*, in which case the above commands are correct.
 In the rare case that a user named "name" with the e-mail "name@email.com" is reading this, I apologize for spoiling your anonymity.
 For everyone else, remember that git is meant to facilitate collaborative code development, so we need to know who is submitting code so we can communicate more effectively later.
-That said, it is alright to use an username and e-mail address that does not spoil your identity in the real world, so long as you are reachable by the information provided.
+That said, it is alright to use a username and e-mail address that does not spoil your identity in the real world, so long as you are reachable by the information provided.
 
 ### Finding some code
 
@@ -73,7 +73,7 @@ Regardless, as long as there is a repository under your username on github, we c
     <img  class="center" src="res/clone.png" />
 </p>
 
-Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both an username and password.
+Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
 Now, you will probably be interacting with github a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/).
 If you want, we can discuss the set-up in more detail later (just let me know!), but for now, we'll stick with https because it's more familiar to new users.
 
