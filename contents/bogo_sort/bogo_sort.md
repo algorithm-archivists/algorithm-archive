@@ -36,7 +36,7 @@ In code, it looks something like this:
 {% sample lang="rs" %}
 [import:16-20, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
-[import:32-39, lang:"swift"](code/swift/bogosort.swift)
+[import:25-31, lang:"swift"](code/swift/bogosort.swift)
 {% endmethod %}
 
 That's it.

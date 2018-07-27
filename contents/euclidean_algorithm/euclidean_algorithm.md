@@ -28,7 +28,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="go" %}
 [import:25-38, lang="golang"](code/go/euclidean.go)
 {% sample lang="swift" %}
-[import:1-15, lang="swift"](code/swift/euclidean_algorithm.swift)
+[import:1-14, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
 [import:3-17, lang="matlab"](code/matlab/euclidean.m)
 {% endmethod %}
@@ -65,7 +65,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="go" %}
 [import:14-23, lang="golang"](code/go/euclidean.go)
 {% sample lang="swift" %}
-[import:17-29, lang="swift"](code/swift/euclidean_algorithm.swift)
+[import:16-27, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
 [import:19-31, lang="matlab"](code/matlab/euclidean.m)
 {% endmethod %}
