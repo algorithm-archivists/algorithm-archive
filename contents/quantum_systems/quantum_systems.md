@@ -227,6 +227,8 @@ This ultimately looks like this:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/energy.jl)
+{% sample lang="c" %}
+[import:28-, lang:"c_cpp"](code/julia/energy.jl)
 {% endmethod %}
 
 This calculation will be used in many different simulations of quantum systems to check our results.
