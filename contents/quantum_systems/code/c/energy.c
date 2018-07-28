@@ -25,38 +25,39 @@ void fft(double complex *x, int n, bool inverse) {
     }
 }
 
-double calculate_energy(struct params par, struct operators opr) {
-    double complex wfc_r[opr.size];
-    double complex wfc_k[opr.size];
-    double complex wfc_c[opr.size];
-    memcpy(wfc_r, opr.wfc, sizeof(wfc_r));
+double calculate_energy(double complex *wfc, double complex *h_r,
+                        double complex *h_k, double dx, size_t size) {
+    double complex wfc_r[size];
+    double complex wfc_k[size];
+    double complex wfc_c[size];
+    memcpy(wfc_r, wfc, sizeof(wfc_r));
 
-    memcpy(wfc_k, opr.wfc, sizeof(wfc_k));
-    fft(wfc_k, opr.size, false);
+    memcpy(wfc_k, wfc, sizeof(wfc_k));
+    fft(wfc_k, size, false);
 
-    for (size_t i = 0; i < opr.size; ++i) {
+    for (size_t i = 0; i < size; ++i) {
         wfc_c[i] = conj(wfc_r[i]);
     }
 
-    double complex energy_k[opr.size];
-    double complex energy_r[opr.size];
+    double complex energy_k[size];
+    double complex energy_r[size];
 
-    for (size_t i = 0; i < opr.size; ++i) {
-        energy_k[i] = wfc_k[i] * cpow(par.k[i] + 0.0*I, 2);
+    for (size_t i = 0; i < size; ++i) {
+        energy_k[i] = wfc_k[i] * h_k[i];
     }
 
-    fft(energy_k, opr.size, true);
+    fft(energy_k, size, true);
 
-    for (size_t i = 0; i < opr.size; ++i) {
-        energy_k[i] *= 0.5 * wfc_c[i];
-        energy_r[i] = wfc_c[i] * opr.v[i] * wfc_r[i];
+    for (size_t i = 0; i < size; ++i) {
+        energy_k[i] *= wfc_c[i];
+        energy_r[i] = wfc_c[i] * H_r[i] * wfc_r[i];
     }
 
     double energy_final = 0;
 
-    for (size_t i = 0; i < opr.size; ++i) {
+    for (size_t i = 0; i < size; ++i) {
         energy_final += creal(energy_k[i] + energy_r[i]);
     }
 
-    return energy_final * par.dx;
+    return energy_final * dx;
 }
