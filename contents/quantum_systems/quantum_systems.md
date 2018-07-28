@@ -22,7 +22,7 @@ Because supercomputers are not great at performing quantum computations, certain
 A _universal quantum simulator_ is often called a quantum computer for this reason.
 
 The truth is that quantum simulators are hard to make in laboratories, so simulating quantum systems on classical hardware is as good as we can do in most cases.
-This section is devoted to all the different methods currently used to solve complex quantum systems, so let's start with the Schrodinger Equation, which has many different formulations.
+This section is devoted to all the different methods currently used to solve complex quantum systems, so let's start with the Schr&ouml;dinger Equation, which has many different formulations.
 Here is the easiest one to explain:
 
 $$
@@ -91,7 +91,7 @@ $$
 $$
 
 where $$\hbar$$ is Planck's constant and $$\sigma_q = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(q_i-\mu)^2}$$.
-In this case, $$\sigma$$ is the standard deviation, $$\mu$$ is the statistical mean of your distribution, $$N$$ is the number of points sampled, $$q_i$$ is the value for each point $$i$$, and $$q$$ stands for $$x$$ or $$p$$..
+In this case, $$\sigma$$ is the standard deviation, $$\mu$$ is the statistical mean of your distribution, $$N$$ is the number of points sampled, $$q_i$$ is the value for each point $$i$$, and $$q$$ stands for $$r$$ or $$p$$.
 Ultimately, this means that if we have a higher precision in position space, we will have a lower precision in momentum space.
 The converse is also true: a higher precision in momentum space will lead to a lower precision in position space.
 
@@ -117,7 +117,7 @@ There is still something missing from the picture that should be described in mo
 
 ## Hamiltonian
 
-Here is the Schrodinger equation again:
+Here is the Schr&ouml;dinger equation again:
 
 $$
 i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \left[-\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r},t) \right] \Psi(\mathbf{r},t)
@@ -127,7 +127,7 @@ We described it in the initial section of this chapter.
 For the most part, when we are trying to solve this equation the left-hand side does not change.
 It's always $$i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t}$$.
 On the other hand, the right-hand side can change a lot depending on the situation.
-That is to say that we can easily simplify the Schrodinger equation by using a mathematical formalism known as the _Hamiltonian_.
+That is to say that we can easily simplify the Schr&ouml;dinger equation by using a mathematical formalism known as the _Hamiltonian_.
 
 To be clear, Hamiltonian mechanics is not a quantum-specific idea.
 It's everywhere in statistical physics and is often taught in classical physics courses as an analogue to another notational form known as Lagrangian mechanics.
@@ -151,14 +151,14 @@ Both of these are operators.
 That is to say that they _operate_ on our quantum system by transforming it in some way.
 Ultimately, this means that the operators are not meant to be interpreted on their own without acting on some other object, in this case, the wavefunction $$\Psi(x)$$.
 
-In the end, we can update our Schrodinger equation to be
+In the end, we can update our Schr&ouml;dinger equation to be
 
 $$
-i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \hat H Psi(\mathbf{r},t)
+i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \hat H \Psi(\mathbf{r},t)
 $$
 
 Which is a lot cleaner and more general.
-Now, the Schrodinger equation can solve any quantum system so long as it can be written in terms of Hamiltonian mechanics!
+Now, the Schr&ouml;dinger equation can solve any quantum system so long as it can be written in terms of Hamiltonian mechanics!
 
 When looking at the operators, it is clear that the $$\hat V$$ operator is in position space.
 We can clearly see that it operates as a function of $$x$$.
@@ -236,7 +236,7 @@ In the end, many quantum simulations are focused on the _ground_ state, which is
 
 As we proceed to add new algorithms to simulate quantum systems, I will add more and more notation to this section; however, there are already huge textbooks out there related to understanding and studying quantum systems.
 We don't want to re-invent the wheel here.
-Instead, we want to focus on an area that is often not considered with too much detail -- the algorithms and methods researchers use to ascertain new knowedge about quantum mechanics, like the split-operator method, DMRG, quantum monte carlo, exact diagonalization, and many more.
+Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowedge about quantum mechanics, like the split-operator method, DMRG, quantum monte carlo, exact diagonalization, and many more.
 
 Quantum mechanics is one of those areas of physics that really does push the boundary of human knowledge in a number of different areas and computing is one of those areas.
 In fact, [quantum information theory](../quantum_information/quantum_information.md) is currently set to be the next innovation to radically change the landscape of modern computation as we know it!

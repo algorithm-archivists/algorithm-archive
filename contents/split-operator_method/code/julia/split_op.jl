@@ -49,10 +49,10 @@ function init(par::Param, voffset::Float64, wfcoffset::Float64)
     opr.V = 0.5 * (par.x - voffset).^2
     opr.wfc = exp.(-(par.x - wfcoffset).^2/2)
     if (par.im_time)
-        opr.KE = exp.(-0.5*par.k.^2*par.dt)
+        opr. = exp.(-0.5*par.k.^2*par.dt)
         opr.PE = exp.(-0.5*opr.V*par.dt)
     else
-        opr.KE = exp.(-im*0.5*par.k.^2*par.dt)
+        opr. = exp.(-im*0.5*par.k.^2*par.dt)
         opr.PE = exp.(-im*0.5*opr.V*par.dt)
     end
 
@@ -70,7 +70,7 @@ function split_op(par::Param, opr::Operators)
         opr.wfc = fft(opr.wfc)
 
         # Full step in momentum space
-        opr.wfc = opr.wfc .* opr.KE
+        opr.wfc = opr.wfc .* opr.
 
         # ifft back
         opr.wfc = ifft(opr.wfc)
@@ -83,14 +83,10 @@ function split_op(par::Param, opr::Operators)
 
         # renormalizing for imaginary time
         if (par.im_time)
-            sum = 0
-            for element in density
-                sum += element
-            end
-            sum *= par.dx
+            renorm_factor = sum(density) * par.dx
 
             for j = 1:length(opr.wfc)
-                opr.wfc[j] /= sqrt(sum)
+                opr.wfc[j] /= sqrt(renorm_factor)
             end
         end
 
