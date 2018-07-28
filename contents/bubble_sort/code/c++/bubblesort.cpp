@@ -2,70 +2,34 @@
 #include <cstddef>
 #include <iostream>
 #include <iterator>
-#include <random>
 
-using std::begin;
-using std::end;
-
-template <class Rng>
-std::vector<float> generate_input(std::size_t size, Rng& rng) {
-  auto dist = std::uniform_real_distribution<>(0.0, 1.0);
-
-  auto ret = std::vector<float>();
-  std::generate_n(std::back_inserter(ret), size,
-    [&rng, &dist] { return dist(rng); });
-
-  return ret;
+template <class Iter>
+void print_range(Iter first, Iter last) {
+  for (auto it = first; it != last; ++it)
+    std::cout << *it << " ";
+  std::cout << std::endl;
 }
 
 template <class Iter>
-void print_range(std::ostream& os, Iter const first, Iter const last) {
-  os << '{';
-
-  if (first != last) {
-    os << *first;
-    std::for_each(first + 1, last, [&os] (double d) { os << ", " << d; });
-  }
-
-  os << "}\n";
-}
-
-template <class Iter>
-void bubble_sort(Iter const first, Iter const last) {
-  if (first == last) {
-    // the empty range is vacuously sorted
-    return;
-  }
-
-  for (;;) {
-    bool is_sorted = true;
-
-    for (auto it = first; it + 1 != last; ++it) {
+void bubble_sort(Iter first, Iter last) {
+  for (auto it1 = first; it1 != last; ++it1) {
+    for (auto it2 = first; it2 + 1 != last; ++it2) {
       // these are unsorted! gotta swap 'em
-      if (*(it + 1) < *it) {
-        using std::swap;
-        swap(*it, *(it + 1));
-        is_sorted = false;
+      if (*(it2 + 1) < *it2) {
+        std::iter_swap(it2, it2 + 1);
       }
-    }
-
-    if (is_sorted) {
-      break;
     }
   }
 }
 
 int main() {
-  std::random_device random_device;
-  auto rng = std::mt19937(random_device());
+  int input[] = {1, 45, 756, 4569, 56, 3, 8, 5, -10, -4};
 
-  auto input = generate_input(10, rng);
+  std::cout << "Unsorted array:\n";
+  print_range(std::begin(input), std::end(input));
 
-  std::cout << "before sorting:\n";
-  print_range(std::cout, begin(input), end(input));
+  bubble_sort(std::begin(input), std::end(input));
 
-  bubble_sort(begin(input), end(input));
-
-  std::cout << "\nafter sorting:\n";
-  print_range(std::cout, begin(input), end(input));
+  std::cout << "\nSorted array:\n";
+  print_range(std::begin(input), std::end(input));
 }

@@ -1,3 +1,7 @@
+This file lists everyone, who contributed to this repo and wanted to show up here. If you're looking for information on contribution, please check the `CONTRIBUTING.md` out.
+
+# Contributors
+
 James Schloss
 <br>
 Nicole Mazzuca
@@ -44,3 +48,4 @@ Max Weinstein
 <br>
 Gibus Wearing Brony
 <br>
+Arun Sahadeo

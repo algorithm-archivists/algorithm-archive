@@ -1,5 +1,4 @@
 func bubbleSort(sortArray: inout [Int]) -> [Int] {
-    
     for i in (1..<sortArray.count).reversed() {
         for j in 0..<i {
             if sortArray[j] > sortArray[j+1] {

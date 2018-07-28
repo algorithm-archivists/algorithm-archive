@@ -13,7 +13,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="cs" %}
 [import:9-27, lang:"csharp"](code/csharp/BubbleSort.cs)
 {% sample lang="c" %}
-[import:11-21, lang:"c_cpp"](code/c/bubble_sort.c)
+[import:10-20, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="js" %}
@@ -25,19 +25,21 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/bubblesort.cpp)
+[import:13-23, lang:"c_cpp"](code/c++/bubblesort.cpp)
 {% sample lang="rs" %}
-[import:6-19, lang:"rust"](code/rust/bubble_sort.rs)
+[import:6-16, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
 [import:3-18, lang:"d"](code/d/bubble_sort.d)
 {% sample lang="go" %}
 [import:7-21, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
-[import:5-19, lang:"racket"](code/racket/bubbleSort.rkt)
+[import:6-19, lang:"racket"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
-[import, lang:"swift"](code/swift/bubblesort.swift)
+[import:1-13, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
 [import:2-13, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
+{% sample lang="ruby" %}
+[import:3-13, lang:"ruby"](code/ruby/bubble.rb)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -45,6 +47,45 @@ Now, as you might imagine, computer scientists have optimized this to the fiery 
 For now, it's fine to just bask in the simplicity that is bubble sort.
 Trust me, there are plenty of more complicated algorithms that do precisely the same thing, only much, much better (for most cases).
 
+## Example Code
+
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/bubble.jl)
+{% sample lang="cs" %}
+BubbleSort.cs
+[import, lang:"csharp"](code/csharp/BubbleSort.cs)
+Program.cs
+[import, lang:"csharp"](code/csharp/Program.cs)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/bubble_sort.c)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/bubble.java)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/bubble.js)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/bubblesort.py)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/bubblesort.m)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/bubbleSort.hs)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/bubblesort.cpp)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/bubble_sort.rs)
+{% sample lang="d" %}
+[import, lang:"d"](code/d/bubble_sort.d)
+{% sample lang="go" %}
+[import, lang:"golang"](code/go/bubbleSort.go)
+{% sample lang="racket" %}
+[import, lang:"racket"](code/racket/bubbleSort.rkt)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/bubblesort.swift)
+{% sample lang="ti83b" %}
+[import, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
+{% sample lang="ruby" %}
+[import, lang:ruby"](code/ruby/bubble.rb)
+{% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

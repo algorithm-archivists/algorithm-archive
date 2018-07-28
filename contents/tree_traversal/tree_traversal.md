@@ -19,8 +19,9 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="py" %}
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:3-7, lang:"julia"](code/julia/Tree.jl)
+<p>
+  <img  class="center" src="code/scratch/struct.svg" width="250" />
+</p>
 {% sample lang="rs"%}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
@@ -45,8 +46,10 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="py" %}
 [import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:9-16, lang:"julia"](code/julia/Tree.jl)
+<p>
+  <img  class="center" src="code/scratch/dfs.svg" width="250" />
+  <img  class="center" src="code/scratch/dfs-from.svg" width="250" />
+</p>
 {% sample lang="rs"%}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
@@ -81,8 +84,9 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="py" %}
 [import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+<p>
+  <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
+</p>
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
@@ -113,8 +117,9 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="py" %}
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
+<p>
+  <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
+</p>
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
@@ -154,8 +159,9 @@ In code, it looks like this:
 {% sample lang="py" %}
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:45-56, lang:"julia"](code/julia/Tree.jl)
+<p>
+  <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
+</p>
 {% sample lang="rs"%}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
@@ -187,8 +193,9 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="py" %}
 [import:63-74, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:58-69, lang:"julia"](code/julia/Tree.jl)
+<p>
+  <img  class="center" src="code/scratch/bfs.svg" width="400" />
+</p>
 {% sample lang="rs"%}
 [import:26-34, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
@@ -222,9 +229,8 @@ MainClass.java
 [import, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 
-<p>
-    <img  class="center" src="code/scratch/scratch_tree.png" />
-</p>
+The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/174017753/)
+
 {% sample lang="rs"%}
 [import, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}

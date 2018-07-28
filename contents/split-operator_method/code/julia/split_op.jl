@@ -33,8 +33,8 @@ end
 
 mutable struct Operators
     V::Vector{Complex{Float64}}
-    PE::Vector{Complex{Float64}}
-    KE::Vector{Complex{Float64}}
+    R::Vector{Complex{Float64}}
+    K::Vector{Complex{Float64}}
     wfc::Vector{Complex{Float64}}
 
     Operators(res) = new(Vector{Complex{Float64}}(res),
