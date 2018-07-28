@@ -61,6 +61,8 @@ each point is tested to see whether it's in the circle or not:
 [import:15-17, lang:"swift"](code/swift/monte_carlo.swift)
 {% sample lang="py" %}
 [import:5-7, lang:"python"](code/python/monte_carlo.py)
+{% sample lang="cs" %}
+[import:23-23, lang:"csharp"](code/csharp/Circle.cs)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -116,6 +118,13 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"swift"](code/swift/monte_carlo.swift)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/monte_carlo.py)
+{% sample lang="cs" %}
+MonteCarlo.cs
+[import, lang:"csharp"](code/csharp/MonteCarlo.cs)
+Circle.cs
+[import, lang:"csharp"](code/csharp/Circle.cs)
+Program.cs
+[import, lang:"csharp"](code/csharp/Program.cs)
 {% endmethod %}
 
 
