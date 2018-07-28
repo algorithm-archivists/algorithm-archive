@@ -2,7 +2,7 @@
   "gitbook": "3.x.x",
   "plugins": [
     "fontsettings",
-    "mathjax",
+    "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
     "creativecommons",
     "wordcount",
@@ -15,6 +15,9 @@
     "maxIndexSize": 1000000000
   },
   "pluginsConfig": {
+    "mathjax":{
+      "version": "2.6.1"
+    },
     "include-codeblock": {
       "fixlang": true,
       "unindent": true
