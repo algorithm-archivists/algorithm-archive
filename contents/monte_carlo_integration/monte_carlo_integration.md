@@ -10,7 +10,7 @@ How could they possibly be used to find non-random values?
 Well, imagine you have a square.
 The area of the square is simple, $$\text{Area}_{\text{square}} = \text{length} \times \text{width}$$.
 Since it's a square, the $$\text{length}$$ and $$\text{width}$$ are the same, so the formula is technically just $$\text{Area}_{\text{square}} = \text{length}^2$$.
-If we embed a circle into the square with a radius $$r = \text{length}$$ (shown below), then it's area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
+If we embed a circle into the square with a radius $$r = \tfrac{length}{2}$$ (shown below), then it's area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
 For simplicity, we can also say that $$\text{Area}_{\text{square}}=4r^2$$.
 
 <p>
