@@ -99,6 +99,9 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% method %}
 {% sample lang="jl" %}
 [import:9-32, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import:10-20, lang:"c_cpp"](code/c/split_op.c)
+[import:51-72, lang:"c_cpp"](code/c/split_op.c)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
@@ -111,6 +114,9 @@ Afterwards, we turn them into operators:
 {% method %}
 {% sample lang="jl" %}
 [import:34-60, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import:22-28, lang:"c_cpp"](code/c/split_op.c)
+[import:74-95, lang:"c_cpp"](code/c/split_op.c)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
@@ -124,6 +130,8 @@ The final step is to do the iteration, itself.
 {% method %}
 {% sample lang="jl" %}
 [import:63-109, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import:97-145, lang:"c_cpp"](code/c/split_op.c)
 {% endmethod %}
 
 And that's it.
@@ -143,6 +151,8 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/split_op.c)
 {% endmethod %}
 
 <script>
