@@ -1,0 +1,24 @@
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - "4"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install gitbook-cli -g
+  - gitbook install
+
+before_script:
+  - mkdir -p "${TRAVIS_BUILD_DIR}"/build
+
+script:
+  - gitbook build . "${TRAVIS_BUILD_DIR}"/build
+  - |
+    if [[ "${TRAVIS_BRANCH}" == master ]]; then
+        bash "${TRAVIS_BUILD_DIR}"/tools/deploy/update_site_travis.bash
+    fi
