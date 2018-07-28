@@ -4,19 +4,19 @@ namespace MonteCarloIntegration
 {
     public class MonteCarlo
     {
-        public struct RunOutput
+        public struct PiEstimate
         {
-            public double PiEstimate { get; private set; }
+            public double Estimate { get; private set; }
             public double Error { get; private set; }
 
-            public RunOutput(double piEstimate, double error)
+            public PiEstimate(double estimate, double error)
             {
-                this.PiEstimate = piEstimate;
+                this.Estimate = estimate;
                 this.Error = error;
             }
         }
 
-        public RunOutput Run(int samples)
+        public PiEstimate Run(int samples)
         {
             var circle = new Circle(1.0);
             var count = 0;
@@ -31,7 +31,7 @@ namespace MonteCarloIntegration
 
             var piEstimate = 4.0 * count / samples;
             var error = Math.Abs(Math.PI - piEstimate);
-            return new RunOutput(piEstimate, error);
+            return new PiEstimate(piEstimate, error);
         }
     }
 }
