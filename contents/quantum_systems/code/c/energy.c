@@ -27,16 +27,13 @@ void fft(double complex *x, int n, bool inverse) {
 
 double calculate_energy(double complex *wfc, double complex *h_r,
                         double complex *h_k, double dx, size_t size) {
-    double complex wfc_r[size];
     double complex wfc_k[size];
     double complex wfc_c[size];
-    memcpy(wfc_r, wfc, sizeof(wfc_r));
-
     memcpy(wfc_k, wfc, sizeof(wfc_k));
     fft(wfc_k, size, false);
 
     for (size_t i = 0; i < size; ++i) {
-        wfc_c[i] = conj(wfc_r[i]);
+        wfc_c[i] = conj(wfc[i]);
     }
 
     double complex energy_k[size];
@@ -50,7 +47,7 @@ double calculate_energy(double complex *wfc, double complex *h_r,
 
     for (size_t i = 0; i < size; ++i) {
         energy_k[i] *= wfc_c[i];
-        energy_r[i] = wfc_c[i] * H_r[i] * wfc_r[i];
+        energy_r[i] = wfc_c[i] * H_r[i] * wfc[i];
     }
 
     double energy_final = 0;
