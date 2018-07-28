@@ -43,7 +43,7 @@ We can then address each part of this solution in chunks, first in position spac
 Which looks something like this:
 
 $$
-\Psi(\mathcal{r}, t+dt) = \left[\hat{U}_r(\frac{dt}{2})\mathcal{F}^{-1}\left[\hat{U}_k(dt) \mathcal{F} \left[\hat{U}_r(\frac{dt}{2}) \Psi(\mathbf{r},t) \right] \right] \right] + \mathcal{O}(dt^3)
+\Psi(\mathcal{r}, t+dt) = \left[\hat{U}_r\left(\frac{dt}{2}\right)\mathcal{F}^{-1}\left[\hat{U}_k(dt) \mathcal{F} \left[\hat{U}_r\left(\frac{dt}{2}\right) \Psi(\mathbf{r},t) \right] \right] \right] + \mathcal{O}(dt^3)
 $$
 
 where $$\hat{U}_r = e^{-\frac{i\hat{H}_rdt}{\hbar}}$$, $$\hat{U}_k = e^{-\frac{i\hat{H}_kdt}{\hbar}}$$, and $$\mathcal{F}$$ and $$\mathcal{F}^{-1}$$ indicate forward and inverse Fourier Transforms.
