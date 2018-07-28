@@ -103,7 +103,7 @@ Regardless, we first need to set all the initial parameters, including the initi
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
 This is simply because the FFT will naturally assume that the `0` in our grid is at the left side of the simulation, so we shift k-space to match this expectation.
-Also, for this code we will be using the notation from above: `opr.R` will be the real space operators and `opr.M` will be the momentum space operators.
+Also, for this code we will be using notation to what we used above: `opr.R` will be the real space operators and `opr.K` will be the momentum space operators.
 There is another boolean value here called `im_time`, which is for imaginary time evolution.
 
 Afterwards, we turn them into operators:
