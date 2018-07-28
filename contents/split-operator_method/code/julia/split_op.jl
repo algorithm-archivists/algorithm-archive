@@ -49,11 +49,11 @@ function init(par::Param, voffset::Float64, wfcoffset::Float64)
     opr.V = 0.5 * (par.x - voffset).^2
     opr.wfc = exp.(-(par.x - wfcoffset).^2/2)
     if (par.im_time)
-        opr. = exp.(-0.5*par.k.^2*par.dt)
-        opr.PE = exp.(-0.5*opr.V*par.dt)
+        opr.K = exp.(-0.5*par.k.^2*par.dt)
+        opr.R = exp.(-0.5*opr.V*par.dt)
     else
-        opr. = exp.(-im*0.5*par.k.^2*par.dt)
-        opr.PE = exp.(-im*0.5*opr.V*par.dt)
+        opr.K = exp.(-im*0.5*par.k.^2*par.dt)
+        opr.R = exp.(-im*0.5*opr.V*par.dt)
     end
 
     return opr
@@ -64,19 +64,19 @@ function split_op(par::Param, opr::Operators)
 
     for i = 1:par.timesteps
         # Half-step in real space
-        opr.wfc = opr.wfc .* opr.PE
+        opr.wfc = opr.wfc .* opr.R
 
         # fft to momentum space
         opr.wfc = fft(opr.wfc)
 
         # Full step in momentum space
-        opr.wfc = opr.wfc .* opr.
+        opr.wfc = opr.wfc .* opr.K
 
         # ifft back
         opr.wfc = ifft(opr.wfc)
 
         # final half-step in real space
-        opr.wfc = opr.wfc .* opr.PE
+        opr.wfc = opr.wfc .* opr.R
 
         # density for plotting and potential
         density = abs2.(opr.wfc)
