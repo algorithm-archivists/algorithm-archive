@@ -1,5 +1,3 @@
-#!/usr/bin/env crystal 
-
 def bubble_sort(arr)
   arr = arr.dup 
   (0 ... arr.size).each do 

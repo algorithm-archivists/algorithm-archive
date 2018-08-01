@@ -41,7 +41,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="ruby" %}
 [import:3-13, lang:"ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
-[import:3-13, lang:"crystal"](code/crystal/bubble.cr)
+[import:1-11, lang:"crystal"](code/crystal/bubble.cr)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
