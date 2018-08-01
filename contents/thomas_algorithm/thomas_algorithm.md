@@ -44,6 +44,11 @@ $$
 [import, lang:"c_cpp"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
+{% sample lang="scratch" %}
+You will find this algorithm implemented [in this project](https://scratch.mit.edu/projects/169418273/).
+<p>
+  <img  class="center" src="code/scratch/thomas.svg" width="1000" />
+</p>
 {% endmethod %}
 
 This is a much simpler implementation than Gaussian Elimination and only has one for loop before back-substitution, which is why it has a better complexity case.
@@ -70,4 +75,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
