@@ -116,7 +116,12 @@
         {
           "lang": "lua",
           "name": "Lua"
+        },
+        {
+          "lang": "crystal",
+          "name": "Crystal"
         }
+
       ]
     }
   }
