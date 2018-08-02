@@ -20,6 +20,6 @@ namespace MonteCarloIntegration
 
         public Circle(double radius) => this.Radius = Math.Abs(radius);
 
-        public bool IsInMe(Point point) => point.X * point.X + point.Y * point.Y < Radius * Radius;
+        public bool IsInMe(Point point) => Math.Pow(point.X, 2) + Math.Pow(point.Y, 2) < Math.Pow(Radius, 2);
     }
 }

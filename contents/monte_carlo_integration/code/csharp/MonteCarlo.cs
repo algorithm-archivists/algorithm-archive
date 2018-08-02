@@ -7,12 +7,12 @@ namespace MonteCarloIntegration
         public struct PiEstimate
         {
             public double Estimate { get; private set; }
-            public double Error { get; private set; }
+            public double PercentError { get; private set; }
 
-            public PiEstimate(double estimate, double error)
+            public PiEstimate(double estimate, double percentError)
             {
                 this.Estimate = estimate;
-                this.Error = error;
+                this.PercentError = percentError;
             }
         }
 
@@ -30,8 +30,8 @@ namespace MonteCarloIntegration
             }
 
             var piEstimate = 4.0 * count / samples;
-            var error = Math.Abs(Math.PI - piEstimate);
-            return new PiEstimate(piEstimate, error);
+            var percentError = (piEstimate - Math.PI) / Math.PI * 100;
+            return new PiEstimate(piEstimate, percentError);
         }
     }
 }
