@@ -40,6 +40,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-13, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
 {% sample lang="ruby" %}
 [import:3-13, lang:"ruby"](code/ruby/bubble.rb)
+{% sample lang="crystal" %}
+[import:1-11, lang:"crystal"](code/crystal/bubble.cr)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -85,6 +87,8 @@ Program.cs
 [import, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
 {% sample lang="ruby" %}
 [import, lang:ruby"](code/ruby/bubble.rb)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/bubble.cr)
 {% endmethod %}
 
 <script>
