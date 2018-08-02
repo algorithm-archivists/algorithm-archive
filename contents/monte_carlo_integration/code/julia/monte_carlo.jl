@@ -25,7 +25,7 @@ function monte_carlo(n::Int64)
     #     4*pi_count/n instead
     pi_estimate = 4*pi_count/n
     println("The pi estimate is: ", pi_estimate)
-    println("Percent error is: ", signif(100*(pi_estimate - pi)/pi, 3), " %")
+    println("Percent error is: ", signif(100 * abs(pi_estimate - pi) / pi, 3), " %")
 end
 
 monte_carlo(10000000)
