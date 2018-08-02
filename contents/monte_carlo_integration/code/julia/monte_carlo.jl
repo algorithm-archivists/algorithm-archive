@@ -24,6 +24,7 @@ function monte_carlo(n::Int64)
     #     are only using the upper quadrant and the unit circle, so we can use
     #     4*pi_count/n instead
     pi_estimate = 4*pi_count/n
+    println("The pi estimate is: ", pi_estimate)
     println("Percent error is: ", signif(100*(pi - pi_estimate)/pi, 3), " %")
 end
 
