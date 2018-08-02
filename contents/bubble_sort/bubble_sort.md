@@ -42,6 +42,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:3-13, lang:"ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
 [import:1-11, lang:"crystal"](code/crystal/bubble.cr)
+{% sample lang="php" %}
+[import:3-15, lang:"php"](code/php/bubble_sort.php)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -89,6 +91,8 @@ Program.cs
 [import, lang:ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/bubble.cr)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/bubble_sort.php)
 {% endmethod %}
 
 <script>

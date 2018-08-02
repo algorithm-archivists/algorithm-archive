@@ -51,3 +51,5 @@ Gibus Wearing Brony
 Arun Sahadeo
 <br>
 NIFR91
+<br>
+Michal Hanajik
