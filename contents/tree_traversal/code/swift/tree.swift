@@ -40,8 +40,8 @@ func dfsRecursivePostOrder(node: Node) {
 func dfsRecursiveInOrderBinary(node: Node) {
     if node.children?.count == 2 {
         dfsRecursiveInOrderBinary(node: node.children![0])
-        dfsRecursiveInOrderBinary(node: node.children![1])
         print(node.value)
+        dfsRecursiveInOrderBinary(node: node.children![1])
     } else if node.children?.count == 1 {
         dfsRecursiveInOrderBinary(node: node.children![0])
         print(node.value)
