@@ -14,6 +14,14 @@ fn dfs_recursive(n: &Node) {
     }
 }
 
+fn dfs_recursive_postorder(n: &Node) {
+    for child in &n.children {
+        dfs_recursive(child);
+    }
+
+    println!("{}", n.value);
+}
+
 fn dfs_stack(n: &Node) {
     let mut stack = vec![n];
 

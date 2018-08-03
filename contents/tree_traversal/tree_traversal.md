@@ -89,7 +89,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 </p>
 {% sample lang="rs"%}
 This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+[import:17-23, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
@@ -163,7 +163,7 @@ In code, it looks like this:
   <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:17-24, lang:"rust"](code/rust/tree.rs)
+[import:25-32, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
@@ -197,7 +197,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:26-34, lang:"rust"](code/rust/tree.rs)
+[import:34-42, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
