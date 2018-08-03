@@ -14,19 +14,55 @@ In code, it looks something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:1-14, lang:"julia"](code/julia/bogo.jl)
+[import:10-14, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
 [import:9-15, lang:"csharp"](code/csharp/BogoSort.cs)
 {% sample lang="clj" %}
-[import:2-11, lang:"clojure"](code/clojure/bogo.clj)
+[import:7-11, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
-[import:4-29, lang:"c_cpp"](code/c/bogo_sort.c)
+[import:25-29, lang:"c_cpp"](code/c/bogo_sort.c)
 {% sample lang="java" %}
-[import:2-17, lang:"java"](code/java/bogo.java)
+[import:2-6, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
-[import:1-16, lang:"javascript"](code/javascript/bogo.js)
+[import:11-15, lang:"javascript"](code/javascript/bogo.js)
 {% sample lang="py" %}
-[import:4-12, lang:"python"](code/python/bogo.py)
+[import:10-12, lang:"python"](code/python/bogo.py)
+{% sample lang="hs" %}
+[import:17-20, lang:"haskell"](code/haskell/bogoSort.hs)
+{% sample lang="m" %}
+[import:21-28, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="cpp" %}
+[import:33-38, lang:"c_cpp"](code/c++/bogosort.cpp)
+{% sample lang="rs" %}
+[import:16-20, lang:"rust"](code/rust/bogosort.rs)
+{% sample lang="swift" %}
+[import:25-31, lang:"swift"](code/swift/bogosort.swift)
+{% endmethod %}
+
+That's it.
+Ship it!
+We are done here!
+
+## Example Code
+
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/bogo.jl)
+{% sample lang="cs" %}
+BogoSort.cs
+[import, lang:"csharp"](code/csharp/BogoSort.cs)
+Program.cs
+[import, lang:"csharp"](code/csharp/Program.cs)
+{% sample lang="clj" %}
+[import, lang:"clojure"](code/clojure/bogo.clj)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/bogo_sort.c)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/bogo.java)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/bogo.js)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/bogo.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
@@ -38,10 +74,6 @@ In code, it looks something like this:
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bogosort.swift)
 {% endmethod %}
-
-That's it.
-Ship it!
-We are done here!
 
 
 <script>

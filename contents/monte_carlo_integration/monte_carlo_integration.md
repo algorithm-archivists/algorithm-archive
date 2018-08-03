@@ -10,7 +10,7 @@ How could they possibly be used to find non-random values?
 Well, imagine you have a square.
 The area of the square is simple, $$\text{Area}_{\text{square}} = \text{length} \times \text{width}$$.
 Since it's a square, the $$\text{length}$$ and $$\text{width}$$ are the same, so the formula is technically just $$\text{Area}_{\text{square}} = \text{length}^2$$.
-If we embed a circle into the square with a radius $$r = \text{length}$$ (shown below), then it's area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
+If we embed a circle into the square with a radius $$r = \tfrac{length}{2}$$ (shown below), then its area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
 For simplicity, we can also say that $$\text{Area}_{\text{square}}=4r^2$$.
 
 <p>
@@ -58,7 +58,11 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="java" %}
 [import:13-15, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
-[import:21-25, lang:"swift"](code/swift/monte_carlo.swift)
+[import:15-17, lang:"swift"](code/swift/monte_carlo.swift)
+{% sample lang="py" %}
+[import:5-7, lang:"python"](code/python/monte_carlo.py)
+{% sample lang="cs" %}
+[import:23-23, lang:"csharp"](code/csharp/Circle.cs)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -112,6 +116,15 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/monte_carlo.swift)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/monte_carlo.py)
+{% sample lang="cs" %}
+MonteCarlo.cs
+[import, lang:"csharp"](code/csharp/MonteCarlo.cs)
+Circle.cs
+[import, lang:"csharp"](code/csharp/Circle.cs)
+Program.cs
+[import, lang:"csharp"](code/csharp/Program.cs)
 {% endmethod %}
 
 
