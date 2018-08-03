@@ -88,7 +88,6 @@ This has not been implemented in your chosen language, so here is the Julia code
   <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-This has not been implemented in your chosen language, so here is the Julia code
 [import:17-23, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
