@@ -22,7 +22,7 @@ In the end, we will update $$c$$ and $$d$$ to be $$c'$$ and $$d'$$ like so:
 $$
 \begin{align}
 c'_i &= \frac{c_i}{b_i - a_i \times c'_{i-1}} \\
-d'_i &= \frac{d_i - a_i*d'_{i-1}}{b_i - a_i \times c'_{i-1}}
+d'_i &= \frac{d_i - a_i \times d'_{i-1}}{b_i - a_i \times c'_{i-1}}
 \end{align}
 $$
 
@@ -44,6 +44,8 @@ $$
 [import, lang:"c_cpp"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/thomas.hs)
 {% endmethod %}
 
 This is a much simpler implementation than Gaussian Elimination and only has one for loop before back-substitution, which is why it has a better complexity case.
@@ -70,4 +72,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-

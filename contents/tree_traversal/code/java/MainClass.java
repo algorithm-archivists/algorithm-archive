@@ -22,7 +22,7 @@ public class MainClass {
         tree.dfsRecursiveInOrderBinary();
 
         tree = new Tree(3, 2);
-        System.out.println("Using in-order binary recursive DFS : (suceed)");
+        System.out.println("Using in-order binary recursive DFS : (succeed)");
         tree.dfsRecursiveInOrderBinary();
 
 

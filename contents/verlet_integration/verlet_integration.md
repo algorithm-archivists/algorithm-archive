@@ -35,7 +35,7 @@ Here is what it looks like in code:
 {% sample lang="cpp" %}
 [import:4-17, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:3-16, lang:"c_cpp"](code/c/verlet.c)
+[import:3-14, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:2-18, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
@@ -81,7 +81,7 @@ Here's what it looks like in code:
 {% sample lang="cpp" %}
 [import:20-36, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:18-33, lang:"c_cpp"](code/c/verlet.c)
+[import:16-31, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:21-40, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
@@ -138,7 +138,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="cpp" %}
 [import:38-49, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:35-46, lang:"c_cpp"](code/c/verlet.c)
+[import:33-43, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:43-57, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
@@ -223,4 +223,3 @@ $$
 \newcommand{\bfomega}{\boldsymbol{\omega}}
 \newcommand{\bftau}{\boldsymbol{\tau}}
 $$
-
