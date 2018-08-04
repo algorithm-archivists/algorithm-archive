@@ -92,7 +92,7 @@ There are more complicated things that can be done with the bitshift operators; 
 
 #### Logic gates
 In addition to the bitshift operations, there are a number of logical operations that can be performed on one or two bits together.
-These operations are called *gates*, and follow soemwhat straightforward logic.
+These operations are called *gates*, and follow somewhat straightforward logic.
 The *AND* gate, for example, reads in 2 bits and will only output a 1 value if both inputs are 1. This can be seen in the corresponding truth table:
 
 <p>
