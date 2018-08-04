@@ -38,7 +38,7 @@ func monteCarlo(n: Int) -> Double {
 func main() {
     let piEstimate = monteCarlo(n: 10000)
     print("Pi estimate is: ", piEstimate)
-    print("Percent error is: \(100*(Double.pi - piEstimate)/Double.pi)%")
+    print("Percent error is: \(100 * abs(piEstimate - Double.pi)/Double.pi)%")
 }
 
 
