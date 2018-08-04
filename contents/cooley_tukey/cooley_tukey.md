@@ -97,7 +97,7 @@ M = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im;
 
 It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix!
 That said, the Discrete Fourier Transform is slow -- primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful.
-So what was the trick that everyone used to go from a Discrete fourier Transform to a *Fast* Fourier Transform?
+So what was the trick that everyone used to go from a Discrete Fourier Transform to a *Fast* Fourier Transform?
 
 Recursion!
 
