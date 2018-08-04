@@ -38,7 +38,7 @@ $$
 $$
 
 where $$D$$ is some positive definite matrix and $$\phi(\mathbf{r},t)$$ is the density (or temperature) of the system.
-In fact, this is why one of the most common types of quantum simulation is sometimes called  _diffusion monte carlo_.
+In fact, this is why one of the most common types of quantum simulation is sometimes called  _diffusion Monte Carlo_.
 There really isn't that much of a difference between the two systems in terms of how they are simulated on classical hardware... but we are getting ahead of ourselves.
 For now, let's talk about how quantum mechanics differs from classical mechanics and how we can use this to our advantage.
 
@@ -87,7 +87,7 @@ Simply put, the Heisenberg uncertainty principle states that we cannot definitel
 In particular, it says:
 
 $$
-\sigma_x \sigma_p \geq \frac{\hbar}{2} 
+\sigma_x \sigma_p \geq \frac{\hbar}{2}
 $$
 
 where $$\hbar$$ is Planck's constant and $$\sigma_q = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(q_i-\mu)^2}$$.
@@ -236,7 +236,7 @@ In the end, many quantum simulations are focused on the _ground_ state, which is
 
 As we proceed to add new algorithms to simulate quantum systems, I will add more and more notation to this section; however, there are already huge textbooks out there related to understanding and studying quantum systems.
 We don't want to re-invent the wheel here.
-Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowedge about quantum mechanics, like the split-operator method, DMRG, quantum monte carlo, exact diagonalization, and many more.
+Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowedge about quantum mechanics, like the split-operator method, DMRG, quantum Monte Carlo, exact diagonalization, and many more.
 
 Quantum mechanics is one of those areas of physics that really does push the boundary of human knowledge in a number of different areas and computing is one of those areas.
 In fact, [quantum information theory](../quantum_information/quantum_information.md) is currently set to be the next innovation to radically change the landscape of modern computation as we know it!
