@@ -187,7 +187,7 @@ $$
 $$
 
 and basically describes $$A$$ as a column vector.
-The _bra_ represents the Hermitian conjucate of the ket and looks like this:
+The _bra_ represents the Hermitian conjugate of the ket and looks like this:
 
 $$
 \langle B \rvert
@@ -201,7 +201,7 @@ For example, if we want to indicate the probability of a wavefunction $$\psi$$ c
 Now that we have a basic understanding of the notation, we should go through several other important quantum mechanical ideas and properties.
 
 ## Eigenstates
-As mentioned, the wavefunction $$\Psi(x)$$ is complex and has both real and imaginary parts; however, there are certain states that are eclusively real.
+As mentioned, the wavefunction $$\Psi(x)$$ is complex and has both real and imaginary parts; however, there are certain states that are exclusively real.
 These states are _eigenstates_ of the system, and are often described as the constituent states that make up all other possible wavefunctions.
 In other words,
 
@@ -236,7 +236,7 @@ In the end, many quantum simulations are focused on the _ground_ state, which is
 
 As we proceed to add new algorithms to simulate quantum systems, I will add more and more notation to this section; however, there are already huge textbooks out there related to understanding and studying quantum systems.
 We don't want to re-invent the wheel here.
-Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowedge about quantum mechanics, like the split-operator method, DMRG, quantum Monte Carlo, exact diagonalization, and many more.
+Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowledge about quantum mechanics, like the split-operator method, DMRG, quantum Monte Carlo, exact diagonalization, and many more.
 
 Quantum mechanics is one of those areas of physics that really does push the boundary of human knowledge in a number of different areas and computing is one of those areas.
 In fact, [quantum information theory](../quantum_information/quantum_information.md) is currently set to be the next innovation to radically change the landscape of modern computation as we know it!
