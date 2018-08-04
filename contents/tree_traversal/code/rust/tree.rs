@@ -22,6 +22,21 @@ fn dfs_recursive_postorder(n: &Node) {
     println!("{}", n.value);
 }
 
+fn dfs_recursive_inorder_btree(n: &Node) {
+    if n.children.len() == 2{
+        dfs_recursive_inorder_btree(&n.children[1]);
+        println!("{}", n.value);
+        dfs_recursive_inorder_btree(&n.children[0]);
+    } else if n.children.len() == 1 {
+        dfs_recursive_inorder_btree(&n.children[0]);
+        println!("{}", n.value);
+    } else if n.children.len() == 0 {
+        println!("{}", n.value);
+    } else {
+        println!("This is not a binary tree.");
+    }
+}
+
 fn dfs_stack(n: &Node) {
     let mut stack = vec![n];
 
@@ -54,11 +69,15 @@ fn create_tree(num_row: u64, num_child: u64) -> Node {
 }
 
 fn main() {
-    let root = create_tree(3,3);
+    let root = create_tree(3,2);
     println!("Recursive DFS:");
     dfs_recursive(&root);
     println!("Stack DFS:");
     dfs_stack(&root);
     println!("Queue BFS:");
     bfs_queue(&root);
+    println!("Recursive PostOrder DFS: ");
+    dfs_recursive_postorder(&root);
+    println!("Recursive DFS BTree:");
+    dfs_recursive_inorder_btree(&root);
 }
