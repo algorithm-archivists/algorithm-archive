@@ -10,7 +10,6 @@ import numpy as np
 
 class Param:
     """Container for holding all simulation parameters."""
-
     def __init__(self,
                  xmax: float,
                  res: int,
@@ -33,7 +32,6 @@ class Param:
 
 class Operators:
     """Container for holding operators and wavefunction coefficients."""
-
     def __init__(self, res: int) -> None:
 
         self.V = np.empty(res, dtype=complex)
@@ -89,6 +87,7 @@ def split_op(par: Param, opr: Operators) -> None:
         if i % (par.timesteps // 100) == 0:
             filename = "output{}.dat".format(str(i).rjust(5, str(0)))
             with open(filename, "w") as outfile:
+                # Outputting for gnuplot. Any plotter will do.
                 for j in range(len(density)):
                     template = "{}\t{}\t{}\n".format
                     line = template(par.x[j], density[j].real, opr.V[j].real)
