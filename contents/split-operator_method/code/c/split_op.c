@@ -5,6 +5,7 @@
 #include <string.h>
 #include <math.h>
 
+// Using fftw3 library.
 #include <fftw3.h>
 
 struct params {
@@ -132,6 +133,8 @@ void split_op(struct params par, struct operators opr) {
             }
         }
 
+        // Writing data into a file in the format of:
+        // index, density, real potential.
         char filename[256];
         sprintf(filename, "output%lu.dat", i);
         FILE *fp = fopen(filename, "w");
