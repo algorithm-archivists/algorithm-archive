@@ -85,6 +85,9 @@ func main() {
 
     print("Using recursive DFS:")
     dfsRecursive(node: root)
+    
+    print("Using recursive postorder DFS:")
+    dfsRecursivePostOrder(node: root)
 
     print("Using stack-based DFS:")
     dfsStack(node: root)
