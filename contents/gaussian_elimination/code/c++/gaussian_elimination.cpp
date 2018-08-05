@@ -6,7 +6,6 @@
 #include <iomanip>
 
 void gaussian_elimination(std::vector<double>& a, int cols) {
-  assert(a.size() % cols == 0);
   int rows = a.size() / cols;
 
   int row = 0;
@@ -28,8 +27,10 @@ void gaussian_elimination(std::vector<double>& a, int cols) {
     }
 
     // Step 2: swap row with highest value for that column to the top
-    for (int c = 0; c < cols; ++c)
-      std::swap(a[c + row * cols], a[c + max_index * cols]);
+    if (row != max_index) {
+      for (int c = 0; c < cols; ++c)
+        std::swap(a[c + row * cols], a[c + max_index * cols]);
+    }
 
     // Loop for all remaining rows
     for (int i = row + 1; i < rows; ++i) {
@@ -52,7 +53,6 @@ void gaussian_elimination(std::vector<double>& a, int cols) {
 }
 
 std::vector<double> back_substitution(const std::vector<double>& a, int cols) {
-  assert(a.size() % cols == 0);
   int rows = a.size() / cols;
 
   // Creating the solution Vector
@@ -71,7 +71,6 @@ std::vector<double> back_substitution(const std::vector<double>& a, int cols) {
 }
 
 void gauss_jordan_elimination(std::vector<double>& a, int cols) {
-  assert(a.size() % cols == 0);
   // After this, we know what row to start on (r-1)
   // to go back through the matrix
   int row = 0;
@@ -92,7 +91,6 @@ void gauss_jordan_elimination(std::vector<double>& a, int cols) {
 }
 
 void print_matrix(const std::vector<double>& a, int cols) {
-  assert(a.size() % cols == 0);
   int rows = a.size() / cols;
   for (int i = 0; i < rows; ++i) {
     std::cout << "[";
