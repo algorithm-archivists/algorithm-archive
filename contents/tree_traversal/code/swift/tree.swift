@@ -31,7 +31,7 @@ func dfsRecursive(node: Node) {
 
 func dfsRecursivePostOrder(node: Node) {
     for child in node.children! {
-        dfsRecursive(node: child)
+        dfsRecursivePostOrder(node: child)
     }
 
     print(node.value)
