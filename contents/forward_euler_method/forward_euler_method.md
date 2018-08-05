@@ -73,7 +73,7 @@ If we were to take the Euler method's solution as valid, we would incorrectly as
     <img  class="center" src="res/instability.png" />
 </p>
 
-Like above, the blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a tiemstep of 1.
+Like above, the blue line is the analytical solution, the green is with a timestep of 0.5 and the red is with a timestep of 1.
 Here, it's interesting that we see 2 different instability patterns.
 The green is initially unstable, but converges onto the correct solution, but the red is wrong from the get-go and only gets more wrong as time goes on.
 
@@ -126,22 +126,3 @@ Full code for the visualization follows:
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$

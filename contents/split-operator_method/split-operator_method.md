@@ -102,11 +102,13 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% sample lang="c" %}
 [import:10-20, lang:"c_cpp"](code/c/split_op.c)
 [import:51-72, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="py" %}
+[import:11-30, lang:"python"](code/python/split_op.py)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
 This is simply because the FFT will naturally assume that the `0` in our grid is at the left side of the simulation, so we shift k-space to match this expectation.
-Also, for this code we will be using the notation from above: `opr.R` will be the real space operators and `opr.M` will be the momentum space operators.
+Also, for this code we will be using notation to what we used above: `opr.R` will be the real space operators and `opr.K` will be the momentum space operators.
 There is another boolean value here called `im_time`, which is for imaginary time evolution.
 
 Afterwards, we turn them into operators:
@@ -117,6 +119,8 @@ Afterwards, we turn them into operators:
 {% sample lang="c" %}
 [import:22-28, lang:"c_cpp"](code/c/split_op.c)
 [import:74-95, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="py" %}
+[import:33-54, lang:"python"](code/python/split_op.py)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
@@ -132,6 +136,8 @@ The final step is to do the iteration, itself.
 [import:63-109, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
 [import:97-145, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="py" %}
+[import:57-95, lang:"python"](code/python/split_op.py)
 {% endmethod %}
 
 And that's it.
@@ -153,28 +159,10 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 [import, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="py" %}
+[import:5-127, lang:"python"](code/python/split_op.py)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-

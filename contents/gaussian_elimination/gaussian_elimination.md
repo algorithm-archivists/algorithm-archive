@@ -149,7 +149,7 @@ $$
 \begin{array}{ccc|c}
 1 & 0 & 0 & \frac{18}{11} \\
 0 & 1 & 0 & \frac{-14}{11} \\
-0 & 0 & 1 & \frac{18}{11} 
+0 & 0 & 1 & \frac{18}{11}
 \end{array}
 \right]
 $$
@@ -358,6 +358,8 @@ In code, this looks like:
 [import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
+{% sample lang="hs" %}
+[import:10-36, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
@@ -383,13 +385,15 @@ Here it is in code:
 
 {% method %}
 {% sample lang="jl" %}
-[import:70-96, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
-[import:70-96, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
-[import:70-96, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="hs" %}
+[import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 ## Back-substitution
@@ -418,6 +422,8 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 [import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
+{% sample lang="hs" %}
+[import:48-53, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 ## Conclusions
@@ -438,29 +444,11 @@ As for what's next... Well, we are in for a treat! The above algorithm clearly h
 [import, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-

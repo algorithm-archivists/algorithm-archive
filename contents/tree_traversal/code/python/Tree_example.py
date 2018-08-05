@@ -25,7 +25,7 @@ def DFS_recursive(node):
 
 def DFS_recursive_postorder(node):
     for child in node.children:
-        DFS_recursive(child)
+        DFS_recursive_postorder(child)
 
     if node.data != None:
         print(node.data)
@@ -34,11 +34,11 @@ def DFS_recursive_postorder(node):
 # This assumes only 2 children, but accounts for other possibilities
 def DFS_recursive_inorder_btree(node):
     if (len(node.children) == 2):
-        DFS_recursive_inorder_btree(node.children[1])
+        DFS_recursive_inorder_btree(node.children[0])
         print(node.data)
-        DFS_recursive_inorder_btree(node.children[2])
-    elif (len(node.children) == 1):
         DFS_recursive_inorder_btree(node.children[1])
+    elif (len(node.children) == 1):
+        DFS_recursive_inorder_btree(node.children[0])
         print(node.data)
     elif (len(node.children) == 0):
         print(node.data)
@@ -80,12 +80,19 @@ def main():
     print("Recursive:")
     DFS_recursive(tree)
 
+    print("Recursive Postorder:")
+    DFS_recursive_postorder(tree)
+
     print("Stack:")
     DFS_stack(tree)
 
     print("Queue:")
     BFS_queue(tree)
 
+    binaryTree = create_tree(Node(), 3, 2)
+    
+    print("Recursive Inorder Binary Tree:")
+    DFS_recursive_inorder_btree(binaryTree)
 
 if __name__ == '__main__':
     main()

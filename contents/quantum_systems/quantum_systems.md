@@ -38,7 +38,7 @@ $$
 $$
 
 where $$D$$ is some positive definite matrix and $$\phi(\mathbf{r},t)$$ is the density (or temperature) of the system.
-In fact, this is why one of the most common types of quantum simulation is sometimes called  _diffusion monte carlo_.
+In fact, this is why one of the most common types of quantum simulation is sometimes called  _diffusion Monte Carlo_.
 There really isn't that much of a difference between the two systems in terms of how they are simulated on classical hardware... but we are getting ahead of ourselves.
 For now, let's talk about how quantum mechanics differs from classical mechanics and how we can use this to our advantage.
 
@@ -87,7 +87,7 @@ Simply put, the Heisenberg uncertainty principle states that we cannot definitel
 In particular, it says:
 
 $$
-\sigma_x \sigma_p \geq \frac{\hbar}{2} 
+\sigma_x \sigma_p \geq \frac{\hbar}{2}
 $$
 
 where $$\hbar$$ is Planck's constant and $$\sigma_q = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(q_i-\mu)^2}$$.
@@ -187,7 +187,7 @@ $$
 $$
 
 and basically describes $$A$$ as a column vector.
-The _bra_ represents the Hermitian conjucate of the ket and looks like this:
+The _bra_ represents the Hermitian conjugate of the ket and looks like this:
 
 $$
 \langle B \rvert
@@ -201,7 +201,7 @@ For example, if we want to indicate the probability of a wavefunction $$\psi$$ c
 Now that we have a basic understanding of the notation, we should go through several other important quantum mechanical ideas and properties.
 
 ## Eigenstates
-As mentioned, the wavefunction $$\Psi(x)$$ is complex and has both real and imaginary parts; however, there are certain states that are eclusively real.
+As mentioned, the wavefunction $$\Psi(x)$$ is complex and has both real and imaginary parts; however, there are certain states that are exclusively real.
 These states are _eigenstates_ of the system, and are often described as the constituent states that make up all other possible wavefunctions.
 In other words,
 
@@ -229,6 +229,8 @@ This ultimately looks like this:
 [import, lang:"julia"](code/julia/energy.jl)
 {% sample lang="c" %}
 [import:28-, lang:"c_cpp"](code/c/energy.c)
+{% sample lang="py" %}
+[import:4-17, lang:"python"](code/python/energy.py)
 {% endmethod %}
 
 This calculation will be used in many different simulations of quantum systems to check our results.
@@ -238,7 +240,7 @@ In the end, many quantum simulations are focused on the _ground_ state, which is
 
 As we proceed to add new algorithms to simulate quantum systems, I will add more and more notation to this section; however, there are already huge textbooks out there related to understanding and studying quantum systems.
 We don't want to re-invent the wheel here.
-Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowedge about quantum mechanics, like the split-operator method, DMRG, quantum monte carlo, exact diagonalization, and many more.
+Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowledge about quantum mechanics, like the split-operator method, DMRG, quantum Monte Carlo, exact diagonalization, and many more.
 
 Quantum mechanics is one of those areas of physics that really does push the boundary of human knowledge in a number of different areas and computing is one of those areas.
 In fact, [quantum information theory](../quantum_information/quantum_information.md) is currently set to be the next innovation to radically change the landscape of modern computation as we know it!
@@ -249,23 +251,3 @@ As always, if there is something that you feel is missing from this section, ple
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-
