@@ -227,6 +227,8 @@ This ultimately looks like this:
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/energy.jl)
+{% sample lang="c" %}
+[import:28-, lang:"c_cpp"](code/c/energy.c)
 {% sample lang="py" %}
 [import:4-17, lang:"python"](code/python/energy.py)
 {% endmethod %}

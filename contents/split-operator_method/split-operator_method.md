@@ -99,6 +99,9 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% method %}
 {% sample lang="jl" %}
 [import:9-32, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import:10-20, lang:"c_cpp"](code/c/split_op.c)
+[import:51-72, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:11-30, lang:"python"](code/python/split_op.py)
 {% endmethod %}
@@ -113,6 +116,9 @@ Afterwards, we turn them into operators:
 {% method %}
 {% sample lang="jl" %}
 [import:34-60, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import:22-28, lang:"c_cpp"](code/c/split_op.c)
+[import:74-95, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:33-54, lang:"python"](code/python/split_op.py)
 {% endmethod %}
@@ -128,6 +134,8 @@ The final step is to do the iteration, itself.
 {% method %}
 {% sample lang="jl" %}
 [import:63-109, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import:97-145, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
 {% endmethod %}
@@ -149,6 +157,8 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/split_op.jl)
+{% sample lang="c" %}
+[import, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:5-127, lang:"python"](code/python/split_op.py)
 {% endmethod %}
