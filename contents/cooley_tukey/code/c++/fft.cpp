@@ -20,6 +20,19 @@ using std::size_t;
 using complex = std::complex<double>;
 static const double pi = 3.14159265358979323846264338327950288419716;
 
+template <typename Iter>
+void dft(Iter X, Iter last) {
+  const auto N = last - X;
+  std::vector<complex> tmp(N);
+  for (auto i = 0; i < N; ++i) {
+    for (auto j = 0; j < N; ++j) {
+      using namespace std::literals::complex_literals;
+      tmp[i] += X[j] * exp(-2.0 * M_PI * i * j / N * 1i);
+    }
+  }
+  std::copy(std::begin(tmp), std::end(tmp), X);
+}
+
 // `cooley_tukey` does the cooley-tukey algorithm, recursively
 template <typename Iter>
 void cooley_tukey(Iter first, Iter last) {

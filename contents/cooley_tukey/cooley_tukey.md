@@ -119,7 +119,7 @@ In the end, the code looks like:
 {% sample lang="c" %}
 [import:20-39, lang:"c_cpp"](code/c/fft.c)
 {% sample lang="cpp" %}
-[import:27-57, lang:"c_cpp"](code/c++/fft.cpp)
+[import:36-67, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
