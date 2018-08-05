@@ -207,19 +207,19 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-Tree.cs
+##### Tree.cs
 [import, lang:"csharp"](code/csharp/Tree.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
-utility.h
+##### utility.h
 [import, lang:"c_cpp"](code/c/utility.h)
-tree_traversal.c
+##### tree_traversal.c
 [import, lang:"c_cpp"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-Tree.java
+##### Tree.java
 [import, lang:"java"](code/java/Tree.java)
-MainClass.java
+##### MainClass.java
 [import, lang:"java"](code/java/MainClass.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/tree.js)

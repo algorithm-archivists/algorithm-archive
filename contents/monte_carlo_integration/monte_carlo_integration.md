@@ -119,11 +119,11 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="py" %}
 [import, lang:"python"](code/python/monte_carlo.py)
 {% sample lang="cs" %}
-MonteCarlo.cs
+##### MonteCarlo.cs
 [import, lang:"csharp"](code/csharp/MonteCarlo.cs)
-Circle.cs
+##### Circle.cs
 [import, lang:"csharp"](code/csharp/Circle.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% endmethod %}
 
