@@ -25,7 +25,7 @@ def DFS_recursive(node):
 
 def DFS_recursive_postorder(node):
     for child in node.children:
-        DFS_recursive(child)
+        DFS_recursive_postorder(child)
 
     if node.data != None:
         print(node.data)
@@ -89,4 +89,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
