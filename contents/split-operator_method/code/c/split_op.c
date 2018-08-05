@@ -9,9 +9,9 @@
 
 struct params {
     double xmax;
-    int res;
+    unsigned int res;
     double dt;
-    int timesteps;
+    unsigned int timesteps;
     double dx;
     double *x;
     double dk;
@@ -48,8 +48,8 @@ void fft(double complex *x, int n, bool inverse) {
     }
 }
 
-void init_params(struct params *par, double xmax, int res, double dt,
-                 int timesteps, bool im) {
+void init_params(struct params *par, double xmax, unsigned int res, double dt,
+                 unsigned int timesteps, bool im) {
 
     par->xmax = xmax;
     par->res = res;
