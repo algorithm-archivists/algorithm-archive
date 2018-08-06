@@ -88,8 +88,7 @@ This has not been implemented in your chosen language, so here is the Julia code
   <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:18-26, lang:"julia"](code/julia/Tree.jl)
+[import:17-23, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
@@ -121,8 +120,7 @@ This has not been implemented in your chosen language, so here is the Julia code
   <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:28-43, lang:"julia"](code/julia/Tree.jl)
+[import:25-38, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
@@ -163,7 +161,7 @@ In code, it looks like this:
   <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:17-24, lang:"rust"](code/rust/tree.rs)
+[import:40-47, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
@@ -197,7 +195,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:26-34, lang:"rust"](code/rust/tree.rs)
+[import:49-57, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% endmethod %}
@@ -241,22 +239,3 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$

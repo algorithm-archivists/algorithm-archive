@@ -48,6 +48,10 @@ Max Weinstein
 <br>
 Gibus Wearing Brony
 <br>
+Gorzoid
+<br>
 Arun Sahadeo
 <br>
 NIFR91
+<br>
+Michal Hanajik

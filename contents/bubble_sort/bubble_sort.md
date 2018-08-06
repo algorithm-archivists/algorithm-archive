@@ -42,6 +42,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:3-13, lang:"ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
 [import:1-11, lang:"crystal"](code/crystal/bubble.cr)
+{% sample lang="php" %}
+[import:3-15, lang:"php"](code/php/bubble_sort.php)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -89,27 +91,10 @@ Program.cs
 [import, lang:ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/bubble.cr)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/bubble_sort.php)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
