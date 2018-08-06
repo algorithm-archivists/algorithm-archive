@@ -10,7 +10,7 @@ How could they possibly be used to find non-random values?
 Well, imagine you have a square.
 The area of the square is simple, $$\text{Area}_{\text{square}} = \text{length} \times \text{width}$$.
 Since it's a square, the $$\text{length}$$ and $$\text{width}$$ are the same, so the formula is technically just $$\text{Area}_{\text{square}} = \text{length}^2$$.
-If we embed a circle into the square with a radius $$r = \text{length}$$ (shown below), then it's area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
+If we embed a circle into the square with a radius $$r = \tfrac{length}{2}$$ (shown below), then its area is $$\text{Area}_{\text{circle}}=\pi r^2$$.
 For simplicity, we can also say that $$\text{Area}_{\text{square}}=4r^2$$.
 
 <p>
@@ -58,7 +58,11 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="java" %}
 [import:13-15, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
-[import:21-25, lang:"swift"](code/swift/monte_carlo.swift)
+[import:15-17, lang:"swift"](code/swift/monte_carlo.swift)
+{% sample lang="py" %}
+[import:5-7, lang:"python"](code/python/monte_carlo.py)
+{% sample lang="cs" %}
+[import:23-23, lang:"csharp"](code/csharp/Circle.cs)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -73,13 +77,13 @@ If we use a small number of points, this will only give us a rough approximation
     <img  class="center" src="res/monte_carlo.gif" width="400"/>
 </p>
 
-The true power of monte carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
-As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use monte carlo integration!
+The true power of Monte Carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
+As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use Monte Carlo integration!
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
 
 ## Example Code
-Monte carlo methods are famous for their simplicity.
+Monte Carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
 Here, we are just integrating a circle, like we described above; however, there is a small twist and trick.
 Instead of calculating the area of the circle, we are instead trying to find the value of $$\pi$$, and
@@ -112,28 +116,18 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/monte_carlo.swift)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/monte_carlo.py)
+{% sample lang="cs" %}
+MonteCarlo.cs
+[import, lang:"csharp"](code/csharp/MonteCarlo.cs)
+Circle.cs
+[import, lang:"csharp"](code/csharp/Circle.cs)
+Program.cs
+[import, lang:"csharp"](code/csharp/Program.cs)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$

@@ -35,11 +35,11 @@ Here is what it looks like in code:
 {% sample lang="cpp" %}
 [import:4-17, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:3-16, lang:"c_cpp"](code/c/verlet.c)
+[import:3-14, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:2-18, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
-[import:28-33, lang:"python"](code/python/verlet.py)
+[import:1-9, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
@@ -81,11 +81,11 @@ Here's what it looks like in code:
 {% sample lang="cpp" %}
 [import:20-36, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:18-33, lang:"c_cpp"](code/c/verlet.c)
+[import:16-31, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:21-40, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
-[import:35-42, lang:"python"](code/python/verlet.py)
+[import:11-21, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
@@ -138,11 +138,11 @@ Here is the velocity Verlet method in code:
 {% sample lang="cpp" %}
 [import:38-49, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:35-46, lang:"c_cpp"](code/c/verlet.c)
+[import:33-43, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:43-57, lang:"java"](code/java/verlet.java)
 {% sample lang="py" %}
-[import:44-48, lang:"python"](code/python/verlet.py)
+[import:23-32, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
@@ -162,7 +162,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% endmethod %}
 
 
-Even though this method is more used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O} \Delta t^2$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$
+Even though this method is more used than the simple Verlet method mentioned above, it unfortunately has an error term of $$\mathcal{O} \Delta t^2$$, which is two orders of magnitude worse. That said, if you want to have a simulation with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulations are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$
 
 ## Example Code
 
@@ -204,23 +204,3 @@ Submitted by P. Mekhail
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-

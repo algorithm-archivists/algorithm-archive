@@ -15,13 +15,13 @@ and live coded on Twitch: https://www.twitch.tv/simuleios.
 If you would like to communicate more directly, please feel free to go to our discord: https://discord.gg/Pr2E9S6.
 
 
-Note that the this project is is essentially a book about algorithms collaboratively written by an online community.
+Note that the this project is essentially a book about algorithms collaboratively written by an online community.
 Fortunately, there are a lot of algorithms out there, which means that there is a lot of content material available.
 Unfortunately, this means that we will probably never cover every algorithm ever created and instead need to focus on what the community sees as useful and necessary.
 That said, we'll still cover a few algorithms for fun that have very little, if any practical purpose.
 
 If you would like to contribute, feel free to go to any chapter with code associated with it and implement that algorithm in your favorite language,
-and then submit the code via pull request, following the submission guidelines found in `contents/how_to_contribute/how_to_contribute.md` (or [here](contents/how_to_contribute/how_to_contribute.md) if you are reading this on gitbook).
+and then submit the code via pull request, following the submission guidelines found in `contents/how_to_contribute/how_to_contribute.md` (or [here](contents/how_to_contribute/how_to_contribute.md) if you are reading this on GitBook).
 
 Hopefully, this project will grow and allow individuals to learn about and try their hand at implementing different algorithms for fun and (potentially) useful projects.
 If nothing else, it will be an enjoyable adventure for our community.

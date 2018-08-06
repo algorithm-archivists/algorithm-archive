@@ -25,7 +25,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
-[import:33-56, lang:"c_cpp"](code/c++/bubblesort.cpp)
+[import:13-23, lang:"c_cpp"](code/c++/bubblesort.cpp)
 {% sample lang="rs" %}
 [import:6-16, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
@@ -35,9 +35,15 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="racket" %}
 [import:6-19, lang:"racket"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
-[import:1-12, lang:"swift"](code/swift/bubblesort.swift)
+[import:1-13, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
 [import:2-13, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
+{% sample lang="ruby" %}
+[import:3-13, lang:"ruby"](code/ruby/bubble.rb)
+{% sample lang="crystal" %}
+[import:1-11, lang:"crystal"](code/crystal/bubble.cr)
+{% sample lang="php" %}
+[import:3-15, lang:"php"](code/php/bubble_sort.php)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -81,27 +87,14 @@ Program.cs
 [import, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
 [import, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
+{% sample lang="ruby" %}
+[import, lang:ruby"](code/ruby/bubble.rb)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/bubble.cr)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/bubble_sort.php)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$

@@ -97,7 +97,7 @@ M = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im;
 
 It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix!
 That said, the Discrete Fourier Transform is slow -- primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful.
-So what was the trick that everyone used to go from a Discrete fourier Transform to a *Fast* Fourier Transform?
+So what was the trick that everyone used to go from a Discrete Fourier Transform to a *Fast* Fourier Transform?
 
 Recursion!
 
@@ -236,23 +236,3 @@ Some rather impressive scratch code was submitted by Jie and can be found here: 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-
