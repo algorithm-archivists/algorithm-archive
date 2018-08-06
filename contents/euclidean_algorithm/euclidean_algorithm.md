@@ -121,7 +121,7 @@ Program.cs
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
-[import, lang="lua"](code/julia/euclidean.jl)
+[import, lang="julia"](code/julia/euclidean.jl)
 {% endmethod %}
 
 
