@@ -6,7 +6,7 @@
     "bibtex-cite",
     "creativecommons",
     "wordcount",
-    "api-language-selector",
+    "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
     "ga",
     "bulk-redirect"
