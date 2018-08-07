@@ -22,7 +22,7 @@ inline bool in_circle(double x, double y, double r = 1) {
  */
 double monte_carlo_pi(unsigned samples) {
     static std::default_random_engine generator;
-    static std::uniform_real_distribution<double> dist(-1, 1);
+    static std::uniform_real_distribution<double> dist(0, 1);
 
     unsigned count = 0;
     for (unsigned i = 0; i < samples; ++i) {
@@ -33,7 +33,7 @@ double monte_carlo_pi(unsigned samples) {
             ++count;
     }
 
-    return 4.0 * count / (double) samples;
+    return 4.0 * count / samples;
 }
 
 int main() {
@@ -42,7 +42,7 @@ int main() {
     std::cout << "Enter samples to use: ";
     std::cin >> samples;
 
-    double pi = monte_carlo_pi(samples);
-    printf("Pi = %f\n", pi);
-    printf("Percent error is: %g %%\n", 100 * std::abs(pi - PI) / PI);
+    double pi_estimate = monte_carlo_pi(samples);
+    std::cout << "Pi = " << pi_estimate << '\n';
+    std::cout << "Percent error is: " << 100 * std::abs(pi_estimate - PI) / PI << " %\n";
 }
