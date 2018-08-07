@@ -29,7 +29,7 @@ double monte_carlo_pi(unsigned samples) {
         double x = dist(generator);
         double y = dist(generator);
 
-        if (x*x + y*y < 1)
+        if (in_circle(x, y))
             ++count;
     }
 
