@@ -26,8 +26,7 @@ void dft(Iter X, Iter last) {
   std::vector<complex> tmp(N);
   for (auto i = 0; i < N; ++i) {
     for (auto j = 0; j < N; ++j) {
-      using namespace std::literals::complex_literals;
-      tmp[i] += X[j] * exp(-2.0 * M_PI * i * j / N * 1i);
+      tmp[i] += X[j] * exp(complex(0, -2.0 * M_PI * i * j / N));
     }
   }
   std::copy(std::begin(tmp), std::end(tmp), X);
