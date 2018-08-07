@@ -13,8 +13,8 @@ double ccw(const Point& a, const Point& b, const Point& c) {
 }
 
 std::vector<Point> graham_scan(const std::vector<Point>& input) {
-  auto points = input;
-  auto const N = points.size();
+  std::vector<Point> points = input;
+  const size_t N = points.size();
 
   // Place the lowest point at the start of the array
   std::iter_swap(
@@ -34,8 +34,8 @@ std::vector<Point> graham_scan(const std::vector<Point>& input) {
       });
 
   // M will be the point on the hull
-  auto M = 2u;
-  for (auto i = 0u; i < N; ++i) {
+  size_t M = 2;
+  for (size_t i = 0; i < N; ++i) {
     while (ccw(points[M - 2], points[M - 1], points[i]) <= 0) {
       if (M > 2) {
         M -= 1;
@@ -59,7 +59,7 @@ std::vector<Point> graham_scan(const std::vector<Point>& input) {
 int main() {
   // This hull is just a simple test so we know what the output should be
   std::vector<Point> points = {{2, 1.9}, {1, 1}, {2, 4}, {3, 1}, {2, 0}};
-  auto hull = graham_scan(points);
+  std::vector<Point> hull = graham_scan(points);
   for (auto&& p : hull)
     std::cout << "(" << p.x << ", " << p.y << ") ";
   std::cout << std::endl;
