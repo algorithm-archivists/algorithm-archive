@@ -42,6 +42,8 @@ Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 ListExtensions.cs
 [import, lang:"csharp"](code/csharp/ListExtensions.cs)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/stable-marriage.java)
 {% endmethod %}
 
 <script>
