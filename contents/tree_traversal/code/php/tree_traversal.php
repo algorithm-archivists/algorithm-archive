@@ -42,13 +42,23 @@ class TreeTraversal
 
   public static function dfs_recursive_inorder_binary(Tree $tree): void
   {
-    $childrenCount = count($tree->getChildren());
-    if ($childrenCount > 2) throw new InvalidArgumentException('Not a binary tree!');
-    elseif ($childrenCount > 0) {
-      static::dfs_recursive_inorder_binary($tree->getChildren()[0]);
-      echo $tree->getId() . PHP_EOL;
-      static::dfs_recursive_inorder_binary($tree->getChildren()[1]);
-    } else echo $tree->getId() . PHP_EOL;
+    switch (count($tree->getChildren())) {
+      case 2:
+        static::dfs_recursive_inorder_binary($tree->getChildren()[0]);
+        echo $tree->getId() . PHP_EOL;
+        static::dfs_recursive_inorder_binary($tree->getChildren()[1]);
+        break;
+      case 1:
+        static::dfs_recursive_inorder_binary($tree->getChildren()[0]);
+        echo $tree->getId() . PHP_EOL;
+        break;
+      case 0:
+        echo $tree->getId() . PHP_EOL;
+        break;
+      default:
+        throw new InvalidArgumentException('Not a binary tree!');
+        break;
+    }
   }
 
   public static function dfs_stack(Tree $tree): void
