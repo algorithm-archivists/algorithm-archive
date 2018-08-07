@@ -12,9 +12,12 @@ struct node {
       : left(std::move(a_left)), right(std::move(a_right)),
         weight(left->weight + right->weight) {
     left->parent = this;
-    left->branch = branch::left;
     right->parent = this;
-    right->branch = branch::right;
+  }
+
+  bool branch() const
+  {
+    return parent->right.get() == this;
   }
 
   // leaf fields
@@ -26,8 +29,6 @@ struct node {
 
   // common fields
   node* parent = nullptr;
-  enum class branch { left, right };
-  branch branch = branch::left;
   int weight = 0;
 };
 
@@ -80,7 +81,7 @@ std::vector<bool> encode(const std::string& string_to_encode, codebook& cb) {
     auto node = cb.char_map[ch];
     std::vector<bool> compressed_char;
     while (node->parent != nullptr) {
-      compressed_char.push_back(node->branch != node::branch::left);
+      compressed_char.push_back(node->branch());
       node = node->parent;
     }
     res.insert(std::end(res), compressed_char.rbegin(), compressed_char.rend());
