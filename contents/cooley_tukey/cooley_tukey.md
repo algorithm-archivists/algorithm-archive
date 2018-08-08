@@ -129,7 +129,7 @@ In the end, the code looks like:
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
-This is a limitation of the fact that we are using recursion and dividing the array into 2 every time; however, if your array is not a power of 2, you can simply pad the leftover space with 0's until your array is a power of 2.
+This is a limitation of the fact that we are using recursion and dividing the array in 2 every time; however, if your array is not a power of 2, you can simply pad the leftover space with 0's until your array is a power of 2.
 
 The above method is a perfectly valid FFT; however, it is missing the pictorial heart and soul of the Cooley-Tukey algorithm: Butterfly Diagrams.
 
