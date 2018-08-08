@@ -6,7 +6,7 @@ Even so, there are plenty of incredibly complicated algorithms out there to perf
 In some sense, this is what I love about computer science research!
 It takes operations that everyone knows and loves, abstracts them, and transforms them into fast and efficient methods for the computer to implement.
 Sometimes these algorithms are completely baffling.
-I remember laughing for ten minutes after I heard that an FFT(Fast Fourier Transform) convolutions could be used to calculate a simple integer multiplicationing the Schönhage–Strassen algorithm.
+I remember laughing for ten minutes after I heard that FFT convolutions could be used to calculate a simple integer multiplicationing the Schönhage–Strassen algorithm.
 I thought, "Why would you ever want to use an FFT to do something to trivial? This has to be a joke!"
 
 Oh boy was I wrong.
@@ -20,23 +20,3 @@ Sometimes it's even worth looking at trivial operations through a new lens.
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-
