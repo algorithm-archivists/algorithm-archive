@@ -11,4 +11,14 @@ For the most part, though, queues and stacks are treated the same way. There mus
 2. to remove the first element (`pop()`)
 3. to push elements onto the data structure (`push()`)
 
+{%method%}
+{%sample lang="c"%}
+[import, lang:"c"](code/c/stack.c)
+{%endmethod%}
+
 The notation for this depends on the language you are using. Queues, for example, will often use `dequeue()` instead of `pop()` and `front()` instead of `top()`. You will see the language-specific details in the source code under the algorithms in this book, so for now it's simply important to know what stacks and queues are and how to access elements held within them.
+
+{%method%}
+{%sample lang="c"%}
+[import, lang:"c"](code/c/queue.c)
+{%endmethod%}
