@@ -1,15 +1,15 @@
 #Proportional-Integral-Derivative Controller
 
 The proportional-integral-derivative controller (PID controller) is a control loop feedback mechanism, used for continuously modulated control.
-The PID controller is in three parts proportional controller, integral controller, and derivative controller.
+The PID controller is comprised of three parts: proportional controller, integral controller, and derivative controller.
 
-Before we get into how a PID controller works, we need a good example to use to explain how it work.
-Imagine you are making a self driving rc car that drives on a line, how wuld make it work given that the car moves with a constent speed.
+Before we get into how a PID controller works, we need a good example to explain things.
+Imagine you are making a self-driving RC car that drives on a line, how would make it work given that the car moves with a constant speed.
 
 ### Proportional Controller
 
-If the car is too far to the right then you would turn left and visa versa.
-Since there is a range of angles you can turn the wheel, you can turn with proportion to how far you are from the line.
+If the car is too far to the right then you would turn left and vice versa.
+But there are a range of angles you can turn the wheel, so you can turn proportional to how far you are from the line.
 This is what the proportional controller (P controller) does, which is given by,
 
 $$ P = K_{p} e(t), $$
@@ -49,16 +49,16 @@ The PID controller is just a sum of all there three constrollers, of the form,
 
 $$ U = K_{p} e(t) + K_{i} \int_{0}^{t} e(x) dx + K_{d} \frac{de(t)}{dt} $$
 
-To use a PID controller, you need to tune it, by setting the constants, $K_{p}$, $K_{i}$, and $K_{d}$.
+To use a PID controller, you need to tune it by setting the constants, $K_{p}$, $K_{i}$, and $K_{d}$.
 There are multiple methods of tuning like, manual tuning, Ziegler–Nichols, Tyreus Luyben, and more.
 
-The uses of PID controllers are theoretically any process which has mesurable output and a known ideal output,
-but controllers are used mainly for regulating temperature, pressure, force, flow rate, feed rate, speed, and more.
+The uses of PID controllers are theoretically any process which has measurable output and a known ideal output,
+but controllers are used mainly for regulating temperature, pressure, force, flow rate, feed rate, speed and more.
 
 ## The Algorithm
 
-Luckily the algorithm is very simple, You just need to make the PID equation discrete.
-Thus, the equation looks like this,
+Luckily the algorithm is very simple, you just need to make the PID equation discrete.
+Thus, the equation looks like this:
 
 $$ U = K_{p} e(t_{j}) + \sum_{l=0}^{j} K_{i} e(t_{l}) \Delta t + K_{d} \frac{e(t_{j-1}) - e(t_{j})}{\Delta t}. $$
 
