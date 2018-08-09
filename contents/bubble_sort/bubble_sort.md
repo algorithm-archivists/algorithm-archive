@@ -88,7 +88,7 @@ Program.cs
 {% sample lang="ti83b" %}
 [import, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
 {% sample lang="ruby" %}
-[import, lang:ruby"](code/ruby/bubble.rb)
+[import, lang:"ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/bubble.cr)
 {% sample lang="php" %}
