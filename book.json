@@ -127,6 +127,10 @@
         {
           "lang": "php",
           "name": "PHP"
+        },
+        {
+          "lang": "lisp",
+          "name": "Lisp"
         }
       ]
     }
