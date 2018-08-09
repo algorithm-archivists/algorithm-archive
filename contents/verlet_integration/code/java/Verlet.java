@@ -4,7 +4,7 @@ public class VerletValues {
 	public double vel;
   
 	public VerletValues(double time, double vel) {
-    	this.time = time;
+        this.time = time;
         this.vel = vel;
     }
 }
