@@ -33,7 +33,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="go" %}
 [import:7-21, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
-[import:6-19, lang:"racket"](code/racket/bubbleSort.rkt)
+[import:6-19, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
 [import:1-13, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
@@ -82,7 +82,7 @@ Program.cs
 {% sample lang="go" %}
 [import, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
-[import, lang:"racket"](code/racket/bubbleSort.rkt)
+[import, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
