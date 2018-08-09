@@ -50,7 +50,8 @@ The PID controller is just a sum of all there three constrollers, of the form,
 $$ U = K_{p} e(t) + K_{i} \int_{0}^{t} e(x) dx + K_{d} \frac{de(t)}{dt} $$
 
 To use a PID controller, you need to tune it by setting the constants, $K_{p}$, $K_{i}$, and $K_{d}$.
-There are multiple methods of tuning like, manual tuning, Ziegler–Nichols, Tyreus Luyben, and more.
+If you choose the parameters for your PID controller incorrectly, the output will be unstable, i.e., the output diverges.
+There are multiple methods of tuning like, manual tuning, Ziegler–Nichols, Tyreus Luyben, Cohen–Coon, and Åström-Hägglund.
 
 The uses of PID controllers are theoretically any process which has measurable output and a known ideal output,
 but controllers are used mainly for regulating temperature, pressure, force, flow rate, feed rate, speed and more.
