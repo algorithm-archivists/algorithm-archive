@@ -1,5 +1,5 @@
 import java.util.List;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Collections;
 
 class StableMarriage {
@@ -9,8 +9,6 @@ class StableMarriage {
      * lists of men and women.
      */
     public static void findStableMarriages(List<Woman> women, List<Man> men) {
-        boolean keep_going;
-
         // We might have more men/women than women/men. In this case, not everybody can
         // get a mate. We should aim to give every member of the less numerous gender a mate,
         // as this is always possible.
@@ -25,23 +23,19 @@ class StableMarriage {
             for (Woman woman : women)
                 woman.chooseMate();
 
-            // Repeat the process if someone is left without a partner.
-            keep_going = false;
-            for (Person person : leastCommonGender) {
-                if (keep_going |= person.isLonely()) {
-                    break;
-                }
-            }
+            // End the process if everybody has a mate.
+            if (!leastCommonGender.stream().anyMatch(Person::isLonely))
+                break;
 
-        } while (keep_going);
+        } while (true);
 
         women.forEach(w -> System.out.println(w + " married to " + w.getMate()));
     }
 
     public static void main(String[] args) {
         int nPairs = 5;
-        List<Woman> women = new LinkedList<>();
-        List<Man> men = new LinkedList<>();
+        List<Woman> women = new ArrayList<>();
+        List<Man> men = new ArrayList<>();
         for (char i = 'A'; i < 'A' + nPairs; ++i) {
             women.add(new Woman("" + i));
             men.add(new Man("" + i));
@@ -51,11 +45,11 @@ class StableMarriage {
 
         women.forEach(w -> {
             w.receiveOptions(men);
-            System.out.println(w + " prefers " + w.getPreferedMates());
+            System.out.println(w + " prefers " + w.getPreferredMates());
         });
         men.forEach(m -> {
             m.receiveOptions(women);
-            System.out.println(m + " prefers " + m.getPreferedMates());
+            System.out.println(m + " prefers " + m.getPreferredMates());
         });
 
         findStableMarriages(women, men);
@@ -66,7 +60,7 @@ class StableMarriage {
 class Person {
     private final String name;
     protected Person mate;
-    protected List<Person> preferedMates;
+    protected List<Person> preferredMates;
 
     public Person(String name) {
         this.name = name;
@@ -98,12 +92,12 @@ class Person {
 
     public void receiveOptions(List<? extends Person> mates) {
         // Preferences are subjective.
-        preferedMates = new LinkedList<>(mates);
-        Collections.shuffle(preferedMates);
+        preferredMates = new ArrayList<>(mates);
+        Collections.shuffle(preferredMates);
     }
 
-    public List<Person> getPreferedMates() {
-        return preferedMates;
+    public List<Person> getPreferredMates() {
+        return preferredMates;
     }
 
     public String toString() {
@@ -112,7 +106,7 @@ class Person {
 }
 
 class Woman extends Person {
-    private List<Man> suitors = new LinkedList<>();
+    private List<Man> suitors = new ArrayList<>();
 
     public Woman(String name) {
         super(name);
@@ -123,7 +117,7 @@ class Woman extends Person {
     }
 
     public void chooseMate() {
-        for (Person mostDesired : preferedMates) {
+        for (Person mostDesired : preferredMates) {
             if (mostDesired == mate || suitors.contains(mostDesired)) {
                 setMate(mostDesired);
                 break;
@@ -138,8 +132,8 @@ class Man extends Person {
     }
 
     public void propose() {
-        if (!preferedMates.isEmpty()) {
-            Woman fiance = (Woman) preferedMates.remove(0);
+        if (!preferredMates.isEmpty()) {
+            Woman fiance = (Woman) preferredMates.remove(0);
             fiance.recieveProposal(this);
         }
     }
