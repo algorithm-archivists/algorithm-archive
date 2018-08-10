@@ -4,11 +4,11 @@ from itertools import product
 class Graph:
     def __init__(self, vertices, edges):
         self.vertices = vertices
-        self.edges = {}
+        self.edges = {v: {} for v in self.vertices}
 
         for x, y, delta in edges:
-            self.edges.setdefault(x, {})[y] = delta
-            self.edges.setdefault(y, {})[x] = delta
+            self.edges[x][y] = delta
+            self.edges[y][x] = delta
 
     def route(self, start):
         unvisited = {x for x in self.vertices if x != start}
@@ -24,7 +24,7 @@ class Graph:
 
             next_node = None
             for n in unvisited:
-                if next_node is None or distances[n] < distances[next_node]:
+                if distances[n] < sys.maxsize and (next_node is None or distances[n] < distances[next_node]):
                     next_node = n
 
             if next_node is not None:
@@ -50,7 +50,10 @@ def main():
         d, p = g.route(x)
         print('Starting at {}:'.format(x))
         for y in v:
-            print('\t-> {} with distance {} via path {}'.format(y, d[y], p[y]))
+            if d[y]:
+                print('\t-> {} with distance {} via path {}'.format(y, d[y], p[y]))
+            else:
+                print('\t-> {} does not exist'.format(y))
 
 if __name__ == '__main__':
     main()
