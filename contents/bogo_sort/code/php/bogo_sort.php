@@ -16,7 +16,7 @@ function bogo_sort(array $array): array
 }
 
 
-$unsorted = [1, 2, 3, 4, 5, 6, 8, 7, 9, 10];
+$unsorted = [10, 7, 3, 1, 4, 8, 5, 6, 9, 2];
 $bogo_sorted = bogo_sort($unsorted);
 
 echo sprintf('Unsorted: %s%s', implode(',', $unsorted), PHP_EOL);
