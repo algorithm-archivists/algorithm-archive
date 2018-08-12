@@ -2,7 +2,7 @@
 #include <iostream>
 #include <utility>
 
-typedef std::pair<double, double> vpair;
+using vpair = std::pair<double, double>;
 
 double verlet(double pos, double acc, double dt) {
 
@@ -19,7 +19,7 @@ double verlet(double pos, double acc, double dt) {
   return time;
 }
 
-std::pair<double, double> stormer_verlet(double pos, double acc, double dt) {
+vpair stormer_verlet(double pos, double acc, double dt) {
 
   double prev_pos = pos;
   double time = 0;
@@ -38,7 +38,7 @@ std::pair<double, double> stormer_verlet(double pos, double acc, double dt) {
   return std::make_pair(time, vel);
 }
 
-std::pair<double, double> velocity_verlet(double pos, double acc, double dt) {
+vpair velocity_verlet(double pos, double acc, double dt) {
 
   double time = 0;
   double vel = 0;
@@ -53,7 +53,6 @@ std::pair<double, double> velocity_verlet(double pos, double acc, double dt) {
 
 int main() {
   double time, vel;
-  vpair time_vel_pair;
 
   std::cout << std::fixed << std::setprecision(8);
 
@@ -68,21 +67,18 @@ int main() {
   std::cout << "Time for Verlet integration is: " \
             << time << std::endl;
 
-  time_vel_pair = stormer_verlet(5.0, -10, 0.01);
-  time = time_vel_pair.first;
-  vel = time_vel_pair.second;
+  std::tie(time, vel) = stormer_verlet(5.0, -10, 0.01);
   std::cout << "Time for Stormer Verlet integration is: " \
             << time << std::endl;
   std::cout << "Velocity for Stormer Verlet integration is: " \
             << vel << std::endl;
 
-  time_vel_pair = velocity_verlet(5.0, -10, 0.01);
-  time = time_vel_pair.first;
-  vel = time_vel_pair.second;
+  std::tie(time, vel) = velocity_verlet(5.0, -10, 0.01);
   std::cout << "Time for velocity Verlet integration is: " \
             << time << std::endl;
   std::cout << "Velocity for velocity Verlet integration is: " \
             << vel << std::endl;
 
   return 0;
+
 }
