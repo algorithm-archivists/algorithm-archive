@@ -13,18 +13,8 @@
       (swap lst n (+ n 1))                      ;then
       lst))))                                   ;else
 
-;; Use of an array instead of a list would be faster
+;; The built-in sort: (sort (list 5 4 3 2 1) #'<)
 (print 
   (bubble-sort (list 5 4 3 2 1)))
 (print
   (bubble-sort (list 1 2 3 3 2 1)))
-
-;; The built-in sort is quicker, see the usage below
-;; quick test
-(assert 
-  (equal  (bubble-sort (list 5 4 3 2 1))
-          (sort '(1 2 3 4 5) #'<)))
-
-(assert 
-  (equal  (bubble-sort (list 1 2 3 3 2 1))
-          (sort '(1 2 3 3 2 1) #'<)))
