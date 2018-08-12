@@ -127,7 +127,11 @@
         {
           "lang": "php",
           "name": "PHP"
-        }
+        },
+	{
+	  "lang": "nim",
+          "name": "Nim"
+	}
       ]
     }
   }
