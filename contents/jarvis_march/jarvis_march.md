@@ -40,6 +40,8 @@ Program.cs
 [import, lang:"python"](code/python/jarvisMarch.py)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/jarvis_march.cpp)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/JarvisMarch.java)
 {% endmethod %}
 
 <script>
