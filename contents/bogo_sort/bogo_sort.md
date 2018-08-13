@@ -51,9 +51,9 @@ We are done here!
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
-BogoSort.cs
+##### BogoSort.cs
 [import, lang:"csharp"](code/csharp/BogoSort.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/bogo.clj)
