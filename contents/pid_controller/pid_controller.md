@@ -1,6 +1,6 @@
-#Proportional-Integral-Derivative Controller
+# Proportional-Integral-Derivative Controller
 
-The proportional-integral-derivative controller (PID controller) is a control loop feedback mechanism, used for continuously modulated control.
+The Proportional-Integral-Derivative controller (PID controller) is a control loop feedback mechanism, used for continuously modulated control.
 The PID controller is comprised of three parts: proportional controller, integral controller, and derivative controller.
 
 Before we get into how a PID controller works, we need a good example to explain things.
@@ -8,21 +8,22 @@ Imagine you are making a self-driving RC car that drives on a line, how would ma
 
 ### Proportional Controller
 
-If the car is too far to the right then you would turn left and vice versa.
-But there are a range of angles you can turn the wheel, so you can turn proportional to how far you are from the line.
-This is what the proportional controller (P controller) does, which is given by,
+If the car is too far to the right then you should turn left and vice versa.
+Since there are a range of angles you can turn the wheel, so you should turn proportional to the distance from the line.
+This is what the proportional controller (P controller) does, which is described by,
 
 $$ P = K_{p} e(t), $$
 
-Where $K_{p}$ is a constant and $e(t)$ is the current error.
+Where $K_{p}$ is a constant and $e(t)$ is the current distance from the line, which is called the error.
 The performance of the controller improves with larger $K_{p}$;
-if $K_{p}$ is too high then when the error is too high, the system becomes unstable, i.e. the rc car drives in a circle.
+if $K_{p}$ is too high then when the error is too high, the system becomes unstable.
+In this case, the car would turn in circles, since there is a maximum angle the wheel can turn, else it would zig zag around the line.
 
 ### Derivative Controller
 
-The P controller works well but it has the added problem of overshoting a lot.
-we need to dampen the oscillation, on way to solve this is to make the rc car resistant to sudden changes of error.
-This is what the derivative controller (D controller) does, which is given by,
+The P controller works well but it has the added problem of overshooting a lot, we need to dampen these oscillations.
+One way to solve this is to make the rc car resistant to sudden changes of error.
+This is what the derivative controller (D controller) does, which is described by,
 
 $$ D = K_{d} \frac{de(t)}{dt}$$
 
@@ -33,19 +34,20 @@ When the car is getting back on track quickly with little to no oscillations the
 
 ### Integral Controller
 
-I looks like we are done, we start driving but if some wind starts pushing the car then we get a constant error.
+The Proportional and Derivative controllers are robust enough to get the on course.
+We start driving, but then some wind starts pushing the car which introduces a constant error.
 We need to know if we are spending too long on one side and account for that.
 The way to do that is to sum up all the errors and multiply it by a constant.
-This is what the integral controller (I controller) does, which is given by,
+This is what the integral controller (I controller) does, which is described by,
 
-$$ I = K_{i} \int_{0}^{t} e(x) dx, $$
+$$ I = K_{i} \int_{0}^{t} e(\uptau) d\uptau, $$
 
 Where $K_{i}$ is a constant.
 The peformance of the controller is better with higher $K_{i}$; but with higher $K_{i}$ it can introduce oscillations.
 
 ### Proportional-Integral-Derivative Controller
 
-The PID controller is just a sum of all there three constrollers, of the form,
+The PID controller is just a sum of all three controllers and is of the form,
 
 $$ U = K_{p} e(t) + K_{i} \int_{0}^{t} e(x) dx + K_{d} \frac{de(t)}{dt} $$
 
@@ -53,7 +55,7 @@ To use a PID controller, you need to tune it by setting the constants, $K_{p}$, 
 If you choose the parameters for your PID controller incorrectly, the output will be unstable, i.e., the output diverges.
 There are multiple methods of tuning like, manual tuning, Ziegler–Nichols, Tyreus Luyben, Cohen–Coon, and Åström-Hägglund.
 
-The uses of PID controllers are theoretically any process which has measurable output and a known ideal output,
+Theoretically, PID controllers can be used for any process with a measurable output and a known ideal output,
 but controllers are used mainly for regulating temperature, pressure, force, flow rate, feed rate, speed and more.
 
 ## The Algorithm
