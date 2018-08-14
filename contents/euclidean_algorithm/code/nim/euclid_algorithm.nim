@@ -1,7 +1,7 @@
 proc euclid_mod(in1, in2: int): int =
     var
-        a = in1
-        b = in2
+        a = abs(in1)
+        b = abs(in2)
     
     while b != 0:
         var temp: int = b
@@ -12,8 +12,8 @@ proc euclid_mod(in1, in2: int): int =
 
 proc euclid_sub(in1, in2: int): int =
     var
-        a = in1
-        b = in2
+        a = abs(in1)
+        b = abs(in2)
 
     while a != b:
         if a > b:
