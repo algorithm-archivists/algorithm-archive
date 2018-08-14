@@ -1,17 +1,30 @@
 ;;;; Bubble sort implementation
 
-;;; Swaps two elements in a list (complexity: O(n))
-(defun swap (lst low high)
-  (let ((list-tail (nthcdr low lst)))
-  (rotatef (car list-tail) (elt list-tail (- high low)))
-  lst))
+(defun bubble-up (list)
+  (if
+    (< (length list) 2) 
+    list  
+    (if 
+      (> (first list) (second list))
+      (cons 
+        (second list) 
+        (bubble-up 
+          (cons 
+            (first list) 
+            (rest (rest list)))))
+            
+      (cons 
+        (first list)
+        (bubble-up
+          (cons
+            (second list)
+            (rest (rest list))))))))
 
-(defun bubble-sort (lst)
-  (dotimes (m (- (length lst) 1) lst)           ;loop
-    (dotimes (n (- (length lst) (+ 1 m)) lst)   ;loop   
-      (if (> (nth n lst) (nth (+ n 1) lst))     ;if
-      (swap lst n (+ n 1))                      ;then
-      lst))))                                   ;else
+(defun bubble-sort (list)
+  (if 
+    (equal list (bubble-up list))
+    list
+    (bubble-sort (bubble-up list))))
 
 ;; The built-in sort: (sort (list 5 4 3 2 1) #'<)
 (print 
