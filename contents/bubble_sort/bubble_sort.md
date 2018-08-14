@@ -59,9 +59,9 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bubble.jl)
 {% sample lang="cs" %}
-BubbleSort.cs
+##### BubbleSort.cs
 [import, lang:"csharp"](code/csharp/BubbleSort.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/bubble_sort.c)
