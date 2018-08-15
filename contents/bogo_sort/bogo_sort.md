@@ -37,6 +37,8 @@ In code, it looks something like this:
 [import:16-20, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
 [import:25-31, lang:"swift"](code/swift/bogosort.swift)
+{% sample lang="php" %}
+[import:11-16, lang:"php"](code/php/bogo_sort.php)
 {% endmethod %}
 
 That's it.
@@ -49,9 +51,9 @@ We are done here!
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
-BogoSort.cs
+##### BogoSort.cs
 [import, lang:"csharp"](code/csharp/BogoSort.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/bogo.clj)
@@ -73,6 +75,8 @@ Program.cs
 [import, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bogosort.swift)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/bogo_sort.php)
 {% endmethod %}
 
 

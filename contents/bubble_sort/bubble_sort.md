@@ -44,6 +44,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:1-11, lang:"crystal"](code/crystal/bubble.cr)
 {% sample lang="php" %}
 [import:3-15, lang:"php"](code/php/bubble_sort.php)
+{% sample lang="lisp" %}
+[import:3-28, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -57,9 +59,9 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bubble.jl)
 {% sample lang="cs" %}
-BubbleSort.cs
+##### BubbleSort.cs
 [import, lang:"csharp"](code/csharp/BubbleSort.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/bubble_sort.c)
@@ -93,6 +95,8 @@ Program.cs
 [import, lang:"crystal"](code/crystal/bubble.cr)
 {% sample lang="php" %}
 [import, lang:"php"](code/php/bubble_sort.php)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% endmethod %}
 
 <script>
