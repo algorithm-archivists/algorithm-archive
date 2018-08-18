@@ -1,5 +1,7 @@
 import random
 
+randomize()
+
 proc print_array(a: openArray[int]) =
     for n in 0 .. len(a)-1:
         echo a[n]
