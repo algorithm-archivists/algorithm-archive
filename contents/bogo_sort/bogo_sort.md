@@ -40,7 +40,7 @@ In code, it looks something like this:
 {% sample lang="php" %}
 [import:11-16, lang:"php"](code/php/bogo_sort.php)
 {% sample lang="nim" %}
-[import:14-16, lang:"nim"](code/nim/bogo_sort.nim)
+[import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% endmethod %}
 
 That's it.
