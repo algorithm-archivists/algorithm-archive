@@ -132,10 +132,10 @@
           "lang": "lisp",
           "name": "Lisp"
         },
-	      {
-	        "lang": "nim",
+	{
+	  "lang": "nim",
           "name": "Nim"
-	      }
+        }
       ]
     }
   }
