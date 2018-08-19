@@ -21,7 +21,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="py" %}
 [import:4-9, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}
-[import:11-23, lang:"matlab"](code/matlab/bubblesort.m)
+[import:1-13, lang:"matlab"](code/matlab/bubblesort.m)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
@@ -33,7 +33,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="go" %}
 [import:7-21, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
-[import:6-19, lang:"racket"](code/racket/bubbleSort.rkt)
+[import:6-19, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
 [import:1-13, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
@@ -84,13 +84,13 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="go" %}
 [import, lang:"golang"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
-[import, lang:"racket"](code/racket/bubbleSort.rkt)
+[import, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/bubblesort.swift)
 {% sample lang="ti83b" %}
 [import, lang:"ti-83_basic"](code/ti83basic/BUBLSORT.txt)
 {% sample lang="ruby" %}
-[import, lang:ruby"](code/ruby/bubble.rb)
+[import, lang:"ruby"](code/ruby/bubble.rb)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/bubble.cr)
 {% sample lang="php" %}
