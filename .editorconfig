@@ -75,6 +75,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# Lisp
+[*.lisp]
+indent_style = space
+indent_size = 2
+
 # Matlab
 [*.m]
 indent_style = space

@@ -43,6 +43,8 @@ each point is tested to see whether it's in the circle or not:
 [import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="cpp" %}
+[import:7-16, lang:"c_cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -77,13 +79,13 @@ If we use a small number of points, this will only give us a rough approximation
     <img  class="center" src="res/monte_carlo.gif" width="400"/>
 </p>
 
-The true power of monte carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
-As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use monte carlo integration!
+The true power of Monte Carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
+As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use Monte Carlo integration!
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
 
 ## Example Code
-Monte carlo methods are famous for their simplicity.
+Monte Carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
 Here, we are just integrating a circle, like we described above; however, there is a small twist and trick.
 Instead of calculating the area of the circle, we are instead trying to find the value of $$\pi$$, and
@@ -100,6 +102,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -119,11 +123,11 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="py" %}
 [import, lang:"python"](code/python/monte_carlo.py)
 {% sample lang="cs" %}
-MonteCarlo.cs
+##### MonteCarlo.cs
 [import, lang:"csharp"](code/csharp/MonteCarlo.cs)
-Circle.cs
+##### Circle.cs
 [import, lang:"csharp"](code/csharp/Circle.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% endmethod %}
 
@@ -131,22 +135,3 @@ Program.cs
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$

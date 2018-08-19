@@ -355,7 +355,7 @@ In code, this looks like:
 {% sample lang="jl" %}
 [import:1-45, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-[import:13-44, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:15-48, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -387,8 +387,7 @@ Here it is in code:
 {% sample lang="jl" %}
 [import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-This code does not exist yet in C, so here's Julia code (sorry for the inconvenience)
-[import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:64-82, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
 [import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
@@ -419,7 +418,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 {% sample lang="jl" %}
 [import:47-67, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
-[import:46-58, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:50-62, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -452,22 +451,3 @@ As for what's next... Well, we are in for a treat! The above algorithm clearly h
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
