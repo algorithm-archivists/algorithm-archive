@@ -17,6 +17,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
+{% sample lang="lisp" %}
+[import:3-12, lang="lisp"](code/lisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import:11-22, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
@@ -35,6 +37,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:1-14, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
 [import:1-10, lang="julia"](code/julia/euclidean.jl)
+{% sample lang="nim" %}
+[import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -58,6 +62,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
+{% sample lang="lisp" %}
+[import:13-17, lang="lisp"](code/lisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import:1-9, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
@@ -76,6 +82,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:16-25, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
 [import:12-25, lang="julia"](code/julia/euclidean.jl)
+{% sample lang="nim" %}
+[import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -92,9 +100,9 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="c" %}
 [import, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
-EuclideanAlgorithm.cs
+##### EuclideanAlgorithm.cs
 [import, lang="csharp"](code/csharp/EuclideanAlgorithm.cs)
-Program.cs
+##### Program.cs
 [import, lang="csharp"](code/csharp/Program.cs)
 {% sample lang="clj" %}
 [import, lang="clojure"](code/clojure/euclidean_example.clj)
@@ -104,6 +112,8 @@ Program.cs
 [import, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
+{% sample lang="lisp" %}
+[import, lang="lisp"](code/lisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
@@ -122,6 +132,8 @@ Program.cs
 [import, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
 [import, lang="julia"](code/julia/euclidean.jl)
+{% sample lang="nim" %}
+[import, lang="nim" %](code/nim/euclid_algorithm.nim)
 {% endmethod %}
 
 

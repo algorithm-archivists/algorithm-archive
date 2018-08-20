@@ -16,6 +16,6 @@
         [r (drop l 2)])
     (cond [(= (- n counter) 2) (cons (min x y) (cons (max x y) r))]
           [(cons (min x y) (pass  (cons (max x y) r) (+ counter 1) n))])))
-          
+
 
 ((lambda (x) (display (bubbleSort x))) (read))
