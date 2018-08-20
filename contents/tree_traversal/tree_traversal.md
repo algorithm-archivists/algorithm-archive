@@ -138,7 +138,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="swift"%}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:43-52, lang:"php"](code/php/tree_traversal.php)
+[import:43-62, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 <p>
@@ -184,7 +184,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="swift"%}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:54-63, lang:"php"](code/php/tree_traversal.php)
+[import:64-73, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -209,7 +209,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:63-74, lang:"python"](code/python/Tree_example.py)
+[import:75-84, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
