@@ -9,7 +9,7 @@ Now, step to the vertex `z` whose path weight is the lowest.  Remove that vertex
 
 {% method %}
 {% sample lang="py" %}
-[import:4-9, lang:"python"](code/python/dijkstra.py)
+[import:1-69, lang:"python"](code/python/dijkstra.py)
 {% endmethod %}
 
 
