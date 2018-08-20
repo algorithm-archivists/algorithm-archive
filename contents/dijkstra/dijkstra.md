@@ -7,6 +7,10 @@ To begin, start at the first vertex `x` and make a set of all the other "unvisit
 
 Now, step to the vertex `z` whose path weight is the lowest.  Remove that vertex from the unvisited set.  Repeat the above process from this vertex, noting that a shortest path to each of `z`'s neighbors must go through `z` and will have a total path weight of the `x`-`z` path plus the weight of the edge being traversed.  Repeat this process of improving shortest known paths, choosing vertices from the unvisited set whose known paths are the shortest, and checking neighbors until one of two terminating conditions is met.  Either the unvisted set of vertices is exhausted (meaning we have traversed the entire graph), or no remaining unvisted vertices have known paths to them.  This latter condition is met when the graph is disconnected, leaving us with vertices that cannot be reached from a start vertex via any path.  Once either of these conditions is met, then we have found the shortest paths from `x` to all connected vertices.
 
+The below example uses the following graph as a sample.
+
+![alt text](assets/sample_graph.png "Example Dijkstra Graph")
+
 {% method %}
 {% sample lang="py" %}
 [import:1-69, lang:"python"](code/python/dijkstra.py)
