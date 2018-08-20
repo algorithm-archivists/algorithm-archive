@@ -28,6 +28,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:1-3, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:1-9, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import:3-27, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -58,6 +60,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:5-6, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import:31-35, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -96,6 +100,8 @@ Now, in this case the first element searched through is still the root of the tr
 [import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import:37-41, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 <p>
@@ -129,6 +135,8 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import:43-62, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 <p>
@@ -173,6 +181,8 @@ This has not been implemented in your chosen language, so here is the Julia code
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="swift"%}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import:64-73, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -197,7 +207,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:63-74, lang:"python"](code/python/Tree_example.py)
+[import:75-84, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
@@ -208,6 +218,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import:65-74, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 ## Example Code
@@ -245,6 +257,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import, lang:"swift"](code/swift/tree.swift)
+{% sample lang="php"%}
+[import, lang:"php"](code/php/tree_traversal.php)
 {% endmethod %}
 
 
