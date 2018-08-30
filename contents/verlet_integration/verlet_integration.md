@@ -56,6 +56,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:1-16, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import:1-15, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
@@ -102,6 +104,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:18-35, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-27, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import:17-34, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
@@ -159,10 +163,12 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:37-50, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:29-40, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import:36-49, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
-Even though this method is more used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O} \Delta t^2$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$
+Even though this method is more used than the simple Verlet method mentioned above, it unfortunately has an error term of $$\mathcal{O} \Delta t^2$$, which is two orders of magnitude worse. That said, if you want to have a simulation with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulations are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$
 
 ## Example Code
 
@@ -198,28 +204,11 @@ Submitted by P. Mekhail
 [import, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/verlet.rs)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/verlet.swift)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$

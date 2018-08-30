@@ -86,10 +86,13 @@ end
 function main()
 
     println("Creating Tree")
-    root = create_tree(2,3)
+    root = create_tree(2, 3)
 
     println("Using recursive DFS:")
     DFS_recursive(root);
+
+    println("Using recursive DFS with post-order traversal:")
+    DFS_recursive_postorder(root);
 
     println("Using stack-based DFS:")
     DFS_stack(root);
@@ -100,7 +103,7 @@ function main()
     println("Creating binary tree to test in-order traversal.")
     root_binary = create_tree(3,2)
     println("Using In-order DFS:")
-    DFS_recursive_inorder_btree(root_binary)    
+    DFS_recursive_inorder_btree(root_binary)
 end
 
 main()

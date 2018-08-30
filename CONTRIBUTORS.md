@@ -50,5 +50,16 @@ Max Weinstein
 <br>
 Gibus Wearing Brony
 <br>
+Gorzoid
+<br>
 Arun Sahadeo
->>>>>>> 71557fe72f8a3b276575311d60b1e782bd19476b
+<br>
+NIFR91
+<br>
+Michal Hanajik
+<br>
+Bendik Samseth
+<br>
+Trashtalk
+<br>
+Cyrus Burt

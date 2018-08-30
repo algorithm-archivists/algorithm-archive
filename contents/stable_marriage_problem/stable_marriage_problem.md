@@ -34,36 +34,16 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}
-GaleShapleyAlgorithm.cs
+##### GaleShapleyAlgorithm.cs
 [import, lang:"csharp"](code/csharp/GaleShapleyAlgorithm.cs)
-Person.cs
+##### Person.cs
 [import, lang:"csharp"](code/csharp/Person.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
-ListExtensions.cs
+##### ListExtensions.cs
 [import, lang:"csharp"](code/csharp/ListExtensions.cs)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
-$$
-\newcommand{\d}{\mathrm{d}}
-\newcommand{\bff}{\boldsymbol{f}}
-\newcommand{\bfg}{\boldsymbol{g}}
-\newcommand{\bfp}{\boldsymbol{p}}
-\newcommand{\bfq}{\boldsymbol{q}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfv}{\boldsymbol{v}}
-\newcommand{\bfA}{\boldsymbol{A}}
-\newcommand{\bfB}{\boldsymbol{B}}
-\newcommand{\bfC}{\boldsymbol{C}}
-\newcommand{\bfM}{\boldsymbol{M}}
-\newcommand{\bfJ}{\boldsymbol{J}}
-\newcommand{\bfR}{\boldsymbol{R}}
-\newcommand{\bfT}{\boldsymbol{T}}
-\newcommand{\bfomega}{\boldsymbol{\omega}}
-\newcommand{\bftau}{\boldsymbol{\tau}}
-$$
-

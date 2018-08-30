@@ -14,16 +14,15 @@ using std::size_t;
 std::vector<double> solve_euler(double timestep, size_t size) {
   std::vector<double> result;
   double current = 1.0;
-  std::generate_n(std::back_inserter(result), size, [&] {
-    return std::exchange(current, current - 3.0 * current * timestep);
-  });
+  for (size_t i = 0; i < size; ++i) {
+    result.push_back(current);
+    current -= 3.0 * current * timestep;
+  }
   return result;
 }
 
-/*
-  check_result takes an iterator over doubles,
-  and returns whether any value is outside the passed threshold.
-*/
+// check_result takes an iterator over doubles,
+// and returns whether any value is outside the passed threshold.
 template <typename Iter>
 bool check_result(Iter first, Iter last, double threshold, double timestep) {
   auto it = first;
