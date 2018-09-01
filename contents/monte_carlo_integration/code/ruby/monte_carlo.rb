@@ -29,3 +29,4 @@ percent_error = 100 * (pi_estimate - Math::PI).abs / Math::PI
 
 puts "The estimate of pi is: #{pi_estimate.round(3)}"
 puts "The percent error is: #{percent_error.round(3)}"
+
