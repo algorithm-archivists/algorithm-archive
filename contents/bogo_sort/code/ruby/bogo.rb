@@ -17,8 +17,15 @@ end
 
 def main()
 	a = [1, 1, 0, 3, 7]
+	
+	puts("Unsorted")
+	print(a)
+	
 	bogo_sort(a)
-	print a
+	
+	puts("\n\nSorted")
+	print(a)
 end
 
 main()
+
