@@ -41,6 +41,8 @@ In code, it looks something like this:
 [import:11-16, lang:"php"](code/php/bogo_sort.php)
 {% sample lang="nim" %}
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
+{% sample lang="ruby" %}
+[import:12-16, lang:"ruby"](code/ruby/bogo.rb)
 {% endmethod %}
 
 That's it.
@@ -81,6 +83,8 @@ We are done here!
 [import, lang:"php"](code/php/bogo_sort.php)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/bogo_sort.nim)
+{% sample lang="ruby" %}
+[import, lang:"ruby"](code/ruby/bogo.rb)
 {% endmethod %}
 
 
