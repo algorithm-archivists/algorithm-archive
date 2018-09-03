@@ -9,3 +9,11 @@ function bubbleSort(arr) {
     }
   }
 }
+
+function main() {
+  const testArray = [4, 5, 123, 759, -132, 8940, 24, 34, -5];
+  bubbleSort(testArray);
+  console.log(testArray);
+}
+
+main();

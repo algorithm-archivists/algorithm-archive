@@ -43,6 +43,8 @@ each point is tested to see whether it's in the circle or not:
 [import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="cpp" %}
+[import:7-16, lang:"c_cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -63,6 +65,10 @@ each point is tested to see whether it's in the circle or not:
 [import:5-7, lang:"python"](code/python/monte_carlo.py)
 {% sample lang="cs" %}
 [import:23-23, lang:"csharp"](code/csharp/Circle.cs)
+{% sample lang="nim" %}
+[import:6-7, lang:"nim"](code/nim/monte_carlo.nim)
+{% sample lang="ruby" %}
+[import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -100,6 +106,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/monte_carlo.c)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -119,13 +127,18 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="py" %}
 [import, lang:"python"](code/python/monte_carlo.py)
 {% sample lang="cs" %}
-MonteCarlo.cs
+##### MonteCarlo.cs
 [import, lang:"csharp"](code/csharp/MonteCarlo.cs)
-Circle.cs
+##### Circle.cs
 [import, lang:"csharp"](code/csharp/Circle.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/monte_carlo.nim)
+{% sample lang="ruby" %}
+[import, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% endmethod %}
+
 
 
 <script>

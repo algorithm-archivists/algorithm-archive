@@ -102,6 +102,8 @@ The transformations are quite easy too, isn't that neat?
 [import, lang:"c_cpp"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% endmethod %}
