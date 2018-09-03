@@ -1,6 +1,6 @@
 class Node 
-  property id,children 
-  def initialize(@id : Int32,@children : Array(Node))
+  property id, children 
+  def initialize(@id : Int32, @children : Array(Node))
   end 
 end 
 
@@ -50,17 +50,17 @@ def bfs_queue(node)
   end  
 end 
 
-def create_tree(levels,num_childs) 
+def create_tree(levels, num_childs) 
 
-  children = [ ] of Node  
+  children = [] of Node  
   unless levels == 0 
-    num_childs.times{children.push create_tree levels-1,num_childs } 
+    num_childs.times{children.push create_tree levels-1, num_childs } 
   end 
   
-  Node.new(levels,children) 
+  Node.new(levels, children) 
 end
 
-def print_tree(node,depth = [] of String) 
+def print_tree(node, depth = [] of String) 
   puts "(#{node.id})"
   depth.push " " 
   len = node.children.size - 1
