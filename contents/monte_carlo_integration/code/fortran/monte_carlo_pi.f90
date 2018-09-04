@@ -16,7 +16,7 @@ LOGICAL :: in_circle
 r  = 1
 pi = DACOS(-1.d0)  !!3.1415926535d0
 ! TEST CASE WRITE(*,*) 'Pi = ', pi
-n  = 10000000
+n  = 1000000
 pos_x = 0
 pos_y = 0
 pi_count = 0
