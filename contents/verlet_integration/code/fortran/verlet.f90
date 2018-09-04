@@ -1,8 +1,8 @@
 SUBROUTINE verlet(pos, acc, dt, time) 
     IMPLICIT NONE
-    REAL(8), INTENT(INOUT)    :: pos, acc, dt
-    REAL(8)                :: prev_pos, next_pos
-    REAL(8), INTENT(INOUT)   :: time
+    REAL(8), INTENT(INOUT)    :: pos, acc, dt, time
+    REAL(8) :: prev_pos, next_pos
+
 
     prev_pos = pos
     time     = 0d0
@@ -51,9 +51,7 @@ SUBROUTINE velocity_verlet(pos, acc, dt, time, vel)
     DO
         IF (pos > 0d0) THEN
             time = time + dt
-            WRITE(*,*) 'Time ', time
             pos = pos + vel * dt + 0.5d0 * acc * dt ** 2 
-            WRITE(*,*)'Pos ', pos 
             vel = vel + acc * dt
         ELSE
             EXIT
