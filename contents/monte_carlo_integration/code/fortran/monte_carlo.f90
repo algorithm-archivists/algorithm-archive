@@ -14,23 +14,23 @@ LOGICAL :: in_circle
 
 ! Calculate Pi from trigonometric functions as reference
 pi = DACOS(-1.d0)  
-n  = 100000
-r  = 1
-pos_x = 0
-pos_y = 0
-pi_count = 0
+n  = 1000000
+r  = 1d0
+pos_x = 0d0
+pos_y = 0d0
+pi_count = 0d0
 
 DO i=0,n
     CALL RANDOM_NUMBER(pos_x)
     CALL RANDOM_NUMBER(pos_y)
        
     IF (in_circle(pos_x, pos_y, r) .EQV. .TRUE.) THEN 
-        pi_count = pi_count + 1
+        pi_count = pi_count + 1d0
     END IF
 END DO
 
-pi_est   = 4 * pi_count / n
-pi_error = 100 * (abs(pi_est - pi)/pi)
+pi_est   = 4d0 * pi_count / n
+pi_error = 100d0 * (abs(pi_est - pi)/pi)
 
 WRITE(*,*) 'The pi estimate is: ', pi_est
 WRITE(*,*) 'Percent error is: ', pi_error, ' %'
