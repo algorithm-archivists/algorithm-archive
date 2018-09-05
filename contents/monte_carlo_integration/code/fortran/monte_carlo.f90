@@ -8,9 +8,16 @@ END FUNCTION in_circle
 PROGRAM monte_carlo
 IMPLICIT NONE
 
+INTERFACE
+    FUNCTION in_circle(pos_x, pos_y, r) 
+    IMPLICIT NONE
+    REAL(16), INTENT(IN) :: pos_x, pos_y, r
+    LOGICAL :: in_circle
+END FUNCTION in_circle 
+END INTERFACE
+
 INTEGER :: i,n
 REAL(16) :: pos_x,pos_y, r, pi_est, pi_count, pi_error, pi
-LOGICAL :: in_circle
 
 ! Calculate Pi from trigonometric functions as reference
 pi = DACOS(-1.d0)  
