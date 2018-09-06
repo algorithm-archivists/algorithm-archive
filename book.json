@@ -135,6 +135,10 @@
         {
           "lang": "nim",
           "name": "Nim"
+        },
+        {
+          "lang": "x86asm",
+          "name": "X86 Assembly"
         }
       ]
     }
