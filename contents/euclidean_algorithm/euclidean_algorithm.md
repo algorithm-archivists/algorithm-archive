@@ -36,7 +36,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="lua" %}
 [import:1-14, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
-[import:1-10, lang="julia"](code/julia/euclidean.jl)
+[import:12-25, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% endmethod %}
@@ -81,7 +81,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="lua" %}
 [import:16-25, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
-[import:12-25, lang="julia"](code/julia/euclidean.jl)
+[import:1-10, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
 {% endmethod %}
