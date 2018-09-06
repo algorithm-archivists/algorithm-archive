@@ -1,7 +1,7 @@
 INTEGER FUNCTION euclid_sub(a, b)
       IMPLICIT NONE
           INTEGER, INTENT(INOUT) :: a, b
-          !INTEGER, INTENT(OUT):: euclid_sub 
+
 
           a = ABS(a)
           b = ABS(b)
@@ -22,7 +22,7 @@ INTEGER FUNCTION euclid_mod(a, b)
       IMPLICIT NONE
       INTEGER, INTENT(INOUT) :: a, b
       INTEGER             :: temp
-     ! INTEGER, INTENT(OUT):: euclid_mod
+
 
   DO WHILE (b > 0)
     temp = b
