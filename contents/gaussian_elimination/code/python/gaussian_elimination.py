@@ -69,9 +69,6 @@ def back_substitution(A):
 
 
 def main():
-    #A = np.matrix('0. 2 1 -8; 1 -2 -3 0; -1 1 2 3')
-    #A = np.matrix('1. -2 -6 12 1; 2 4 12 -17 1; 1 -4 -12 22 1')
-    #A = np.matrix('1 1 1 1 1; 0 1 0 0 0; 0 0 0 0 1; 0 0 0 1 0')
     A = np.matrix('2. 3 4 6; 1 2 3 4; 3 -4 0 10')
 
     print("Original")
