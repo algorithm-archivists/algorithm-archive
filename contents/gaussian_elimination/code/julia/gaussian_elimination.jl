@@ -52,10 +52,7 @@ function back_substitution(A::Array{Float64,2})
     # Creating the solution Vector
     soln = Vector{Float64}(rows)
 
-    # initialize the final element
-    soln[rows] = A[rows, cols] / A[rows, cols-1]
-
-    for i = (rows - 1):-1:1
+    for i = rows:-1:1
         sum = 0.0
         for j = rows:-1:i
             sum += soln[j]*A[i,j]

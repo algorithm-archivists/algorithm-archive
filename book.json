@@ -2,11 +2,11 @@
   "gitbook": "3.x.x",
   "plugins": [
     "fontsettings",
-    "mathjax",
+    "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
     "creativecommons",
     "wordcount",
-    "api-language-selector",
+    "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
     "ga",
     "bulk-redirect"
@@ -15,6 +15,9 @@
     "maxIndexSize": 1000000000
   },
   "pluginsConfig": {
+    "mathjax":{
+      "version": "2.6.1"
+    },
     "include-codeblock": {
       "fixlang": true,
       "unindent": true
@@ -116,6 +119,22 @@
         {
           "lang": "lua",
           "name": "Lua"
+        },
+        {
+          "lang": "crystal",
+          "name": "Crystal"
+        },
+        {
+          "lang": "php",
+          "name": "PHP"
+        },
+        {
+          "lang": "lisp",
+          "name": "Lisp"
+        },
+        {
+          "lang": "nim",
+          "name": "Nim"
         }
       ]
     }

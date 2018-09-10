@@ -6,7 +6,7 @@ For the most part, depending on your specialty, you will probably not see too mu
 Honestly, you could probably get away with what you learned in high school.
 
 However, this is a book about algorithms, and algorithms sometimes require a deeper understanding of mathematics.
-This section attemps to provide the mathematical foundations that you will need to understand certain algorithms.
+This section attempts to provide the mathematical foundations that you will need to understand certain algorithms.
 As we add new algorithms and need new mathematical tools, we will add them to this section.
 
 A notable exception to this rule will be in the case of classes of algorithms that require domain-specific knowledge, like quantum simulations or bioinformatics.

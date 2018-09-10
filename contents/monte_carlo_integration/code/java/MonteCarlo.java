@@ -6,7 +6,7 @@ public class MonteCarlo {
     public static void main(String[] args) {
         double piEstimation = monteCarlo(1000);
         System.out.println("Estimated pi value: " + piEstimation);
-        System.out.printf("Percent error: " + 100 * (Math.PI - piEstimation) / Math.PI);
+        System.out.printf("Percent error: " + 100 * Math.abs(piEstimation - Math.PI) / Math.PI);
     }
 
     //function to check whether point (x,y) is in unit circle
