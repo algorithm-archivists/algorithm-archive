@@ -5,7 +5,7 @@ The Proportional-Integral-Derivative controller (PID controller) is a control lo
 The PID controller is comprised of three parts: proportional controller, integral controller, and derivative controller.
 
 Before we get into how a PID controller works, we need a good example to explain things.
-Imagine you are making a self-driving RC car that drives on a line, how would make it work given that the car moves with a constant speed.
+Imagine you are making a self-driving RC car that drives on a line, how would make the car stay on track given that it moves with a constant speed.
 
 ### Proportional Controller
 
