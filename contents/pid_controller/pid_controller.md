@@ -1,4 +1,5 @@
 # Proportional-Integral-Derivative Controller
+Written by Gathros
 
 The Proportional-Integral-Derivative controller (PID controller) is a control loop feedback mechanism, used for continuously modulated control.
 The PID controller is comprised of three parts: proportional controller, integral controller, and derivative controller.
@@ -9,7 +10,7 @@ Imagine you are making a self-driving RC car that drives on a line, how would ma
 ### Proportional Controller
 
 If the car is too far to the right then you should turn left and vice versa.
-Since there are a range of angles you can turn the wheel, so you should turn proportional to the distance from the line.
+Since there are a range of angles you can turn the wheel, you should turn proportional to the distance from the line.
 This is what the proportional controller (P controller) does, which is described by,
 
 $$ P = K_{p} e(t), $$
@@ -17,7 +18,7 @@ $$ P = K_{p} e(t), $$
 Where $K_{p}$ is a constant and $e(t)$ is the current distance from the line, which is called the error.
 The performance of the controller improves with larger $K_{p}$;
 if $K_{p}$ is too high then when the error is too high, the system becomes unstable.
-In this case, the car would turn in circles, since there is a maximum angle the wheel can turn, else it would zig zag around the line.
+In this example, the car would turn in circles, since there is a maximum angle the wheel can turn, else it would zig zag around the line.
 
 ### Derivative Controller
 
@@ -30,14 +31,12 @@ $$ D = K_{d} \frac{de(t)}{dt}$$
 Where $K_{d}$ is a constant.
 If $K_{d}$ is too high then the system is overdamped, i.e. the car takes too long to get back on track.
 If it's too low the system is underdamped, i.e. the car oscillates around the line.
-When the car is getting back on track quickly with little to no oscillations then the system is called critically damped.
+When the car returns to the track and there is little to no oscillations, the system is critically damped.
 
 ### Integral Controller
 
-The Proportional and Derivative controllers are robust enough to get the on course.
-We start driving, but then some wind starts pushing the car which introduces a constant error.
-We need to know if we are spending too long on one side and account for that.
-The way to do that is to sum up all the errors and multiply it by a constant.
+The Proportional and Derivative controllers are robust enough to keep on course, but what if some wind starts pushing the car and introducing a constant error?
+Well, we would need to know if we are spending too long on one side and account for it, we can figure it out by summing up all the errors and multiply it by a constant.
 This is what the integral controller (I controller) does, which is described by,
 
 $$ I = K_{i} \int_{0}^{t} e(\uptau) d\uptau, $$
@@ -74,7 +73,8 @@ In the end the code looks like this:
 
 ## Example Code
 
-This example is not calculating the time elapsed, instead it is setting a value called dt.
+The example code is of a 1-dimensional RC car that is trying to change from the first lane to the second lane, where the numbers represent the center of the lane.
+This example is we can't calculate the time elapsed, instead we are setting a value called dt for time elapsed.
 
 {% method %}
 {% sample lang="c" %}
