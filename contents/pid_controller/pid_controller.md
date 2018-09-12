@@ -5,11 +5,11 @@ The Proportional-Integral-Derivative controller (PID controller) is a control lo
 The PID controller is comprised of three parts: proportional controller, integral controller, and derivative controller.
 
 Before we get into how a PID controller works, we need a good example to explain things.
-Imagine you are making a self-driving RC car that drives on a line, how would make the car stay on track given that it moves with a constant speed.
+Imagine you are making a self-driving RC car that drives on a line, how could we keep the car on track if it moves with a constant speed?
 
 ### Proportional Controller
 
-If the car is too far to the right then you should turn left and vice versa.
+Imagine our RC car is moving too far to the right, in this case it makes sense to turn left.
 Since there are a range of angles you can turn the wheel, you should turn proportional to the distance from the line.
 This is what the proportional controller (P controller) does, which is described by,
 
@@ -36,7 +36,7 @@ When the car returns to the track and there is little to no oscillations, the sy
 ### Integral Controller
 
 The Proportional and Derivative controllers are robust enough to keep on course, but what if some wind starts pushing the car and introducing a constant error?
-Well, we would need to know if we are spending too long on one side and account for it, we can figure it out by summing up all the errors and multiply it by a constant.
+Well, we would need to know if we are spending too long on one side to account for it, and we can figure it out by summing up all the errors and multiply it by a constant.
 This is what the integral controller (I controller) does, which is described by,
 
 $$ I = K_{i} \int_{0}^{t} e(\uptau) d\uptau, $$
@@ -74,7 +74,7 @@ In the end the code looks like this:
 ## Example Code
 
 The example code is of a 1-dimensional RC car that is trying to change from the first lane to the second lane, where the numbers represent the center of the lane.
-This example is we can't calculate the time elapsed, instead we are setting a value called dt for time elapsed.
+In this example, we can't calculate the time elapsed, so we are instead setting a value called dt for time elapsed.
 
 {% method %}
 {% sample lang="c" %}
