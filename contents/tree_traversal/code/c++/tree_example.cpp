@@ -1,6 +1,3 @@
-// initially contributed by James Schloss (Leios)
-// restyled by Nicole Mazzuca (ubsan)
-
 #include <algorithm>
 #include <cstddef>
 #include <iostream>
