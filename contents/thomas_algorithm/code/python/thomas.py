@@ -13,7 +13,7 @@ def thomas(a, b, c, d):
         scale = 1 / (b[i] - c[i-1]*a[i])
         
         c[i] = c[i] * scale
-        d[i] = (d[i] -a[i] * d[i-1]) * scale
+        d[i] = (d[i] - a[i] * d[i-1]) * scale
 
     
     # do the back substitution
