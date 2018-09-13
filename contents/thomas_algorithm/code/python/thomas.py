@@ -8,17 +8,17 @@ def thomas(a, b, c, d):
     d[0] = d[0] / b[0]
 
     n = len(d) #number of equations to solve
-    for i in range(1,n):
+    for i in range(1, n):
         #scale factor for c and d
-        scale = 1 / (b[i] - c[i-1]*a[i])
+        scale = 1 / (b[i] - c[i-1] * a[i])
         
         c[i] = c[i] * scale
         d[i] = (d[i] - a[i] * d[i-1]) * scale
 
     
     # do the back substitution
-    for i in range(n-2,-1,-1):
-        d[i] = d[i] - c[i]*d[i+1]
+    for i in range(n-2, -1, -1):
+        d[i] = d[i] - c[i] * d[i+1]
     
     return d
 
