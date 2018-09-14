@@ -396,7 +396,7 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 {% sample lang="hs" %}
 [import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
-[import:31-51, lang:"python"](code/python/gaussian_elimination.py)
+[import:31-49, lang:"python"](code/python/gaussian_elimination.py)
 {% endmethod %}
 
 ## Back-substitution
@@ -428,7 +428,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 {% sample lang="hs" %}
 [import:48-53, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
-[import:54-68, lang:"python"](code/python/gaussian_elimination.py)
+[import:52-64, lang:"python"](code/python/gaussian_elimination.py)
 {% endmethod %}
 
 ## Conclusions
