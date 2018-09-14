@@ -35,6 +35,7 @@ def main():
     b = [1, 3, 6]
     c = [4, 5, 0]
     d = [7, 5, 3]
+
     soln = thomas(a, b, c, d)
     print(soln)
 
