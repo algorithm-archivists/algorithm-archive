@@ -2,7 +2,7 @@
 
 # note this example is inplace and destructive
 def thomas(a, b, c, d):
-    
+
     # set the initial elements
     c[0] = c[0] / b[0]
     d[0] = d[0] / b[0]
@@ -11,15 +11,15 @@ def thomas(a, b, c, d):
     for i in range(1, n):
         # scale factor for c and d
         scale = 1 / (b[i] - c[i-1] * a[i])
-        
+
         c[i] = c[i] * scale
         d[i] = (d[i] - a[i] * d[i-1]) * scale
 
-    
+
     # do the back substitution
     for i in range(n-2, -1, -1):
         d[i] = d[i] - c[i] * d[i+1]
-    
+
     return d
 
 def main():
