@@ -26,5 +26,5 @@ fn monte_carlo(n: i64) -> f64 {
 fn main() {
     let pi_estimate = monte_carlo(10000000);
 
-    println!("Percent error is {:.3}%", (100.0 * (PI - pi_estimate) / PI));
+    println!("Percent error is {:.3}%", (100.0 * (PI - pi_estimate).abs() / PI));
 }
