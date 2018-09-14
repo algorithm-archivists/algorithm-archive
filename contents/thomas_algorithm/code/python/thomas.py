@@ -3,13 +3,13 @@
 # note this example is inplace and destructive
 def thomas(a, b, c, d):
     
-    #set the initial elements
+    # set the initial elements
     c[0] = c[0] / b[0]
     d[0] = d[0] / b[0]
 
-    n = len(d) #number of equations to solve
+    n = len(d) # number of equations to solve
     for i in range(1, n):
-        #scale factor for c and d
+        # scale factor for c and d
         scale = 1 / (b[i] - c[i-1] * a[i])
         
         c[i] = c[i] * scale
