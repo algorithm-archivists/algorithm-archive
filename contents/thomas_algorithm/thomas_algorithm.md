@@ -106,6 +106,8 @@ The transformations are quite easy too, isn't that neat?
 [import, lang:"java"](code/java/thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/thomas.swift)
 {% endmethod %}
 
 <script>
