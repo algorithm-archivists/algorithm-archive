@@ -74,7 +74,7 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="c" %}
 [import:8-19, lang:"c_cpp"](code/c/fft.c)
 {% sample lang="cpp" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:23-33, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:2-11, lang:"julia"](code/julia/fft.jl)
 {% sample lang="py" %}
@@ -119,7 +119,7 @@ In the end, the code looks like:
 {% sample lang="c" %}
 [import:20-39, lang:"c_cpp"](code/c/fft.c)
 {% sample lang="cpp" %}
-[import:35-66, lang:"c_cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
