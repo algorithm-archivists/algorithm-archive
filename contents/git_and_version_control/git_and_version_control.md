@@ -139,7 +139,7 @@ git status
 ```
 
 This will show that `CONTRIBUTORS.md` has been modified.
-If we want to save our changes, we need to add all the files with changes to them to a package called a `commit`.
+If we want to save our changes, we need to add all of the files with changes to them to a package called a `commit`.
 To add the files, simply type:
 
 ```
@@ -214,7 +214,7 @@ To switch branches, use
 git checkout branch
 ```
 
-And this will change all the files on your local directory to match the branch you have swapped to.
+And this will change all of the files on your local directory to match the branch you have swapped to.
 Note that if you have local changes that will be overwritten when changing branches, git will note these changes and tell you to do something about them before switching to a new branch.
 If you want to get rid of the changes, you could delete any files that are causing conflicts; however, this is barbaric and should be avoided in civilized society.
 Another solution is to use a feature of git called the `stash`.
