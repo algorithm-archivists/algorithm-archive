@@ -14,8 +14,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="java" %}
 [import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:3-7, lang:"julia"](code/julia/Tree.jl)
+[import:1-6, lang:"javascript"](code/javascript/Tree.js)
 {% sample lang="py" %}
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -48,7 +47,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="java" %}
 [import:21-27, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:12-15, lang:"javascript"](code/javascript/tree.js)
+[import:20-23, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -91,7 +90,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="java" %}
 [import:34-41, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:17-20, lang:"javascript"](code/javascript/tree.js)
+[import:25-28, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -128,7 +127,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="java" %}
 [import:48-62, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:22-34, lang:"javascript"](code/javascript/tree.js)
+[import:30-40, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -175,7 +174,7 @@ In code, it looks like this:
 {% sample lang="java" %}
 [import:65-79, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:36-43, lang:"javascript"](code/javascript/tree.js)
+[import:42-49, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -215,7 +214,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="java" %}
 [import:81-95, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:45-52, lang:"javascript"](code/javascript/tree.js)
+[import:51-58, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:75-84, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}

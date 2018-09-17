@@ -1,12 +1,20 @@
-function createTree(rows, children) {
-  if (rows === 0) {
-    return { id: rows, children: [] };
+class Node {
+  constructor(id, children=[]) {
+    this.id = id;
+    this.children = children;
+  }
+}
+
+function createTree(numRow, numChild) {
+  var root = new Node(numRow);
+
+  if (numRow > 0) {
+    for (var i = 0; i < numChild; i++) {
+      root.children.push(createTree(numRow-1, numChild));
+    }
   }
 
-  return {
-    id: rows,
-    children: [...Array(children).keys()].map(() => createTree(rows - 1, children))
-  };
+  return root;
 }
 
 function dfsPreorder(tree) {
@@ -20,9 +28,7 @@ function dfsPostorder(tree) {
 }
 
 function dfsInorder(tree) {
-  if (!tree) {
-    return;
-  }
+  if (!tree) { return; }
 
   if (tree.children.length > 2) {
     throw new Error("Postorder traversal is only valid for binary trees");
@@ -51,7 +57,7 @@ function bfs(tree) {
   }
 }
 
-const root = createTree(3, 3);
+const root = createTree(3, 3)
 dfsPreorder(root);
 dfsPostorder(root);
 dfsIterative(root);
