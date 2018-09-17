@@ -14,7 +14,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="java" %}
 [import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:1-6, lang:"javascript"](code/javascript/Tree.js)
+[import:1-6, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -127,7 +127,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="java" %}
 [import:48-62, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:30-40, lang:"javascript"](code/javascript/tree.js)
+[import:30-37, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -174,7 +174,7 @@ In code, it looks like this:
 {% sample lang="java" %}
 [import:65-79, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:42-49, lang:"javascript"](code/javascript/tree.js)
+[import:39-46, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -214,7 +214,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="java" %}
 [import:81-95, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:51-58, lang:"javascript"](code/javascript/tree.js)
+[import:48-55, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:75-84, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
