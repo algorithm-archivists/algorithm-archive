@@ -24,7 +24,7 @@ void monte_carlo(int samples) {
     double estimate = 4.0 * count / (samples * radius * radius);
 
     printf("The estimate of pi is %f\n", estimate);
-    printf("Which has an error of %0.2f%\n", 100 * (M_PI - estimate) / M_PI);
+    printf("Percentage error: %0.2f%\n", 100 * fabs(M_PI - estimate) / M_PI);
 }
 
 int main() {

@@ -23,7 +23,7 @@ function monteCarlo(n) {
   // 4*piCount/n instead
   // piEstimate = 4*piCount/n
   const piEstimate = 4 * piCount / n;
-  console.log('Percent error is: %s%', 100 * (Math.PI - piEstimate) / Math.PI);
+  console.log('Percent error is: %s%', 100 * Math.abs(piEstimate - Math.PI) / Math.PI);
 }
 
 monteCarlo(100000000);

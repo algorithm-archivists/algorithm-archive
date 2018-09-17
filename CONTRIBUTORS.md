@@ -48,7 +48,20 @@ Max Weinstein
 <br>
 Gibus Wearing Brony
 <br>
-Julian
+Gorzoid
 <br>
 Arun Sahadeo
 <br>
+NIFR91
+<br>
+Michal Hanajik
+<br>
+Bendik Samseth
+<br>
+mukundan314
+<br>
+Trashtalk
+<br>
+Cyrus Burt
+<br>
+Liikt

@@ -3,13 +3,13 @@
 I am a fan of open-source software. It allows users to see inside the code running on their system and mess around with it if they like.
 Unlike proprietary software, open source software allows any user to learn the entire codebase from the ground up, and that's an incredibly exciting prospect!
 More than that, open-source development breeds strong communities of like-minded individuals who work together to solve problems they care about.
-At least in my case, different open-source communites inspired me to code in my free time.
+At least in my case, different open-source communities inspired me to code in my free time.
 It taught me that programming is more than a simple series of instructions for a computer.
 More than anything, though, open-source software development taught me about how to work with others and overcome petty squabbles, because if there's one thing any open-source community is known for, it's petty squabbling.
 
 It might be because of my appreciation of large-scale software development that I never questioned the utility of version control.
 If there are a couple hundred people all contributing source code to the same place, there has to be some way to control all the different codebases each individual has on their own machine.
-Even if I have no collaborators, version control is a way to make sure my laptop and work machine both have the same code without having to transer a USB stick back and forth.
+Even if I have no collaborators, version control is a way to make sure my laptop and work machine both have the same code without having to transfer a USB stick back and forth.
 That said, at some point in my life, I became a physics researcher.
 This meant that I wrote code to solve physics problems with a small team. The problem was that even though I was using version control, the rest of my team was not.
 
@@ -22,7 +22,7 @@ If you are writing code, it exists as a way to quickly save what you have before
 It also allows individuals to collaborate on a larger scale by providing necessary tools to merge work created by different individuals into a single, cohesive story.
 
 No matter how you look at it, version control is a useful and necessary tool to collaborate with other programmers and is definitely worth discussing in depth.
-Though many version control systems exist, for now we will focus on git, simply because it is incredibly popular and this book is hosted both on github and gitbook.
+Though many version control systems exist, for now we will focus on git, simply because it is incredibly popular and this book is hosted both on GitHub and GitBook.
 We hope to discuss other version control methods and strengthen this tutorial on git in the future; however, this book is meant as an archive of algorithms, not as an introduction to version control or best software practices.
 Though discussions like these are useful, we must be careful not to get too far out-of-scope.
 For now, this tutorial is simply meant as a quick way to kickstart our community into using git and collaborating more effectively with each other (specifically on this book).
@@ -36,9 +36,9 @@ When using git, there will be a local copy of a repository of code that may or m
 
 Now, there is an easy way, a hard way, and an impossibly complicated way to use git.
 We'll be walking through the easy and hard ways.
-We are not trying to impress anyone with git wizardry. We are simply trying to provide the basics with a little undersanding sprinkled in.
+We are not trying to impress anyone with git wizardry. We are simply trying to provide the basics with a little understanding sprinkled in.
 
-As a side note: we will be assuming that you are using git from the terminal. There is a GUI available from github and it works super well for most cases; however, it's also self-explanatory in most cases.
+As a side note: we will be assuming that you are using git from the terminal. There is a GUI available from GitHub and it works super well for most cases; however, it's also self-explanatory in most cases.
 Put another way: if you can understand the ways of the terminal, the git GUI will be much more straightforward. On the other hand, learning the GUI will not necessarily help you when using the terminal.
 
 So, first things first. Make sure git is installed on your system and set it up with the following commands
@@ -57,8 +57,8 @@ That said, it is alright to use a username and e-mail address that does not spoi
 
 Now we need to find a repository of code to work on. If you are starting your own repository or want to work on an internal network, this will not be too big of an issue.
 If you just want to get the feel for how git works, I suggest going to [github.com](https://github.com/) and checking out the code developed there.
-Note that you will not be able to contribute to any old directory on github, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
-Because of this, you may want to create a repository under your own github username or make your own copy of someone elses code on github by clicking the *fork* button:
+Note that you will not be able to contribute to any old directory on GitHub, simply because if anyone could contribute any code they wanted to any repository they wanted, the world would become incredibly chaotic.
+Because of this, you may want to create a repository under your own GitHub username or make your own copy of someone elses code on GitHub by clicking the *fork* button:
 
 <p>
     <img  class="center" src="res/fork.png" />
@@ -67,17 +67,17 @@ Because of this, you may want to create a repository under your own github usern
 Note that if you have a fork of a particular code repository, you can ask the owner of the original code repository to pull your changes into their version of the code with a *pull request*, but we are getting ahead of ourselves here.
 If you cannot think of what repository to work on and want to collaborate on this project in the future, feel free to fork the [Algorithm Archive](https://github.com/algorithm-archivists/algorithm-archive) and modify that!
 
-Regardless, as long as there is a repository under your username on github, we can continue by linking that remote github location to your local git directory. First, we need to find the url of the github repository, as shown here:
+Regardless, as long as there is a repository under your username on GitHub, we can continue by linking that remote GitHub location to your local git directory. First, we need to find the URL of the GitHub repository, as shown here:
 
 <p>
     <img  class="center" src="res/clone.png" />
 </p>
 
-Note that there are 2 provided urls here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote github repository, while https requires both a username and password.
-Now, you will probably be interacting with github a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/).
+Note that there are 2 provided URLs here, one for *ssh* and another for *https*. From the user's perspective, the difference between the two is minimal: ssh requires the user to type only a password when interacting with the remote GitHub repository, while https requires both a username and password.
+Now, you will probably be interacting with GitHub a lot, so ssh will definitely save time and is preferred for many people who use git a lot; however, [there is some initial set-up](https://help.github.com/articles/connecting-to-github-with-ssh/).
 If you want, we can discuss the set-up in more detail later (just let me know!), but for now, we'll stick with https because it's more familiar to new users.
 
-Once you have the url, there are 2 ways to proceed:
+Once you have the URL, there are 2 ways to proceed:
 
 **The easy way:**
 ```
@@ -95,11 +95,11 @@ git merge origin/master
 ```
 
 Here, `git clone` does every step of the *not-so-easy* way in one command, so the two methods are completely identical. Because of this, in most cases, I just use `git clone`; however, the *not-so-easy* way is much more explicit and helps us understand what is going on a little better.
-For now, we will breifly describe each of the commands; however, we will definitely be covering them in more depth through this tutorial.
+For now, we will briefly describe each of the commands; however, we will definitely be covering them in more depth through this tutorial.
 So, here it is, step-by-step:
 1. `mkdir algorithm_archive`: make a directory. We can call this directory anything, but we'll call it algorithm_archive for now.
 2. `git init`: initialize git
-3. `git remote add origin https://github.com/algorithm-archivists/algorithm-archive`: add a remote location (the github url we found just a second ago). Again, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that.
+3. `git remote add origin https://github.com/algorithm-archivists/algorithm-archive`: add a remote location (the GitHub URL we found just a second ago). Again, we can call this remote location anything, but `git clone` always calls it `origin`, so well stick with that.
 4. `git fetch`: update the local directory with the information from the remote online repository
 5. `git merge origin/master`: merge those updates. Right now, the `origin/master` part of this command might seem like a bit of black octocat magic, but we will cover it in just a bit!
 
@@ -112,7 +112,7 @@ origin	https://github.com/user/algorithm-archive.git (push)
 ```
 
 This provides information on different `remotes`. We'll talk about `fetch` and `push` a bit later.
-Now, you might be asking yourself: If I am only connected to the url I forked earlier, what happens when the owner of the main code repository pushes changes? How will I update my code when this happens?
+Now, you might be asking yourself: If I am only connected to the URL I forked earlier, what happens when the owner of the main code repository pushes changes? How will I update my code when this happens?
 Actually, you probably were not asking that question. It's not an obvious question to ask at all, but it's a useful question to move this tutorial forward.
 The solution is simple: Add another `remote` like so:
 
@@ -125,7 +125,7 @@ That said, we need to talk about how to do that.
 
 ### Committing to git
 
-Now you have the repository linked to another online source. Note that you are not authorized to push changes onto the `upstream` url, but that's alright for now. Let's just stick to modifying `origin`.
+Now you have the repository linked to another online source. Note that you are not authorized to push changes onto the `upstream` URL, but that's alright for now. Let's just stick to modifying `origin`.
 At this point, we can make any modification we want! I might suggest doing something simple:
 
 ```
@@ -172,7 +172,7 @@ Now let's say you want to checkout what the code looked like at a particular com
 git checkout CHARS
 ```
 
-It's incredibly unlikely that any two commits will share the first *n* characters, so this is unique enough for git to identify which commit we were referring to and send us back there, but here's where the notation get's a little crazy!
+It's incredibly unlikely that any two commits will share the first *n* characters, so this is unique enough for git to identify which commit we were referring to and send us back there, but here's where the notation gets a little crazy!
 See, when we are sent back in time to the chosen commit (with the above command), we will be in a *detached head* state.
 This refers to the term we use to describe the very latest commit, **HEAD**.
 If we wanted to checkout the previous commit (for example), we would use `git checkout HEAD~1`, the second-to-last commit would be `HEAD~2`, and so on and so-forth.
@@ -190,7 +190,7 @@ But this requires a little explanation!
 ### Checkout these branches!
 
 Now let's take a step to the side and talk about another fantastic git feature, *branches*.
-At this point, we might have code forked under our own username on github. This means that there could be at least 2 functioning versions of the code we are working on: our own fork and the original owner's fork.
+At this point, we might have code forked under our own username on GitHub. This means that there could be at least 2 functioning versions of the code we are working on: our own fork and the original owner's fork.
 That said, within each fork, there is the ability to have multiple lines of development, each one on a different *branch*.
 
 If you are new to software development, this might not seem too useful; however, imagine you are working on a large, open-source project that thousands of people use.
@@ -276,12 +276,12 @@ The easiest way to do this (in my opinion) can be found here: [https://help.gith
 Note that there are a lot of good tools for this and everyone has their favorite choice.
 I don't expect for too many users to run into merge conflicts while working with the Algorithm Archive, so I will omit much more discussion here, but let me know if you think I should cover this in more detail.
 It's an incredibly difficult aspect of using git and will drive you nuts the first tie you see it, but after that, it will be much more straightforward.
-Also: let me know if there's any tools you like, and I'll add them to this guide here.
+Also, let me know if there's any tools you like, and I'll add them to this guide here.
 
-### Interacting with github
+### Interacting with GitHub
 
 To this point, we have introduced the concept of `remote`s and how to set them up, but we have not discussed how to interact with them.
-For the most part, there are only a few commands to keep in mind. the easiest one to explain is
+For the most part, there are only a few commands to keep in mind. The easiest one to explain is
 
 ```
 git push
@@ -299,7 +299,7 @@ For example, if you are pushing the `master` branch to the `origin` remote, it w
 git push origin master
 ```
 
-Now, I personally like being explicit about which branch and remote we are working with, but you can tell git to ignore the `remote` and `branch` specifications by setting an upstream url, which means running
+Now, I personally like being explicit about which branch and remote we are working with, but you can tell git to ignore the `remote` and `branch` specifications by setting an upstream URL, which means running
 
 ```
 git push -u remote branch
@@ -313,7 +313,7 @@ Now, if `push`ing moves changes from your own computer to a repository online, i
 git pull remote branch
 ```
 
-However, there's a little more to it than that. In essense, `git pull` is running two separate commands. One updates your git repository with the information found on your remotes. This one is called `git fetch`.
+However, there's a little more to it than that. In essence, `git pull` is running two separate commands. One updates your git repository with the information found on your remotes. This one is called `git fetch`.
 The other one finds the changes and merges those changes with the branch found on your local machine. This is called `git merge` (as discussed before). When put together, it might look like:
 
 ```
@@ -339,7 +339,7 @@ git reset
 ```
 
 That's it. Don't overcomplicate it. You haven't committed to the code yet, so just unstage everything back to the `HEAD`.
-The problem is that this command is quite nuanced and has plenty of other uses. This goes beyong the scope of this text, but you can find more information here: [https://git-scm.com/blog](https://git-scm.com/blog).
+The problem is that this command is quite nuanced and has plenty of other uses. This goes beyond the scope of this text, but you can find more information here: [https://git-scm.com/blog](https://git-scm.com/blog).
 
 Now, what if your mistake was found after committing? Well, that's a little more complicated. Your mistake is already in your `git log`.
 The easiest way to deal with this is to live with the mistake and make a new commit that fixes it later.
@@ -349,14 +349,14 @@ One way to reverse the commit completely is with
 git revert commit
 ```
 
-where `commit` is whatever commit you want to undo from your `git log`.
+Where `commit` is whatever commit you want to undo from your `git log`.
 Assuming you are working with a small team and don't mind having a somewhat dirty commit history where your mistakes haunt you forever in your `git log`, this is fine; however, if you want to remove the commit completely, you might need to think about using another command:
 
 ```
 git rebase
 ```
 
-the problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately.
+The problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately.
 Because of this, I often just live with my mistakes; however, in rare cases, having a clean `git log` is incredibly important.
 I am not a git magician (yet), so I will not delve into what is essentially black magic to me. Instead, I'll link a guide: [https://git-scm.com/book/en/v2/Git-Branching-Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
 
