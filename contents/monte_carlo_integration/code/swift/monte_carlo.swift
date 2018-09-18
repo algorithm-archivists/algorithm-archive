@@ -1,18 +1,4 @@
-//Double Extension from YannickSteph on StackOverflow: https://stackoverflow.com/questions/25050309/swift-random-float-between-0-and-1
-
-import Foundation
-
-public extension Double {
-    public static var random: Double {
-        return Double(arc4random()) / 0xFFFFFFFF // Returns a random double between 0.0 and 1.0, inclusive.
-    }
-    
-    public static func random(min: Double, max: Double) -> Double {
-        return Double.random * (max - min) + min
-    }
-}
-
-func isInCircle(x: Double, y: Double, radius: Double) -> Bool {
+func inCircle(x: Double, y: Double, radius: Double) -> Bool {
     return (x*x) + (y*y) < radius*radius
 }
 
@@ -21,16 +7,16 @@ func monteCarlo(n: Int) -> Double {
     var piCount = 0
     var randX: Double
     var randY: Double
-    
+
     for _ in 0...n {
-        randX = Double.random(min: 0, max: radius)
-        randY = Double.random(min: 0, max: radius)
-        
-        if(isInCircle(x: randX, y: randY, radius: radius)) {
+        randX = Double.random(in: 0..<radius)
+        randY = Double.random(in: 0..<radius)
+
+        if(inCircle(x: randX, y: randY, radius: radius)) {
             piCount += 1
         }
     }
-    
+
     let piEstimate = Double(4 * piCount)/(Double(n))
     return piEstimate
 }
@@ -41,6 +27,4 @@ func main() {
     print("Percent error is: \(100 * abs(piEstimate - Double.pi)/Double.pi)%")
 }
 
-
 main()
-
