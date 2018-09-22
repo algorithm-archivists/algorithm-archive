@@ -14,7 +14,7 @@ In code, it looks something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:10-14, lang:"julia"](code/julia/bogo.jl)
+[import:12-16, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
 [import:9-15, lang:"csharp"](code/csharp/BogoSort.cs)
 {% sample lang="clj" %}
