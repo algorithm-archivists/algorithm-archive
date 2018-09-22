@@ -211,11 +211,11 @@ Here I should point out that Gaussian elimination makes sense from a purely anal
 For small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution.
 For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
 
-In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix where you have the following moves available:
+In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix with 3 possible moves. You can:
 
-1. You can swap any two rows
-2. You can multiply any row by a non-zero scale value
-3. You can add any row to a multiple of any other row
+1. swap any two rows
+2. multiply any row by a non-zero scale value
+3. add any row to a multiple of any other row
 
 That's it.
 Before continuing, I suggest you try to recreate the row echelon matrix we made above.

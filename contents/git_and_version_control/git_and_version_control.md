@@ -276,12 +276,12 @@ The easiest way to do this (in my opinion) can be found here: [https://help.gith
 Note that there are a lot of good tools for this and everyone has their favorite choice.
 I don't expect for too many users to run into merge conflicts while working with the Algorithm Archive, so I will omit much more discussion here, but let me know if you think I should cover this in more detail.
 It's an incredibly difficult aspect of using git and will drive you nuts the first tie you see it, but after that, it will be much more straightforward.
-Also: let me know if there's any tools you like, and I'll add them to this guide here.
+Also, let me know if there's any tools you like, and I'll add them to this guide here.
 
 ### Interacting with GitHub
 
 To this point, we have introduced the concept of `remote`s and how to set them up, but we have not discussed how to interact with them.
-For the most part, there are only a few commands to keep in mind. the easiest one to explain is
+For the most part, there are only a few commands to keep in mind. The easiest one to explain is
 
 ```
 git push
@@ -349,14 +349,14 @@ One way to reverse the commit completely is with
 git revert commit
 ```
 
-where `commit` is whatever commit you want to undo from your `git log`.
+Where `commit` is whatever commit you want to undo from your `git log`.
 Assuming you are working with a small team and don't mind having a somewhat dirty commit history where your mistakes haunt you forever in your `git log`, this is fine; however, if you want to remove the commit completely, you might need to think about using another command:
 
 ```
 git rebase
 ```
 
-the problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately.
+The problem is that `git rebase` is complicated and could potentially destroy your codebase if it's used inappropriately.
 Because of this, I often just live with my mistakes; however, in rare cases, having a clean `git log` is incredibly important.
 I am not a git magician (yet), so I will not delve into what is essentially black magic to me. Instead, I'll link a guide: [https://git-scm.com/book/en/v2/Git-Branching-Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
 
