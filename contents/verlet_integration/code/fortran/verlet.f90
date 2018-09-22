@@ -1,7 +1,7 @@
 SUBROUTINE verlet(pos, acc, dt, time) 
     IMPLICIT NONE
-    REAL(8), INTENT(INOUT)    :: pos, acc, dt, time
-    REAL(8) :: prev_pos, next_pos
+    REAL(8), INTENT(INOUT) :: pos, acc, dt, time
+    REAL(8)                :: prev_pos, next_pos
 
 
     prev_pos = pos
@@ -9,7 +9,7 @@ SUBROUTINE verlet(pos, acc, dt, time)
 
     DO
         IF (pos > 0d0) THEN
-            time = time + dt
+            time     = time + dt
             next_pos = pos * 2d0 - prev_pos + acc * dt ** 2
             prev_pos = pos
             pos      = next_pos
@@ -30,7 +30,7 @@ SUBROUTINE stromer_verlet(pos, acc, dt, time, vel)
 
     DO
         IF (pos > 0d0) THEN
-            time = time + dt
+            time     = time + dt
             next_pos = pos * 2 - prev_pos + acc * dt ** 2
             prev_pos = pos
             pos      = next_pos
@@ -51,8 +51,8 @@ SUBROUTINE velocity_verlet(pos, acc, dt, time, vel)
     DO
         IF (pos > 0d0) THEN
             time = time + dt
-            pos = pos + vel * dt + 0.5d0 * acc * dt ** 2 
-            vel = vel + acc * dt
+            pos  = pos + vel * dt + 0.5d0 * acc * dt ** 2 
+            vel  = vel + acc * dt
         ELSE
             EXIT
         END IF
@@ -66,7 +66,7 @@ REAL(8) :: pos,acc, dt, time, vel
 
 INTERFACE
     SUBROUTINE verlet(pos, acc, dt, time)
-    REAL(8), INTENT(INOUT)    :: pos, acc, dt, time
+    REAL(8), INTENT(INOUT) :: pos, acc, dt, time
     REAL(8)                :: prev_pos, next_pos
     END SUBROUTINE
 END INTERFACE 
