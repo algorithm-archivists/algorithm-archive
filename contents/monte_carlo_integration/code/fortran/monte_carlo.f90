@@ -8,6 +8,7 @@ FUNCTION in_circle(pos_x, pos_y, r)
 END FUNCTION in_circle 
 
 PROGRAM monte_carlo
+
 IMPLICIT NONE
 
 INTERFACE
@@ -18,7 +19,7 @@ INTERFACE
     END FUNCTION in_circle 
 END INTERFACE
 
-INTEGER :: i,n
+INTEGER  :: i,n
 REAL(16) :: pos_x,pos_y, r, pi_est, pi_count, pi_error, pi
 
 ! Calculate Pi from trigonometric functions as reference
