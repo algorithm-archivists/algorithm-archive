@@ -40,7 +40,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
-[import:1-16, lang="Fortran"](code/fortran/euclidean.f90)
+[import:1-19, lang="Fortran"](code/fortran/euclidean.f90)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
