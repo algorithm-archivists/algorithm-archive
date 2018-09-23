@@ -28,7 +28,7 @@ def gaussian_elimination(A):
         pivot_row += 1
 
 
-# Assumes A is already ref
+# Assumes A is already row echelon form
 def gauss_jordan_elimination(A):
     
     col = 0
@@ -49,7 +49,7 @@ def gauss_jordan_elimination(A):
             A[r, :] -= A[r, col] * A[row, :]
 
 
-# Assumes A has a unique solution and A in ref
+# Assumes A has a unique solution and A in row echelon form
 def back_substitution(A):
     
     sol = np.zeros(A.shape[0]).T
