@@ -1,8 +1,9 @@
 SUBROUTINE bubblesort(array)
     IMPLICIT NONE
-    INTEGER                              :: len_array
+    INTEGER                              :: array_length, array_shape
     REAL(8), ALLOCATABLE, DIMENSION(:,:) :: array
 
+    len_array = size(array)
 
     DO 
 	
