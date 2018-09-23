@@ -61,48 +61,48 @@ END SUBROUTINE velocity_verlet
 
 PROGRAM verlet_integration
 
-IMPLICIT NONE 
-REAL(8) :: pos,acc, dt, time, vel
-
-INTERFACE
-    SUBROUTINE verlet(pos, acc, dt, time)
-    REAL(8), INTENT(INOUT) :: pos, acc, dt, time
-    REAL(8)                :: prev_pos, next_pos
-    END SUBROUTINE
-END INTERFACE 
-
-INTERFACE 
-    SUBROUTINE stromer_verlet(pos, acc, dt, time, vel) 
-        REAL(8), INTENT(INOUT) :: pos, acc, dt, time, vel
+    IMPLICIT NONE 
+    REAL(8) :: pos,acc, dt, time, vel
+    
+    INTERFACE
+        SUBROUTINE verlet(pos, acc, dt, time)
+        REAL(8), INTENT(INOUT) :: pos, acc, dt, time
         REAL(8)                :: prev_pos, next_pos
-    END SUBROUTINE 
-END INTERFACE 
-
-INTERFACE 
-    SUBROUTINE velocity_verlet(pos, acc, dt, time, vel) 
-        REAL(8), INTENT(INOUT) :: pos, acc, dt, time, vel
-        REAL(8)                :: prev_pos, next_pos 
-    END SUBROUTINE 
-END INTERFACE 
-
-pos = 5d0
-acc = -10d0
-dt  = 0.01d0
-! Verlet 
-CALL verlet(pos, acc, dt, time)
-
-WRITE(*,*) 'Time for Verlet integration: ', time 
-
-! Stromer Verlet 
-pos = 5d0
-CALL stromer_verlet(pos, acc, dt, time, vel)
-
-WRITE(*,*) 'Time for Stromer-Verlet integration: ', time 
-
-! Velocity Verlet
-pos = 5d0
-CALL velocity_verlet(pos, acc, dt, time, vel)
-
-WRITE(*,*) 'Time for Velocity-Verlet integration: ', time 
-
+        END SUBROUTINE
+    END INTERFACE 
+    
+    INTERFACE 
+        SUBROUTINE stromer_verlet(pos, acc, dt, time, vel) 
+            REAL(8), INTENT(INOUT) :: pos, acc, dt, time, vel
+            REAL(8)                :: prev_pos, next_pos
+        END SUBROUTINE 
+    END INTERFACE 
+    
+    INTERFACE 
+        SUBROUTINE velocity_verlet(pos, acc, dt, time, vel) 
+            REAL(8), INTENT(INOUT) :: pos, acc, dt, time, vel
+            REAL(8)                :: prev_pos, next_pos 
+        END SUBROUTINE 
+    END INTERFACE 
+    
+    pos = 5d0
+    acc = -10d0
+    dt  = 0.01d0
+    ! Verlet 
+    CALL verlet(pos, acc, dt, time)
+    
+    WRITE(*,*) 'Time for Verlet integration: ', time 
+    
+    ! Stromer Verlet 
+    pos = 5d0
+    CALL stromer_verlet(pos, acc, dt, time, vel)
+    
+    WRITE(*,*) 'Time for Stromer-Verlet integration: ', time 
+    
+    ! Velocity Verlet
+    pos = 5d0
+    CALL velocity_verlet(pos, acc, dt, time, vel)
+    
+    WRITE(*,*) 'Time for Velocity-Verlet integration: ', time 
+    
 END PROGRAM verlet_integration
