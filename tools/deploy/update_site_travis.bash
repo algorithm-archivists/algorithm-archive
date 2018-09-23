@@ -38,11 +38,11 @@ GH_REPO_REF="github.com/${DOCS_REPO_OWNER}/${DOCS_REPO_NAME}.git"
 
 if [ -d build ]; then
     echo "${bold}Cloning the website repo...${normal}"
-    git clone -b $DOCS_BRANCH_NAME https://git@${GH_REPO_REF}
+    git clone -b "${DOCS_BRANCH_NAME}" https://git@"${GH_REPO_REF}"
     rm -rf ./"${DOCS_REPO_NAME}"/*
     cp -a ./build/* ./"${DOCS_REPO_NAME}"
     pushd ./"${DOCS_REPO_NAME}"
-    # echo "www.algorithm-archive.org" > CNAME
+    echo "www.algorithm-archive.org" > CNAME
     echo "${bold}Adding changes...${normal}"
     git add --all
     echo "${bold}Committing...${normal}"
@@ -51,7 +51,7 @@ if [ -d build ]; then
     git commit \
         -m "Deploy book to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER}" \
         -m "Commit: ${TRAVIS_COMMIT}" || ret=$?
-    git push "https://${GH_TOKEN}@${GH_REPO_REF}" > /dev/null 2>&1
+    git push "https://${GH_TOKEN}@${GH_REPO_REF}"
     popd
 else
     echo "" >&2
