@@ -1,4 +1,4 @@
-# Submitted by Gustorn
+using Random
 
 const mnames = ["A", "B", "C", "D"]
 const wnames = ["E", "F", "G", "H"]

@@ -416,7 +416,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 
 {% method %}
 {% sample lang="jl" %}
-[import:47-67, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:47-64, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:50-62, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}

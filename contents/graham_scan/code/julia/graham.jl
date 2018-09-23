@@ -1,4 +1,4 @@
-type Point
+struct Point
     x::Float64
     y::Float64
 end
@@ -14,8 +14,8 @@ function graham_scan(points::Vector{Point})
     sort!(points, by = item -> item.y)
 
     # Sort all other points according to angle with that point
-    other_points = sort(points[2:end], by = item -> atan2(item.y - points[1].y,
-                                                          item.x - points[1].x))
+    other_points = sort(points[2:end], by = item -> atan(item.y - points[1].y,
+                                                         item.x - points[1].x))
 
     # Place points sorted by angle back into points vector
     for i in 1:length(other_points)
