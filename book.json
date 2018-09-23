@@ -135,6 +135,10 @@
         {
           "lang": "nim",
           "name": "Nim"
+        },
+        {
+          "lang": "f90",
+          "name": "Fortran"
         }
       ]
     }

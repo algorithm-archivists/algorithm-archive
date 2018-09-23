@@ -69,6 +69,8 @@ each point is tested to see whether it's in the circle or not:
 [import:6-7, lang:"nim"](code/nim/monte_carlo.nim)
 {% sample lang="ruby" %}
 [import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
+{% sample lang="f90" %}
+[import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -137,6 +139,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"nim"](code/nim/monte_carlo.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/monte_carlo.rb)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% endmethod %}
 
 
