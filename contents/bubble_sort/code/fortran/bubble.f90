@@ -1,15 +1,18 @@
 SUBROUTINE bubblesort(array)
     IMPLICIT NONE
-    INTEGER :: len_array
+    INTEGER                              :: len_array
     REAL(8), ALLOCATABLE, DIMENSION(:,:) :: array
 
 
-    for i
+    DO 
+	
+	END DO
 END SUBROUTINE bubblesort
 
-PROGRAM
-    IMPLICIT NONE
-    INTEGER :: cols, rows
+PROGRAM main
+
+IMPLICIT NONE
+INTEGER :: cols, rows
 
     
 END PROGRAMM 
