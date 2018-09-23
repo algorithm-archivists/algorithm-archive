@@ -19,7 +19,7 @@ SUBROUTINE verlet(pos, acc, dt, time)
     END DO
 END SUBROUTINE verlet
 
-SUBROUTINE stromer_verlet(pos, acc, dt, time, vel) 
+SUBROUTINE stormer_verlet(pos, acc, dt, time, vel) 
     IMPLICIT NONE
     REAL(8), INTENT(INOUT) :: pos, acc, dt, time, vel
     REAL(8)                :: prev_pos, next_pos
@@ -39,7 +39,7 @@ SUBROUTINE stromer_verlet(pos, acc, dt, time, vel)
             EXIT
         END IF
     END DO
-END SUBROUTINE stromer_verlet 
+END SUBROUTINE stormer_verlet 
 
 SUBROUTINE velocity_verlet(pos, acc, dt, time, vel) 
     IMPLICIT NONE
@@ -72,7 +72,7 @@ PROGRAM verlet_integration
     END INTERFACE 
     
     INTERFACE 
-        SUBROUTINE stromer_verlet(pos, acc, dt, time, vel) 
+        SUBROUTINE stormer_verlet(pos, acc, dt, time, vel) 
             REAL(8), INTENT(INOUT) :: pos, acc, dt, time, vel
             REAL(8)                :: prev_pos, next_pos
         END SUBROUTINE 
@@ -93,11 +93,11 @@ PROGRAM verlet_integration
     
     WRITE(*,*) 'Time for Verlet integration: ', time 
     
-    ! Stromer Verlet 
+    ! stormer Verlet 
     pos = 5d0
-    CALL stromer_verlet(pos, acc, dt, time, vel)
+    CALL stormer_verlet(pos, acc, dt, time, vel)
     
-    WRITE(*,*) 'Time for Stromer-Verlet integration: ', time 
+    WRITE(*,*) 'Time for Stormer-Verlet integration: ', time 
     
     ! Velocity Verlet
     pos = 5d0
