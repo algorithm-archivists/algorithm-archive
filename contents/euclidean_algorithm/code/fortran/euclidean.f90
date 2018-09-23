@@ -35,14 +35,15 @@ END FUNCTION euclid_mod
 
 PROGRAM euclidean
 
-IMPLICIT NONE
-INTEGER :: a, b, euclid_sub, euclid_mod
-
+    IMPLICIT NONE
+    INTEGER :: a, b, euclid_sub, euclid_mod
+    
     a = 24
     b = 27
     WRITE(*,*) 'Subtraction method: GCD is: ', euclid_sub(a, b)
-
+    
     a = 24
     b = 27
     WRITE(*,*) 'Modulus method:     GCD is: ', euclid_mod(a, b)
+
 END PROGRAM euclidean 

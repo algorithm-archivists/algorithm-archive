@@ -36,25 +36,25 @@ END FUNCTION euclid_mod
 
 PROGRAM euclidean
     
-IMPLICIT NONE
-INTEGER :: a, b, euclid_sub, euclid_mod, temp_a, temp_b, ioerror
-
-DO
-    WRITE(*,*) 'Calculate greatest common divisor. Give two integers:'
-    READ(*, '(i10)', iostat=ioerror) temp_a, temp_b
+    IMPLICIT NONE
+    INTEGER :: a, b, euclid_sub, euclid_mod, temp_a, temp_b, ioerror
     
-    IF (ioerror == 0) THEN
-        EXIT
-    END IF
-
-    WRITE(*,*) 'Entered numbers are not integers. Try again.'
-END DO
-
-a = temp_a
-b = temp_b
-WRITE(*,*) 'Subtraction method: GCD is: ', euclid_sub(a, b)
-
-a = temp_a 
-b = temp_b 
-WRITE(*,*) 'Modulus method:     GCD is: ', euclid_mod(a, b)
+    DO
+        WRITE(*,*) 'Calculate greatest common divisor. Give two integers:'
+        READ(*, '(i10)', iostat=ioerror) temp_a, temp_b
+        
+        IF (ioerror == 0) THEN
+            EXIT
+        END IF
+    
+        WRITE(*,*) 'Entered numbers are not integers. Try again.'
+    END DO
+    
+    a = temp_a
+    b = temp_b
+    WRITE(*,*) 'Subtraction method: GCD is: ', euclid_sub(a, b)
+    
+    a = temp_a 
+    b = temp_b 
+    WRITE(*,*) 'Modulus method:     GCD is: ', euclid_mod(a, b)
 END PROGRAM euclidean 
