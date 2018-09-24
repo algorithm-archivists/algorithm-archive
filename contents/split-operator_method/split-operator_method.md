@@ -98,7 +98,7 @@ Regardless, we first need to set all the initial parameters, including the initi
 
 {% method %}
 {% sample lang="jl" %}
-[import:9-32, lang:"julia"](code/julia/split_op.jl)
+[import:11-34, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
 [import:10-20, lang:"c_cpp"](code/c/split_op.c)
 [import:51-72, lang:"c_cpp"](code/c/split_op.c)
@@ -115,7 +115,7 @@ Afterwards, we turn them into operators:
 
 {% method %}
 {% sample lang="jl" %}
-[import:34-60, lang:"julia"](code/julia/split_op.jl)
+[import:36-62, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
 [import:22-28, lang:"c_cpp"](code/c/split_op.c)
 [import:74-95, lang:"c_cpp"](code/c/split_op.c)
@@ -133,7 +133,7 @@ The final step is to do the iteration, itself.
 
 {% method %}
 {% sample lang="jl" %}
-[import:63-109, lang:"julia"](code/julia/split_op.jl)
+[import:65-112, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
 [import:97-145, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
