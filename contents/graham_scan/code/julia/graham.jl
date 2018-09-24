@@ -46,7 +46,11 @@ end
 
 function main()
     # This hull is just a simple test so we know what the output should be
-    points = [Point(2,1.9), Point(1, 1), Point(2, 4), Point(3, 1), Point(2, 0)]
+    points = [
+        Point(-5.,2), Point(5,7), Point(-6,-12), Point(-14,-14), Point(9,9),
+        Point(-1,-1), Point(-10,11), Point(-6,15), Point(-6,-8), Point(15,-9),
+        Point(7,-7), Point(-2,-9), Point(6,-5), Point(0,14), Point(2,8)
+    ]
     hull = graham_scan(points)
     println(hull)
 end
