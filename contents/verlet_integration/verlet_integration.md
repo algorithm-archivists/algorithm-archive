@@ -33,11 +33,11 @@ Here is what it looks like in code:
 {% sample lang="jl" %}
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:4-17, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:9-22, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 [import:3-14, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:2-18, lang:"java"](code/java/verlet.java)
+[import:13-28, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:1-9, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -58,6 +58,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import:1-15, lang:"swift"](code/swift/verlet.swift)
+{% sample lang="f90" %}
+[import:1-20, lang:"fortran"](code/fortran/verlet.f90)
 {% endmethod %}
 
 Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
@@ -78,11 +80,11 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="jl" %}
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:20-36, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:24-41, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 [import:16-31, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:21-40, lang:"java"](code/java/verlet.java)
+[import:30-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:11-21, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -103,6 +105,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import:17-34, lang:"swift"](code/swift/verlet.swift)
+{% sample lang="f90" %}
+[import:22-42, lang:"fortran"](code/fortran/verlet.f90)
 {% endmethod %}
 
 
@@ -137,11 +141,11 @@ Here is the velocity Verlet method in code:
 {% sample lang="jl" %}
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:38-49, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:43-54, lang:"c_cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
 [import:33-43, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:43-57, lang:"java"](code/java/verlet.java)
+[import:51-65, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:23-32, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -162,6 +166,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import:36-49, lang:"swift"](code/swift/verlet.swift)
+{% sample lang="f90" %}
+[import:44-60, lang:"fortran"](code/fortran/verlet.f90)
 {% endmethod %}
 
 Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
@@ -178,7 +184,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/verlet.c)
 {% sample lang="java" %}
-[import, lang:"java"](code/java/verlet.java)
+[import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -202,6 +208,8 @@ Submitted by P. Mekhail
 [import, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/verlet.swift)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/verlet.f90)
 {% endmethod %}
 
 

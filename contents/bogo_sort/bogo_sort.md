@@ -14,7 +14,7 @@ In code, it looks something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:10-14, lang:"julia"](code/julia/bogo.jl)
+[import:12-16, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
 [import:9-15, lang:"csharp"](code/csharp/BogoSort.cs)
 {% sample lang="clj" %}
@@ -36,7 +36,7 @@ In code, it looks something like this:
 {% sample lang="rs" %}
 [import:16-20, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
-[import:25-31, lang:"swift"](code/swift/bogosort.swift)
+[import:13-19, lang:"swift"](code/swift/bogosort.swift)
 {% sample lang="php" %}
 [import:11-16, lang:"php"](code/php/bogo_sort.php)
 {% sample lang="nim" %}
