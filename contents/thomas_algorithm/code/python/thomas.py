@@ -12,13 +12,13 @@ def thomas(a, b, c, d):
         # scale factor for c and d
         scale = 1 / (b[i] - c[i-1] * a[i])
 
-        c[i] = c[i] * scale
+        c[i] *= scale
         d[i] = (d[i] - a[i] * d[i-1]) * scale
 
 
     # do the back substitution
     for i in range(n-2, -1, -1):
-        d[i] = d[i] - c[i] * d[i+1]
+        d[i] -= c[i] * d[i+1]
 
     return d
 
@@ -27,6 +27,7 @@ def main():
     # [1  4  0][x]   [7]
     # [2  3  5][y] = [5]
     # [0  3  6][z]   [3]
+    #
     #                 [.8666]
     # soln will equal [1.533]
     #                 [-.266]
