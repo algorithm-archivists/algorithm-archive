@@ -1,11 +1,18 @@
-{-# LANGUAGE FlexibleContexts #-}
-
 import Data.Array.CArray
 import Data.Complex
 import Data.List (intercalate, transpose)
-import Math.FFT (dft, idft) -- Binding to fftw
+import Math.FFT (dft, idft)
 
 type Vector = CArray Int (Complex Double)
+
+(.*), (.+) :: Vector -> Vector -> Vector
+a .* b = liftArray2 (*) a b
+a .+ b = liftArray2 (+) a b
+
+normalize :: Double -> Vector -> Vector
+normalize dx v =
+  let factor = 1 / sqrt dx / norm2 v :+ 0
+   in liftArray (factor *) v
 
 data Parameters = Parameters
   { xmax :: Double
@@ -49,40 +56,30 @@ data Operators = Operators
 makeOperators :: Parameters -> Complex Double -> Complex Double -> Operators
 makeOperators param v0 wfc0 =
   let rng = (0, res param - 1)
-      t =
-        (dt param :+ 0) *
-        if imTime param
-          then 1 :+ 0
-          else 0 :+ 1
+      time
+        | imTime param = dt param :+ 0
+        | otherwise = 0 :+ dt param
       v = liftArray (\x -> 0.5 * (x - v0) ^ 2) (x param)
-      rStep = liftArray (\x -> exp (-0.5 * t * x)) v
-      kStep = liftArray (\k -> exp (-0.5 * t * k ^ 2)) (ks param)
-      wfc' = liftArray (\x -> exp (-(x - wfc0) ^ 2 / 2)) (x param)
-      factor = 1 / sqrt (dx param) / norm2 wfc' :+ 0
-      wfc = liftArray (factor *) wfc'
-   in Operators v rStep kStep wfc
+      rStep = liftArray (\x -> exp (-0.5 * time * x)) v
+      kStep = liftArray (\k -> exp (-0.5 * time * k ^ 2)) (ks param)
+      wfc = liftArray (\x -> exp (-(x - wfc0) ^ 2 / 2)) (x param)
+   in Operators v rStep kStep (normalize (dx param) wfc)
 
 evolve :: Parameters -> Operators -> [Operators]
 evolve param op@(Operators _ rStep kStep _) = iterate splitop op
   where
     splitop op = op {wfc = wfc' op}
     wfc' = norm . (rStep .*) . idft . (kStep .*) . dft . (rStep .*) . wfc
-    a .* b = liftArray2 (*) a b
-    norm x
-      | imTime param =
-        let f = 1 / sqrt (dx param) / norm2 x :+ 0
-         in liftArray (f *) x
-      | otherwise = x
+    norm = if imTime param then normalize (dx param) else id
 
 calculateEnergy :: Parameters -> Operators -> Double
 calculateEnergy param ops = (* dx param) . sum . map realPart $ elems totalE
   where
-    totalE = liftArray2 (+) potentialE kineticE
+    totalE = potentialE .+ kineticE
     potentialE = wfcConj .* v ops .* wfc ops
     kineticOp = liftArray ((/ 2) . (^ 2)) (ks param)
     kineticE = wfcConj .* idft (kineticOp .* dft (wfc ops))
     wfcConj = liftArray conjugate $ wfc ops
-    a .* b = liftArray2 (*) a b
 
 -- Use gnuplot to make an animated  GIF using ../../plot_output.plt
 -- $ gnuplot -e "folder='/code/haskell'" plot_output.plt
