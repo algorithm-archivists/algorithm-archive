@@ -63,7 +63,6 @@ mukundan314
 Trashtalk
 <br>
 Cyrus Burt
-<<<<<<< HEAD
 <br>
 Patrik Tesarik
 <br>
