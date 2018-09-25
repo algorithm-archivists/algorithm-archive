@@ -81,8 +81,8 @@ calculateEnergy param ops = (* dx param) . sum . map realPart $ elems totalE
     kineticE = wfcConj .* idft (kineticOp .* dft (wfc ops))
     wfcConj = liftArray conjugate $ wfc ops
 
--- Use gnuplot to make an animated  GIF using ../../plot_output.plt
--- $ gnuplot -e "folder='/code/haskell'" plot_output.plt
+-- Use gnuplot to make an animated  GIF using ../gnuplot/plot_output.plt
+-- $ gnuplot -e "folder='../haskell'" plot_output.plt
 printEvolution :: Parameters -> [Operators] -> IO ()
 printEvolution param =
   mapM_ (export . (format <$>)) . zip [0 ..] . take 100 . skip
