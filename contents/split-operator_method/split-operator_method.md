@@ -55,7 +55,7 @@ Here's a flowchart of what we are looking for every timestep:
 
 
 For the most part, that's it:
-1. Multiply the wavefunction in real space with the real-space operator. 
+1. Multiply the wavefunction in real space with the real-space operator.
 2. Flip to momentum space with a Fourier transform.
 3. Multiply the momentum-space wavefuntion by the momentum-space operator.
 4. Flip to position space with an inverse Fourier transform.
@@ -104,6 +104,8 @@ Regardless, we first need to set all the initial parameters, including the initi
 [import:51-72, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:11-30, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import:10-40, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
@@ -121,6 +123,8 @@ Afterwards, we turn them into operators:
 [import:74-95, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:33-54, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import:42-63, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
@@ -138,6 +142,8 @@ The final step is to do the iteration, itself.
 [import:97-145, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import:65-75, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 And that's it.
@@ -161,6 +167,8 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 [import, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:5-127, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 <script>
