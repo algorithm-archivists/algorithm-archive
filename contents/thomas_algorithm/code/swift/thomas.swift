@@ -1,4 +1,9 @@
-func thomas(a: inout  [Double], b: inout [Double], c: inout  [Double], d: inout [Double]) -> [Double] {
+func thomas(a: [Double], b: [Double], c: [Double], d: [Double]) -> [Double] {
+    var a = a
+    var b = b
+    var c = c
+    var d = d
+
     // set the initial elements
     c[0] = c[0] / b[0]
     d[0] = d[0] / b[0]
@@ -21,12 +26,12 @@ func thomas(a: inout  [Double], b: inout [Double], c: inout  [Double], d: inout 
 }
 
 func main() {
-    var a = [0.0, 2.0, 3.0]
-    var b = [1.0, 3.0, 6.0]
-    var c = [4.0, 5.0, 0.0]
-    var d = [7.0, 5.0, 3.0]
+    let a = [0.0, 2.0, 3.0]
+    let b = [1.0, 3.0, 6.0]
+    let c = [4.0, 5.0, 0.0]
+    let d = [7.0, 5.0, 3.0]
 
-    print(thomas(a: &a, b: &b, c: &c, d: &d))
+    print(thomas(a: a, b: b, c: c, d: d))
 }
 
 main()
