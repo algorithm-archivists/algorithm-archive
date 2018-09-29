@@ -39,7 +39,7 @@ In code, this looks something like:
 {% sample lang="jl" %}
 [import:1-17, lang:"julia"](code/julia/conv.jl)
 {% sample lang="hs" %}
-[import:1-5, lang:"haskell"](code/haskell/convolution.hs)
+[import:6-9, lang:"haskell"](code/haskell/convolution.hs)
 {% sample lang="c"%}
 [import:5-18, lang:"c_cpp"](code/c/convolutions.c)
 {% sample lang="cpp"%}
@@ -86,8 +86,7 @@ That said, Julia has an in-built fft routine, so the code for this method could 
 [import:19-22, lang:"julia"](code/julia/conv.jl)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="hs" %}
-The FFT-based convolution in Haskell is complicated, so here is some simple julia code:
-[import:19-22, lang:"julia"](code/julia/conv.jl)
+[import:11-14, lang:"haskell"](code/haskell/convolution.hs)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="c"%}
 [import:20-30, lang:"c_cpp"](code/c/convolutions.c)
