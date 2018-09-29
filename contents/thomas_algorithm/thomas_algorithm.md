@@ -111,6 +111,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"java"](code/java/thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/thomas.swift)
 {% endmethod %}
 
 <script>
