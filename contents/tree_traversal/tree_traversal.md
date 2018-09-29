@@ -185,8 +185,7 @@ In code, it looks like this:
 {% sample lang="rs"%}
 [import:40-47, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:45-56, lang:"julia"](code/julia/Tree.jl)
+[import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
@@ -225,7 +224,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="rs"%}
 [import:49-57, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
