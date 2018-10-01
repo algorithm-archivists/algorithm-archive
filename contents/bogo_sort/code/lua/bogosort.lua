@@ -20,3 +20,10 @@ function bogosort(arr)
 		shuffle(arr)
 	end
 end
+
+local arr = {1, 45, 756, 4569, 56, 3, 8, 5, -10, -4}
+print(("Unsorted array: {%s}"):format(table.concat(arr,", ")))
+
+bogosort(arr)
+
+print(("Sorted array: {%s}"):format(table.concat(arr,", ")))
