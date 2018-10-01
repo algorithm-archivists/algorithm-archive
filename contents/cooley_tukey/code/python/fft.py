@@ -2,6 +2,14 @@ from random import random
 from cmath import exp, pi
 from math import log2
 
+def dft(X):
+    N = len(X)
+    temp = [0]*N
+    for i in range(N):
+        for k in range(N):
+            temp[i] += X[k] * exp(-2.0j*pi*i*k/N)
+    return temp
+
 def cooley_tukey(X):
 	N = len(X)
 	if N <= 1:
@@ -47,5 +55,7 @@ for i in range(64):
 
 Y = cooley_tukey(X)
 Z = iterative_cooley_tukey(X)
+T = dft(X)
 
 print(all(abs([Y[i] - Z[i] for i in range(64)][j]) < 1 for j in range(64)))
+print(all(abs([Y[i] - T[i] for i in range(64)][j]) < 1 for j in range(64)))

@@ -102,10 +102,17 @@ The transformations are quite easy too, isn't that neat?
 [import, lang:"c_cpp"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
+{% sample lang="scratch" %}
+You will find this algorithm implemented [in this project](https://scratch.mit.edu/projects/169418273/).
+<p>
+  <img  class="center" src="code/scratch/thomas.svg" width="1000" />
+</p>
 {% sample lang="java" %}
 [import, lang:"java"](code/java/thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
+{% sample lang="swift" %}
+[import, lang:"swift"](code/swift/thomas.swift)
 {% endmethod %}
 
 <script>
