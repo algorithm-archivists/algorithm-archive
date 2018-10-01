@@ -1,11 +1,9 @@
 
 local function shuffle(arr)
-	local size = #tbl
-	for i = size, 1, -1 do
-		local rand = math.random(size)
-		tbl[i], tbl[rand] = tbl[rand], tbl[i]
+	for i = 1, #arr do
+		local rand = math.random(#arr)
+		arr[i], arr[rand] = arr[rand], arr[i]
 	end
-	return tbl
 end
 
 local function issorted(arr)
