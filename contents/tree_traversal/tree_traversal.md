@@ -6,7 +6,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="jl" %}
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:15-18, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:12-15, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:7-11, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -40,7 +40,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="jl" %}
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:20-27, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:17-24, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:34-45, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -83,7 +83,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="jl" %}
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:29-34 lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:26-31, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:47-58, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -120,7 +120,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="jl" %}
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:37-55 lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:34-52 lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:60-79, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -167,7 +167,7 @@ In code, it looks like this:
 {% sample lang="jl" %}
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:58-73, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:55-70, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:81-94, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -207,7 +207,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="jl" %}
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:76-89, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:73-86, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:96-109, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
