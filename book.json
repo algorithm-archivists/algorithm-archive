@@ -137,8 +137,8 @@
           "name": "Nim"
         },
         {
-          "lang": "x86asm",
-          "name": "X86 Assembly"
+          "lang": "x64",
+          "name": "X86-64 Assembly"
         }
       ]
     }
