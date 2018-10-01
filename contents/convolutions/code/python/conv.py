@@ -5,11 +5,11 @@ def conv(signal1, signal2):
     """Discrete convolution by definition"""
     
     out = []
-    n = range(min(len(signal1), len(signal2)))
+    n = min(len(signal1), len(signal2))
 
-    for i in n:
+    for i in range(n):
         s = 0
-        for j in n:
+        for j in range(i, n):
             s += signal1[j] * signal2[i - j]
         out.append(s)
 
