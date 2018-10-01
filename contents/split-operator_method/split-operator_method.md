@@ -100,8 +100,8 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% sample lang="jl" %}
 [import:11-34, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:10-20, lang:"c_cpp"](code/c/split_op.c)
-[import:51-72, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import:8-74, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:11-30, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -119,8 +119,8 @@ Afterwards, we turn them into operators:
 {% sample lang="jl" %}
 [import:36-62, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:22-28, lang:"c_cpp"](code/c/split_op.c)
-[import:74-95, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import:76-129, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:33-54, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -139,7 +139,9 @@ The final step is to do the iteration, itself.
 {% sample lang="jl" %}
 [import:65-112, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:97-145, lang:"c_cpp"](code/c/split_op.c)
+[import:98-148, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import:152-202, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -165,6 +167,8 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 [import, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:5-127, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
