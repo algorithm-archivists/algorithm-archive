@@ -9,7 +9,7 @@ def conv(signal1, signal2):
 
     for i in range(n):
         s = 0
-        for j in range(i, n):
+        for j in range(n):
             s += signal1[j] * signal2[i - j]
         out.append(s)
 
