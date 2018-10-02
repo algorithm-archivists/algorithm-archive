@@ -121,6 +121,8 @@ Full code for the visualization follows:
 [import, lang:"matlab"](code/matlab/euler.m)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/euler.swift)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/euler.js)
 {% endmethod %}
 
 <script>
