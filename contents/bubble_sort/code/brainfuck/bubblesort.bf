@@ -50,7 +50,7 @@ set a "correct" marker between numbers
 check swap marker
 <<<<<<
 
-if swap marker is set, delete "correct" marker
+if swap marker is set delete "correct" marker
 [->>>>>>->
 
 and swap the numbers
