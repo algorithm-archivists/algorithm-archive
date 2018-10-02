@@ -40,4 +40,3 @@ SUBROUTINE bubblesort(array)
 END SUBROUTINE bubblesort
     
 END PROGRAM main 
->>>>>>> 44181dc533101507167ae8fe2c97329100941098
