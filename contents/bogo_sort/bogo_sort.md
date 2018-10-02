@@ -43,14 +43,15 @@ In code, it looks something like this:
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="f90" %}
+[import:24-32, lang:"fortran"](code/fortran/bogo.f90)
 {% endmethod %}
 
 That's it.
 Ship it!
 We are done here!
 
-## Example Code
-
+## Example Code 
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bogo.jl)
@@ -85,6 +86,8 @@ We are done here!
 [import, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/bogo.f90)
 {% endmethod %}
 
 
