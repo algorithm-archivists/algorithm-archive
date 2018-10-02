@@ -1,4 +1,4 @@
-import numpy as np
+import math
 from scipy.fftpack import fft, ifft
 
 def conv(signal1, signal2):
@@ -8,7 +8,7 @@ def conv(signal1, signal2):
     n = min(len(signal1), len(signal2))
 
     for i in range(n):
-        s = 0
+        s = complex(0)
         for j in range(n):
             s += signal1[j] * signal2[i - j]
         out.append(s)
@@ -25,14 +25,13 @@ def conv_fft(signal1, signal2):
     for i in range(min(len(signal1), len(signal2))):
         out.append(fft_s1[i] * fft_s2[i])
 
-    return ifft(out)
+    return list(ifft(out))
 
 
 def main():
     # Example convolution with sin and cos
-    x = np.linspace(0, 1, 5)
-    s1 = np.sin(x)
-    s2 = np.cos(x)
+    s1 = [math.sin(x) for x in range(5)]
+    s2 = [math.cos(x) for x in range(5)]
 
     print("Discrete Convolution")
     print(conv(s1, s2))
