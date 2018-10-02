@@ -1,7 +1,6 @@
-
 local function shuffle(arr)
-	for i = 1, #arr do
-		local rand = math.random(#arr)
+	for i = 1, #arr-1 do
+		local rand = math.random(i,#arr)
 		arr[i], arr[rand] = arr[rand], arr[i]
 	end
 end
