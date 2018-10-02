@@ -48,6 +48,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:3-28, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import:5-9, lang:"nim"](code/nim/bubble_sort.nim)
+{% sample lang="f90" %}
+[import:19-40, lang:"fortran"](code/fortran/bubble.f90)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -101,6 +103,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/bubble_sort.nim)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/bubble.f90)
 {% endmethod %}
 
 <script>
