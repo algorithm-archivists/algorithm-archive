@@ -139,7 +139,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="nim" %}
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
-[import, lang="Fortran"](code/fortran/euclidean.f90)
+[import, lang="fortran"](code/fortran/euclidean.f90)
 {% endmethod %}
 
 
