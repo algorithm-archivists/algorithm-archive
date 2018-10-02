@@ -9,6 +9,7 @@ do operations if we need to
 >>++++
 >>++++++
 >>+++++
+>>+++
 >>+++++++
 >>+
 >>+++
@@ -34,7 +35,13 @@ from the next number
 [->+>-<<]
 
 now we undo or last step
->[<+>>
+>
+
+once without a zero check in case the numbers are equal
+<+>>+<-
+
+then as long as the left number is bigger than zero
+[<+>>
 
 but if the number to the right becomes a zero in the process 
 (this happens due to a so called "buffer overflow" where the 
@@ -52,7 +59,7 @@ been swapped
 +
 
 now we go and check the memory location that we used to memorize
-wether the number to the right was zero (thus making it smaller than
+whether the number to the right was zero (thus making it smaller than
 the one on the left)
 <<<<<<
 
