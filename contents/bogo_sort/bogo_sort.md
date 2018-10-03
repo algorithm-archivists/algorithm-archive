@@ -76,7 +76,7 @@ We are done here!
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bogosort.m)
 {% sample lang="lua" %}
-[import:1-29, lang="lua"](code/lua/bogosort.lua)
+[import, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
