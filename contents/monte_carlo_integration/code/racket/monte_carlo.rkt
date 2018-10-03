@@ -8,7 +8,8 @@
             (if (= n 0)
                 pi_count
                 (monte_carlo_internal (sub1 n) (if (in_circle (random) (random)) 
-						(add1 pi_count) pi_count
+						(add1 pi_count)
+						pi_count
 					       )
 			)
                 )
