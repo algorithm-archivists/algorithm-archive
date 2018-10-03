@@ -1,31 +1,24 @@
 #!/usr/bin/env ruby
 
 def is_sorted(a)
-  for i in 0...a.length-1
-    if a[i+1] < a[i]
-	  return false
-	end
-  end
-  return true
+  a.each_cons.all? { |(l, r)| l <= r }
 end
 
 def bogo_sort(a)
-  while !is_sorted(a)
-    a.shuffle!
-  end
+  a.shuffle! until is_sorted a
 end
 
-def main()
+def main
 	a = [1, 1, 0, 3, 7]
 	
-	puts("Unsorted")
-	print(a)
+	puts "Unsorted"
+	print a
 	
-	bogo_sort(a)
+	bogo_sort a
 	
-	puts("\n\nSorted")
-	print(a)
+	puts "\n\nSorted" 
+	print a 
 end
 
-main()
+main
 
