@@ -51,7 +51,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="f90" %}
 [import:19-40, lang:"fortran"](code/fortran/bubble.f90)
 {% sample lang="scala" %}
-[import:2-15, lang:"scala"](code/scala/bubble_sort.scala)
+[import:3-14, lang:"scala"](code/scala/bubble_sort.scala)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.

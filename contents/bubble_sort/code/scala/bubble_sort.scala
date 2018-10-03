@@ -13,7 +13,6 @@ object BubbleSort {
       case _ => list
     }
 
-
   def main(args: Array[String]): Unit = {
     val unsorted = List(9, 2, 0, 5, 3, 8, 1, 9, 4, 0, 7, 0, 9, 9, 0)
 
