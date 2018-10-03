@@ -25,7 +25,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="rs"%}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:1-3, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:1-4, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:1-9, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
@@ -59,7 +59,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="rs"%}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:5-6, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:6-7, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
@@ -101,7 +101,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="rs"%}
 [import:17-23, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
@@ -138,7 +138,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="rs"%}
 [import:25-38, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
@@ -185,8 +185,7 @@ In code, it looks like this:
 {% sample lang="rs"%}
 [import:40-47, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:45-56, lang:"julia"](code/julia/Tree.jl)
+[import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
@@ -225,7 +224,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="rs"%}
 [import:49-57, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
