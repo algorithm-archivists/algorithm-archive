@@ -33,12 +33,23 @@ def conv(signal1, signal2):
 
 def conv_fft(signal1, signal2):
     """Convolution using fft and convolutional theorem"""
+
+    signal1 = signal1.copy()
+    signal2 = signal2.copy()
+
+    # pad signals to same len
+    max_len = max(len(signal1), len(signal2))
+    
+    for i in range(max_len - len(signal1)):
+        signal1.append(0)
+    for i in range(max_len - len(signal2)):
+        signal2.append(0)
     
     fft_s1 = fft(signal1)
     fft_s2 = fft(signal2)
     out = []
 
-    for i in range(min(len(signal1), len(signal2))):
+    for i in range(len(signal1)):
         out.append(fft_s1[i] * fft_s2[i])
 
     return list(ifft(out))

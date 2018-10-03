@@ -19,3 +19,4 @@ end
 function conv_fft(signal1::Vector{Complex}, signal2::Vector{Complex})
     return ifft(fft(signal1).*fft(signal2))
 end
+
