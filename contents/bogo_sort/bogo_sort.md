@@ -43,6 +43,8 @@ In code, it looks something like this:
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import:2-6, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
 {% endmethod %}
 
 That's it.
@@ -85,6 +87,8 @@ We are done here!
 [import, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
 {% endmethod %}
 
 
