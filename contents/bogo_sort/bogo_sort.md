@@ -43,6 +43,8 @@ In code, it looks something like this:
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="processing" %}
+[import:55-59, lang:"java"](code/processing/bogoSort.pde)
 {% endmethod %}
 
 That's it.
@@ -85,6 +87,8 @@ We are done here!
 [import, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="processing" %}
+[import:1-53, lang:"java"](code/processing/bogoSort.pde)
 {% endmethod %}
 
 
