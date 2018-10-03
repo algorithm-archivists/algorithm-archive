@@ -1,5 +1,5 @@
 bubbleSort
-    "Bubble sort for an array."
+    "Bubble sort for a collection."
 
     | len swapper thisElem nextElem nextIndex |
     len := self size.
