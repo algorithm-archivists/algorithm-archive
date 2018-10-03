@@ -1,9 +1,16 @@
-proc thomas_algorithm(a,b,c1,d1: array[3,float]): array[3,float] = 
+const x: array[3,float] = [0.0,2.0,3.0]
+const y: array[3,float] = [1.0,3.0,6.0]
+const z: array[3,float] = [4.0,5.0,0.0]
+const w: array[3,float] = [7.0,5.0,3.0]
 
-    let n: int = len(d1)
+const n: int = len(w)
 
-    var c: array[3,float] = c1
-    var d: array[3,float] = d1
+proc thomas_algorithm(a,b,c_in,d_in: array[n,float]): array[n,float] = 
+
+    #const n: int = len(d1)
+
+    var c: array[n,float] = c_in
+    var d: array[n,float] = d_in
     
     c[0] = c[0] / b[0]
     d[0] = d[0] / b[0]
@@ -19,13 +26,7 @@ proc thomas_algorithm(a,b,c1,d1: array[3,float]): array[3,float] =
 
     return d
             
-
-
-const x: array[3,float] = [0.0,2.0,3.0]
-const y: array[3,float] = [1.0,3.0,6.0]
-const z: array[3,float] = [4.0,5.0,0.0]
-const w: array[3,float] = [7.0,5.0,3.0]
-
+            
 echo "The system,"
 echo "[1.0 4.0 0.0][x] = [7.0]"
 echo "[2.0 3.0 5.0][x] = [5.0]"
