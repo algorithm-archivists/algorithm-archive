@@ -42,7 +42,7 @@ In code, it looks something like this:
 {% sample lang="nim" %}
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
-[import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+[import:7-9, lang:"ruby"](code/ruby/bogo.rb)
 {% endmethod %}
 
 That's it.
