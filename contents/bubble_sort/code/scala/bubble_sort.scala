@@ -1,18 +1,17 @@
 object BubbleSort {
 
-  def bubbleUpLargestToTheEnd(list: List[Int]): List[Int] =
+  def bubbleDown(list: List[Int]): List[Int] =
     list match {
-      case first :: second :: tail if first > second => second :: bubbleUpLargestToTheEnd(first :: tail)
-      case first :: second :: tail => first :: bubbleUpLargestToTheEnd(second :: tail)
+      case a :: b :: tail if a < b => b :: bubbleDown(a :: tail)
+      case a :: b :: tail => a :: bubbleDown(b :: tail)
       case _ => list
     }
 
   def bubbleSort(list: List[Int]): List[Int] =
-    bubbleUpLargestToTheEnd(list) match {
-      case unsorted :+ largest => bubbleSort(unsorted) :+ largest
+    bubbleDown(list) match {
+      case unsorted :+ smallest => smallest :: bubbleDown(unsorted)
       case _ => list
     }
-
 
   def main(args: Array[String]): Unit = {
     val unsorted = List(9, 2, 0, 5, 3, 8, 1, 9, 4, 0, 7, 0, 9, 9, 0)
