@@ -1,19 +1,23 @@
 object BubbleSort {
-  def bubbleBiggest(unprocessed: List[Int], notBiggest: List[Int] = List()): List[Int] =
-    unprocessed match {
-      case a :: b :: tail =>
-        if (a > b) bubbleBiggest(a :: tail, b :: notBiggest)
-        else bubbleBiggest(b :: tail, a :: notBiggest)
-      case a :: Nil => a :: notBiggest
-      case Nil => unprocessed
+
+  def bubbleUpLargestToTheEnd(list: List[Int]): List[Int] =
+    list match {
+      case first :: second :: tail if first > second => second :: bubbleUpLargestToTheEnd(first :: tail)
+      case first :: second :: tail => first :: bubbleUpLargestToTheEnd(second :: tail)
+      case _ => list
     }
 
-  def bubbleSort(unsorted: List[Int], sorted: List[Int] = List()): List[Int] =
-    bubbleBiggest(unsorted) match {
-      case m :: us => bubbleSort(us, m :: sorted)
-      case _ => sorted
+  def bubbleSort(list: List[Int]): List[Int] =
+    bubbleUpLargestToTheEnd(list) match {
+      case unsorted :+ largest => bubbleSort(unsorted) :+ largest
+      case _ => list
     }
 
-  def main(args: Array[String]): Unit =
-    println(bubbleSort(List(9, 2, 0, 5, 3, 8, 1, 9, 4, 0, 7, 0, 9, 9, 0)))
+
+  def main(args: Array[String]): Unit = {
+    val unsorted = List(9, 2, 0, 5, 3, 8, 1, 9, 4, 0, 7, 0, 9, 9, 0)
+
+    println("Unsorted list is " + unsorted)
+    println("  Sorted list is " + bubbleSort(unsorted))
+  }
 }
