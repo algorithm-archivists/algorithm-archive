@@ -71,6 +71,8 @@ each point is tested to see whether it's in the circle or not:
 [import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="php" %}
+[import:4-7, lang:"php"](code/php/monte_carlo.php)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -141,6 +143,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/monte_carlo.php)
 {% endmethod %}
 
 
