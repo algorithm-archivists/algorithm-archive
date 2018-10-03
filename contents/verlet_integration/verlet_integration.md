@@ -41,8 +41,7 @@ Here is what it looks like in code:
 {% sample lang="py" %}
 [import:1-9, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
+[import:14-21, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
@@ -88,8 +87,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="py" %}
 [import:11-21, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
+[import:23-28, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
@@ -149,8 +147,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="py" %}
 [import:23-32, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
+[import:30-35, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
