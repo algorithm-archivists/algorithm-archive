@@ -4,31 +4,19 @@ from scipy.fftpack import fft, ifft
 def conv(signal1, signal2):
     """Discrete convolution by definition"""
 
-    n = len(signal1) + len(signal2)
-    signal1 = signal1.copy()
-    signal2 = signal2.copy()
-
-    # pad signals to same len
-    max_len = max(len(signal1), len(signal2))
-    
-    for i in range(max_len - len(signal1)):
-        signal1.append(0)
-    for i in range(max_len - len(signal2)):
-        signal2.append(0)
-        
-    # build output signal
+    n = len(signal1) + len(signal2) - 1
     out = []
     
     for i in range(n):
-        s = complex(0)
+        s = 0
         
-        for j in range(i):
-            if j < len(signal1) and i - j - 1  < len(signal2):
-                s += signal1[j] * signal2[i - j - 1]
+        for j in range(i + 1):
+            if j < len(signal1) and i - j  < len(signal2):
+                s += signal1[j] * signal2[i - j]
                 
         out.append(s)
 
-    return out[1:]
+    return out
 
 
 def conv_fft(signal1, signal2):
