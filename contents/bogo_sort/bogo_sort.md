@@ -88,7 +88,7 @@ We are done here!
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="factor" %}
-[import, lang:"factor"](code/factor/bogosort.factor)
+[import, lang:"factor"](code/factor/bogo_sort.factor)
 {% endmethod %}
 
 

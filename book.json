@@ -139,7 +139,11 @@
         {
           "lang": "f90",
           "name": "Fortran90"
-        }
+        },
+        {
+          "lang": "factor",
+	  "name": "Factor"
+	}
       ]
     }
   }
