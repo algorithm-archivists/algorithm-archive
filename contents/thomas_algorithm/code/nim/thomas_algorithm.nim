@@ -1,6 +1,9 @@
-proc thomas_algorithm(a,b,c,d: var array[3,float]) = 
-    
-    let n: int = len(d)
+proc thomas_algorithm(a,b,c1,d1: array[3,float]): array[3,float] = 
+
+    let n: int = len(d1)
+
+    var c: array[3,float] = c1
+    var d: array[3,float] = d1
     
     c[0] = c[0] / b[0]
     d[0] = d[0] / b[0]
@@ -13,22 +16,24 @@ proc thomas_algorithm(a,b,c,d: var array[3,float]) =
 
     for i in countdown(n-2,0):
         d[i] -= c[i]*d[i+1]
+
+    return d
             
 
 
-var x: array[3,float] = [0.0,2.0,3.0]
-var y: array[3,float] = [1.0,3.0,6.0]
-var z: array[3,float] = [4.0,5.0,0.0]
-var w: array[3,float] = [7.0,5.0,3.0]
+const x: array[3,float] = [0.0,2.0,3.0]
+const y: array[3,float] = [1.0,3.0,6.0]
+const z: array[3,float] = [4.0,5.0,0.0]
+const w: array[3,float] = [7.0,5.0,3.0]
 
 echo "The system,"
 echo "[1.0 4.0 0.0][x] = [7.0]"
-echo "[2.0 3.0 5.0][y] = [5.0]"
-echo "[0.0 3.0 6.0][z] = [3.0]"
+echo "[2.0 3.0 5.0][x] = [5.0]"
+echo "[0.0 3.0 6.0][x] = [3.0]"
 
 echo "has the solution:"
 
-thomas_algorithm(x,y,z,w)
+const soln: array[3,float] = thomas_algorithm(x,y,z,w)
 
 for i in 0..2:
-    echo w[i]
+    echo soln[i]
