@@ -105,6 +105,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"nim"](code/nim/bubble_sort.nim)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="st" %}
+[import, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% endmethod %}
 
 <script>
