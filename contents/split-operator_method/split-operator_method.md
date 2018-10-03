@@ -100,6 +100,8 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% sample lang="jl" %}
 [import:11-34, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
+[import:11-21, lang:"c_cpp"](code/c/split_op.c)
+[import:52-73, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="cpp" %}
 [import:8-74, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
@@ -119,6 +121,8 @@ Afterwards, we turn them into operators:
 {% sample lang="jl" %}
 [import:36-62, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
+[import:23-29, lang:"c_cpp"](code/c/split_op.c)
+[import:75-96, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="cpp" %}
 [import:76-129, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
