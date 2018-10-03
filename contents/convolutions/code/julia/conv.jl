@@ -19,11 +19,3 @@ end
 function conv_fft(signal1::Vector{Complex}, signal2::Vector{Complex})
     return ifft(fft(signal1).*fft(signal2))
 end
-
-
-a = [1im, 2, 3]
-b = [3im, 4, 5]
-
-conv(a, b)
-
-println(a)
