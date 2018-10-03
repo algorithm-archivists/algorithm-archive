@@ -143,6 +143,10 @@
         {
           "lang": "emojic",
           "name": "Emojicode"
+        },
+        {
+          "lang": "st",
+          "name": "Smalltalk"
         }
       ]
     }
