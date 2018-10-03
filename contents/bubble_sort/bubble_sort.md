@@ -50,6 +50,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:5-9, lang:"nim"](code/nim/bubble_sort.nim)
 {% sample lang="f90" %}
 [import:19-40, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="emojic" %}
+[import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -105,6 +107,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"nim"](code/nim/bubble_sort.nim)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% endmethod %}
 
 <script>
