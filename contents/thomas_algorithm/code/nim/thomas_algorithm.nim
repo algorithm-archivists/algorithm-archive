@@ -23,8 +23,8 @@ var w: array[3,float] = [7.0,5.0,3.0]
 
 echo "The system,"
 echo "[1.0 4.0 0.0][x] = [7.0]"
-echo "[2.0 3.0 5.0][x] = [5.0]"
-echo "[0.0 3.0 6.0][x] = [3.0]"
+echo "[2.0 3.0 5.0][y] = [5.0]"
+echo "[0.0 3.0 6.0][z] = [3.0]"
 
 echo "has the solution:"
 
