@@ -80,7 +80,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bubblesort.m)
 {% sample lang="lua" %}
-[import:1-17, lang="lua"](code/lua/bubble_sort.lua)
+[import, lang="lua"](code/lua/bubble_sort.lua)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
