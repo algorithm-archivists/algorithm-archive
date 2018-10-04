@@ -141,6 +141,10 @@
           "name": "Fortran90"
         },
         {
+          "lang": "scala",
+          "name": "Scala"
+        },
+        {
           "lang": "emojic",
           "name": "Emojicode"
         }
