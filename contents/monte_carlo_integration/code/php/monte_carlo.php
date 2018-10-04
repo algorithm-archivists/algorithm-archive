@@ -8,7 +8,7 @@ function in_circle(float $positionX, float $positionY, float $radius = 1): bool
 
 function random_zero_to_one(): float
 {
-    return mt_rand(0, 100) / 100;
+    return mt_rand() / mt_getrandmax();
 }
 
 function monte_carlo(int $samples, float $radius = 1): float
