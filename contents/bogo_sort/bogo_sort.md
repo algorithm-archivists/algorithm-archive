@@ -45,6 +45,8 @@ In code, it looks something like this:
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import:7-9, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="st" %}
+[import:2-6, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 That's it.
@@ -89,6 +91,8 @@ We are done here!
 [import, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="st" %}
+[import, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 

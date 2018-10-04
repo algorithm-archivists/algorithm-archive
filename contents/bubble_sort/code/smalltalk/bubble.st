@@ -8,7 +8,7 @@ bubbleSort
             thisElem := self at: index.
             nextElem := self at: index + 1.
             (thisElem > nextElem) ifTrue: [ 
-                self at: nextIndex put: thisElem.
+                self at: thisIndex + 1 put: thisElem.
                 self at: thisIndex put: nextElem.
             ]
         ]
