@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <cstring>
+#include <fstream>
 
 // Using fftw3 library.
 #include <fftw3.h>
@@ -122,13 +123,18 @@ void split_op(Params &par, Operators &opr) {
         // index, density, real potential.
         char filename[256];
         sprintf(filename, "output%lu.dat", i);
-        FILE *fp = fopen(filename, "w");
+        std::ofstream fstream;
+        fstream.open(filename, std::fstream::out);
         
-        for (int i = 0; i < opr.size; ++i) {
-            fprintf(fp, "%d\t%f\t%f\n", i, density[i], real(opr.v[i]));
+        char buffer[1023];
+        if (!fstream.fail()) {
+            for (int i = 0; i < opr.size; ++i) {
+                snprintf(buffer, 1023, "%d\t%f\t%f\n", i, density[i], real(opr.v[i]));
+                fstream.write(buffer, strlen(buffer));
+            }
         }
         
-        fclose(fp);
+        fstream.close();
     }
 }
 
