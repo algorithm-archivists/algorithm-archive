@@ -143,6 +143,10 @@
         {
           "lang": "scala",
           "name": "Scala"
+        },
+        {
+          "lang": "emojic",
+          "name": "Emojicode"
         }
       ]
     }
