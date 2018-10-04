@@ -1,0 +1,97 @@
+function gcd(a, b)
+    while a ≠ b 
+        if a > b
+           a := a − b; 
+        else
+           b := b − a; 
+    return a;
+
+in(number)              A
+in(number)              BA
+
+// Start of loop
+duplicate               BBA
+push 3                  3BBA
+push 2                  23BBA
+roll                    ABB
+duplicate               AABB
+push 4                  4AABB
+push 1                  14AABB
+roll                    ABBA
+subtract                0/x BA
+not                     1/0 BA      // 1 if a = b and 0 if a ≠ b
+not                     0/1 BA      // 1 if a ≠ b and 0 if a = b
+pointer                 BA
+
+    // Go down if a ≠ b
+    duplicate               BBA
+    push 3                  3BBA
+    push 2                  23BBA
+    roll                    ABB
+    duplicate               AABB
+    push 4                  4AABB
+    push 1                  14AABB
+    roll                    ABBA
+    push 2                  2ABBA
+    push 1                  12ABBA
+    roll                    BABA
+    greater                 0/1 BA          // A > B; 1 if true; 0 if false
+    pointer                 BA              // maybe a switch here instead?
+
+        // If A > B
+        duplicate               BBA
+        push 3                  3BBA
+        push 1                  13BBA
+        roll                    BAB
+        subtract                AB              // A = A - B
+        push 2                  2AB
+        push 1                  12AB
+        roll                    BA
+        // Go back to start of loop
+
+        // If B > A
+        // b = b - a
+        push 2                  2BA
+        push 1                  12BA
+        roll                    AB
+        duplicate               AAB
+        push 3                  3AAB
+        push 1                  13AAB
+        roll                    ABA
+        subtract                BA              // B = B - A
+        // Go back to start of loop
+
+// Go right if a = b (end of while loop)
+pop                     A
+out(number)             -
+
+---------------------------------------------------------------------------
+
+function gcd(a, b)
+    while b ≠ 0
+       t := b; 
+       b := a mod b; 
+       a := t; 
+    return a;
+
+in(number)              A
+in(number)              BA
+
+//  Start of loop
+duplicate               BBA
+not                     0/1 BA
+not                     1/0 BA
+pointer                 BA
+
+    // Go down if b ≠ 0
+    duplicate               TBA
+    push 3                  3TBA                  
+    push 1                  13TBA
+    roll                    BAT
+    mod                     BA          // b = a mod b; a = t
+    // Go back to the start of the loop
+
+// Go right if b = 0
+pop                     A
+out(number)             -
+
