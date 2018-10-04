@@ -139,6 +139,10 @@
         {
           "lang": "f90",
           "name": "Fortran90"
+        },
+        {
+          "lang": "emojic",
+          "name": "Emojicode"
         }
       ]
     }

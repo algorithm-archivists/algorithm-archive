@@ -1,4 +1,4 @@
-Copyright 2017 James Schloss et. al
+Copyright 2018 James Schloss et. al
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
