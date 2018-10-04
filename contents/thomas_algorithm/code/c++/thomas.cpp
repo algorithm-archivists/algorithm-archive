@@ -2,10 +2,10 @@
 #include <vector>
 #include <cstring>
 
-void thomas(std::vector<double> const a, std::vector<double> const b, std::vector<double> const c, std::vector<double>& x, const size_t size) {
-
-    std::vector<double> y(size);
-    memset(y.data(), 0, size * sizeof(double));
+void thomas(std::vector<double> const a, std::vector<double> const b, std::vector<double> const c, std::vector<double>& x) {
+    int size = a.size();
+    double y[size];
+    memset(y, 0, size * sizeof(double));
 
     y[0] = c[0] / b[0];
     x[0] = x[0] / b[0];
@@ -33,7 +33,7 @@ int main() {
     std::cout << "[0.0  3.0  6.0][z] = [3.0]" << std::endl;
     std::cout << "has the solution" << std::endl;
 
-    thomas(a, b, c, x, 3);
+    thomas(a, b, c, x);
 
     for (size_t i = 0; i < 3; ++i) {
         std::cout << "[" << x[i] << "]" << std::endl;
