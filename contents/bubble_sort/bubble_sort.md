@@ -114,7 +114,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bubble.f90)
 {% sample lang="st" %}
-[import, lang:"smalltalk"](code/smalltalk/usage.st)
+[import, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% sample lang="emojic" %}
 [import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% endmethod %}
