@@ -14,12 +14,14 @@
   )
 
 (define (euclid_mod a b)
-  (if (= 0 b)
-      (abs a)
-      (euclid_mod b (modulo a b))
-      )
+  (local ((define (euclid_mod* a b)
+           (if (= 0 b)
+               (abs a)
+               (euclid_mod* b (modulo a b))
+               )
+           )) (euclid_mod* a b)
+    )
   )
 
 (displayln (euclid_sub (* 64 67) (* 64 81)))
 (displayln (euclid_mod (* 128 12) (* 128 77)))
-

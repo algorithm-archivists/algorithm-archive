@@ -91,7 +91,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="racket" %}
-[import:16-21, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+[import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
