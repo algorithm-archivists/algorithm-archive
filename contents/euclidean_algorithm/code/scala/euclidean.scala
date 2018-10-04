@@ -9,9 +9,9 @@ object Euclid {
     }
 
   def euclid_mod(a: Int, b: Int): Int =
-    b match {
-      case 0 => a
-      case _ => euclid_mod(b, a % b)
+    (Math.abs(a), Math.abs(b)) match {
+      case (_, 0) => a
+      case (a, b) => euclid_mod(b, a % b)
     }
 
   def main(args: Array[String]): Unit = {
