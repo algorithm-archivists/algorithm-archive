@@ -1,48 +1,48 @@
-program bogo
-    implicit none
-    real(8), dimension(5) :: array
+PROGRAM bogo
+    IMPLICIT NONE
+    REAL(8), DIMENSION(5) :: array
 
-    array = (/ 1, 1, 0, 3, 7 /)
+    array = (/ 1d0, 1d0, 0d0, 3d0, 7d0 /)
 
-    call bogo_sort(array)
+    CALL bogo_sort(array)
 
     WRITE(*,*) array 
 
-contains
+contaINs
 
-    logical function is_sorted(array) 
-        real(8), dimension(:), intent(in) :: array
-        integer                           :: i
+    LOGICAL FUNCTION is_sorted(array) 
+        REAL(8), DIMENSION(:), INTENT(IN) :: array
+        INTEGER                           :: i
 
-         do i = 1, size(array)
-            if (array(i+1) < array(i)) then
-                is_sorted = .false.
-            end if
-         end do
-    end function is_sorted
+         DO i = 1, SIZE(array)
+            IF (array(i+1) < array(i)) THEN
+                is_sorted = .FALSE.
+            END IF
+         END DO
+    END FUNCTION is_sorted
 
-    subroutine bogo_sort(array)
-        real(8), dimension(:), intent(inout) :: array
+    SUBROUTINE bogo_sort(array)
+        REAL(8), DIMENSION(:), INTENT(INOUT) :: array
 
-        do while (is_sorted(array) .eqv. .false.)
+        DO WHILE (is_sorted(array) .EQV. .FALSE.)
 
-            call shuffle(array)
+            CALL shuffle(array)
 
-        end do
-    end subroutine bogo_sort
+        END DO
+    END SUBROUTINE bogo_sort
     
-    subroutine shuffle(array)
-        real(8), dimension(:), intent(inout) :: array
-        integer                              :: i, randpos
-        real(8)                              :: r, temp
+    SUBROUTINE shuffle(array)
+        REAL(8), DIMENSION(:), INTENT(INOUT) :: array
+        INTEGER                              :: i, randpos
+        REAL(8)                              :: r, temp
 
-        do i = size(array), 2, -1
-            call random_number(r)
-            randpos    = int(r * i) + 1
+        DO i = size(array), 2, -1
+            CALL RANDOM_NUMBER(r)
+            randpos    = INT(r * i) + 1
             temp       = array(randpos)
             array(randpos) = array(i)
             array(i)       = temp
-        end do
+        END DO
 
-    end subroutine shuffle
-end program bogo
+    END SUBROUTINE shuffle
+END PROGRAM bogo
