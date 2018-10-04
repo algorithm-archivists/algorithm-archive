@@ -31,6 +31,8 @@ In code, it looks something like this:
 [import:17-20, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import:21-28, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import:1-22, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import:33-38, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
@@ -74,6 +76,8 @@ We are done here!
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
