@@ -1,6 +1,6 @@
 object Euclid {
 
-  def euclid(a: Int, b: Int): Int =
+  def euclid_sub(a: Int, b: Int): Int =
     (Math.abs(a), Math.abs(b)) match {
       case (0, _) | (_, 0) => 0
       case (x, y) if x < y => euclid(x, y - x)
@@ -15,7 +15,7 @@ object Euclid {
     }
 
   def main(args: Array[String]): Unit = {
-    println(euclid(151 * 899, 151 * 182))
+    println(euclid_sub(151 * 899, 151 * 182))
     println(euclid_mod(151 * 899, 151 * 182))
   }
 
