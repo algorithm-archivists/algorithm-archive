@@ -1,4 +1,4 @@
-"Add this method to the ArrayedCollection class in the browser:"
+"Add this method to the SequenceableCollection class in the browser:"
 bubbleSort
     "Bubble sort for a collection."
     | len swapper thisElem nextElem nextIndex |
