@@ -1,189 +1,120 @@
 #include <complex>
+#include <vector>
 #include <iostream>
 #include <cstring>
 
 // Using fftw3 library.
 #include <fftw3.h>
 
-class Params {
-public:
+struct Params {
     Params(double _xmax, unsigned int _res, double _dt, unsigned int _timesteps, bool im) {
         xmax = _xmax;
         res = _res;
         dt = _dt;
         timesteps = _timesteps;
         dx = 2.0 * xmax / res;
-        x = new double[res];
         dk = M_PI / xmax;
-        k = new double[res];
         im_time = im;
         
         for (size_t i = 0; i < res; ++i) {
-            x[i] = xmax / res - xmax + i * (2.0 * xmax / res);
+            x.push_back(xmax / res - xmax + i * (2.0 * xmax / res));
             if (i < res / 2) {
-                k[i] = i * M_PI / xmax;
+                k.push_back(i * M_PI / xmax);
             } else {
-                k[i] = ((double)i - res) * M_PI / xmax;
+                k.push_back((static_cast<double>(i) - res) * M_PI / xmax);
             }
         }
     }
     
-    ~Params() {
-        delete[] x;
-        delete[] k;
-    }
-    
-    unsigned int getRes() const {
-        return res;
-    }
-    double getXmax() const {
-        return xmax;
-    }
-    double getDt() const {
-        return dt;
-    }
-    double getDx() const {
-        return dx;
-    }
-    double getDk() const {
-        return dk;
-    }
-    unsigned int getTimesteps() const {
-        return timesteps;
-    }
-    double * getXs() const {
-        return x;
-    }
-    double * getKs() const {
-        return k;
-    }
-    bool isImTime() const {
-        return im_time;
-    }
-    
-protected:
     double xmax;
     unsigned int res;
     double dt;
     unsigned int timesteps;
     double dx;
-    double *x;
+    std::vector<double> x;
     double dk;
-    double *k;
+    std::vector<double> k;
     bool im_time;
 };
 
-class Operators {
+struct Operators {
 public:
     Operators(Params &par, double voffset,
               double wfcoffset) {
-        size = par.getRes();
-        v = new std::complex<double>[size];
-        pe = new std::complex<double>[size];
-        ke = new std::complex<double>[size];
-        wfc = new std::complex<double>[size];
+        size = par.res;
         
         for (size_t i = 0; i < size; ++i) {
-            v[i] = 0.5 * pow(par.getXs()[i] - voffset, 2);
-            wfc[i] = exp(-pow(par.getXs()[i] - wfcoffset, 2) / 2.0);
+            v.emplace_back(0.5 * pow(par.x[i] - voffset, 2));
+            wfc.emplace_back(exp(-pow(par.x[i] - wfcoffset, 2) / 2.0));
             
-            if (par.isImTime()) {
-                ke[i] = exp(-0.5 * par.getDt() * pow(par.getKs()[i], 2));
-                pe[i] = exp(-0.5 * par.getDt() * v[i]);
+            if (par.im_time) {
+                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2)));
+                pe.emplace_back(exp(-0.5 * par.dt * v[i]));
             } else {
-                ke[i] = exp(-0.5 * par.getDt() * pow(par.getKs()[i], 2) * std::complex(0.0, 1.0));
-                pe[i] = exp(-0.5 * par.getDt() * v[i] * std::complex(0.0, 1.0));
+                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * std::complex(0.0, 1.0)));
+                pe.emplace_back(exp(-0.5 * par.dt * v[i] * std::complex(0.0, 1.0)));
             }
         }
     }
     
-    ~Operators() {
-        delete[] v;
-        delete[] pe;
-        delete[] ke;
-        delete[] wfc;
-    }
-    
-    size_t getSize() const {
-        return size;
-    }
-    std::complex<double> *getV() const {
-        return v;
-    }
-    std::complex<double> *getPe() const {
-        return pe;
-    }
-    std::complex<double> *getKe() const {
-        return ke;
-    }
-    std::complex<double> *getWfc() const {
-        return wfc;
-    }
-    
-protected:
     size_t size;
-    std::complex<double> *v;
-    std::complex<double> *pe;
-    std::complex<double> *ke;
-    std::complex<double> *wfc;
+    std::vector<std::complex<double>> v;
+    std::vector<std::complex<double>> pe;
+    std::vector<std::complex<double>> ke;
+    std::vector<std::complex<double>> wfc;
 };
 
-void fft(std::complex<double> *x, int n, bool inverse) {
+void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
     std::complex<double> y[n];
     memset(y, 0, sizeof(y));
     fftw_plan p;
     
-    if (inverse) {
-        p = fftw_plan_dft_1d(n, (fftw_complex*)x, (fftw_complex*)y,
-                             FFTW_BACKWARD, FFTW_ESTIMATE);
-    } else {
-        p = fftw_plan_dft_1d(n, (fftw_complex*)x, (fftw_complex*)y,
-                             FFTW_FORWARD, FFTW_ESTIMATE);
-    }
+    p = fftw_plan_dft_1d(n, reinterpret_cast<fftw_complex*>(x.data()), reinterpret_cast<fftw_complex*>(y),
+                         (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
     
     fftw_execute(p);
     fftw_destroy_plan(p);
     
     for (size_t i = 0; i < n; ++i) {
-        x[i] = y[i] / sqrt((double)n);
+        x[i] = y[i] / sqrt(static_cast<double>(n));
     }
 }
 
 void split_op(Params &par, Operators &opr) {
-    double density[opr.getSize()];
+    double density[opr.size];
     
-    for (size_t i = 0; i < par.getTimesteps(); ++i) {
-        for (size_t j = 0; j < opr.getSize(); ++j) {
-            opr.getWfc()[j] *= opr.getPe()[j];
+    for (size_t i = 0; i < par.timesteps; ++i) {
+        for (size_t j = 0; j < opr.size; ++j) {
+            opr.wfc[j] *= opr.pe[j];
         }
         
-        fft(opr.getWfc(), opr.getSize(), false);
+        fft(opr.wfc, opr.size, false);
         
-        for (size_t j = 0; j < opr.getSize(); ++j) {
-            opr.getWfc()[j] *= opr.getKe()[j];
+        for (size_t j = 0; j < opr.size; ++j) {
+            opr.wfc[j] *= opr.ke[j];
         }
         
-        fft(opr.getWfc(), opr.getSize(), true);
+        fft(opr.wfc, opr.size, true);
         
-        for (size_t j = 0; j < opr.getSize(); ++j) {
-            opr.getWfc()[j] *= opr.getPe()[j];
+        for (size_t j = 0; j < opr.size; ++j) {
+            opr.wfc[j] *= opr.pe[j];
         }
         
-        for (size_t j = 0; j < opr.getSize(); ++j) {
-            density[j] = pow(abs(opr.getWfc()[j]), 2);
+        for (size_t j = 0; j < opr.size; ++j) {
+            density[j] = pow(abs(opr.wfc[j]), 2);
         }
         
-        if (par.isImTime()) {
+        if (par.im_time) {
             double sum = 0;
             
-            for (size_t j = 0; j < opr.getSize(); ++j) {
+            for (size_t j = 0; j < opr.size; ++j) {
                 sum += density[j];
             }
             
-            sum *= par.getDx();
+            sum *= par.dx;
             
-            for (size_t j = 0; j < opr.getSize(); ++j) {
-                opr.getWfc()[j] /= sqrt(sum);
+            for (size_t j = 0; j < opr.size; ++j) {
+                opr.wfc[j] /= sqrt(sum);
             }
         }
         
@@ -193,8 +124,8 @@ void split_op(Params &par, Operators &opr) {
         sprintf(filename, "output%lu.dat", i);
         FILE *fp = fopen(filename, "w");
         
-        for (int i = 0; i < opr.getSize(); ++i) {
-            fprintf(fp, "%d\t%f\t%f\n", i, density[i], real(opr.getV()[i]));
+        for (int i = 0; i < opr.size; ++i) {
+            fprintf(fp, "%d\t%f\t%f\n", i, density[i], real(opr.v[i]));
         }
         
         fclose(fp);
@@ -202,39 +133,36 @@ void split_op(Params &par, Operators &opr) {
 }
 
 double calculate_energy(Params par, Operators opr) {
-    std::complex<double> wfc_r[opr.getSize()];
-    std::complex<double> wfc_k[opr.getSize()];
-    std::complex<double> wfc_c[opr.getSize()];
-    std::memcpy(wfc_r, opr.getWfc(), sizeof(wfc_r));
+    std::vector<std::complex<double>> wfc_r = std::vector(opr.wfc);
+    std::vector<std::complex<double>> wfc_k = std::vector(opr.wfc);
+    std::vector<std::complex<double>> wfc_c;
+    fft(wfc_k, opr.size, false);
     
-    std::memcpy(wfc_k, opr.getWfc(), sizeof(wfc_k));
-    fft(wfc_k, opr.getSize(), false);
-    
-    for (size_t i = 0; i < opr.getSize(); ++i) {
+    for (size_t i = 0; i < opr.size; ++i) {
         wfc_c[i] = conj(wfc_r[i]);
     }
     
-    std::complex<double> energy_k[opr.getSize()];
-    std::complex<double> energy_r[opr.getSize()];
+    std::vector<std::complex<double>> energy_k;
+    std::vector<std::complex<double>> energy_r;
     
-    for (size_t i = 0; i < opr.getSize(); ++i) {
-        energy_k[i] = wfc_k[i] * pow(par.getKs()[i] + 0.0*std::complex(0.0, 1.0), 2);
+    for (size_t i = 0; i < opr.size; ++i) {
+        energy_k[i] = wfc_k[i] * pow(std::complex(par.k[i], 0.0), 2);
     }
     
-    fft(energy_k, opr.getSize(), true);
+    fft(energy_k, opr.size, true);
     
-    for (size_t i = 0; i < opr.getSize(); ++i) {
+    for (size_t i = 0; i < opr.size; ++i) {
         energy_k[i] *= 0.5 * wfc_c[i];
-        energy_r[i] = wfc_c[i] * opr.getV()[i] * wfc_r[i];
+        energy_r[i] = wfc_c[i] * opr.v[i] * wfc_r[i];
     }
     
     double energy_final = 0;
     
-    for (size_t i = 0; i < opr.getSize(); ++i) {
+    for (size_t i = 0; i < opr.size; ++i) {
         energy_final += real(energy_k[i] + energy_r[i]);
     }
     
-    return energy_final * par.getDx();
+    return energy_final * par.dx;
 }
 
 int main() {
