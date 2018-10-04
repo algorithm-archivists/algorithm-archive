@@ -4,17 +4,18 @@
  )
 
 (define (monte_carlo n)
-  (* (/ (local ((define (monte_carlo_internal n pi_count)
-            (if (= n 0)
-                pi_count
-                (monte_carlo_internal (sub1 n) (if (in_circle (random) (random)) 
-						(add1 pi_count)
-						pi_count
-					       )
-			)
-                )
-            ))(monte_carlo_internal n 0)
-    ) n) 4)
+  (* (/ (local ((define (monte_carlo* n count)
+                  (if (= n 0)
+                      count
+                      (monte_carlo* (sub1 n) 
+                                    (if (in_circle (random) (random)) 
+                                        (add1 count)
+                                        count
+                                    )
+                      )
+                  )
+               )) (monte_carlo* n 0)
+        ) n) 4)
   )
 
 (monte_carlo 100000)
