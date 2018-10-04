@@ -123,6 +123,8 @@ Full code for the visualization follows:
 [import, lang:"swift"](code/swift/euler.swift)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/Euler.java)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/euler.f90)
 {% endmethod %}
 
 <script>

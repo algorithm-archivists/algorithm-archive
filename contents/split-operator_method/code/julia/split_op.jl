@@ -6,6 +6,8 @@
 #
 #------------------------------------------------------------------------------#
 
+using FFTW
+
 struct Param
     xmax::Float64
     res::Int64
@@ -37,17 +39,17 @@ mutable struct Operators
     K::Vector{Complex{Float64}}
     wfc::Vector{Complex{Float64}}
 
-    Operators(res) = new(Vector{Complex{Float64}}(res),
-                         Vector{Complex{Float64}}(res),
-                         Vector{Complex{Float64}}(res),
-                         Vector{Complex{Float64}}(res))
+    Operators(res) = new(zeros(res),
+                         zeros(res),
+                         zeros(res),
+                         zeros(res))
 end
 
 # Function to initialize the wfc and potential
 function init(par::Param, voffset::Float64, wfcoffset::Float64)
     opr = Operators(length(par.x))
-    opr.V = 0.5 * (par.x - voffset).^2
-    opr.wfc = exp.(-(par.x - wfcoffset).^2/2)
+    opr.V = 0.5 * (par.x .- voffset).^2
+    opr.wfc = exp.(-(par.x .- wfcoffset).^2/2)
     if (par.im_time)
         opr.K = exp.(-0.5*par.k.^2*par.dt)
         opr.R = exp.(-0.5*opr.V*par.dt)
@@ -93,7 +95,8 @@ function split_op(par::Param, opr::Operators)
         # Outputting data to file. Plotting can also be done in a similar way
         # This is set to output exactly 100 files, no matter how many timesteps
         if ((i-1) % div(par.timesteps, 100) == 0)
-            outfile = open("output" *string(lpad(i-1, 5, 0))* ".dat","w")
+            outfile = open("output" * string(lpad(string(i-1), 5, string(0)))
+                                    * ".dat","w")
 
             # Outputting for gnuplot. Any plotter will do.
             for j = 1:length(density)

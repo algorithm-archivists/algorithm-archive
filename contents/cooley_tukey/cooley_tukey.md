@@ -70,17 +70,19 @@ For some reason, though, putting code to this transformation really helped me fi
 
 {% method %}
 {% sample lang="jl" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
 [import:8-19, lang:"c_cpp"](code/c/fft.c)
+{% sample lang="clj" %}
+[import:15-30, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:23-33, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="py" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:5-11, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:4-13, lang:"julia"](code/julia/fft.jl)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -115,17 +117,19 @@ With recursion, we can reduce the complexity to $$\sim \mathcal{O}(n \log n)$$, 
 In the end, the code looks like:
 {% method %}
 {% sample lang="jl" %}
-[import:14-31, lang:"julia"](code/julia/fft.jl)
+[import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
 [import:20-39, lang:"c_cpp"](code/c/fft.c)
+{% sample lang="clj" %}
+[import:31-58, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:35-66, lang:"c_cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:6-19, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
-[import:5-16, lang:"python"](code/python/fft.py)
+[import:13-24, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
-[import:14-31, lang:"julia"](code/julia/fft.jl)
+[import:16-32, lang:"julia"](code/julia/fft.jl)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -222,6 +226,8 @@ Note: I implemented this in Julia because the code seems more straightforward in
 [import, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/fft.c)
+{% sample lang="clj" %}
+[import, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
