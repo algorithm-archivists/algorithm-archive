@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 function thomas_algorithm(array $a, array $b, array $c, array $x, int $size): array
 {
-  $y = [];
-  $y[0] = $b[0] == 0 ? 0 : $c[0] / $b[0];
-  $x[0] = $b[0] == 0 ? 0 : $x[0] / $b[0];
+    $y = [];
+    $y[0] = $b[0] == 0 ? 0 : $c[0] / $b[0];
+    $x[0] = $b[0] == 0 ? 0 : $x[0] / $b[0];
 
-  for ($i = 1; $i < $size; ++$i) {
-    $scale = (float)(1 / ($b[$i] - $a[$i] * $y[$i - 1]));
-    $y[$i] = $c[$i] * $scale;
-    $x[$i] = ($x[$i] - $a[$i] * $x[$i - 1]) * $scale;
-  }
+    for ($i = 1; $i < $size; ++$i) {
+        $scale = (float)(1 / ($b[$i] - $a[$i] * $y[$i - 1]));
+        $y[$i] = $c[$i] * $scale;
+        $x[$i] = ($x[$i] - $a[$i] * $x[$i - 1]) * $scale;
+    }
 
-  for ($i = $size - 2; $i >= 0; --$i)
-    $x[$i] -= $y[$i] & $x[$i + 1];
+    for ($i = $size - 2; $i >= 0; --$i)
+        $x[$i] -= $y[$i] & $x[$i + 1];
 
-  return $x;
+    return $x;
 }
 
 
@@ -33,4 +33,4 @@ echo sprintf('has the solution:%s', PHP_EOL);
 
 $solution = thomas_algorithm($a, $a, $c, $x, count($x));
 for ($i = 0; $i < count($solution); $i++)
-  echo sprintf('  [%s]%s', $solution[$i], PHP_EOL);
+    echo sprintf('  [%s]%s', $solution[$i], PHP_EOL);
