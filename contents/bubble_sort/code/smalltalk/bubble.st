@@ -1,17 +1,15 @@
 "Add this method to the SequenceableCollection class in the browser:"
 bubbleSort
     "Bubble sort for a collection."
-    | len swapper thisElem nextElem nextIndex |
+    | len swapper thisElem nextElem |
     len  := self size.
     1 to: len - 1 do:  [ :iteration |
-        1 to: len - 1 do: [ :thisIndex |
-            thisElem := self at: thisIndex.
-            nextIndex := thisIndex + 1.
-            nextElem := self at: nextIndex.
+        1 to: len - 1 do: [ :index |
+            thisElem := self at: index.
+            nextElem := self at: index + 1.
             (thisElem > nextElem) ifTrue: [ 
-                swapper := nextElem.
                 self at: nextIndex put: thisElem.
-                self at: thisIndex put: swapper.
+                self at: thisIndex put: nextElem.
             ]
         ]
     ]
