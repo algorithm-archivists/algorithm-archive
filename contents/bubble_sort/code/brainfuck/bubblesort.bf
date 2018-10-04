@@ -28,11 +28,8 @@ add it to the empty space to the right
 and subtract it from the next number
 [->+>-<<]
 
-undo subtraction
->
-
-once without a zero check in case the numbers are equal
-<+>>+<-
+undo subtraction once without a zero check in case the numbers are equal
++>>+<-
 
 then as long as the left number is bigger than zero
 [<+>>
