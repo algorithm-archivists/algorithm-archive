@@ -33,7 +33,7 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import:1-20, lang:"st"](code/smalltalk/tree_traversal.st)
+[import:1-20, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -69,7 +69,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import:22-28, lang:"st"](code/smalltalk/tree_traversal.st)
+[import:22-27, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -113,7 +113,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import:30-35, lang:"st"](code/smalltalk/tree_traversal.st)
+[import:29-34, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 <p>
@@ -152,7 +152,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import:37-59, lang:"st"](code/smalltalk/tree_traversal.st)
+[import:36-49, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 <p>
@@ -201,7 +201,7 @@ In code, it looks like this:
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import:61-73, lang:"st"](code/smalltalk/tree_traversal.st)
+[import:47-58, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -242,7 +242,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import:75-87, lang:"st"](code/smalltalk/tree_traversal.st)
+[import:60-71, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 ## Example Code
@@ -285,7 +285,7 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
-[import, lang:"st"](code/smalltalk/tree_traversal.st)
+[import, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% endmethod %}
 
 
