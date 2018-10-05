@@ -127,16 +127,18 @@ void split_op(Params &par, Operators &opr) {
         
         // Writing data into a file in the format of:
         // index, density, real potential.
-        char filename[256];
-        sprintf(filename, "output%lu.dat", i);
-        std::ofstream fstream;
-        fstream.open(filename, std::fstream::out);
+        std::stringstream filename_stream;
+        filename_stream << "output" << i << ".dat";
         
-        char buffer[1023];
-        if (!fstream.fail()) {
+        std::ofstream fstream = std::ofstream(filename_stream.str());
+        
+        if (fstream) {
             for (int i = 0; i < opr.size; ++i) {
-                snprintf(buffer, 1023, "%d\t%f\t%f\n", i, density[i], real(opr.v[i]));
-                fstream.write(buffer, strlen(buffer));
+                std::stringstream data_stream;
+                
+                data_stream << i << "\t" << density[i] << "\t" << real(opr.v[i]) << "\n";
+                
+                fstream.write(data_stream.str().c_str(), data_stream.str().length());
             }
         }
         
