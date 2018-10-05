@@ -13,8 +13,8 @@ void monte_carlo(int samples) {
     int count = 0;
 
     for (int i = 0; i < samples; ++i) {
-        double x = (double)rand() * 2.0 / RAND_MAX - 1.0;
-        double y = (double)rand() * 2.0 / RAND_MAX - 1.0;
+        double x = (double)rand() * radius / RAND_MAX;
+        double y = (double)rand() * radius / RAND_MAX;
 
         if (in_circle(x, y, radius)) {
             count += 1;
@@ -30,7 +30,10 @@ void monte_carlo(int samples) {
 int main() {
     srand(time(NULL));
 
-    monte_carlo(1000000);
-
+    double estimate = monte_carlo(1000000);
+	
+    printf("The estimate of pi is %f\n", estimate);
+    printf("Percentage error: %0.2f%\n", 100 * fabs(M_PI - estimate) / M_PI);
+	
     return 0;
 }
