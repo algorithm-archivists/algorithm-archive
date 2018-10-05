@@ -1,5 +1,5 @@
 "Add this to the SequenceableCollection: "
-bogoSort
+SequenceableCollection>>bogoSort
     "A simple bogosort."
     [ self isSorted ] whileFalse: [ 
         self shuffle.
