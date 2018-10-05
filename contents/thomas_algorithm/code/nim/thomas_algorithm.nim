@@ -8,16 +8,17 @@ proc thomas_algorithm(a, b, c_in, d_in: seq[float]): seq[float] =
   c[0] /= b[0]
   d[0] /= b[0]
 
-    for i in 1..n-1:
-      let scale: float = (1 / (b[i] - c[i - 1] * a[i]))
+  for i in 1..n - 1:
+    let scale: float = (1 / (b[i] - c[i - 1] * a[i]))
 
-      c[i] *= scale
-      d[i] = (d[i] - a[i] * d[i - 1]) * scale
+    c[i] *= scale
+    d[i] = (d[i] - a[i] * d[i - 1]) * scale
 
-    for i in countdown(n-2,0):
-      d[i] -= c[i] * d[i + 1]
+  for i in countdown(n - 2,0):
+    d[i] -= c[i] * d[i + 1]
 
-    return d
+  
+  return d
             
 
 const x: seq[float] = @[0.0, 2.0, 3.0]
@@ -34,5 +35,5 @@ echo "has the solution:"
 
 const soln: seq[float] = thomas_algorithm(x,y,z,w)
 
-for i in 0..2:
+for i in 0..len(w) - 1:
   echo soln[i]
