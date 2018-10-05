@@ -77,5 +77,5 @@ test := Node new: 1 children: { Node new: 2.
 test dfsRecursive.
 test dfsRecursivePostorder.
 test dfsInOrderBinaryTree.
-test dfsStack: 2.
-test bfs: 4); cr.
+test dfsStack.
+test bfs.
