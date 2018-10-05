@@ -7,7 +7,36 @@ function gcd(a, b)
     return a;
 
 in(number)              A
+// absolute of A
+duplicate               AA
+push 1                  1AA
+duplicate               11AA
+subtract                0AA
+greater                 0/1A        // 1 if A > 0, 0 if A <= 0
+not                     1/0A        // 0 if A > 0, 1 if A <= 0
+push 1                  1 1/0 A
+push 3                  31 1/0 A
+subtract                -2 1/0 A
+multiply                -2/0 A
+push 1                  1 -2/0 A
+add                     -1/1 A
+multiply                A
+
 in(number)              BA
+// absolute of B
+duplicate               BBA
+push 1                  1BBA
+duplicate               11BBA
+subtract                0BBA
+greater                 0/1BA        // 1 if B > 0, 0 if B <= 0
+not                     1/0BA        // 0 if B > 0, 1 if B <= 0
+push 1                  1 1/0 BA
+push 3                  31 1/0 BA
+subtract                -2 1/0 BA
+multiply                -2/0 BA
+push 1                  1 -2/0 BA
+add                     -1/1 BA
+multiply                BA
 
 // Start of loop
 duplicate               BBA
