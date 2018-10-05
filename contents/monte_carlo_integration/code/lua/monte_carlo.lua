@@ -13,3 +13,7 @@ function monte_carlo(nsamples)
 	
 	return 4 * count/nsamples
 end
+
+local pi = monte_carlo(10000000)
+print("Estimate: " .. pi)
+print(("Error: %.2f%%"):format(100*math.abs(pi-math.pi)/math.pi))
