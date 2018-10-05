@@ -1,5 +1,5 @@
 "Add this method to the SequenceableCollection class in the browser:"
-bubbleSort
+SequenceableCollection>>bubbleSort
     "Bubble sort for a collection."
     | len swapper thisElem nextElem |
     len  := self size.
