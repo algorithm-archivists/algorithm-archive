@@ -25,6 +25,6 @@ function monte_carlo(int $samples, float $radius = 1): float
 
 $piEstimate = monte_carlo(100000000);
 $percentError = abs($piEstimate - pi()) / pi() * 100;
-echo sprintf('The estimate of PI is: %s', $piEstimate);
+printf('The estimate of PI is: %s', $piEstimate);
 echo PHP_EOL;
-echo sprintf('The percent error is: %s', $percentError);
+printf('The percent error is: %s', $percentError);
