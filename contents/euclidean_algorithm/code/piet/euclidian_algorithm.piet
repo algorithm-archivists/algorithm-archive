@@ -52,7 +52,7 @@ not                     1/0 BA      // 1 if a = b and 0 if a ≠ b
 not                     0/1 BA      // 1 if a ≠ b and 0 if a = b
 pointer                 BA
 
-    // Go down if a ≠ b
+    // Go left if a ≠ b
     duplicate               BBA
     push 3                  3BBA
     push 2                  23BBA
@@ -90,7 +90,7 @@ pointer                 BA
         subtract                BA              // B = B - A
         // Go back to start of loop
 
-// Go right if a = b (end of while loop)
+// Go down if a = b (end of while loop)
 pop                     A
 out(number)             -
 
