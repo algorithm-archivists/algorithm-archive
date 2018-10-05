@@ -20,8 +20,7 @@
 
 
 ; In this case, the Monte Carlo algorithm returns the ratio
-; between the area of the unit circle and the area of the enclosing square
-; for one of the four quadrants of the circle.
-; To calculate Pi the result must be multiplied by four.
+; between the area of the unit circle and the area of the enclosing square.
+; To calculate Pi using this ratio, it has to be multiplied by four.
 ; (This step is generally not required. It is only used to approximate Pi.)
 (display (* 4 (monte_carlo 1000)))
