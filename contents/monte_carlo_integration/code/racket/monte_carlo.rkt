@@ -4,7 +4,7 @@
  )
 
 (define (monte_carlo n)
-  (* (/ (local ((define (monte_carlo* n count)
+  (/ (local ((define (monte_carlo* n count)
                   (if (= n 0)
                       count
                       (monte_carlo* (sub1 n) 
@@ -15,7 +15,7 @@
                       )
                   )
                )) (monte_carlo* n 0)
-        ) n) 4)
+        ) n)
   )
 
-(display (monte_carlo 1000))
+(display (* 4 (monte_carlo 1000)))
