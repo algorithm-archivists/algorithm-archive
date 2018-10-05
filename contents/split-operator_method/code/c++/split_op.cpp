@@ -185,7 +185,7 @@ int main() {
     
     split_op(par, opr);
     
-    printf("The energy is %f\n", calculate_energy(par, opr));
+    std::cout << "The energy is " << calculate_energy(par, opr) << "\n";
     
     return 0;
 }
