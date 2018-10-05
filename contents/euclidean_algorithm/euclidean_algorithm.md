@@ -41,6 +41,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="scala" %}
+[import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
 [import:3-14, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% endmethod %}
@@ -90,6 +92,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="scala" %}
+[import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
 [import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% endmethod %}
@@ -144,6 +148,8 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="scala" %}
+[import, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
 [import, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% endmethod %}
