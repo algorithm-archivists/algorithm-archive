@@ -18,8 +18,8 @@ def gcd_minus(a, b)
 	a
 end
  
-p gcd_mod(108, 48) #=> 12
-p gcd_mod(6003, 936) #=> 9
- 
-p gcd_minus(108, 48) #=> 12
-p gcd_minus(6003, 936) #=> 9
+p gcd_mod(12 * 6, 12 * 4) #=> 12
+p gcd_mod(9 * 667, 9 * 104) #=> 9
+
+p gcd_minus(12 * 6, 12 * 4) #=> 12
+p gcd_minus(9 * 667, 9 * 104) #=> 9
