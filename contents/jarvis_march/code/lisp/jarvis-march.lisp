@@ -87,27 +87,29 @@
 
 (defun jarvis-march (gift)
 "finds the convex hull of any random distribution of points"
-  (setq hull (leftmost-point gift))
-  (setq hull
-    (cons
-      (next-point-on-hull
-        (make-point 
-          :x (point-x hull)
-          :y (- (point-y hull) 1))
-        hull
-        gift)
-      hull)) 
-  (setq hull (list (first hull) (rest hull)))
-  (loop 
-    (if (p-eql (first hull) (first (last hull)))
-        (return-from jarvis-march (butlast hull))
-        (setq hull
-          (cons
-            (next-point-on-hull
-              (second hull)
-              (first hull)
-              gift)
-            hull)))))
+  (let* 
+    ((start 
+      (leftmost-point gift))
+    ;creates the hull with the first and second points of the hull in a list
+    (hull 
+      (list 
+        (next-point-on-hull
+          (make-point
+            :x (point-x start)
+            :y (- (point-y start) 1))
+          start
+          gift)
+        start)))
+    (loop 
+      (if (p-eql (first hull) (first (last hull)))
+          (return-from jarvis-march (butlast hull))
+          (setq hull
+            (cons
+              (next-point-on-hull
+                (second hull)
+                (first hull)
+                gift)
+              hull))))))
 
 (defun make-points (list)
   "Takes a list of lists and returns a list of points"
