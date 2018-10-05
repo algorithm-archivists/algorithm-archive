@@ -33,7 +33,7 @@ echo "[0.0 3.0 6.0][z] = [3.0]"
 
 echo "has the solution:"
 
-const soln: seq[float] = thomas_algorithm(x,y,z,w)
+const soln: seq[float] = thomas_algorithm(x, y, z, w)
 
 for i in 0..len(w) - 1:
   echo soln[i]
