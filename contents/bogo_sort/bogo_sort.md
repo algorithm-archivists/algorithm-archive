@@ -46,7 +46,7 @@ In code, it looks something like this:
 {% sample lang="ruby" %}
 [import:7-9, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="st" %}
-[import:2-6, lang:"st"](code/smalltalk/bogosort.st)
+[import:2-6, lang:"smalltalk"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 That's it.
@@ -92,7 +92,7 @@ We are done here!
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="st" %}
-[import, lang:"st"](code/smalltalk/bogosort.st)
+[import, lang:"smalltalk"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 
