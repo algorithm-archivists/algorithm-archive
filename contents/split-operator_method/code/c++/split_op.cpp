@@ -14,7 +14,9 @@ struct Params {
         dt = _dt;
         timesteps = _timesteps;
         dx = 2.0 * xmax / res;
+        x.reserve(res);
         dk = M_PI / xmax;
+        k.reserve(res);
         im_time = im;
         
         for (size_t i = 0; i < res; ++i) {
@@ -43,6 +45,10 @@ public:
     Operators(Params &par, double voffset,
               double wfcoffset) {
         size = par.res;
+        v.reserve(size);
+        pe.reserve(size);
+        ke.reserve(size);
+        wfc.reserve(size);
         
         for (size_t i = 0; i < size; ++i) {
             v.emplace_back(0.5 * pow(par.x[i] - voffset, 2));
