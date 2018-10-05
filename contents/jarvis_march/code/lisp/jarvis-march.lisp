@@ -1,6 +1,6 @@
 ;;;; Jarvis march implementation
 
-(defstruct point x y)
+(defstruct (point (:constructor make-point (x y))) x y)
 
 (defun p-eql (p1 p2)
   "Checks if two points are the same"
@@ -94,14 +94,12 @@
     (hull 
       (list 
         (next-point-on-hull
-          (make-point
-            :x (point-x start)
-            :y (- (point-y start) 1))
+          (make-point (point-x start) (- (point-y start) 1))
           start
           gift)
         start)))
     (loop 
-      (if (p-eql (first hull) (first (last hull)))
+      (if (p-eql (first hull) start)
           (return-from jarvis-march (butlast hull))
           (setq hull
             (cons
@@ -111,17 +109,12 @@
                 gift)
               hull))))))
 
-(defun make-points (list)
-  "Takes a list of lists and returns a list of points"
+(defvar test-gift
   (map 
     'list
-    (lambda (e) (make-point :x (first e) :y (second e)))
-    list))
-
-(defvar test-set 
-  (make-points 
-   '((0 0) (2 1) (0 2)
+    (lambda (e) (apply #'make-point e))
+    '((0 0) (2 1) (0 2)
     (-1 0) (1 -1) (0 1)
     (-2 0) (-1 -2) (1 -3))))
 
-(print (jarvis-march test-set))
+(print (jarvis-march test-gift))
