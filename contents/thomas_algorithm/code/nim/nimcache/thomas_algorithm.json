@@ -1,8 +1,0 @@
-{"compile":[
-],
-"link":[
-"/home/cb/algorithm-archive/contents/thomas_algorithm/code/nim/nimcache/thomas_algorithm.o",
-"/home/cb/algorithm-archive/contents/thomas_algorithm/code/nim/nimcache/stdlib_system.o"
-],
-"linkcmd": "gcc   -o /home/cb/algorithm-archive/contents/thomas_algorithm/code/nim/thomas_algorithm  /home/cb/algorithm-archive/contents/thomas_algorithm/code/nim/nimcache/thomas_algorithm.o /home/cb/algorithm-archive/contents/thomas_algorithm/code/nim/nimcache/stdlib_system.o    -ldl"
-}
