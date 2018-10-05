@@ -18,4 +18,4 @@
         ) n) 4)
   )
 
-(monte_carlo 100000)
+(display (monte_carlo 1000))
