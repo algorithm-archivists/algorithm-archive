@@ -1,9 +1,13 @@
 def gcd_mod(a, b)
+	a = a.abs
+	b = b.abs
 	a, b = b, a%b until b.zero?
 	a
 end
  
 def gcd_minus(a, b)
+	a = a.abs
+	b = b.abs
 	until a == b
 		if a > b
 			a -= b
