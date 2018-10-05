@@ -39,8 +39,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:12-25, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
-{% sample lang="x64" %}
-[import:43-78, lang="x64"](code/x64/euclidean_example.s)
+{% sample lang="asm-x64" %}
+[import:43-78, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:1-19, lang="Fortran"](code/fortran/euclidean.f90)
 {% endmethod %}
@@ -88,8 +88,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-10, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
-{% sample lang="x64" %}
-[import:8-41, lang="x64"](code/x64/euclidean_example.s)
+{% sample lang="asm-x64" %}
+[import:8-41, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:21-34, lang="Fortran"](code/fortran/euclidean.f90)
 {% endmethod %}
@@ -142,8 +142,8 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
-{% sample lang="x64" %}
-[import, lang="x64"](code/x64/euclidean_example.s)
+{% sample lang="asm-x64" %}
+[import, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import, lang="Fortran"](code/fortran/euclidean.f90)
 {% endmethod %}
