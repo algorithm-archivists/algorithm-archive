@@ -9,4 +9,7 @@ USING: locals ;
 
 USING: random ;
 : bogosort ( seq -- seq' )
+  ! `dup` duplicates the array, because `sorted?` pops its reference to it
+  ! randomize works in-place
+  ! so we `randomize` `until` it's `sorted?`
   [ dup sorted? ] [ randomize ] until ;
