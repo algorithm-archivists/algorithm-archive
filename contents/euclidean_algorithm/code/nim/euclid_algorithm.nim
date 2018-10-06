@@ -23,5 +23,5 @@ proc euclid_sub(in1, in2: int): int =
     
     return a
 
-echo euclid_sub(32*5, 32*3)
-echo euclid_mod(64*2, 64*7)
+echo euclid_sub(64 * 67, 64 * 81)
+echo euclid_mod(128 * 12, 128 * 77)
