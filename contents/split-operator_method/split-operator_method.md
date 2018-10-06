@@ -145,7 +145,7 @@ The final step is to do the iteration, itself.
 {% sample lang="c" %}
 [import:98-148, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="cpp" %}
-[import:74-180, lang:"c_cpp"](code/c++/split_op.cpp)
+[import:74-183, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
