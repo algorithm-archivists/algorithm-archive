@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-function in_circle(float $position_x, float $position_y, float $radius = 1): bool
+function in_circle(float $positionX, float $positionY, float $radius = 1): bool
 {
-    return pow($position_x 2) + pow($position_y, 2) < pow($radius, 2);
+    return pow($positionX 2) + pow($positionY, 2) < pow($radius, 2);
 }
 
 function random_zero_to_one(): float
