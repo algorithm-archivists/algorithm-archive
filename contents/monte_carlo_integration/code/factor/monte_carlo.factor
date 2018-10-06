@@ -1,3 +1,5 @@
+USING: locals random math.ranges math.functions ;
+
 :: monte-carlo ( xr yr n in-shape?: ( x y -- b ) -- % )
   n <iota> [ drop xr random yr random in-shape? call ] map [ ] count n / ; inline
 
