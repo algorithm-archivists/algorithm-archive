@@ -50,6 +50,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:3-28, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import:5-9, lang:"nim"](code/nim/bubble_sort.nim)
+{% sample lang="st" %}
+[import:2-15, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% sample lang="asm-x64" %}
 [import:44-110, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
@@ -117,6 +119,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="st" %}
+[import, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/bubble_sort.scala)
 {% sample lang="emojic" %}
