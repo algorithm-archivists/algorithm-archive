@@ -137,13 +137,25 @@
           "name": "Nim"
         },
         {
+          "lang": "asm-x64",
+          "name": "X86-64 Assembly"
+        },
+        {
           "lang": "f90",
           "name": "Fortran90"
         },
         {
           "lang": "factor",
-	  "name": "Factor"
-	}
+          "name": "Factor"
+	},
+	{
+          "lang": "scala",
+          "name": "Scala"
+        },
+        {
+          "lang": "emojic",
+          "name": "Emojicode"
+        }
       ]
     }
   }
