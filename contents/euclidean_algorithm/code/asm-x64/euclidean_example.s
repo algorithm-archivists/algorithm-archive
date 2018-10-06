@@ -7,86 +7,68 @@
   .global main
   .extern printf
 
+# rdi - a
+# rsi - b
+# RET rax - gcd of a and b
 euclid_mod:
-  # Abs of the first argument
-  mov    rax, rdi
+  mov    rax, rdi           # Get abs of a
   sar    rax, 31
   xor    rdi, rax
   sub    rdi, rax
-
-  # Abs of the second argument
-  mov    rax, rsi
+  mov    rax, rsi           # Get abs of b
   sar    rax, 31
   xor    rsi, rax
   sub    rsi, rax
-
-  # While loop
   jmp    mod_check
 mod_loop:
-  xor    rdx, rdx
+  xor    rdx, rdx           # Take the mod of a and b
   mov    rax, rdi
   div    rsi
-  mov    rdi, rsi
-  mov    rsi, rdx
+  mov    rdi, rsi           # Set b to the mod of a and b
+  mov    rsi, rdx           # Set a to b
 mod_check:
-  cmp    rsi, 0
+  cmp    rsi, 0             # Check if b is non-zero
   jne    mod_loop
-
-  mov    rax, rdi
+  mov    rax, rdi           # Return the result
   ret
 
 euclid_sub:
-  # Abs of the first argument
-  mov    rax, rdi
+  mov    rax, rdi           # Get abs of a
   sar    rax, 31
   xor    rdi, rax
   sub    rdi, rax
-
-  # Abs of the second argument
-  mov    rax, rsi
+  mov    rax, rsi           # Get abs of b
   sar    rax, 31
   xor    rsi, rax
   sub    rsi, rax
-
-  # While loop
   jmp    check
 loop:
-  cmp    rdi, rsi
+  cmp    rdi, rsi           # Find which is bigger
   jle    if_true
-
-  sub    rdi, rsi
+  sub    rdi, rsi           # If a is bigger then a -= b
   jmp    check
 if_true:
-  sub    rsi, rdi
+  sub    rsi, rdi           # Else b -= a
 check:
-  cmp    rsi, rdi
+  cmp    rsi, rdi           # Check if a and b are not equal
   jne    loop
-
-  mov    rax, rdi
+  mov    rax, rdi           # Return results
   ret
 
 main:
-  # Calling euclid_mod
-  mov    rdi, 4288
+  mov    rdi, 4288          # Call euclid_mod
   mov    rsi, 5184
   call   euclid_mod
-
-  # Printing euclid_mod output
-  mov    rdi, OFFSET fmt
+  mov    rdi, OFFSET fmt    # Print output
   mov    rsi, rax
   xor    rax, rax
   call   printf
-
-  # Calling euclid_sub
-  mov    rdi, 1536
+  mov    rdi, 1536          # Call euclid_sub
   mov    rsi, 9856
   call   euclid_sub
-
-  # Printing euclid_sub output
-  mov    rdi, OFFSET fmt
+  mov    rdi, OFFSET fmt    # Print output
   mov    rsi, rax
   xor    rax, rax
   call   printf
-
-  xor    rax, rax
+  xor    rax, rax           # Return 0
   ret
