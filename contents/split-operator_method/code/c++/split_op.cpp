@@ -58,8 +58,8 @@ public:
                 ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2)));
                 pe.emplace_back(exp(-0.5 * par.dt * v[i]));
             } else {
-                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * std::complex(0.0, 1.0)));
-                pe.emplace_back(exp(-0.5 * par.dt * v[i] * std::complex(0.0, 1.0)));
+                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * std::complex<double>(0.0, 1.0)));
+                pe.emplace_back(exp(-0.5 * par.dt * v[i] * std::complex<double>(0.0, 1.0)));
             }
         }
     }
@@ -147,27 +147,27 @@ void split_op(Params &par, Operators &opr) {
 }
 
 double calculate_energy(Params par, Operators opr) {
-    std::vector<std::complex<double>> wfc_r = std::vector(opr.wfc);
-    std::vector<std::complex<double>> wfc_k = std::vector(opr.wfc);
+    std::vector<std::complex<double>> wfc_r(opr.wfc);
+    std::vector<std::complex<double>> wfc_k(opr.wfc);
     std::vector<std::complex<double>> wfc_c;
     fft(wfc_k, opr.size, false);
     
     for (size_t i = 0; i < opr.size; ++i) {
-        wfc_c[i] = conj(wfc_r[i]);
+        wfc_c.push_back(conj(wfc_r[i]));
     }
     
     std::vector<std::complex<double>> energy_k;
     std::vector<std::complex<double>> energy_r;
     
     for (size_t i = 0; i < opr.size; ++i) {
-        energy_k[i] = wfc_k[i] * pow(std::complex(par.k[i], 0.0), 2);
+        energy_k.push_back(wfc_k[i] * pow(std::complex<double>(par.k[i], 0.0), 2));
     }
     
     fft(energy_k, opr.size, true);
     
     for (size_t i = 0; i < opr.size; ++i) {
         energy_k[i] *= 0.5 * wfc_c[i];
-        energy_r[i] = wfc_c[i] * opr.v[i] * wfc_r[i];
+        energy_r.push_back(wfc_c[i] * opr.v[i] * wfc_r[i]);
     }
     
     double energy_final = 0;
