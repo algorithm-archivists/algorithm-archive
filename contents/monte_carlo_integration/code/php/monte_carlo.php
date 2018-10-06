@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-function in_circle(float $positionX, float $positionY, float $radius = 1): bool
+function in_circle(float $position_x, float $position_y, float $radius = 1): bool
 {
-    return pow($positionX, 2) + pow($positionY, 2) < pow($radius, 2);
+    return pow($position_x 2) + pow($position_y, 2) < pow($radius, 2);
 }
 
 function random_zero_to_one(): float
@@ -25,6 +25,7 @@ function monte_carlo(int $samples, float $radius = 1): float
 
 $piEstimate = monte_carlo(100000000);
 $percentError = abs($piEstimate - pi()) / pi() * 100;
+
 printf('The estimate of PI is: %s', $piEstimate);
 echo PHP_EOL;
 printf('The percent error is: %s', $percentError);
