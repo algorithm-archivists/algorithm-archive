@@ -45,6 +45,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
 [import:3-14, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import:8-19, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:1-13, lang="smalltalk"](code/smalltalk/euclid.st)
 {% endmethod %}
@@ -98,6 +100,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
 [import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import:1-6, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:15-25, lang="smalltalk"](code/smalltalk/euclid.st)
 {% endmethod %}
@@ -156,6 +160,8 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
 [import, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import, lang="smalltalk"](code/smalltalk/euclid.st)
 {% endmethod %}
