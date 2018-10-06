@@ -47,6 +47,8 @@ In code, it looks something like this:
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="f90" %}
 [import:24-32, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import:3-8, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% endmethod %}
 
 That's it.
@@ -92,6 +94,8 @@ We are done here!
 [import, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% endmethod %}
 
 
