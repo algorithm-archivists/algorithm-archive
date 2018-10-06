@@ -102,7 +102,6 @@
             gift)
           start)))
       (loop 
-      (print hull)
         (if (p-eql (first hull) start)
             (return-from jarvis-march (butlast hull))
             (setq hull
