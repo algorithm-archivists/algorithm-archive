@@ -304,8 +304,7 @@ generate_tree_count_chars:
   inc    r12
   jmp    generate_tree_count_chars
 generate_tree_leaves_setup:
-  mov    r12, 255                             # The loop counter
-  cmp    r12, 0                               # Check if we reached zero (on subsequent iterations "dec" sets the correct flag)
+  mov    r12, 255                             # The loop counter. We can only get here if the "test" on line 301 resulted in a zero so the next jl instruction will do the right thing
 generate_tree_leaves:
   jl     generate_tree_branches               # If not then it's time to generate the branches
   mov    r13d, DWORD PTR [rsp + 4*r12]        # Load the count at the ith position
@@ -421,10 +420,9 @@ heap_pop_compare_indices:
   mov    QWORD PTR [rdx + 8*rcx], rdi
   mov    r9, rcx
   jmp    heap_pop_sift_down
-heap_pop_done:
-  ret
 heap_empty:
   xor    rax, rax                             # Return a null pointer to indicate the heap was empty
+heap_pop_done:
   ret
 
 # rdi - codebook start ptr
