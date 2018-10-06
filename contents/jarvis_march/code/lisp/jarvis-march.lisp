@@ -34,7 +34,7 @@
     ((< x 0)
       (+ (atan (/ y x)) pi))
     ((and (zerop x) (zerop y))
-      Nil)))
+      nil)))
 
 (defun angle (p1 p2 p3)
   "Returns the angle between three points"
@@ -72,7 +72,7 @@
 (defun next-point-on-hull (p1 p2 gift)
   "finds the next point on the convex hull of a gift"
   (cond 
-    ((null gift) Nil) 
+    ((null gift) nil) 
     ((null (rest gift)) (first gift)) 
     (t 
       (if 
@@ -87,27 +87,31 @@
 
 (defun jarvis-march (gift)
 "finds the convex hull of any random distribution of points"
-  (let* 
-    ((start 
-      (leftmost-point gift))
-    ;creates the hull with the first and second points of the hull in a list
-    (hull 
-      (list 
-        (next-point-on-hull
-          (make-point (point-x start) (- (point-y start) 1))
-          start
-          gift)
-        start)))
-    (loop 
-      (if (p-eql (first hull) start)
-          (return-from jarvis-march (butlast hull))
-          (setq hull
-            (cons
-              (next-point-on-hull
-                (second hull)
-                (first hull)
-                gift)
-              hull))))))
+  ;deals with edge cases
+  (if (< (length gift) 3)
+      gift
+    (let* 
+      ((start 
+        (leftmost-point gift))
+      ;creates the hull with the first and second points of the hull in a list
+      (hull 
+        (list 
+          (next-point-on-hull
+            (make-point (point-x start) (- (point-y start) 1))
+            start
+            gift)
+          start)))
+      (loop 
+      (print hull)
+        (if (p-eql (first hull) start)
+            (return-from jarvis-march (butlast hull))
+            (setq hull
+              (cons
+                (next-point-on-hull
+                  (second hull)
+                  (first hull)
+                  gift)
+                hull)))))))
 
 (defvar test-gift
   (map 
