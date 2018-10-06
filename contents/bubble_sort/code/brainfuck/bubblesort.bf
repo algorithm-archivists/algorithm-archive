@@ -59,7 +59,7 @@ go to next pair
 repeat until end of array
 ]
 
-go to leftmost switch marker
+go to leftmost "correct" marker
 >>>
 
 delete marker and jump to the next one if it's 1
