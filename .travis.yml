@@ -18,9 +18,9 @@ script:
 
 after_success:
     - |
-    if [[ "${TRAVIS_BRANCH}" == master && "${TRAVIS_PULL_REQUEST}" == false ]]; then
-        # Commits to master that are not pull requests, that is, only
-        # actual addition of code to master, should deploy the book to
-        # the site.
-        bash "${TRAVIS_BUILD_DIR}"/tools/deploy/update_site_travis.bash
-    fi
+        if [[ "${TRAVIS_BRANCH}" == master && "${TRAVIS_PULL_REQUEST}" == false ]]; then
+            # Commits to master that are not pull requests, that is, only
+            # actual addition of code to master, should deploy the book to
+            # the site.
+            bash "${TRAVIS_BUILD_DIR}"/tools/deploy/update_site_travis.bash
+        fi

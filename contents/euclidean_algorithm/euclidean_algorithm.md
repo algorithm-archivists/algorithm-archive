@@ -42,7 +42,15 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="asm-x64" %}
 [import:43-78, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
-[import:1-19, lang="Fortran"](code/fortran/euclidean.f90)
+[import:1-19, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="scala" %}
+[import:3-8, lang="scala"](code/scala/euclidean.scala)
+{% sample lang="racket" %}
+[import:3-14, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import:8-19, lang="ruby"](code/ruby/euclidean.rb)
+{% sample lang="st" %}
+[import:1-13, lang="smalltalk"](code/smalltalk/euclid.st)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -91,7 +99,15 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="asm-x64" %}
 [import:8-41, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
-[import:21-34, lang="Fortran"](code/fortran/euclidean.f90)
+[import:21-34, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="scala" %}
+[import:10-14, lang="scala"](code/scala/euclidean.scala)
+{% sample lang="racket" %}
+[import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import:1-6, lang="ruby"](code/ruby/euclidean.rb)
+{% sample lang="st" %}
+[import:15-25, lang="smalltalk"](code/smalltalk/euclid.st)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -145,7 +161,15 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="asm-x64" %}
 [import, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
-[import, lang="Fortran"](code/fortran/euclidean.f90)
+[import, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="scala" %}
+[import, lang="scala"](code/scala/euclidean.scala)
+{% sample lang="racket" %}
+[import, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import, lang="ruby"](code/ruby/euclidean.rb)
+{% sample lang="st" %}
+[import, lang="smalltalk"](code/smalltalk/euclid.st)
 {% endmethod %}
 
 
