@@ -96,13 +96,13 @@ const a = [[3,  2, -4,  3],
 	  [ 5, -3,  1, 14]];
 
 gaussianElimination(a);
-console.log("Gaussian elimination:\n");
+console.log("Gaussian elimination:");
 printMatrix(a);
 
 gaussJordan(a);
-console.log("\nGauss-Jordan:\n");
+console.log("\nGauss-Jordan:");
 printMatrix(a);
 
 const sol = backSubstitution(a);
-console.log("\nSolutions are:\n");
+console.log("\nSolutions are:");
 printMatrixRow(sol);
