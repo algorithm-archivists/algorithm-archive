@@ -141,7 +141,7 @@
           "name": "Fortran90"
         },
         {
-          "lang": "processing",
+          "lang": "pde",
           "name": "Processing"
         }
       ]
