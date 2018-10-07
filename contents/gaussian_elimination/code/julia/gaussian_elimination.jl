@@ -10,7 +10,7 @@ function gaussian_elimination(A::Array{Float64,2})
     for col = 1:(cols-1)
 
         # Step 1: finding the maximum element for each column
-        max_index = indmax(abs.(A[row:end,col])) + row-1
+        max_index = argmax(abs.(A[row:end,col])) + row-1
 
         # Check to make sure matrix is good!
         if (A[max_index, col] == 0)
@@ -50,7 +50,7 @@ function back_substitution(A::Array{Float64,2})
     cols = size(A,2)
 
     # Creating the solution Vector
-    soln = Vector{Float64}(rows)
+    soln = zeros(rows)
 
     for i = rows:-1:1
         sum = 0.0

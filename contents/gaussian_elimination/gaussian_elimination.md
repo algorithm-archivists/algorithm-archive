@@ -360,6 +360,8 @@ In code, this looks like:
 [import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
 [import:10-36, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% sample lang="py" %}
+[import:3-28, lang:"python"](code/python/gaussian_elimination.py)
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
@@ -393,6 +395,8 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="hs" %}
 [import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% sample lang="py" %}
+[import:31-49, lang:"python"](code/python/gaussian_elimination.py)
 {% endmethod %}
 
 ## Back-substitution
@@ -416,13 +420,15 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 
 {% method %}
 {% sample lang="jl" %}
-[import:47-67, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:47-64, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:50-62, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="rs" %}
 [import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
 [import:48-53, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% sample lang="py" %}
+[import:52-64, lang:"python"](code/python/gaussian_elimination.py)
 {% endmethod %}
 
 ## Conclusions
@@ -445,6 +451,8 @@ As for what's next... Well, we are in for a treat! The above algorithm clearly h
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/gaussian_elimination.py)
 {% endmethod %}
 
 
