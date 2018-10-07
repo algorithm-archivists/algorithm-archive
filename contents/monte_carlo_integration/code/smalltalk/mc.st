@@ -8,7 +8,7 @@ PIFinder>>finalize: succeeded of: total
 	^4 * succeeded / (total)
 
 Object subclass: #InCircleSampler
-	instanceVariableNames: 'radius'
+	instanceVariableNames: 'radius rand'
 	classVariableNames: ''
 	package: 'AAA'
 
@@ -17,12 +17,15 @@ InCircleSampler class>>new: newRadius
 	obj := self new.
 	obj radius: newRadius.
 	^obj.
+	
+InCircleSampler>>initialize
+	rand := Random new
 
 InCircleSampler>>radius: newRadius
 	radius := newRadius
 
 InCircleSampler>>sample
-	^{Random new next * radius. Random new next * radius}
+	^{rand next * radius. rand next * radius}
 
 Object subclass: #MonteCarlo
 	instanceVariableNames: ''
