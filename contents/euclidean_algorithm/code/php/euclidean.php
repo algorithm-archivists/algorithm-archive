@@ -25,6 +25,6 @@ function euclid_mod(float $a, float $b): float
     return $a;
 }
 
-echo sprintf('Euclidean mod: %s', euclid_mod(64 * 67, 64 * 81));
+printf('Euclidean mod: %s', euclid_mod(64 * 67, 64 * 81));
 echo PHP_EOL;
-echo sprintf('Euclidean sub: %s', euclid_sub(128 * 12, 128 * 77));
+printf('Euclidean sub: %s', euclid_sub(128 * 12, 128 * 77));
