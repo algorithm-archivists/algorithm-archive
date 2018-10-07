@@ -145,9 +145,10 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="f90" %}
 [import, lang="Fortran"](code/fortran/euclidean.f90)
 {% sample lang="ws" %}
-[import, lang="whitespace"](code/whitespace/euclidian_sub.ws)
-{% sample lang="ws" %}
-[import, lang="whitespace"](code/whitespace/euclidian_mod.ws)
+Here is a readable version of the algorithms with comments. First, subtraction method:
+[import, lang="whitespace"](code/whitespace/euclidian_sub_comments.ws)
+and modulo method:
+[import, lang="whitespace"](code/whitespace/euclidian_mod_comments.ws)
 {% endmethod %}
 
 
