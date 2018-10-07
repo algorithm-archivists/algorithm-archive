@@ -151,6 +151,10 @@
         {
           "lang": "emojic",
           "name": "Emojicode"
+        },
+        {
+          "lang": "lolcode",
+          "name": "LOLCODE"
         }
       ]
     }
