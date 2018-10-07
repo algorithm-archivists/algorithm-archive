@@ -15,3 +15,11 @@ USING: random ;
   [ dup sorted? ] [ randomize ] until
 ;
 
+! WARNING: Increasing this number beyond 5 or so will make this take a very long time.
+!          That said, if you have an afternoon to kill...
+5 <iota> >array randomize ! generate a random array to demo
+dup .                     ! show the array
+bogosort                  ! bogosort it
+.                         ! show it again
+
+
