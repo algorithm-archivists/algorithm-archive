@@ -49,4 +49,4 @@ finder := PIFinder new.
 pi := MonteCarlo solve: int with: sampler times: 1000000 then: finder.
 precision := pi - (Float pi) abs * 100 / (Float pi).
 
-Transcript show: 'PI: '; show: pi asFloat; cr; show: '% error: '; show: precision; cr.
+Transcript show: 'PI: '; show: pi asFloat; cr; show: '% error: '; show: precision abs; cr.
