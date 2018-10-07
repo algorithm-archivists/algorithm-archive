@@ -149,18 +149,15 @@ void split_op(Params &par, Operators &opr) {
 double calculate_energy(Params par, Operators opr) {
     std::vector<std::complex<double>> wfc_r(opr.wfc);
     std::vector<std::complex<double>> wfc_k(opr.wfc);
-    std::vector<std::complex<double>> wfc_c;
-    wfc_c.reserve(opr.size);
+    std::vector<std::complex<double>> wfc_c(opr.size);
     fft(wfc_k, opr.size, false);
     
     for (size_t i = 0; i < opr.size; ++i) {
         wfc_c.push_back(conj(wfc_r[i]));
     }
     
-    std::vector<std::complex<double>> energy_k;
-    std::vector<std::complex<double>> energy_r;
-    energy_k.reserve(opr.size);
-    energy_r.reserve(opr.size);
+    std::vector<std::complex<double>> energy_k(opr.size);
+    std::vector<std::complex<double>> energy_r(opr.size);
     
     for (size_t i = 0; i < opr.size; ++i) {
         energy_k.push_back(wfc_k[i] * pow(std::complex<double>(par.k[i], 0.0), 2));
