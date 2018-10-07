@@ -109,3 +109,18 @@ indent_size = 2
 [*.rs]
 indent_style = space
 indent_size = 4
+
+# Emojicode
+[*.emojic]
+indent_style = space
+indent_size = 2
+
+# PHP
+[*.php]
+indent_style = space
+indent_size = 4
+
+#Lua
+[*.lua]
+indent_style = space
+indent_size = 2
