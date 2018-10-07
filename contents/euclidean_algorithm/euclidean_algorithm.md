@@ -214,9 +214,16 @@ and modulo method:
 {% sample lang="bash" %}
 [import, lang="bash"](code/bash/euclid.bash)
 {% sample lang="piet" %}
+A text version of the program is provided for both versions.
+#### Subtraction
 > ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
 
+[import:23-107](code/piet/euclidian_algorithm.piet)
+
+#### Modulo
 > ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
+
+[import:126-146](code/piet/euclidian_algorithm.piet)
 {% endmethod %}
 
 <script>
