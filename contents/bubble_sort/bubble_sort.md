@@ -14,6 +14,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:9-27, lang:"csharp"](code/csharp/BubbleSort.cs)
 {% sample lang="c" %}
 [import:10-20, lang:"c_cpp"](code/c/bubble_sort.c)
+{% sample lang="hy" %}
+[import:9-23, lang:"hy"](code/hy/bubble_sort.hy)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="kotlin" %}
@@ -81,6 +83,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/bubble_sort.c)
+{% sample lang="hy" %}
+[import, lang:"hy"](code/hy/bubble_sort.hy)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/bubble.java)
 {% sample lang="kotlin" %}

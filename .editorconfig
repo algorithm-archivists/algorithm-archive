@@ -55,6 +55,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# Hy
+[*.hy]
+indent_style = space
+indent_size = 2
+
 # Java
 [*.java]
 indent_style = space
