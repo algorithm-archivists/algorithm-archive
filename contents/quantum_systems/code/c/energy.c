@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <complex.h>
 #include <string.h>
 #include <math.h>
@@ -47,7 +48,7 @@ double calculate_energy(double complex *wfc, double complex *h_r,
 
     for (size_t i = 0; i < size; ++i) {
         energy_k[i] *= wfc_c[i];
-        energy_r[i] = wfc_c[i] * H_r[i] * wfc[i];
+        energy_r[i] = wfc_c[i] * h_r[i] * wfc[i];
     }
 
     double energy_final = 0;
