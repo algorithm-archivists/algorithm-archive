@@ -13,14 +13,14 @@ function random_zero_to_one(): float
 
 function monte_carlo(int $samples, float $radius = 1): float
 {
-    $in_circle_count = 0;
+    $inCircleCount = 0;
 
     for ($i = 0; $i < $samples; $i++) {
         if (in_circle(random_zero_to_one() * $radius, random_zero_to_one() * $radius, $radius))
-            $in_circle_count++;
+            $inCircleCount++;
     }
 
-    return 4 * $in_circle_count / $samples;
+    return 4 * $inCircleCount / $samples;
 }
 
 $piEstimate = monte_carlo(100000000);
