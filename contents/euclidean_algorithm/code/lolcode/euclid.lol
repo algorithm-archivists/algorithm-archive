@@ -1,6 +1,6 @@
 HAI 1.2
     OBTW
-        The variable _ is needed because the 1.2 syntax of LOLCODE requires that an UPPIN or NERFIN
+        The variable var is needed because the 1.2 syntax of LOLCODE requires that an UPPIN or NERFIN
         is in the loop head. Thus I had to create a dummy variable.
     TLDR
     HOW IZ I ABZ YR NUM
@@ -14,8 +14,8 @@ HAI 1.2
         I HAS A VAR1 ITZ I IZ ABZ YR NUM1 MKAY
         I HAS A VAR2 ITZ I IZ ABZ YR NUM2 MKAY
 
-        I HAS A _ ITZ 1
-        IM IN YR LOOP UPPIN YR _ WILE DIFFRINT VAR2 AN 0
+        I HAS A var ITZ 1
+        IM IN YR LOOP UPPIN YR var WILE DIFFRINT VAR2 AN 0
             I HAS A TMP ITZ VAR2
             VAR2 R MOD OF VAR1 AN VAR2
             VAR1 R TMP
@@ -28,8 +28,8 @@ HAI 1.2
         I HAS A VAR1 ITZ I IZ ABZ YR NUM1 MKAY
         I HAS A VAR2 ITZ I IZ ABZ YR NUM2 MKAY
 
-        I HAS A _ ITZ 1
-        IM IN YR LOOP UPPIN YR _ WILE DIFFRINT VAR1 AN VAR2
+        I HAS A var ITZ 1
+        IM IN YR LOOP UPPIN YR var WILE DIFFRINT VAR1 AN VAR2
             DIFFRINT VAR1 AN SMALLR OF VAR1 AN VAR2, OH RLY?
                 YA RLY, VAR1 R DIFF OF VAR1 AN VAR2
                 NO WAI, VAR2 R DIFF OF VAR2 AN VAR1
