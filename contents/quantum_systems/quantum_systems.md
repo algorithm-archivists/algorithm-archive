@@ -230,7 +230,7 @@ This ultimately looks like this:
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/Energy.hs)
 {% sample lang="c" %}
-[import:28-, lang:"c_cpp"](code/c/energy.c)
+[import:29-, lang:"c_cpp"](code/c/energy.c)
 {% sample lang="py" %}
 [import:4-17, lang:"python"](code/python/energy.py)
 {% endmethod %}
