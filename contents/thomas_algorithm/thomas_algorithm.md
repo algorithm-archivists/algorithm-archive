@@ -113,6 +113,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/thomas.swift)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/thomas.php)
 {%sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}

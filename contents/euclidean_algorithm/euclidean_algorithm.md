@@ -41,8 +41,13 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
+<<<<<<< HEAD
 {% sample lang="factor" %}
 [import:1-11, lang="factor"](code/factor/euclid.factor)
+=======
+{% sample lang="ws" %}
+[import, lang="whitespace"](code/whitespace/euclidian_sub.ws)
+>>>>>>> c6ff7bbfcae6cb054ac21573d8b36f8cbf018471
 {% sample lang="scala" %}
 [import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
@@ -100,6 +105,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="factor" %}
 [import:13-22, lang="factor"](code/factor/euclid.factor)
+{% sample lang="ws" %}
+[import, lang="whitespace"](code/whitespace/euclidian_mod.ws)
 {% sample lang="scala" %}
 [import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
@@ -162,6 +169,11 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="factor" %}
 [import, lang="factor"](code/factor/euclid.factor)
+{% sample lang="ws" %}
+Here is a readable version of the algorithms with comments. First, subtraction method:
+[import, lang="whitespace"](code/whitespace/euclidian_sub_comments.ws)
+and modulo method:
+[import, lang="whitespace"](code/whitespace/euclidian_mod_comments.ws)
 {% sample lang="scala" %}
 [import, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}

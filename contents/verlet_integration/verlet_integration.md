@@ -39,7 +39,7 @@ Here is what it looks like in code:
 {% sample lang="java" %}
 [import:13-28, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:1-9, lang:"python"](code/python/verlet.py)
+[import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:14-21, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
@@ -85,7 +85,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="java" %}
 [import:30-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:11-21, lang:"python"](code/python/verlet.py)
+[import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:23-28, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
@@ -145,7 +145,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="java" %}
 [import:51-65, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:23-32, lang:"python"](code/python/verlet.py)
+[import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:30-35, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
