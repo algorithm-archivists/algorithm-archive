@@ -1,4 +1,5 @@
 : euclid- ( a b -- gcd )
+  [ abs ] bi@
   [ 2dup = ]
   [
     ! make sure the lower number is deeper
