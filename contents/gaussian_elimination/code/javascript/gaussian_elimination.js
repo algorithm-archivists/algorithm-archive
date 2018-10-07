@@ -2,7 +2,6 @@ function gaussianElimination(a) {
   const rows = a.length
   const cols = a[0].length
   let row = 0;
-
   for (let col = 0; col < cols - 1; ++col) {
 
     let pivot = row;
@@ -39,9 +38,8 @@ function gaussianElimination(a) {
 }
 
 function backSubstitution(a) {
-  const rows = a.length;
   const cols = a[0].length;
-  const sol=[];
+  const sol = [];
 
   for (let i = rows - 1; i >= 0; --i) {
 
@@ -91,9 +89,11 @@ function printMatrix(a) {
   }
 }
 
-const a = [[3,  2, -4,  3],
-	  [ 2,  3,  3, 15],
-	  [ 5, -3,  1, 14]];
+const a = [
+  [3,  2, -4,  3],
+	[2,  3,  3, 15],
+  [5, -3,  1, 14]
+];
 
 gaussianElimination(a);
 console.log("Gaussian elimination:");
