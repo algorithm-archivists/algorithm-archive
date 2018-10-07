@@ -5,7 +5,7 @@ void setup() {
   stroke(255);
   fill(0);
   
-  random_array(test_array,0,100);
+  randomArray(test_array,0,100);
 }
 
 void draw(){
@@ -25,7 +25,7 @@ void draw(){
 }
 
 
-void random_array(int[] array , int min , int max){
+void randomArray(int[] array , int min , int max){
   for(int i=0;i<array.length;i++){
     array[i] = (int) random(min,max);
   }
@@ -52,7 +52,7 @@ Boolean isSorted(int[] array){
   return true;
 }
 
-void bogo_Sort(int[] array){
+void bogoSort(int[] array){
   while (! isSorted(array)){
     randomize(array);
   }
