@@ -73,7 +73,7 @@
             gift)
           start)))
       (loop 
-        (if (p-eql (first hull) start)
+        (if (equalp (first hull) start)
             (return-from jarvis-march (butlast hull))
             (setq hull
               (cons
@@ -87,8 +87,6 @@
   (map 
     'list
     (lambda (e) (apply #'make-point e))
-    '((0 0) (2 1) (0 2)
-    (-1 0) (1 -1) (0 1)
-    (-2 0) (-1 -2) (1 -3))))
+    '((2 1.5) (1 1) (2 4) (3 1))))
 
 (print (jarvis-march test-gift))
