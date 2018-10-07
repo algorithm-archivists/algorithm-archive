@@ -3,25 +3,34 @@ Enter two positive integers.
 	
 			
 		
-  
+  			  	    
    
-			 
- 
-	 	
-   	
-			 
-		 		   
 			   	
+				  	 
  
-			    
+	 			  	   	
+ 
+ 
+					  	  	 
+   
  
 			 
  
+			  	    
 
-
-  	
-   	
+  			  	   	
+   
 				
  	
-The
+
+
+
+  			  	  	 
+   
+ 
+		  	   	
+ 
+			 
+ 
+The			  	    
 end.
