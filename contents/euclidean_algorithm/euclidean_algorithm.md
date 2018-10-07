@@ -42,7 +42,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
-[import:4-15, lang="php"](code/php/euclidean.php)
+[import:4-18, lang="php"](code/php/euclidean.php)
 {% sample lang="scala" %}
 [import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
@@ -99,7 +99,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
-[import:17-26, lang="php"](code/php/euclidean.php)
+[import:20-30, lang="php"](code/php/euclidean.php)
 {% sample lang="scala" %}
 [import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
