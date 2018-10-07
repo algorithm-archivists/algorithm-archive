@@ -71,6 +71,12 @@ each point is tested to see whether it's in the circle or not:
 [import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="lua" %}
+[import:1-3, lang="lua"](code/lua/monte_carlo.lua)
+{% sample lang="racket" %}
+[import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
+{% sample lang="scala" %}
+[import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -141,6 +147,12 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/monte_carlo.lua)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/monte_carlo.rkt)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/monte_carlo.scala)
 {% endmethod %}
 
 
