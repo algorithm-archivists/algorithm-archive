@@ -1,22 +1,26 @@
 USING: locals random math.ranges math.functions ;
 
-:: monte-carlo ( xr yr n in-shape?: ( x y -- b ) -- % )
-  n <iota> [ drop xr random yr random in-shape? call ] map [ ] count n / ; inline
+:: monte-carlo ( n in-shape?: ( x y -- ? ) -- % )
+  n <iota> [ drop random-unit random-unit in-shape? call ] count n /
+; inline
 
-! Calculating the area of a square in the first quadrant
--100 100 [a,b] dup   ! two input ranges
-1000                 ! number of iterations
-[ 0 < swap 0 < and ] ! in-shape test (can be anything that takes two points) -- this one is a square.
-monte-carlo          ! run the Monte Carlo integration
-100 * >float .       ! prettyprint the results as a percentage
+! Use the monte-carlo approximation to calculate pi
+: monte-carlo-pi ( n -- pi-approx )
+  [ ! in-circle check
+    [ 2 ^ ] bi@ + ! get the distance from the center
+    1 <           ! see if it's less than the radius
+  ]
+  monte-carlo 4 * >float
+;
 
-! Calculate the ratio of circle-area to square-area
--10000 >bignum 10000 >bignum [a,b] dup ! big ranges to get more precision
-10000                  ! lots of iterations for, again, more precision
-[ ! in-circle check
-  2 ^ swap 2 ^ + sqrt ! get the distance from the center
-  10000 <             ! see if it's less than the radius
-]
-monte-carlo
-100 * >float .
+USING: formatting calendar ;
+! Add timing, so we can see how long things take.
+:: time-quot ( quot -- quot' )
+  [ now quot dip now swap time- duration>milliseconds "Took %dms\n" printf ]
+; inline
+
+! Actually calculate pi to 5 levels of precision.
+5 <iota> [
+  10 swap ^ dup "%d iterations\n" printf monte-carlo-pi "pi: %f\n" printf
+] time-quot each
 

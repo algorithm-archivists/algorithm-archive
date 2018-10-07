@@ -72,7 +72,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="f90" %}
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% sample lang="factor" %}
-[import:16-19 lang:"factor"](code/factor/monte_carlo.factor)
+[import:9-12 lang:"factor"](code/factor/monte_carlo.factor)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
