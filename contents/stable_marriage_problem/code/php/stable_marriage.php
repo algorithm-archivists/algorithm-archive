@@ -4,9 +4,7 @@ declare(strict_types=1);
 abstract class Person
 {
     private $name;
-    /** @var array Person[] */
     protected $preferences = [];
-    /** @var Person */
     protected $match;
 
     public function __construct($name)
@@ -67,7 +65,6 @@ class Man extends Person
     public function propose(): void
     {
         if (!empty($this->preferences)) {
-            /** @var Woman $fiance */
             $fiance = array_shift($this->preferences);
             $fiance->receiveProposal($this);
         }
@@ -76,7 +73,6 @@ class Man extends Person
 
 class Woman extends Person
 {
-    /** @var Man[] */
     private $suitors = [];
 
     public function receiveProposal(Man $man): void
@@ -98,8 +94,6 @@ class Woman extends Person
 function stable_marriage(array $men, array $women): void
 {
     $smallerGroup = count($men) < count($women) ? $men : $women;
-    /** @var Woman $woman */
-    /** @var Man $man */
     do {
         foreach ($men as $man)
             if ($man->isSingle()) $man->propose();
@@ -107,14 +101,13 @@ function stable_marriage(array $men, array $women): void
         foreach ($women as $woman)
             $woman->chooseMatch();
 
-        /** @var Person $person */
         if (empty(array_filter($smallerGroup, function (Person $person) {
             return $person->isSingle();
         }))) break;
 
     } while (true);
 
-    foreach ($women as $woman) echo sprintf('%s is married to %s%s', $woman, $woman->getMatch(), PHP_EOL);
+    foreach ($women as $woman) printf('%s is married to %s%s', $woman, $woman->getMatch(), PHP_EOL);
 }
 
 $groupSize = 10;
@@ -126,18 +119,16 @@ for ($i = 1; $i <= $groupSize; $i++) {
     $women[] = new Woman("W${i}");
 }
 
-/** @var Man $man */
-/** @var Woman $woman */
 foreach ($men as $man) {
     $man->setPreferences($women);
-    echo sprintf('%s\'s choices:%s', $man->getName(), PHP_EOL);
-    echo sprintf('%s%s', implode(',', $man->getPreferences()), PHP_EOL);
+    printf('%s\'s choices:%s', $man->getName(), PHP_EOL);
+    printf('%s%s', implode(',', $man->getPreferences()), PHP_EOL);
 }
 echo PHP_EOL;
 foreach ($women as $woman) {
     $woman->setPreferences($men);
-    echo sprintf('%s\'s choices:%s', $woman->getName(), PHP_EOL);
-    echo sprintf('%s%s', implode(',', $woman->getPreferences()), PHP_EOL);
+    printf('%s\'s choices:%s', $woman->getName(), PHP_EOL);
+    printf('%s%s', implode(',', $woman->getPreferences()), PHP_EOL);
 }
 echo PHP_EOL;
 stable_marriage($men, $women);
