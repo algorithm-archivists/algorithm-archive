@@ -1,11 +1,12 @@
 <?php
 declare(strict_types=1);
 
-abstract class Person
+class Person
 {
     private $name;
-    protected $preferences = [];
-    protected $match;
+    private $suitors = [];
+    private $preferences = [];
+    private $match;
 
     public function __construct($name)
     {
@@ -19,11 +20,10 @@ abstract class Person
 
     public function setPreferences(array $preferences): void
     {
-        shuffle($preferences);
         $this->preferences = $preferences;
     }
 
-    public function getMatch(): Person
+    public function getMatch(): ?Person
     {
         return $this->match;
     }
@@ -50,18 +50,10 @@ abstract class Person
                 $this->match->unmatch();
             }
             $this->match = $match;
-            if ($match !== null) $match->setMatch($this);
+            $match->setMatch($this);
         }
     }
 
-    public function __toString(): string
-    {
-        return $this->name;
-    }
-}
-
-class Man extends Person
-{
     public function propose(): void
     {
         if (!empty($this->preferences)) {
@@ -69,13 +61,8 @@ class Man extends Person
             $fiance->receiveProposal($this);
         }
     }
-}
 
-class Woman extends Person
-{
-    private $suitors = [];
-
-    public function receiveProposal(Man $man): void
+    public function receiveProposal(Person $man): void
     {
         $this->suitors[] = $man;
     }
@@ -88,26 +75,40 @@ class Woman extends Person
                 break;
             }
         }
+
+        $this->suitors = [];
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
 
-function stable_marriage(array $men, array $women): void
+function stable_marriage(array $men, array $women): array
 {
-    $smallerGroup = count($men) < count($women) ? $men : $women;
     do {
-        foreach ($men as $man)
-            if ($man->isSingle()) $man->propose();
+        foreach ($men as $man) {
+            if ($man->isSingle()) {
+                $man->propose();
+            }
+        }
 
-        foreach ($women as $woman)
+        foreach ($women as $woman) {
             $woman->chooseMatch();
+        }
 
-        if (empty(array_filter($smallerGroup, function (Person $person) {
-            return $person->isSingle();
-        }))) break;
+        $unmarried = false;
+        foreach ($women as $woman) {
+            if ($woman->isSingle()) {
+                $unmarried = true;
+                break;
+            }
+        }
 
-    } while (true);
+    } while ($unmarried);
 
-    foreach ($women as $woman) printf('%s is married to %s%s', $woman, $woman->getMatch(), PHP_EOL);
+    return $women;
 }
 
 $groupSize = 10;
@@ -115,20 +116,29 @@ $men = [];
 $women = [];
 
 for ($i = 1; $i <= $groupSize; $i++) {
-    $men[] = new Man("M${i}");
-    $women[] = new Woman("W${i}");
+    $men[] = new Person("M${i}");
+    $women[] = new Person("W${i}");
 }
 
 foreach ($men as $man) {
-    $man->setPreferences($women);
-    printf('%s\'s choices:%s', $man->getName(), PHP_EOL);
-    printf('%s%s', implode(',', $man->getPreferences()), PHP_EOL);
+    $preferences = $women;
+    shuffle($preferences);
+    $man->setPreferences($preferences);
+    printf('%s\'s choices: %s', $man->getName(), implode(',', $man->getPreferences()));
+    echo PHP_EOL;
 }
 echo PHP_EOL;
 foreach ($women as $woman) {
-    $woman->setPreferences($men);
-    printf('%s\'s choices:%s', $woman->getName(), PHP_EOL);
-    printf('%s%s', implode(',', $woman->getPreferences()), PHP_EOL);
+    $preferences = $men;
+    shuffle($preferences);
+    $woman->setPreferences($preferences);
+    printf('%s\'s choices: %s', $woman->getName(), implode(',', $woman->getPreferences()));
+    echo PHP_EOL;
 }
 echo PHP_EOL;
-stable_marriage($men, $women);
+
+$married = stable_marriage($men, $women);
+foreach ($married as $woman) {
+    printf('%s is married to %s', $woman, $woman->getMatch());
+    echo PHP_EOL;
+}
