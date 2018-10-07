@@ -147,7 +147,7 @@
         {
           "lang": "factor",
           "name": "Factor"
-	},
+        },
 	{
           "lang": "scala",
           "name": "Scala"
