@@ -15,7 +15,7 @@
     "maxIndexSize": 1000000000
   },
   "pluginsConfig": {
-    "mathjax":{
+    "mathjax": {
       "version": "2.6.1"
     },
     "include-codeblock": {
