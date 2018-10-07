@@ -1,42 +1,42 @@
 HAI 1.2
-    OBTW
-        The variable var is needed because the 1.2 syntax of LOLCODE requires that an UPPIN or NERFIN
-        is in the loop head. Thus I had to create a dummy variable.
-    TLDR
     HOW IZ I ABZ YR NUM
-        DIFFRINT NUM AN BIGGR OF NUM AN 0, OH RLY?
+        DIFFRINT NUM AN BIGGR OF NUM AN 0, O RLY?
             YA RLY, FOUND YR DIFF OF 0 AN NUM
             NO WAI, FOUND YR NUM
         OIC
     IF U SAY SO
 
     HOW IZ I UKLIDMOD YR NUM1 AN YR NUM2
-        I HAS A VAR1 ITZ I IZ ABZ YR NUM1 MKAY
-        I HAS A VAR2 ITZ I IZ ABZ YR NUM2 MKAY
+        NUM1 R I IZ ABZ YR NUM1 MKAY
+        NUM2 R I IZ ABZ YR NUM2 MKAY
 
-        I HAS A var ITZ 1
-        IM IN YR LOOP UPPIN YR var WILE DIFFRINT VAR2 AN 0
-            I HAS A TMP ITZ VAR2
-            VAR2 R MOD OF VAR1 AN VAR2
-            VAR1 R TMP
+        IM IN YR LOOP 
+            BOTH SAEM NUM2 AN 0, O RLY?
+                YA RLY, FOUND YR NUM1
+            OIC
+
+            I HAS A TMP ITZ NUM2
+            NUM2 R MOD OF NUM1 AN NUM2
+            NUM1 R TMP
         IM OUTTA YR LOOP
 
-        FOUND YR VAR1
     IF U SAY SO
 
     HOW IZ I UKLIDSUP YR NUM1 AN YR NUM2
-        I HAS A VAR1 ITZ I IZ ABZ YR NUM1 MKAY
-        I HAS A VAR2 ITZ I IZ ABZ YR NUM2 MKAY
+        NUM1 R I IZ ABZ YR NUM1 MKAY
+        NUM2 R EI IZ ABZ YR NUM2 MKAY
 
-        I HAS A var ITZ 1
-        IM IN YR LOOP UPPIN YR var WILE DIFFRINT VAR1 AN VAR2
-            DIFFRINT VAR1 AN SMALLR OF VAR1 AN VAR2, OH RLY?
-                YA RLY, VAR1 R DIFF OF VAR1 AN VAR2
-                NO WAI, VAR2 R DIFF OF VAR2 AN VAR1
+        IM IN YR LOOP 
+            BOTH SAEM NUM1 AN NUM2, O RLY?
+                YA RLY, FOUND YR NUM1
+            OIC        
+
+            DIFFRINT NUM1 AN SMALLR OF NUM1 AN NUM2, O RLY?
+                YA RLY, NUM1 R DIFF OF NUM1 AN NUM2
+                NO WAI, NUM2 R DIFF OF NUM2 AN NUM1
             OIC
         IM OUTTA YR LOOP
 
-        FOUND YR VAR1
     IF U SAY SO
 
     I HAS A CHECK1 ITZ I IZ UKLIDMOD YR PRODUKT OF 64 AN 67 AN YR PRODUKT OF 64 AN 81 MKAY
