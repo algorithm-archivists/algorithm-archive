@@ -37,4 +37,5 @@
 - Ken Power
 - PaddyKe
 - nic-hartley
+- Thijs Raymakers
 - crafter312
