@@ -38,6 +38,7 @@ function gaussianElimination(a) {
 }
 
 function backSubstitution(a) {
+  const rows = a.length;
   const cols = a[0].length;
   const sol = [];
 
@@ -54,7 +55,6 @@ function backSubstitution(a) {
 }
 
 function gaussJordan(a) {
-  const rows = a.length;
   const cols = a[0].length;
   let row = 0;
 
