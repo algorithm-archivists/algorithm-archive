@@ -145,12 +145,24 @@
           "name": "Fortran90"
         },
         {
+          "lang": "factor",
+          "name": "Factor"
+        },
+        {
+          "lang": "ws",
+          "name": "Whitespace"
+        },
+        {
           "lang": "scala",
           "name": "Scala"
         },
         {
           "lang": "emojic",
           "name": "Emojicode"
+        },
+        {
+          "lang": "lolcode",
+          "name": "LOLCODE"
         }
       ]
     }
