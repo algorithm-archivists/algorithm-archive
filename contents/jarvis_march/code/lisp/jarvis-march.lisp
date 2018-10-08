@@ -2,27 +2,6 @@
 
 (defstruct (point (:constructor make-point (x y))) x y)
 
-(defun extreme-of (func comp-op list)
-  "Finds the value in a list that evaluates to the highest
-  or lowest value when passed to a function"
-  (if (< (length list) 2)
-      (first list)
-      ;the comp-op is either '>' or '<'
-      (if
-        (funcall comp-op 
-          (funcall func (first list))
-          (funcall func (second list)))
-        (extreme-of func comp-op (cons (first list) (rest (rest list)))) 
-        (extreme-of func comp-op (rest list)))))
-
-(defun leftmost-point (gift)
-  "Returns the leftmost point of the gift"
-  (extreme-of #'point-x #'< gift))
-
-(defun next-point-on-hull (p1 p2 gift)
-  "finds the next point on the convex hull of a gift"
-  (extreme-of (lambda (p3) (angle p1 p2 p3)) #'> gift))
-
 (defun atan2 (y x)
   "Returns the angle based on the origin"
   (cond
@@ -54,6 +33,27 @@
         (cond
           ((< theta 0) (+ theta (* 2 pi)))
           (t theta)))))
+
+(defun extreme-of (func comp-op list)
+  "Finds the value in a list that evaluates to the highest
+  or lowest value when passed to a function"
+  (if (< (length list) 2)
+      (first list)
+      ;the comp-op is either '>' or '<'
+      (if
+        (funcall comp-op 
+          (funcall func (first list))
+          (funcall func (second list)))
+        (extreme-of func comp-op (cons (first list) (rest (rest list)))) 
+        (extreme-of func comp-op (rest list)))))
+
+(defun leftmost-point (gift)
+  "Returns the leftmost point of the gift"
+  (extreme-of #'point-x #'< gift))
+
+(defun next-point-on-hull (p1 p2 gift)
+  "finds the next point on the convex hull of a gift"
+  (extreme-of (lambda (p3) (angle p1 p2 p3)) #'> gift))
 
 (defun second-point-on-hull (start gift)
   "Returns the second point of a hull"
