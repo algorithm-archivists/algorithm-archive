@@ -85,7 +85,7 @@ class Person
     }
 }
 
-function stable_marriage(array $men, array $women): array
+function stable_marriage(array $men, array $women): void
 {
     do {
         foreach ($men as $man) {
@@ -107,8 +107,6 @@ function stable_marriage(array $men, array $women): array
         }
 
     } while ($unmarried);
-
-    return $women;
 }
 
 $groupSize = 10;
@@ -137,8 +135,8 @@ foreach ($women as $woman) {
 }
 echo PHP_EOL;
 
-$married = stable_marriage($men, $women);
-foreach ($married as $woman) {
+stable_marriage($men, $women);
+foreach ($women as $woman) {
     printf('%s is married to %s', $woman, $woman->getMatch());
     echo PHP_EOL;
 }
