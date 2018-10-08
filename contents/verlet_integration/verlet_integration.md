@@ -60,7 +60,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="f90" %}
 [import:1-20, lang:"fortran"](code/fortran/verlet.f90)
 {% sample lang="ruby" %}
-[import:1-14, lang="ruby"](code/ruby/vervlet.rb)
+[import:1-14, lang="ruby"](code/ruby/verlet.rb)
 {% endmethod %}
 
 Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
@@ -108,7 +108,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="f90" %}
 [import:22-42, lang:"fortran"](code/fortran/verlet.f90)
 {% sample lang="ruby" %}
-[import:16-32, lang="ruby"](code/ruby/vervlet.rb)
+[import:16-32, lang="ruby"](code/ruby/verlet.rb)
 {% endmethod %}
 
 
@@ -170,7 +170,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="f90" %}
 [import:44-60, lang:"fortran"](code/fortran/verlet.f90)
 {% sample lang="ruby" %}
-[import:34-46, lang="ruby"](code/ruby/vervlet.rb)
+[import:34-46, lang="ruby"](code/ruby/verlet.rb)
 {% endmethod %}
 
 Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
@@ -214,7 +214,7 @@ Submitted by P. Mekhail
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/verlet.f90)
 {% sample lang="ruby" %}
-[import, lang="ruby"](code/ruby/vervlet.rb)
+[import, lang="ruby"](code/ruby/verlet.rb)
 {% endmethod %}
 
 
