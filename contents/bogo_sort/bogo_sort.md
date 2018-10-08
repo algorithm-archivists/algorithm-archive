@@ -47,15 +47,20 @@ In code, it looks something like this:
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="emojic" %}
 [import:2-6, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
+{% sample lang="factor" %}
+[import:10-12, lang:"factor"](code/factor/bogo_sort.factor)
 {% sample lang="f90" %}
 [import:24-32, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="st" %}
+[import:2-6, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 That's it.
 Ship it!
 We are done here!
 
-## Example Code 
+## Example Code
+
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bogo.jl)
@@ -94,8 +99,12 @@ We are done here!
 [import, lang:"ruby"](code/ruby/bogo.rb)
 {% sample lang="emojic" %}
 [import, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
+{% sample lang="factor" %}
+[import, lang:"factor"](code/factor/bogo_sort.factor)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="st" %}
+[import, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 
