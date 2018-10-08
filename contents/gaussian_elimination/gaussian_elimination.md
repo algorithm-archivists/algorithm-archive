@@ -400,7 +400,7 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 {% sample lang="py" %}
 [import:31-49, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="js" %}
-[import:56-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
+[import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
 
 ## Back-substitution
@@ -434,7 +434,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 {% sample lang="py" %}
 [import:52-64, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="js" %}
-[import:40-54, lang:"javascript"](code/javascript/gaussian_elimination.js)
+[import:40-55, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
 
 ## Conclusions
