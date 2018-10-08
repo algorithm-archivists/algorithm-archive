@@ -13,14 +13,5 @@ USING: locals random math.ranges math.functions ;
   monte-carlo 4 * >float
 ;
 
-USING: formatting calendar ;
-! Add timing, so we can see how long things take.
-:: time-quot ( quot -- quot' )
-  [ now quot dip now swap time- duration>milliseconds "Took %dms\n" printf ]
-; inline
-
-! Actually calculate pi to 5 levels of precision.
-5 <iota> [
-  10 swap ^ dup "%d iterations\n" printf monte-carlo-pi "pi: %f\n" printf
-] time-quot each
+10000000 monte-carlo-pi
 
