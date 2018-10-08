@@ -1,4 +1,4 @@
-;;;; Jarvis march implementation
+;;;; Jarvis March implementation
 
 (defstruct (point (:constructor make-point (x y))) x y)
 
@@ -55,38 +55,33 @@
           ((< theta 0) (+ theta (* 2 pi)))
           (t theta)))))
 
+(defun second-point-on-hull (start gift)
+  "Returns the second point of a hull"
+  (next-point-on-hull
+    (make-point (point-x start) (- (point-y start) 1))
+    start
+    gift))
 
 (defun jarvis-march (gift)
-"finds the convex hull of any random distribution of points"
-  ;deals with edge cases
+  "finds the convex hull of any random distribution of points"
+  ;deals with the edge cases
   (if (< (length gift) 3)
-      gift
-    (let* 
-      ((start 
-        (leftmost-point gift))
-      ;creates the hull with the first and second points of the hull in a list
-      (hull 
-        (list 
-          (next-point-on-hull
-            (make-point (point-x start) (- (point-y start) 1))
-            start
-            gift)
-          start)))
-      (loop 
-        (if (equalp (first hull) start)
-            (return-from jarvis-march (butlast hull))
-            (setq hull
-              (cons
-                (next-point-on-hull
-                  (second hull)
-                  (first hull)
-                  gift)
-                hull)))))))
+    gift
+    (loop
+      with start = (leftmost-point gift)
+      with hull = (list (second-point-on-hull start gift) start)
+      until (equalp (first hull) start)
+      do 
+        (setq hull
+          (cons 
+            (next-point-on-hull (second hull) (first hull) gift)
+            hull))
+      finally (return (rest hull)))))
 
-(defvar test-gift
+(defvar gift
   (map 
     'list
     (lambda (e) (apply #'make-point e))
     '((2 1.5) (1 1) (2 4) (3 1))))
 
-(print (jarvis-march test-gift))
+(print (jarvis-march gift))
