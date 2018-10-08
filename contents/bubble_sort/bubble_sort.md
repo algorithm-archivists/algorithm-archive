@@ -19,7 +19,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="kotlin" %}
 [import:1-11, lang:"kotlin"](code/kotlin/BubbleSort.kt)
 {% sample lang="js" %}
-[import:1-11, lang:"javascript"](code/javascript/bubble.js)
+[import:1-12, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
 [import:4-9, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}

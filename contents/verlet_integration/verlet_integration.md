@@ -52,7 +52,7 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:1-16, lang:"javascript"](code/javascript/verlet.js)
+[import:1-14, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
@@ -98,7 +98,7 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:18-35, lang:"javascript"](code/javascript/verlet.js)
+[import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
@@ -158,7 +158,7 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:37-50, lang:"javascript"](code/javascript/verlet.js)
+[import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
