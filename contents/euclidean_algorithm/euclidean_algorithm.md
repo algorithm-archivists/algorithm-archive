@@ -41,6 +41,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import:4-18, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import:1-13, lang="factor"](code/factor/euclid.factor)
 {% sample lang="ws" %}
@@ -102,6 +104,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import:20-30, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import:15-25, lang="factor"](code/factor/euclid.factor)
 {% sample lang="ws" %}
@@ -168,6 +172,8 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
 {% sample lang="f90" %}
 [import, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import, lang="factor"](code/factor/euclid.factor)
 {% sample lang="ws" %}
