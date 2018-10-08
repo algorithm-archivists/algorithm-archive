@@ -363,7 +363,7 @@ In code, this looks like:
 {% sample lang="py" %}
 [import:3-28, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="java" %}
-[import:3-45, lang:"java"](code/java/GaussianElimination.java)
+[import:5-47, lang:"java"](code/java/GaussianElimination.java)
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
@@ -400,7 +400,7 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 {% sample lang="py" %}
 [import:31-49, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="java" %}
-[import:47-68, lang:"java"](code/java/GaussianElimination.java)
+[import:49-70, lang:"java"](code/java/GaussianElimination.java)
 {% endmethod %}
 
 ## Back-substitution
@@ -434,7 +434,7 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 {% sample lang="py" %}
 [import:52-64, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="java" %}
-[import:70-85, lang:"java"](code/java/GaussianElimination.java)
+[import:72-87, lang:"java"](code/java/GaussianElimination.java)
 {% endmethod %}
 
 ## Conclusions
