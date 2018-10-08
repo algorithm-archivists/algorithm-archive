@@ -71,6 +71,10 @@ each point is tested to see whether it's in the circle or not:
 [import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="emojic" %}
+[import:23-27, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import:4-7, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
 [import:1-3, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
@@ -147,6 +151,10 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
