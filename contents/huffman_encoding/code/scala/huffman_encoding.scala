@@ -1,4 +1,4 @@
-import scala.collection.mutable.{ListBuffer, Map, PriorityQueue}
+import scala.collection.mutable.{Map, PriorityQueue}
 
 object HuffmanEncoding {
 
@@ -8,19 +8,18 @@ object HuffmanEncoding {
 
   case class Leaf(char: Char, var weight: Int) extends Node
 
-  case class Branch(left: Node, right: Node, var weight: Int) extends Node {}
+  case class Branch(left: Node, right: Node, var weight: Int) extends Node
 
   def createTree(phrase: String) = {
-    val leaves = ListBuffer[Leaf]()
-    phrase.foreach(c =>
-      leaves.find(leaf => leaf.char == c) match {
-        case Some(leaf) => leaf.weight += 1
-        case _ => leaves += Leaf(c, 1)
-      }
-    )
 
     val tree = PriorityQueue[Node]()(Ordering.by(-_.weight))
-    tree ++= leaves
+    tree ++= phrase
+      .groupBy(identity)
+      .mapValues(_.size)
+      .map{
+        case (char, count) => Leaf(char, count)
+      }
+
     while (tree.size > 1) {
       val node1 = tree.dequeue()
       val node2 = tree.dequeue()
@@ -49,30 +48,32 @@ object HuffmanEncoding {
 
 
   def encode(phrase: String, codeBook: Map[Char, String]) = {
-    val encoded: StringBuilder = StringBuilder.newBuilder
-    phrase.foreach(c =>
-      encoded ++= codeBook(c)
-    )
-    encoded.mkString
+    phrase.flatMap(c => codeBook(c))
   }
 
   def decode(encoded: String, root: Node) = {
-    val decoded: StringBuilder = StringBuilder.newBuilder
     var currentNode = root
-    encoded.foreach(bit => {
+
+    def chooseTreeBranch(bit: Char) =
       currentNode match {
         case Branch(left, right, _) =>
           currentNode = if (bit == '0') left else right
       }
+
+    def maybeGetACharacter =
       currentNode match {
         case Leaf(c, _) => {
-          decoded += c
           currentNode = root
+          Some(c)
         }
-        case _ =>
+        case _ => None
       }
-    })
-    decoded.mkString
+
+    encoded
+      .flatMap(bit => {
+        chooseTreeBranch(bit)
+        maybeGetACharacter
+      })
   }
 
   def main(args: Array[String]): Unit = {
