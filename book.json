@@ -145,6 +145,10 @@
           "name": "Fortran90"
         },
         {
+          "lang": "factor",
+          "name": "Factor"
+        },
+        {
           "lang": "ws",
           "name": "Whitespace"
         },

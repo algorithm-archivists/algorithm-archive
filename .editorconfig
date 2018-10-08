@@ -133,6 +133,11 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
+# Factor
+[*.factor]
+intent_style = space
+indent_size = 2
+
 #Lua
 [*.lua]
 indent_style = space
