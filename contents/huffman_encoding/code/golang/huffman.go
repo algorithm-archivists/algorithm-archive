@@ -57,10 +57,9 @@ func codebookRecurse(node *node, cb *codebook, code []rune) {
 		(*cb)[node.char] = string(code)
 	}
 
-	// 0x30 == "0" and 0x31 == "1"
-	code = append(code, 0x30)
+	code = append(code, '0')
 	codebookRecurse(node.left, cb, code)
-	code = append(code[:len(code)-1], 0x31)
+	code = append(code[:len(code)-1], '1')
 	codebookRecurse(node.right, cb, code)
 }
 
