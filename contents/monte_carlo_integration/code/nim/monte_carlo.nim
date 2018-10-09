@@ -3,23 +3,23 @@ import math
 
 randomize()
 
-proc in_circle(x,y,radius: float): bool =
-    return x * x + y * y < radius * radius
+proc in_circle(x, y, radius: float): bool =
+  return x * x + y * y < radius * radius
 
 proc monte_carlo(samples: int): float =
-    const radius: float = 1
-    var count: int = 0
+  const radius: float = 1
+  var count: int = 0
 
-    for i in 0 .. < samples:
-        var
-            x: float = random(radius)
-            y: float = random(radius)
+  for i in 0 .. < samples:
+    let
+      x: float = random(radius)
+      y: float = random(radius)
         
-        if in_circle(x,y,radius):
-            count += 1
+    if in_circle(x, y, radius):
+      count += 1
     
-    var pi_estimate: float = 4 * count / samples
-    return pi_estimate
+  let pi_estimate: float = 4 * count / samples
+  return pi_estimate
 
 let estimate: float = monte_carlo(1000000)
 
