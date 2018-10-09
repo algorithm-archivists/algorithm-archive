@@ -39,10 +39,9 @@ Here is what it looks like in code:
 {% sample lang="java" %}
 [import:13-28, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:1-9, lang:"python"](code/python/verlet.py)
+[import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
+[import:14-21, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
@@ -53,7 +52,7 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:1-16, lang:"javascript"](code/javascript/verlet.js)
+[import:1-14, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
@@ -86,10 +85,9 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="java" %}
 [import:30-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:11-21, lang:"python"](code/python/verlet.py)
+[import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
+[import:23-28, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
@@ -100,7 +98,7 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:18-35, lang:"javascript"](code/javascript/verlet.js)
+[import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
@@ -147,10 +145,9 @@ Here is the velocity Verlet method in code:
 {% sample lang="java" %}
 [import:51-65, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:23-32, lang:"python"](code/python/verlet.py)
+[import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
+[import:30-35, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
@@ -161,7 +158,7 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:37-50, lang:"javascript"](code/javascript/verlet.js)
+[import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}

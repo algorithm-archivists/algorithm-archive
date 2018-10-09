@@ -16,12 +16,16 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:10-20, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
+{% sample lang="kotlin" %}
+[import:1-11, lang:"kotlin"](code/kotlin/BubbleSort.kt)
 {% sample lang="js" %}
-[import:1-11, lang:"javascript"](code/javascript/bubble.js)
+[import:1-12, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
 [import:4-9, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}
 [import:1-13, lang:"matlab"](code/matlab/bubblesort.m)
+{% sample lang="lua" %}
+[import:1-9, lang="lua"](code/lua/bubble_sort.lua)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
@@ -48,8 +52,18 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:3-28, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import:5-9, lang:"nim"](code/nim/bubble_sort.nim)
+{% sample lang="st" %}
+[import:2-15, lang:"smalltalk"](code/smalltalk/bubble.st)
+{% sample lang="asm-x64" %}
+[import:44-110, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
 [import:19-40, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="bf" %}
+[import:17-63, lang:"brainfuck"](code/brainfuck/bubblesort.bf)
+{% sample lang="scala" %}
+[import:3-14, lang:"scala"](code/scala/bubble_sort.scala)
+{% sample lang="emojic" %}
+[import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -71,12 +85,16 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/bubble.java)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/BubbleSort.kt)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bubblesort.m)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/bubble_sort.lua)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
@@ -103,8 +121,18 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"lisp"](code/lisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/bubble_sort.nim)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="bf" %}
+[import, lang:"brainfuck"](code/brainfuck/bubblesort.bf)
+{% sample lang="st" %}
+[import, lang:"smalltalk"](code/smalltalk/bubble.st)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/bubble_sort.scala)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% endmethod %}
 
 <script>
