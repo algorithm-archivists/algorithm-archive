@@ -23,9 +23,6 @@ console.log("The system,");
 console.log("[1.0  4.0  0.0][x] = [7.0]");
 console.log("[2.0  3.0  5.0][y] = [5.0]");
 console.log("[0.0  3.0  6.0][z] = [3.0]");
-console.log("has the solution:\n");
+console.log("has the solution:\n", x);
 
 thomas(a, b, c, x);
-
-for (let i = 0; i < 3; i++)
-	console.log("[" + x[i] + "]");
