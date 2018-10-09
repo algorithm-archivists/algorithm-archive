@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GrahamScan {
 
@@ -14,6 +14,14 @@ public class GrahamScan {
             this.y = y;
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (o == null) return false;
+            if (o == this) return true;
+            if (!(o instanceof Point)) return false;
+            Point p = (Point)o;
+            return p.x == this.x && p.y == this.y;
+        }
     }
 
     static double ccw(Point a, Point b, Point c) {
@@ -25,36 +33,16 @@ public class GrahamScan {
     }
 
     static List<Point> grahamScan(List<Point> gift) {
-        gift = new ArrayList<Point>(new HashSet<Point>(gift)); // remove duplicate points
+        gift = gift.stream()
+                   .distinct()
+                   .sorted(Comparator.comparingDouble(point -> -point.y))
+                   .collect(Collectors.toList());
 
-        // Sort the list so the point with the lowest y-coordinate comes first
-        Comparator<Point> yComparator = (a, b) -> {
-            if (b.y - a.y < 0)
-                return -1;
-            else if (b.y - a.y > 0) {
-                return 1;
-            } else
-                return 0;
-        };
-
-        gift.sort(yComparator);
         Point pivot = gift.get(0);
 
         // Sort the remaining Points based on the angle between the pivot and itself
         List<Point> hull = gift.subList(1, gift.size());
-
-        Comparator<Point> angleComparator = (a, b) -> {
-            double angleA = polarAngle(a, pivot);
-            double angleB = polarAngle(b, pivot);
-            if (angleA - angleB < 0)
-                return -1;
-            else if (angleA - angleB > 0)
-                return 1;
-            else
-                return 0;
-        };
-
-        hull.sort(angleComparator);
+        hull.sort(Comparator.comparingDouble(point -> polarAngle(point, pivot)));
 
         // The pivot is always on the hull
         hull.add(0, pivot);
@@ -77,13 +65,12 @@ public class GrahamScan {
             Point temp = hull.get(i);
             hull.set(i, hull.get(m));
             hull.set(m, temp);
-
         }
         return hull.subList(0, m + 1);
     }
 
     public static void main(String[] args) {
-        ArrayList<Point> points = new ArrayList<Point>();
+        ArrayList<Point> points = new ArrayList<>();
 
         points.add(new Point(-5, 2));
         points.add(new Point(5, 7));
@@ -103,7 +90,6 @@ public class GrahamScan {
 
         List<Point> convexHull = grahamScan(points);
 
-        convexHull.stream().forEach(p -> System.out.printf("% 1.0f, % 1.0f\n", p.x, p.y));
-
+        convexHull.forEach(p -> System.out.printf("% 1.0f, % 1.0f\n", p.x, p.y));
     }
 }
