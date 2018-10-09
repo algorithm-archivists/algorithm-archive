@@ -78,7 +78,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
 {% sample lang="go" %}
-[import, lang:"golang"](code/golang/huffman.go)
+[import, lang:"go"](code/golang/huffman.go)
 {% endmethod %}
 
 <script>
