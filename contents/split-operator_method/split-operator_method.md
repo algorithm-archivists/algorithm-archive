@@ -55,7 +55,7 @@ Here's a flowchart of what we are looking for every timestep:
 
 
 For the most part, that's it:
-1. Multiply the wavefunction in real space with the real-space operator. 
+1. Multiply the wavefunction in real space with the real-space operator.
 2. Flip to momentum space with a Fourier transform.
 3. Multiply the momentum-space wavefuntion by the momentum-space operator.
 4. Flip to position space with an inverse Fourier transform.
@@ -100,10 +100,12 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% sample lang="jl" %}
 [import:11-34, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:10-20, lang:"c_cpp"](code/c/split_op.c)
-[import:51-72, lang:"c_cpp"](code/c/split_op.c)
+[import:11-21, lang:"c_cpp"](code/c/split_op.c)
+[import:52-73, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:11-30, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import:17-47, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
@@ -117,10 +119,12 @@ Afterwards, we turn them into operators:
 {% sample lang="jl" %}
 [import:36-62, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:22-28, lang:"c_cpp"](code/c/split_op.c)
-[import:74-95, lang:"c_cpp"](code/c/split_op.c)
+[import:23-29, lang:"c_cpp"](code/c/split_op.c)
+[import:75-96, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:33-54, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import:49-66, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
@@ -135,9 +139,11 @@ The final step is to do the iteration, itself.
 {% sample lang="jl" %}
 [import:65-112, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:97-145, lang:"c_cpp"](code/c/split_op.c)
+[import:98-148, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import:68-73, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 And that's it.
@@ -161,6 +167,8 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 [import, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="py" %}
 [import:5-127, lang:"python"](code/python/split_op.py)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/splitOp.hs)
 {% endmethod %}
 
 <script>
