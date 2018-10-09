@@ -55,6 +55,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:8-19, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:1-13, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import:2-17, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
@@ -118,6 +120,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-6, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:15-25, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import:19-31, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
@@ -189,6 +193,8 @@ and modulo method:
 [import, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
