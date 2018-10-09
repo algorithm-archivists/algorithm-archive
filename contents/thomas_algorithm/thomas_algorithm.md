@@ -112,7 +112,7 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% sample lang="go" %}
-[import, lang:"golang"](code/golang/thomas.go)
+[import, lang:"go"](code/golang/thomas.go)
 {% endmethod %}
 
 <script>
