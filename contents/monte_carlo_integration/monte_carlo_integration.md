@@ -54,7 +54,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="d" %}
 [import:2-5, lang:"d"](code/d/monte_carlo.d)
 {% sample lang="go" %}
-[import:12-14, lang:"golang"](code/go/monteCarlo.go)
+[import:12-14, lang:"go"](code/go/monteCarlo.go)
 {% sample lang="r" %}
 [import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -129,7 +129,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {%sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
 {%sample lang="go" %}
-[import, lang:"golang"](code/go/monteCarlo.go)
+[import, lang:"go"](code/go/monteCarlo.go)
 {%sample lang="r" %}
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
