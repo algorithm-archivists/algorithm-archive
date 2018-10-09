@@ -119,6 +119,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/thomas.cpp)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/thomas.js)
 {% endmethod %}
 
 <script>
