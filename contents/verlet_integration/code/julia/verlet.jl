@@ -24,7 +24,7 @@ function stormer_verlet(pos::Float64, acc::Float64, dt::Float64)
         prev_pos = temp_pos
 
         # Because acceleration is constant, velocity is straightforward
-        vel += acc*dt
+        vel += acc * dt
     end
 
     return time, vel

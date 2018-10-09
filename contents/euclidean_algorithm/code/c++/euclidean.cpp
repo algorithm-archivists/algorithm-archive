@@ -1,5 +1,3 @@
-// originally contributed by James Schloss (Leios)
-// restyled by Nicole Mazzuca (ubsan)
 #include <cmath>
 #include <iostream>
 #include <utility>

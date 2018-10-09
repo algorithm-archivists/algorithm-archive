@@ -60,11 +60,27 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="java" %}
 [import:13-15, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
-[import:15-17, lang:"swift"](code/swift/monte_carlo.swift)
+[import:1-3, lang:"swift"](code/swift/monte_carlo.swift)
 {% sample lang="py" %}
 [import:5-7, lang:"python"](code/python/monte_carlo.py)
 {% sample lang="cs" %}
 [import:23-23, lang:"csharp"](code/csharp/Circle.cs)
+{% sample lang="nim" %}
+[import:6-7, lang:"nim"](code/nim/monte_carlo.nim)
+{% sample lang="ruby" %}
+[import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
+{% sample lang="f90" %}
+[import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="emojic" %}
+[import:23-27, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import:4-7, lang:"php"](code/php/monte_carlo.php)
+{% sample lang="lua" %}
+[import:1-3, lang="lua"](code/lua/monte_carlo.lua)
+{% sample lang="racket" %}
+[import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
+{% sample lang="scala" %}
+[import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -129,7 +145,24 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"csharp"](code/csharp/Circle.cs)
 ##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/monte_carlo.nim)
+{% sample lang="ruby" %}
+[import, lang:"ruby"](code/ruby/monte_carlo.rb)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/monte_carlo.php)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/monte_carlo.lua)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/monte_carlo.rkt)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/monte_carlo.scala)
 {% endmethod %}
+
 
 
 <script>

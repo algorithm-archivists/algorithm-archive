@@ -12,7 +12,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="clj" %}
 [import:2-8, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:20-33, lang="c_cpp"](code/c++/euclidean.cpp)
+[import:18-31, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
@@ -36,9 +36,27 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="lua" %}
 [import:1-14, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
-[import:1-10, lang="julia"](code/julia/euclidean.jl)
+[import:12-25, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
+{% sample lang="f90" %}
+[import:1-19, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import:4-18, lang="php"](code/php/euclidean.php)
+{% sample lang="factor" %}
+[import:1-13, lang="factor"](code/factor/euclid.factor)
+{% sample lang="ws" %}
+[import, lang="whitespace"](code/whitespace/euclidian_sub.ws)
+{% sample lang="scala" %}
+[import:3-8, lang="scala"](code/scala/euclidean.scala)
+{% sample lang="racket" %}
+[import:3-14, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import:8-19, lang="ruby"](code/ruby/euclidean.rb)
+{% sample lang="st" %}
+[import:1-13, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="lolcode" %}
+[import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -57,7 +75,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="clj" %}
 [import:9-13, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:7-17, lang="c_cpp"](code/c++/euclidean.cpp)
+[import:5-15, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
@@ -81,9 +99,27 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="lua" %}
 [import:16-25, lang="lua"](code/lua/euclidean.lua)
 {% sample lang="jl" %}
-[import:12-25, lang="julia"](code/julia/euclidean.jl)
+[import:1-10, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
+{% sample lang="f90" %}
+[import:21-34, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import:20-30, lang="php"](code/php/euclidean.php)
+{% sample lang="factor" %}
+[import:15-25, lang="factor"](code/factor/euclid.factor)
+{% sample lang="ws" %}
+[import, lang="whitespace"](code/whitespace/euclidian_mod.ws)
+{% sample lang="scala" %}
+[import:10-14, lang="scala"](code/scala/euclidean.scala)
+{% sample lang="racket" %}
+[import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import:1-6, lang="ruby"](code/ruby/euclidean.rb)
+{% sample lang="st" %}
+[import:15-25, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="lolcode" %}
+[import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -134,8 +170,28 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
+{% sample lang="f90" %}
+[import, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import, lang="php"](code/php/euclidean.php)
+{% sample lang="factor" %}
+[import, lang="factor"](code/factor/euclid.factor)
+{% sample lang="ws" %}
+Here is a readable version of the algorithms with comments. First, subtraction method:
+[import, lang="whitespace"](code/whitespace/euclidian_sub_comments.ws)
+and modulo method:
+[import, lang="whitespace"](code/whitespace/euclidian_mod_comments.ws)
+{% sample lang="scala" %}
+[import, lang="scala"](code/scala/euclidean.scala)
+{% sample lang="racket" %}
+[import, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+{% sample lang="ruby" %}
+[import, lang="ruby"](code/ruby/euclidean.rb)
+{% sample lang="st" %}
+[import, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="lolcode" %}
+[import, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

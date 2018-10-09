@@ -24,7 +24,7 @@ void print_range(std::ostream& os, Iter const first, Iter const last) {
 
   if (first != last) {
     os << *first;
-    std::for_each(first + 1, last, [&os] (double d) { os << ", " << *it; });
+    std::for_each(first + 1, last, [&os] (double d) { os << ", " << d; });
   }
 
   os << "}\n";
