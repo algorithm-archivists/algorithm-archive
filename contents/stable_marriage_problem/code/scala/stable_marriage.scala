@@ -2,7 +2,7 @@ import scala.collection.mutable._
 
 object StableMarriage {
 
-  var bachelors = ListBuffer[Man]()
+  var bachelors = Queue[Man]()
 
   case class Man(name: String, var preferences: List[Woman] = List()) {
     def propose(): Unit = preferences match {
@@ -12,7 +12,7 @@ object StableMarriage {
           woman.fiance = Some(this)
         }
         else
-          bachelors += this
+          bachelors.enqueue(this)
         preferences = remainingPreferences
       }
       case _ =>
@@ -28,8 +28,9 @@ object StableMarriage {
   }
 
   def findStableMatches(men: Man*): Unit = {
-    bachelors = men.to[ListBuffer]
-    bachelors foreach (b => b.propose())
+    bachelors = men.to[Queue]
+    while (bachelors.nonEmpty)
+      bachelors.dequeue.propose()
   }
 }
 
