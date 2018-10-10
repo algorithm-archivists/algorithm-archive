@@ -80,6 +80,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# LOLCODE
+[*.lol]
+indent_style = space
+indent_size = 4
+
 # Matlab
 [*.m]
 indent_style = space
@@ -127,6 +132,11 @@ indent_size = 2
 [*.php]
 indent_style = space
 indent_size = 4
+
+# Factor
+[*.factor]
+intent_style = space
+indent_size = 2
 
 #Lua
 [*.lua]
