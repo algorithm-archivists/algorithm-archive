@@ -1,8 +1,8 @@
 package main
 
 import (
+	"container/heap"
 	"fmt"
-	"sort"
 )
 
 type node struct {
@@ -13,10 +13,32 @@ type node struct {
 }
 
 type codebook map[rune]string
+type nodeHeap []*node
+
+func (n nodeHeap) Len() int           { return len(n) }
+func (n nodeHeap) Less(i, j int) bool { return n[i].freq > n[j].freq }
+func (n nodeHeap) Swap(i, j int)      { n[i], n[j] = n[j], n[i] }
+
+func (n *nodeHeap) Push(x interface{}) {
+	if node, ok := x.(*node); ok {
+		*n = append(*n, node)
+	} else {
+		fmt.Printf("I got a node of Type %T\n", x)
+	}
+}
+
+func (n *nodeHeap) Pop() interface{} {
+	old := *n
+	l := len(old)
+	x := old[l-1]
+	*n = old[0 : l-1]
+	return x
+}
 
 func buildTree(message string) *node {
 	freqMap := make(map[rune]*node)
-	nodeList := make([]*node, 0)
+	h := new(nodeHeap)
+	heap.Init(h) // really needed?
 
 	for _, char := range message {
 		if _, ok := freqMap[char]; ok {
@@ -26,26 +48,21 @@ func buildTree(message string) *node {
 			newNode.freq = 1
 			newNode.char = char
 			freqMap[char] = newNode
-			nodeList = append(nodeList, newNode)
+			heap.Push(h, newNode)
 		}
 	}
 
-	for len(nodeList) > 1 {
-		sort.Slice(nodeList, func(i, j int) bool {
-			return nodeList[i].freq < nodeList[j].freq
-		})
-
-		left := nodeList[0]
-		right := nodeList[1]
-		nodeList = nodeList[2:]
+	for h.Len() > 1 {
+		left, right := h.Pop().(*node), h.Pop().(*node)
 		branch := new(node)
-		nodeList = append(nodeList, branch)
+		branch.freq = right.freq + left.freq
 		branch.left = left
 		branch.right = right
-		branch.freq = left.freq + right.freq
+		heap.Push(h, branch)
 	}
 
-	return nodeList[0]
+	root := heap.Pop(h).(*node)
+	return root
 }
 
 func codebookRecurse(node *node, cb *codebook, code []rune) {
