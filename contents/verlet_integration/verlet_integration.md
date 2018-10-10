@@ -59,6 +59,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:1-15, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import:1-20, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import:1-14, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
 [import:5-16, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
@@ -107,6 +109,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:17-34, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import:22-42, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import:16-32, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
 [import:18-30, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
@@ -169,6 +173,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:36-49, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import:44-60, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import:34-46, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
 [import:32-42, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
@@ -213,6 +219,8 @@ Submitted by P. Mekhail
 [import, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
