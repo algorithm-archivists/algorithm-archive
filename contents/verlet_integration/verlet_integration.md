@@ -39,10 +39,9 @@ Here is what it looks like in code:
 {% sample lang="java" %}
 [import:13-28, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:1-9, lang:"python"](code/python/verlet.py)
+[import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
+[import:14-21, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
@@ -53,13 +52,17 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:1-16, lang:"javascript"](code/javascript/verlet.js)
+[import:1-14, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import:1-15, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import:1-20, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import:1-14, lang="ruby"](code/ruby/verlet.rb)
+{% sample lang="go" %}
+[import:5-16, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
 
 Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
@@ -86,10 +89,9 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="java" %}
 [import:30-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:11-21, lang:"python"](code/python/verlet.py)
+[import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
+[import:23-28, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
@@ -100,13 +102,17 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:18-35, lang:"javascript"](code/javascript/verlet.js)
+[import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import:17-34, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import:22-42, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import:16-32, lang="ruby"](code/ruby/verlet.rb)
+{% sample lang="go" %}
+[import:18-30, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
 
 
@@ -147,10 +153,9 @@ Here is the velocity Verlet method in code:
 {% sample lang="java" %}
 [import:51-65, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
-[import:23-32, lang:"python"](code/python/verlet.py)
+[import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
-Unfortunately, this has not yet been implemented in haskell, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
+[import:30-35, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
@@ -161,13 +166,17 @@ Unfortunately, this has not yet been implemented in matlab, so here's Julia code
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="javascript" %}
-[import:37-50, lang:"javascript"](code/javascript/verlet.js)
+[import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
 {% sample lang="swift" %}
 [import:36-49, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import:44-60, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import:34-46, lang="ruby"](code/ruby/verlet.rb)
+{% sample lang="go" %}
+[import:32-42, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
 
 Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
@@ -210,6 +219,10 @@ Submitted by P. Mekhail
 [import, lang:"swift"](code/swift/verlet.swift)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/verlet.f90)
+{% sample lang="ruby" %}
+[import, lang="ruby"](code/ruby/verlet.rb)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/verlet.go)
 {% endmethod %}
 
 
