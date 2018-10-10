@@ -21,8 +21,7 @@ public class JarvisMarch {
         public boolean equals(Point p) {
             if (p.getX() == x && p.getY() == y) {
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
         }
@@ -56,8 +55,7 @@ public class JarvisMarch {
         while (true) {
             if (hull.size() == 1) {
                 ref = new Point(pointOnHull.getX(), pointOnHull.getY() + 1); //finds a third point to use in calculating the angle
-            }
-            else {
+            } else {
                 ref = hull.get(hull.size() - 2);
             }
             Point endpoint = arr.get(0); //initial canidate for next point in hull
@@ -69,8 +67,7 @@ public class JarvisMarch {
             pointOnHull = endpoint;
             if (pointOnHull.equals(hull.get(0))) { //add next point to hull if not equal to the leftmost point
                 break;
-            }
-            else {
+            } else {
                 hull.add(pointOnHull);
             }
         }
