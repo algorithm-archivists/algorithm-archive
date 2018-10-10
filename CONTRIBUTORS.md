@@ -1,4 +1,4 @@
-This file lists everyone, who contributed to this repo and wanted to show up here. If you're looking for information on contribution, please check the `CONTRIBUTING.md` out.
+﻿This file lists everyone, who contributed to this repo and wanted to show up here. If you're looking for information on contribution, please check the `CONTRIBUTING.md` out.
 
 # Contributors
 
@@ -37,3 +37,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Ken Power
 - PaddyKe
 - nic-hartley
+- crafter312
