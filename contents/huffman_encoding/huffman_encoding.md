@@ -63,9 +63,9 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/huffman.hs)
 {% sample lang="cs" %}
-HuffmanCoding.cs
+##### HuffmanCoding.cs
 [import, lang:"csharp"](code/csharp/HuffmanCoding.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
@@ -77,6 +77,10 @@ Program.cs
 [import, lang:"javascript"](code/javascript/huffman.js)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/huffman.go)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/huffman.s)
 {% endmethod %}
 
 <script>

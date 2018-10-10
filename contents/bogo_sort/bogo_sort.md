@@ -14,7 +14,7 @@ In code, it looks something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:10-14, lang:"julia"](code/julia/bogo.jl)
+[import:12-16, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
 [import:9-15, lang:"csharp"](code/csharp/BogoSort.cs)
 {% sample lang="clj" %}
@@ -31,14 +31,30 @@ In code, it looks something like this:
 [import:17-20, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import:21-28, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import:1-22, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import:33-38, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
 [import:16-20, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
-[import:25-31, lang:"swift"](code/swift/bogosort.swift)
+[import:13-19, lang:"swift"](code/swift/bogosort.swift)
 {% sample lang="php" %}
 [import:11-16, lang:"php"](code/php/bogo_sort.php)
+{% sample lang="nim" %}
+[import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
+{% sample lang="ruby" %}
+[import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import:2-6, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
+{% sample lang="factor" %}
+[import:10-12, lang:"factor"](code/factor/bogo_sort.factor)
+{% sample lang="f90" %}
+[import:24-32, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import:3-8, lang:"lisp"](code/racket/bogo_sort.rkt)
+{% sample lang="st" %}
+[import:2-6, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 That's it.
@@ -51,9 +67,9 @@ We are done here!
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/bogo.jl)
 {% sample lang="cs" %}
-BogoSort.cs
+##### BogoSort.cs
 [import, lang:"csharp"](code/csharp/BogoSort.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/bogo.clj)
@@ -69,6 +85,8 @@ Program.cs
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
@@ -77,6 +95,20 @@ Program.cs
 [import, lang:"swift"](code/swift/bogosort.swift)
 {% sample lang="php" %}
 [import, lang:"php"](code/php/bogo_sort.php)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/bogo_sort.nim)
+{% sample lang="ruby" %}
+[import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
+{% sample lang="factor" %}
+[import, lang:"factor"](code/factor/bogo_sort.factor)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/bogo_sort.rkt)
+{% sample lang="st" %}
+[import, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
 
 

@@ -1,5 +1,5 @@
 function solve_euler(timestep::Float64, n::Int64)
-    euler_result = Vector{Float64}(n)
+    euler_result = Vector{Float64}(undef, n)
 
     # Setting the initial condition
     euler_result[1] = 1;

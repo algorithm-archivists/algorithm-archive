@@ -34,14 +34,18 @@ I am incredibly interested to see what you guys do and how you implement the alg
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}
-GaleShapleyAlgorithm.cs
+##### GaleShapleyAlgorithm.cs
 [import, lang:"csharp"](code/csharp/GaleShapleyAlgorithm.cs)
-Person.cs
+##### Person.cs
 [import, lang:"csharp"](code/csharp/Person.cs)
-Program.cs
+##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
-ListExtensions.cs
+##### ListExtensions.cs
 [import, lang:"csharp"](code/csharp/ListExtensions.cs)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/stable-marriage.java)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/stable_marriage.php)
 {% endmethod %}
 
 <script>
