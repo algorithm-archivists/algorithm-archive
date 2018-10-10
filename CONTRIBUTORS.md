@@ -1,4 +1,4 @@
-This file lists everyone, who contributed to this repo and wanted to show up here. If you're looking for information on contribution, please check the `CONTRIBUTING.md` out.
+﻿This file lists everyone, who contributed to this repo and wanted to show up here. If you're looking for information on contribution, please check the `CONTRIBUTING.md` out.
 
 # Contributors
 
@@ -57,3 +57,4 @@ NIFR91
 Michal Hanajik
 <br>
 Bendik Samseth
+<br>crafter312
