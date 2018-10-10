@@ -23,13 +23,9 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="py" %}
 [import:4-6, lang:"python"](code/python/grahamScan.py)
 {% sample lang="go" %}
-<<<<<<< HEAD
 [import:13-15, lang:"go"](code/golang/graham.go)
-=======
-[import:13-15, lang:"golang"](code/golang/graham.go)
 {% sample lang="java" %}
 [import:27-29, lang:"java"](code/java/GrahamScan.java)
->>>>>>> c50435c03befbc9ca100b67441e2b4aa9f2e0b46
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -55,13 +51,9 @@ In the end, the code should look something like this:
 {% sample lang="py" %}
 [import:14-27, lang:"python"](code/python/grahamScan.py)
 {% sample lang="go" %}
-<<<<<<< HEAD
 [import:21-42, lang:"go"](code/golang/graham.go)
-=======
-[import:21-42, lang:"golang"](code/golang/graham.go)
 {% sample lang="java" %}
 [import:35-70, lang:"java"](code/java/GrahamScan.java)
->>>>>>> c50435c03befbc9ca100b67441e2b4aa9f2e0b46
 {% endmethod %}
 
 ### Bibliography
@@ -82,13 +74,9 @@ In the end, the code should look something like this:
 {% sample lang="py" %}
 [import, lang:"python"](code/python/grahamScan.py)
 {% sample lang="go" %}
-<<<<<<< HEAD
 [import, lang:"go"](code/golang/graham.go)
-=======
-[import, lang:"golang"](code/golang/graham.go)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/GrahamScan.java)
->>>>>>> c50435c03befbc9ca100b67441e2b4aa9f2e0b46
 {% endmethod %}
 
 <script>
