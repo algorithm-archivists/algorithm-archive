@@ -14,8 +14,8 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="java" %}
 [import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:3-7, lang:"julia"](code/julia/Tree.jl)
+[import:1-10, lang:"javascript"](code/javascript/tree.js)
+As a note, a `node` struct is not necessary in javascript, so this is an example of how a tree might be constructed.
 {% sample lang="py" %}
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}

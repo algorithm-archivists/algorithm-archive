@@ -95,7 +95,8 @@ That said, variations of this method *are* certainly used (for example Crank-Nic
 
 Like in the case of [Verlet Integration](../verlet_integration/verlet_integration.md), the easiest way to test to see if this method works is to test it against a simple test-case.
 Here, the most obvious test-case would be dropping a ball from 5 meters, which is my favorite example, but proved itself to be slightly less enlightening than I would have thought.
-So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y' = 5y$$. Note that in this case, the velocity is directly given by the ODE and the acceleration is not part of the model.
+So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y(t)' = -3t$$ with the initial condition that $$y(0) = 1$$.
+Note that in this case, the velocity is directly given by the ODE and the acceleration is not part of the model.
 
 {% method %}
 {% sample lang="jl" %}
