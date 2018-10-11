@@ -1,4 +1,4 @@
-public class thomas {
+public class Thomas {
     private static void thomasAlgorithm(double a[], double b[], double c[], double x[], int size) {
 
         double y[] = new double[size];
