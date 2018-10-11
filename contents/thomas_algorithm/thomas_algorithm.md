@@ -111,8 +111,6 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"java"](code/java/thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
-{% sample lang="go" %}
-[import, lang:"go"](code/golang/thomas.go)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/thomas.swift)
 {% sample lang="php" %}
@@ -121,6 +119,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/thomas.cpp)
+{% sample lang="js" %}
+[import, lang:"js"](code/javascript/thomas.js)
 {% endmethod %}
 
 <script>
