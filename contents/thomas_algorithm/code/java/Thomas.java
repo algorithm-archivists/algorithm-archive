@@ -1,8 +1,8 @@
 public class Thomas {
-    private static double[] thomasAlgorithm(double a[], double b[], double c[], double x[]) {
+    private static double[] thomasAlgorithm(double[] a, double[] b, double[] c, double[] x) {
         int size = a.length;
-        double y[] = new double[size]; // This is needed so that we don't have to modify c
-        double solution[] = new double[size];
+        double[] y = new double[size]; // This is needed so that we don't have to modify c
+        double[] solution = new double[size];
 
         // Set initial elements
         y[0] = c[0] / b[0];
@@ -24,11 +24,11 @@ public class Thomas {
     }
 
     public static void main(String[] args) {
-        double a[] = {0.0, 2.0, 3.0};
-        double b[] = {1.0, 3.0, 6.0};
-        double c[] = {4.0, 5.0, 0.0};
-        double x[] = {7.0, 5.0, 3.0};
-        double solution[] = thomasAlgorithm(a, b, c, x);
+        double[] a = {0.0, 2.0, 3.0};
+        double[] b = {1.0, 3.0, 6.0};
+        double[] c = {4.0, 5.0, 0.0};
+        double[] x = {7.0, 5.0, 3.0};
+        double[] solution = thomasAlgorithm(a, b, c, x);
 
         System.out.format("The system,\n");
         System.out.format("[%.1f, %.1f, %.1f][x] = [%.1f]\n", b[0], c[0], 0f, x[0]);
