@@ -1,31 +1,31 @@
-function forwardEuler(time_step, n) {
+function forwardEuler(timeStep, n) {
   const arr = [1];
   for (let i = 1; i <= n; i++) {
-    arr[i] = arr[i - 1] - 3 * arr[i - 1] * time_step;
+    arr[i] = arr[i - 1] - 3 * arr[i - 1] * timeStep;
   }
   return arr;
 }
 
-function checkEuler(arr, time_step, threshold) {
-  const is_approx = true;
-  arr.forEach(function callback(value, i) {
-    const solution = Math.exp(-3 * time_step * i);
+function checkEuler(arr, timeStep, threshold) {
+  const isApprox = true;
+  arr.forEach((_value, i) => {
+    const solution = Math.exp(-3 * timeStep * i);
 
     if (Math.abs(arr[i] - solution) > threshold) {
       console.log(arr[i], solution);
-      is_approx = false;
+      isApprox = false;
     }
   });
-  return is_approx;
+  return isApprox;
 }
 
 function main() {
-  const time_step = 0.01;
+  const timeStep = 0.01;
   const threshold = 0.01;
   const n = 100;
-  var euler_result = forwardEuler(time_step, n);
-  var check_result = checkEuler(euler_result, time_step, threshold);
-  console.log(check_result);
+  let eulerResult = forwardEuler(timeStep, n);
+  let checkResult = checkEuler(eulerResult, timeStep, threshold);
+  console.log(checkResult);
 }
 
 main();
