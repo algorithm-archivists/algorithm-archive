@@ -1,20 +1,23 @@
 public class Thomas {
-    private static void thomasAlgorithm(double a[], double b[], double c[], double x[], int size) {
-
+    private static double[] thomasAlgorithm(double a[], double b[], double c[], double x[]) {
+        int size = a.length;
         double y[] = new double[size];
+        double solution[] = new double[size];
 
         y[0] = c[0] / b[0];
-        x[0] = x[0] / b[0];
+        solution[0] = x[0] / b[0];
 
         for (int i = 1; i < size; ++i) {
             double scale = 1.0 / (b[i] - a[i] * y[i - 1]);
             y[i] = c[i] * scale;
-            x[i] = (x[i] - a[i] * x[i - 1]) * scale;
+            solution[i] = (x[i] - a[i] * solution[i - 1]) * scale;
         }
 
         for (int i = size - 2; i >= 0; --i) {
-            x[i] -= y[i] * x[i + 1];
+            solution[i] -= y[i] * solution[i + 1];
         }
+
+        return solution;
     }
 
     public static void main(String[] args) {
@@ -29,9 +32,9 @@ public class Thomas {
         System.out.println("[0.0  3.0  6.0][z] = [3.0]\n");
         System.out.println("has the solution:\n");
 
-        thomasAlgorithm(a, b, c, x, 3);
+        double solution[] = thomasAlgorithm(a, b, c, x);
 
         for (int i = 0; i < 3; ++i)
-            System.out.println("[" + x[i] + "]\n");
+            System.out.println("[" + solution[i] + "]\n");
     }
 }
