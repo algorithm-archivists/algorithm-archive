@@ -1,18 +1,21 @@
 public class Thomas {
     private static double[] thomasAlgorithm(double a[], double b[], double c[], double x[]) {
         int size = a.length;
-        double y[] = new double[size];
+        double y[] = new double[size]; // This is needed so that we don't have to modify c
         double solution[] = new double[size];
 
+        // Set initial elements
         y[0] = c[0] / b[0];
         solution[0] = x[0] / b[0];
 
         for (int i = 1; i < size; ++i) {
+            // Scale factor is for c and x
             double scale = 1.0 / (b[i] - a[i] * y[i - 1]);
             y[i] = c[i] * scale;
             solution[i] = (x[i] - a[i] * solution[i - 1]) * scale;
         }
 
+        // Back-substitution
         for (int i = size - 2; i >= 0; --i) {
             solution[i] -= y[i] * solution[i + 1];
         }
