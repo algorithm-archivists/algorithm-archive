@@ -25,16 +25,16 @@ public class Thomas {
         double b[] = {1.0, 3.0, 6.0};
         double c[] = {4.0, 5.0, 0.0};
         double x[] = {7.0, 5.0, 3.0};
-
-        System.out.println("The system,\n");
-        System.out.println("[1.0  4.0  0.0][x] = [7.0]\n");
-        System.out.println("[2.0  3.0  5.0][y] = [5.0]\n");
-        System.out.println("[0.0  3.0  6.0][z] = [3.0]\n");
-        System.out.println("has the solution:\n");
-
         double solution[] = thomasAlgorithm(a, b, c, x);
 
-        for (int i = 0; i < 3; ++i)
-            System.out.println("[" + solution[i] + "]\n");
+        System.out.format("The system,\n");
+        System.out.format("[%.1f, %.1f, %.1f][x] = [%.1f]\n", b[0], c[0], 0f, x[0]);
+        System.out.format("[%.1f, %.1f, %.1f][y] = [%.1f]\n", a[1], b[1], c[1], x[1]);
+        System.out.format("[%.1f, %.1f, %.1f][z] = [%.1f]\n", 0f, a[2], b[2], x[2]);
+        System.out.format("has the solution:\n");
+
+        for (int i = 0; i < 3; ++i) {
+            System.out.format("[% .5f]\n", solution[i]);
+        }
     }
 }
