@@ -9,6 +9,7 @@ abs() {
 euclid_mod() {
 	local a=$(abs $1)
 	local b=$(abs $2)
+	
 	while [ $b -ne 0 ]; do
 		let "tmp = $b"
 		let "b = $a % $b"
