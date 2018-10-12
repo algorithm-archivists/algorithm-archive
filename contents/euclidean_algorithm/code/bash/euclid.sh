@@ -1,38 +1,43 @@
+#!/usr/bin/env bash
 abs() {
-	local ret=$1
-	if [ $ret -lt 0 ]; then
-		let "ret = $ret * -1"
-	fi
-	echo $ret
+    local ret=$1
+    if [[ $ret -lt 0 ]]; then
+        ((ret *= -1))
+    fi
+    printf "%s" "$ret"
 } 
 
 euclid_mod() {
-	local a=$(abs $1)
-	local b=$(abs $2)
-	
-	while [ $b -ne 0 ]; do
-		let "tmp = $b"
-		let "b = $a % $b"
-		let "a = tmp"
-	done
-	echo $a
+    local a
+    local b
+    a=$(abs "$1")
+    b=$(abs "$2")
+    
+    while [[ $b -ne 0 ]]; do
+        ((tmp = b))
+        ((b = a % b))
+        ((a = tmp))
+    done
+    printf "%s" "$a"
 }
 
 euclid_sub() {
-	local a=$(abs $1)
-	local b=$(abs $2)
-	
-	while [ $a -ne $b ]; do
-		if [ $a -gt $b ]; then
-			let "a -= $b"
-		else
-			let "b -= $a"
-		fi
-	done
-	echo $a
+    local a
+    local b
+    a=$(abs "$1")
+    b=$(abs "$2")
+    
+    while [[ $a -ne $b ]]; do
+        if [[ $a -gt $b ]]; then
+            ((a -= b))
+        else
+            ((b -= a))
+        fi
+    done
+    printf "%s" "$a"
 }
 
-result=$(euclid_mod 143 693)
-echo $result
-result=$(euclid_sub 150 400)
-echo $result
+result=$(euclid_mod $((64 * 67)) $((64 * 81)))
+echo "$result"
+result=$(euclid_sub $((128 * 12)) $((128 * 77)))
+echo "$result"
