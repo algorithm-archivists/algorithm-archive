@@ -28,7 +28,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="ml" %}
 [import:9-17, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-[import:25-38, lang="golang"](code/go/euclidean.go)
+[import:25-38, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:1-14, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
@@ -55,6 +55,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:8-19, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:1-13, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import:2-17, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
@@ -91,7 +93,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="ml" %}
 [import:3-7, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-[import:14-23, lang="golang"](code/go/euclidean.go)
+[import:14-23, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:16-27, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
@@ -118,6 +120,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-6, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:15-25, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import:19-31, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
@@ -159,7 +163,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="ml" %}
 [import, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-[import, lang="golang"](code/go/euclidean.go)
+[import, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
@@ -189,6 +193,8 @@ and modulo method:
 [import, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% endmethod %}
