@@ -1,4 +1,4 @@
-s# Thomas Algorithm
+# Thomas Algorithm
 
 As alluded to in the [Gaussian Elimination chapter](../gaussian_elimination/gaussian_elimination.md), the Thomas Algorithm (or TDMA, Tri-Diagonal Matrix Algorithm) allows for programmers to **massively** cut the computational cost of their code from $$ O(n^3)$$ to $$O(n)$$ in certain cases!
 This is done by exploiting a particular case of Gaussian Elimination where the matrix looks like this:
