@@ -41,6 +41,16 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
+# Emojicode
+[*.emojic]
+indent_style = space
+indent_size = 2
+
+# Factor
+[*.factor]
+indent_style = space
+indent_size = 2
+
 # Go
 [*.go]
 indent_style = tab
@@ -85,6 +95,11 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
+# Lua
+[*.lua]
+indent_style = space
+indent_size = 2
+
 # Matlab
 [*.m]
 indent_style = space
@@ -99,6 +114,11 @@ indent_size = 2
 [*.ml]
 indent_style = space
 indent_size = 2
+
+# PHP
+[*.php]
+indent_style = space
+indent_size = 4
 
 # Python
 [*.py]
@@ -122,23 +142,3 @@ indent_size = 0
 trim_trailing_whitespace = false
 insert_final_newline = false
 end_of_line = lf
-
-# Emojicode
-[*.emojic]
-indent_style = space
-indent_size = 2
-
-# PHP
-[*.php]
-indent_style = space
-indent_size = 4
-
-# Factor
-[*.factor]
-intent_style = space
-indent_size = 2
-
-#Lua
-[*.lua]
-indent_style = space
-indent_size = 2
