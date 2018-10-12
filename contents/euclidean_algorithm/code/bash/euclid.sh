@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 abs() {
     local ret=$1
-    if [[ $ret -lt 0 ]]; then
+    if (( $ret < 0 )); then
         ((ret *= -1))
     fi
     printf "%s" "$ret"
@@ -13,7 +13,7 @@ euclid_mod() {
     a=$(abs "$1")
     b=$(abs "$2")
     
-    while [[ $b -ne 0 ]]; do
+    while (( $b != 0 )); do
         ((tmp = b))
         ((b = a % b))
         ((a = tmp))
@@ -27,8 +27,8 @@ euclid_sub() {
     a=$(abs "$1")
     b=$(abs "$2")
     
-    while [[ $a -ne $b ]]; do
-        if [[ $a -gt $b ]]; then
+    while (( $a != $b )); do
+        if (( $a > $b )); then
             ((a -= b))
         else
             ((b -= a))
