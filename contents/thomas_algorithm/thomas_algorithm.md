@@ -108,7 +108,7 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
   <img  class="center" src="code/scratch/thomas.svg" width="1000" />
 </p>
 {% sample lang="java" %}
-[import, lang:"java"](code/java/thomas.java)
+[import, lang:"java"](code/java/Thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% sample lang="go" %}
