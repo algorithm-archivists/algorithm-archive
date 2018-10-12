@@ -1,19 +1,19 @@
 function thomas(a, b, c, x) {
-	const y = [];
+  const y = [];
 
-	y[0] = c[0] / b[0];
-	x[0] = x[0] / b[0];
+  y[0] = c[0] / b[0];
+  x[0] = x[0] / b[0];
 
-	for (let i = 1; i < a.length; i++) {
-		const scale = 1 / (b[i] - a[i] * y[i - 1]);
-		y[i] = c[i] * scale;
-		x[i] = (x[i] - a[i] * x[i - 1]) * scale;
-	}
+  for (let i = 1; i < a.length; i++) {
+    const scale = 1 / (b[i] - a[i] * y[i - 1]);
+    y[i] = c[i] * scale;
+    x[i] = (x[i] - a[i] * x[i - 1]) * scale;
+  }
 
-	for (let i = a.length - 2; i >= 0; i--)
-		x[i] -= y[i] * x[i + 1];
+  for (let i = a.length - 2; i >= 0; i--)
+    x[i] -= y[i] * x[i + 1];
 
-	return x;
+  return x;
 }
 
 let a = [0, 2, 3];
