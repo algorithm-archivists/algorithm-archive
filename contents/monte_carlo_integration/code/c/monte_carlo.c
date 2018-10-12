@@ -29,7 +29,7 @@ int main() {
     double estimate = monte_carlo(1000000);
 
     printf("The estimate of pi is %g\n", estimate);
-    printf("Percentage error: %0.2f%\n", 100 * fabs(M_PI - estimate) / M_PI);
+    printf("Percentage error: %0.2f%%\n", 100 * fabs(M_PI - estimate) / M_PI);
 
     return 0;
 }
