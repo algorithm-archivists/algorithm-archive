@@ -23,9 +23,9 @@ euclid_sub() {
 	
 	while [ $a -ne $b ]; do
 		if [ $a -gt $b ]; then
-			let "a = $a - $b"
+			let "a -= $b"
 		else
-			let "b = $b - $a"
+			let "b -= $a"
 		fi
 	done
 	echo $a
