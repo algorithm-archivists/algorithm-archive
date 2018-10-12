@@ -6,6 +6,11 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 end_of_line = lf
 
+# Bash
+[*.bash]
+indent_style = space
+indent_size = 4
+
 # C
 [*.c]
 indent_style = space
