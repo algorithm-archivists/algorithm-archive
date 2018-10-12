@@ -36,7 +36,7 @@ public class Thomas {
         System.out.format("[%.1f, %.1f, %.1f][z] = [%.1f]\n", 0f, a[2], b[2], x[2]);
         System.out.format("has the solution:\n");
 
-        for (int i = 0; i < 3; ++i) {
+        for (int i = 0; i < solution.length; i++) {
             System.out.format("[% .5f]\n", solution[i]);
         }
     }
