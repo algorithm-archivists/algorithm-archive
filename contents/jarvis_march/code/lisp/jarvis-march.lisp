@@ -13,28 +13,23 @@
       (- (point-x p3) (point-x p1)))))
 
 (defun next-point-on-hull (p1 p2 gift)
+  "Finds the next point on the convex hull of a gift"
   (if (null gift)
       p2
       (if (is-left-p p1 p2 (first gift))
           (next-point-on-hull p1 (first gift) (rest gift))
           (next-point-on-hull p1 p2 (rest gift)))))
 
-(defun extreme-of (func comp-op list)
-  "Finds the value in a list that evaluates to the highest
-  or lowest value when passed to a function"
-  (if (< (length list) 2)
-      (first list)
-      ;the comp-op is either '>' or '<'
-      (if
-        (funcall comp-op 
-          (funcall func (first list))
-          (funcall func (second list)))
-        (extreme-of func comp-op (cons (first list) (rest (rest list)))) 
-        (extreme-of func comp-op (rest list)))))
-
 (defun leftmost-point (gift)
-  "Returns the leftmost point of the gift"
-  (extreme-of #'point-x #'< gift))
+  "Returns the lefmost point of a gift"
+  (if (< (length gift) 2)
+      (first gift)
+      (if
+        (< 
+          (point-x (first gift)) 
+          (point-x (second gift)))
+        (leftmost-point (cons (first gift) (rest (rest gift))))
+        (leftmost-point (rest gift)))))
 
 (defun second-point-on-hull (start gift)
   "Returns the second point of a hull"
