@@ -165,7 +165,7 @@
           "name": "LOLCODE"
         },
         {
-          "lang": "bash",
+          "lang": "sh",
           "name": "Bash"
         }
       ]
