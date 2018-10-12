@@ -1,28 +1,26 @@
 function thomas(a::Vector{Float64}, b::Vector{Float64}, c::Vector{Float64},
                 d::Vector{Float64}, n::Int64)
 
-    soln = Vector{Float64}(undef, n)
+    x = d
+    c_prime = c
 
     # Setting initial elements
-    c[1] = c[1] / b[1]
-    d[1] = d[1] / b[1]
+    c_prime[1] = c_prime[1] / b[1]
+    x[1] = x[1] / b[1]
 
     for i = 2:n
-        # Scale factor is for c and d
-        scale = 1.0 / (b[i] - c[i-1]*a[i])
-        c[i] = c[i] * scale
-        d[i] = (d[i] - a[i] * d[i-1]) * scale
+        # Scale factor is for c_prime and x
+        scale = 1.0 / (b[i] - c_prime[i-1]*a[i])
+        c_prime[i] = c_prime[i] * scale
+        x[i] = (x[i] - a[i] * x[i-1]) * scale
     end
-
-    # Set the last solution for back-substitution
-    soln[n] = d[n]
 
     # Back-substitution
     for i = n-1:-1:1
-        soln[i] = d[i] - c[i] * soln[i+1]
+        x[i] = x[i] - c_prime[i] * x[i+1]
     end
 
-    return soln
+    return x
 
 end
 
