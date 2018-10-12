@@ -60,7 +60,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="lolcode" %}
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
-[import:9-18, lang="bash"](code/bash/euclid.sh)
+[import:9-19, lang="bash"](code/bash/euclid.sh)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -127,7 +127,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="lolcode" %}
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
-[import:20-32, lang="bash"](code/bash/euclid.sh)
+[import:21-33, lang="bash"](code/bash/euclid.sh)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
