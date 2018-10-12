@@ -72,6 +72,8 @@ void queue_resize(struct queue *q) {
     memcpy(tmp, q->data + q->front, (q->capacity - q->front) * size);
     memcpy(tmp + q->capacity - q->front, q->data, (q->front - 1) * size);
 
+    free(q->data);
+
     q->data = tmp;
     q->back = q->capacity - 1;
     q->front = 0;
@@ -79,7 +81,7 @@ void queue_resize(struct queue *q) {
 }
 
 void enqueue(struct queue *q, void *element) {
-    if (q->front == (q->back % q->capacity) + 1) {
+    if (q->front == (q->back + 1) % q->capacity) {
         queue_resize(q);
     }
 
