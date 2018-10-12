@@ -2,37 +2,22 @@
 
 (defstruct (point (:constructor make-point (x y))) x y)
 
-(defun atan2 (y x)
-  "Returns the angle based on the origin"
-  (cond
-    ((> x 0)
-      (atan (/ y x)))
-    ((> y 0)
-      (- (/ pi 2) (atan (/ x y))))
-    ((< y 0)
-      (- (/ (- pi) 2) (atan (/ x y))))
-    ((< x 0)
-      (+ (atan (/ y x)) pi))
-    ((and (zerop x) (zerop y))
-      nil)))
+(defun is-left-p (p1 p2 p3)
+  "Checks if the point p3 is to the left of the line p1 -> p2"
+  (>
+    (*
+      (- (point-y p3) (point-y p1))
+      (- (point-x p2) (point-x p1)))
+    (*
+      (- (point-y p2) (point-y p1))
+      (- (point-x p3) (point-x p1)))))
 
-(defun angle (p1 p2 p3)
-  "Returns the angle between three points"
-  (if (or (equalp p1 p2) (equalp p2 p3) (equalp p1 p3))
-      0
-      (let*
-        ((thetaA 
-            (atan2 
-              (- (point-y p1) (point-y p2)) 
-              (- (point-x p1) (point-x p2))))
-          (thetaC 
-            (atan2 
-              (- (point-y p3) (point-y p2)) 
-              (- (point-x p3) (point-x p2))))
-          (theta (- thetaC thetaA)))
-        (cond
-          ((< theta 0) (+ theta (* 2 pi)))
-          (t theta)))))
+(defun next-point-on-hull (p1 p2 gift)
+  (if (null gift)
+      p2
+      (if (is-left-p p1 p2 (first gift))
+          (next-point-on-hull p1 (first gift) (rest gift))
+          (next-point-on-hull p1 p2 (rest gift)))))
 
 (defun extreme-of (func comp-op list)
   "Finds the value in a list that evaluates to the highest
@@ -51,15 +36,11 @@
   "Returns the leftmost point of the gift"
   (extreme-of #'point-x #'< gift))
 
-(defun next-point-on-hull (p1 p2 gift)
-  "finds the next point on the convex hull of a gift"
-  (extreme-of (lambda (p3) (angle p1 p2 p3)) #'> gift))
-
 (defun second-point-on-hull (start gift)
   "Returns the second point of a hull"
   (next-point-on-hull
-    (make-point (point-x start) (- (point-y start) 1))
     start
+    (make-point (point-x start) (- (point-y start) 1))
     gift))
 
 (defun jarvis-march (gift)
@@ -74,7 +55,7 @@
       do 
         (setq hull
           (cons 
-            (next-point-on-hull (second hull) (first hull) gift)
+            (next-point-on-hull (first hull) (second hull) gift)
             hull))
       finally (return (rest hull)))))
 
