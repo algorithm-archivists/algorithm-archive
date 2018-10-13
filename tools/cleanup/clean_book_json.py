@@ -9,9 +9,8 @@ with open("../../book.json") as f:
     text = f.read()
 
 book = json.loads(text)
-lang = book["pluginsConfig"]["api-language-selector"]["languages"]
-book["pluginsConfig"]["api-language-selector"]["languages"] \
-  = sorted(lang, key=lambda x: x[u'name'])
+book["pluginsConfig"]["api-language-selector"]["languages"]\
+                                   .sort(key=lambda x: x[u'lang'])
 
 with open("../../book.json_", "w") as f:
     f.write(json.dumps(book, indent=2))
