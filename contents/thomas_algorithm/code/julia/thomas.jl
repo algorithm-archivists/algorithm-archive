@@ -1,23 +1,23 @@
 function thomas(a::Vector{Float64}, b::Vector{Float64}, c::Vector{Float64},
                 d::Vector{Float64}, n::Int64)
 
-    x = d
-    c_prime = c
+    x = copy(d)
+    c_prime = copy(c)
 
     # Setting initial elements
-    c_prime[1] = c_prime[1] / b[1]
-    x[1] = x[1] / b[1]
+    c_prime[1] /= b[1]
+    x[1] /= b[1]
 
     for i = 2:n
         # Scale factor is for c_prime and x
         scale = 1.0 / (b[i] - c_prime[i-1]*a[i])
-        c_prime[i] = c_prime[i] * scale
+        c_prime[i] *= scale
         x[i] = (x[i] - a[i] * x[i-1]) * scale
     end
 
     # Back-substitution
     for i = n-1:-1:1
-        x[i] = x[i] - c_prime[i] * x[i+1]
+        x[i] -= (c_prime[i] * x[i+1])
     end
 
     return x
