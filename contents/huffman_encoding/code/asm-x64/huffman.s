@@ -226,10 +226,8 @@ decode_done:
 # rsi - Huffman-tree root (ptr)
 generate_codebook:
   push   r12
-  push   r13
-  sub    rsp, bitstr_size + 8                 # 8 extra bytes for alignment
-  mov    r12, rdi
-  mov    r13, rsi
+  sub    rsp, bitstr_size + 16                # 16 extra bytes for alignment
+  mov    r12, rsi
   xorps  xmm0, xmm0                           # Create a 0-initialized bitstring. This will be
   movaps XMMWORD PTR [rsp], xmm0              # used in the recursive function calls
   movaps XMMWORD PTR [rsp + 16], xmm0
@@ -237,12 +235,11 @@ generate_codebook:
   xor    rsi, rsi
   mov    rdx, codebook_size
   call   memset
-  mov    rdi, r12
-  mov    rsi, r13
+  mov    rdi, rax
+  mov    rsi, r12
   mov    rdx, rsp
   call   generate_codebook_recurse
-  add    rsp, bitstr_size + 8
-  pop    r13
+  add    rsp, bitstr_size + 16
   pop    r12
   ret
 
