@@ -163,6 +163,10 @@
         {
           "lang": "lolcode",
           "name": "LOLCODE"
+        },
+        {
+          "lang": "sh",
+          "name": "Bash"
         }
       ]
     }
