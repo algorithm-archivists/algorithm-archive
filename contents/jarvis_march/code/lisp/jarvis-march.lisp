@@ -22,14 +22,10 @@
 
 (defun leftmost-point (gift)
   "Returns the lefmost point of a gift"
-  (if (< (length gift) 2)
-      (first gift)
-      (if
-        (< 
-          (point-x (first gift)) 
-          (point-x (second gift)))
-        (leftmost-point (cons (first gift) (rest (rest gift))))
-        (leftmost-point (rest gift)))))
+  (reduce 
+    (lambda (p1 p2)
+      (if (< (point-x p1) (point-x p2)) p1 p2))
+    gift))
 
 (defun second-point-on-hull (start gift)
   "Returns the second point of a hull"
@@ -39,7 +35,7 @@
     gift))
 
 (defun jarvis-march (gift)
-  "finds the convex hull of any random distribution of points"
+  "finds the convex hull of any distribution of points"
   ;deals with the edge cases
   (if (< (length gift) 3)
     gift
