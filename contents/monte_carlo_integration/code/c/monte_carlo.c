@@ -8,7 +8,7 @@ bool in_circle(double x, double y) {
     return x * x + y * y < 1;
 }
 
-double monte_carlo(int samples) {
+double monte_carlo(unsigned int samples) {
     int count = 0;
 
     for (int i = 0; i < samples; ++i) {
