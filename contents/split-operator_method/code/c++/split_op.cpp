@@ -7,6 +7,14 @@
 // Using fftw3 library.
 #include <fftw3.h>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+using complex = std::complex<double>;
+using vector_real = std::vector<double>;
+using vector_complex = std::vector<complex>;
+
 struct Params {
     Params(double _xmax, unsigned int _res, double _dt, unsigned int _timesteps, bool im) {
         xmax = _xmax;
@@ -34,9 +42,9 @@ struct Params {
     double dt;
     unsigned int timesteps;
     double dx;
-    std::vector<double> x;
+    vector_real x;
     double dk;
-    std::vector<double> k;
+    vector_real k;
     bool im_time;
 };
 
@@ -58,25 +66,27 @@ public:
                 ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2)));
                 pe.emplace_back(exp(-0.5 * par.dt * v[i]));
             } else {
-                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * std::complex<double>(0.0, 1.0)));
-                pe.emplace_back(exp(-0.5 * par.dt * v[i] * std::complex<double>(0.0, 1.0)));
+                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * complex(0.0, 1.0)));
+                pe.emplace_back(exp(-0.5 * par.dt * v[i] * complex(0.0, 1.0)));
             }
         }
     }
     
     size_t size;
-    std::vector<std::complex<double>> v;
-    std::vector<std::complex<double>> pe;
-    std::vector<std::complex<double>> ke;
-    std::vector<std::complex<double>> wfc;
+    vector_complex v;
+    vector_complex pe;
+    vector_complex ke;
+    vector_complex wfc;
 };
 
-void fft(std::vector<std::complex<double>> &x, int n, bool inverse) {
-    std::complex<double> y[n];
+void fft(vector_complex &x, int n, bool inverse) {
+    complex y[n];
     memset(y, 0, sizeof(y));
     fftw_plan p;
     
-    p = fftw_plan_dft_1d(n, reinterpret_cast<fftw_complex*>(x.data()), reinterpret_cast<fftw_complex*>(y),
+    fftw_complex *in = reinterpret_cast<fftw_complex*>(x.data());
+    fftw_complex *out = reinterpret_cast<fftw_complex*>(y);
+    p = fftw_plan_dft_1d(n, in, out,
                          (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
     
     fftw_execute(p);
@@ -147,20 +157,20 @@ void split_op(Params &par, Operators &opr) {
 }
 
 double calculate_energy(Params &par, Operators &opr) {
-    std::vector<std::complex<double>> wfc_r(opr.wfc);
-    std::vector<std::complex<double>> wfc_k(opr.wfc);
-    std::vector<std::complex<double>> wfc_c(opr.size);
+    vector_complex wfc_r(opr.wfc);
+    vector_complex wfc_k(opr.wfc);
+    vector_complex wfc_c(opr.size);
     fft(wfc_k, opr.size, false);
     
     for (size_t i = 0; i < opr.size; ++i) {
         wfc_c.push_back(conj(wfc_r[i]));
     }
     
-    std::vector<std::complex<double>> energy_k(opr.size);
-    std::vector<std::complex<double>> energy_r(opr.size);
+    vector_complex energy_k(opr.size);
+    vector_complex energy_r(opr.size);
     
     for (size_t i = 0; i < opr.size; ++i) {
-        energy_k.push_back(wfc_k[i] * pow(std::complex<double>(par.k[i], 0.0), 2));
+        energy_k.push_back(wfc_k[i] * pow(complex(par.k[i], 0.0), 2));
     }
     
     fft(energy_k, opr.size, true);
