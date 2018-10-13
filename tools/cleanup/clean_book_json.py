@@ -10,7 +10,7 @@ with open("../../book.json") as f:
 
 book = json.loads(text)
 book["pluginsConfig"]["api-language-selector"]["languages"]\
-                                   .sort(key=lambda x: x[u'lang'])
+                                   .sort(key=lambda x: x[u'name'])
 
 with open("../../book.json_", "w") as f:
     f.write(json.dumps(book, indent=2))
