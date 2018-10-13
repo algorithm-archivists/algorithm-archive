@@ -163,21 +163,21 @@ double calculate_energy(Params &par, Operators &opr) {
     fft(wfc_k, opr.size, false);
 
     for (size_t i = 0; i < opr.size; ++i) {
-        wfc_c.push_back(conj(wfc_r[i]));
+        wfc_c[i] = conj(wfc_r[i]);
     }
 
     vector_complex energy_k(opr.size);
     vector_complex energy_r(opr.size);
 
     for (size_t i = 0; i < opr.size; ++i) {
-        energy_k.push_back(wfc_k[i] * pow(complex(par.k[i], 0.0), 2));
+        energy_k[i] = wfc_k[i] * pow(complex(par.k[i], 0.0), 2);
     }
 
     fft(energy_k, opr.size, true);
 
     for (size_t i = 0; i < opr.size; ++i) {
         energy_k[i] *= 0.5 * wfc_c[i];
-        energy_r.push_back(wfc_c[i] * opr.v[i] * wfc_r[i]);
+        energy_r[i] = wfc_c[i] * opr.v[i] * wfc_r[i];
     }
 
     double energy_final = 0;
