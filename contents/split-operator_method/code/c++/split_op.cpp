@@ -71,7 +71,7 @@ public:
     std::vector<std::complex<double>> wfc;
 };
 
-void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
+void fft(std::vector<std::complex<double>> &x, int n, bool inverse) {
     std::complex<double> y[n];
     memset(y, 0, sizeof(y));
     fftw_plan p;
@@ -146,7 +146,7 @@ void split_op(Params &par, Operators &opr) {
     }
 }
 
-double calculate_energy(Params par, Operators opr) {
+double calculate_energy(Params &par, Operators &opr) {
     std::vector<std::complex<double>> wfc_r(opr.wfc);
     std::vector<std::complex<double>> wfc_k(opr.wfc);
     std::vector<std::complex<double>> wfc_c(opr.size);
