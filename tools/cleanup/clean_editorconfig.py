@@ -2,7 +2,7 @@
 """
 Sorts languages in .editorconfig alphabetically into .editorconfig_.
 Check the file manually, then rename.
-You need to path the path to the file as an argument.
+You need to pass the path to the file as an argument.
 From root: $ tools/cleanup/clean_editorconfig.py .editorconfig
 Known examples of bug:
 - Language tag with missing space: "#Lua" instead of "# Lua"

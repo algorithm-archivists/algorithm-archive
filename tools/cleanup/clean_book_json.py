@@ -2,7 +2,7 @@
 """
 Sorts languages in book.json alphabetically into book.json_.
 Check the file manually, then rename.
-You need to path the path to the file as an argument.
+You need to pass the path to the file as an argument.
 From root: $ tools/cleanup/clean_book_json.py book.json
 """
 
