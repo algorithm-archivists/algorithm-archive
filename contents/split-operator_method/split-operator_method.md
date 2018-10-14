@@ -103,7 +103,7 @@ Regardless, we first need to set all the initial parameters, including the initi
 [import:11-21, lang:"c_cpp"](code/c/split_op.c)
 [import:52-73, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="cpp" %}
-[import:10-41, lang:"c_cpp"](code/c++/split_op.cpp)
+[import:14-49, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:11-30, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -124,7 +124,7 @@ Afterwards, we turn them into operators:
 [import:23-29, lang:"c_cpp"](code/c/split_op.c)
 [import:75-96, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="cpp" %}
-[import:43-72, lang:"c_cpp"](code/c++/split_op.cpp)
+[import:51-80, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:33-54, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -145,7 +145,7 @@ The final step is to do the iteration, itself.
 {% sample lang="c" %}
 [import:98-148, lang:"c_cpp"](code/c/split_op.c)
 {% sample lang="cpp" %}
-[import:74-183, lang:"c_cpp"](code/c++/split_op.cpp)
+[import:82-190, lang:"c_cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
