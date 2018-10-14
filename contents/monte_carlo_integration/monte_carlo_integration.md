@@ -81,6 +81,8 @@ each point is tested to see whether it's in the circle or not:
 [import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import:3-5, lang:"lisp"](code/scala/monte-carlo.lisp)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -161,6 +163,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/scala/monte-carlo.lisp)
 {% endmethod %}
 
 
