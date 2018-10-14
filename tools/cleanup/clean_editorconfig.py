@@ -16,7 +16,7 @@ with open(path) as f:
     config = f.read()
 
 lang = config.split("\n#")
-lang_sorted = lang[0:2] + sorted(lang[2:])
+lang_sorted = lang[0:2] + sorted(lang[2:], key = lambda x : x.lower())
 config = "\n#".join(lang_sorted)
 
 with open(path + "_", "w") as f:

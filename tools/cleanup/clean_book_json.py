@@ -16,7 +16,7 @@ with open(path) as f:
 
 book = json.loads(text)
 book["pluginsConfig"]["api-language-selector"]["languages"]\
-                                   .sort(key=lambda x: x[u'name'])
+                         .sort(key=lambda x: x[u'name'].lower())
 
 with open(path + "_", "w") as f:
     f.write(json.dumps(book, indent=2))
