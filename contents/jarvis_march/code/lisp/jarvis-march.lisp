@@ -27,13 +27,6 @@
       (if (< (point-x p1) (point-x p2)) p1 p2))
     gift))
 
-(defun second-point-on-hull (start gift)
-  "Returns the second point of a hull"
-  (next-point-on-hull
-    start
-    (make-point (point-x start) (- (point-y start) 1))
-    gift))
-
 (defun jarvis-march (gift)
   "finds the convex hull of any distribution of points"
   ;deals with the edge cases
@@ -41,14 +34,18 @@
     gift
     (loop
       with start = (leftmost-point gift)
-      with hull = (list (second-point-on-hull start gift) start)
-      until (equalp (first hull) start)
+      with hull = (list start (make-point (point-x start) (- (point-y start) 1)))
+      until 
+        (and 
+          (equalp (first hull) start) 
+          (> (length hull) 2))
       do 
         (setq hull
           (cons 
             (next-point-on-hull (first hull) (second hull) gift)
             hull))
-      finally (return (rest hull)))))
+      ;deletes extra points
+      finally (return (rest (butlast hull))))))
 
 (defvar gift
   (map 
