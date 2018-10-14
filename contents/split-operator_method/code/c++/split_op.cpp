@@ -28,7 +28,7 @@ struct Params {
         im_time = im;
 
         for (size_t i = 0; i < res; ++i) {
-            x.push_back(xmax / res - xmax + i * (2.0 * xmax / res));
+            x.emplace_back(xmax / res - xmax + i * (2.0 * xmax / res));
             if (i < res / 2) {
                 k.push_back(i * M_PI / xmax);
             } else {
@@ -59,15 +59,15 @@ public:
         wfc.reserve(size);
 
         for (size_t i = 0; i < size; ++i) {
-            v.emplace_back(0.5 * pow(par.x[i] - voffset, 2));
-            wfc.emplace_back(exp(-pow(par.x[i] - wfcoffset, 2) / 2.0));
+            v.push_back(0.5 * pow(par.x[i] - voffset, 2));
+            wfc.push_back(exp(-pow(par.x[i] - wfcoffset, 2) / 2.0));
 
             if (par.im_time) {
-                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2)));
-                pe.emplace_back(exp(-0.5 * par.dt * v[i]));
+                ke.push_back(exp(-0.5 * par.dt * pow(par.k[i], 2)));
+                pe.push_back(exp(-0.5 * par.dt * v[i]));
             } else {
-                ke.emplace_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * complex(0.0, 1.0)));
-                pe.emplace_back(exp(-0.5 * par.dt * v[i] * complex(0.0, 1.0)));
+                ke.push_back(exp(-0.5 * par.dt * pow(par.k[i], 2) * complex(0.0, 1.0)));
+                pe.push_back(exp(-0.5 * par.dt * v[i] * complex(0.0, 1.0)));
             }
         }
     }
