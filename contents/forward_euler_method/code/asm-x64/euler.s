@@ -66,9 +66,9 @@ results_loop:
   call   printf
   mov    rax, 1                      # and set sucess code to failed (rax = 1)
 if_false:
-  add    r13, 1
+  add    r12, 1
 loop_check:
-  cmp    r13, r14                    # Check if index is less the array size
+  cmp    r12, r13                    # Check if index is less the array size
   jle    results_loop
   pop    r13
   pop    r12
