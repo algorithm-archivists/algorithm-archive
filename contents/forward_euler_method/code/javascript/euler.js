@@ -11,7 +11,7 @@ function solveEuler(timeStep, n){
 
 function checkResult(result, threshold, timeStep) {
   let approx = true;
-  for (let i = 0; i < result.length; ++i){
+  for (let i = 0; i < result.length; ++i) {
     const solution = Math.exp(-3 * i * timeStep);
     if (Math.abs(result[i] - solution) > threshold) {
       console.log(result[i] + " " + solution);
