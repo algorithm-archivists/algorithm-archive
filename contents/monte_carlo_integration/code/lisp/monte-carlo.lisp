@@ -5,6 +5,7 @@
   (< (+ (* x x) (* y y)) 1))
 
 (defun monte-carlo (samples)
+  "Returns an approximation of pi"
   (loop repeat samples
     with count = 0 
     do
