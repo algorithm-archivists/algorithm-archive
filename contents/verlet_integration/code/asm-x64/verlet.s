@@ -15,10 +15,10 @@
   .global main
   .extern printf
 
-# rdi  - time ptr
 # xmm0 - pos
 # xmm1 - acc
 # xmm2 - dt
+# RET xmm0 - time
 verlet:
   pxor   xmm7, xmm7                  # Holds 0 for comparisons
   pxor   xmm3, xmm3                  # Holds time value
@@ -38,14 +38,14 @@ verlet_loop:
   comisd xmm0, xmm7                  # Check if position is greater then 0.0
   ja     verlet_loop
 verlet_return:
-  movsd  QWORD PTR [rdi], xmm3       # Saving time value
+  movsd  xmm0, xmm3                  # Saving time value
   ret
 
-# rdi  - time ptr
-# rsi  - vel ptr
 # xmm0 - pos
 # xmm1 - acc
 # xmm2 - dt
+# RET xmm0 - time
+# RET xmm1 - velocity
 stormer_verlet:
   pxor   xmm7, xmm7                  # Holds 0 for comparisons
   pxor   xmm3, xmm3                  # Holds time value
@@ -65,16 +65,16 @@ stormer_verlet_loop:
   comisd xmm0, xmm7                  # Check if position is greater then 0.0
   ja     stormer_verlet_loop
 stormer_verlet_return:
-  movsd  QWORD PTR [rdi], xmm3       # Saving time and velocity
+  movsd  xmm0, xmm3                  # Saving time and velocity
   mulsd  xmm3, xmm1
-  movsd  QWORD PTR [rsi], xmm3
+  movsd  xmm1, xmm3
   ret
 
-# rdi  - time ptr
-# rsi  - vel ptr
 # xmm0 - pos
 # xmm1 - acc
 # xmm2 - dt
+# RET xmm0 - time
+# RET xmm1 - velocity
 velocity_verlet:
   pxor   xmm7, xmm7                  # Holds 0 for comparisons
   pxor   xmm3, xmm3                  # Holds the velocity value
@@ -96,44 +96,32 @@ velocity_verlet_loop:
   comisd xmm0, xmm7
   ja     velocity_verlet_loop
 velocity_verlet_return:
-  movsd  QWORD PTR [rdi], xmm4       # Saving time and velocity
-  movsd  QWORD PTR [rsi], xmm3
+  movsd  xmm0, xmm4                  # Saving time and velocity
+  movsd  xmm1, xmm3
   ret
 
 main:
   push   rbp
-  sub    rsp, 16                     # Making space for time and velocity
-  mov    rdi, rsp                    # Calling verlet
-  movsd  xmm0, pos
+  movsd  xmm0, pos                   # Calling verlet
   movsd  xmm1, acc
   movsd  xmm2, dt
   call   verlet
   mov    rdi, OFFSET verlet_fmt      # Print output
-  movsd  xmm0, QWORD PTR [rsp]
   mov    rax, 1
   call   printf
-  mov    rdi, rsp                    # Calling stormer_verlet
-  lea    rsi, [rsp + 8]
-  movsd  xmm0, pos
+  movsd  xmm0, pos                   # Calling stormer_verlet
   movsd  xmm1, acc
   movsd  xmm2, dt
   call   stormer_verlet
   mov    rdi, OFFSET stormer_fmt     # Print output
-  movsd  xmm0, QWORD PTR [rsp]
-  movsd  xmm1, QWORD PTR [rsp + 8]
   mov    rax, 1
   call   printf
-  mov    rdi, rsp                    # Calling velocity_verlet
-  lea    rsi, [rsp + 8]
-  movsd  xmm0, pos
+  movsd  xmm0, pos                   # Calling velocity_verlet
   movsd  xmm1, acc
   movsd  xmm2, dt
   call   velocity_verlet
-  mov    rdi, OFFSET velocity_fmt   # Print output
-  movsd  xmm0, QWORD PTR [rsp]
-  movsd  xmm1, QWORD PTR [rsp + 8]
+  mov    rdi, OFFSET velocity_fmt    # Print output
   mov    rax, 1
   call   printf
-  add    rsp, 16
   pop    rbp
   ret
