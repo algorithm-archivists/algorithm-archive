@@ -8,14 +8,14 @@ bubble_sort() {
     arr=("$@")
     (( len = ${#arr[@]} ))
 
-    for i in $(seq 0 $(( len - 1 ))); do
-	for j in $(seq 0 $(( len - 2 ))); do
-	    if (( arr[j] > arr[(( j + 1 ))] )); then
-		(( tmp = arr[(( j + 1 ))] ))
-		(( arr[(( j + 1 ))] = arr[j] ))
-		(( arr[j] = tmp ))
-	    fi
-	done
+    for ((i = 0; i <= len - 1; i++)); do
+	    for ((j = 0; j <= len - 2; j++)); do
+	        if (( arr[j] > arr[(( j + 1 ))] )); then
+		        (( tmp = arr[(( j + 1 ))] ))
+		        (( arr[(( j + 1 ))] = arr[j] ))
+		        (( arr[j] = tmp ))
+	        fi
+	    done
     done
     echo ${arr[*]}
 }
