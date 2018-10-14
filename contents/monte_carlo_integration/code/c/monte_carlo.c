@@ -9,9 +9,9 @@ bool in_circle(double x, double y) {
 }
 
 double monte_carlo(unsigned int samples) {
-    int count = 0;
+    unsigned int count = 0;
 
-    for (int i = 0; i < samples; ++i) {
+    for (unsigned int i = 0; i < samples; ++i) {
         double x = (double)rand() / RAND_MAX;
         double y = (double)rand() / RAND_MAX;
 
