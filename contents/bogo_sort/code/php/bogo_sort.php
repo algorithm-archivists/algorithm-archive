@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 function is_sorted(array $array): bool
 {

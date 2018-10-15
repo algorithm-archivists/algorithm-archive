@@ -40,7 +40,7 @@ In code, it looks something like this:
 {% sample lang="swift" %}
 [import:13-19, lang:"swift"](code/swift/bogosort.swift)
 {% sample lang="php" %}
-[import:14-21, lang:"php"](code/php/bogo_sort.php)
+[import:15-22, lang:"php"](code/php/bogo_sort.php)
 {% sample lang="nim" %}
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
