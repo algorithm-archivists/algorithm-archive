@@ -13,4 +13,6 @@
             (incf count))
     finally (return (* (/ count samples) 4.0))))
 
-(print (monte-carlo 1000000))
+(defvar pi-estimate (monte-carlo 5000000))
+(format t "Estimate: ~D ~%" pi-estimate)
+(format t "Error: ~D" (* (/ (- pi-estimate pi) pi) 100))
