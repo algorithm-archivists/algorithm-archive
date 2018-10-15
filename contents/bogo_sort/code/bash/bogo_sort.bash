@@ -9,10 +9,10 @@ is_sorted() {
     (( sorted = 1 ))
     
     for (( i = len; i > 0; i-- )); do
-	if (( arr[i] < arr[(( i - 1 ))] )); then
-	    (( sorted = 0 ))
-	    break
-	fi
+        if (( arr[i] < arr[(( i - 1 ))] )); then
+            (( sorted = 0 ))
+            break
+        fi
     done
     printf "%d" $sorted
 }
@@ -27,10 +27,10 @@ shuffle() {
     (( len = ${#arr[@]} ))
     
     for (( i = 0; i < len; i++ )); do
-	(( rand = RANDOM % len ))
-	(( tmp = arr[rand] ))
-	(( arr[rand] = arr[i] ))
-	(( arr[i] = tmp ))
+        (( rand = RANDOM % len ))
+        (( tmp = arr[rand] ))
+        (( arr[rand] = arr[i] ))
+        (( arr[i] = tmp ))
     done
     echo ${arr[*]}
 }
@@ -39,7 +39,7 @@ bogo_sort() {
     local arr
     arr=("$@")
     while [ $(is_sorted "${arr[@]}") = 0 ]; do
-	arr=($(shuffle "${arr[@]}"))
+        arr=($(shuffle "${arr[@]}"))
     done
     echo ${arr[*]}
 }
