@@ -37,6 +37,10 @@
           "default": true
         },
         {
+          "lang": "bash",
+          "name": "Bash"
+        },
+        {
           "lang": "cs",
           "name": "C#"
         },
@@ -163,10 +167,6 @@
         {
           "lang": "lolcode",
           "name": "LOLCODE"
-        },
-        {
-          "lang": "sh",
-          "name": "Bash"
         }
       ]
     }
