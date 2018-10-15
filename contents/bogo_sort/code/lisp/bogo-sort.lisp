@@ -4,7 +4,7 @@
   "Checks if a list is sorted"
   (if (< (length list) 2)
       t
-      (if (< (first list) (second list))
+      (if (<= (first list) (second list))
           (sortedp (rest list))
           nil)))
 
