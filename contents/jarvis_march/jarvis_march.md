@@ -37,7 +37,7 @@ Since this algorithm, there have been many other algorithms that have advanced t
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/jarvis-march.js)
 {% sample lang="py" %}
-[import, lang:"python"](code/python/jarvisMarch.py)
+[import, lang:"python"](code/python/jarvis_march.py)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/jarvis_march.cpp)
 {% sample lang="java" %}
