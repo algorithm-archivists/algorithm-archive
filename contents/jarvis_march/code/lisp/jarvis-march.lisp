@@ -35,15 +35,12 @@
     (loop
       with start = (leftmost-point gift)
       with hull = (list start (make-point (point-x start) (- (point-y start) 1)))
-      until 
-        (and 
-          (equalp (first hull) start) 
-          (> (length hull) 2))
       do 
         (setq hull
           (cons 
             (next-point-on-hull (first hull) (second hull) gift)
             hull))
+      until (equalp (first hull) start)
       ;deletes extra points
       finally (return (rest (butlast hull))))))
 
