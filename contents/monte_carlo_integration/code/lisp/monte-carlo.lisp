@@ -15,4 +15,4 @@
 
 (defvar pi-estimate (monte-carlo 5000000))
 (format t "Estimate: ~D ~%" pi-estimate)
-(format t "Error: ~D" (* (/ (- pi-estimate pi) pi) 100))
+(format t "Error: ~D%" (* (/ (abs (- pi-estimate pi)) pi) 100))
