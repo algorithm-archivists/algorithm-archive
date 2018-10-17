@@ -122,6 +122,8 @@ Full code for the visualization follows:
 [import, lang:"matlab"](code/matlab/euler.m)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/euler.swift)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/Euler.java)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/euler.f90)
 {% sample lang="go" %}
