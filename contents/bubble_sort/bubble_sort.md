@@ -19,7 +19,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="kotlin" %}
 [import:1-11, lang:"kotlin"](code/kotlin/BubbleSort.kt)
 {% sample lang="js" %}
-[import:1-11, lang:"javascript"](code/javascript/bubble.js)
+[import:1-12, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
 [import:4-9, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}
@@ -35,7 +35,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="d" %}
 [import:3-18, lang:"d"](code/d/bubble_sort.d)
 {% sample lang="go" %}
-[import:7-21, lang:"golang"](code/go/bubbleSort.go)
+[import:7-21, lang:"go"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
 [import:6-19, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
@@ -64,6 +64,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:3-14, lang:"scala"](code/scala/bubble_sort.scala)
 {% sample lang="emojic" %}
 [import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
+{% sample lang="bash" %}
+[import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -104,7 +106,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="d" %}
 [import, lang:"d"](code/d/bubble_sort.d)
 {% sample lang="go" %}
-[import, lang:"golang"](code/go/bubbleSort.go)
+[import, lang:"go"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
 [import, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
@@ -133,6 +135,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"scala"](code/scala/bubble_sort.scala)
 {% sample lang="emojic" %}
 [import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/bubble_sort.bash)
 {% endmethod %}
 
 <script>

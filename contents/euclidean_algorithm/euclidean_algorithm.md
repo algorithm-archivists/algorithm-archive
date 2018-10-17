@@ -28,7 +28,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="ml" %}
 [import:9-17, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-[import:25-38, lang="golang"](code/go/euclidean.go)
+[import:25-38, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:1-14, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
@@ -39,8 +39,12 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:12-25, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
+{% sample lang="asm-x64" %}
+[import:43-78, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import:4-18, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import:1-13, lang="factor"](code/factor/euclid.factor)
 {% sample lang="ws" %}
@@ -53,8 +57,12 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:8-19, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:1-13, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import:2-17, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
+{% sample lang="bash" %}
+[import:24-38, lang="bash"](code/bash/euclid.bash)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -89,7 +97,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="ml" %}
 [import:3-7, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-[import:14-23, lang="golang"](code/go/euclidean.go)
+[import:14-23, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:16-27, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
@@ -100,8 +108,12 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-10, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
+{% sample lang="asm-x64" %}
+[import:8-41, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import:20-30, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import:15-25, lang="factor"](code/factor/euclid.factor)
 {% sample lang="ws" %}
@@ -114,8 +126,12 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-6, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import:15-25, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import:19-31, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
+{% sample lang="bash" %}
+[import:10-22, lang="bash"](code/bash/euclid.bash)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -155,7 +171,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="ml" %}
 [import, lang="ocaml"](code/ocaml/euclidean_example.ml)
 {% sample lang="go" %}
-[import, lang="golang"](code/go/euclidean.go)
+[import, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import, lang="swift"](code/swift/euclidean_algorithm.swift)
 {% sample lang="matlab" %}
@@ -166,8 +182,12 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
+{% sample lang="asm-x64" %}
+[import, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import, lang="fortran"](code/fortran/euclidean.f90)
+{% sample lang="php" %}
+[import, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import, lang="factor"](code/factor/euclid.factor)
 {% sample lang="ws" %}
@@ -183,10 +203,15 @@ and modulo method:
 [import, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
 [import, lang="smalltalk"](code/smalltalk/euclid.st)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/euclidean_algorithm.emojic)
 {% sample lang="lolcode" %}
 [import, lang="LOLCODE"](code/lolcode/euclid.lol)
+{% sample lang="bash" %}
+[import, lang="bash"](code/bash/euclid.bash)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+

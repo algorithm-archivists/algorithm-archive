@@ -45,10 +45,14 @@ In code, it looks something like this:
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import:2-6, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
 {% sample lang="factor" %}
 [import:10-12, lang:"factor"](code/factor/bogo_sort.factor)
 {% sample lang="f90" %}
 [import:24-32, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import:3-8, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% sample lang="st" %}
 [import:2-6, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}
@@ -95,10 +99,14 @@ We are done here!
 [import, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
 {% sample lang="factor" %}
 [import, lang:"factor"](code/factor/bogo_sort.factor)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% sample lang="st" %}
 [import, lang:"st"](code/smalltalk/bogosort.st)
 {% endmethod %}

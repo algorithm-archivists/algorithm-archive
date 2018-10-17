@@ -54,7 +54,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="d" %}
 [import:2-5, lang:"d"](code/d/monte_carlo.d)
 {% sample lang="go" %}
-[import:12-14, lang:"golang"](code/go/monteCarlo.go)
+[import:12-14, lang:"go"](code/go/monteCarlo.go)
 {% sample lang="r" %}
 [import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -73,6 +73,8 @@ each point is tested to see whether it's in the circle or not:
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% sample lang="factor" %}
 [import:9-12 lang:"factor"](code/factor/monte_carlo.factor)
+{% sample lang="emojic" %}
+[import:23-27, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
 {% sample lang="php" %}
 [import:4-7, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
@@ -81,6 +83,10 @@ each point is tested to see whether it's in the circle or not:
 [import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import:3-5, lang:"lisp"](code/scala/monte-carlo.lisp)
+{% sample lang="asm-x64" %}
+[import:21-32, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -129,7 +135,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {%sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
 {%sample lang="go" %}
-[import, lang:"golang"](code/go/monteCarlo.go)
+[import, lang:"go"](code/go/monteCarlo.go)
 {%sample lang="r" %}
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -153,6 +159,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% sample lang="factor" %}
 [import, lang:"factor"](code/factor/monte_carlo.factor)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
 {% sample lang="php" %}
 [import, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
@@ -161,6 +169,10 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/scala/monte-carlo.lisp)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
 {% endmethod %}
 
 

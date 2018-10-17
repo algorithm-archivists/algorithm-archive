@@ -37,6 +37,10 @@
           "default": true
         },
         {
+          "lang": "bash",
+          "name": "Bash"
+        },
+        {
           "lang": "cs",
           "name": "C#"
         },

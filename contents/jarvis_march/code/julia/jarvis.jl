@@ -22,8 +22,7 @@ function jarvis_march(points::Vector{Pos})
 
     # Find cross product between points
     curr_product = jarvis_cross(Pos(0,0), hull[1], curr_point)
-    #while (curr_point != hull[1])
-    while (length(hull) < 4)
+    while (curr_point != hull[1])
         for point in points
                 product = 0.0
             if (i == 1)
