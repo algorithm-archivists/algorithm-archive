@@ -38,7 +38,7 @@ shuffle() {
 bogo_sort() {
     local arr
     arr=("$@")
-    while [ $(is_sorted "${arr[@]}") = 0 ]; do
+    while [[ $(is_sorted "${arr[@]}") == 0 ]]; do
         arr=($(shuffle "${arr[@]}"))
     done
     echo ${arr[*]}
