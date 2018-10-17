@@ -9,12 +9,12 @@
           nil)))
 
 (defun shuffle (list)
-  "Returns a shuffled list"
-  (loop for i from 0 upto (- (length list) 1)
+  "Returns a shuffled list using the Fisher-Yates method"
+  (loop for i from (1- (length list)) downto 0
     do
       (rotatef 
         (nth i list)
-        (nth (random (length list)) list))
+        (nth (random (1+ i)) list))
     finally (return list)))
 
 (defun bogo-sort (list)
