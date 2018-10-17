@@ -16,6 +16,6 @@ USING: locals random math.ranges math.functions ;
 USING: math.constants ;
 10000000 monte-carlo-pi ! Approximate pi
 dup .                   ! Print the approximation
-pi - pi / >float abs .  ! And the error margin
+pi - pi / 100 * >float abs .  ! And the error margin
 
 
