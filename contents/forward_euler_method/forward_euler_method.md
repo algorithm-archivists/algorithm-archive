@@ -129,7 +129,7 @@ Full code for the visualization follows:
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/euler.s)
 {% sample lang="java" %}
-[import, lang:"java"](code/java/euler.java)
+[import, lang:"java"](code/java/ForwardEuler.java)
 {% endmethod %}
 
 <script>
