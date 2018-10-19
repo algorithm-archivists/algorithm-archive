@@ -87,6 +87,8 @@ each point is tested to see whether it's in the circle or not:
 [import:3-5, lang:"lisp"](code/scala/monte-carlo.lisp)
 {% sample lang="asm-x64" %}
 [import:21-32, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
+{% sample lang="bash" %}
+[import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -173,6 +175,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"lisp"](code/scala/monte-carlo.lisp)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
 
 
