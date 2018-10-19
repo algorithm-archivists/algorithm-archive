@@ -83,6 +83,8 @@ For some reason, though, putting code to this transformation really helped me fi
 [import:5-11, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:4-13, lang:"julia"](code/julia/fft.jl)
+{% sample lang="js" %}
+[import:3-16, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -130,6 +132,8 @@ In the end, the code looks like:
 [import:13-24, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:16-32, lang:"julia"](code/julia/fft.jl)
+{% sample lang="js" %}
+[import:18-42, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -236,6 +240,8 @@ Note: I implemented this in Julia because the code seems more straightforward in
 [import, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 
