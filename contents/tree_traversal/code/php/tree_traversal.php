@@ -135,9 +135,9 @@ TreeTraversal::DFSStack($node);
 echo 'DFS Queue:' . PHP_EOL;
 TreeTraversal::DFSQueue($node);
 
-// If you want try binary order non-binary tree
-// Comment generation of new tree bellow
-// If you do that, exception will be thrown
+// If you want to try to run binary order on a non-binary tree,
+// comment out the generation of the new tree below.
+// If you do that, an exception will be thrown
 $node = generate_tree(3, 2);
 echo 'DFS Recursive Inorder Binary:' . PHP_EOL;
 TreeTraversal::DFSRecursiveInorderBinary($node);
