@@ -104,16 +104,16 @@ class TreeTraversal
     }
 }
 
-function generate_tree(int $num_of_rows, int $num_of_children, int $id = -1): Tree
+function generate_tree(int $numOfRows, int $numOfChildren, int $id = -1): Tree
 {
     if ($id === -1) {
         $id = 1;
     }
     $node = new Tree($id);
 
-    if ($num_of_rows > 1) {
-        for ($i = 0; $i < $num_of_children; $i++) {
-            $child = generate_tree($num_of_rows - 1, $num_of_children, $id * 10 + $i + 1);
+    if ($numOfRows > 1) {
+        for ($i = 0; $i < $numOfChildren; $i++) {
+            $child = generate_tree($numOfRows - 1, $numOfChildren, $id * 10 + $i + 1);
             $node->addChild($child);
         }
     }
