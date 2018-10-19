@@ -10,12 +10,12 @@ object HuffmanEncoding {
 
   case class Branch(left: Node, right: Node, var weight: Int) extends Node
 
-  def createTree(phrase: String) = {
+  def createTree(phrase: String): Option[Node] = {
 
     val tree = PriorityQueue[Node]()(Ordering.by(-_.weight))
     tree ++= phrase
       .groupBy(identity)
-      .mapValues(_.size)
+      .mapValues(_.length)
       .map{
         case (char, count) => Leaf(char, count)
       }
@@ -26,11 +26,11 @@ object HuffmanEncoding {
       tree += Branch(node1, node2, node1.weight + node2.weight)
     }
 
-    tree.head
+    tree.headOption
   }
 
 
-  def createCodeBook(root: Node) = {
+  def createCodeBook(maybeRoot: Option[Node]): Map[Char, String] = {
     val codeBook = Map[Char, String]()
 
     def codeBookRecurse(node: Node, code: String): Unit =
@@ -42,22 +42,25 @@ object HuffmanEncoding {
         }
       }
 
-    codeBookRecurse(root, "")
+    maybeRoot.foreach(c => codeBookRecurse(c, ""))
+
     codeBook
   }
 
 
-  def encode(phrase: String, codeBook: Map[Char, String]) = {
-    phrase.flatMap(c => codeBook(c))
+  def encode(phrase: String, codeBook: Map[Char, String]): String = {
+    phrase.flatMap(c => codeBook.getOrElse(c, "?"))
   }
 
-  def decode(encoded: String, root: Node) = {
+  def decode(encoded: String, maybeRoot: Option[Node]): String = {
+    val root = maybeRoot.getOrElse(Leaf('?', 0))
     var currentNode = root
 
     def chooseTreeBranch(bit: Char) =
       currentNode match {
         case Branch(left, right, _) =>
           currentNode = if (bit == '0') left else right
+        case _ =>
       }
 
     def maybeGetACharacter =
@@ -80,11 +83,11 @@ object HuffmanEncoding {
     val originalText = "bibbity_bobbity"
     println("Original Text: " + originalText)
 
-    val tree = createTree("bibbity_bobbity")
+    val tree = createTree(originalText)
     val codeBook = createCodeBook(tree)
     println("CodeBook is: " + codeBook)
 
-    val encoded = encode("bibbity_bobbity", codeBook)
+    val encoded = encode(originalText, codeBook)
     println("Encoded text: " + encoded)
 
     val decoded = decode(encoded, tree)
