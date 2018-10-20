@@ -39,3 +39,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - nic-hartley
 - crafter312
 - Christopher Milan
+- Vexatos
