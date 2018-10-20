@@ -44,6 +44,10 @@ I am incredibly interested to see what you guys do and how you implement the alg
 [import, lang:"csharp"](code/csharp/ListExtensions.cs)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/stable-marriage.java)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/stable_marriage.php)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/stable_marriage.scala)
 {% endmethod %}
 
 <script>

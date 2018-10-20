@@ -6,7 +6,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="jl" %}
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:15-18, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:12-15, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:7-11, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -14,8 +14,8 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="java" %}
 [import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:3-7, lang:"julia"](code/julia/Tree.jl)
+[import:1-10, lang:"javascript"](code/javascript/tree.js)
+As a note, a `node` struct is not necessary in javascript, so this is an example of how a tree might be constructed.
 {% sample lang="py" %}
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -25,13 +25,17 @@ This has not been implemented in your chosen language, so here is the Julia code
 {% sample lang="rs"%}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:1-3, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:1-4, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:1-9, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
 [import:3-27, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import:5-8, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import:24-27, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -40,7 +44,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="jl" %}
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:20-27, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:17-24, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:34-45, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -59,13 +63,17 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="rs"%}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:5-6, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:6-7, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
 [import:31-35, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import:10-15, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import:290-314, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -83,7 +91,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="jl" %}
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:29-34 lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:26-31, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:47-58, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -101,13 +109,17 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="rs"%}
 [import:17-23, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:8-9, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
 [import:37-41, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import:17-22, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import:316-344, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 <p>
@@ -120,7 +132,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="jl" %}
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:37-55 lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:34-52 lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:60-79, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -138,13 +150,17 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="rs"%}
 [import:25-38, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:11-15, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
 [import:43-62, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import:24-38, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import:346-396, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 <p>
@@ -167,7 +183,7 @@ In code, it looks like this:
 {% sample lang="jl" %}
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:58-73, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:55-70, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:81-94, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -185,14 +201,17 @@ In code, it looks like this:
 {% sample lang="rs"%}
 [import:40-47, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-This has not been implemented in your chosen language, so here is the Julia code
-[import:45-56, lang:"julia"](code/julia/Tree.jl)
+[import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
 [import:64-73, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import:40-49, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import:398-445, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -207,7 +226,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="jl" %}
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:76-89, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:73-86, lang:"c_cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:96-109, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -225,13 +244,17 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="rs"%}
 [import:49-57, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
-[import:17-20, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
 [import:65-74, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import:51-60, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import:447-498, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 ## Example Code
@@ -273,6 +296,10 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/treetraversal.go)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% endmethod %}
 
 
