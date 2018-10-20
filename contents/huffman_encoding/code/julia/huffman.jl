@@ -16,15 +16,15 @@ const Node = Union{Leaf, Branch}
 isbranch(branch::Branch) = true
 isbranch(other::T) where {T} = false
 
-function codebook_recurse(leaf::Leaf, code::String,
+function codebook_recurse!(leaf::Leaf, code::String,
                           dict::Dict{Char,String})
     dict[leaf.key] = code
 end
 
-function codebook_recurse(branch::Branch, code::String,
+function codebook_recurse!(branch::Branch, code::String,
                           dict::Dict{Char,String})
-    codebook_recurse(branch.left, string(code, "1"), dict)
-    codebook_recurse(branch.right, string(code, "0"), dict)
+    codebook_recurse!(branch.left, string(code, "1"), dict)
+    codebook_recurse!(branch.right, string(code, "0"), dict)
 end
 
 # This will depth-first search through the tree
@@ -33,7 +33,7 @@ end
 # This outputs encoding Dict to be used for encoding
 function create_codebook(n::Node)
     codebook = Dict{Char,String}()
-    codebook_recurse(n, "", codebook)
+    codebook_recurse!(n, "", codebook)
     return codebook
 end
 
