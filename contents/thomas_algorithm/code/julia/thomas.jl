@@ -30,12 +30,13 @@ function main()
     c = [4.0, 5.0, 0.0]
     d = [7.0, 5.0, 3.0]
 
-    println("The system,")
-    println(a)
-    println(b)
-    println(c)
-    println(d)
-    println("Has the solution:")
+    println(
+        """The system
+        $(join((b[1], c[1], "",   "|", d[1]), "\t"))
+        $(join((a[2], b[2], c[2], "|", d[2]), "\t"))
+        $(join(("",   a[3], b[3], "|", d[3]), "\t"))
+        Has the solution:"""
+    )
 
     soln = thomas(a, b, c, d, 3)
 
