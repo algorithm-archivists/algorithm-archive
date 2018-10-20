@@ -1,4 +1,4 @@
-function gaussian_elimination(A::Array{Float64,2})
+function gaussian_elimination!(A::Array{Float64,2})
 
     rows = size(A,1)
     cols = size(A,2)
@@ -64,7 +64,7 @@ function back_substitution(A::Array{Float64,2})
 end
 
 
-function gauss_jordan_elimination(A::Array{Float64,2})
+function gauss_jordan_elimination!(A::Array{Float64,2})
 
     rows = size(A,1)
     cols = size(A,2)
@@ -97,10 +97,10 @@ function main()
          1 2 3 4;
          3 -4 0 10]
 
-    gaussian_elimination(A)
+    gaussian_elimination!(A)
     println(A)
 
-    gauss_jordan_elimination(A)
+    gauss_jordan_elimination!(A)
     println(A)
 
     soln = back_substitution(A)

@@ -9,15 +9,15 @@ function is_sorted(a::Vector{Float64})
     return true
 end
 
-function bogo_sort(a::Vector{Float64})
+function bogo_sort!(a::Vector{Float64})
     while(!is_sorted(a))
         shuffle!(a)
     end
 end
 
 function main()
-    a = [1, 3, 2, 4]
-    bogo_sort(a)
+    a = [1.0, 3.0, 2.0, 4.0]
+    bogo_sort!(a)
     println(a)
 end
 
