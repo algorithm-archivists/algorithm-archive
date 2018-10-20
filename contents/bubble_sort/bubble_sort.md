@@ -55,7 +55,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="st" %}
 [import:2-15, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% sample lang="asm-x64" %}
-[import:44-110, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
+[import:43-66, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
 [import:19-40, lang:"fortran"](code/fortran/bubble.f90)
 {% sample lang="bf" %}
