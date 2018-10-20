@@ -133,8 +133,8 @@
           "name": "PHP"
         },
         {
-          "lang": "lisp",
-          "name": "Lisp"
+          "lang": "clisp",
+          "name": "Common Lisp"
         },
         {
           "lang": "nim",
