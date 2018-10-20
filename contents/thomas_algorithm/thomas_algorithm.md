@@ -121,6 +121,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/thomas.cpp)
+{% sample lang="lua" %}
+[import, lang:"lua"](code/lua/thomas.lua)
 {% endmethod %}
 
 <script>
