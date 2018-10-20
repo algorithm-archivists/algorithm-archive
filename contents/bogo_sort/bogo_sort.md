@@ -56,7 +56,7 @@ In code, it looks something like this:
 {% sample lang="st" %}
 [import:2-6, lang:"st"](code/smalltalk/bogosort.st)
 {% sample lang="asm-x64" %}
-[import:93-113, lang:"asm-x64"](code/asm-x64/bogosort.s)
+[import:93-113, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
 {% sample lang="lisp" %}
 [import:20-24, lang:"lisp"](code/lisp/bogo-sort.lisp)
 {% endmethod %}
@@ -114,7 +114,7 @@ We are done here!
 {% sample lang="st" %}
 [import, lang:"st"](code/smalltalk/bogosort.st)
 {% sample lang="asm-x64" %}
-[import, lang:"asm-x64"](code/asm-x64/bogosort.s)
+[import, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
 {% sample lang="lisp" %}
 [import, lang:"lisp"](code/lisp/bogo-sort.lisp)
 {% endmethod %}
