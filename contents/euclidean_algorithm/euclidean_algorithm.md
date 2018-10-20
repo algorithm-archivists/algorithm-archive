@@ -40,7 +40,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="asm-x64" %}
-[import:43-78, lang="asm-x64"](code/asm-x64/euclidean_example.s)
+[import:35-56, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
@@ -109,7 +109,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="nim" %}
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
 {% sample lang="asm-x64" %}
-[import:8-41, lang="asm-x64"](code/asm-x64/euclidean_example.s)
+[import:10-33, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
