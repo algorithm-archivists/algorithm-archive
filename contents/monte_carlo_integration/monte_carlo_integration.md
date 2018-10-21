@@ -169,7 +169,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/monte_carlo.scala)
-{% sample lang="clisp" %}
+{% sample lang="lisp" %}
 [import, lang:"lisp"](code/clisp/monte-carlo.lisp)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/monte_carlo.s)

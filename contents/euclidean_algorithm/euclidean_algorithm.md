@@ -17,7 +17,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="clisp" %}
+{% sample lang="lisp" %}
 [import:3-12, lang="lisp"](code/clisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import:11-22, lang="python"](code/python/euclidean_example.py)
@@ -86,7 +86,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="clisp" %}
+{% sample lang="lisp" %}
 [import:13-17, lang="lisp"](code/clisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import:1-9, lang="python"](code/python/euclidean_example.py)
@@ -160,7 +160,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
-{% sample lang="clisp" %}
+{% sample lang="lisp" %}
 [import, lang="lisp"](code/clisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import, lang="python"](code/python/euclidean_example.py)
