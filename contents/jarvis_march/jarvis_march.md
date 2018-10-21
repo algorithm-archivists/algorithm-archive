@@ -41,7 +41,7 @@ Since this algorithm, there have been many other algorithms that have advanced t
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/jarvis_march.cpp)
 {% sample lang="lisp" %}
-[import, lang:"lisp"](code/lisp/jarvis-march.lisp)
+[import, lang:"lisp"](code/clisp/jarvis-march.lisp)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/JarvisMarch.java)
 {% sample lang="go" %}
