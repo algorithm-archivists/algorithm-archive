@@ -83,7 +83,7 @@ each point is tested to see whether it's in the circle or not:
 [import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
-{% sample lang="clisp" %}
+{% sample lang="lisp" %}
 [import:3-5, lang:"lisp"](code/clisp/monte-carlo.lisp)
 {% sample lang="asm-x64" %}
 [import:21-32, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
