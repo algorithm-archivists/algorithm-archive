@@ -55,6 +55,8 @@ In code, it looks something like this:
 [import:3-8, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% sample lang="st" %}
 [import:2-6, lang:"st"](code/smalltalk/bogosort.st)
+{% sample lang="bash" %}
+[import:38-45, lang:"bash"](code/bash/bogo_sort.bash)
 {% sample lang="asm-x64" %}
 [import:93-113, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
 {% sample lang="lisp" %}
@@ -113,6 +115,8 @@ We are done here!
 [import, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% sample lang="st" %}
 [import, lang:"st"](code/smalltalk/bogosort.st)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/bogo_sort.bash)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
 {% sample lang="lisp" %}
