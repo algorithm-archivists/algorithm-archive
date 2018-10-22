@@ -14,7 +14,7 @@ public class ForwardEuler {
         boolean isApprox = true;
 
         for(int i = 0; i < eulerResult.length; i++) {
-            double time = (i - 1) * timestep;
+            double time = (i) * timestep;
             double solution = Math.exp(-3 * time);
             if(Math.abs(eulerResult[i] - solution) > threshold) {
                 System.out.println(eulerResult[i] + " " + solution);
