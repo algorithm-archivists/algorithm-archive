@@ -26,6 +26,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# Crystal
+[*.cr]
+indent_style = space
+indent_size = 2
+
 # C#
 [*.cs]
 indent_style = space

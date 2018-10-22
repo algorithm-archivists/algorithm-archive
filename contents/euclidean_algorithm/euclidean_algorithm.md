@@ -18,7 +18,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
-[import:3-12, lang="lisp"](code/lisp/euclidean_algorithm.lisp)
+[import:3-12, lang="lisp"](code/clisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import:11-22, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
@@ -39,6 +39,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:12-25, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:13-24, lang="nim"](code/nim/euclid_algorithm.nim)
+{% sample lang="asm-x64" %}
+[import:35-56, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:1-19, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
@@ -85,7 +87,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
-[import:13-17, lang="lisp"](code/lisp/euclidean_algorithm.lisp)
+[import:13-17, lang="lisp"](code/clisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import:1-9, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
@@ -106,6 +108,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:1-10, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import:1-11, lang="nim"](code/nim/euclid_algorithm.nim)
+{% sample lang="asm-x64" %}
+[import:10-33, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import:21-34, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
@@ -157,7 +161,7 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
-[import, lang="lisp"](code/lisp/euclidean_algorithm.lisp)
+[import, lang="lisp"](code/clisp/euclidean_algorithm.lisp)
 {% sample lang="py" %}
 [import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="haskell" %}
@@ -178,6 +182,8 @@ The Euclidean Algorithm is truly fundamental to many other algorithms throughout
 [import, lang="julia"](code/julia/euclidean.jl)
 {% sample lang="nim" %}
 [import, lang="nim" %](code/nim/euclid_algorithm.nim)
+{% sample lang="asm-x64" %}
+[import, lang="asm-x64"](code/asm-x64/euclidean_example.s)
 {% sample lang="f90" %}
 [import, lang="fortran"](code/fortran/euclidean.f90)
 {% sample lang="php" %}
