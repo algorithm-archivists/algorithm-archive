@@ -6,13 +6,12 @@
 #include <fftw3.h>
 
 void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
-    std::complex<double> y[n];
-    memset(y, 0, sizeof(y));
+    std::vector<std::complex<double>> y(x.size(), std::complex<double>(0.0, 0.0));
 
     fftw_plan p;
 
     fftw_complex *in = reinterpret_cast<fftw_complex*>(x.data());
-    fftw_complex *out = reinterpret_cast<fftw_complex*>(y);
+    fftw_complex *out = reinterpret_cast<fftw_complex*>(y.data());
 
     p = fftw_plan_dft_1d(n, in, out,
                         (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);

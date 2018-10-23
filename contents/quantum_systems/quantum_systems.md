@@ -232,7 +232,7 @@ This ultimately looks like this:
 {% sample lang="c" %}
 [import:29-, lang:"c_cpp"](code/c/energy.c)
 {% sample lang="cpp" %}
-[import:29-62, lang:"c_cpp"](code/c++/energy.cpp)
+[import:29-, lang:"c_cpp"](code/c++/energy.cpp)
 {% sample lang="py" %}
 [import:4-17, lang:"python"](code/python/energy.py)
 {% endmethod %}
