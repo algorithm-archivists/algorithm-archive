@@ -5,7 +5,7 @@
 
 #include <fftw3.h>
 
-void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
+void fft(std::vector<std::complex<double>> x, bool inverse) {
     std::vector<std::complex<double>> y(x.size(), std::complex<double>(0.0, 0.0));
 
     fftw_plan p;
@@ -13,7 +13,7 @@ void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
     fftw_complex *in = reinterpret_cast<fftw_complex*>(x.data());
     fftw_complex *out = reinterpret_cast<fftw_complex*>(y.data());
 
-    p = fftw_plan_dft_1d(n, in, out,
+    p = fftw_plan_dft_1d(x.size(), in, out,
                         (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
 
 
@@ -21,7 +21,7 @@ void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
     fftw_destroy_plan(p);
 
     for (size_t i = 0; i < x.size(); ++i) {
-        x[i] = y[i] / sqrt(static_cast<double>(n));
+        x[i] = y[i] / sqrt(static_cast<double>(x.size()));
     }
 }
 
@@ -31,7 +31,7 @@ double calculate_energy(std::vector<std::complex<double>> wfc,
                         double dx, size_t size) {
     std::vector<std::complex<double>> wfc_k(wfc);
     std::vector<std::complex<double>> wfc_c(size);
-    fft(wfc_k, size, false);
+    fft(wfc_k, false);
 
     for (size_t i = 0; i < size; ++i) {
         wfc_c[i] = conj(wfc[i]);
@@ -44,7 +44,7 @@ double calculate_energy(std::vector<std::complex<double>> wfc,
         energy_k[i] = wfc_k[i] * h_k[i];
     }
 
-    fft(energy_k, size, true);
+    fft(energy_k, true);
 
     for (size_t i = 0; i < size; ++i) {
         energy_k[i] *= wfc_c[i];
