@@ -1,50 +1,55 @@
+#include <complex>
 #include <vector>
 #include <complex>
+#include <cstring>
 
 #include <fftw3.h>
 
-void fft(std::vector<std::complex<double>> x, bool inverse) {
-    std::vector<std::complex<double>> y(x.size());
-    for (size_t i = 0; i < x.size(); i++) {
-        y.push_back(std::complex(0.0, 0.0));
-    }
-    
+void fft(std::vector<std::complex<double>> x, int n, bool inverse) {
+    std::complex<double> y[n];
+    memset(y, 0, sizeof(y));
+
     fftw_plan p;
 
-    p = fftw_plan_dft_1d(x.size(), reinterpret_cast<fftw_complex*>(x.data()),
-                         reinterpret_cast<fftw_complex*>(y.data()),
-                         (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
+    fftw_complex *in = reinterpret_cast<fftw_complex*>(x.data());
+    fftw_complex *out = reinterpret_cast<fftw_complex*>(y);
+
+    p = fftw_plan_dft_1d(n, in, out,
+                        (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
+
 
     fftw_execute(p);
     fftw_destroy_plan(p);
 
     for (size_t i = 0; i < x.size(); ++i) {
-        x[i] = y[i] / sqrt((double)x.size());
+        x[i] = y[i] / sqrt(static_cast<double>(n));
     }
 }
 
-double calculate_energy(std::vector<std::complex<double>> wfc, std::vector<std::complex<double>> h_r,
-                        std::vector<std::complex<double>> h_k, double dx, size_t size) {
+double calculate_energy(std::vector<std::complex<double>> wfc,
+                        std::vector<std::complex<double>> h_r,
+                        std::vector<std::complex<double>> h_k,
+                        double dx, size_t size) {
     std::vector<std::complex<double>> wfc_k(wfc);
     std::vector<std::complex<double>> wfc_c(size);
-    fft(wfc_k, false);
+    fft(wfc_k, size, false);
 
     for (size_t i = 0; i < size; ++i) {
-        wfc_c.push_back(conj(wfc[i]));
+        wfc_c[i] = conj(wfc[i]);
     }
 
     std::vector<std::complex<double>> energy_k(size);
     std::vector<std::complex<double>> energy_r(size);
 
     for (size_t i = 0; i < size; ++i) {
-        energy_k.push_back(wfc_k[i] * h_k[i]);
+        energy_k[i] = wfc_k[i] * h_k[i];
     }
 
-    fft(energy_k, true);
+    fft(energy_k, size, true);
 
     for (size_t i = 0; i < size; ++i) {
         energy_k[i] *= wfc_c[i];
-        energy_r.push_back(wfc_c[i] * h_r[i] * wfc[i]);
+        energy_r[i] = wfc_c[i] * h_r[i] * wfc[i];
     }
 
     double energy_final = 0;
