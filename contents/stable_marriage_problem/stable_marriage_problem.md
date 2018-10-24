@@ -21,6 +21,8 @@ I am incredibly interested to see what you guys do and how you implement the alg
 ## Example Code
 
 {% method %}
+{% sample lang="ruby" %}
+[import, lang:"ruby"](code/ruby/stable_marriage.rb)
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/stable_marriage.jl)
 {% sample lang="py" %}
