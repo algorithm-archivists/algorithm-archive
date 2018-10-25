@@ -61,6 +61,8 @@ In code, it looks something like this:
 [import:93-113, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
 {% sample lang="lisp" %}
 [import:20-24, lang:"lisp"](code/clisp/bogo-sort.lisp)
+{% sample lang="crystal" %}
+[import:10-14, lang:"crystal"](code/crystal/bogo.cr)
 {% endmethod %}
 
 That's it.
@@ -121,6 +123,8 @@ We are done here!
 [import, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
 {% sample lang="lisp" %}
 [import, lang:"lisp"](code/clisp/bogo-sort.lisp)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/bogo.cr)
 {% endmethod %}
 
 
