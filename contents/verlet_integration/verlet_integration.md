@@ -65,6 +65,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:5-16, lang:"go"](code/golang/verlet.go)
 {% sample lang="asm-x64" %}
 [import:18-42, lang:"asm-x64"](code/asm-x64/verlet.s)
+{% sample lang="kotlin" %}
+[import:3-15, lang:"kotlin"](code/kotlin/verlet.kt)
 {% endmethod %}
 
 Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
