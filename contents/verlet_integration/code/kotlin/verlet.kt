@@ -1,44 +1,44 @@
 data class VerletValues(val time: Double, val vel: Double)
 
-fun verlet(_position: Double, acceleration: Double, dt: Double): Double {
-    var position = _position  // Since function parameter are val and can't be modified
-    var previousPosition = position
+fun verlet(_pos: Double, acc: Double, dt: Double): Double {
+    var pos = _pos  // Since function parameter are val and can't be modified
+    var prevPos = pos
     var time = 0.0
 
-    while (position > 0) {
+    while (pos > 0) {
         time += dt
-        val nextPosition = position * 2 - previousPosition + acceleration * dt * dt
-        previousPosition = position
-        position = nextPosition
+        val nextPos = pos * 2 - prevPos + acc * dt * dt
+        prevPos = pos
+        pos = nextPos
     }
     return time
 }
 
-fun stormerVerlet(_position: Double, acceleration: Double, dt: Double): VerletValues {
-    var position = _position
-    var previousPosition = position
+fun stormerVerlet(_pos: Double, acc: Double, dt: Double): VerletValues {
+    var pos = _pos
+    var prevPos = pos
     var time = 0.0
-    var velocity = 0.0
-    while (position > 0) {
+    var vel = 0.0
+    while (pos > 0) {
         time += dt
-        val nextPosition = position * 2 - previousPosition + acceleration * dt * dt
-        previousPosition = position
-        position = nextPosition
-        velocity += acceleration * dt
+        val nextPos = pos * 2 - prevPos + acc * dt * dt
+        prevPos = pos
+        pos = nextPos
+        vel += acc * dt
     }
-    return VerletValues(time, velocity)
+    return VerletValues(time, vel)
 }
 
-fun velocityVerlet(_position: Double, acceleration: Double, dt: Double): VerletValues {
-    var position = _position
+fun velocityVerlet(_pos: Double, acc: Double, dt: Double): VerletValues {
+    var pos = _pos
     var time = 0.0
-    var velocity = 0.0
-    while (position > 0) {
+    var vel = 0.0
+    while (pos > 0) {
         time += dt
-        position += velocity * dt + 0.5 * acceleration * dt * dt
-        velocity += acceleration * dt
+        pos += vel * dt + 0.5 * acc * dt * dt
+        vel += acc * dt
     }
-    return VerletValues(time, velocity)
+    return VerletValues(time, vel)
 }
 
 fun main(args: Array<String>) {
@@ -50,6 +50,6 @@ fun main(args: Array<String>) {
     println("Velocity for Stormer Verlet integration is: " + stormerVerlet.vel)
 
     val velocityVerlet = velocityVerlet(5.0, -10.0, 0.01)
-    println("Time for velocity Verlet integration is: " + velocityVerlet.time)
-    println("Velocity for velocity Verlet integration is: " + velocityVerlet.vel)
+    println("Time for vel Verlet integration is: " + velocityVerlet.time)
+    println("Velocity for vel Verlet integration is: " + velocityVerlet.vel)
 }
