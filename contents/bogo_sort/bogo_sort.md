@@ -63,6 +63,8 @@ In code, it looks something like this:
 [import:20-24, lang:"lisp"](code/clisp/bogo-sort.lisp)
 {% sample lang="crystal" %}
 [import:10-14, lang:"crystal"](code/crystal/bogo.cr)
+{% sample lang="r" %}
+[import:1-6, lang:"r"](code/r/bogo_sort.r)
 {% endmethod %}
 
 That's it.
@@ -125,6 +127,8 @@ We are done here!
 [import, lang:"lisp"](code/clisp/bogo-sort.lisp)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/bogo.cr)
+{% sample lang="r" %}
+[import, lang:"r"](code/r/bogo_sort.r)
 {% endmethod %}
 
 
