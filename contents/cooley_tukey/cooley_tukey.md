@@ -84,7 +84,7 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="scratch" %}
 [import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="js" %}
-[import:3-16, lang:"javascript"](code/javascript/fft.js)
+[import:6-19, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -133,7 +133,7 @@ In the end, the code looks like:
 {% sample lang="scratch" %}
 [import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="js" %}
-[import:18-42, lang:"javascript"](code/javascript/fft.js)
+[import:21-45, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.

@@ -1,4 +1,7 @@
-const complex = require('./complex');
+// This code example makes use of complex.js.
+// You can install it with `npm install complex.js`.
+
+const complex = require('complex.js');
 
 function dft(x) {
     const len = x.length;
