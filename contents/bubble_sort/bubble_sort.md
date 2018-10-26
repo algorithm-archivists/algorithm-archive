@@ -16,8 +16,10 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:10-20, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
+{% sample lang="kotlin" %}
+[import:1-11, lang:"kotlin"](code/kotlin/BubbleSort.kt)
 {% sample lang="js" %}
-[import:1-11, lang:"javascript"](code/javascript/bubble.js)
+[import:1-12, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
 [import:4-9, lang:"python"](code/python/bubblesort.py)
 {% sample lang="m" %}
@@ -33,7 +35,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="d" %}
 [import:3-18, lang:"d"](code/d/bubble_sort.d)
 {% sample lang="go" %}
-[import:7-21, lang:"golang"](code/go/bubbleSort.go)
+[import:7-21, lang:"go"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
 [import:6-19, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
@@ -47,19 +49,23 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="php" %}
 [import:3-15, lang:"php"](code/php/bubble_sort.php)
 {% sample lang="lisp" %}
-[import:3-28, lang:"lisp"](code/lisp/bubble_sort.lisp)
+[import:3-28, lang:"lisp"](code/clisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import:5-9, lang:"nim"](code/nim/bubble_sort.nim)
 {% sample lang="st" %}
 [import:2-15, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% sample lang="asm-x64" %}
-[import:44-110, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
+[import:43-66, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
 [import:19-40, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="bf" %}
+[import:17-63, lang:"brainfuck"](code/brainfuck/bubblesort.bf)
 {% sample lang="scala" %}
 [import:3-14, lang:"scala"](code/scala/bubble_sort.scala)
 {% sample lang="emojic" %}
 [import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
+{% sample lang="bash" %}
+[import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -81,6 +87,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/bubble.java)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/BubbleSort.kt)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/bubble.js)
 {% sample lang="py" %}
@@ -98,7 +106,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="d" %}
 [import, lang:"d"](code/d/bubble_sort.d)
 {% sample lang="go" %}
-[import, lang:"golang"](code/go/bubbleSort.go)
+[import, lang:"go"](code/go/bubbleSort.go)
 {% sample lang="racket" %}
 [import, lang:"scheme"](code/racket/bubbleSort.rkt)
 {% sample lang="swift" %}
@@ -112,19 +120,23 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="php" %}
 [import, lang:"php"](code/php/bubble_sort.php)
 {% sample lang="lisp" %}
-[import, lang:"lisp"](code/lisp/bubble_sort.lisp)
+[import, lang:"lisp"](code/clisp/bubble_sort.lisp)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/bubble_sort.nim)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/bubble_sort.s)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/bubble.f90)
+{% sample lang="bf" %}
+[import, lang:"brainfuck"](code/brainfuck/bubblesort.bf)
 {% sample lang="st" %}
 [import, lang:"smalltalk"](code/smalltalk/bubble.st)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/bubble_sort.scala)
 {% sample lang="emojic" %}
 [import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/bubble_sort.bash)
 {% endmethod %}
 
 <script>

@@ -1,4 +1,4 @@
-function bubble_sort(a::Vector{Float64})
+function bubble_sort!(a::Vector{Float64})
     n = length(a)
     for i = 1:n
         for j = 1:n-1
@@ -12,7 +12,7 @@ end
 
 function main()
     a = [1., 3, 2, 4, 5, 10, 50, 7, 1.5, 0.3]
-    bubble_sort(a)
+    bubble_sort!(a)
     println(a)
 end
 
