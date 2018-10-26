@@ -43,9 +43,9 @@ def iterative_cooley_tukey(X):
 		for j in range(0, N, stride):
 			v = 1
 			for k in range(stride//2):
-				X[k + j + stride//2] = X[k + j] - v*X[k + j + stride//2];
-				X[k + j] -= (X[k + j + stride//2] - X[k + j]);
-				v *= w;
+				X[k + j + stride//2] = X[k + j] - v*X[k + j + stride//2]
+				X[k + j] -= (X[k + j + stride//2] - X[k + j])
+				v *= w
 	return X
 
 X = []
