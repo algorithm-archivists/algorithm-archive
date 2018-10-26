@@ -7,7 +7,7 @@ function forwardEuler(timeStep, n) {
 }
 
 function checkEuler(arr, timeStep, threshold) {
-  const isApprox = true;
+  let isApprox = true;
   arr.forEach((_value, i) => {
     const solution = Math.exp(-3 * timeStep * i);
 
@@ -23,8 +23,8 @@ function main() {
   const timeStep = 0.01;
   const threshold = 0.01;
   const n = 100;
-  let eulerResult = forwardEuler(timeStep, n);
-  let checkResult = checkEuler(eulerResult, timeStep, threshold);
+  const eulerResult = forwardEuler(timeStep, n);
+  const checkResult = checkEuler(eulerResult, timeStep, threshold);
   console.log(checkResult);
 }
 
