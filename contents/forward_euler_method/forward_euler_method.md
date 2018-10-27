@@ -130,6 +130,8 @@ Full code for the visualization follows:
 [import, lang:"go"](code/golang/euler.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/euler.s)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/ForwardEuler.java)
 {% endmethod %}
 
 <script>
