@@ -77,6 +77,12 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"javascript"](code/javascript/huffman.js)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/huffman.go)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/huffman.s)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/huffman_encoding.scala)
 {% endmethod %}
 
 <script>

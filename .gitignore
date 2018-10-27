@@ -77,6 +77,9 @@ anaconda-mode/
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
 
+# npm package lock for local installs
+package-lock.json
+
 # Book build output
 _book
 
@@ -498,3 +501,11 @@ __pycache__/
 
 -# Other
 -*.xcf
+
+# Cache files for sublime text
+*.sublime-workspace
+*.sublime-project
+
+# Settings directory for visual studio code
+vscode/
+

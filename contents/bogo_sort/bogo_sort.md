@@ -31,6 +31,8 @@ In code, it looks something like this:
 [import:17-20, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import:21-28, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import:1-22, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import:33-38, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
@@ -43,6 +45,24 @@ In code, it looks something like this:
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import:12-16, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import:2-6, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
+{% sample lang="factor" %}
+[import:10-12, lang:"factor"](code/factor/bogo_sort.factor)
+{% sample lang="f90" %}
+[import:24-32, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import:3-8, lang:"lisp"](code/racket/bogo_sort.rkt)
+{% sample lang="st" %}
+[import:2-6, lang:"st"](code/smalltalk/bogosort.st)
+{% sample lang="bash" %}
+[import:38-45, lang:"bash"](code/bash/bogo_sort.bash)
+{% sample lang="asm-x64" %}
+[import:93-113, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
+{% sample lang="lisp" %}
+[import:20-24, lang:"lisp"](code/clisp/bogo-sort.lisp)
+{% sample lang="crystal" %}
+[import:10-14, lang:"crystal"](code/crystal/bogo.cr)
 {% endmethod %}
 
 That's it.
@@ -73,6 +93,8 @@ We are done here!
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
@@ -85,6 +107,24 @@ We are done here!
 [import, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
 [import, lang:"ruby"](code/ruby/bogo.rb)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/bogo_sort.emojic)
+{% sample lang="factor" %}
+[import, lang:"factor"](code/factor/bogo_sort.factor)
+{% sample lang="f90" %}
+[import, lang:"fortran"](code/fortran/bogo.f90)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/bogo_sort.rkt)
+{% sample lang="st" %}
+[import, lang:"st"](code/smalltalk/bogosort.st)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/bogo_sort.bash)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/bogo_sort.s)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/bogo-sort.lisp)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/bogo.cr)
 {% endmethod %}
 
 
