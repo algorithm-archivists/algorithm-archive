@@ -47,7 +47,7 @@ double calculate_energy(std::vector<std::complex<double>> wfc,
     fft(energy_k, true);
 
     for (size_t i = 0; i < size; ++i) {
-        energy_k[i] *= wfc_c[i];
+        energy_k[i] *= 0.5 * wfc_c[i];
         energy_r[i] = wfc_c[i] * h_r[i] * wfc[i];
     }
 
