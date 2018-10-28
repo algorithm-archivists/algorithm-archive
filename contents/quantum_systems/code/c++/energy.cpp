@@ -5,7 +5,7 @@
 
 #include <fftw3.h>
 
-void fft(std::vector<std::complex<double>> x, bool inverse) {
+void fft(std::vector<std::complex<double>> &x, bool inverse) {
     std::vector<std::complex<double>> y(x.size(), std::complex<double>(0.0, 0.0));
 
     fftw_plan p;
