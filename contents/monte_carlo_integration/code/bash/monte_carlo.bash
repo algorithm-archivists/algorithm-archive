@@ -4,7 +4,7 @@ inCircle() {
     local mag
     ((ret = 0))
     if (($1 ** 2 + $2 ** 2 < 1073676289)); then # 1073676289 = 32767 ** 2
-	((ret = 1))
+        ((ret = 1))
     fi
     printf "%d" $ret
 }
@@ -14,9 +14,9 @@ monteCarlo() {
     local i
     ((count = 0))
     for((i = 0; i < $1; i++));do
-	if(($(inCircle RANDOM RANDOM) == 1)); then
-	    ((count++))
-	fi
+    if(($(inCircle RANDOM RANDOM) == 1)); then
+        ((count++))
+    fi
     done
     echo "scale = 8; 4 * $count / $1" | bc
 }
