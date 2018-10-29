@@ -47,7 +47,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="crystal" %}
 [import:1-11, lang:"crystal"](code/crystal/bubble.cr)
 {% sample lang="php" %}
-[import:3-15, lang:"php"](code/php/bubble_sort.php)
+[import:4-17, lang:"php"](code/php/bubble_sort.php)
 {% sample lang="lisp" %}
 [import:3-28, lang:"lisp"](code/clisp/bubble_sort.lisp)
 {% sample lang="nim" %}

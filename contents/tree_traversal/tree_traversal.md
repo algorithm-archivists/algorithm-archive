@@ -29,7 +29,7 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 {% sample lang="swift"%}
 [import:1-9, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:3-27, lang:"php"](code/php/tree_traversal.php)
+[import:4-37, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="go" %}
@@ -67,7 +67,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="swift"%}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:31-35, lang:"php"](code/php/tree_traversal.php)
+[import:41-49, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="go" %}
@@ -113,7 +113,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="swift"%}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:37-41, lang:"php"](code/php/tree_traversal.php)
+[import:51-57, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="go" %}
@@ -154,7 +154,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="swift"%}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:43-62, lang:"php"](code/php/tree_traversal.php)
+[import:59-78, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="go" %}
@@ -205,7 +205,7 @@ In code, it looks like this:
 {% sample lang="swift"%}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:64-73, lang:"php"](code/php/tree_traversal.php)
+[import:80-91, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="go" %}
@@ -248,7 +248,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="swift"%}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php"%}
-[import:65-74, lang:"php"](code/php/tree_traversal.php)
+[import:93-104, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="go" %}
