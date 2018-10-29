@@ -1,7 +1,6 @@
 # Gaussian Elimination
 
-So, how exactly do we go about solving a system of linear equations? Well, one way is _Gaussian Elimination_, which you may have encountered before in a math class or two. The basic idea is that we take a system of equations,
-
+Let's say we have a a system of equations,
 
 $$
 \begin{align}
@@ -11,9 +10,11 @@ x + 2y + 3z &= 4 \\
 \end{align}
 $$
 
+and we want to solve for $$x$$, $$y$$, and $$z$$.
+Well, one way to do this is with _Gaussian Elimination_, which you may have encountered before in a math class or two.
 
-and turn it into a matrix by using the coefficients in front of each variable
-
+The first step is to transform the system of equations into a matrix by using the coefficients in front of each variable, where each row corresponds to another equation and each column corresponds to an independent variable like $$x$$, $$y$$, or $$z$$.
+For the previous system of equations, this might look like this:
 
 $$
 \left[
@@ -40,9 +41,7 @@ z
 \right]
 $$
 
-
 Or more simply:
-
 
 $$
 \left[
@@ -54,9 +53,8 @@ $$
 \right]
 $$
 
-
-Now, at first, this doesn't seem to help anything, so let's think of this in another way. Wouldn't it be great if the system of equations looked like this:
-
+At first, rearranging the data into a matrix like this doesn't seem to help with anything, so let's think of this in another way.
+Wouldn't it be great if the system of equations looked like this:
 
 $$
 \begin{align}
@@ -66,8 +64,8 @@ y + 2z &= 2 \\
 \end{align}
 $$
 
-
-Then we could just solve for $$z$$ and plug that value in to the top two equations to solve for $$x$$ and $$y$$! In matrix form, it would look like this
+Then we could just solve for $$z$$ and plug that value in to the top two equations to solve for $$x$$ and $$y$$ through a process known as back-substitution.
+In matrix form, it would look like this
 
 
 $$
@@ -81,12 +79,12 @@ $$
 $$
 
 This matrix form has a particular name: _Row Echelon Form_.
-Basically, any matrix can be considered in row echelon form if
+Basically, any matrix can be considered in row echelon form if:
 
 1. All non-zero rows are above rows of all zeros
 2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-All the following examples are in the row echelon form:
+All following examples are in the row echelon form:
 
 $$
 \left[
@@ -122,15 +120,16 @@ $$
 \right]
 $$
 
-The first two are probably the ones we are interested in, at the very least they have the right dimensions to solve a system of equations.
-The last two systems are either under- or over-constrained; however, if you translate the last row of second matrix into a system, you get $$0=1$$, which is a contradiction.
-This is due to the fact that the matrix is singular, and there are no solutions to this particular system. Nevertheless, all of these matrices are in row echelon form.
+The first two of these have the right dimensions to find a solution to a system of equations.
+The last two matrices are respectively under- and over-constrained, meaning they cannot be solved via this method; however, this doesn't mean that every matrix in the correct form can be solved.
+For example, if you translate the second matrix into a system of equations again, the last row translates into $$0x+0y+0z=1$$, which is a contradiction.
+This is due to the fact that the matrix is singular, and there are no solutions to this particular system.
+Nevertheless, all of these matrices are in row echelon form.
 
-Now, it seems obvious to point out that if we ignore the last column, row echelon form is an upper triangular matrix.
+It seems obvious to point out that if we ignore the last column, row echelon form is an upper triangular matrix for systems that are neither under- nor over-determined.
 This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
 
-Now, row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this
-
+Now, row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this:
 
 $$
 \begin{align}
@@ -140,9 +139,7 @@ z &= \frac{18}{11}
 \end{align}
 $$
 
-
-Then we would know exactly what $$x$$, $$y$$, and $$z$$ are without any fuss! In matrix form, it looks like
-
+Then we would know exactly what $$x$$, $$y$$, and $$z$$ are without any fuss! In matrix form, it looks like this:
 
 $$
 \left[
@@ -154,7 +151,6 @@ $$
 \right]
 $$
 
-And that's where we really want to get to for obvious reasons.
 This introduces yet another matrix configuration: * **Reduced** Row Echelon Form*.
 A matrix is in reduced row echelon form if it satisfies the following conditions:
 
@@ -189,10 +185,10 @@ $$
 \right]
 $$
 
-Again, only the first one (the identity matrix looking guy) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system?
+Again, only the first of these (the one that looks like an identity matrix) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system of equations?
 
-Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as the rank.
-The rank of a matrix is the maximal number of linearly independent columns, in reduced row echelon form, the rank is simply the number of pivots.
+Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as its rank.
+The rank of a matrix is the maximum number of linearly independent columns, in reduced row echelon form, the rank is simply the number of pivots.
 
 For now, I hope the motivation is clear: we want to convert a matrix into row echelon and then reduced row echelon form to make large systems of equations trivial to solve, so we need some method to do that.
 In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a row echelon matrix into reduced row echelon is called *Gauss-Jordan Elimination*.
@@ -205,17 +201,16 @@ For this reason, we will be using the following definitions in this chapter:
 * **Gauss-Jordan Elimination:** The process of transforming a row echelon matrix into *reduced* row echelon form
 * **Back-substitution:** The process of directly solving a row echelon matrix, *without transforming into reduced row echelon form*
 
-## The Method
+## The Analytical Method
 
-Here I should point out that Gaussian elimination makes sense from a purely analytical point of view.
-For small systems of equations, it's relatively straightforward to do this method by hand; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution.
+Gaussian elimination is inherently analytical and can be done by hand for small systems of equations; however, for large systems, this \(of course\) become tedious and we will need to find an appropriate numerical solution.
 For this reason, I have split this section into two parts. One will cover the analytical framework, and the other will cover an algorithm you can write in your favorite programming language.
 
 In the end, reducing large systems of equations boils down to a game you play on a seemingly random matrix with 3 possible moves. You can:
 
-1. swap any two rows
-2. multiply any row by a non-zero scale value
-3. add any row to a multiple of any other row
+1. Swap any two rows.
+2. Multiply any row by a non-zero scale value.
+3. Add any row to a multiple of any other row.
 
 That's it.
 Before continuing, I suggest you try to recreate the row echelon matrix we made above.
@@ -240,8 +235,8 @@ $$
 $$
 
 There are plenty of different strategies you could use to do this, and no one strategy is better than the rest.
-Personally, I usually try to multiply each row in the matrix by different values and add rows together until the first column is all the same value, and then I subtract the first row from all subsequent rows.
-I then do the same thing for the following columns.
+One method is to subtract a multiple of the top row from subsequent rows below it such that all values beneath the pivot value are zero. 
+This process might be easier if you swap some rows around first and can be performed for each pivot.
 
 After you get an upper triangular matrix, the next step is diagonalizing to create the reduced row echelon form. In other words, we do the following:
 
@@ -266,13 +261,14 @@ $$
 Here, the idea is similar to above.
 The strategy is the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
 
-## The Algorithm
+## The Computational Method
 
-Now, the analytical method may seem straightforward, but the algorithm does not obviously follow from the game we were playing before, so we'll go through it step-by-step.
+The analytical method for Gaussian Elimination may seem straightforward, but the computational method does not obviously follow from the "game" we were playing before, so we'll go through it step-by-step.
 
-In general, do the following process:
+In general, we do the following process for each row `row`:
 
-1. For each column `col`, find the highest value
+#### Step 1
+For each column `col`, find the highest value
 $$
 \left[
 \begin{array}{ccc|c}
@@ -285,7 +281,13 @@ $$
 If that value is $$0$$, the matrix is singular and the system has no solutions.
 Feel free to exit here, but if we want to be as general as possible the algorithm can continue even in that case.
 
-2. Swap the row with the highest valued element with the current row.
+{% method %}
+{% sample lang="jl" %}
+[import:12-19, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
+
+#### Step 2
+Swap the row with the highest valued element with the current row `row`.
 $$
 \left[
 \begin{array}{ccc|c}
@@ -303,7 +305,14 @@ $$
 \end{array}
 \right]
 $$
-3. For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
+
+{% method %}
+{% sample lang="jl" %}
+[import:21-24, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
+
+#### Step 3
+For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
 $$
 \rightarrow
 \left[
@@ -318,7 +327,14 @@ $$
       &= \frac{1}{3}
 \end{align}
 $$
-4. Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
+
+{% method %}
+{% sample lang="jl" %}
+[import:26-30, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
+
+#### Step 4
+Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
 $$
 A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
 \left[
@@ -337,19 +353,31 @@ A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\te
 \end{array}
 \right]
 $$
+
+{% method %}
+{% sample lang="jl" %}
+[import:32-38, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
+
+#### Step 5
 5. Set the value of that row's pivot column to 0.
 $$
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
 0 & 2 & 3 & 4 \\
-2 & 3  & 4 & 6
+2 & 3 & 4 & 6
 \end{array}
 \right]
-
 $$
 
-In code, this looks like:
+{% method %}
+{% sample lang="jl" %}
+[import:40-41, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% endmethod %}
+
+#### All together
+When we put everything together, it looks like this:
 
 {% method %}
 {% sample lang="jl" %}
