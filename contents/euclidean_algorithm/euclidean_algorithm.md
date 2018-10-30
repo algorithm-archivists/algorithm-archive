@@ -63,6 +63,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import:24-38, lang="bash"](code/bash/euclid.bash)
+{% sample lang="bf" %}
+[import, lang="brainfuck"](code/brainfuck/euclidean_sub.bf)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -132,6 +134,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import:10-22, lang="bash"](code/bash/euclid.bash)
+{% sample lang="bf" %}
+[import, lang="brainfuck"](code/brainfuck/euclidean_mod.bf)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -209,6 +213,114 @@ and modulo method:
 [import, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import, lang="bash"](code/bash/euclid.bash)
+{% sample lang="bf" %}
+#### Subtraction varient
+##### Code
+[import, lang="brainfuck"](code/brainfuck/euclidean_sub.bf)
+##### Explanation
+Basic plan: get |a-b|, check if 0
+
+So the program does something like
+```
+a (b) 0 0 1 0 0
+a b a b (0) 0 0
+if(a>b) a b a-b 0 (a-b) 0 0 
+else a b 0 a-b (a-b) 0 0
+if(a-b==0)print and break
+else 
+if(a>b) a-b b 0 0 (a-b) 0 0 
+else a a-b 0 0 (a-b) 0 0
+```
+
+More detail:
+
+`scan a,b`: `>,>,`
+State: `a (b) 0 0 0 0 0`
+```
+>>>+
+[
+[-]<<<
+<[->>>+<<<]>[->>>+<<<]>>
+```
+State: `0 0 0 (a) b 0 0`
+```
+[-<+<<+>>>]
+>[-<+<<+>>>]
+```
+State: `a b a b (0) 0 0`
+```
+<<
+[->- subtracts a from b, assuming a>b
+>[-]+
+<[
+>-]>
+[->>]<<< if a is 0, stop
+]
+```
+So basically the state will either be 
+a_b (0) 0 0
+or
+(0) a_b 0 0
+but it's hard to do when states may be different, so  `>[>]` moves the pointer to cell 4
+```
+<[<<[-]>>[-<<+>>>+<]]
+<[<<[-]>>[-<<+>>>>+<<]]
+```
+basically cell 4 will contain the difference
+```
+>>>[-]+
+>[-]<<
+[>-]>
+[<<<<.>>> testing if difference is 0, if so return
+>->>]<<
+]
+```
+
+#### Modulo varient
+##### Code
+[import, lang="brainfuck"](code/brainfuck/euclidean_mod.bf)
+##### Explanation
+`scan a,b`: `>,>,`
+
+State: `0 a >b 0 0 0`
+
+`while(b!=0)`: `[`
+
+`a,b,0=0,b-a%b,a%b`:
+```
+<[
+   >->+<[>]
+   >[<+>-]<
+   <[<]>-
+]
+```
+
+so basically this is the modulo algorithm in brainfuck, it slowly shifts cell 2 to cell 3, while subtracting 1 from cell 1
+then when cell 2 goes to 0, it shifts cell 3 to 2 and continues, this is like just constantly subtracting cell 2 from cell 1, until you cant subtract anymore then return at cell 3
+
+State: `0 >0 b-a%b a%b 0 0`
+
+shifting: `>[-<+>]`
+
+State: `0 b-a%b >0 a%b 0 0`
+
+Currently we have a,b,0=b-a%b,0,a%b, and we need a,b,0=b,a%b,0, so we just add the third cell to the first and second cell
+
+adding thing: `>[-<+<+>>]<`
+
+State: `0 b >(a%b) 0 0 0`
+
+So now we have a,b=b,a%b, we continue the loop
+
+`]`
+
+After the second cell is 0, the loop terminates and we obtain the GCD
+
+State: `0 >GCD(a b) 0 0 0 0`
+
+Now we print the GCD
+
+print: `<.`
 {% endmethod %}
 
 <script>
