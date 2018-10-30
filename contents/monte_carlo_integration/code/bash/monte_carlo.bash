@@ -13,10 +13,10 @@ monteCarlo() {
     local count
     local i
     ((count = 0))
-    for((i = 0; i < $1; i++));do
-    if(($(inCircle RANDOM RANDOM) == 1)); then
-        ((count++))
-    fi
+    for ((i = 0; i < $1; i++)); do
+        if (($(inCircle RANDOM RANDOM) == 1)); then
+            ((count++))
+        fi
     done
     echo "scale = 8; 4 * $count / $1" | bc
 }
@@ -24,3 +24,4 @@ monteCarlo() {
 est=$(monteCarlo 10000)
 echo "The estimate of pi is $est"
 echo "Percentage error: $(echo "scale = 8; 100 * sqrt( ( 1 - $est / (4*a(1)) ) ^ 2 )" | bc -l)"
+Fi
