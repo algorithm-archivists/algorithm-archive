@@ -125,6 +125,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"lua"](code/lua/thomas.lua)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/thomas.cr)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/thomas.kt)
 {% endmethod %}
 
 <script>
