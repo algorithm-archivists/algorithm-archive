@@ -24,4 +24,3 @@ monteCarlo() {
 est=$(monteCarlo 10000)
 echo "The estimate of pi is $est"
 echo "Percentage error: $(echo "scale = 8; 100 * sqrt( ( 1 - $est / (4*a(1)) ) ^ 2 )" | bc -l)"
-Fi
