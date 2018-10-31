@@ -79,21 +79,20 @@ public:
     vector_complex wfc;
 };
 
-void fft(vector_complex &x, int n, bool inverse) {
-    complex y[n];
-    memset(y, 0, sizeof(y));
+void fft(vector_complex &x, bool inverse) {
+    std::vector<std::complex<double>> y(x.size(), std::complex<double>(0.0, 0.0));
     fftw_plan p;
 
     fftw_complex *in = reinterpret_cast<fftw_complex*>(x.data());
-    fftw_complex *out = reinterpret_cast<fftw_complex*>(y);
-    p = fftw_plan_dft_1d(n, in, out,
+    fftw_complex *out = reinterpret_cast<fftw_complex*>(y.data());
+    p = fftw_plan_dft_1d(x.size(), in, out,
                          (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
 
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    for (size_t i = 0; i < n; ++i) {
-        x[i] = y[i] / sqrt(static_cast<double>(n));
+    for (size_t i = 0; i < x.size(); ++i) {
+        x[i] = y[i] / sqrt(static_cast<double>(x.size()));
     }
 }
 
@@ -105,13 +104,13 @@ void split_op(Params &par, Operators &opr) {
             opr.wfc[j] *= opr.pe[j];
         }
 
-        fft(opr.wfc, opr.size, false);
+        fft(opr.wfc, false);
 
         for (size_t j = 0; j < opr.size; ++j) {
             opr.wfc[j] *= opr.ke[j];
         }
 
-        fft(opr.wfc, opr.size, true);
+        fft(opr.wfc, true);
 
         for (size_t j = 0; j < opr.size; ++j) {
             opr.wfc[j] *= opr.pe[j];
@@ -160,7 +159,7 @@ double calculate_energy(Params &par, Operators &opr) {
     vector_complex wfc_r(opr.wfc);
     vector_complex wfc_k(opr.wfc);
     vector_complex wfc_c(opr.size);
-    fft(wfc_k, opr.size, false);
+    fft(wfc_k, false);
 
     for (size_t i = 0; i < opr.size; ++i) {
         wfc_c[i] = conj(wfc_r[i]);
@@ -173,7 +172,7 @@ double calculate_energy(Params &par, Operators &opr) {
         energy_k[i] = wfc_k[i] * pow(complex(par.k[i], 0.0), 2);
     }
 
-    fft(energy_k, opr.size, true);
+    fft(energy_k, true);
 
     for (size_t i = 0; i < opr.size; ++i) {
         energy_k[i] *= 0.5 * wfc_c[i];
