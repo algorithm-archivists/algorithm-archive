@@ -268,7 +268,7 @@ The analytical method for Gaussian Elimination may seem straightforward, but the
 In general, we do the following process for each row `row`:
 
 #### Step 1
-For each column `col`, find the highest value
+For each column `col`, find the highest value.
 $$
 \left[
 \begin{array}{ccc|c}
@@ -278,8 +278,11 @@ $$
 \end{array}
 \right]
 $$
-If that value is $$0$$, the matrix is singular and the system has no solutions.
-Feel free to exit here, but if we want to be as general as possible the algorithm can continue even in that case.
+
+In this case, the highest value is $$3$$, but if that value is $$0$$ instead, the matrix is singular and the system has no single solution.
+This makes sense because if the highest value in a column is 0, the entire column must be 0, thus there can be no unique solution when we read the matrix as a set of equations.
+That said, Gaussian elimination is more general and allows us to continue, even if the matrix is not necessarily solvable as a set of equations.
+Feel free to exit here if your matrix is singular and your end-goal is to solve a system of equations.
 
 {% method %}
 {% sample lang="jl" %}
@@ -311,8 +314,12 @@ $$
 [import:21-24, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% endmethod %}
 
+The *pivot* is now considered to be the first element in the highest swapped row.
+In this case, the new pivot is now $$3$$.
+
 #### Step 3
-For all remaining rows, find a fraction that corresponds to the ratio of the lower value in that column to the central pivot \(the one you swapped to the top\)
+For all remaining rows, find a fraction that corresponds to the ratio of the value in that column to the pivot.
+For example, in this matrix, the next row is $$1$$ and the pivot value is $$3$$.
 $$
 \rightarrow
 \left[
@@ -334,7 +341,8 @@ $$
 {% endmethod %}
 
 #### Step 4
-Set all values in the corresponding rows to be the value they were before $$-$$ the top row $$\times$$ the fraction. This is essentially performing move 3 from above, except with an optimal multiplicative factor.
+Subtract the top row multiplied by the fraction found in Step 3 from each corresponding row element.
+This is essentially performing move 3 from the above game, except with an optimal multiplicative factor.
 $$
 A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
 \left[
@@ -396,14 +404,14 @@ When we put everything together, it looks like this:
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
 
-Now, to be clear: this algorithm creates an upper-triangular matrix.
-In other words, it only creates a matrix in *row echelon form*, not * **reduced** row echelon form*.
-If the matrix is found to be singular during this process, the system of equations is either over or under-determined and no general solution exists.
+Now, to be clear: this algorithm creates an upper-triangular, row echelon matrix if the initial set of equations can be solved; however, Gaussian elimination can be used for cases that are not related to solving systems of equations.
+If the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
 For this reason, many implementations of this method will stop the moment the matrix is found to be singular.
 In this implementation, we allowed for the more general case and opted to simply output when the matrix is singular instead.
-If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no general solution, so some small modification might be necessary!
+If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no unique solution, so some small modification might be necessary!
 
-So what do we do from here? Well, we continue further reducing the matrix; however, there are two ways to do this:
+So what do we do from here?
+Well, we continue reducing the matrix; however, there are two ways to do this:
 
 1. Reduce the matrix further into *reduced* row echelon form with Gauss-Jordan elimination
 2. Solve the system directly with *back-substitution* if the matrix is allows for such solutions
@@ -412,8 +420,8 @@ Let's start with Gauss-Jordan Elimination and then back-substitution
 
 ## Gauss-Jordan Elimination
 
-Gauss-Jordan Elimination is precisely what we said above.
-We basically need to find the pivot of every row and set that value to 1.
+Gauss-Jordan Elimination is precisely what we said above; however, in this case, we often work from the bottom-up instead of the top-down.
+We basically need to find the pivot of every row and set that value to 1 by dividing the entire row by the pivot value.
 Afterwards, we subtract upwards until all values above the pivot are 0 before moving on to the next column.
 Here it is in code:
 
@@ -473,12 +481,17 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 
 ## Conclusions
 
-And with that, we have two possible ways to reduce our system of equations.
+And with that, we have two possible ways to reduce our system of equations and finding a solution.
 If we are sure our matrix is not singular and that a solution exists, it's fastest to use back-substitution to find our solution.
 If no solution exists or we are trying to find a reduced row echelon matrix, then Gauss-Jordan elimination is best.
 As we said at the start, the notation for Gaussian Elimination is rather ambiguous in the literature, so we are hoping that the definitions provided here are clear and consistent enough to cover all the bases.
 
-As for what's next... Well, we are in for a treat! The above algorithm clearly has 3 `for` loops, and will thus have a complexity of $$\sim O(n^3)$$, which is abysmal! If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$! How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
+As for what's next... Well, we are in for a treat!
+The above algorithm clearly has 3 `for` loops, and has a complexity of $$\sim O(n^3)$$, which is abysmal!
+If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$!
+How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
+
+There are also plenty of other solvers that do similar things that we will get to in due time.
 
 ## Example Code
 
