@@ -65,7 +65,7 @@ y + 2z &= 2 \\
 $$
 
 Then we could just solve for $$z$$ and plug that value in to the top two equations to solve for $$x$$ and $$y$$ through a process known as back-substitution.
-In matrix form, it would look like this
+In matrix form, this set of equations would look like this:
 
 
 $$
@@ -79,12 +79,10 @@ $$
 $$
 
 This matrix form has a particular name: _Row Echelon Form_.
-Basically, any matrix can be considered in row echelon form if:
+Basically, any matrix can be considered in row echelon form if the leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-1. All non-zero rows are above rows of all zeros
-2. The leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
-
-All following examples are in the row echelon form:
+This creates a matrix that sometiems resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
+For example, all of the following matrices are in row echelon form:
 
 $$
 \left[
@@ -113,23 +111,20 @@ $$
 \;,\;
 \left[
 \begin{array}{cc}
-0 & 0 \\
-0 & 2 \\
-0 & 0
+1 &  2 \\
+2 &  0 \\
+0 &  0
 \end{array}
 \right]
 $$
 
-The first two of these have the right dimensions to find a solution to a system of equations.
-The last two matrices are respectively under- and over-constrained, meaning they cannot be solved via this method; however, this doesn't mean that every matrix in the correct form can be solved.
+The first two of these have the right dimensions to find a solution to a system of equations; however, the last two matrices are respectively under- and over-constrained, meaning they do not provide an appropriate solution to a system of equations.
+That said, this doesn't mean that every matrix in the correct form can be solved either.
 For example, if you translate the second matrix into a system of equations again, the last row translates into $$0x+0y+0z=1$$, which is a contradiction.
 This is due to the fact that the matrix is singular, and there are no solutions to this particular system.
 Nevertheless, all of these matrices are in row echelon form.
 
-It seems obvious to point out that if we ignore the last column, row echelon form is an upper triangular matrix for systems that are neither under- nor over-determined.
-This might not be important now, but it will play an important role in future discussions, so keep it buzzing in the back of your brain.
-
-Now, row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this:
+Row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this:
 
 $$
 \begin{align}
@@ -187,11 +182,11 @@ $$
 
 Again, only the first of these (the one that looks like an identity matrix) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system of equations?
 
-Beyond solving a system, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as its rank.
+Beyond solving a system of equations, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as its rank.
 The rank of a matrix is the maximum number of linearly independent columns, in reduced row echelon form, the rank is simply the number of pivots.
 
 For now, I hope the motivation is clear: we want to convert a matrix into row echelon and then reduced row echelon form to make large systems of equations trivial to solve, so we need some method to do that.
-In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a row echelon matrix into reduced row echelon is called *Gauss-Jordan Elimination*.
+In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a row echelon matrix into reduced row echelon form is called *Gauss-Jordan Elimination*.
 That said, the notation here is sometimes inconsistent.
 Several authors use the term *Gaussian Elimination* to include Gauss-Jordan elimination as well.
 In addition, the process of Gauss-Jordan elimination is sometimes called *Back-substitution*, which is also confusing because the term can also be used to mean solving a system of equations from row echelon form, without simplifying to reduced row echelon form.
@@ -238,7 +233,7 @@ There are plenty of different strategies you could use to do this, and no one st
 One method is to subtract a multiple of the top row from subsequent rows below it such that all values beneath the pivot value are zero. 
 This process might be easier if you swap some rows around first and can be performed for each pivot.
 
-After you get an upper triangular matrix, the next step is diagonalizing to create the reduced row echelon form. In other words, we do the following:
+After you get a row echelon matrix, the next step is to find the reduced row echelon form. In other words, we do the following:
 
 $$
 \left[
@@ -265,8 +260,6 @@ The strategy is the same as before, but starts from the right-most column and su
 
 The analytical method for Gaussian Elimination may seem straightforward, but the computational method does not obviously follow from the "game" we were playing before, so we'll go through it step-by-step.
 
-In general, we do the following process for each row `row`:
-
 #### Step 1
 For each column `col`, find the highest value.
 $$
@@ -287,10 +280,14 @@ Feel free to exit here if your matrix is singular and your end-goal is to solve 
 {% method %}
 {% sample lang="jl" %}
 [import:12-19, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="java" %}
+[import:14-24, lang:"java"](code/java/GaussianElimination.java)
+{% sample lang="c" %}
+[import:16-30, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 #### Step 2
-Swap the row with the highest valued element with the current row `row`.
+Swap the row with the highest valued element with the current row row index, which should be the same as the column number `col`.
 $$
 \left[
 \begin{array}{ccc|c}
@@ -312,13 +309,18 @@ $$
 {% method %}
 {% sample lang="jl" %}
 [import:21-24, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="java" %}
+[import:26-30, lang:"java"](code/java/GaussianElimination.java)
+{% sample lang="c" %}
+[import:5-13, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:32-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 The *pivot* is now considered to be the first element in the highest swapped row.
 In this case, the new pivot is now $$3$$.
 
 #### Step 3
-For all remaining rows, find a fraction that corresponds to the ratio of the value in that column to the pivot.
+For all rows beneath the current row, find a fraction that corresponds to the ratio of the value in that column to the pivot.
 For example, in this matrix, the next row is $$1$$ and the pivot value is $$3$$.
 $$
 \rightarrow
@@ -338,11 +340,16 @@ $$
 {% method %}
 {% sample lang="jl" %}
 [import:26-30, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="java" %}
+[import:32-34, lang:"java"](code/java/GaussianElimination.java)
+{% sample lang="c" %}
+[import:36-37, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 #### Step 4
-Subtract the top row multiplied by the fraction found in Step 3 from each corresponding row element.
-This is essentially performing move 3 from the above game, except with an optimal multiplicative factor.
+Subtract the current row multiplied by the fraction found in Step 3 from each corresponding row element.
+This essentially subtracts an optimal multiple of the current row from each row underneath (similar to Step 3 from the above game).
+Ideally, this should always create a 0 under the current row's pivot value.
 $$
 A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
 \left[
@@ -365,23 +372,21 @@ $$
 {% method %}
 {% sample lang="jl" %}
 [import:32-38, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="java" %}
+[import:35-40, lang:"java"](code/java/GaussianElimination.java)
+{% sample lang="c" %}
+[import:39-41, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 #### Step 5
-5. Set the value of that row's pivot column to 0.
-$$
-\left[
-\begin{array}{ccc|c}
-3 & -4 & 0 & 10 \\
-0 & 2 & 3 & 4 \\
-2 & 3 & 4 & 6
-\end{array}
-\right]
-$$
-
+To be safe, set the value of each element under the current row's pivot to be 0.
 {% method %}
 {% sample lang="jl" %}
 [import:40-41, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="java" %}
+[import:42-43, lang:"java"](code/java/GaussianElimination.java)
+{% sample lang="c" %}
+[import:43-43, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% endmethod %}
 
 #### All together
@@ -404,17 +409,16 @@ When we put everything together, it looks like this:
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
 
-Now, to be clear: this algorithm creates an upper-triangular, row echelon matrix if the initial set of equations can be solved; however, Gaussian elimination can be used for cases that are not related to solving systems of equations.
-If the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
-For this reason, many implementations of this method will stop the moment the matrix is found to be singular.
+To be clear: if the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
+For this reason, many implementations of this method will stop the moment the matrix is found to have no unique solutions.
 In this implementation, we allowed for the more general case and opted to simply output when the matrix is singular instead.
-If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no unique solution, so some small modification might be necessary!
+If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no unique solution, so some small modificationof this code might be necessary!
 
 So what do we do from here?
 Well, we continue reducing the matrix; however, there are two ways to do this:
 
 1. Reduce the matrix further into *reduced* row echelon form with Gauss-Jordan elimination
-2. Solve the system directly with *back-substitution* if the matrix is allows for such solutions
+2. Solve the system directly with *back-substitution* if the matrix allows for such solutions
 
 Let's start with Gauss-Jordan Elimination and then back-substitution
 
@@ -422,7 +426,7 @@ Let's start with Gauss-Jordan Elimination and then back-substitution
 
 Gauss-Jordan Elimination is precisely what we said above; however, in this case, we often work from the bottom-up instead of the top-down.
 We basically need to find the pivot of every row and set that value to 1 by dividing the entire row by the pivot value.
-Afterwards, we subtract upwards until all values above the pivot are 0 before moving on to the next column.
+Afterwards, we subtract upwards until all values above the pivot are 0 before moving on to the next column from right to left (instead of left to right, like before).
 Here it is in code:
 
 {% method %}
@@ -460,7 +464,8 @@ $$
 
 We can quickly solve $$11z = 18$$ for $$z$$, and then use that to solve $$y + 2z = 2$$ for $$y$$ by plugging in for $$z$$.
 After that, we simply need to solve $$2x + 3y + 4z = 6$$ for $$x$$ in a similar fashion.
-In code, this involves keeping a rolling sum of all the values we substitute in like so:
+In code, this involves keeping a rolling sum of all the values we substitute, subtracting that sum from the solution column and then dividing by the coefficient variable.
+In code, it looks like this:
 
 {% method %}
 {% sample lang="jl" %}
@@ -481,15 +486,15 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 
 ## Conclusions
 
-And with that, we have two possible ways to reduce our system of equations and finding a solution.
+And with that, we have two possible ways to reduce our system of equations and find a solution.
 If we are sure our matrix is not singular and that a solution exists, it's fastest to use back-substitution to find our solution.
 If no solution exists or we are trying to find a reduced row echelon matrix, then Gauss-Jordan elimination is best.
 As we said at the start, the notation for Gaussian Elimination is rather ambiguous in the literature, so we are hoping that the definitions provided here are clear and consistent enough to cover all the bases.
 
 As for what's next... Well, we are in for a treat!
-The above algorithm clearly has 3 `for` loops, and has a complexity of $$\sim O(n^3)$$, which is abysmal!
+The above algorithm clearly has 3 `for` loops and has a complexity of $$\sim O(n^3)$$, which is abysmal!
 If we can reduce the matrix to a specifically **tridiagonal** matrix, we can actually solve the system in $$\sim O(n)$$!
-How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the _Thomas Algorithm_.
+How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the [_Thomas Algorithm_](../thomas_algorithm/thomas_algorithm.md).
 
 There are also plenty of other solvers that do similar things that we will get to in due time.
 
