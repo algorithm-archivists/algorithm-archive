@@ -67,6 +67,8 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"csharp"](code/csharp/HuffmanCoding.cs)
 ##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/huffman.lua)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
