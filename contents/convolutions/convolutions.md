@@ -46,6 +46,8 @@ In code, this looks something like:
 [import:68-88, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% sample lang="python"%}
 [import:4-19, lang:"python"](code/python/conv.py)
+{% sample lang="asm-x64"%}
+[import:117-186, lang:"asm-x64"](code/asm-x64/convolutions.s)
 {% endmethod %}
 
 Note that in this case, the output array will be the size of `f[n]` and `g[n]` put together.
@@ -96,6 +98,8 @@ Where the `.*` operator is an element-wise multiplication.
 [import:90-105, lang:"c_cpp"](code/c++/convolutions.cpp)
 {% sample lang="python"%}
 [import:22-43, lang:"python"](code/python/conv.py)
+{% sample lang="asm-x64"%}
+[import:188-229, lang:"asm-x64"](code/asm-x64/convolutions.s)
 {% endmethod %}
 
 This method also has the added advantage that it will *always output an array of the size of your signal*; however, if your signals are not of equal size, we need to pad the smaller signal with zeros.
