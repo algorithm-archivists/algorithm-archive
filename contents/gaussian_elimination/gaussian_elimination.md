@@ -258,10 +258,18 @@ The strategy is the same as before, but starts from the right-most column and su
 
 ## The Computational Method
 
-The analytical method for Gaussian Elimination may seem straightforward, but the computational method does not obviously follow from the "game" we were playing before, so we'll go through it step-by-step.
+The analytical method for Gaussian Elimination may seem straightforward, but the computational method does not obviously follow from the "game" we were playing before.
+Ultimately, the computational method boils down to two separate steps and has a complexity of $$\mathcal{O}(n^3)$$.
+
+As a note, this process iterates through all the rows in the provided matrix.
+When we say "current row" (`curr_row`), we mean the specific row iteration number we are on at that time, and as before, the "pivot" corresponds to the first non-zero element in that row.
 
 #### Step 1
-For each column `col`, find the highest value.
+For each element in the pivot column under the current row, find the highest value and switch the row with the highest value with the current row.
+The *pivot* is then considered to be the first element in the highest swapped row.
+
+For example, in this case the highest value is $$3$$:
+
 $$
 \left[
 \begin{array}{ccc|c}
@@ -272,22 +280,8 @@ $$
 \right]
 $$
 
-In this case, the highest value is $$3$$, but if that value is $$0$$ instead, the matrix is singular and the system has no single solution.
-This makes sense because if the highest value in a column is 0, the entire column must be 0, thus there can be no unique solution when we read the matrix as a set of equations.
-That said, Gaussian elimination is more general and allows us to continue, even if the matrix is not necessarily solvable as a set of equations.
-Feel free to exit here if your matrix is singular and your end-goal is to solve a system of equations.
+After finding this value, we simply switch the row with the $$3$$ to the current row:
 
-{% method %}
-{% sample lang="jl" %}
-[import:12-19, lang:"julia"](code/julia/gaussian_elimination.jl)
-{% sample lang="java" %}
-[import:14-24, lang:"java"](code/java/GaussianElimination.java)
-{% sample lang="c" %}
-[import:16-30, lang:"c_cpp"](code/c/gaussian_elimination.c)
-{% endmethod %}
-
-#### Step 2
-Swap the row with the highest valued element with the current row row index, which should be the same as the column number `col`.
 $$
 \left[
 \begin{array}{ccc|c}
@@ -306,22 +300,33 @@ $$
 \right]
 $$
 
-{% method %}
-{% sample lang="jl" %}
-[import:21-24, lang:"julia"](code/julia/gaussian_elimination.jl)
-{% sample lang="java" %}
-[import:26-30, lang:"java"](code/java/GaussianElimination.java)
-{% sample lang="c" %}
-[import:5-13, lang:"c_cpp"](code/c/gaussian_elimination.c)
-[import:32-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
-{% endmethod %}
-
-The *pivot* is now considered to be the first element in the highest swapped row.
 In this case, the new pivot is now $$3$$.
 
-#### Step 3
-For all rows beneath the current row, find a fraction that corresponds to the ratio of the value in that column to the pivot.
-For example, in this matrix, the next row is $$1$$ and the pivot value is $$3$$.
+As a note, if the highest value is $$0$$, the matrix is singular and the system has no single solution.
+This makes sense because if the highest value in a column is 0, the entire column must be 0, thus there can be no unique solution when we read the matrix as a set of equations.
+That said, Gaussian elimination is more general and allows us to continue, even if the matrix is not necessarily solvable as a set of equations.
+Feel free to exit after finding a $$0$$ if your end-goal is to solve a system of equations.
+
+{% method %}
+{% sample lang="jl" %}
+[import:12-24, lang:"julia"](code/julia/gaussian_elimination.jl)
+{% sample lang="java" %}
+[import:14-30, lang:"java"](code/java/GaussianElimination.java)
+{% sample lang="c" %}
+[import:5-13, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:16-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="hs" %}
+[import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
+[import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% endmethod %}
+
+#### Step 2
+For the row beneath the current pivot row and within the pivot column, find a fraction that corresponds to the ratio of the value in that column to the pivot, itself.
+After this, subtract the current pivot row multiplied by that fraction found in from each corresponding row element.
+This process essentially subtracts an optimal multiple of the current row from each row underneath (similar to Step 3 from the above game).
+Ideally, this should always create a 0 under the current row's pivot value.
+
+For example, in this matrix, the next row is $$1$$ and the pivot value is $$3$$, so the fraction is $$\frac{1}{3}$$.
 $$
 \rightarrow
 \left[
@@ -337,19 +342,8 @@ $$
 \end{align}
 $$
 
-{% method %}
-{% sample lang="jl" %}
-[import:26-30, lang:"julia"](code/julia/gaussian_elimination.jl)
-{% sample lang="java" %}
-[import:32-34, lang:"java"](code/java/GaussianElimination.java)
-{% sample lang="c" %}
-[import:36-37, lang:"c_cpp"](code/c/gaussian_elimination.c)
-{% endmethod %}
+After finding the fraction, we simply subtract $$\text{row} - \frac{1}{3}\times \text{curr_row}$$, like so:
 
-#### Step 4
-Subtract the current row multiplied by the fraction found in Step 3 from each corresponding row element.
-This essentially subtracts an optimal multiple of the current row from each row underneath (similar to Step 3 from the above game).
-Ideally, this should always create a 0 under the current row's pivot value.
 $$
 A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
 \left[
@@ -363,30 +357,25 @@ A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\te
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
-\mathbf{\frac{1}{3}} & \mathbf{\frac{2}{3}} & \mathbf{1} & \mathbf{\frac{4}{3}} \\
+\mathbf{\frac{1}{3}} & \mathbf{\frac{2}{3}} & \mathbf{1} & \mathbf{\frac{4}{3}} 
+\\
 2 & 3  & 4 & 6
 \end{array}
 \right]
 $$
 
-{% method %}
-{% sample lang="jl" %}
-[import:32-38, lang:"julia"](code/julia/gaussian_elimination.jl)
-{% sample lang="java" %}
-[import:35-40, lang:"java"](code/java/GaussianElimination.java)
-{% sample lang="c" %}
-[import:39-41, lang:"c_cpp"](code/c/gaussian_elimination.c)
-{% endmethod %}
+After this, repeat the process for all other rows.
 
-#### Step 5
-To be safe, set the value of each element under the current row's pivot to be 0.
 {% method %}
 {% sample lang="jl" %}
-[import:40-41, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:26-38, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="java" %}
-[import:42-43, lang:"java"](code/java/GaussianElimination.java)
+[import:32-40, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="c" %}
-[import:43-43, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:36-41, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="hs" %}
+[import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
+[import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% endmethod %}
 
 #### All together
@@ -423,6 +412,8 @@ Well, we continue reducing the matrix; however, there are two ways to do this:
 Let's start with Gauss-Jordan Elimination and then back-substitution
 
 ## Gauss-Jordan Elimination
+
+TODO: Add in matrix inverse information
 
 Gauss-Jordan Elimination is precisely what we said above; however, in this case, we often work from the bottom-up instead of the top-down.
 We basically need to find the pivot of every row and set that value to 1 by dividing the entire row by the pivot value.
