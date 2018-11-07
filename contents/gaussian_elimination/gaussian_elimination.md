@@ -318,6 +318,12 @@ Feel free to exit after finding a $$0$$ if your end-goal is to solve a system of
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% sample lang="js" %}
+[import:7-23, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="py" %}
+[import:13-19, lang:"python"](code/python/gaussian_elimination.py)
+{% sample lang="rs" %}
+[import:43-60, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 #### Step 2
@@ -376,6 +382,12 @@ After this, repeat the process for all other rows.
 {% sample lang="hs" %}
 [import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
+{% sample lang="js" %}
+[import:25-30, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="py" %}
+[import:21-26, lang:"python"](code/python/gaussian_elimination.py)
+{% sample lang="rs" %}
+[import:62-71, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 #### All together
@@ -413,8 +425,6 @@ Let's start with Gauss-Jordan Elimination and then back-substitution
 
 ## Gauss-Jordan Elimination
 
-TODO: Add in matrix inverse information
-
 Gauss-Jordan Elimination is precisely what we said above; however, in this case, we often work from the bottom-up instead of the top-down.
 We basically need to find the pivot of every row and set that value to 1 by dividing the entire row by the pivot value.
 Afterwards, we subtract upwards until all values above the pivot are 0 before moving on to the next column from right to left (instead of left to right, like before).
@@ -437,6 +447,9 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 {% sample lang="js" %}
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
+
+As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side, instead of the right-hand side of eace equation.
+This process is straightforward but will not be covered here, simply because there are much faster numerical methods to find an inverse matrix; however, if you would like to see this, let me know and I can add it in for completeness.
 
 ## Back-substitution
 
