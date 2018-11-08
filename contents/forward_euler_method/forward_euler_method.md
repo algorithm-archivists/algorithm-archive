@@ -132,6 +132,8 @@ Full code for the visualization follows:
 [import, lang:"asm-x64"](code/asm-x64/euler.s)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/ForwardEuler.java)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/forwardeuler.nim)
 {% endmethod %}
 
 <script>
