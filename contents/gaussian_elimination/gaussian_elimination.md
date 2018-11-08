@@ -300,12 +300,9 @@ $$
 \right]
 $$
 
-In this case, the new pivot is now $$3$$.
+In this case, the new pivot is $$3$$.
 
-As a note, if the highest value is $$0$$, the matrix is singular and the system has no single solution.
-This makes sense because if the highest value in a column is 0, the entire column must be 0, thus there can be no unique solution when we read the matrix as a set of equations.
-That said, Gaussian elimination is more general and allows us to continue, even if the matrix is not necessarily solvable as a set of equations.
-Feel free to exit after finding a $$0$$ if your end-goal is to solve a system of equations.
+In code, this process might look like this:
 
 {% method %}
 {% sample lang="jl" %}
@@ -326,9 +323,15 @@ Feel free to exit after finding a $$0$$ if your end-goal is to solve a system of
 [import:43-60, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
+As a note, if the highest value is $$0$$, the matrix is singular and the system has no single solution.
+This makes sense because if the highest value in a column is 0, the entire column must be 0, thus there can be no unique solution when we read the matrix as a set of equations.
+That said, Gaussian elimination is more general and allows us to continue, even if the matrix is not necessarily solvable as a set of equations.
+Feel free to exit after finding a $$0$$ if your end-goal is to solve a system of equations.
+
+
 #### Step 2
 For the row beneath the current pivot row and within the pivot column, find a fraction that corresponds to the ratio of the value in that column to the pivot, itself.
-After this, subtract the current pivot row multiplied by that fraction found in from each corresponding row element.
+After this, subtract the current pivot row multiplied by the fraction from each corresponding row element.
 This process essentially subtracts an optimal multiple of the current row from each row underneath (similar to Step 3 from the above game).
 Ideally, this should always create a 0 under the current row's pivot value.
 
@@ -348,10 +351,9 @@ $$
 \end{align}
 $$
 
-After finding the fraction, we simply subtract $$\text{row} - \frac{1}{3}\times \text{curr_row}$$, like so:
+After finding the fraction, we simply subtract $$\text{current_row} - \frac{1}{3}\times \text{pivot_row}$$, like so:
 
 $$
-A(\text{curr_row}_{\text{row}}, \text{curr_col}_{\text{col}}) \mathrel{+}= A(\text{pivot_row}_{\text{row}}, \text{pivot_row}_{\text{curr_col}} \times f) \\
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
@@ -372,6 +374,7 @@ $$
 
 After this, repeat the process for all other rows.
 
+Here is what it might look like in code:
 {% method %}
 {% sample lang="jl" %}
 [import:26-38, lang:"julia"](code/julia/gaussian_elimination.jl)
@@ -413,7 +416,7 @@ When we put everything together, it looks like this:
 To be clear: if the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
 For this reason, many implementations of this method will stop the moment the matrix is found to have no unique solutions.
 In this implementation, we allowed for the more general case and opted to simply output when the matrix is singular instead.
-If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no unique solution, so some small modificationof this code might be necessary!
+If you intend to solve a system of equations, then it makes sense to stop the method the moment you know there is no unique solution, so some small modification of this code might be necessary!
 
 So what do we do from here?
 Well, we continue reducing the matrix; however, there are two ways to do this:
@@ -448,7 +451,7 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
 
-As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side, instead of the right-hand side of eace equation.
+As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side instead of the right-hand side of each equation.
 This process is straightforward but will not be covered here, simply because there are much faster numerical methods to find an inverse matrix; however, if you would like to see this, let me know and I can add it in for completeness.
 
 ## Back-substitution
