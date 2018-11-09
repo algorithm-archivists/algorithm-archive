@@ -1,6 +1,6 @@
 import math
 
-proc solve_euler(timestep: float, n:int): seq[float] =
+proc solveEuler(timestep: float, n: int): seq[float] =
   var res = newSeq[float](n)
   
   res[0] = 1.0
