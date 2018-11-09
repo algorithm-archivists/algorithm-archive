@@ -26,7 +26,7 @@ const
   timestep: float = 0.1
   n: int = 100
   threshold: float = 0.1
-  euler_result: seq[float] = solve_euler(timestep, n)
-  approx: bool = check(euler_result, threshold, timestep)
+  eulerResult: seq[float] = solveEuler(timestep, n)
+  approx: bool = check(eulerResult, threshold, timestep)
 
 echo approx
