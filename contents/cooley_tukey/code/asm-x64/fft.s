@@ -392,7 +392,9 @@ end_loop:
   lea    rsi, [rsp + 1024]
   mov    rdx, 1024
   call   approx
+  xor    rax, rax
   add    rsp, 2048
   pop    r12
   ret
+
 
