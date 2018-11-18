@@ -1,34 +1,18 @@
-class Generator
-    def initialize(size)
-        @size = size
-    end
-
-    def generate(prefix, r)
-        Array.new(@size){|i|
-            Person.new(
-                i,
-                "#{prefix} #{i}",
-                (0 ... @size).to_a.shuffle!(random: r)
-            )
-        }
-    end
-end
-
 class Person
     def initialize(id, name, prefs)
         @id      = id
         @name    = name
         @prefs   = prefs
-        @partner = LONELY
+        @partner = nil
         @choices = 0
     end
 
-    def lonely
-        @partner == LONELY
+    def lonely?
+        @partner.nil?
     end
 
     def propose(partners)
-        if !self.lonely
+        unless self.lonely?
             raise '%s is not lonely!' % self.name
         end
         choice = @prefs[@choices]
@@ -36,16 +20,18 @@ class Person
         @choices += 1
     end
 
-    # Represents this Person as an Array of strings
-    def print
-        name = if self.lonely
-            then "Lonely"
-            else @partner.name
-        end
-        [
-            "##{@id} | #{@name}",
-            "Partner: #{name}"
-        ]
+    def to_s
+      "#{@name.rjust(20)}: #{self.lonely? && "Lonely" || @partner.name}"
+    end
+
+    def self.generate(size, prefix, r)
+        Array.new(size){|i|
+            Person.new(
+                i,
+                "#{prefix} #{i}",
+                (0 ... size).to_a.shuffle(random: r)
+            )
+        }
     end
 
     protected
@@ -54,22 +40,20 @@ class Person
 
     # Acts upon a given Proposal
     def onPropose(partner)
-        if !self.lonely
+        unless self.lonely?
             offer = score(partner)
             current = score(@partner)
             return unless offer > current 
-            @partner.partner = LONELY
+            @partner.partner = nil
         end
         @partner = partner
         partner.partner = self
     end
 
     private
-    LONELY = nil
-
     # Determines the preference of a given partner
     def score(partner)
-        return 0 if partner == nil
+        return 0 if partner.nil?
         @prefs.size - @prefs.index(partner.id)
     end
 end
@@ -78,36 +62,23 @@ end
 r = Random.new(42)
 
 # Determines Output Columns
-cols = 4
-gen = Generator.new(4)
-men = gen.generate("Man", r)
-women = gen.generate("Woman", r)
+men = Person.generate(4, "Man", r)
+women = Person.generate(4, "Woman", r)
 
 # Assume no Name is longer than 20 characters
-spacer = '-' * 20 * cols 
+spacer = '-' * (20 * 2 + 2)
 
-round = 0
 # Solve the Problem
-loop do
-    round += 1
-    singles = men.select(&:lonely)
+1.step do |round|
+    singles = men.select(&:lonely?)
     singles.each do |m|
         m.propose(women)
     end
+
     break if singles.empty?
 
-    # Pretty Print
     puts "Round #{round}"
     puts spacer
-    puts [men, women] # Array of Arrays of Persons
-            .flatten # => Array of Persons
-            .map(&:print) # => Print Person
-            .each_slice(cols) # => split by columns
-            .map{|o| # Turn 2D array in 1D array
-                o.transpose.map{|a| 
-                    a.map{|e|'%-20s' % e}.join
-                }
-            }
-            .zip([spacer].cycle) # Add Spacer inbetween
-    puts
+    puts men, women
+    puts spacer
 end
