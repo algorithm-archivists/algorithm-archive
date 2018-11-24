@@ -6,6 +6,9 @@
                  .long -2147483648
                  .long 0
                  .long 0
+  one:           .double 1.0
+  fmt:           .string "%zu %f %+fi\n"
+  txt:           .string "Output Differnece between the two methods:\n"
 
 .section .text
   .global main
@@ -228,18 +231,6 @@ conv_fft_return:
   pop    r12
   ret
 
-.LC2:
-  .string "%zu %f %+fi\n"
-.LC1:
-  .long 0
-  .long 0
-  .long 0
-  .long 0
-.LC0:
-  .long 0
-  .long 1072693248
-  .long 0
-  .long 0
 main:
   push r12
   xor eax, eax
@@ -247,10 +238,10 @@ main:
   push rbp
   push rbx
   sub rsp, 10240
-  movsd xmm1, QWORD PTR .LC1[rip]
-  movsd xmm0, QWORD PTR .LC1[rip+8]
-  movsd xmm3, QWORD PTR .LC0[rip]
-  movsd xmm2, QWORD PTR .LC0[rip+8]
+  pxor  xmm1, xmm1
+  pxor  xmm0, xmm0
+  movsd xmm3, one
+  pxor  xmm2, xmm2
   jmp .L7
 .L13:
   movsd QWORD PTR [rsp+rax], xmm3
@@ -300,10 +291,12 @@ main:
   lea rdi, [rsp+2048]
   call conv_fft
   lea r12, [rsp+6152]
+  mov edi, OFFSET txt
+  call printf
 .L6:
   movsd xmm1, QWORD PTR [r12+rbx]
   mov rsi, rbp
-  mov edi, OFFSET FLAT:.LC2
+  mov edi, OFFSET fmt
   movsd xmm0, QWORD PTR [rsp+6144+rbx]
   subsd xmm1, QWORD PTR [rsp+8200+rbx]
   mov eax, 2
