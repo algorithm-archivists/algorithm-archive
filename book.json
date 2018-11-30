@@ -167,7 +167,11 @@
         {
           "lang": "lolcode",
           "name": "LOLCODE"
-        }
+        },
+	{
+	  "lang": "pl",
+	  "name": "Prolog"
+	}
       ]
     }
   }
