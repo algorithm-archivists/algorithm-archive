@@ -12,7 +12,7 @@ type person struct {
 	index   int
 }
 
-func suffle(arr []int, size int) []int {
+func shuffle(arr []int, size int) []int {
 	seed := rand.NewSource(time.Now().UnixNano())
 	generator := rand.New(seed)
 
@@ -35,7 +35,7 @@ func createGroup(size int) []person {
 		for j := 0; j < size; j++ {
 			arr[j] = j
 		}
-		group[i].prefers = suffle(arr, size)
+		group[i].prefers = shuffle(arr, size)
 	}
 	return group
 }
