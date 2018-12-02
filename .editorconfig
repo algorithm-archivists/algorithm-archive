@@ -125,6 +125,11 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# Perl
+[*.pl]
+indent_style = space
+indent_size = 4
+
 # PHP
 [*.php]
 indent_style = space
