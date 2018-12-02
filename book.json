@@ -167,6 +167,10 @@
         {
           "lang": "lolcode",
           "name": "LOLCODE"
+        },
+        {
+          "lang": "perl",
+          "name": "Perl"
         }
       ]
     }
