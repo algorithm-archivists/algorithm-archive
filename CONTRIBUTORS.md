@@ -40,3 +40,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - crafter312
 - Christopher Milan
 - Vexatos
+- Raven-Blue Dragon

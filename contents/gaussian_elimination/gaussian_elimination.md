@@ -366,6 +366,8 @@ In code, this looks like:
 [import:5-47, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:9-53, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 Now, to be clear: this algorithm creates an upper-triangular matrix.
@@ -405,6 +407,8 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:49-70, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:55-82, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 ## Back-substitution
@@ -441,6 +445,8 @@ In code, this involves keeping a rolling sum of all the values we substitute in 
 [import:72-87, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:40-55, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:84-98, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 ## Conclusions
@@ -469,6 +475,8 @@ As for what's next... Well, we are in for a treat! The above algorithm clearly h
 [import, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 
