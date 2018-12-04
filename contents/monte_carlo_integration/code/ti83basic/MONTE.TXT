@@ -1,0 +1,29 @@
+"MONTE PROGRAMMED BY CODING WITH ETHANOL
+ClrHome
+Prompt M
+0->C
+0->I
+StoreGDB 0
+ClrDraw
+AxesOff
+CoordOff
+GridOff
+LabelOff
+0->Xmin:1->Xmax
+0->Ymin:1->Ymax
+Circle(0,0,1)
+For(I,0,M,1)
+::rand->X
+::rand->Y
+::Pt-On(X,Y)
+::If ((X*X+Y*Y)<1)
+::Then
+::::C+1->C
+::End
+End
+ClrHome
+(C/M)*4->E
+Text(28,43,E)
+Pause 
+RecallGDB 0
+ClrHome
