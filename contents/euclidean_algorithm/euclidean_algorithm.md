@@ -217,25 +217,29 @@ and modulo method:
 #### Subtraction varient
 ##### Code
 [import, lang="brainfuck"](code/brainfuck/euclidean_sub.bf)
-##### Explanation
-Basic plan: get |a-b|, check if 0
+##### State of memory after each chunk of code:
 
-So the program does something like
 ```
-a (b) 0 0 1 0 0
-a b a b (0) 0 0
-if(a>b) a b a-b 0 (a-b) 0 0 
-else a b 0 a-b (a-b) 0 0
-if(a-b==0)print and break
+[a (b) 0 0 1 0 0]
+[a b a b (0) 0 0]
+if(a>b) [a b a-b 0 (a-b) 0 0]
+else [a b 0 b-a (b-a) 0 0]
+if(a-b==0)
+    print and break
 else 
-if(a>b) a-b b 0 0 (a-b) 0 0 
-else a a-b 0 0 (a-b) 0 0
+    if(a>b) [a-b b 0 0 (a-b) 0 0]
+    else [a b-a 0 0 (b-a) 0 0]
+And the codeis looped till cell 0 = cell 1
 ```
 
-More detail:
+##### Explanation
+
+**Here we just get the input from the user:**
 
 `scan a,b`: `>,>,`
 State: `a (b) 0 0 0 0 0`
+
+**The input is duplicated**
 ```
 >>>+
 [
@@ -248,6 +252,8 @@ State: `0 0 0 (a) b 0 0`
 >[-<+<<+>>>]
 ```
 State: `a b a b (0) 0 0`
+
+**Here, we subtract 1 from cell 2 from 3 until one of them hits 0, the other cell would be |a-b|**
 ```
 <<
 [->- subtracts a from b, assuming a>b
@@ -257,16 +263,27 @@ State: `a b a b (0) 0 0`
 [->>]<<< if a is 0, stop
 ]
 ```
-So basically the state will either be 
-a_b (0) 0 0
+`>[>]` moves the pointer to cell 4
+
+Now the states are
+`a b a-b 0 (0) 0`
 or
-(0) a_b 0 0
-but it's hard to do when states may be different, so  `>[>]` moves the pointer to cell 4
+`a b 0 b-a (0) 0`
+
+
+**If cell 3 is non-zero, let cell 1=cell 4=cell 3**
 ```
 <[<<[-]>>[-<<+>>>+<]]
+```
+**If cell 2 is non-zero, let cell 0=cell 4=cell 2**
+```
 <[<<[-]>>[-<<+>>>>+<<]]
 ```
-basically cell 4 will contain the difference
+
+State: `a b 0 b-a (0) 0 -> a b-a (0) 0 b-a 0`
+       `a b a-b 0 (0) 0 -> a-b b (0) 0 a-b 0`
+
+This tests if cell 4 is zero, if so print cell 0 and break
 ```
 >>>[-]+
 >[-]<<
