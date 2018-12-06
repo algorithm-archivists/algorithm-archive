@@ -491,6 +491,28 @@ In code, it looks like this:
 [import:40-55, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% endmethod %}
 
+## Visual Representation
+
+We have thus far used Gaussian elimination as a method to solve a system of equations; however, there is often a much easier way to find a similar solution simply by plotting each row in our matrix. 
+For the case of 2 equations and 2 unknowns, we would plot the two lines corresponding to each equation and the $$(x, y)$$ location of their point of intersection would be the solution for $$x$$ and $$y$$.
+Similarly, for the case of 3 equations and 3 unknowns, we would plot 3 planes and the $$(x, y, z)$$ location of their point of intersection would be the solution for $$x$$, $$y$$, and $$z$$.
+
+What, then, is the point of Gaussian elimination if we can simply plot our set of equations to find a solution?
+Well, this analogy breaks down quickly when we start moving beyond 3D, so it is obvious we need some method to deal with higher-dimensional systems.
+That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
+
+<p>
+    <img  class="center" src="res/medres.gif" width="500" />
+</p>
+
+As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
+At this point, it's trivial to find the $$z$$-coordinate for the solution because it's simply the $$z$$ intercept of the parallel plane.
+From there, the matrices become even easier to interpret as they move to the reduced row echelon form.
+In this form, the solution is simply the $$x$$, $$y$$, and $$z$$ intercepts of the appropriate planes.
+
+This visualization might have been obvious for some readers, but I found it particularly enlightening at first.
+By performing Gaussian elimination, we are manipulating our planes such that they can be interpreted at a glance -- which is precisely the same thing we are doing with the matrix interpretation!
+
 ## Conclusions
 
 And with that, we have two possible ways to reduce our system of equations and find a solution.
