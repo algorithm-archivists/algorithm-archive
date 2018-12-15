@@ -4,10 +4,10 @@ def gaussian_elimination(A):
 
     pivot_row = 0
     
-    # Step 1: Go by column
+    # Go by column
     for pivot_col in range(min(A.shape[0], A.shape[1])):
 
-        # Step 2: Swap row with highest element in col
+        # Swap row with highest element in col
         max_i = np.argmax(abs(A[pivot_row:, pivot_col])) + pivot_row
         
         temp = A[pivot_row, :].copy()
@@ -18,11 +18,11 @@ def gaussian_elimination(A):
         if A[pivot_row, pivot_col] == 0:
             continue
 
-        # Steps 3 & 4: Zero out elements below pivot
+        # Zero out elements below pivot
         for r in range(pivot_row + 1,  A.shape[0]):
-            # Step 3: Get fraction
+            # Get fraction
             frac = -A[r, pivot_col] / A[pivot_row, pivot_col]
-            # Step 4: Add rows
+            # Add rows
             A[r, :] += frac * A[pivot_row, :]
 
         pivot_row += 1
