@@ -1,6 +1,6 @@
 # Gaussian Elimination
 
-Let's say we have a a system of equations,
+Let's say we have a system of equations,
 
 $$
 \begin{align}
@@ -501,9 +501,9 @@ What, then, is the point of Gaussian elimination if we can simply plot our set o
 Well, this analogy breaks down quickly when we start moving beyond 3D, so it is obvious we need some method to deal with higher-dimensional systems.
 That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
 
-<p>
-    <img  class="center" src="res/medres.gif" width="500" />
-</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ox6FjmooQDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
 At this point, it's trivial to find the $$z$$-coordinate for the solution because it's simply the $$z$$ intercept of the parallel plane.
