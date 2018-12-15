@@ -53,8 +53,10 @@ $$
 \right]
 $$
 
-At first, rearranging the data into a matrix like this doesn't seem to help with anything, so let's think of this in another way.
-Wouldn't it be great if the system of equations looked like this:
+At first, translating the set of equations into a matrix like this doesn't seem to help with anything, so let's think of this in another way.
+
+#### Row Echelon Form
+Instead of the complicated mess of equations shown above, imagine if the system looked like this:
 
 $$
 \begin{align}
@@ -66,7 +68,6 @@ $$
 
 Then we could just solve for $$z$$ and plug that value in to the top two equations to solve for $$x$$ and $$y$$ through a process known as back-substitution.
 In matrix form, this set of equations would look like this:
-
 
 $$
 \left[
@@ -124,6 +125,7 @@ For example, if you translate the second matrix into a system of equations again
 This is due to the fact that the matrix is singular, and there are no solutions to this particular system.
 Nevertheless, all of these matrices are in row echelon form.
 
+#### *Reduced* Row Echelon Form
 Row echelon form is nice, but wouldn't it be even better if our system of equations looked simply like this:
 
 $$
@@ -182,8 +184,8 @@ $$
 
 Again, only the first of these (the one that looks like an identity matrix) is desirable in the context of solving a system of equations, but transforming any matrix in this form gives us an immediate and definitive answer at the question: can I solve my system of equations?
 
-Beyond solving a system of equations, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as its rank.
-The rank of a matrix is the maximum number of linearly independent columns, in reduced row echelon form, the rank is simply the number of pivots.
+Beyond solving a system of equations, reshaping a matrix in this form makes it very easy to deduce other properties of the matrix, such as its rank &mdash; the maximum number of linearly independent columns.
+In reduced row echelon form, the rank is simply the number of pivots.
 
 For now, I hope the motivation is clear: we want to convert a matrix into row echelon and then reduced row echelon form to make large systems of equations trivial to solve, so we need some method to do that.
 In general, the term *Gaussian Elimination* refers to the process of transforming a matrix into row echelon form, and the process of transforming a row echelon matrix into reduced row echelon form is called *Gauss-Jordan Elimination*.
@@ -253,8 +255,8 @@ $$
 \right]
 $$
 
-Here, the idea is similar to above.
-The strategy is the same as before, but starts from the right-most column and subtracts upwards instead of downwards.
+Here, the idea is similar to above and the same rules apply.
+In this case, we might start from the right-most column and subtracts upwards instead of downwards.
 
 ## The Computational Method
 
@@ -311,7 +313,7 @@ In code, this process might look like this:
 [import:14-30, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="c" %}
 [import:5-13, lang:"c_cpp"](code/c/gaussian_elimination.c)
-[import:16-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
+[import:19-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -365,7 +367,7 @@ $$
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
-\mathbf{\frac{1}{3}} & \mathbf{\frac{2}{3}} & \mathbf{1} & \mathbf{\frac{4}{3}} 
+0 & \mathbf{\frac{10}{3}} & \mathbf{3} & \mathbf{\frac{2}{3}} 
 \\
 2 & 3  & 4 & 6
 \end{array}
