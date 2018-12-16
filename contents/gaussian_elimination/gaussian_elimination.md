@@ -529,6 +529,15 @@ How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ 
 
 There are also plenty of other solvers that do similar things that we will get to in due time.
 
+## Video Explanation
+
+Here's a video describing Gaussian elimination:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2tlwSqblrvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Example Code
 
 {% method %}

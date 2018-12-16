@@ -193,6 +193,15 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 
 Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
 
+
+## Video Explanation
+
+Here is a video describing Verlet integration:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g55QvpAev0I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 
 Both of these methods work simply by iterating timestep-by-timestep and can be written straightforwardly in any language. For reference, here are snippets of code that use both the classic and velocity Verlet methods to find the time it takes for a ball to hit the ground after being dropped from a given height.

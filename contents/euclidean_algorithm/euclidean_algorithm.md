@@ -142,6 +142,15 @@ Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was las
 
 The Euclidean Algorithm is truly fundamental to many other algorithms throughout the history of computer science and will definitely be used again later. At least to me, it's amazing how such an ancient algorithm can still have modern use and appeal. That said, there are still other algorithms out there that can find the greatest common divisor of two numbers that are arguably better in certain cases than the Euclidean algorithm, but the fact that we are discussing Euclid two millennia after his death shows how timeless and universal mathematics truly is. I think that's pretty cool.
 
+## Video Explanation
+
+Here's a video on the Euclidean algorithm:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h86RzlyHfUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Example Code
 
 {% method %}

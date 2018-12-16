@@ -269,6 +269,15 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:81-96, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
+## Video Explanation
+
+Here is a video describing tree traversal:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cZPXfl_tUkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Example Code
 {% method %}
 {% sample lang="jl" %}

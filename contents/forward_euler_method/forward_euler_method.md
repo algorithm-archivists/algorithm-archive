@@ -91,6 +91,15 @@ Verlet integration has a distinct advantage over the forward Euler method in bot
 That said, in practice, due to the instability of the forward Euler method and the error with larger timesteps, this method is rarely used in practice.
 That said, variations of this method *are* certainly used (for example Crank-Nicolson and [Runge-Kutta](../runge_kutta_methods/runge_kutta_methods.md), so the time spent reading this chapter is not a total waste!
 
+## Video Explanation
+
+Here is a video describing the forward Euler method:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wG7h8g6VLBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Example Code
 
 Like in the case of [Verlet Integration](../verlet_integration/verlet_integration.md), the easiest way to test to see if this method works is to test it against a simple test-case.

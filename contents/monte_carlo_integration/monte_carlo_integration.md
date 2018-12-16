@@ -108,6 +108,15 @@ As long as you can write some function to tell whether the provided point is ins
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
 
+## Video Explanation
+
+Here is a video describing Monte Carlo integration:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AyBNnkYrSWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Example Code
 Monte Carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
@@ -178,8 +187,6 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="bash" %}
 [import, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
-
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

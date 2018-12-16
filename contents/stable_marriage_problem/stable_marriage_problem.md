@@ -18,6 +18,15 @@ To be clear, even though this algorithm seems conceptually simple, it is rather 
 I do not at all claim that the code provided here is efficient and we will definitely be coming back to this problem in the future when we have more tools under our belt.
 I am incredibly interested to see what you guys do and how you implement the algorithm.
 
+## Video Explanation
+
+Here is a video describing the stable marriage problem:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A7xRZQAQU8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 ## Example Code
 
 {% method %}
