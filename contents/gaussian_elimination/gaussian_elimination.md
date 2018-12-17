@@ -232,7 +232,7 @@ $$
 $$
 
 There are plenty of different strategies you could use to do this, and no one strategy is better than the rest.
-One method is to subtract a multiple of the top row from subsequent rows below it such that all values beneath the pivot value are zero. 
+One method is to subtract a multiple of the top row from subsequent rows below it such that all values beneath the pivot value are zero.
 This process might be easier if you swap some rows around first and can be performed for each pivot.
 
 After you get a row echelon matrix, the next step is to find the reduced row echelon form. In other words, we do the following:
@@ -314,6 +314,9 @@ In code, this process might look like this:
 {% sample lang="c" %}
 [import:5-13, lang:"c_cpp"](code/c/gaussian_elimination.c)
 [import:19-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="cpp" %}
+[import:22-29, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:37-51, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -367,7 +370,7 @@ $$
 \left[
 \begin{array}{ccc|c}
 3 & -4 & 0 & 10 \\
-0 & \mathbf{\frac{10}{3}} & \mathbf{3} & \mathbf{\frac{2}{3}} 
+0 & \mathbf{\frac{10}{3}} & \mathbf{3} & \mathbf{\frac{2}{3}}
 \\
 2 & 3  & 4 & 6
 \end{array}
@@ -384,6 +387,8 @@ Here is what it might look like in code:
 [import:32-40, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="c" %}
 [import:36-41, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="cpp" %}
+[import:11-19, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -403,6 +408,8 @@ When we put everything together, it looks like this:
 [import:1-45, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:15-48, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="cpp" %}
+[import:11-67, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -440,6 +447,8 @@ Here it is in code:
 [import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:64-82, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="cpp" %}
+[import:70-83, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
 [import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
@@ -481,6 +490,8 @@ In code, it looks like this:
 [import:47-64, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import:50-62, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="cpp" %}
+[import:86-99, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -495,7 +506,7 @@ In code, it looks like this:
 
 ## Visual Representation
 
-We have thus far used Gaussian elimination as a method to solve a system of equations; however, there is often a much easier way to find a similar solution simply by plotting each row in our matrix. 
+We have thus far used Gaussian elimination as a method to solve a system of equations; however, there is often a much easier way to find a similar solution simply by plotting each row in our matrix.
 For the case of 2 equations and 2 unknowns, we would plot the two lines corresponding to each equation and the $$(x, y)$$ location of their point of intersection would be the solution for $$x$$ and $$y$$.
 Similarly, for the case of 3 equations and 3 unknowns, we would plot 3 planes and the $$(x, y, z)$$ location of their point of intersection would be the solution for $$x$$, $$y$$, and $$z$$.
 
@@ -536,6 +547,8 @@ There are also plenty of other solvers that do similar things that we will get t
 [import, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/gaussian_elimination.c)
+{% sample lang="cpp" %}
+[import, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
