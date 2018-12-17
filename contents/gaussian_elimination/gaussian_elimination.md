@@ -82,7 +82,7 @@ $$
 This matrix form has a particular name: _Row Echelon Form_.
 Basically, any matrix can be considered in row echelon form if the leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-This creates a matrix that sometiems resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
+This creates a matrix that sometimes resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
 For example, all of the following matrices are in row echelon form:
 
 $$
