@@ -169,7 +169,6 @@ Here is a video describing the split-operator method:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BBt8EugN03Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-
 ## Example Code
 This example code is a simulation of a gaussian distribution of atoms slightly offset in a harmonic trap in imaginary time.
 So long as the code is written appropriately, this means that the atoms should move towards the center of the trap and the energy should decay to $$\frac{1}{2}\hbar\omega$$, which will be simply $$\frac{1}{2}$$ in this simulation.

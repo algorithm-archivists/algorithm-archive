@@ -116,7 +116,6 @@ Here is a video describing Monte Carlo integration:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AyBNnkYrSWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-
 ## Example Code
 Monte Carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
