@@ -69,6 +69,10 @@
           "name": "Haskell"
         },
         {
+          "lang": "hy",
+          "name": "Hy"
+        },
+        {
           "lang": "rs",
           "name": "Rust"
         },
