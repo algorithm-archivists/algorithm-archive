@@ -82,7 +82,7 @@ $$
 This matrix form has a particular name: _Row Echelon Form_.
 Basically, any matrix can be considered in row echelon form if the leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-This creates a matrix that sometiems resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
+This creates a matrix that sometimes resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
 For example, all of the following matrices are in row echelon form:
 
 $$
@@ -528,6 +528,14 @@ If we can reduce the matrix to a specifically **tridiagonal** matrix, we can act
 How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the [_Thomas Algorithm_](../thomas_algorithm/thomas_algorithm.md).
 
 There are also plenty of other solvers that do similar things that we will get to in due time.
+
+## Video Explanation
+
+Here's a video describing Gaussian elimination:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2tlwSqblrvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 
