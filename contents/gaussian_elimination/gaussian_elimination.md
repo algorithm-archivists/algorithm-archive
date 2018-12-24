@@ -324,7 +324,7 @@ In code, this process might look like this:
 {% sample lang="py" %}
 [import:13-19, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
-[import:43-60, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:43-76, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 As a note, if the highest value is $$0$$, the matrix is singular and the system has no single solution.
@@ -396,7 +396,7 @@ Here is what it might look like in code:
 {% sample lang="py" %}
 [import:21-26, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
-[import:62-71, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:62-75, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 #### All together
@@ -421,6 +421,8 @@ When we put everything together, it looks like this:
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% sample lang="go" %}
 [import:9-53, lang:"go"](code/go/gaussian_elimination.go)
+{% sample lang="rs" %}
+[import:41-77, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 To be clear: if the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
@@ -463,6 +465,8 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
 {% sample lang="go" %}
 [import:55-82, lang:"go"](code/go/gaussian_elimination.go)
+{% sample lang="rs" %}
+[import:79-96, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side instead of the right-hand side of each equation.
@@ -496,7 +500,7 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:56-72, lang:"cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
-[import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:98-112, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
 [import:48-53, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -523,7 +527,7 @@ That said, it is particularly interesting to see what happens as we plot our mat
 <video width="560" height="315" autoplay controls loop>
   <source src="res/GE_vis.mp4" type="video/mp4">
 Your browser does not support the video tag.
-</video> 
+</video>
 </div>
 
 As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
