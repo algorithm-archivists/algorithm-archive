@@ -246,7 +246,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:75-84, lang:"python"](code/python/Tree_example.py)
+[import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
