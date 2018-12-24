@@ -132,7 +132,7 @@ We are done here!
 {% sample lang="r" %}
 [import, lang:"r"](code/r/bogo_sort.r)
 {% sample lang="go" %}
-[import:3-, lang:"go"](code/go/bogo_sort.go)
+[import, lang:"go"](code/go/bogo_sort.go)
 {% endmethod %}
 
 
