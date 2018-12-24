@@ -133,6 +133,13 @@ There are a few other gates, but this is enough for most things. We'll add more 
 
 That's about it for bitlogic. I realize it was a bit long, but this is absolutely essential to understanding how computers think and how to use programming as an effective tool!
 
+## Video Explanation
+Here is a video describing the contents of this chapter:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zMuEk44Ufkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>

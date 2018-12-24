@@ -36,6 +36,8 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:5-8, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:24-27, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import:1-3, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -74,6 +76,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:10-15, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:290-314, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import:27-34, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -120,6 +124,8 @@ Now, in this case the first element searched through is still the root of the tr
 [import:17-22, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:316-344, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import:36-43, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
 <p>
@@ -161,6 +167,8 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:24-38, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:346-396, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import:45-62, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
 <p>
@@ -212,6 +220,8 @@ In code, it looks like this:
 [import:40-49, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:398-445, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import:64-79, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -236,7 +246,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:75-84, lang:"python"](code/python/Tree_example.py)
+[import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
@@ -255,7 +265,17 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:51-60, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:447-498, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import:81-96, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
+
+## Video Explanation
+
+Here is a video describing tree traversal:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cZPXfl_tUkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 {% method %}
@@ -300,6 +320,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
 
