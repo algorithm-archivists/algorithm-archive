@@ -29,6 +29,8 @@ Here is a video describing the stable marriage problem:
 ## Example Code
 
 {% method %}
+{% sample lang="ruby" %}
+[import, lang:"ruby"](code/ruby/stable_marriage.rb)
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/stable_marriage.jl)
 {% sample lang="py" %}
