@@ -15,7 +15,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="c" %}
 [import:10-20, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="c8" %}
-[import:39-63, lang:""](code/chip8/bubble_sort.c8)
+[import:39-63, lang:""](code/chip8/bubblesort.c8)
 {% sample lang="java" %}
 [import:2-12, lang:"java"](code/java/bubble.java)
 {% sample lang="kotlin" %}
@@ -88,7 +88,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="c" %}
 [import, lang:"c_cpp"](code/c/bubble_sort.c)
 {% sample lang="c8" %}
-[import, lang:""](code/chip8/bubble_sort.c8)
+[import, lang:""](code/chip8/bubblesort.c8)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/bubble.java)
 {% sample lang="kotlin" %}
