@@ -228,8 +228,7 @@ iterative_cooley_tukey:
   push   r14
   push   r15
   push   rbx
-  push   rbp
-  sub    rsp, 40
+  sub    rsp, 48
   mov    r12, rdi
   mov    r13, rsi
   call   bit_reverse              # Bit reversing array
@@ -245,7 +244,8 @@ iter_ct_loop_i:
   movsd  xmm0, two                # Calculate stride = 2^(r14)
   cvtsi2sdq xmm1, r14
   call   pow
-  cvttsd2si rbp, xmm0
+  cvttsd2si r10, xmm0
+  mov    QWORD PTR [rsp + 40], r10# move stride to stack
   movsd  xmm1, two_pi             # Calculating cexp(-2pi * I / stride)
   divsd  xmm1, xmm0
   pxor   xmm0, xmm0
@@ -261,7 +261,7 @@ iter_ct_loop_j:
   movsd  QWORD PTR [rsp + 24], xmm4
   movsd  QWORD PTR [rsp + 32], xmm5
   xor    rbx, rbx
-  mov    rax, rbp                 # Calculate stride / 2
+  mov    rax, QWORD PTR [rsp + 40]# Calculate stride / 2
   sar    rax, 1
 iter_ct_loop_k:
   cmp    rbx, rax                 # Check if rbx is less then stride / 2
@@ -269,7 +269,7 @@ iter_ct_loop_k:
   mov    r8, r15                  # Saving pointers to X[k + j + stride / 2] and X[k + j]
   add    r8, rbx
   sal    r8, 4
-  mov    r9, rbp
+  mov    r9, QWORD PTR [rsp + 40]
   sal    r9, 3
   add    r9, r8
   lea    r9, [r12 + r9]
@@ -301,19 +301,18 @@ iter_ct_loop_k:
   movsd  QWORD PTR [rsp + 24], xmm0 # Saving answer
   movsd  QWORD PTR [rsp + 32], xmm1
   add    rbx, 1
-  mov    rax, rbp
+  mov    rax, QWORD PTR [rsp + 40]
   sar    rax, 1
   jmp    iter_ct_loop_k
 iter_ct_end_k:
-  add    r15, rbp
+  add    r15, QWORD PTR [rsp + 40]
   jmp    iter_ct_loop_j
 iter_ct_end_j:
   add    r14, 1
   mov    rax, QWORD PTR [rsp]
   jmp    iter_ct_loop_i
 iter_ct_end_i:
-  add    rsp, 40
-  pop    rbp
+  add    rsp, 48
   pop    rbx
   pop    r15
   pop    r14
