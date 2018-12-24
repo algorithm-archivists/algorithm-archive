@@ -53,6 +53,10 @@
           "name": "C"
         },
         {
+          "lang": "c8",
+          "name": "chip-8"
+        },
+        {
           "lang": "py",
           "name": "Python"
         },
