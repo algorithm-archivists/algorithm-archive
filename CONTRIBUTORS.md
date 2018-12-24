@@ -36,3 +36,8 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Patrik Tesarik
 - Ken Power
 - PaddyKe
+- nic-hartley
+- Thijs Raymakers
+- crafter312
+- Christopher Milan
+- Vexatos

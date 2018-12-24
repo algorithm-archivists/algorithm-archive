@@ -108,15 +108,25 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
   <img  class="center" src="code/scratch/thomas.svg" width="1000" />
 </p>
 {% sample lang="java" %}
-[import, lang:"java"](code/java/thomas.java)
+[import, lang:"java"](code/java/Thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/thomas.go)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/thomas.swift)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/thomas.php)
 {%sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/thomas.cpp)
+{% sample lang="lua" %}
+[import, lang:"lua"](code/lua/thomas.lua)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/thomas.cr)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/thomas.kt)
 {% endmethod %}
 
 <script>

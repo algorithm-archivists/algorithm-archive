@@ -47,6 +47,14 @@ and `bibbity_bobbity` becomes `01000010010111011110111000100101110`.
 As mentioned this uses the minimum number of bits possible for encoding.
 The fact that this algorithm is both conceptually simple and provably useful is rather extraordinary to me and is why Huffman encoding will always hold a special place in my heart.
 
+## Video Explanation
+
+Here is a quick video explanation for Huffman encoding:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wHyUxTc2Ohk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 In code, this can be a little tricky. It requires a method to continually sort the nodes as you add more and more nodes to the system.
 The most straightforward way to do this in some languages is with a priority queue, but depending on the language, this might be more or less appropriate.
@@ -67,6 +75,8 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"csharp"](code/csharp/HuffmanCoding.cs)
 ##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/huffman.lua)
 {% sample lang="cpp" %}
 [import, lang:"c_cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
@@ -77,8 +87,12 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"javascript"](code/javascript/huffman.js)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/huffman.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/huffman.s)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/huffman_encoding.scala)
 {% endmethod %}
 
 <script>

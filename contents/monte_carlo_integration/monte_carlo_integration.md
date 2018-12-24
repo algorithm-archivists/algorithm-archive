@@ -54,7 +54,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="d" %}
 [import:2-5, lang:"d"](code/d/monte_carlo.d)
 {% sample lang="go" %}
-[import:12-14, lang:"golang"](code/go/monteCarlo.go)
+[import:12-14, lang:"go"](code/go/monteCarlo.go)
 {% sample lang="r" %}
 [import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -73,12 +73,24 @@ each point is tested to see whether it's in the circle or not:
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% sample lang="st" %}
 [import:6-8, lang:"smalltalk"](code/smalltalk/mc.st)
+{% sample lang="factor" %}
+[import:9-12 lang:"factor"](code/factor/monte_carlo.factor)
+{% sample lang="emojic" %}
+[import:23-27, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import:4-7, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
 [import:1-3, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
 [import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import:3-5, lang:"lisp"](code/clisp/monte-carlo.lisp)
+{% sample lang="asm-x64" %}
+[import:21-32, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
+{% sample lang="bash" %}
+[import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -97,6 +109,14 @@ The true power of Monte Carlo comes from the fact that it can be used to integra
 As long as you can write some function to tell whether the provided point is inside the shape you want (like `in_circle()` in this case), you can use Monte Carlo integration!
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
+
+## Video Explanation
+
+Here is a video describing Monte Carlo integration:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AyBNnkYrSWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 Monte Carlo methods are famous for their simplicity.
@@ -127,7 +147,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {%sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
 {%sample lang="go" %}
-[import, lang:"golang"](code/go/monteCarlo.go)
+[import, lang:"go"](code/go/monteCarlo.go)
 {%sample lang="r" %}
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -151,15 +171,25 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"fortran"](code/fortran/monte_carlo.f90)
 {% sample lang="st" %}
 [import, lang:"smalltalk"](code/smalltalk/mc.st)
+{% sample lang="factor" %}
+[import, lang:"factor"](code/factor/monte_carlo.factor)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
 [import, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/monte-carlo.lisp)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
-
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

@@ -91,11 +91,20 @@ Verlet integration has a distinct advantage over the forward Euler method in bot
 That said, in practice, due to the instability of the forward Euler method and the error with larger timesteps, this method is rarely used in practice.
 That said, variations of this method *are* certainly used (for example Crank-Nicolson and [Runge-Kutta](../runge_kutta_methods/runge_kutta_methods.md), so the time spent reading this chapter is not a total waste!
 
+## Video Explanation
+
+Here is a video describing the forward Euler method:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wG7h8g6VLBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 
 Like in the case of [Verlet Integration](../verlet_integration/verlet_integration.md), the easiest way to test to see if this method works is to test it against a simple test-case.
 Here, the most obvious test-case would be dropping a ball from 5 meters, which is my favorite example, but proved itself to be slightly less enlightening than I would have thought.
-So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y' = 5y$$. Note that in this case, the velocity is directly given by the ODE and the acceleration is not part of the model.
+So, this time, let's remove ourselves from any physics and instead solve the following ODE: $$y(t)' = -3t$$ with the initial condition that $$y(0) = 1$$.
+Note that in this case, the velocity is directly given by the ODE and the acceleration is not part of the model.
 
 {% method %}
 {% sample lang="jl" %}
@@ -121,8 +130,18 @@ Full code for the visualization follows:
 [import, lang:"matlab"](code/matlab/euler.m)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/euler.swift)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/euler.js)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/euler.f90)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/euler.go)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/euler.s)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/ForwardEuler.java)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/forwardeuler.nim)
 {% endmethod %}
 
 <script>

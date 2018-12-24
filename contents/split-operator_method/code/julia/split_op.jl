@@ -62,7 +62,7 @@ function init(par::Param, voffset::Float64, wfcoffset::Float64)
 end
 
 # Function for the split-operator loop
-function split_op(par::Param, opr::Operators)
+function split_op!(par::Param, opr::Operators)
 
     for i = 1:par.timesteps
         # Half-step in real space
@@ -126,7 +126,7 @@ function calculate_energy(par, opr)
     energy_final = 0
     for i = 1:length(energy_k)
         energy_final += real(energy_k[i] + energy_r[i])
-    end 
+    end
 
     return energy_final*par.dx
 end
@@ -137,7 +137,7 @@ function main()
 
     # Starting wavefunction slightly offset so we can see it change
     opr = init(par, 0.0, -1.00)
-    split_op(par, opr)
+    split_op!(par, opr)
 
     energy = calculate_energy(par, opr)
     println("Energy is: ", energy)
