@@ -65,6 +65,8 @@ In code, it looks something like this:
 [import:10-14, lang:"crystal"](code/crystal/bogo.cr)
 {% sample lang="r" %}
 [import:1-6, lang:"r"](code/r/bogo_sort.r)
+{% sample lang="scala" %}
+[import:12-16, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
 [import:27-31, lang:"go"](code/go/bogo_sort.go)
 {% endmethod %}
@@ -131,6 +133,8 @@ We are done here!
 [import, lang:"crystal"](code/crystal/bogo.cr)
 {% sample lang="r" %}
 [import, lang:"r"](code/r/bogo_sort.r)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
 [import, lang:"go"](code/go/bogo_sort.go)
 {% endmethod %}
