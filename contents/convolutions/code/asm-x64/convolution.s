@@ -128,8 +128,7 @@ conv:
   push   r14
   push   r15
   push   rbx
-  push   rbp
-  sub    rsp, 24
+  sub    rsp, 32
   mov    r12, rdi
   mov    r13, rsi
   mov    r14, rdx
@@ -138,10 +137,11 @@ conv:
   pxor   xmm0, xmm0
   movsd  QWORD PTR [rsp + 8], xmm0           # Save 0 + 0i into the stack
   movsd  QWORD PTR [rsp + 16], xmm0
-  mov    rbp, rcx                            # Find smallest array size
-  cmp    rbp, r8
+  mov    r9, rcx                            # Find smallest array size
+  cmp    r9, r8
   jge    conv_keep_size
-  mov    rbp, r8
+  mov    r9, r8
+  mov    QWORD PTR [rsp + 24], r9
 conv_keep_size:
   xor    r15, r15
 conv_loop_i:
@@ -151,16 +151,16 @@ conv_loop_i:
 conv_loop_j:
   cmp    rbx, r15                            # Check if the rbx is less then r15
   je     conv_end_j
-  cmp    r15, rbp                            # Check if r15 is less then the smallest array size
+  cmp    r15, QWORD PTR [rsp + 24]           # Check if r15 is less then the smallest array size
   je     conv_end_j
-  lea    rdi, [r12 + rbx]                    # Get signal1[j] * signal2[i-j]
-  mov    rsi, r15
-  sub    rsi, rbx
-  lea    rsi, [r13 + rsi]
-  movsd  xmm0, QWORD PTR [rdi]
-  movsd  xmm1, QWORD PTR [rdi + 8]
-  movsd  xmm2, QWORD PTR [rsi]
-  movsd  xmm3, QWORD PTR [rsi + 8]
+  lea    r8, [r12 + rbx]                    # Get signal1[j] * signal2[i-j]
+  mov    r9, r15
+  sub    r9, rbx
+  lea    r9, [r13 + r9]
+  movsd  xmm0, QWORD PTR [r8]
+  movsd  xmm1, QWORD PTR [r8 + 8]
+  movsd  xmm2, QWORD PTR [r9]
+  movsd  xmm3, QWORD PTR [r9 + 8]
   call   __muldc3
   movsd  xmm2, QWORD PTR [rsp + 8]           # Sum result to sum
   movsd  xmm3, QWORD PTR [rsp + 16]
@@ -179,8 +179,7 @@ conv_end_j:
   add    r15, 16
   jmp    conv_loop_i
 conv_end_i:
-  add    rsp, 24
-  pop    rbp
+  add    rsp, 32
   pop    rbx
   pop    r15
   pop    r14
