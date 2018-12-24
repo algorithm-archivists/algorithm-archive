@@ -4,7 +4,6 @@
     "fontsettings",
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
-    "creativecommons",
     "wordcount",
     "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",

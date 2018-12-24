@@ -17,3 +17,20 @@ Keeping with the community theme, this book is freely available on [GitHub](http
 As a final note before beginning the bulk text, I would like for this book to be "language agnostic." This basically means that I would like to use pseudocode in the main text, but provide source code in any language you could want in the appendix. Though this may seem a little counter-intuitive, I think it offers the greatest flexibility for myself as the author and for the community to develop their own code in any way they please. In fact, if you feel inclined, please feel free to implement your own version of any algorithm mentioned in this text. If you submit it and it passes all my *ahem* rigorous tests, then I can throw it at the end of each chapter with attribution to you!
 
 So I guess that's all for now. Because this book is freely available online, I may be heavily modifying the content as we delve deeper into the archive of arcane algorithms.
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
