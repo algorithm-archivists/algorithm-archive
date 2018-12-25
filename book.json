@@ -38,6 +38,9 @@
       "ignore": [
         "emojicode",
         "text"
+      ],
+      "css": [
+        "prismjs/themes/prism-tomorrow.css"
       ]
     },
     "api-language-selector": {
