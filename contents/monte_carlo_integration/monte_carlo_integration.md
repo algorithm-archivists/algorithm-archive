@@ -42,9 +42,9 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="clj" %}
 [import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-[import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+[import:7-9, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import:7-16, lang:"c_cpp"](code/c++/monte_carlo.cpp)
+[import:7-16, lang:"cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -133,9 +133,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/monte_carlo.c)
+[import, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/monte_carlo.cpp)
+[import, lang:"cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}

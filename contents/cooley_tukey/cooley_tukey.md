@@ -72,11 +72,11 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="jl" %}
 [import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:8-19, lang:"c_cpp"](code/c/fft.c)
+[import:8-19, lang:"c"](code/c/fft.c)
 {% sample lang="clj" %}
 [import:15-30, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:23-33, lang:"c_cpp"](code/c++/fft.cpp)
+[import:23-33, lang:"cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
@@ -119,11 +119,11 @@ In the end, the code looks like:
 {% sample lang="jl" %}
 [import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:20-39, lang:"c_cpp"](code/c/fft.c)
+[import:20-39, lang:"c"](code/c/fft.c)
 {% sample lang="clj" %}
 [import:31-58, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:36-66, lang:"c_cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
@@ -225,11 +225,11 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/fft.c)
+[import, lang:"c"](code/c/fft.c)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/fft.cpp)
+[import, lang:"cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
