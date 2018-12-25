@@ -13,7 +13,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="cs" %}
 [import:9-27, lang:"csharp"](code/csharp/BubbleSort.cs)
 {% sample lang="c" %}
-[import:10-20, lang:"c_cpp"](code/c/bubble_sort.c)
+[import:10-20, lang:"c"](code/c/bubble_sort.c)
 {% sample lang="c8" %}
 [import:39-63, lang:"chip-8"](code/chip8/bubblesort.c8)
 {% sample lang="java" %}
@@ -31,7 +31,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
-[import:13-23, lang:"c_cpp"](code/c++/bubblesort.cpp)
+[import:13-23, lang:"cpp"](code/c++/bubblesort.cpp)
 {% sample lang="rs" %}
 [import:6-16, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}
@@ -86,7 +86,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 ##### Program.cs
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/bubble_sort.c)
+[import, lang:"c"](code/c/bubble_sort.c)
 {% sample lang="c8" %}
 [import, lang:"chip-8"](code/chip8/bubblesort.c8)
 {% sample lang="java" %}
@@ -104,7 +104,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/bubbleSort.hs)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/bubblesort.cpp)
+[import, lang:"cpp"](code/c++/bubblesort.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/bubble_sort.rs)
 {% sample lang="d" %}

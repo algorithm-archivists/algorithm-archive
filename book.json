@@ -9,7 +9,9 @@
     "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
     "ga",
-    "bulk-redirect"
+    "bulk-redirect",
+    "prism",
+    "-highlight"
   ],
   "lunr": {
     "maxIndexSize": 1000000000
@@ -28,6 +30,15 @@
     },
     "ga": {
       "token": "UA-118252470-1"
+    },
+    "prism": {
+      "lang": {
+        "asm-x64": "nasm"
+      },
+      "ignore": [
+        "emojicode",
+        "text"
+      ]
     },
     "api-language-selector": {
       "languages": [

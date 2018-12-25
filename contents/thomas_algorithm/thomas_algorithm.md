@@ -99,7 +99,7 @@ The transformations are quite easy too, isn't that neat?
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/thomas.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/thomas.c)
+[import, lang:"c"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
 {% sample lang="scratch" %}
@@ -120,7 +120,7 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 {%sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/thomas.cpp)
+[import, lang:"cpp"](code/c++/thomas.cpp)
 {% sample lang="lua" %}
 [import, lang:"lua"](code/lua/thomas.lua)
 {% sample lang="crystal" %}

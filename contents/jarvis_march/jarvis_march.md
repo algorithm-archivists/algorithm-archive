@@ -33,13 +33,13 @@ Since this algorithm, there have been many other algorithms that have advanced t
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/jarvisMarch.hs)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/jarvis_march.c)
+[import, lang:"c"](code/c/jarvis_march.c)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/jarvis-march.js)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/jarvisMarch.py)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/jarvis_march.cpp)
+[import, lang:"cpp"](code/c++/jarvis_march.cpp)
 {% sample lang="lisp" %}
 [import, lang:"lisp"](code/clisp/jarvis-march.lisp)
 {% sample lang="java" %}

@@ -38,9 +38,9 @@ Here is a video describing the stable marriage problem:
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/stableMarriage.hs)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/stable_marriage.c)
+[import, lang:"c"](code/c/stable_marriage.c)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/stable_marriage.cpp)
+[import, lang:"cpp"](code/c++/stable_marriage.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}

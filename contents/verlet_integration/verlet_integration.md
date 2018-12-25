@@ -33,9 +33,9 @@ Here is what it looks like in code:
 {% sample lang="jl" %}
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:9-22, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:9-22, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:3-14, lang:"c_cpp"](code/c/verlet.c)
+[import:3-14, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:13-28, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -87,9 +87,9 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="jl" %}
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:24-41, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:24-41, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:16-31, lang:"c_cpp"](code/c/verlet.c)
+[import:16-31, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:30-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -155,9 +155,9 @@ Here is the velocity Verlet method in code:
 {% sample lang="jl" %}
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:43-54, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:43-54, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:33-43, lang:"c_cpp"](code/c/verlet.c)
+[import:33-43, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:51-65, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -209,9 +209,9 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/verlet.cpp)
+[import, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/verlet.c)
+[import, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}

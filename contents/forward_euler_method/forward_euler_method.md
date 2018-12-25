@@ -110,9 +110,9 @@ Note that in this case, the velocity is directly given by the ODE and the accele
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/euler.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/euler.c)
+[import, lang:"c"](code/c/euler.c)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/euler.cpp)
+[import, lang:"cpp"](code/c++/euler.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}

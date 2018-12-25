@@ -67,7 +67,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/huffman.rs)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/huffman.c)
+[import, lang:"c"](code/c/huffman.c)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/huffman.hs)
 {% sample lang="cs" %}
@@ -78,7 +78,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/huffman.lua)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/huffman.cpp)
+[import, lang:"cpp"](code/c++/huffman.cpp)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/huffman.clj)
 {% sample lang="py" %}

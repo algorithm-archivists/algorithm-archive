@@ -41,9 +41,9 @@ In code, this looks something like:
 {% sample lang="hs" %}
 [import:6-9, lang:"haskell"](code/haskell/convolution.hs)
 {% sample lang="c"%}
-[import:5-18, lang:"c_cpp"](code/c/convolutions.c)
+[import:5-18, lang:"c"](code/c/convolutions.c)
 {% sample lang="cpp"%}
-[import:68-88, lang:"c_cpp"](code/c++/convolutions.cpp)
+[import:68-88, lang:"cpp"](code/c++/convolutions.cpp)
 {% sample lang="python"%}
 [import:4-19, lang:"python"](code/python/conv.py)
 {% endmethod %}
@@ -91,9 +91,9 @@ Where the `.*` operator is an element-wise multiplication.
 [import:11-14, lang:"haskell"](code/haskell/convolution.hs)
 Where the `.*` operator is an element-wise multiplication.
 {% sample lang="c"%}
-[import:20-30, lang:"c_cpp"](code/c/convolutions.c)
+[import:20-30, lang:"c"](code/c/convolutions.c)
 {% sample lang="cpp"%}
-[import:90-105, lang:"c_cpp"](code/c++/convolutions.cpp)
+[import:90-105, lang:"cpp"](code/c++/convolutions.cpp)
 {% sample lang="python"%}
 [import:22-43, lang:"python"](code/python/conv.py)
 {% endmethod %}
