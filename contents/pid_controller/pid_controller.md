@@ -1,17 +1,16 @@
 # Proportional-Integral-Derivative Controller
-Written by Gathros
 
 The Proportional-Integral-Derivative controller (PID controller) is a control loop feedback mechanism, used for continuously modulated control.
-The PID controller is comprised of three parts: proportional controller, integral controller, and derivative controller.
+The PID controller has three components: proportional controller, integral controller, and derivative controller.
 
 Before we get into how a PID controller works, we need a good example to explain things.
-Imagine you are making a self-driving RC car that drives on a line, how could we keep the car on track if it moves with a constant speed?
+For the following sections, imagine you are designing a self driving RC car that tries to remain on a line as it is moving with a constant speed. How would you keep it on course.
 
 ### Proportional Controller
 
-Imagine our RC car is moving too far to the right, in this case it makes sense to turn left.
+Imagine our RC car is too far to the right of the line, in this case it makes sense to turn left.
 Since there are a range of angles you can turn the wheel, you should turn proportional to the distance from the line.
-This is what the proportional controller (P controller) does, which is described by,
+This is what the proportional controller (P controller) does, which is described by
 
 $$ P = K_{p} e(t), $$
 
@@ -22,9 +21,9 @@ In this example, the car would turn in circles, since there is a maximum angle t
 
 ### Derivative Controller
 
-The P controller works well but it has the added problem of overshooting a lot, we need to dampen these oscillations.
+The P controller works well but it has the added problem of overshooting, we need to dampen this motion.
 One way to solve this is to make the rc car resistant to sudden changes of error.
-This is what the derivative controller (D controller) does, which is described by,
+This is what the derivative controller (D controller) does, which is described by
 
 $$ D = K_{d} \frac{de(t)}{dt}$$
 
@@ -35,9 +34,9 @@ When the car returns to the track and there is little to no oscillations, the sy
 
 ### Integral Controller
 
-The Proportional and Derivative controllers are robust enough to keep on course, but what if some wind starts pushing the car and introducing a constant error?
-Well, we would need to know if we are spending too long on one side to account for it, and we can figure it out by summing up all the errors and multiply it by a constant.
-This is what the integral controller (I controller) does, which is described by,
+The Proportional and Derivative controllers are robust enough to keep on course, but what if some wind starts pushing the car constantly of track?
+Well, we would need to know if we are spending too long on one side to account for it, and we can figure it out by summing up all the displacements, usually refered to as errors, and multiply it by a constant.
+This is what the integral controller (I controller) does, which is described by
 
 $$ I = K_{i} \int_{0}^{t} e(\uptau) d\uptau, $$
 
@@ -46,7 +45,7 @@ The peformance of the controller is better with higher $K_{i}$; but with higher 
 
 ### Proportional-Integral-Derivative Controller
 
-The PID controller is just a sum of all three controllers and is of the form,
+The PID controller is just a sum of all three controllers and is of the form
 
 $$ U = K_{p} e(t) + K_{i} \int_{0}^{t} e(x) dx + K_{d} \frac{de(t)}{dt} $$
 
@@ -68,7 +67,7 @@ In the end the code looks like this:
 
 {% method %}
 {% sample lang="c" %}
-[import:26-34, lang:"c_cpp"](code/c/pid_controller.c)
+[import:26-34, lang:"c"](code/c/pid_controller.c)
 {% endmethod %}
 
 ## Example Code
@@ -78,9 +77,14 @@ In this example, we can't calculate the time elapsed, so we are instead setting 
 
 {% method %}
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/pid_controller.c)
+[import, lang:"c"](code/c/pid_controller.c)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+## License
+The text of this of this chapter is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode) with attribution to Gathros.
+The code examples are licensed under the MIT license (found in LICENSE.md).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
