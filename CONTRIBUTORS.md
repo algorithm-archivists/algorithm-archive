@@ -2,66 +2,43 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 
 # Contributors
 
-James Schloss
-<br>
-Nicole Mazzuca
-<br>
-Marius Becker
-<br>
-Gathros
-<br>
-Jeremie Gillet (- Jie -)
-<br>
-Salim Khatib
-<br>
-Hitesh C
-<br>
-Shaurya
-<br>
-Maxime Dherbécourt
-<br>
-Jess 3Jane
-<br>
-Pen Pal
-<br>
-Chinmaya Mahesh
-<br>
-Unlambder
-<br>
-Kjetil Johannessen
-<br>
-CDsigma
-<br>
-Gammison
-<br>
-hsjoihs
-<br>
-DominikRafacz
-<br>
-lulucca12
-<br>
-GuyPozner
-<br>
-William Boyles
-<br>
-Max Weinstein
-<br>
-Gibus Wearing Brony
-<br>
-Gorzoid
-<br>
-Arun Sahadeo
-<br>
-NIFR91
-<br>
-Michal Hanajik
-<br>
-Bendik Samseth
-<br>
-mukundan314
-<br>
-Trashtalk
-<br>
-Cyrus Burt
-<br>
-Liikt
+- James Schloss
+- Nicole Mazzuca
+- Marius Becker
+- Gathros
+- Jeremie Gillet (- Jie -)
+- Salim Khatib
+- Hitesh C
+- Shaurya
+- Maxime Dherbécourt
+- Jess 3Jane
+- Pen Pal
+- Chinmaya Mahesh
+- Unlambder
+- Kjetil Johannessen
+- CDsigma
+- Gammison
+- hsjoihs
+- DominikRafacz
+- lulucca12
+- GuyPozner
+- William Boyles
+- Max Weinstein
+- Gibus Wearing Brony
+- Gorzoid
+- Arun Sahadeo
+- NIFR91
+- Michal Hanajik
+- Bendik Samseth
+- mukundan314
+- Trashtalk
+- Cyrus Burt
+- Patrik Tesarik
+- Ken Power
+- PaddyKe
+- nic-hartley
+- Thijs Raymakers
+- crafter312
+- Christopher Milan
+- Vexatos
+- Björn Heinrichs 
