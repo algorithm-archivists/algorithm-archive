@@ -504,7 +504,10 @@ Well, this analogy breaks down quickly when we start moving beyond 3D, so it is 
 That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ox6FjmooQDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video width="560" height="315" autoplay controls loop>
+  <source src="res/GE_vis.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
 </div>
 
 As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
