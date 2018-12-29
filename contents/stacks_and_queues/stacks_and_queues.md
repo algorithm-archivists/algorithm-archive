@@ -12,3 +12,20 @@ For the most part, though, queues and stacks are treated the same way. There mus
 3. to push elements onto the data structure (`push()`)
 
 The notation for this depends on the language you are using. Queues, for example, will often use `dequeue()` instead of `pop()` and `front()` instead of `top()`. You will see the language-specific details in the source code under the algorithms in this book, so for now it's simply important to know what stacks and queues are and how to access elements held within them.
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

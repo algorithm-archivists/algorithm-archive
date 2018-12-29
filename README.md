@@ -1,6 +1,6 @@
 > **IMPORTANT NOTE FOR NEW CONTRIBUTORS:**
 >
-> We do **not** yet accept entirely new chapters by everyone. If you would like to start work on one, get in contact with Leios first. If you create a full chapter, including text, and submit it as a pull request it is most likely going to get rejected.
+> We do **not** yet accept entirely new chapters by everyone. If you would like to start working on one, please contact James Schloss (Leios) first. If you create a full chapter, including text, and submit it as a pull request it is most likely going to get rejected.
 >
 > If you want to help, it is best to write language examples for *existing* chapters. You can also try to find spelling or other mistakes in existing chapters and submit fixes for those.
 
@@ -32,7 +32,9 @@ Thanks for reading and let me know if there's anything wrong or if you want to s
 ----
 
 ## License
-The content of this project itself is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (link below). The code examples are licensed under the MIT license (found in LICENSE.md).
+The code examples for this project are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+All text content is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode) with attribution specified at the end of every chapter.
+All graphics are licensed under the license stated at the end of every chapter.
+If no attribution is specified, please attribute James Schloss.
 
-{% creativecommons type="by-nc" %}
-{% endcreativecommons %}
+[<p><img  class="center" src="contents/cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)

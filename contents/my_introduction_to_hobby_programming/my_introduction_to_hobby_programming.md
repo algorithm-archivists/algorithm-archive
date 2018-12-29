@@ -67,3 +67,20 @@ The same as I saw in the installation before. Except this time, I didn't sit the
 I'll be honest, even though this happened almost a decade ago, it is burned into my head as one of the best learning experiences I have ever had. I am sure many, many people would have found it incredibly frustrating. They would have thrown their computer at the wall, exclaiming, "What am I supposed to do?" For me, though, it was captivating. I would never see my computer in the same way again and to this day when I pop open a terminal, I cannot help but smile a little.
 
 Basically, since the first time I was able to directly interact with my computer, I have been captivated with the idea, and though I was not able use the knowledge until much later in my life, it stuck with me and definitely shaped my perspective of the world.
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
