@@ -3,7 +3,7 @@ name: Chapter submission
 about: Add a chapter or modify an existing chapter in the Algorithm Archive
 title: ''
 labels: ''
-assignees: ''
+assignees: 'leios'
 
 ---
 
@@ -33,7 +33,7 @@ I, AUTHOR, the copyright holder of this work, irrevocably grant anyone the right
 (Anyone may use, share or remix this work, as long as they credit me and share any derivative work under this license.)
 
 <!--- Please leave this section --->
-** For Algorithm Archive Developers **
+**For Algorithm Archive Developers**
 - [ ] The algorithm archive can be built locally
 - [ ] The markdown file has been edited with appropriate line numbers
 - [ ] There are appropriate images / animations to describe the chapter's algorithm, data structure, or method

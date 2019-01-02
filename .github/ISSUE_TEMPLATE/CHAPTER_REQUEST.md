@@ -3,7 +3,7 @@ name: Chapter Request
 about: Requesting a new chapter to be in the Algorithm Archive
 title: ''
 labels: ''
-assignees: ''
+assignees: 'leios'
 
 ---
 
@@ -22,7 +22,7 @@ A clear and concise description of what the new method would be about, including
 Add any other reasons why this chapter should be a higher priority.
 
 <!--- Please leave this section --->
-** For Algorithm Archive Developers **
+**For Algorithm Archive Developers**
 - [ ] This chapter can be added to the [Master Overview](https://github.com/algorithm-archivists/algorithm-archive/projects/11) (if it cannot be, explain why -- lack of sufficient technical sources, not novel enough, too ambitious)
 - [ ] There is a timeline for when this chapter can be written
 - [ ] The chapter has been added to the [Master Overview](https://github.com/algorithm-archivists/algorithm-archive/projects/11)

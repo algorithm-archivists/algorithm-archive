@@ -41,7 +41,7 @@ If applicable, add screenshots to help explain your problem.
 Add any other context about the problem here.
 
 <!--- Please leave this section --->
-** For Algorithm Archive Developers **
+**For Algorithm Archive Developers**
 - [ ] The bug can be reproduced
 - [ ] The bug can be fixed (if not, please explain why not)
 - [ ] There is a timeline to fix the bug
