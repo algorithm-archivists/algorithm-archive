@@ -65,11 +65,14 @@ This section is currently a work-in-progress, and all of these methods will have
 
 ## Asymmetric Cryptography
 
-Asymmetric cryptography is sometimes called "public key cryptography" because Bob and Alice both need a shared public key and a private key they keep to themselves.
-This makes these algorithms asymmetric because what is encrypted with the public key can only be decrypted with the private key and vice versa. 
+Asymmetric cryptography is sometimes called "public key cryptography" (or PK Crypto in short) because Bob and Alice both need a shared public key and a private key they keep to themselves.
+These algorithms are called asymmetric because what is encrypted with the public key can only be decrypted with the private key and vice versa. 
 This can be used for a number of different applications, like digital signing, encrypted communication or secretly sharing keys.
-For example, if Alice wants to send a message to Bob and Bob wants to make sure the message from Alice was not altered, Alice can encrypt the message with her private key.
-If the message is altered (possibly by Charlie), then the message can no longer be decrypted with Alice's public key.
+For example, if Alice wants to send a message to Bob and this message has to kept private Alice will encrypt the message with Bob's private key.
+Now only Bob can decrypt the message again and read it.
+If Charlie were to alter Alice's message, Bob couldn't decrypt it anymore.
+If Bob wants to make sure the message is actually from Alice, Alice can encrypt the already encrypted message with her private key again.
+This is to keep Charlie from sending forged or altered messages since Bob couldn't decrypt that layer with Alice's public key.
 Some examples for public key cryptography:
 * **RSA**: This algorithm calculates a public and a private key from two very large primes. 
     It is (hopefully) near impossible to factor the product of two such primes in a feasible amount of time.
