@@ -35,9 +35,9 @@ Both of which are described in the following sections.
 Cryptographic systems are a cornerstone to modern information technology and lie at the heart of everything from WiFi to online banking.
 If an attacker manages to crack modern cryptographic algorithms, they could cause serious damage.
 For this reason, it is important to keep a few things in mind:
-* Because crypto has become such an advanced field cryptosystems should be analyzed by trained professionals and have to go under extensive testing and vetting.
+* Because crypto has become such an advanced field crypto systems should be analyzed by trained professionals and have to go under extensive testing and vetting.
     Meaning whenever possible use a widely accepted cryptography library instead of writing your own cypher.
-* Kerckhoffs's principle says that when determing the robustness of a cryptosystem it should be assumed that the attacker knows the encryption and decryption algorithm. 
+* Kerckhoffs's principle says that when determining the robustness of a crypto system it should be assumed that the attacker knows the encryption and decryption algorithm. 
     This does not include any pre-shared or secret keys.
 * With the advances in technology cryptography often hits its limits.
     Many formerly thought hashing algorithms became obsolete because the computer used to crack them got faster and better.
@@ -53,10 +53,10 @@ Some examples for symmetric cryptography are:
 * **Ceasar Cipher**: Alice and Bob rotate the alphabet by $$n$$ characters and use that as a table to encode and decode their message.
 * **Rot13**: This is a special case of the Caeser Cipher where the alphabet is rotated by 13, hence the name "Rot13."
 * **Permutation Cipher**: Here you choose a permutation $$\pi$$ (i.e. $$\pi=(3,1,2,4)$$) and reorder the the letters according to that $$\pi$$ which is the key.
-* **XOR encryption**: This method works on bitstrings and combines the message and a key of equal bit length with the XOR operator.
+* **XOR encryption**: This method works on bit strings and combines the message and a key of equal bit length with the XOR operator.
     To decrypt, simply XOR again with the same key.
 * **DES or Data Encryption Standard**: This is a newer encryption algorithm which was standardized in 1977. 
-    It has since been deemed unsecure and is superseded by AES.
+    It has since been deemed insecure and is superseded by AES.
 * **AES or Advanced Encryption Standard**: The actual algorithm is called "Rijndael". 
     Like with XOR or DES you generate a bit string (depending on which AES you use 128/192 or 256 bit long) which is your key.
 * **Blowfish**: This algorithm also was a good contender for the AES but lost to Rijndael.
@@ -72,8 +72,8 @@ For example, if Alice wants to send a message to Bob and Bob wants to make sure 
 If the message is altered (possibly by Charlie), then the message can no longer be decrypted with Alice's public key.
 Some examples for public key cryptography:
 * **RSA**: This algorithm calculates a public and a private key from two very large primes. 
-    It is (hopefully) near impossible to factor the product of two such primes in a feasable amount of time.
-* **ECC or Elliptic-curve cryptography**: Here you calulate the private and public key from two points on an elliptic curve. 
+    It is (hopefully) near impossible to factor the product of two such primes in a feasible amount of time.
+* **ECC or Elliptic-curve cryptography**: Here you calculate the private and public key from two points on an elliptic curve. 
     This has the positive side effect that you need smaller numbers than non-ECC algorithms like RSA to achieve the same level of security.
 
 This section is currently a work-in-progress. These methods will also have corresponding chapters in the near future.
