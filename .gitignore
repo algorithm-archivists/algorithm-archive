@@ -77,6 +77,9 @@ anaconda-mode/
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
 
+# npm package lock for local installs
+package-lock.json
+
 # Book build output
 _book
 

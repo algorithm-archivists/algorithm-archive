@@ -1,0 +1,146 @@
+This file describes the path that the Piet program takes in a more human readable form. 
+Two functions are implemented:
+- GCD with subtraction
+- GCD with the modulo operator
+
+-------------------
+SUBTRACTION
+-------------------
+
+Pseudo code:
+
+function gcd(a, b)
+    while a ≠ b 
+        if a > b
+           a := a − b; 
+        else
+           b := b − a; 
+    return a;
+
+
+Piet code:
+
+COMMAND                 STATE OF STACK
+in(number)              A           // Take A as an input
+duplicate               AA          // Start to take the absolute value of A
+push 1                  1AA
+duplicate               11AA
+subtract                0AA
+greater                 0/1A        // 1 if A > 0, 0 if A <= 0
+not                     1/0A        // 0 if A > 0, 1 if A <= 0
+push 1                  1 1/0 A
+push 3                  31 1/0 A
+subtract                -2 1/0 A
+multiply                -2/0 A
+push 1                  1 -2/0 A
+add                     -1/1 A
+multiply                A           // A should now be an absolute value
+
+in(number)              BA          // Take B as an input
+duplicate               BBA         // Start to take the absolute value of B
+push 1                  1BBA
+duplicate               11BBA
+subtract                0BBA
+greater                 0/1BA        // 1 if B > 0, 0 if B <= 0
+not                     1/0BA        // 0 if B > 0, 1 if B <= 0
+push 1                  1 1/0 BA
+push 3                  31 1/0 BA
+subtract                -2 1/0 BA
+multiply                -2/0 BA
+push 1                  1 -2/0 BA
+add                     -1/1 BA
+multiply                BA          // B should now be an absolute value
+
+// Start of the main loop while a ≠ b 
+duplicate               BBA
+push 3                  3BBA
+push 2                  23BBA
+roll                    ABB
+duplicate               AABB
+push 4                  4AABB
+push 1                  14AABB
+roll                    ABBA
+subtract                0/x BA
+not                     1/0 BA      // 1 if a = b and 0 if a ≠ b
+not                     0/1 BA      // 1 if a ≠ b and 0 if a = b
+pointer                 BA          // If a ≠ b, the DP should change one clockwise, otherwise, go straight ahead.
+
+    // Go left if a ≠ b (DP changed one clockwise)
+    duplicate               BBA
+    push 3                  3BBA
+    push 2                  23BBA
+    roll                    ABB
+    duplicate               AABB
+    push 4                  4AABB
+    push 1                  14AABB
+    roll                    ABBA
+    push 2                  2ABBA
+    push 1                  12ABBA
+    roll                    BABA
+    greater                 0/1 BA          // A > B; 1 if true; 0 if false
+    pointer                 BA              // If A > B, DP goes one clockwise, otherwise, DP stays the same. 
+
+        // If A > B (DP has changed 1 clockwise)
+        duplicate               BBA
+        push 3                  3BBA
+        push 1                  13BBA
+        roll                    BAB
+        subtract                AB              // A = A - B
+        push 2                  2AB
+        push 1                  12AB
+        roll                    BA
+        // Go back to start of loop
+
+        // If B > A (DP stayed the same)
+        push 2                  2BA
+        push 1                  12BA
+        roll                    AB
+        duplicate               AAB
+        push 3                  3AAB
+        push 1                  13AAB
+        roll                    ABA
+        subtract                BA              // B = B - A
+        // Go back to start of loop
+
+// Go down if a = b (end of while loop)
+pop                     A
+out(number)             -               // Print out A when done.
+
+---------------------------------------------------------------------------
+
+-------------------
+MODULO
+-------------------
+
+Pseudo code:
+
+function gcd(a, b)
+    while b ≠ 0
+       t := b; 
+       b := a mod b; 
+       a := t; 
+    return a;
+
+Piet code:
+
+COMMAND                 STATE OF STACK
+in(number)              A
+in(number)              BA
+
+//  Start of loop
+duplicate               BBA
+not                     0/1 BA
+not                     1/0 BA
+pointer                 BA
+
+    // Go down if b ≠ 0
+    duplicate               TBA
+    push 3                  3TBA                  
+    push 1                  13TBA
+    roll                    BAT
+    mod                     BA          // b = a mod b; a = t
+    // Go back to the start of the loop
+
+// Go right if b = 0
+pop                     A
+out(number)             -               // Print out A when done.

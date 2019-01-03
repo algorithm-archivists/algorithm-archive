@@ -99,7 +99,7 @@ The transformations are quite easy too, isn't that neat?
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/thomas.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/thomas.c)
+[import, lang:"c"](code/c/thomas.c)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/thomas.py)
 {% sample lang="scratch" %}
@@ -108,9 +108,11 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
   <img  class="center" src="code/scratch/thomas.svg" width="1000" />
 </p>
 {% sample lang="java" %}
-[import, lang:"java"](code/java/thomas.java)
+[import, lang:"java"](code/java/Thomas.java)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/thomas.go)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/thomas.swift)
 {% sample lang="php" %}
@@ -118,9 +120,32 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 {%sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/thomas.cpp)
+[import, lang:"cpp"](code/c++/thomas.cpp)
+{% sample lang="lua" %}
+[import, lang:"lua"](code/lua/thomas.lua)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/thomas.cr)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/thomas.kt)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

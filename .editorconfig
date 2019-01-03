@@ -6,6 +6,11 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 end_of_line = lf
 
+# Bash
+[*.bash]
+indent_style = space
+indent_size = 4
+
 # C
 [*.c]
 indent_style = space
@@ -18,6 +23,11 @@ indent_size = 2
 
 # C++
 [*.cpp]
+indent_style = space
+indent_size = 2
+
+# Crystal
+[*.cr]
 indent_style = space
 indent_size = 2
 
@@ -38,6 +48,16 @@ indent_size = 4
 
 # Elm
 [*.elm]
+indent_style = space
+indent_size = 2
+
+# Emojicode
+[*.emojic]
+indent_style = space
+indent_size = 2
+
+# Factor
+[*.factor]
 indent_style = space
 indent_size = 2
 
@@ -80,6 +100,16 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+# LOLCODE
+[*.lol]
+indent_style = space
+indent_size = 4
+
+# Lua
+[*.lua]
+indent_style = space
+indent_size = 2
+
 # Matlab
 [*.m]
 indent_style = space
@@ -94,6 +124,11 @@ indent_size = 2
 [*.ml]
 indent_style = space
 indent_size = 2
+
+# PHP
+[*.php]
+indent_style = space
+indent_size = 4
 
 # Python
 [*.py]
@@ -117,18 +152,3 @@ indent_size = 0
 trim_trailing_whitespace = false
 insert_final_newline = false
 end_of_line = lf
-
-# Emojicode
-[*.emojic]
-indent_style = space
-indent_size = 2
-
-# PHP
-[*.php]
-indent_style = space
-indent_size = 4
-
-#Lua
-[*.lua]
-indent_style = space
-indent_size = 2

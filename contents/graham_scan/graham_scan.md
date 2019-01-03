@@ -17,11 +17,15 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="hs" %}
 [import:6-7, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
-[import:24-26, lang:"c_cpp"](code/c/graham.c)
+[import:24-26, lang:"c"](code/c/graham.c)
 {% sample lang="js" %}
 [import:36-38, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
 [import:4-6, lang:"python"](code/python/grahamScan.py)
+{% sample lang="go" %}
+[import:13-15, lang:"go"](code/golang/graham.go)
+{% sample lang="java" %}
+[import:27-29, lang:"java"](code/java/GrahamScan.java)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -41,11 +45,15 @@ In the end, the code should look something like this:
 {% sample lang="hs" %}
 [import:9-18, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
-[import:65-95, lang:"c_cpp"](code/c/graham.c)
+[import:65-95, lang:"c"](code/c/graham.c)
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
 [import:14-27, lang:"python"](code/python/grahamScan.py)
+{% sample lang="go" %}
+[import:21-42, lang:"go"](code/golang/graham.go)
+{% sample lang="java" %}
+[import:35-70, lang:"java"](code/java/GrahamScan.java)
 {% endmethod %}
 
 ### Bibliography
@@ -60,13 +68,34 @@ In the end, the code should look something like this:
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/grahamScan.hs)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/graham.c)
+[import, lang:"c"](code/c/graham.c)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/grahamScan.py)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/graham.go)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/GrahamScan.java)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

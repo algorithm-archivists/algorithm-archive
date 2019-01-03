@@ -72,17 +72,19 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="jl" %}
 [import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:8-19, lang:"c_cpp"](code/c/fft.c)
+[import:8-19, lang:"c"](code/c/fft.c)
 {% sample lang="clj" %}
 [import:15-30, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:23-33, lang:"c_cpp"](code/c++/fft.cpp)
+[import:23-33, lang:"cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
-[import:4-13, lang:"julia"](code/julia/fft.jl)
+[import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:5-11, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:4-13, lang:"julia"](code/julia/fft.jl)
+{% sample lang="asm-x64" %}
+[import:15-74, lang:"asm-x64"](code/asm-x64/fft.s)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -119,17 +121,19 @@ In the end, the code looks like:
 {% sample lang="jl" %}
 [import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:20-39, lang:"c_cpp"](code/c/fft.c)
+[import:20-39, lang:"c"](code/c/fft.c)
 {% sample lang="clj" %}
 [import:31-58, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:36-66, lang:"c_cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
-[import:6-19, lang:"haskell"](code/haskell/fft.hs)
+[import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:13-24, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:16-32, lang:"julia"](code/julia/fft.jl)
+{% sample lang="asm-x64" %}
+[import:76-165, lang:"asm-x64"](code/asm-x64/fft.s)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -225,20 +229,46 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/fft.c)
+[import, lang:"c"](code/c/fft.c)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/fft.cpp)
+[import, lang:"cpp"](code/c++/fft.cpp)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/fft.s)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[FTexample](res/FT_example.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[radix2positive](res/radix-2screen_positive.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[radix2](res/radix-2screen.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[radix8](res/radix-8screen.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DIT-FFT-butterfly](https://en.wikipedia.org/wiki/Butterfly_diagram#/media/File:DIT-FFT-butterfly.png)" was created by Virens and is licenced under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

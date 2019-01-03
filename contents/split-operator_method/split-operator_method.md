@@ -100,8 +100,10 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% sample lang="jl" %}
 [import:11-34, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:11-21, lang:"c_cpp"](code/c/split_op.c)
-[import:52-73, lang:"c_cpp"](code/c/split_op.c)
+[import:11-21, lang:"c"](code/c/split_op.c)
+[import:52-73, lang:"c"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import:14-49, lang:"cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:11-30, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -119,8 +121,10 @@ Afterwards, we turn them into operators:
 {% sample lang="jl" %}
 [import:36-62, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:23-29, lang:"c_cpp"](code/c/split_op.c)
-[import:75-96, lang:"c_cpp"](code/c/split_op.c)
+[import:23-29, lang:"c"](code/c/split_op.c)
+[import:75-96, lang:"c"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import:51-80, lang:"cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:33-54, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -139,7 +143,9 @@ The final step is to do the iteration, itself.
 {% sample lang="jl" %}
 [import:65-112, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import:98-148, lang:"c_cpp"](code/c/split_op.c)
+[import:98-148, lang:"c"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import:99-156, lang:"cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:57-95, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -155,6 +161,14 @@ As you can see from the code, this involves summing the density, multiplying tha
 
 The Split-Operator method is one of the most commonly used quantum simulation algorithms because of how straightforward it is to code and how quickly you can start really digging into the physics of the simulation results!
 
+## Video Explanation
+
+Here is a video describing the split-operator method:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BBt8EugN03Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 This example code is a simulation of a gaussian distribution of atoms slightly offset in a harmonic trap in imaginary time.
 So long as the code is written appropriately, this means that the atoms should move towards the center of the trap and the energy should decay to $$\frac{1}{2}\hbar\omega$$, which will be simply $$\frac{1}{2}$$ in this simulation.
@@ -164,7 +178,9 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/split_op.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/split_op.c)
+[import, lang:"c"](code/c/split_op.c)
+{% sample lang="cpp" %}
+[import, lang:"cpp"](code/c++/split_op.cpp)
 {% sample lang="py" %}
 [import:5-127, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
@@ -174,3 +190,25 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[split_op_method](res/split_op_method.svg)" was created by [Julian Schacher](https://github.com/julianschacher) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[realsplitop](res/real_time.gif)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[imaginarysplitop](res/imaginary_time.gif)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
