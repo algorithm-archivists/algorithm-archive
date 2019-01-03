@@ -75,3 +75,17 @@ Some examples for public key cryptography:
 * **ECC or Elliptic-curve cryptography**: Here you calulate the private and public key from two points on an elliptic curve. This has the positive side effect that you need smaller numbers than non-ECC algorithms like RSA to achieve the same level of security.
 
 This section is currently a work-in-progress. These methods will also have corresponding chapters in the near future.
+
+## License
+The text of this of this chapter is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode) with attribution to Liikt.
+The code examples are licensed under the MIT license (found in LICENSE.md).
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by Liikt and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
