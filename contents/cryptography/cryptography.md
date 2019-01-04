@@ -41,6 +41,7 @@ For this reason, it is important to keep a few things in mind:
     This does not include any pre-shared or secret keys.
 * With the advances in technology cryptography often hits its limits.
     Many formerly thought hashing algorithms became obsolete because the computer used to crack them got faster and better.
+    The keys for RSA have to be longer or different and stronger algorithms have to be used. 
     Another field that cryptography will have to face is Quantum Computing.
     Quantum Computers will have a big impact on cryptography and especially asymmetric crypto.
     This whole set of problems is summarized in the field of Post-quantum cryptography.
