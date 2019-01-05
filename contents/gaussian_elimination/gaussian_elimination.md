@@ -315,8 +315,8 @@ In code, this process might look like this:
 [import:5-13, lang:"c_cpp"](code/c/gaussian_elimination.c)
 [import:19-34, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:23-30, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
-[import:36-56, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:27-28, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:12-28, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -388,7 +388,7 @@ Here is what it might look like in code:
 {% sample lang="c" %}
 [import:36-41, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:12-20, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:32-35, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -409,7 +409,7 @@ When we put everything together, it looks like this:
 {% sample lang="c" %}
 [import:15-48, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:12-72, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:8-49, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -448,7 +448,7 @@ Here it is in code:
 {% sample lang="c" %}
 [import:64-82, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:75-89, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:52-64, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
 [import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
@@ -491,7 +491,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:50-62, lang:"c_cpp"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:92-105, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
+[import:67-79, lang:"c_cpp"](code/c++/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
