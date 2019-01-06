@@ -129,8 +129,6 @@ We are done here!
 [import, lang:"crystal"](code/crystal/bogo.cr)
 {% sample lang="r" %}
 [import, lang:"r"](code/r/bogo_sort.r)
-{% sample lang="go" %}
-[import, lang:"go"](code/go/bogo_sort.go)
 {% endmethod %}
 
 
