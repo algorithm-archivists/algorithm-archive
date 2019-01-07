@@ -82,7 +82,7 @@ $$
 This matrix form has a particular name: _Row Echelon Form_.
 Basically, any matrix can be considered in row echelon form if the leading coefficient or _pivot_ (the first non-zero element in every row when reading from left to right) is right of the pivot of the row above it.
 
-This creates a matrix that sometiems resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
+This creates a matrix that sometimes resembles an upper-triangular matrix; however, that doesn't mean that all row-echelon matrices are upper-triangular.
 For example, all of the following matrices are in row echelon form:
 
 $$
@@ -514,7 +514,10 @@ Well, this analogy breaks down quickly when we start moving beyond 3D, so it is 
 That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ox6FjmooQDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video width="560" height="315" autoplay controls loop>
+  <source src="res/GE_vis.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
 </div>
 
 As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
@@ -538,6 +541,14 @@ If we can reduce the matrix to a specifically **tridiagonal** matrix, we can act
 How? Well, we can use an algorithm known as the _Tri-Diagonal Matrix Algorithm_ \(TDMA\) also known as the [_Thomas Algorithm_](../thomas_algorithm/thomas_algorithm.md).
 
 There are also plenty of other solvers that do similar things that we will get to in due time.
+
+## Video Explanation
+
+Here's a video describing Gaussian elimination:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2tlwSqblrvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 
@@ -564,3 +575,23 @@ There are also plenty of other solvers that do similar things that we will get t
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
