@@ -23,7 +23,7 @@ fn dfs_recursive_postorder(n: &Node) {
 }
 
 fn dfs_recursive_inorder_btree(n: &Node) {
-    if n.children.len() == 2{
+    if n.children.len() == 2 {
         dfs_recursive_inorder_btree(&n.children[1]);
         println!("{}", n.value);
         dfs_recursive_inorder_btree(&n.children[0]);
@@ -46,7 +46,7 @@ fn dfs_stack(n: &Node) {
     }
 }
 
-fn bfs_queue(n: &Node){
+fn bfs_queue(n: &Node) {
     let mut queue = VecDeque::new();
     queue.push_back(n);
 
@@ -58,14 +58,20 @@ fn bfs_queue(n: &Node){
 
 fn create_tree(num_row: u64, num_child: u64) -> Node {
     if num_row == 0 {
-        return Node { children: vec![], value: 0 };
+        return Node {
+            children: vec![],
+            value: 0,
+        };
     }
 
     let children = (0..num_child)
         .map(|_| create_tree(num_row - 1, num_child))
         .collect();
 
-    Node { children, value: num_row }
+    Node {
+        children,
+        value: num_row,
+    }
 }
 
 fn main() {
