@@ -111,7 +111,7 @@ Now, in this case the first element searched through is still the root of the tr
   <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-[import:17-23, lang:"rust"](code/rust/tree.rs)
+[import:17-24, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -154,7 +154,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
   <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-[import:25-38, lang:"rust"](code/rust/tree.rs)
+[import:25-40, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -207,7 +207,7 @@ In code, it looks like this:
   <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:40-47, lang:"rust"](code/rust/tree.rs)
+[import:41-48, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -252,7 +252,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:49-57, lang:"rust"](code/rust/tree.rs)
+[import:50-58, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}

@@ -23,17 +23,18 @@ fn dfs_recursive_postorder(n: &Node) {
 }
 
 fn dfs_recursive_inorder_btree(n: &Node) {
-    if n.children.len() == 2 {
-        dfs_recursive_inorder_btree(&n.children[1]);
-        println!("{}", n.value);
-        dfs_recursive_inorder_btree(&n.children[0]);
-    } else if n.children.len() == 1 {
-        dfs_recursive_inorder_btree(&n.children[0]);
-        println!("{}", n.value);
-    } else if n.children.len() == 0 {
-        println!("{}", n.value);
-    } else {
-        println!("This is not a binary tree.");
+    match &n.children[..] {
+        [left, right] => {
+            dfs_recursive_inorder_btree(left);
+            println!("{}", n.value);
+            dfs_recursive_inorder_btree(right);
+        }
+        [left] => {
+            dfs_recursive_inorder_btree(left);
+            println!("{}", n.value);
+        }
+        [] => println!("{}", n.value),
+        _ => println!("This is not a binary tree."),
     }
 }
 
@@ -76,14 +77,19 @@ fn create_tree(num_row: u64, num_child: u64) -> Node {
 
 fn main() {
     let root = create_tree(2, 3);
+
     println!("Recursive DFS:");
     dfs_recursive(&root);
+
     println!("Stack DFS:");
     dfs_stack(&root);
+
     println!("Queue BFS:");
     bfs_queue(&root);
+
     println!("Recursive post-order DFS:");
     dfs_recursive_postorder(&root);
+
     println!("Recursive in-order DFS BTree:");
     let root_binary = create_tree(3, 2);
     dfs_recursive_inorder_btree(&root_binary);
