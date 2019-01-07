@@ -19,8 +19,7 @@ void gaussianElimination(std::vector<std::vector<double> > &eqns) {
     if (eqns[pivot][i] == 0.0)
       continue;  // But continuing to simplify the matrix as much as possible
 
-    if (i !=
-        pivot)  // Swapping the rows if new row with higher maxVals is found
+    if (i != pivot)  // Swapping the rows if new row with higher maxVals is found
       std::swap(eqns[pivot], eqns[i]);  // C++ swap function
 
     for (int j = i + 1; j < rows; j++) {
