@@ -1,7 +1,7 @@
 extern crate rand; // External crate that provides random number generation tools
 
-use rand::{thread_rng, Rng}; // Used for random number generation
 use rand::distributions::Uniform; // Used for a uniform distribution
+use rand::{thread_rng, Rng}; // Used for random number generation
 
 fn bubble_sort(a: &mut [u32]) {
     let n = a.len();
