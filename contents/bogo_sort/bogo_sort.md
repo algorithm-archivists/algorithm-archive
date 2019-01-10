@@ -20,7 +20,7 @@ In code, it looks something like this:
 {% sample lang="clj" %}
 [import:7-11, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
-[import:25-29, lang:"c_cpp"](code/c/bogo_sort.c)
+[import:25-29, lang:"c"](code/c/bogo_sort.c)
 {% sample lang="java" %}
 [import:2-6, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
@@ -31,14 +31,16 @@ In code, it looks something like this:
 [import:17-20, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import:21-28, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import:1-22, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
-[import:33-38, lang:"c_cpp"](code/c++/bogosort.cpp)
+[import:33-38, lang:"cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
 [import:16-20, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
 [import:13-19, lang:"swift"](code/swift/bogosort.swift)
 {% sample lang="php" %}
-[import:11-16, lang:"php"](code/php/bogo_sort.php)
+[import:15-22, lang:"php"](code/php/bogo_sort.php)
 {% sample lang="nim" %}
 [import:16-18, lang:"nim"](code/nim/bogo_sort.nim)
 {% sample lang="ruby" %}
@@ -52,7 +54,7 @@ In code, it looks something like this:
 {% sample lang="racket" %}
 [import:3-8, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% sample lang="st" %}
-[import:2-6, lang:"st"](code/smalltalk/bogosort.st)
+[import:2-6, lang:"smalltalk"](code/smalltalk/bogosort.st)
 {% sample lang="bash" %}
 [import:38-45, lang:"bash"](code/bash/bogo_sort.bash)
 {% sample lang="asm-x64" %}
@@ -65,6 +67,10 @@ In code, it looks something like this:
 [import:1-6, lang:"r"](code/r/bogo_sort.r)
 {% sample lang="pde" %}
 [import:55-59, lang:"java"](code/processing/bogoSort.pde)
+{% sample lang="scala" %}
+[import:12-16, lang:"scala"](code/scala/bogo.scala)
+{% sample lang="go" %}
+[import:27-31, lang:"go"](code/go/bogo_sort.go)
 {% endmethod %}
 
 That's it.
@@ -95,7 +101,7 @@ Obviously, bogo sort is almost impossible with a large array.
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/bogo.clj)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/bogo_sort.c)
+[import, lang:"c"](code/c/bogo_sort.c)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/bogo.java)
 {% sample lang="js" %}
@@ -106,8 +112,10 @@ Obviously, bogo sort is almost impossible with a large array.
 [import, lang:"haskell"](code/haskell/bogoSort.hs)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/bogosort.m)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/bogosort.cpp)
+[import, lang:"cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/bogosort.rs)
 {% sample lang="swift" %}
@@ -127,7 +135,7 @@ Obviously, bogo sort is almost impossible with a large array.
 {% sample lang="racket" %}
 [import, lang:"lisp"](code/racket/bogo_sort.rkt)
 {% sample lang="st" %}
-[import, lang:"st"](code/smalltalk/bogosort.st)
+[import, lang:"smalltalk"](code/smalltalk/bogosort.st)
 {% sample lang="bash" %}
 [import, lang:"bash"](code/bash/bogo_sort.bash)
 {% sample lang="asm-x64" %}
@@ -140,8 +148,29 @@ Obviously, bogo sort is almost impossible with a large array.
 [import, lang:"r"](code/r/bogo_sort.r)
 {% sample lang="pde" %}
 [import:1-53, lang:"java"](code/processing/bogoSort.pde)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/bogo.scala)
+{% sample lang="go" %}
+[import, lang:"go"](code/go/bogo_sort.go)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

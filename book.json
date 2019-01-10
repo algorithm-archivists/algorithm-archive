@@ -4,18 +4,19 @@
     "fontsettings",
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
-    "creativecommons",
     "wordcount",
     "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
     "ga",
-    "bulk-redirect"
+    "bulk-redirect",
+    "prism",
+    "-highlight"
   ],
   "lunr": {
     "maxIndexSize": 1000000000
   },
   "pluginsConfig": {
-    "mathjax":{
+    "mathjax": {
       "version": "2.6.1"
     },
     "include-codeblock": {
@@ -29,12 +30,28 @@
     "ga": {
       "token": "UA-118252470-1"
     },
+    "prism": {
+      "lang": {
+        "asm-x64": "nasm"
+      },
+      "ignore": [
+        "emojicode",
+        "text"
+      ],
+      "css": [
+        "prismjs/themes/prism-tomorrow.css"
+      ]
+    },
     "api-language-selector": {
       "languages": [
         {
           "lang": "jl",
           "name": "Julia",
           "default": true
+        },
+        {
+          "lang": "bash",
+          "name": "Bash"
         },
         {
           "lang": "cs",
@@ -47,6 +64,10 @@
         {
           "lang": "c",
           "name": "C"
+        },
+        {
+          "lang": "c8",
+          "name": "chip-8"
         },
         {
           "lang": "py",
@@ -130,11 +151,15 @@
         },
         {
           "lang": "lisp",
-          "name": "Lisp"
+          "name": "Common Lisp"
         },
         {
           "lang": "nim",
           "name": "Nim"
+        },
+        {
+          "lang": "asm-x64",
+          "name": "X86-64 Assembly"
         },
         {
           "lang": "f90",
@@ -163,6 +188,10 @@
         {
           "lang": "pde",
           "name": "Processing"
+        },
+        {
+          "lang": "piet",
+          "name": "Piet"
         }
       ]
     }

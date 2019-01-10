@@ -1,22 +1,32 @@
 import Data.Complex
-import Data.Array
-import Data.Ratio
+import Data.List (partition)
+import Data.Map ((!))
 import qualified Data.Map as M
+import Data.Ratio
+
+dft :: [Complex Double] -> [Complex Double]
+dft x = matMult dftMat x
+  where
+    n = length x
+    w = exp $ (-2) * pi * (0 :+ 1) / fromIntegral n
+    dftMat = [[w ^ (j * k) | j <- [0 .. n - 1]] | k <- [0 .. n - 1]]
+    matMult m x = map (sum . zipWith (*) x) m
 
 fft :: [Complex Double] -> [Complex Double]
-fft x = let n = length x
-            i = 0 :+ 1
-            w = M.fromList [(k%n, exp ((-2)*pi*i*(fromIntegral k)/(fromIntegral n)) ) | k<-[0..n-1]]
-            arr = fft' n w (listArray (0,n-1) x)
-        in [arr!k | k<-[0..n-1]]
+fft x = fft' x
   where
-  fft' 1 _ x = x
-  fft' n w x = let n2 = div n 2
-                   e = fft' n2 w (listArray (0, n2-1) [x!k | k<-[0,2..n-1]])
-                   o = fft' n2 w (listArray (0, n2-1) [x!k | k<-[1,3..n-1]])
-               in array (0, n-1) $ concat [[(k, e!k + o!k * w M.!(k%n)),
-                                            (k + n2, e!k - o!k * w M.!(k%n))]
-                                                               | k <- [0..n2-1]]
+    n = length x
+    w0 = exp ((-2) * pi * (0 :+ 1) / fromIntegral n)
+    w = M.fromList [(k % n, w0 ^ k) | k <- [0 .. n - 1]]
+    fft' [x] = [x]
+    fft' x =
+      let (evens, odds) = partition (even . fst) $ zip [0 ..] x
+          e = fft' $ map snd evens
+          o = fft' $ map snd odds
+          x1 = zipWith3 (\e o k -> e + o * w ! (k %n)) e o [0 ..]
+          x2 = zipWith3 (\e o k -> e - o * w ! (k %n)) e o [0 ..]
+       in x1 ++ x2
 
 main = do
-  print $ fft [0,1,2,3]
+  print $ dft [0, 1, 2, 3]
+  print $ fft [0, 1, 2, 3]

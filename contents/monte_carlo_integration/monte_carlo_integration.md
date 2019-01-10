@@ -42,9 +42,9 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="clj" %}
 [import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-[import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+[import:7-9, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import:7-16, lang:"c_cpp"](code/c++/monte_carlo.cpp)
+[import:7-16, lang:"cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -54,7 +54,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="d" %}
 [import:2-5, lang:"d"](code/d/monte_carlo.d)
 {% sample lang="go" %}
-[import:12-14, lang:"golang"](code/go/monteCarlo.go)
+[import:12-14, lang:"go"](code/go/monteCarlo.go)
 {% sample lang="r" %}
 [import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -71,6 +71,24 @@ each point is tested to see whether it's in the circle or not:
 [import:1-4, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import:1-8, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="factor" %}
+[import:9-12 lang:"factor"](code/factor/monte_carlo.factor)
+{% sample lang="emojic" %}
+[import:23-27, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import:4-7, lang:"php"](code/php/monte_carlo.php)
+{% sample lang="lua" %}
+[import:1-3, lang="lua"](code/lua/monte_carlo.lua)
+{% sample lang="racket" %}
+[import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
+{% sample lang="scala" %}
+[import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import:3-5, lang:"lisp"](code/clisp/monte-carlo.lisp)
+{% sample lang="asm-x64" %}
+[import:21-32, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
+{% sample lang="bash" %}
+[import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -90,6 +108,14 @@ As long as you can write some function to tell whether the provided point is ins
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
 
+## Video Explanation
+
+Here is a video describing Monte Carlo integration:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AyBNnkYrSWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 Monte Carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
@@ -107,9 +133,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/monte_carlo.c)
+[import, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/monte_carlo.cpp)
+[import, lang:"cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -119,7 +145,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {%sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
 {%sample lang="go" %}
-[import, lang:"golang"](code/go/monteCarlo.go)
+[import, lang:"go"](code/go/monteCarlo.go)
 {%sample lang="r" %}
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
@@ -141,10 +167,48 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"ruby"](code/ruby/monte_carlo.rb)
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/monte_carlo.f90)
+{% sample lang="factor" %}
+[import, lang:"factor"](code/factor/monte_carlo.factor)
+{% sample lang="emojic" %}
+[import, lang:"emojicode"](code/emojicode/monte_carlo.emojic)
+{% sample lang="php" %}
+[import, lang:"php"](code/php/monte_carlo.php)
+{% sample lang="lua" %}
+[import, lang="lua"](code/lua/monte_carlo.lua)
+{% sample lang="racket" %}
+[import, lang:"lisp"](code/racket/monte_carlo.rkt)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/monte_carlo.scala)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/monte-carlo.lisp)
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
+{% sample lang="bash" %}
+[import, lang:"bash"](code/bash/monte_carlo.bash)
 {% endmethod %}
-
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[squarecircle](res/square_circle.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[simplemontecarlo](res/monte_carlo.gif)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
