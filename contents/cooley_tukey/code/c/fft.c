@@ -4,6 +4,23 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <fftw3.h>
+
+void fft(double complex *x, int n) {
+    double complex y[n];
+    memset(y, 0, sizeof(y));
+    fftw_plan p;
+
+    p = fftw_plan_dft_1d(n, (fftw_complex*)x, (fftw_complex*)y,
+                         FFTW_FORWARD, FFTW_ESTIMATE);
+
+    fftw_execute(p);
+    fftw_destroy_plan(p);
+
+    for (size_t i = 0; i < n; ++i) {
+        x[i] = y[i] / sqrt((double)n);
+    }
+}
 
 void dft(double complex *X, const size_t N) {
     double complex tmp[N];
@@ -79,8 +96,12 @@ void iterative_cooley_tukey(double complex *X, size_t N) {
 
 void approx(double complex *X, double complex *Y, size_t N) {
     for (size_t i = 0; i < N; ++i) {
-        printf("%f\n", cabs(X[i]) - cabs(Y[i]));
+        if (cabs(X[i]) - cabs(Y[i]) > 1E-5) {
+            printf("This is not approximate.\n");
+            return;
+        }
     }
+    printf("This is approximate.\n");
 }
 
 int main() {
@@ -92,10 +113,12 @@ int main() {
         z[i] = x[i];
     }
 
+    fft(x, 64);
     cooley_tukey(y, 64);
     iterative_cooley_tukey(z, 64);
 
-    approx(y, z, 64);
+    approx(x, y, 64);
+    approx(x, z, 64);
 
     return 0;
 }

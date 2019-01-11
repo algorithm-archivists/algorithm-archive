@@ -50,6 +50,12 @@ fn main() {
     let (time_vv, vel_vv) = velocity_verlet(5.0, -10.0, 0.01);
 
     println!("Time for original Verlet integration: {}", time_v);
-    println!("Time and velocity for Stormer Verlet integration: {}, {}", time_sv, vel_sv);
-    println!("Time and velocity for velocity Verlet integration: {}, {}", time_vv, vel_vv);
+    println!(
+        "Time and velocity for Stormer Verlet integration: {}, {}",
+        time_sv, vel_sv
+    );
+    println!(
+        "Time and velocity for velocity Verlet integration: {}, {}",
+        time_vv, vel_vv
+    );
 }

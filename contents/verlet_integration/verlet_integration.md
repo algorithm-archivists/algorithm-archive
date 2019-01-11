@@ -33,9 +33,9 @@ Here is what it looks like in code:
 {% sample lang="jl" %}
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:9-22, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:9-22, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:3-14, lang:"c_cpp"](code/c/verlet.c)
+[import:3-14, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:13-28, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -65,6 +65,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:5-16, lang:"go"](code/golang/verlet.go)
 {% sample lang="asm-x64" %}
 [import:18-42, lang:"asm-x64"](code/asm-x64/verlet.s)
+{% sample lang="kotlin" %}
+[import:3-15, lang:"kotlin"](code/kotlin/verlet.kt)
 {% endmethod %}
 
 Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
@@ -85,9 +87,9 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="jl" %}
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:24-41, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:24-41, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:16-31, lang:"c_cpp"](code/c/verlet.c)
+[import:16-31, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:30-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -117,6 +119,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:18-30, lang:"go"](code/golang/verlet.go)
 {% sample lang="asm-x64" %}
 [import:44-71, lang:"asm-x64"](code/asm-x64/verlet.s)
+{% sample lang="kotlin" %}
+[import:17-30, lang:"kotlin"](code/kotlin/verlet.kt)
 {% endmethod %}
 
 
@@ -151,9 +155,9 @@ Here is the velocity Verlet method in code:
 {% sample lang="jl" %}
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:43-54, lang:"c_cpp"](code/c++/verlet.cpp)
+[import:43-54, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import:33-43, lang:"c_cpp"](code/c/verlet.c)
+[import:33-43, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import:51-65, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -183,9 +187,19 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:32-42, lang:"go"](code/golang/verlet.go)
 {% sample lang="asm-x64" %}
 [import:73-101, lang:"asm-x64"](code/asm-x64/verlet.s)
+{% sample lang="kotlin" %}
+[import:32-42, lang:"kotlin"](code/kotlin/verlet.kt)
 {% endmethod %}
 
 Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
+
+## Video Explanation
+
+Here is a video describing Verlet integration:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g55QvpAev0I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 
@@ -195,9 +209,9 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/verlet.cpp)
+[import, lang:"cpp"](code/c++/verlet.cpp)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/verlet.c)
+[import, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
@@ -231,9 +245,28 @@ Submitted by P. Mekhail
 [import, lang:"go"](code/golang/verlet.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/verlet.s)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/verlet.kt)
 {% endmethod %}
 
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
