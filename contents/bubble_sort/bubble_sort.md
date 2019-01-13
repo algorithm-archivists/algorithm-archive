@@ -68,6 +68,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% sample lang="bash" %}
 [import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
+{% sample lang="r" %}
+[import:1-14, lang:"r"](code/r/bubblesort.r)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -141,6 +143,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% sample lang="bash" %}
 [import, lang:"bash"](code/bash/bubble_sort.bash)
+{% sample lang="r" %}
+[import, lang:"r"](code/r/bubblesort.r)
 {% endmethod %}
 
 <script>
