@@ -90,7 +90,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="bash" %}
 [import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
 {% sample lang="kotlin" %}
-[import:3-5, lang:"kotlin"](code/bash/MonteCarlo.kt)
+[import:3-5, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -180,7 +180,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="bash" %}
 [import, lang:"bash"](code/bash/monte_carlo.bash)
 {% sample lang="kotlin" %}
-[import, lang:"kotlin"](code/bash/MonteCarlo.kt)
+[import, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
 {% endmethod %}
 
 
