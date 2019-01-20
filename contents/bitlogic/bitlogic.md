@@ -5,7 +5,7 @@ In the end, whenever we write code, all of the data structures we write are tran
 That said, it's not always obvious how this happens, so let's start the simple case of integer numbers.
 
 ## Integers
-For integer numbers, 0 is still 0 and 1 is still 1; however, for 2, we need to use 2 digits because binary only has 0's and 1's. When we get to 4, we'll need 3 digits and when we get to 8, we'll need 4. Ever time we cross a power of 2, we'll need to add a new digit. Here's a table of the first 10 integers in binary:
+For integer numbers, 0 is still 0 and 1 is still 1; however, for 2, we need to use 2 digits because binary only has 0's and 1's. When we get to 4, we'll need 3 digits and when we get to 8, we'll need 4. Every time we cross a power of 2, we'll need to add a new digit. Here's a table of the first 10 integers in binary:
 
 | Integer Number | Binary Number |
 | -------------- | ------------- |
