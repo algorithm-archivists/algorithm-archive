@@ -139,6 +139,10 @@
     {
       "from": "chapters/QI/QI.html",
       "to": "contents/quantum_information/quantum_information.html"
+    },
+    {
+      "from": "chapters/cryptography/cryptography.html",
+      "to": "contents/cryptography/cryptography.html"
     }
   ]
 }
