@@ -12,7 +12,7 @@ def bogo_sort(a):
         random.shuffle(a)
 
 def main():
-    a = [1., 3, 2, 4]
+    a = [1, 3, 2, 4]
     bogo_sort(a)
     print(a)
 
