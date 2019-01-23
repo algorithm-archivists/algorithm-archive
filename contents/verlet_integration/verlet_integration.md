@@ -37,7 +37,7 @@ Here is what it looks like in code:
 {% sample lang="c" %}
 [import:3-14, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:13-28, lang:"java"](code/java/Verlet.java)
+[import:2-17, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -91,7 +91,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="c" %}
 [import:16-31, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:30-49, lang:"java"](code/java/Verlet.java)
+[import:19-37, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -159,7 +159,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="c" %}
 [import:33-43, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:51-65, lang:"java"](code/java/Verlet.java)
+[import:39-51, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -213,6 +213,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="c" %}
 [import, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
+[import, lang:"java"](code/java/VerletValues.java)
 [import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/verlet.py)

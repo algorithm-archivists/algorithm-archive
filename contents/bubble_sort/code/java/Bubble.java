@@ -11,7 +11,6 @@ public class Bubble {
         }
     }
 
-
     public static void main(String[] args) {
         int[] test = new int[]{20, -3, 50, 1, -6, 59};
 

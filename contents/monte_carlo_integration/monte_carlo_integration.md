@@ -58,7 +58,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="r" %}
 [import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
-[import:13-15, lang:"java"](code/java/MonteCarlo.java)
+[import:12-14, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
 [import:1-3, lang:"swift"](code/swift/monte_carlo.swift)
 {% sample lang="py" %}

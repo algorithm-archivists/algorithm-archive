@@ -1,4 +1,3 @@
-//submitted by DominikRafacz
 import java.util.Random;
 
 public class MonteCarlo {
@@ -9,12 +8,12 @@ public class MonteCarlo {
         System.out.printf("Percent error: " + 100 * Math.abs(piEstimation - Math.PI) / Math.PI);
     }
 
-    //function to check whether point (x,y) is in unit circle
+    // function to check whether point (x,y) is in unit circle
     private static boolean inCircle(double x, double y) {
         return x * x + y * y < 1;
     }
 
-    //function to calculate estimation of pi
+    // function to calculate estimation of pi
     public static double monteCarlo(int samples) {
         int piCount = 0;
 
@@ -28,7 +27,6 @@ public class MonteCarlo {
             }
         }
 
-        double estimation = 4.0 * piCount / samples;
-        return estimation;
+        return 4.0 * piCount / samples;
     }
 }
