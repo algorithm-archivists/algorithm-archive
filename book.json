@@ -4,12 +4,13 @@
     "fontsettings",
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
-    "creativecommons",
     "wordcount",
     "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
     "ga",
-    "bulk-redirect"
+    "bulk-redirect",
+    "prism",
+    "-highlight"
   ],
   "lunr": {
     "maxIndexSize": 1000000000
@@ -28,6 +29,18 @@
     },
     "ga": {
       "token": "UA-118252470-1"
+    },
+    "prism": {
+      "lang": {
+        "asm-x64": "nasm"
+      },
+      "ignore": [
+        "emojicode",
+        "text"
+      ],
+      "css": [
+        "prismjs/themes/prism-tomorrow.css"
+      ]
     },
     "api-language-selector": {
       "languages": [
@@ -51,6 +64,10 @@
         {
           "lang": "c",
           "name": "C"
+        },
+        {
+          "lang": "c8",
+          "name": "chip-8"
         },
         {
           "lang": "py",
@@ -167,6 +184,10 @@
         {
           "lang": "lolcode",
           "name": "LOLCODE"
+        },
+        {
+          "lang": "piet",
+          "name": "Piet"
         }
       ]
     }

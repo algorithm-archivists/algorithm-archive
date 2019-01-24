@@ -37,7 +37,9 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Ken Power
 - PaddyKe
 - nic-hartley
+- Thijs Raymakers
 - crafter312
 - Christopher Milan
 - Vexatos
 - Prajwal Krishna Maitin
+- Björn Heinrichs 

@@ -6,11 +6,11 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="jl" %}
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:12-15, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:12-15, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:7-11, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
-[import:7-11, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:7-11, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 [import:110-126, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
@@ -46,11 +46,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="jl" %}
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:17-24, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:17-24, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:34-45, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
-[import:37-45, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:37-45, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 [import:21-27, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
@@ -95,11 +95,11 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="jl" %}
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:26-31, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:26-31, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:47-58, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
-[import:47-53, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:47-53, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 [import:34-41, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
@@ -111,7 +111,7 @@ Now, in this case the first element searched through is still the root of the tr
   <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-[import:17-23, lang:"rust"](code/rust/tree.rs)
+[import:17-24, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -138,11 +138,11 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="jl" %}
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:34-52 lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:34-52 lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:60-79, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
-[import:55-73, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 [import:48-62, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
@@ -154,7 +154,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
   <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
 </p>
 {% sample lang="rs"%}
-[import:25-38, lang:"rust"](code/rust/tree.rs)
+[import:25-40, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -191,11 +191,11 @@ In code, it looks like this:
 {% sample lang="jl" %}
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:55-70, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:55-70, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:81-94, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
-[import:75-93, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 [import:65-79, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
@@ -207,7 +207,7 @@ In code, it looks like this:
   <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:40-47, lang:"rust"](code/rust/tree.rs)
+[import:41-48, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -236,23 +236,23 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="jl" %}
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:73-86, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import:73-86, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 [import:96-109, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
-[import:95-113, lang:"c_cpp"](code/c/tree_traversal.c)
+[import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 [import:81-95, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:75-84, lang:"python"](code/python/Tree_example.py)
+[import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
 </p>
 {% sample lang="rs"%}
-[import:49-57, lang:"rust"](code/rust/tree.rs)
+[import:50-58, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
 [import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift"%}
@@ -269,12 +269,20 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:81-96, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
+## Video Explanation
+
+Here is a video describing tree traversal:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cZPXfl_tUkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/tree_example.cpp)
+[import, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
 ##### Tree.cs
 [import, lang:"csharp"](code/csharp/Tree.cs)
@@ -282,9 +290,9 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import, lang:"csharp"](code/csharp/Program.cs)
 {% sample lang="c" %}
 ##### utility.h
-[import, lang:"c_cpp"](code/c/utility.h)
+[import, lang:"c"](code/c/utility.h)
 ##### tree_traversal.c
-[import, lang:"c_cpp"](code/c/tree_traversal.c)
+[import, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
 ##### Tree.java
 [import, lang:"java"](code/java/Tree.java)
@@ -320,3 +328,27 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[DFSpreorder](res/DFS_pre.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DFSpostorder](res/DFS_post.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DFSinorder](res/DFS_in.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[BFSsimple](res/BFS_simple.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
