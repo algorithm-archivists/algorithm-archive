@@ -224,7 +224,7 @@ In code, it looks like this:
 [import:64-79, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% endmethod %}
 
-All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
+All this said, there are a few details about DFS that might not be ideal, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
 <p>
     <img  class="center" src="res/BFS_simple.png" width="500" />
