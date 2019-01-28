@@ -10,7 +10,7 @@
     do (dfs-recursive child)))
 
 (defun dfs-recursive-postorder (node)
-  "A depth first approach for printing out all values in a tree starting from the bottum"
+  "A depth first approach for printing out all values in a tree starting from the bottom"
   (loop for child in (node-children node)
     do (dfs-recursive-postorder child))
   (when (not (eql (node-data node) Nil))
