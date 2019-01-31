@@ -63,8 +63,11 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import:24-38, lang="bash"](code/bash/euclid.bash)
+{% sample lang="r" %}
+[import:1-8, lang="r"](code/r/euclidian.r)
 {% sample lang="piet" %}
 > ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
+
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -134,8 +137,11 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import:10-22, lang="bash"](code/bash/euclid.bash)
+{% sample lang="r" %}
+[import:10-18, lang="r"](code/r/euclidian.r)
 {% sample lang="piet" %}
 > ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
+
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -221,7 +227,10 @@ and modulo method:
 [import, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import, lang="bash"](code/bash/euclid.bash)
+{% sample lang="r" %}
+[import, lang="r"](code/r/euclidian.r)
 {% sample lang="piet" %}
+
 A text version of the program is provided for both versions.
 #### Subtraction
 > ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
