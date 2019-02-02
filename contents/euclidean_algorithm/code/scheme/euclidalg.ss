@@ -2,9 +2,9 @@
     (cond                                                                                                                                                                                                                                                                         
         [(or (negative? a) (negative? b)) (euclid-sub (abs a) (abs b))]                                                                                                                                                                                                              
         [(eq? a b) a]
-            (if (> a b)
-                (euclid-sub (- a b) b)
-                (euclid-sub a (- b a)))))
+        [(> a b) (euclid-sub (- a b) b)]
+        (else
+            (euclid-sub a (- b a)))))
 
 (define (euclid-mod a b)
     (if (zero? b)
