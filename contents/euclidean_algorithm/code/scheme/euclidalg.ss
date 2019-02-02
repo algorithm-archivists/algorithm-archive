@@ -1,5 +1,4 @@
-(define euclid-sub
-    (lambda (a b)
+(define (euclid-sub a b)
         (cond 
             ((or (negative? a) (negative? b))
             (euclid-sub (abs a) (abs b)))
@@ -9,14 +8,13 @@
                     ((> a b)
                     (euclid-sub (- a b) b))
                     (else
-                        (euclid-sub a (- b a))))))))))
+                        (euclid-sub a (- b a)))))))))
                   
-(define euclid-mod
-    (lambda (a b)
+(define (euclid-mod a b)
         (cond
             ((zero? b) a)
             (else
-                (euclid-mod b (modulo a b))))))
+                (euclid-mod b (modulo a b)))))
 
 (display (euclid-mod (* 64 67) (* 64 81))) (newline)
 (display (euclid-sub (* 64 12) (* 64 27))) (newline)
