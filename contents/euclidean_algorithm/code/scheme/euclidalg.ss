@@ -1,15 +1,12 @@
 (define (euclid-sub a b)
-        (cond 
-            ((or (negative? a) (negative? b))
-            (euclid-sub (abs a) (abs b)))
-            (else (cond
-                ((eq? a b) a)
-                (else (cond
-                    ((> a b)
-                    (euclid-sub (- a b) b))
-                    (else
-                        (euclid-sub a (- b a)))))))))
-                  
+        (if (or (negative? a) (negative? b))
+            (euclid-sub (abs a) (abs b))
+            (if (eq? a b) 
+                a
+                (if (> a b)
+                    (euclid-sub (- a b) b)
+                    (euclid-sub a (- b a))))))
+
 (define (euclid-mod a b)
         (if (zero? b)
             a
