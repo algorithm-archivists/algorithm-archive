@@ -188,6 +188,10 @@
         {
           "lang": "piet",
           "name": "Piet"
+        },
+        {
+          "lang": "ss",
+          "name": "Scheme"
         }
       ]
     }
