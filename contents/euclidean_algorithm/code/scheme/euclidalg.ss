@@ -4,7 +4,7 @@
         [(eq? a b) a]
             (if (> a b)
                 (euclid-sub (- a b) b)
-                (euclid-sub a (- b a))))))
+                (euclid-sub a (- b a)))))
 
 (define (euclid-mod a b)
     (if (zero? b)
