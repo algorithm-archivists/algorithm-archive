@@ -4,7 +4,7 @@ fun euclidSub(a: Int, b: Int): Int {
     var a = a.absoluteValue
     var b = b.absoluteValue
 
-    while(a != b) {
+    while (a != b) {
         if (a > b) a -= b
         else b -= a
     }
