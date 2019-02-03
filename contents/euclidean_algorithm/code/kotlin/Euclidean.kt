@@ -25,7 +25,7 @@ fun euclidMod(a: Int, b: Int): Int {
     return a
 }
 
-fun main() {
+fun main(args: Array<String>) {
     println(euclidSub(128 * 12, 128 * 77))
     println(euclidMod(64 * 67, 64 * 81))
 }
