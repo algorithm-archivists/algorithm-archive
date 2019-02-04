@@ -15,6 +15,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:18-31, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import:3-13, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -88,6 +90,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:5-15, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import:15-26, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
