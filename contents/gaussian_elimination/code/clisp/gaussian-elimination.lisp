@@ -20,10 +20,10 @@
     with pivot-row = 0
     for pivot-col upto (- (array-dimension matrix 0) 2) do
       (swap-rows matrix pivot-row (max-index matrix pivot-row pivot-col))
-      (loop for i from (1+ pivot-row) upto (1- (array-dimension matrix 0))
-        do
-          (loop for j from (1+ pivot-col) upto (1- (array-dimension matrix 1))
-            with fraction = (/ (aref matrix i pivot-col) (aref matrix pivot-row pivot-col)) do
+      (loop for i from (1+ pivot-row) upto (1- (array-dimension matrix 0)) do
+          (loop
+            with fraction = (/ (aref matrix i pivot-col) (aref matrix pivot-row pivot-col))
+            for j from (1+ pivot-col) upto (1- (array-dimension matrix 1)) do
               (setf
                 (aref matrix i j)
                 (- (aref matrix i j) (* (aref matrix pivot-row j) fraction))))

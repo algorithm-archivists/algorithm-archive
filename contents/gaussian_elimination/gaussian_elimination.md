@@ -325,6 +325,9 @@ In code, this process might look like this:
 [import:13-19, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
 [import:43-60, lang:"rust"](code/rust/gaussian_elimination.rs)
+{% sample lang="lisp" %}
+[import:3-15, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
+[import:22-22, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
 {% endmethod %}
 
 As a note, if the highest value is $$0$$, the matrix is singular and the system has no single solution.
@@ -397,6 +400,8 @@ Here is what it might look like in code:
 [import:21-26, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
 [import:62-71, lang:"rust"](code/rust/gaussian_elimination.rs)
+{% sample lang="lisp" %}
+[import:23-29, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
 {% endmethod %}
 
 #### All together
@@ -419,6 +424,8 @@ When we put everything together, it looks like this:
 [import:5-47, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="lisp" %}
+[import:3-31, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
 {% endmethod %}
 
 To be clear: if the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
@@ -459,6 +466,8 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:49-70, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="lisp" %}
+[import:33-48, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
 {% endmethod %}
 
 As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side instead of the right-hand side of each equation.
@@ -501,6 +510,8 @@ In code, it looks like this:
 [import:72-87, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:40-55, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="lisp" %}
+[import:50-62, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
 {% endmethod %}
 
 ## Visual Representation
@@ -517,7 +528,7 @@ That said, it is particularly interesting to see what happens as we plot our mat
 <video width="560" height="315" autoplay controls loop>
   <source src="res/GE_vis.mp4" type="video/mp4">
 Your browser does not support the video tag.
-</video> 
+</video>
 </div>
 
 As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
@@ -569,6 +580,8 @@ Here's a video describing Gaussian elimination:
 [import, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/gaussian-elimination.lisp)
 {% endmethod %}
 
 
