@@ -15,6 +15,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:18-31, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import:3-13, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -65,6 +67,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:24-38, lang="bash"](code/bash/euclid.bash)
 {% sample lang="piet" %}
 > ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
+{% sample lang="ss" %}
+[import:1-7, lang="scheme"](code/scheme/euclidalg.ss)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -86,6 +90,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:5-15, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import:15-26, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -136,6 +142,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:10-22, lang="bash"](code/bash/euclid.bash)
 {% sample lang="piet" %}
 > ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
+{% sample lang="ss" %}
+[import:9-12, lang="scheme"](code/scheme/euclidalg.ss)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -232,6 +240,8 @@ A text version of the program is provided for both versions.
 > ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
 
 [import:126-146](code/piet/euclidian_algorithm.piet)
+{% sample lang="ss" %}
+[import:, lang="scheme"](code/scheme/euclidalg.ss)
 {% endmethod %}
 
 <script>

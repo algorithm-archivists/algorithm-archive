@@ -42,3 +42,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Christopher Milan
 - Vexatos
 - Björn Heinrichs 
+- Olav Sundfør
