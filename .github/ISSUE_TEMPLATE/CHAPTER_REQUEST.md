@@ -27,3 +27,4 @@ Delete this section, if you don't think the chapter is of a high priority.
 - [ ] This chapter can be added to the [Master Overview](https://github.com/algorithm-archivists/algorithm-archive/projects/11) (if it cannot be, explain why in a comment below -- lack of sufficient technical sources, not novel enough, too ambitious, etc.)
 - [ ] There is a timeline for when this chapter can be written
 - [ ] The chapter has been added to the [Master Overview](https://github.com/algorithm-archivists/algorithm-archive/projects/11)
+- [ ] The chapter has been written (Please link the PR)
