@@ -40,4 +40,4 @@ I, AUTHOR, the copyright holder of this work, irrevocably grant anyone the right
 - [ ] The chapter opens up the Algorithm Archive to moving in a new direction or connects to other parts of the archive
 - [ ] All appropriate references have been cited or linked
 - [ ] The code conforms to the [style guidelines](https://github.com/algorithm-archivists/algorithm-archive/wiki/Code-style-guide)
-- [ ] The CC BY-SA licese is an appropriate modification of the license found in `cc/license.txt` and has all images and graphics, text, code, and auxiliary materials licensed appropriately
+- [ ] The CC BY-SA license is an appropriate modification of the license found in `cc/license.txt` and has all images and graphics, text, code, and auxiliary materials licensed appropriately
