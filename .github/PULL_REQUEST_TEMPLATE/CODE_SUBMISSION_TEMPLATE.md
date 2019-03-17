@@ -12,7 +12,7 @@ Thanks for submitting code to the Algorithm Archive!
 
 Before continuing, please be sure you have read the [How to contribute guide for code submission](https://github.com/algorithm-archivists/algorithm-archive/wiki/How-to-Contribute#step-3---submitting-code) and have:
 
-1. edited the markdown file with the appropriate line numbers for your submission
+1. edited the Markdown file with the appropriate line numbers for your submission
 2. built the Algorithm Archive with `gitbook install && gitbook serve` to make sure your code can be seen on your branch
 3. followed all necessary [style guidelines](https://github.com/algorithm-archivists/algorithm-archive/wiki/Code-style-guide) for your language, if available
 
