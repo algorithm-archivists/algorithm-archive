@@ -43,6 +43,6 @@ Add any other context about the problem here.
 <!--- Please leave this section --->
 **For Algorithm Archive Developers**
 - [ ] The bug can be reproduced
-- [ ] The bug can be fixed (if not, please explain why not)
+- [ ] The bug can be fixed (if not, please explain why not in a comment below)
 - [ ] There is a timeline to fix the bug
 - [ ] The bug has been fixed (Please link the PR)
