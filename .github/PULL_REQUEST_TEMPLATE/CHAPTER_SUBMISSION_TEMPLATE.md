@@ -28,6 +28,7 @@ A clear and concise description of the chapter with relevant sources
 A clear and concise description of the code with compilation instructions
 
 ** CC BY-SA notice **
+<!--- Please replace AUTHOR with your actual name in the notice down below. --->
 I, AUTHOR, the copyright holder of this work, irrevocably grant anyone the right to use this work, including derivatives created during the review process, under the Creative Commons Attribution ShareAlike 4.0 license ([legal code](https://creativecommons.org/licenses/by-sa/4.0/deed.en)).
 
 (Anyone may use, share or remix this work, as long as they credit me and share any derivative work under this license.)
