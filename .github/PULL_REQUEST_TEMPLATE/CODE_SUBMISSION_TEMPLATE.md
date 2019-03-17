@@ -20,7 +20,7 @@ If you would like to contact us, we are also available on discord at https://dis
 -->
 
 **Describe the code**
-A clear and concise description of the code with compilation instructions
+A clear and concise description of the code with compilation instructions.
 
 <!--- Please leave this section --->
 **For Algorithm Archive Developers**
