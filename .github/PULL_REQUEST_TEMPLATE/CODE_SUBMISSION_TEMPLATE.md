@@ -25,6 +25,6 @@ A clear and concise description of the code with compilation instructions.
 <!--- Please leave this section --->
 **For Algorithm Archive Developers**
 - [ ] There are no open PR's for this language implementation before this one
-- [ ] The algorithm archive can be built locally
+- [ ] The Algorithm Archive can be built locally
 - [ ] The code conforms to the [style guidelines](https://github.com/algorithm-archivists/algorithm-archive/wiki/Code-style-guide)
 - [ ] The markdown file has been edited with appropriate line numbers
