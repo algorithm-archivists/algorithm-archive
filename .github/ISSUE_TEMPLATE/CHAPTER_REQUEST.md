@@ -20,6 +20,7 @@ A clear and concise description of what the new method would be about, including
 
 **Additional context**
 Add any other reasons why this chapter should be a higher priority.
+Delete this section, if you don't think the chapter is of a high priority.
 
 <!--- Please leave this section --->
 **For Algorithm Archive Developers**
