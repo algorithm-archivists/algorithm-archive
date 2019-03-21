@@ -350,7 +350,7 @@ $$
 \end{array}
 \right] \\
 \begin{align}
-    f &= A(\text{pivot}_{\text{row}}, \text{pivot}_{\text{col}}) / A(\text{curr_row}_{\text{row}}, \text{pivot}_{\text{col}}) \\
+    f &= A(\text{curr_row}, \text{pivot}_{\text{col}}) /  A(\text{pivot}_{\text{row}}, \text{pivot}_{\text{col}}) \\
       &= \frac{1}{3}
 \end{align}
 $$
