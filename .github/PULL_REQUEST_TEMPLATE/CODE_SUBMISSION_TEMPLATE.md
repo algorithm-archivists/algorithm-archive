@@ -19,11 +19,16 @@ Before continuing, please be sure you have read the [How to contribute guide for
 If you would like to contact us, we are also available on discord at https://discord.gg/2PEjsR
 -->
 
-**Describe the code**
+# Code submission
+
+## Description
+
 A clear and concise description of the code with compilation instructions.
 
 <!--- Please leave this section --->
-**For Algorithm Archive Developers**
+
+## For Algorithm Archive Developers
+
 - [ ] There are no open PR's for this language implementation before this one
 - [ ] The Algorithm Archive can be built locally
 - [ ] The code conforms to the [style guidelines](https://github.com/algorithm-archivists/algorithm-archive/wiki/Code-style-guide)
