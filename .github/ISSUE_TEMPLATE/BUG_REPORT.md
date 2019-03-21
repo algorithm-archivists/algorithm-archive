@@ -9,7 +9,7 @@ Thanks for reporting a bug report to the Algorithm Archive!
 
 Please fill in the information below.
 
-If you would like to contact us, we are also available on discord at https://discord.gg/2PEjsR
+If you would like to contact us, we are also available on Discord at https://discord.gg/2PEjsR
 -->
 
 # Bug Report

@@ -15,7 +15,7 @@ Before continuing, please be sure you have read the [How to contribute guide for
 4. followed all necessary [style guidelines](https://github.com/algorithm-archivists/algorithm-archive/wiki/Code-style-guide) for the initial submission language, if available
 5. agreed to share your chapter under [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
-If you would like to contact us, we are also available on discord at https://discord.gg/2PEjsR
+If you would like to contact us, we are also available on Discord at https://discord.gg/2PEjsR
 -->
 
 # Chapter Submission
