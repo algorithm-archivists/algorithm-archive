@@ -2,7 +2,6 @@
 name: Chapter submission
 about: Add a chapter or modify an existing chapter in the Algorithm Archive
 assignees: 'leios'
-
 ---
 
 <!--
@@ -25,11 +24,11 @@ If you would like to contact us, we are also available on discord at https://dis
 
 ### The Chapter
 
-A clear and concise description of the chapter with relevant sources
+A clear and concise description of the chapter with relevant sources.
 
 ### The Code
 
-A clear and concise description of the code with compilation instructions
+A clear and concise description of the code with compilation instructions.
 
 ## CC BY-SA notice
 

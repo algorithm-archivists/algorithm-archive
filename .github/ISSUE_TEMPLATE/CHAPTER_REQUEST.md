@@ -1,7 +1,6 @@
 ---
 name: Chapter Request
 about: Requesting a new chapter to be in the Algorithm Archive
-
 ---
 
 <!--
