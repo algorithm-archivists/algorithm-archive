@@ -1,9 +1,6 @@
 ---
 name: Code submission
 about: Add code or modify existing code in the Algorithm Archive
-title: ''
-labels: ''
-assignees: ''
 
 ---
 
@@ -25,7 +22,8 @@ If you would like to contact us, we are also available on discord at https://dis
 
 A clear and concise description of the code with compilation instructions.
 
-<!--- Please leave this section --->
+
+<!--- Please leave the following section --->
 
 ## For Algorithm Archive Developers
 

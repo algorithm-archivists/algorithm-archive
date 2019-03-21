@@ -1,9 +1,6 @@
 ---
 name: Chapter Request
 about: Requesting a new chapter to be in the Algorithm Archive
-title: ''
-labels: ''
-assignees: 'leios'
 
 ---
 
@@ -26,7 +23,8 @@ A clear and concise description of what the new algorithm, method or data struct
 Add any other reasons why this chapter should be a higher priority.
 Delete this section, if you don't think the chapter is of a high priority.
 
-<!--- Please leave this section --->
+
+<!--- Please leave the following section --->
 
 ## For Algorithm Archive Developers
 

@@ -1,9 +1,7 @@
 ---
 name: Bug Report
 about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+labels: Problem
 
 ---
 
@@ -24,9 +22,10 @@ A clear and concise description of what the bug is.
 ### Steps to Reproduce
 
 Steps to reproduce the behavior:
+
 1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
+2. Click on '...'
+3. Scroll down to '...'
 4. See error
 
 ### Expected behavior
@@ -37,18 +36,21 @@ A clear and concise description of what you expected to happen.
 
 If applicable, add screenshots to help explain your problem.
 
-## Environment (please complete the following information)
+## Environment
+
+<!--- Please complete the following information --->
 
  - OS: [e.g. Ubuntu, iOS, Windows]
  - OS Version: [e.g. 16.04, 11.3.1, 10 09/2018]
- - Browser [e.g. Chrome, Safari, Firefox]
- - Browser Version [e.g. 22]
+ - Browser: [e.g. Chrome, Safari, Firefox]
+ - Browser Version: [e.g. 22]
 
 ## Additional context
 
 Add any other context about the problem here.
 
-<!--- Please leave this section --->
+
+<!--- Please leave the following section --->
 
 ## For Algorithm Archive Developers
 

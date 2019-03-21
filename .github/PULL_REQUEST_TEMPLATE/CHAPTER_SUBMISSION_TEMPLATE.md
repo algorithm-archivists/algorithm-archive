@@ -1,8 +1,6 @@
 ---
 name: Chapter submission
 about: Add a chapter or modify an existing chapter in the Algorithm Archive
-title: ''
-labels: ''
 assignees: 'leios'
 
 ---
@@ -40,7 +38,8 @@ I, AUTHOR, the copyright holder of this work, irrevocably grant anyone the right
 
 (Anyone may use, share or remix this work, as long as they credit me and share any derivative work under this license.)
 
-<!--- Please leave this section --->
+
+<!--- Please leave the following section --->
 
 ## For Algorithm Archive Developers
 

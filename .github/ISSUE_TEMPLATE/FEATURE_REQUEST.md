@@ -1,9 +1,6 @@
 ---
 name: Feature Request
 about: Requesting a new feature to be in the Algorithm Archive
-title: ''
-labels: ''
-assignees: ''
 
 ---
 
@@ -25,7 +22,8 @@ A clear and concise description of what the desired feature is and how it would 
 
 Add any other reasons why this feature will help with the goals of the Algorithm Archive
 
-<!--- Please leave this section --->
+
+<!--- Please leave the following section --->
 
 ## For Algorithm Archive Developers
 
