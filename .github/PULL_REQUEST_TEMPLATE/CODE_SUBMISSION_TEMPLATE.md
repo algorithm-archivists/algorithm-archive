@@ -1,7 +1,6 @@
 ---
 name: Code submission
 about: Add code or modify existing code in the Algorithm Archive
-
 ---
 
 <!--
