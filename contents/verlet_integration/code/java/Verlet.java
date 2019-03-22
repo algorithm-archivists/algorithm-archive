@@ -1,14 +1,3 @@
-// Submitted by lolatomroflsinnlos
-public class VerletValues {
-	public double time;
-	public double vel;
-  
-	public VerletValues(double time, double vel) {
-        this.time = time;
-        this.vel = vel;
-    }
-}
-
 public class Verlet {
     static double verlet(double pos, double acc, double dt) {
 
@@ -44,8 +33,7 @@ public class Verlet {
              vel += acc*dt;
         }
       
-       VerletValues stormerVerlet = new VerletValues(time, vel);
-       return stormerVerlet;
+       return new VerletValues(time, vel);
     }
 
     static VerletValues velocity_verlet(double pos, double acc, double dt) {
@@ -58,10 +46,8 @@ public class Verlet {
             time += dt;
             pos += vel*dt + 0.5*acc * dt * dt;
             vel += acc*dt;
-      }
-
-        VerletValues velocityVerlet = new VerletValues(time, vel);
-        return velocityVerlet;
+        }
+        return new VerletValues(time, vel);
     }
 
     public static void main(String[] args) {

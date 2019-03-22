@@ -15,6 +15,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:18-31, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import:3-13, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import:15-29, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -65,6 +67,10 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:24-38, lang="bash"](code/bash/euclid.bash)
 {% sample lang="pro" %}
 [import:1-5, lang="Prolog"](code/prolog/euclidean_algorithm.pro)
+{% sample lang="piet" %}
+> ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
+{% sample lang="ss" %}
+[import:1-7, lang="scheme"](code/scheme/euclidalg.ss)
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -86,6 +92,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:5-15, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import:15-26, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import:1-13, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -136,6 +144,10 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:10-22, lang="bash"](code/bash/euclid.bash)
 {% sample lang="pro" %}
 [import:7-10, lang="Prolog"](code/prolog/euclidean_algorithm.pro)
+{% sample lang="piet" %}
+> ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
+{% sample lang="ss" %}
+[import:9-12, lang="scheme"](code/scheme/euclidalg.ss)
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -145,6 +157,14 @@ Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was las
 </p>
 
 The Euclidean Algorithm is truly fundamental to many other algorithms throughout the history of computer science and will definitely be used again later. At least to me, it's amazing how such an ancient algorithm can still have modern use and appeal. That said, there are still other algorithms out there that can find the greatest common divisor of two numbers that are arguably better in certain cases than the Euclidean algorithm, but the fact that we are discussing Euclid two millennia after his death shows how timeless and universal mathematics truly is. I think that's pretty cool.
+
+## Video Explanation
+
+Here's a video on the Euclidean algorithm:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h86RzlyHfUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 
@@ -215,9 +235,44 @@ and modulo method:
 [import, lang="bash"](code/bash/euclid.bash)
 {% sample lang="pro" %}
 [import, lang="Prolog"](code/prolog/euclidean_algorithm.pro)
+{% sample lang="piet" %}
+A text version of the program is provided for both versions.
+#### Subtraction
+> ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
+
+[import:23-107](code/piet/euclidian_algorithm.piet)
+
+#### Modulo
+> ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
+
+[import:126-146](code/piet/euclidian_algorithm.piet)
+{% sample lang="ss" %}
+[import:, lang="scheme"](code/scheme/euclidalg.ss)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
 
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[Euclidsub](res/subtraction.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Euclidmod](res/modulus.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

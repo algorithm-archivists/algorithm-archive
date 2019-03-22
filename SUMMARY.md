@@ -8,7 +8,6 @@
 * [Mathematical Background](contents/mathematical_background/mathematical_background.md)
     * [Complexity Notation](contents/notation/notation.md)
     * [Bit Logic](contents/bitlogic/bitlogic.md)
-    * [Convolutions](contents/convolutions/convolutions.md)
     * [Taylor Series](contents/taylor_series_expansion/taylor_series_expansion.md)
 * [Sorting and Searching](contents/sorting_and_searching/sorting_and_searching.md)
     * [Bubble Sort](contents/bubble_sort/bubble_sort.md)

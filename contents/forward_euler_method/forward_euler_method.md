@@ -91,6 +91,14 @@ Verlet integration has a distinct advantage over the forward Euler method in bot
 That said, in practice, due to the instability of the forward Euler method and the error with larger timesteps, this method is rarely used in practice.
 That said, variations of this method *are* certainly used (for example Crank-Nicolson and [Runge-Kutta](../runge_kutta_methods/runge_kutta_methods.md), so the time spent reading this chapter is not a total waste!
 
+## Video Explanation
+
+Here is a video describing the forward Euler method:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wG7h8g6VLBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 
 Like in the case of [Verlet Integration](../verlet_integration/verlet_integration.md), the easiest way to test to see if this method works is to test it against a simple test-case.
@@ -102,9 +110,9 @@ Note that in this case, the velocity is directly given by the ODE and the accele
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/euler.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/euler.c)
+[import, lang:"c"](code/c/euler.c)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/euler.cpp)
+[import, lang:"cpp"](code/c++/euler.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}
@@ -139,3 +147,24 @@ Full code for the visualization follows:
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[FEerror](res/error.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[FEinstability](res/instability.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
