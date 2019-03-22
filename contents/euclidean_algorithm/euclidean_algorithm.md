@@ -65,6 +65,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:25-40, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import:24-38, lang="bash"](code/bash/euclid.bash)
+{% sample lang="pro" %}
+[import:1-5, lang="Prolog"](code/prolog/euclidean_algorithm.pro)
 {% sample lang="piet" %}
 > ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
 {% sample lang="ss" %}
@@ -140,6 +142,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:9-23, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import:10-22, lang="bash"](code/bash/euclid.bash)
+{% sample lang="pro" %}
+[import:7-10, lang="Prolog"](code/prolog/euclidean_algorithm.pro)
 {% sample lang="piet" %}
 > ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
 {% sample lang="ss" %}
@@ -229,6 +233,8 @@ and modulo method:
 [import, lang="LOLCODE"](code/lolcode/euclid.lol)
 {% sample lang="bash" %}
 [import, lang="bash"](code/bash/euclid.bash)
+{% sample lang="pro" %}
+[import, lang="Prolog"](code/prolog/euclidean_algorithm.pro)
 {% sample lang="piet" %}
 A text version of the program is provided for both versions.
 #### Subtraction

@@ -186,6 +186,10 @@
           "name": "LOLCODE"
         },
         {
+          "lang": "pro",
+          "name": "Prolog"
+        },
+        {
           "lang": "piet",
           "name": "Piet"
         },
