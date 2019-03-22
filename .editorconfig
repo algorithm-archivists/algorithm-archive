@@ -153,6 +153,6 @@ trim_trailing_whitespace = false
 insert_final_newline = false
 end_of_line = lf
 
-[*.pl]
+[*.pro]
 indent_style = space
 indent_size = 0
