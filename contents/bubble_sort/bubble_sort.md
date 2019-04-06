@@ -69,7 +69,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="bash" %}
 [import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
 {% sample lang="vb" %}
-[import:10-23, lang:"visual-basic"](code/visualbasic/bubble_sort.vb)
+[import:13-24, lang:"visual-basic"](code/visualbasic/bubble_sort.vb)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
