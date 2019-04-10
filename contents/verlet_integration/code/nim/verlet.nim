@@ -8,7 +8,7 @@ proc verlet(pos_in, acc, dt: float): float =
   while pos > 0.0:
     time += dt
     tempPos = pos
-    pos = pos * 2 - prevPos + acc * dt * dt 
+    pos = pos * 2 - prevPos + acc * dt * dt
     prevPos = tempPos
 
   time
