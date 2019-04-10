@@ -1,37 +1,37 @@
 proc verlet(pos_in, acc, dt: float): float =
   var
     pos: float = pos_in
-    prev_pos: float = pos
+    prevPos: float = pos
     time: float = 0.0
-    temp_pos: float
+    tempPos: float
 
   while pos > 0.0:
     time += dt
-    temp_pos = pos
-    pos = pos * 2 - prev_pos + acc * dt * dt 
-    prev_pos = temp_pos
+    tempPos = pos
+    pos = pos * 2 - prevPos + acc * dt * dt 
+    prevPos = tempPos
 
-  return time
+  time
 
-proc stormer_verlet(pos_in, acc, dt: float): (float, float) =
+proc stormerVerlet(pos_in, acc, dt: float): (float, float) =
   var
     pos: float = pos_in
-    prev_pos: float = pos
+    prevPos: float = pos
     time: float = 0.0
     vel: float = 0.0
-    temp_pos: float
+    tempPos: float
 
   while pos > 0.0:
     time += dt
-    temp_pos = pos
-    pos = pos * 2 - prev_pos + acc * dt * dt
-    prev_pos = temp_pos
+    tempPos = pos
+    pos = pos * 2 - prevPos + acc * dt * dt
+    prevPos = tempPos
 
     vel += acc * dt
 
-  return (time, vel)
+  (time, vel)
 
-proc velocity_verlet(pos_in, acc, dt: float): (float, float) =
+proc velocityVerlet(pos_in, acc, dt: float): (float, float) =
   var
     pos: float = pos_in
     time: float = 0.0
@@ -42,15 +42,15 @@ proc velocity_verlet(pos_in, acc, dt: float): (float, float) =
     pos += vel * dt + 0.5 * acc * dt * dt
     vel += acc * dt
 
-  return (time, vel)
+  (time, vel)
 
-let time_v: float = verlet(5.0, -10.0, 0.01)
-echo "Time for Verlet integration is: ", time_v
+let timeV = verlet(5.0, -10.0, 0.01)
+echo "Time for Verlet integration is: ", timeV
 
-let (time_sv, vel_sv) = stormer_verlet(5.0, -10.0, 0.01)
-echo "Time for Stormer Verlet integration is: ", time_sv
-echo "Velocity for Stormer Verlet integration is: ", vel_sv
+let (timeSV, velSV) = stormerVerlet(5.0, -10.0, 0.01)
+echo "Time for Stormer Verlet integration is: ", timeSV
+echo "Velocity for Stormer Verlet integration is: ", velSV
 
-let (time_vv, vel_vv) = velocity_verlet(5.0, -10.0, 0.01)
-echo "Time for velocity Verlet integration is: ", time_vv
-echo "Velocity for velocity Verlet integration is: ", vel_vv
+let (timeVV, velVV) = velocityVerlet(5.0, -10.0, 0.01)
+echo "Time for velocity Verlet integration is: ", timeVV
+echo "Velocity for velocity Verlet integration is: ", velVV
