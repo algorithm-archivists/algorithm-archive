@@ -11,7 +11,7 @@ proc verlet(pos_in, acc, dt: float): float =
     pos = pos * 2 - prevPos + acc * dt * dt
     prevPos = tempPos
 
-  time
+  return time
 
 proc stormerVerlet(pos_in, acc, dt: float): (float, float) =
   var
@@ -29,7 +29,7 @@ proc stormerVerlet(pos_in, acc, dt: float): (float, float) =
 
     vel += acc * dt
 
-  (time, vel)
+  return (time, vel)
 
 proc velocityVerlet(pos_in, acc, dt: float): (float, float) =
   var
@@ -42,7 +42,7 @@ proc velocityVerlet(pos_in, acc, dt: float): (float, float) =
     pos += vel * dt + 0.5 * acc * dt * dt
     vel += acc * dt
 
-  (time, vel)
+  return (time, vel)
 
 let timeV = verlet(5.0, -10.0, 0.01)
 echo "Time for Verlet integration is: ", timeV
