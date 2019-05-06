@@ -1,4 +1,11 @@
-# Projections
+# Scatter plot
+
+The scatterplot is another method for plotting data that plots each point in an $$n$$-dimensional space.
+For the purposes of the Algorithm Archive, this space is mainly two-dimensional; however, scatterplots in 3D can may also be used for visualizing three-dimensional datasets, such as those requiring octrees.
+
+## Algorithms using this method:
+
+- Monte carlo
 
 ##### Code Examples
 
