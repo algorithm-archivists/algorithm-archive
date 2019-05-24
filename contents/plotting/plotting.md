@@ -156,6 +156,9 @@ which creates the following plot:
 
 {% endmethod %}
 
+Admittedly, this is not the most beautiful picture.
+Because of the way we cropped the image, it doesn't really accurately represent the data; however, if we were instead trying to plot an exponential function (or if we were to look at small changes in a dataset), this type of plot could be incredibly useful.
+
 #### labels, titles, and legends
 
 Many researchers are very particular about labels.
