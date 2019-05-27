@@ -338,7 +338,7 @@ We will add more aliases to this table as they are used in the archive.
 
 ### Outputting the plot to file
 
-At this point, all scripts will output an image directly to your computer; however, it is important to note that you can use any of the above methods when output to a file as well.
+At this point, all scripts will output an image directly to your computer; however, it is important to note that you can use any of the above methods when outputting to a file as well.
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -362,8 +362,6 @@ set terminal pngcairo size 640, 480
 As an example, here is the script for the image we generated above:
 
 [import, lang:"gnuplot"](code/gnuplot/sine_to_file.gp)
-
-{% endmethod %}
 
 As mentioned above, for a lot of scientific papers and articles, it is worth outputting images into a format that is used commonly for typesetting, such as LaTeX.
 There are multiple ways to create tex output with gnuplot by using different REPL modes like `epslatex`.
@@ -391,11 +389,26 @@ pdflatex out.tex
 We will have a standalone pdf that uses LaTeX features in the file `out.pdf`.
 This file should look like this:
 
-ADD IMAGE
+<p>
+    <img  class="center" src="res/gnuplot/exponential_tex.png" width="480" />
+</p>
 
 Note that in this process, we create auxiliary files like `*.eps` and `*.aux`, which are expected with LaTeX.
 
-SIMPLE TEX DOCUMENT
+If you would like to directly read the output `.tex` file from gnuplot, you can use the command above without the `standalone` option, like so:
+
+```
+set terminal epslatex size 10cm, 10cm
+set output "check.tex"
+```
+
+As a note, the units for the plot are real units in terms of cm, inches, or whatever other measurement LaTeX takes.
+As such, you will probably want to make sure the size of the output image actually fits in the document you want to create.
+Here is a quick example of how to put the output tex file into a LaTeX document:
+
+[import, lang:"gnuplot"](code/gnuplot/latex_import.tex)
+
+{% endmethod %}
 
 ## Plotting data from a file 
 

@@ -1,4 +1,4 @@
-set terminal epslatex standalone size 10cm, 10cm
+set terminal epslatex standalone size 12cm, 8cm
 set output "out.tex"
 
 p exp(x)
