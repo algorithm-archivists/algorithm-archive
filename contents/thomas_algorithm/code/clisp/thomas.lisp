@@ -18,9 +18,8 @@
 
   (loop
     for i from (- (length a) 2) downto 0 do
-      (setf (svref d i) (- (svref d i) (* (svref c i) (svref d (1+ i))))))
-
-  (return-from thomas d))
+      (decf (svref d i) (* (svref c i) (svref d (1+ i))))
+    finally (return d)))
 
 (defvar diagonal-a #(0 2 3))
 (defvar diagonal-b #(1 3 6))
