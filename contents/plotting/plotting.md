@@ -420,10 +420,16 @@ If multiple data sets are required to be plotted, they will also be provided a n
 We will assume that your plotter of choice has limited  three dimensional capabilities and will instead focus on the data format for one and two-dimensional data here
 
 ### One-dimensional output
-In the case of one-dimensional output, the data file is a `.csv` file with numbers separated by a newline.
+In the case of one-dimensional output, the data file is a `.csv` file with numbers separated by a newline, such as in this case:
+
+[import](data/1d_sample_low_res.dat)
 
 ### Two-dimensional output
-In the case of two-dimensional output, the data file will again be a `.csv`, but this time, each number will be separated by a comma for different columns entries and a newline for rows.
+In the case of two-dimensional output, the data file will again be a `.csv`, but this time, each number will be separated by a tab for different columns entries and a newline for rows, as shown here:
+
+TODO: FABRICATE DATA FOR FORMATTING
+[import](data/2d_sample_low_res.dat)
+
 It is expected that the numbers of columns does not vary in each row and that we are working with an $$n \times m$$ matrix which can be simply plotted as a series of pixels that scale in color according to some defined colorbar.
 
 #### changing the colorbar
