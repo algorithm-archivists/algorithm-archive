@@ -119,7 +119,7 @@ function main()
         println("Recursive Cooley Tukey matches fft() from FFTW package.")
     end
     if(isapprox(z, w))
-        println("Recursive Cooley Tukey matches fft() from FFTW package.")
+        println("Iterative Cooley Tukey matches fft() from FFTW package.")
     end
 end
 
