@@ -86,7 +86,7 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="asm-x64" %}
 [import:15-74, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
-[import:3-13, lang:"javascript"](code/javascript/fft.js)
+[import:3-15, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -103,7 +103,7 @@ M = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im;
 
 It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix!
 That said, the Discrete Fourier Transform is slow -- primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful.
-So what was the trick that everyone used to go from a Discrete Fourier Transform to a *Fast* Fourier Transform?
+So what was the trick that everyone used to go from a Discrete Fourier Transform to a _Fast_ Fourier Transform?
 
 Recursion!
 
@@ -137,7 +137,7 @@ In the end, the code looks like:
 {% sample lang="asm-x64" %}
 [import:76-165, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
-[import:15-37, lang="javascript"](code/javascript/fft.js)
+[import:17-39, lang="javascript"](code/javascript/fft.js)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -146,6 +146,7 @@ This is a limitation of the fact that we are using recursion and dividing the ar
 The above method is a perfectly valid FFT; however, it is missing the pictorial heart and soul of the Cooley-Tukey algorithm: Butterfly Diagrams.
 
 ### Butterfly Diagrams
+
 Butterfly Diagrams show where each element in the array goes before, during, and after the FFT.
 As mentioned, the FFT must perform a DFT.
 This means that even though we need to be careful about how we add elements together, we are still ultimately performing the following operation:
@@ -218,8 +219,8 @@ I'll definitely come back to this at some point, so let me know what you liked a
 
 To be clear, the example code this time will be complicated and requires the following functions:
 
-* An FFT library (either in-built or something like FFTW)
-* An approximation function to tell if two arrays are similar
+- An FFT library (either in-built or something like FFTW)
+- An approximation function to tell if two arrays are similar
 
 As mentioned in the text, the Cooley-Tukey algorithm may be implemented either recursively or non-recursively, with the recursive method being much easier to implement.
 I would ask that you implement either the recursive or non-recursive methods (or both, if you feel so inclined).
@@ -250,7 +251,6 @@ Some rather impressive scratch code was submitted by Jie and can be found here: 
 [import, lang:"javascript"](code/javascript/fft.js)
 {% endmethod %}
 
-
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
@@ -268,6 +268,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
+
 - The image "[FTexample](res/FT_example.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[radix2positive](res/radix-2screen_positive.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[radix2](res/radix-2screen.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
@@ -277,4 +278,5 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 ##### Pull Requests
 
 After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+
 - none
