@@ -93,5 +93,5 @@ const Z = iterative_cooley_tukey(X);
 const T = dft(X);
 
 // Check if the calculations are correct within a small tolerance
-console.log(approx(Y, T));
-console.log(approx(Z, T));
+console.log("Cooley tukey approximation is accurate: ", approx(Y, T));
+console.log("Iterative cooley tukey approximation is accurate: ", approx(Z, T));
