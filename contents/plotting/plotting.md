@@ -420,19 +420,80 @@ If multiple data sets are required to be plotted, they will also be provided a n
 We will assume that your plotter of choice has limited  three dimensional capabilities and will instead focus on the data format for one and two-dimensional data here
 
 ### One-dimensional output
-In the case of one-dimensional output, the data file is a `.csv` file with numbers separated by a newline, such as in this case:
+In the case of one-dimensional output, the data file will have all numbers separated by a newline, such as in this case:
 
 [import](data/1d_sample_low_res.dat)
 
-### Two-dimensional output
-In the case of two-dimensional output, the data file will again be a `.csv`, but this time, each number will be separated by a tab for different columns entries and a newline for rows, as shown here:
+For the purposes of the archive, we will call these data files `.dat` files; however, the file extension does not matter and you can just as well name the files `.tsv` or `.csv` depending on your tastes.
 
-TODO: FABRICATE DATA FOR FORMATTING
+{% method %}
+{% sample lang="gnuplot" %}
+
+Gnuplot can read in this file in the same way it can plot functions above.
+Simply use the following command:
+
+```
+plot "sample_data.dat" with lines
+```
+
+Which will provide the following output:
+
+<p>
+    <img  class="center" src="res/gnuplot/1d_sample.png" width="480" />
+</p>
+
+
+{% endmethod %}
+
+### Two-dimensional image output
+In the case of two-dimensional image output, the data file be similar, but this time, each number will be separated by a tab for different column entries and a newline for rows, as shown here:
+
 [import](data/2d_sample_low_res.dat)
 
-It is expected that the numbers of columns does not vary in each row and that we are working with an $$n \times m$$ matrix which can be simply plotted as a series of pixels that scale in color according to some defined colorbar.
+It is expected that the number of columns does not vary in each row and that we are working with an $$n \times m$$ matrix which can be simply plotted as a series of pixels that scale in color according to some defined colorbar.
+
+{% method %}
+{% sample lang="gnuplot" %}
+
+To create 2 dimensional plots in Gnuplot, we need to set the view to 2 dimensional and then do a 3 dimensional plot with the `splot` function that we set to a matrix image, like so:
+
+```
+set view map
+splot "sample_data.dat" matrix with image
+```
+
+<p>
+    <img  class="center" src="res/gnuplot/2d_sample.png" width="480" />
+</p>
+
+{% endmethod %}
 
 #### changing the colorbar
+
+For plotting images from data files, we will often need to specify how we color the image by setting a custom colorbar
+
+{% method %}
+{% sample lang="gnuplot" %}
+
+In Gnuplot, there are not many predifined themes, but it is fairly easy to set your own theme for coloring a 2 dimensional image.
+This is done by setting a `palette` and there are [repositories online](https://github.com/Gnuplotting/gnuplot-palettes) that have a number of palettes ti choose from.
+Simply put a palette is a number line where you can set a color to be associated with whatever value you like, like in this example:
+
+TODO: MIX HTML, COLOR, and RGB methods
+```
+set view map
+set palette defined (0 'dark-blue', 1 'red', 2 'green')
+splot "2d_sample_low_res.dat" matrix with image
+```
+The integer value corresponds to the location of the color on the colorbar and the color can be set as either a recognized word (`dark-blue`, `red`, `green`, etc.), HTML notation (``,``,``,etc.), or RGB colors (``,``,``,etc.).
+
+{% endmethod %}
+
+
+### Scatter Plots
+
+The scatterplot is another method for plotting data that plots each point in an $$n$$-dimensional space.
+For the purposes of the Algorithm Archive, this space is mainly two-dimensional; however, scatterplots in 3D may also be used for visualizing three-dimensional datasets, such as those requiring octrees.
 
 ### Algorithms using this method:
 
