@@ -1,0 +1,15 @@
+define BubbleSort
+set [it1 v] to (1)
+set [it2 v] to (1)
+repeat (length of [List v])
+repeat ((length of [List v]) - (1))
+If <(item ((it2)+(1)) of [List v]) <(item (it2) of [List v])> then
+set [tmp v] to (item (it2) of [List v])
+replace item (it2) of [List v] with (item ((it2)+(1)) of [List v]
+replace item ((it2)+(1)) of [List v] with (tmp)
+end
+change [it2 v] by (1)
+end
+set [it2 v] to (1)
+change [it1 v] by (1)
+end
