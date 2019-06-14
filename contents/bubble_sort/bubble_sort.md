@@ -70,7 +70,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/bubble_sort.png" width="400" />
+  <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
 </p>
 {% endmethod %}
 
