@@ -259,6 +259,8 @@ A text version of the program is provided for both versions.
 {% sample lang="ss" %}
 [import:, lang="scheme"](code/scheme/euclidalg.ss)
 {% sample lang="scratch" %}
+The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/278727055/)
+
 <p>
   <img  class="center" src="code/scratch/main.svg" width="200" />
 </p>
