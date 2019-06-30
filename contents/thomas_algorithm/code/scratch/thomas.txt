@@ -1,0 +1,21 @@
+define Solvetridiagonalsystem
+set [n v] to (length of [b v])
+if <not <(item (1 v) of [b v]) = [0]>> then
+    replace item (1 v) of [c v] with ((item (1 v) of [c v]) / (item (1 v) of [b v]))
+	replace item (1 v) of [d v] with ((item (1 v) of [d v]) / (item (1 v) of [b v]))
+end
+set [indx v] to (2)
+repeat ((n) - (1))
+    if <not <((item (indx) of [b v]) - ((item (indx) of [a v]) * (item ((indx) - (1)) of [c v]))) = [0]>> then
+	    replace item (indx) of [c v] with ((item (indx) of [c v]) / ((item (indx) of [b v]) - ((item (indx) of [a v]) * (item((indx) - (1)) of [c v]))))
+		replace item (indx) of [d v] with (((item (indx) of [c v]) - ((item (indx) of [a v]) * (item ((indx) - (1)) of [d v]))) / ((item (indx) of [b v]) - ((item (indx) of [a v]) * (item ((indx) - (1)) of [c v])))
+	end
+	change [indx v] by (1)
+end
+delete (all v) of [x v]
+add (item (last v) of [d v]) to [x v]
+set [indx v] to ((n) - (1))
+repeat ((n) - (1))
+    insert ((item (indx) of [d v]) - ((item(indx) of [c v]) * (item (1 v) of [x v]))) at (1 v) of [x v]
+	change [indx v] by (-1)
+end
