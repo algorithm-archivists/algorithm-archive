@@ -27,7 +27,7 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="java" %}
 [import:27-29, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="cpp" %}
-[import:21-29, lang="cpp"](code/c++/graham_scan.cpp)
+[import:10-12, lang="cpp"](code/c++/graham_scan.cpp)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -57,7 +57,7 @@ In the end, the code should look something like this:
 {% sample lang="java" %}
 [import:35-70, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="cpp" %}
-[import:51-91, lang="cpp"](code/c++/graham_scan.cpp)
+[import:14-50, lang="cpp"](code/c++/graham_scan.cpp)
 {% endmethod %}
 
 ### Bibliography

@@ -44,3 +44,5 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Björn Heinrichs 
 - Olav Sundfør
 - dovisutu
+- Antetokounpo
+- Akash Dhiman
