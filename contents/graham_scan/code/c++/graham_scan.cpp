@@ -29,7 +29,7 @@ std::vector<point> grahamScan(std::vector<point> points){
 
   //creating convex hull
   size_t m = 1;
-  for(size_t i = 2; i <= points.size(); i++) {
+  for(size_t i = 2; i < points.size(); i++) {
     while(ccw(points[m - 1], points[m], points[i]) <= 0){
       if(m > 1) {
                 m--;
@@ -43,7 +43,7 @@ std::vector<point> grahamScan(std::vector<point> points){
     m++;
     std::swap(points[i], points[m]);
   }
-  return std::vector<point>(points.begin(), points.begin() + m);
+  return std::vector<point>(points.begin(), points.begin() + m + 1);
 }
 
 void print(std::vector<point> points){
