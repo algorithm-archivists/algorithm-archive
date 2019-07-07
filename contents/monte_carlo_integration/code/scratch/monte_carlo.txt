@@ -4,7 +4,7 @@
 define Monte Carlo with point number (num)
 set [Count v] to (0)
 repeat (num)
-    set [x v] to ((pick random (0) to (10000000)) / (10000000))
+    set [x v] to ((pick random (0) to (10000000)) / (10000000)) // 10000000 is arbitarily chosen
     set [y v] to ((pick random (0) to (10000000)) / (10000000))
     if <(((x) * (x)) + ((y) * (y))) < (1) > then
         change [Count] by (1)

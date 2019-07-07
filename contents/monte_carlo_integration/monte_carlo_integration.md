@@ -196,7 +196,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="scratch" %}
 The code snippets were taken from this [scratch project](https://scratch.mit.edu/projects/319610349)
 <p>
-    <img  class="center" src="code/scratch/Algorithm.svg" width="400" />
+    <img  class="center" src="code/scratch/Algorithm.svg" width="600" />
 </p>
 {% endmethod %}
 
