@@ -8,7 +8,7 @@ struct point{
 };
 
 bool ccw(point a, point b, point c){
-  return ((b.x - a.x)*(c.y - a.y) >= (b.y - a.y)*(c.x - a.x));
+  return ((b.x - a.x)*(c.y - a.y) > (b.y - a.y)*(c.x - a.x));
 }
 
 std::vector<point> grahamScan(std::vector<point> points){
