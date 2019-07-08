@@ -43,3 +43,5 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Vexatos
 - Björn Heinrichs 
 - Olav Sundfør
+- dovisutu
+- Antetokounpo
