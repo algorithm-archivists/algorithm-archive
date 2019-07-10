@@ -2,10 +2,10 @@
 
 Plotting is an essential tool for visualizing and understanding important details of several algorithms and methods and is necessary for studies in various areas of computational science.
 For many languages, such as python, julia, and matlab, it is relatively straightforward to create simple plots for various types of data; however, for several other languages, like fortran, C/C++, and java, plotting can be a chore.
-Because the Algorithm Archive strives to be language agnostic, we do not want to favor any particular set of languages and have decided instead to output all data that needs plotting into a file format that cen easily be read in my various plotting scripts separate from the algorithm implementations.
+Because the Algorithm Archive strives to be language agnostic, we do not want to favor any particular set of languages and have decided instead to output all data that needs plotting into a file format that can easily be read in by various plotting scripts separate from the algorithm implementations.
 
 If you are implementing any algorithm in a language found on this page, you should be able to modify your existing code to allow for on-the-fly plotting.
-Otherwise, please use the language of your choice to write the initial language implementation and output the data to a file before using one of the scripts available here for plotting.
+Otherwise, please use the language of your choice to write the initial implementation and output the data to a file before using one of the scripts available here for plotting.
 
 This chapter aims to explain how to plot several different types of data and will be updated as more algorithms require more complex plotting schemes.
 Though many complex file formats exist, we will be mainly storing data for plotting in simple ASCII text.
@@ -18,11 +18,11 @@ To begin, let's write a simple script that allows for plotting a sine wave
 
 {% method %}
 {% sample lang="gnuplot" %}
-[import:1, lang:"gnuplot"](code/gnuplot/sine.gp)
+[import:1-1, lang:"gnuplot"](code/gnuplot/sine.gp)
 
-Here, `x` is a range from negative to positive 10.
+Where `x` is a range from negative to positive 10.
 To plot from the terminal, you can either:
-* enter the gnuplot REPL by using the `gnuplot` command and type the command manually.
+* enter the gnuplot REPL (Read, Evaluate, Print, Loop -- the gnuplot shell) by using the `gnuplot` command and type the above command manually.
 * write the command in an external script (let's call it `script.gp`) and run it with `gnuplot script.gp -`. The `-` will keep the terminal open in the background so the image stays up. If your plotting script outputs a `.png` file, the `-` is unnecessary.
 
 This command will create a plot that looks like this:
@@ -39,6 +39,8 @@ p sin(x) w l
 {% endmethod %}
 
 From here, it is rather straightforward to add more plots.
+For example, let's add in a cosine function.
+
 {% method %}
 {% sample lang="gnuplot" %}
 In this case, we need to add the following line to our script:
@@ -50,7 +52,7 @@ Which will create an image that looks like this:
     <img  class="center" src="res/gnuplot/sincos.png" width="480" />
 </p>
 
-If you would prefer to plot everything on a single line (which will become more relevant later), then you can use the following command:
+If you would prefer to plot everything on a single line (which will become more relevant when plotting directly to an image file), then you can use the following command:
 
 ```
 p sin(x) w l, cos(x) w l
@@ -58,12 +60,14 @@ p sin(x) w l, cos(x) w l
 
 {% endmethod %}
 
-In some sense, this chapter is meant as a guide to help better understand plotting with your language of choice.
+In some sense, this chapter is meant as a guide so users can better understand plotting in their language of choice.
 As such, it is important to first understand how to perform a few basic tasks:
 
-1. Changing the plot title, axis, labels, x/ytic values, and plot dimensions
+1. Changing auxiliary features of the plot such as: title, axis, labels, x/ytic values, and plot dimensions
 2. Plotting multiple functions at the same time
 3. Outputting the plot to file
+
+At the end of this chapter, we will discuss the scatter plot; however, additional plotting techniques may be covered in the near future for specific algorithms and methods.
 
 ### Changing auxiliary features
 
@@ -136,9 +140,10 @@ This is simply meant as a showcase for using gnuplot in this way.
 
 {% endmethod %}
 
+TODO: change to exp() function, then to sin again at the end for logscale sine plot for the rest of the chapter. Say something like... "This is an awful plot, so we'll use it as our example for the rest of this chapter"
 #### logscale
 
-In addition to changing the values of the x and y tics, we can also change the axis to plot in logscale by using the following command:
+In addition to changing the values of the x and y tics, we can also change the axes to plot in logscale by using the following command:
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -162,7 +167,7 @@ Because of the way we cropped the image, it doesn't really accurately represent 
 #### labels, titles, and legends
 
 Many researchers are very particular about labels.
-They need to be in the right spot, say the right stuff, and be interpreted in the right way.
+Labels need to be in the right spot, say the right stuff, and be interpreted in the right way.
 As such, most plotters have a lot of options for labels, including LaTeX-like formating for academic journals and such.
 
 There are also multiple labels associated with each plot.
@@ -192,7 +197,7 @@ For now, let's move on to discuss what we can to with all of the labels in the l
 
 #### legend
 
-First things first, you should probably use a legend, unless you are a legend yourself and don't need one and can use the following:
+First things first, you should probably use a legend, unless you are a legend yourself and don't need one... In which case you can use the following:
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -261,6 +266,7 @@ set title "Gnuplot Test"
 
 {% endmethod %}
 
+TODO: Continue Revision
 #### square output
 
 Many times, plotting data in a 6:9 (or worse, 16:9) aspect ratio can feel like a misrepresentation of the data.
@@ -476,26 +482,60 @@ For plotting images from data files, we will often need to specify how we color 
 {% sample lang="gnuplot" %}
 
 In Gnuplot, there are not many predifined themes, but it is fairly easy to set your own theme for coloring a 2 dimensional image.
-This is done by setting a `palette` and there are [repositories online](https://github.com/Gnuplotting/gnuplot-palettes) that have a number of palettes ti choose from.
-Simply put a palette is a number line where you can set a color to be associated with whatever value you like, like in this example:
+This is done by setting a `palette` and there are [repositories online](https://github.com/Gnuplotting/gnuplot-palettes) that have a number of palettes to choose from.
+Simply put, a palette is a number line where you can set a color to be associated with whatever value you like, like in this example:
 
-TODO: MIX HTML, COLOR, and RGB methods
 ```
 set view map
-set palette defined (0 'dark-blue', 1 'red', 2 'green')
+set palette defined (0 0 0 1, 1 'red', 2 '#00FF00')
 splot "2d_sample_low_res.dat" matrix with image
 ```
-The integer value corresponds to the location of the color on the colorbar and the color can be set as either a recognized word (`dark-blue`, `red`, `green`, etc.), HTML notation (``,``,``,etc.), or RGB colors (``,``,``,etc.).
+The integer value corresponds to the location of the color on the colorbar and the color can be set as either a recognized word (`blue`, `red`, `green`, etc.), HTML notation (`'#FF0000'`,`'#00FF00'`,`'#0000FF'`,etc.), or RGB colors (`1 0 0`,`0 1 0`,`0 0 1`,etc.).
+This example will output the following plot:
+
+<p>
+    <img  class="center" src="res/gnuplot/2d_sample_cb.png" width="480" />
+</p>
+
 
 {% endmethod %}
 
 
 ### Scatter Plots
 
-The scatterplot is another method for plotting data that plots each point in an $$n$$-dimensional space.
-For the purposes of the Algorithm Archive, this space is mainly two-dimensional; however, scatterplots in 3D may also be used for visualizing three-dimensional datasets, such as those requiring octrees.
+The scatter plot is another useful method for visualizing data that plots each point in an $$n$$ -dimensional space.
+For the purposes of the Algorithm Archive, this space is mainly two-dimensional; however, scatterplots in three-dimensional may also be used for visualizing three-dimensional datasets, such as those requiring octrees.
+We will update this section if three-dimensional scatterplots are required.
 
-### Algorithms using this method:
+For the purposes of the algorithm archive, scatterplot data will be output as a series of $$x$$ and $$y$$ pairs, where each row has an $$x$$ and a $$y$$ value, separated by a tab character.
+For example, a datafile might look like this:
+
+[import:1-10](data/scatterplot_data.dat)
+
+For three-dimensional scatterplots, there will be a third $$z$$ dimension.
+{% method %}
+{% sample lang="gnuplot" %}
+
+In gnuplot, scatterplots are easy to generate with the provided data format, for example, you could use the following command:
+
+```
+p "scatterplot_data.dat" pt 7
+```
+
+Which will create the following image
+
+<p>
+    <img  class="center" src="res/gnuplot/scatterplot.png" width="480" />
+</p>
+
+Here, we have chosen `pointtype 7`, simply because it is easier to see when comared to the default crosses.
+
+{% endmethod %}
+
+## Conclusions
+
+Plotting is a powerful tool that is essential for most of computational science.
+Here, we have provided all of the essential skills to plot any data that comes from the algorithm archive, we will strive to provide the plotting scripts we used whenever possible.
 
 ##### Code Examples
 
