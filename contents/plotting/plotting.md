@@ -73,7 +73,7 @@ At the end of this chapter, we will discuss the scatter plot; however, additiona
 
 Beauty is in the eye of the beholder, but it is rare for people to call plots "beautiful."
 That said, there are plenty of things you can do to more clearly represent your data, and if your data is beautiful, so be it!
-In this section, we'll show you some smallscale modifications you can make to the plot we have already generated to make it little cleaner, but there are plenty of other ways to spruce up your plot that we are not covering here.
+In this section, we'll show you some small-scale modifications you can make to the plot we have already generated to make it little cleaner, but there are plenty of other ways to spruce up your plot that we are not covering here.
 Be sure to look at the documentation for plotting in your language of choice if you want to do anything more complicated.
 
 #### x and y range
@@ -103,7 +103,7 @@ For this script, we generate a plot that looks like this:
 
 In addition to changing the plot scales, it is also important to notify your audience of what these scales actually mean.
 To help guide the reader's eye and better understand what the plot represents, plotters provide _tics_ (little notches) on the $$x$$ and $$y$$ axes.
-As such, it is important to update the $$x$$ and $$y$$ tics with appropriate scales and lables.
+As such, it is important to update the $$x$$ and $$y$$ tics with appropriate scales and labels.
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -135,15 +135,14 @@ which creates a plot that looks like this:
 </p>
 
 Here, we are selecting 3 values to use for the x-axis and using words or phrases for the "bottom" and "top" of the y-axis.
-To be clear: we are not condoning the behaviour of having mismatched x and y tic values by using words or phrases along the y axis and numbers along the x axis.
+To be clear: we are not condoning the behavior of having mismatched x and y tic values by using words or phrases along the y axis and numbers along the x axis.
 This is simply meant as a showcase for using gnuplot in this way.
 
 {% endmethod %}
 
-TODO: change to exp() function, then to sin again at the end for logscale sine plot for the rest of the chapter. Say something like... "This is an awful plot, so we'll use it as our example for the rest of this chapter"
 #### logscale
 
-In addition to changing the values of the x and y tics, we can also change the axes to plot in logscale by using the following command:
+In addition to changing the values of the x and y tics, we can also change the axes to plot in log-scale by using the following command:
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -153,29 +152,57 @@ set logscale x
 set logscale y
 ```
 
-which creates the following plot:
+{% endmethod %}
 
+As a simple example, let's take the `exp(x)` function.
+
+{% method %}
+{% sample lang="gnuplot" %}
+
+In gnuplot, we can plot this by using `p exp(x) w l`, which will create the following:
+
+<p>
+    <img  class="center" src="res/gnuplot/exp.png" width="480" />
+</p>
+
+{% endmethod %}
+
+Now let's plot the same function with log-scale along the $$y$$ axis:
+
+{% method %}
+{% sample lang="gnuplot" %}
+
+<p>
+    <img  class="center" src="res/gnuplot/explog.png" width="480" />
+</p>
+
+{% endmethod %}
+
+Here, we see what we expect: `exp(x)` is a straight line when the $$y$$ axis is in log-scale.
+When we use log-scale on the sine and cosine waves from before, we get the following:
+
+{% method %}
+{% sample lang="gnuplot" %}
 <p>
     <img  class="center" src="res/gnuplot/sincos_log.png" width="480" />
 </p>
 
 {% endmethod %}
 
-Admittedly, this is not the most beautiful picture.
-Because of the way we cropped the image, it doesn't really accurately represent the data; however, if we were instead trying to plot an exponential function (or if we were to look at small changes in a dataset), this type of plot could be incredibly useful.
+This is an awful plot, so it is only fitting that we use it as out example for the a few more plots in this chapter.
 
 #### labels, titles, and legends
 
 Many researchers are very particular about labels.
 Labels need to be in the right spot, say the right stuff, and be interpreted in the right way.
-As such, most plotters have a lot of options for labels, including LaTeX-like formating for academic journals and such.
+As such, most plotters have a lot of options for labels, including LaTeX-like formatting for academic journals and such.
 
 There are also multiple labels associated with each plot.
 Every line has a label, often held in a box called a _legend_, and the plot, itself, has a title.
 
 ##### labels
 
-First, let's change the labels associated with each dataset or function.
+First, let's change the labels associated with each data set or function.
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -191,7 +218,7 @@ p sin(x) w l title "sine wave", cos(x) w l title "cos(x)"
 {% endmethod %}
 
 Here, we show that we can modify the data labels to be whatever we want.
-Note that for LaTeX-like math in the label, we might neet to change the output to TeX, which will be shown later.
+Note that for LaTeX-like math in the label, we might need to change the output to TeX, which will be shown later.
 
 For now, let's move on to discuss what we can to with all of the labels in the legend
 
@@ -266,11 +293,10 @@ set title "Gnuplot Test"
 
 {% endmethod %}
 
-TODO: Continue Revision
 #### square output
 
 Many times, plotting data in a 6:9 (or worse, 16:9) aspect ratio can feel like a misrepresentation of the data.
-For whatever reason, I was told time and time again as a fledgling researcher that there is no need for widescreen plots and that I should set the output to square when possible.
+For whatever reason, I was told time and time again as a fledgling researcher that there is no need for widescreen plots and that I should set the output to square whenever possible.
 
 That can be done by using
 
@@ -301,7 +327,7 @@ To find all the point or line types available in gnuplot, simply open the REPL a
     <img  class="center" src="res/gnuplot/test.png" width="480" />
 </p>
 
-As a note, changing the linecolor is not mentioned in the test image above, this can be done with the `linecolor` command, which takes an argument in a colorspace like `rgb`.
+As a note, changing the line color is not mentioned in the test image above, this can be done with the `linecolor` command, which takes an argument in a color space like `rgb`.
 
 If we would like to use a dashed black line for the sine function and purple crosses for cosine, we would use something like this:
 
@@ -338,13 +364,13 @@ Here are all the aliases stated explicitly:
 | `pointtype`   | `pt`      |
 | `title`       | `t`       |
 
-We will add more aliases to this table as they are used in the archive.
+We will add more aliases to this table as they are used in the Algorithm Archive.
 
 {% endmethod %}
 
 ### Outputting the plot to file
 
-At this point, all scripts will output an image directly to your computer; however, it is important to note that you can use any of the above methods when outputting to a file as well.
+At this point, all the scripts have shown so far will output an image directly to your computer screen; however, it is important to note that you can use any of the above methods when outputting to a file as well.
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -356,7 +382,7 @@ set terminal pngcairo
 set output "check.png"
 ```
 
-In this case, we are changing the REPL type to work with png images with the cairo backend, which is a vector drawing library in C.
+In this case, we are changing the REPL type to work with png images with the cairo back-end, which is a vector drawing library in C.
 We are also setting the output to "check.png".
 
 If we would like to set the resolution of the output image, we could do the following:
@@ -401,18 +427,18 @@ This file should look like this:
 
 Note that in this process, we create auxiliary files like `*.eps` and `*.aux`, which are expected with LaTeX.
 
-If you would like to directly read the output `.tex` file from gnuplot, you can use the command above without the `standalone` option, like so:
+If you would like to directly read the output `.tex` file from gnuplot into another LaTeX document, you can use the same command as above without the `standalone` option, like so:
 
 ```
 set terminal epslatex size 10cm, 10cm
 set output "check.tex"
 ```
-
-As a note, the units for the plot are real units in terms of cm, inches, or whatever other measurement LaTeX takes.
-As such, you will probably want to make sure the size of the output image actually fits in the document you want to create.
-Here is a quick example of how to put the output tex file into a LaTeX document:
+This will output another "check.tex" file that can be used by other LaTeX documents, and here is an example tex file to do that:
 
 [import, lang:"gnuplot"](code/gnuplot/latex_import.tex)
+
+As a note, the units for the `epslatex` terminal are real units in terms of cm, inches, or whatever other measurement LaTeX takes.
+As such, you will probably want to make sure the size of the output image from gnuplot actually fits in the document you want to create.
 
 {% endmethod %}
 
@@ -420,7 +446,7 @@ Here is a quick example of how to put the output tex file into a LaTeX document:
 
 Each algorithm in the Algorithm Archive that requires plotting will also output a data file to use for this purpose.
 Even though there are plenty of complex data formats to write to and read from, for the purposes of this text, we will focus on simple ASCII data.
-This is not preferred for any data-intensive task and there are a large number of different storage formats and filetypes available to choose from for your specific purposes; however, the Algorithm Archive intends to provide the simplest explanation of algorithms and methods and we do not want to overcomplicate the process with file input and output.
+This is not preferred for any data-intensive task and there are a large number of different storage formats and file types available to choose from for your specific purposes; however, the Algorithm Archive intends to provide the simplest explanation of algorithms and methods and we do not want to over-complicate the process with file input and output.
 
 If multiple data sets are required to be plotted, they will also be provided a new file, usually with a zero-padded name such as `file_0000.dat`, `file_0001.dat`, `file_0002.dat`, and so on.
 We will assume that your plotter of choice has limited  three dimensional capabilities and will instead focus on the data format for one and two-dimensional data here
@@ -430,13 +456,13 @@ In the case of one-dimensional output, the data file will have all numbers separ
 
 [import](data/1d_sample_low_res.dat)
 
-For the purposes of the archive, we will call these data files `.dat` files; however, the file extension does not matter and you can just as well name the files `.tsv` or `.csv` depending on your tastes.
+For the purposes of the Algorithm Archive, we will call these data files `.dat` files; however, the file extension does not matter and you can just as well name the files `.tsv` or `.csv` depending on your tastes.
 
 {% method %}
 {% sample lang="gnuplot" %}
 
 Gnuplot can read in this file in the same way it can plot functions above.
-Simply use the following command:
+So we can use the following command:
 
 ```
 plot "sample_data.dat" with lines
@@ -476,12 +502,12 @@ splot "sample_data.dat" matrix with image
 
 #### changing the colorbar
 
-For plotting images from data files, we will often need to specify how we color the image by setting a custom colorbar
+For plotting images from data files, we will often need to specify how we color the image by setting a custom color bar
 
 {% method %}
 {% sample lang="gnuplot" %}
 
-In Gnuplot, there are not many predifined themes, but it is fairly easy to set your own theme for coloring a 2 dimensional image.
+In Gnuplot, there are not many predefined themes, but it is fairly easy to set your own theme for coloring a 2 dimensional image.
 This is done by setting a `palette` and there are [repositories online](https://github.com/Gnuplotting/gnuplot-palettes) that have a number of palettes to choose from.
 Simply put, a palette is a number line where you can set a color to be associated with whatever value you like, like in this example:
 
@@ -490,7 +516,7 @@ set view map
 set palette defined (0 0 0 1, 1 'red', 2 '#00FF00')
 splot "2d_sample_low_res.dat" matrix with image
 ```
-The integer value corresponds to the location of the color on the colorbar and the color can be set as either a recognized word (`blue`, `red`, `green`, etc.), HTML notation (`'#FF0000'`,`'#00FF00'`,`'#0000FF'`,etc.), or RGB colors (`1 0 0`,`0 1 0`,`0 0 1`,etc.).
+The integer value corresponds to the location of the color on the color bar and the color can be set as either a recognized word (`blue`, `red`, `green`, etc.), HTML notation (`'#FF0000'`, `'#00FF00'`, `'#0000FF'`, etc.), or RGB colors (`1 0 0`, `0 1 0`, `0 0 1`, etc.).
 This example will output the following plot:
 
 <p>
@@ -504,19 +530,19 @@ This example will output the following plot:
 ### Scatter Plots
 
 The scatter plot is another useful method for visualizing data that plots each point in an $$n$$ -dimensional space.
-For the purposes of the Algorithm Archive, this space is mainly two-dimensional; however, scatterplots in three-dimensional may also be used for visualizing three-dimensional datasets, such as those requiring octrees.
-We will update this section if three-dimensional scatterplots are required.
+For the purposes of the Algorithm Archive, this space is mainly two-dimensional; however, scatter plots in three-dimensions may also be used for visualizing three-dimensional datasets.
+We will update this section if three-dimensional scatter plots are required.
 
-For the purposes of the algorithm archive, scatterplot data will be output as a series of $$x$$ and $$y$$ pairs, where each row has an $$x$$ and a $$y$$ value, separated by a tab character.
+For the purposes of the Algorithm Archive, scatter plot data will be output as a series of $$x$$ and $$y$$ pairs, where each row has an $$x$$ and a $$y$$ value, separated by a tab character.
 For example, a datafile might look like this:
 
 [import:1-10](data/scatterplot_data.dat)
 
-For three-dimensional scatterplots, there will be a third $$z$$ dimension.
+For three-dimensional scatter plots, there might be a third, $$z$$ dimension.
 {% method %}
 {% sample lang="gnuplot" %}
 
-In gnuplot, scatterplots are easy to generate with the provided data format, for example, you could use the following command:
+In gnuplot, scatter plots are easy to generate with the provided data format, for example, you could use the following command:
 
 ```
 p "scatterplot_data.dat" pt 7
@@ -528,14 +554,14 @@ Which will create the following image
     <img  class="center" src="res/gnuplot/scatterplot.png" width="480" />
 </p>
 
-Here, we have chosen `pointtype 7`, simply because it is easier to see when comared to the default crosses.
+Here, we have chosen `pointtype 7`, simply because it is easier to see when compared to the default crosses.
 
 {% endmethod %}
 
 ## Conclusions
 
 Plotting is a powerful tool that is essential for most of computational science.
-Here, we have provided all of the essential skills to plot any data that comes from the algorithm archive, we will strive to provide the plotting scripts we used whenever possible.
+Here, we have provided all of the essential skills to plot any data that comes from the Algorithm Archive, and we will strive to provide the plotting scripts we used whenever possible.
 
 ##### Code Examples
 
