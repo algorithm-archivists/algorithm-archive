@@ -5,7 +5,7 @@
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
     "wordcount",
-    "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
+    "api-language-selector",
     "include-codeblock",
     "ga",
     "bulk-redirect",
