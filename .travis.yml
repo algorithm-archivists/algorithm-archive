@@ -6,6 +6,9 @@ node_js:
   - "4"
 
 install:
+  - rm -r node_modules
+  - rm package-lock.json
+  - npm cache clean --force
   - npm install gitbook-cli -g
   - gitbook install
 
