@@ -575,7 +575,33 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 
 ##### Images/Graphics
 
+{% method %}
+{% sample lang="gnuplot" %}
+- The image "[gnuplot_sine_wave](res/gnuplot/sine.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_wave](res/gnuplot/sincos.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_wave_range](res/gnuplot/sincos_range.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_notics](res/gnuplot/sincos_notics.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_customtics](res/gnuplot/sincos_customtics.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[exp_fn](res/gnuplot/exp.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[exp_fn_log](res/gnuplot/explog.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_log](res/gnuplot/sincos_log.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_label](res/gnuplot/sincos_label.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_nokey](res/gnuplot/sincos_nokey.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_movekey](res/gnuplot/sincos_movekey.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_movekey2](res/gnuplot/sincos_movekey2.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_title](res/gnuplot/sincos_title.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_square](res/gnuplot/sincos_square.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_test](res/gnuplot/test.png)" was created by the `gnuplot test` command, and gnuplot has [this copyright](https://sourceforge.net/p/gnuplot/gnuplot-main/ci/master/tree/Copyright).
+- The image "[gnuplot_sine_cosine_linetype](res/gnuplot/sincos_lt.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_exp_tex](res/gnuplot/exponential_tex.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_1d_sample](res/gnuplot/1d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_2d_sample](res/gnuplot/2d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_2d_sample_colorbar](res/gnuplot/2d_sample_cb.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_scatterplot](res/gnuplot/scatterplot.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+{% endmethod %}
+
 ##### Pull Requests
 
 The following pull requests have modified the text or graphics of this chapter:
-- none
+- 622: Initial PR for chapter
