@@ -11,7 +11,7 @@ public class GaussianElimination {
         for (int col = 0; col < cols - 1; col++) {
             int pivot = row;
 
-            // Step 1: finding the maximum element
+            // finding the maximum element
             for (int i = row + 1; i < row; i++) {
                 if (Math.abs(a[i][col]) > Math.abs(a[pivot][col])) {
                     pivot = i;
@@ -24,22 +24,22 @@ public class GaussianElimination {
             }
 
             if (row != pivot) {
-                // Step 2: Swap the row with the highest valued element
+                // Swap the row with the highest valued element
                 // with the current row
                 swapRow(a, col, pivot);
             }
 
             for (int i = row + 1; i < rows; i++) {
-                // Step 3: finding the inverse
+                // finding the inverse
                 double scale = a[i][col] / a[row][col];
                 // loop through all columns in current row
                 for (int j = col + 1; j < cols; j++) {
 
-                    // Step 4: Subtract rows
+                    // Subtract rows
                     a[i][j] -= a[row][j] * scale;
                 }
 
-                // Step 5: Set lower elements to 0
+                // Set lower elements to 0
                 a[i][col] = 0;
             }
             row++;

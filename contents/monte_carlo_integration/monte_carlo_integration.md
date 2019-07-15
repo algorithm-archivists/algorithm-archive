@@ -42,9 +42,9 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="clj" %}
 [import:3-10, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-[import:7-9, lang:"c_cpp"](code/c/monte_carlo.c)
+[import:7-9, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import:7-16, lang:"c_cpp"](code/c++/monte_carlo.cpp)
+[import:7-16, lang:"cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -58,7 +58,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="r" %}
 [import:2-6, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
-[import:13-15, lang:"java"](code/java/MonteCarlo.java)
+[import:12-14, lang:"java"](code/java/MonteCarlo.java)
 {% sample lang="swift" %}
 [import:1-3, lang:"swift"](code/swift/monte_carlo.swift)
 {% sample lang="py" %}
@@ -89,6 +89,8 @@ each point is tested to see whether it's in the circle or not:
 [import:21-32, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
 {% sample lang="bash" %}
 [import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
+{% sample lang="kotlin" %}
+[import:3-3, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -108,6 +110,14 @@ As long as you can write some function to tell whether the provided point is ins
 This is obviously an incredibly powerful tool and has been used time and time again for many different areas of physics and engineering.
 I can guarantee that we will see similar methods crop up all over the place in the future!
 
+## Video Explanation
+
+Here is a video describing Monte Carlo integration:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AyBNnkYrSWY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 Monte Carlo methods are famous for their simplicity.
 It doesn't take too many lines to get something simple going.
@@ -125,9 +135,9 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/monte_carlo.clj)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/monte_carlo.c)
+[import, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/monte_carlo.cpp)
+[import, lang:"cpp"](code/c++/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -177,10 +187,32 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"asm-x64"](code/asm-x64/monte_carlo.s)
 {% sample lang="bash" %}
 [import, lang:"bash"](code/bash/monte_carlo.bash)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
 {% endmethod %}
-
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+- The image "[squarecircle](res/square_circle.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[simplemontecarlo](res/monte_carlo.gif)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

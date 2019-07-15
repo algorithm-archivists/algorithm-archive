@@ -40,7 +40,7 @@ impl IndexMut<(usize, usize)> for Matrix {
 
 fn gaussian_elimination(a: &mut Matrix) {
     for k in 0..min(a.cols, a.rows) {
-        // Step 1: find the maximum element for this column
+        // find the maximum element for this column
         let mut max_row = k;
         let mut max_value = a[(k, k)].abs();
         for row in (k + 1)..a.rows {
@@ -56,21 +56,21 @@ fn gaussian_elimination(a: &mut Matrix) {
             return;
         }
 
-        // Step 2: swap the row with the highest value for this kumn to the top
+        // swap the row with the highest value for this kumn to the top
         a.swap_rows(k, max_row);
 
         // Loop over all remaining rows
         for i in k + 1..a.rows {
-            // Step 3: find the fraction
+            // find the fraction
             let fraction = a[(i, k)] / a[(k, k)];
 
             // Loop through all columns for that row
             for j in (k + 1)..a.cols {
-                // Step 4: re-evaluate each element
+                // re-evaluate each element
                 a[(i, j)] -= a[(k, j)] * fraction;
             }
 
-            // Step 5: set lower elements to 0
+            // set lower elements to 0
             a[(i, k)] = 0.0;
         }
     }

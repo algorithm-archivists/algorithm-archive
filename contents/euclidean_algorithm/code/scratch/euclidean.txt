@@ -1,0 +1,25 @@
+define euclid_sub
+set [a v] to ([abs v] of [a v])
+set [b v] to ([abs v] of [b v])
+repeat until <(a) = (b)>
+    if <(a) > (b)> then
+        set [a v] to ((a) - (b))
+    else
+        set [b v] to ((b) - (a))
+		
+
+define euclid_mod
+set [a v] to ([abs v] of [a v])
+set [b v] to ([abs v] of [b v])
+repeat until <(b) = (0)>
+    set [temp v] to (b)
+    set [b v] to ((a) mod (b))
+    set [a v] to (temp)
+	
+when green flag clicked
+set [a v] to ((64) * (67))
+set [b v] to ((64) * (81))
+euclid_sub
+set [a v] to ((128) * (12))
+set [b v] to ((128) * (77))
+euclid_mod

@@ -1,0 +1,70 @@
+;chip 8 bubble sort
+;by codingwithethanol
+
+
+	LD V2, 1 ;index increment
+	LD I, ARRAY ;get array pointer
+	LD V3, 12 ;our array will be 12 bytes long
+
+FILL
+	RND V0, #0F ;get random byte value from 0-F
+	LD [I], V0 ;load it to current array index
+	ADD I, V2 ;increment i
+	ADD V3, -1 ;decrement counter
+	SE V3, #0 ;check if counter has reached zero
+	JP FILL ;if it hasnt, loop
+	LD V3, 2 ;x position to print array to
+	LD V4, 4 ;y position to print array to
+	CALL DISPLAY ;display array
+	CALL BUBBLESORT ;sort array
+HERE
+	JP HERE ;block
+
+DISPLAY
+	LD V5, V3 ;save original x offset
+	ADD V5, 60 ;add length of array times char width
+	LD V2, 0 ;array index
+DRAWLOOP
+	LD I, ARRAY ;get array pointer
+	ADD I, V2 ;add index
+	ADD V2, 1 ;increment index
+	LD V0, [I] ;load element of array
+	LD F, V0 ;get address of corresponding hex sprite
+	DRW V3, V4, 5 ;draw it at (V3, V4)
+	ADD V3, 5 ;increment x by char width
+	SE V3, V5 ;if we arent at the end of the array
+	JP DRAWLOOP ;draw another char
+	RET
+
+BUBBLESORT
+SETUP
+	LD V4, 0 ;no swap has been performed
+	LD V3, 0 ;we are starting at the beginning of the array
+CHECKLOOP
+	LD I, ARRAY ;load array pointer
+	ADD I, V3 ;load array index
+	LD V1, [I] ;load 2 bytes from arraypos
+	LD V2, V1 ;temp = b
+	SUB V2, V0 ;temp -= a
+	SE VF, 0 ;if b < a
+	JP GRTHAN ;jump here
+LSTHAN
+	LD V2, V1 ;temp = b
+	LD V1, V0 ;b = a
+	LD V0, V2 ;a = temp
+	LD [I], V1 ;store back swapped values
+	LD V4, 1 ;swap = true
+GRTHAN 
+	ADD V3, 1 ;increment array index
+	SE V3, 12 ;if not end of array
+	JP CHECKLOOP ;step
+CHECKDONE ;if end of array
+	SE V4, 0 ;if a swap was done
+	JP SETUP ;iterate through array again
+	;otherwise
+	LD V3, 2 ;x position to print array to
+	LD V4, 12 ;y position to print array to
+	CALL DISPLAY ;display sorted array
+	RET
+
+ARRAY

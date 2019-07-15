@@ -32,7 +32,7 @@ void dfs_recursive_postorder(node const& n) {
 
 
 void dfs_recursive_inorder_btree(node const& n) {
-  switch (n.children_size) {
+  switch (n.children.size()) {
     case 2:
       dfs_recursive_inorder_btree(n.children[0]);
       std::cout << n.value << '\n';
@@ -92,7 +92,7 @@ node create_tree(size_t num_row, size_t num_child) {
 
   std::vector<node> vec;
   std::generate_n(std::back_inserter(vec), num_child, [&] {
-    return create_node(num_row - 1, num_child);
+    return create_tree(num_row - 1, num_child);
   });
 
   return node{std::move(vec), num_row};
@@ -100,8 +100,8 @@ node create_tree(size_t num_row, size_t num_child) {
 
 int main() {
   // Creating Tree in main
-  auto root = create_node(3, 3);
-  auto binary_root = create_node(3, 2);
+  auto root = create_tree(3, 3);
+  auto binary_root = create_tree(3, 2);
   std::cout << "DFS recursive:\n";
   dfs_recursive(root);
   std::cout << "DFS post order recursive:\n";
