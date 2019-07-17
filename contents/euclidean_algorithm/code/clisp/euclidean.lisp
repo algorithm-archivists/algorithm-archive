@@ -1,4 +1,4 @@
-;;;; Euclid algorithm implementation in Common Lisp
+;;;; Euclidean algorithm implementation in Common Lisp
 
 (defun euclid-sub (a b)
   "Finds the greatest common divsor for any two integers"
