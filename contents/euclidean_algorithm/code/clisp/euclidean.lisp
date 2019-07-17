@@ -9,8 +9,8 @@
   (if (eq a b)
       a
       (if (> a b)
-        (euclid-sub* (- a b) b)
-        (euclid-sub* a (- b a)))))
+	  (euclid-sub* (- a b) b)
+	  (euclid-sub* a (- b a)))))
 
 (defun euclid-mod (a b)
   "Finds the greatest common divisor for any two integers"
@@ -21,11 +21,11 @@
 (print (euclid-sub (* 64 67) (* 64 81)))
 (print (euclid-mod (* 128 12) (* 128 77)))
 
-; quick test
+;; Quick test
 (assert
-  (=  (euclid-sub (* 64 67) (* 64 81))
-      (gcd (* 64 67) (* 64 81))))
+ (eql  (euclid-sub (* 64 67) (* 64 81))
+       (gcd (* 64 67) (* 64 81))))
 
 (assert
-  (=  (euclid-mod (* 64 67) (* 64 81))
+ (eql (euclid-mod (* 64 67) (* 64 81))
       (gcd (* 64 67) (* 64 81))))
