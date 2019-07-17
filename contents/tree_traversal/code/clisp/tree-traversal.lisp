@@ -50,7 +50,7 @@
     (loop while (> (length queue) 0)
        do (print (node-data (first queue)))
 	 (setf temp (pop queue))
-	 ;; If the queue is empty, the queue should be filled with the children
+	 ;; If the queue is empty, the queue should be filled with the children nodes.
 	 (if (eql queue nil)
 	     (setf queue (node-children temp))
 	     (nconc queue (node-children temp))))))

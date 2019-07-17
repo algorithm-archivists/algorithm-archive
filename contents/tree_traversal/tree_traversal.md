@@ -231,7 +231,7 @@ In code, it looks like this:
 {% sample lang="emojic" %}
 [import:64-79, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
-[import:34-42, lang:"lisp"](code/clisp/tree-traversal.lisp)
+[import:34-43, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -278,7 +278,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="emojic" %}
 [import:81-96, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
-[import:44-51, lang:"lisp"](code/clisp/tree-traversal.lisp)
+[import:45-56, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% endmethod %}
 
 ## Video Explanation
