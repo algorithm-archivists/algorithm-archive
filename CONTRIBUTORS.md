@@ -44,6 +44,7 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Raven-Blue Dragon
 - Björn Heinrichs 
 - Olav Sundfør
+- Ben Chislett
 - dovisutu
 - Antetokounpo
 - Akash Dhiman
