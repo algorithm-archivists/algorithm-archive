@@ -4,14 +4,13 @@
   "Finds the time it takes for an object to hit the ground using verlet integration."
   (loop
      with prev-pos = pos
-     with temp-pos = 0
      with time = 0
      while (> pos 0)
      do (incf time dt)
-       (setf temp-pos pos)
      ;; The starting speed is assumed to be zero.
-       (setf pos (+ (* pos 2) (- prev-pos) (* acc dt dt)))
-       (setf prev-pos temp-pos)
+       (psetf
+	pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
+	prev-pos pos)
      finally (return time)))
 
 (defun stormer-verlet (pos acc dt)
@@ -20,18 +19,18 @@
      with prev-pos = pos
      with time = 0
      with vel = 0
-     with temp-pos = 0
      while (> pos 0)
      do (incf time dt)
-       (setf temp-pos pos)
-       (setf pos (+ (* pos 2) (- prev-pos) (* acc dt dt)))
-       (setf prev-pos temp-pos)
+     ;; Variables are changed in parallel by 'psetf', so there's no need for a temporary variable.
+       (psetf
+	pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
+	prev-pos pos)
        (incf vel (* acc dt))
     finally (return (list time vel))))
 
 (defun velocity-verlet (pos acc dt)
+  "Finds the time and velocity when an object hist the ground using the velocity in calculations."
   (loop
-     with prev-pos = pos
      with time = 0
      with vel = 0
      while (> pos 0)
