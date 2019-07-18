@@ -9,8 +9,8 @@
      do (incf time dt)
      ;; The starting speed is assumed to be zero.
        (psetf
-	pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
-	prev-pos pos)
+	    pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
+	    prev-pos pos)
      finally (return time)))
 
 (defun stormer-verlet (pos acc dt)
@@ -23,8 +23,8 @@
      do (incf time dt)
      ;; Variables are changed in parallel by 'psetf', so there's no need for a temporary variable.
        (psetf
-	pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
-	prev-pos pos)
+	    pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
+	    prev-pos pos)
        (incf vel (* acc dt))
     finally (return (list time vel))))
 
