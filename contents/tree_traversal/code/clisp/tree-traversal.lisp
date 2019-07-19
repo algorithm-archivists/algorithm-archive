@@ -49,11 +49,11 @@
        (temp nil))
     (loop while (> (length queue) 0)
        do (print (node-data (first queue)))
-	 (setf temp (pop queue))
-	 ;; If the queue is empty, the queue should be filled with the children nodes.
-	 (if (eql queue nil)
-	     (setf queue (node-children temp))
-	     (nconc queue (node-children temp))))))
+	     (setf temp (pop queue))
+	     ;; If the queue is empty, the queue should be filled with the children nodes.
+	     (if (eql queue nil)
+	         (setf queue (node-children temp))
+	         (nconc queue (node-children temp))))))
 
 (defun make-tree (num-rows num-child)
   "Creates a simple tree, where every node has 'num-child' children and is 'num-rows' deep."
