@@ -64,7 +64,7 @@
        :children nil)
       (make-node
        :data num-rows
-       :children (loop for i upto (1- num-child) collect (make-tree (1- num-rows) num-child)))))
+       :children (loop repeat num-child collect (make-tree (1- num-rows) num-child)))))
 
 ;; A tree for testing
 (defvar tree (make-tree 3 3))
