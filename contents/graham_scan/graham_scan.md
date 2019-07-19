@@ -26,6 +26,8 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 [import:13-15, lang:"go"](code/golang/graham.go)
 {% sample lang="java" %}
 [import:27-29, lang:"java"](code/java/GrahamScan.java)
+{% sample lang="cpp" %}
+[import:10-12, lang="cpp"](code/c++/graham_scan.cpp)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -54,6 +56,8 @@ In the end, the code should look something like this:
 [import:21-42, lang:"go"](code/golang/graham.go)
 {% sample lang="java" %}
 [import:35-70, lang:"java"](code/java/GrahamScan.java)
+{% sample lang="cpp" %}
+[import:14-47, lang="cpp"](code/c++/graham_scan.cpp)
 {% endmethod %}
 
 ### Bibliography
@@ -77,6 +81,8 @@ In the end, the code should look something like this:
 [import, lang:"go"](code/golang/graham.go)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/GrahamScan.java)
+{% sample lang="cpp" %}
+[import, lang="cpp"](code/c++/graham_scan.cpp)
 {% endmethod %}
 
 <script>
