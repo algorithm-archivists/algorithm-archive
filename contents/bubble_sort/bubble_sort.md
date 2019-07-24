@@ -68,6 +68,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% sample lang="bash" %}
 [import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
+{% sample lang="v" %}
+[import:2-21, lang:"v"](code/v/bubble_sort.v)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
