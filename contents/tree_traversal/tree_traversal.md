@@ -305,6 +305,9 @@ Here is a video describing tree traversal:
 
 The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/174017753/)
 
+<p>
+  <img  class="center" src="code/scratch/all.svg" width="400" />
+</p>
 {% sample lang="rs"%}
 [import, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs"%}
