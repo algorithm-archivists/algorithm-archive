@@ -10,4 +10,13 @@ repeat (num)
         change [Count] by (1)
     end
 end
-set [EstPI] to ((4) * ((Count) / (num)))
+set [EstPI v] to ((4) * ((Count) / (num)))
+
+when @greenflag clicked
+set [PI v] to (3.1415926535897932384626433832795028841971493993)
+ask (Point size?) and wait
+Monte Carlo with point number (answer)
+say [Pi estimate done.] for (2) seconds
+say (join [Estimate pi: ] (EstPI)) for (2) seconds
+say (join [Real Pi: ] (PI)) for (2) seconds
+say (join [Percent Error: ] (join ((([abs v] of ((EstPI) - (PI))) / (PI)) * (100)) [%])) for (2) seconds

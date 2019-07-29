@@ -93,7 +93,7 @@ each point is tested to see whether it's in the circle or not:
 [import:3-3, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
 {% sample lang="scratch" %}
 <p>
-    <img  class="center" src="code/scratch/InCircle.svg" width="300" />
+    <img  class="center" src="code/scratch/InCircle.svg" width="464" />
 </p>
 {% endmethod %}
 
@@ -196,7 +196,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="scratch" %}
 The code snippets were taken from this [scratch project](https://scratch.mit.edu/projects/319610349)
 <p>
-    <img  class="center" src="code/scratch/Algorithm.svg" width="600" />
+    <img  class="center" src="code/scratch/Algorithm.svg" width="872" />
 </p>
 {% endmethod %}
 
