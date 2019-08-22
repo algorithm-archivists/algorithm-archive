@@ -74,7 +74,7 @@ At the end of this chapter, we will discuss the scatter plot; however, additiona
 Beauty is in the eye of the beholder, but it is rare for people to call plots "beautiful."
 That said, there are plenty of things you can do to more clearly represent your data, and if your data is beautiful, so be it!
 In this section, we'll show you some small-scale modifications you can make to the plot we have already generated to make it little cleaner, but there are plenty of other ways to spruce up your plot that we are not covering here.
-Be sure to look at the documentation for plotting in your language of choice if you want to do anything more complicated.
+Be sure to look at the documentation {{ "gnuplot" | cite }}  for plotting in your language of choice if you want to do anything more complicated.
 
 #### x and y range
 
@@ -137,6 +137,9 @@ which creates a plot that looks like this:
 Here, we are selecting 3 values to use for the x-axis and using words or phrases for the "bottom" and "top" of the y-axis.
 To be clear: we are not condoning the behavior of having mismatched x and y tic values by using words or phrases along the y axis and numbers along the x axis.
 This is simply meant as a showcase for using gnuplot in this way.
+
+As a note: there is a lot of information here we missed, specifically format specifiers, which allow users to modify the format of the numbers in their plots (to be in floating point, scientific notation, or something else).
+This can be found in [the documentation](http://gnuplot.sourceforge.net/docs_4.2/node184.html), along with anything else that is missed here.
 
 {% endmethod %}
 
@@ -562,6 +565,10 @@ Here, we have chosen `pointtype 7`, simply because it is easier to see when comp
 
 Plotting is a powerful tool that is essential for most of computational science.
 Here, we have provided all of the essential skills to plot any data that comes from the Algorithm Archive, and we will strive to provide the plotting scripts we used whenever possible.
+
+### Bibliography
+
+{% references %} {% endreferences %}
 
 ##### Code Examples
 
