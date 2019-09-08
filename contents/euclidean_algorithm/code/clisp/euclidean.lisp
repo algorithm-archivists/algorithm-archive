@@ -8,7 +8,7 @@
         a
         (if (> a b)
             (euclid-sub* (- a b) b)
-	          (euclid-sub* a (- b a)))))
+            (euclid-sub* a (- b a)))))
   (euclid-sub* (abs a) (abs b)))
 
 (defun euclid-mod (a b)
