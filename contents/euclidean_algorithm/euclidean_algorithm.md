@@ -71,6 +71,11 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 > ![](code/piet/subtract/euclidian_algorithm_subtract_large.png) ![](code/piet/subtract/euclidian_algorithm_subtract.png)
 {% sample lang="ss" %}
 [import:1-7, lang="scheme"](code/scheme/euclidalg.ss)
+{% sample lang="scratch" %}
+<p>
+  <img  class="center" src="code/scratch/euclid_sub.svg" width="200" />
+</p>
+
 {% endmethod %}
 
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
@@ -148,6 +153,11 @@ Modern implementations, though, often use the modulus operator (%) like so
 > ![](code/piet/mod/euclidian_algorithm_mod_large.png) ![](code/piet/mod/euclidian_algorithm_mod.png)
 {% sample lang="ss" %}
 [import:9-12, lang="scheme"](code/scheme/euclidalg.ss)
+{% sample lang="scratch" %}
+<p>
+  <img  class="center" src="code/scratch/euclid_mod.svg" width="200" />
+</p>
+
 {% endmethod %}
 
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
@@ -248,6 +258,13 @@ A text version of the program is provided for both versions.
 [import:126-146](code/piet/euclidian_algorithm.piet)
 {% sample lang="ss" %}
 [import:, lang="scheme"](code/scheme/euclidalg.ss)
+{% sample lang="scratch" %}
+The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/278727055/)
+
+<p>
+  <img  class="center" src="code/scratch/main.svg" width="200" />
+</p>
+
 {% endmethod %}
 
 <script>

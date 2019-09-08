@@ -1,0 +1,15 @@
+define BubbleSort
+set [i v] to (1)
+set [j v] to (1)
+repeat (length of [a v])
+    repeat ((length of [a v]) - (1))
+        If <(item ((j)+(1)) of [a v]) < (item (j) of [a v])> then
+            set [tmp v] to (item (j) of [a v])
+            replace item (j) of [a v] with (item ((j)+(1)) of [a v]
+            replace item ((j)+(1)) of [a v] with (tmp)
+        end
+    change [j v] by (1)
+    end
+set [j v] to (1)
+change [i v] by (1)
+end
