@@ -1,7 +1,7 @@
 ;;;; Verlet integration implementation in Common Lisp
 
 (defun verlet (pos acc dt)
-  "Finds the time it takes for an object to hit the ground using verlet integration."
+  "Finds the time it takes for an object to hit the ground using Verlet integration."
   (loop
     with prev-pos = pos
     for time = 0 then (incf time dt)
@@ -13,20 +13,20 @@
     finally (return time)))
 
 (defun stormer-verlet (pos acc dt)
-  "Finds the time and velocity when an object hits the ground using the stormer-verlet method."
+  "Finds the time and velocity when an object hits the ground using the Stormer-Verlet method."
   (loop
     with prev-pos = pos
     for time = 0 then (incf time dt)
     for vel = 0 then (incf vel (* acc dt))
     while (> pos 0)
-    ;; Variables are changed in parallel by 'psetf', so there's no need for a temporary variable.
+    ;; Variables are changed simultaneously by 'psetf', so there's no need for a temporary variable.
     do (psetf
          pos (+ (* pos 2) (- prev-pos) (* acc dt dt))
          prev-pos pos)
     finally (return (list time vel))))
 
 (defun velocity-verlet (pos acc dt)
-  "Finds the time and velocity when an object hist the ground using the velocity in calculations."
+  "Finds the time and velocity when an object hits the ground using the velocity in calculations."
   (loop
     for time = 0 then (incf time dt)
     for vel = 0 then (incf vel (* acc dt))
