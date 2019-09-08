@@ -2,15 +2,14 @@
 
 (defun euclid-sub (a b)
   "Finds the greatest common divsor for any two integers"
+  (defun euclid-sub* (a b)
+    "Finds the greatest common divisor for any two positive integers"
+    (if (eql a b)
+        a
+        (if (> a b)
+            (euclid-sub* (- a b) b)
+	          (euclid-sub* a (- b a)))))
   (euclid-sub* (abs a) (abs b)))
-
-(defun euclid-sub* (a b)
-  "Finds the greatest common divisor for any two positive integers"
-  (if (eq a b)
-      a
-      (if (> a b)
-	  (euclid-sub* (- a b) b)
-	  (euclid-sub* a (- b a)))))
 
 (defun euclid-mod (a b)
   "Finds the greatest common divisor for any two integers"
@@ -23,10 +22,9 @@
 
 ;; Quick test
 (assert
- (eql  (euclid-sub (* 64 67) (* 64 81))
+  (eql (euclid-sub (* 64 67) (* 64 81))
        (gcd (* 64 67) (* 64 81))))
 
 (assert
- (eql (euclid-mod (* 64 67) (* 64 81))
-      (gcd (* 64 67) (* 64 81))))
-
+  (eql (euclid-mod (* 64 67) (* 64 81))
+       (gcd (* 64 67) (* 64 81))))
