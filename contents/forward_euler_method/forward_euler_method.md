@@ -142,6 +142,8 @@ Full code for the visualization follows:
 [import, lang:"java"](code/java/ForwardEuler.java)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/forwardeuler.nim)
+{% sample lang="ps1" %}
+[import, lang:"powershell"](code/powershell/forwardEuler.ps1)
 {% endmethod %}
 
 <script>
