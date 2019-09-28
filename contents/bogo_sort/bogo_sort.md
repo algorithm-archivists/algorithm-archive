@@ -69,6 +69,8 @@ In code, it looks something like this:
 [import:12-16, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
 [import:27-31, lang:"go"](code/go/bogo_sort.go)
+{% sample lang="ps1" %}
+[import:20-24, lang:"powershell"](code/powershell/bogo_sort.ps1)
 {% endmethod %}
 
 That's it.
@@ -137,6 +139,8 @@ We are done here!
 [import, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
 [import, lang:"go"](code/go/bogo_sort.go)
+{% sample lang="ps1" %}
+[import, lang:"powershell"](code/powershell/bogo_sort.ps1)
 {% endmethod %}
 
 
