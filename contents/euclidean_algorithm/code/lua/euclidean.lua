@@ -1,6 +1,6 @@
-function euclidSub (a, b)
-  local a = math.abs(a)
-  local b = math.abs(b)
+local function euclid_sub(a, b)
+  a = math.abs(a)
+  b = math.abs(b)
 
   while a ~= b do
     if a > b then
@@ -13,9 +13,9 @@ function euclidSub (a, b)
   return a
 end
 
-function euclidMod (a, b)
-  local a = math.abs(a)
-  local b = math.abs(b)
+local function euclid_mod(a, b)
+  a = math.abs(a)
+  b = math.abs(b)
 
   while b ~= 0 do
     a, b = b, a%b
@@ -24,9 +24,9 @@ function euclidMod (a, b)
   return a
 end
 
-function main ()
-  print(euclidSub(128 * 12, 128 * 77))
-  print(euclidMod(64 * 67, 64 * 81))
+local function main()
+  print(euclid_sub(128 * 12, 128 * 77))
+  print(euclid_mod(64 * 67, 64 * 81))
 end
 
 main()
