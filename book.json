@@ -193,10 +193,10 @@
           "lang": "ss",
           "name": "Scheme"
         },
-		{
-		  "lang": "ps1",
-		  "name": "PowerShell"
-		}
+        {
+          "lang": "ps1",
+          "name": "PowerShell"
+        }
       ]
     }
   }
