@@ -1,9 +1,9 @@
-struct point {
+struct Point {
     x int
     y int
 }
 
-fn left_most_point(points []point) point {
+fn left_most_point(points []Point) Point {
     mut ret := points[0]
 
     for p in points {
@@ -15,15 +15,15 @@ fn left_most_point(points []point) point {
     return ret
 }
 
-fn (p point) equal(o point) bool {
+fn (p Point) equal(o Point) bool {
     return p.x == o.x && p.y == o.x
 }
 
-fn counter_clock_wise(p1, p2, p3 point) bool {
+fn counter_clock_wise(p1, p2, p3 Point) bool {
 	return (p3.y-p1.y)*(p2.x-p1.x) >= (p2.y-p1.y)*(p3.x-p1.x)
 }
 
-fn jarvis_march(points []point) []point {
+fn jarvis_march(points []Point) []Point {
     mut hull_point := left_most_point(points)
     mut hull_points := [hull_point]
 
@@ -49,9 +49,9 @@ fn jarvis_march(points []point) []point {
 
 fn main() {
     points := [
-        point{-5, 2}, point{5, 7}, point{-6, -12}, point{-14, -14}, point{9, 9},
-        point{-1, -1}, point{-10, 11}, point{-6, 15}, point{-6, -8}, point{15, -9},
-        point{7, -7}, point{-2, -9}, point{6, -5}, point{0, 14}, point{2, 8}
+        Point{-5, 2}, Point{5, 7}, Point{-6, -12}, Point{-14, -14}, Point{9, 9},
+        Point{-1, -1}, Point{-10, 11}, Point{-6, 15}, Point{-6, -8}, Point{15, -9},
+        Point{7, -7}, Point{-2, -9}, Point{6, -5}, Point{0, 14}, Point{2, 8}
     ]
 
     hull_points := jarvis_march(points)
