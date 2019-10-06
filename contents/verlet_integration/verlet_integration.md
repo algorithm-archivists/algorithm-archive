@@ -37,7 +37,7 @@ Here is what it looks like in code:
 {% sample lang="c" %}
 [import:3-14, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:13-28, lang:"java"](code/java/Verlet.java)
+[import:2-17, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -67,6 +67,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:18-42, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
 [import:3-15, lang:"kotlin"](code/kotlin/verlet.kt)
+{% sample lang="nim" %}
+[import:1-14, lang:"nim"](code/nim/verlet.nim)
 {% endmethod %}
 
 Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
@@ -91,7 +93,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="c" %}
 [import:16-31, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:30-49, lang:"java"](code/java/Verlet.java)
+[import:19-37, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -121,6 +123,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:44-71, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
 [import:17-30, lang:"kotlin"](code/kotlin/verlet.kt)
+{% sample lang="nim" %}
+[import:16-32, lang:"nim"](code/nim/verlet.nim)
 {% endmethod %}
 
 
@@ -159,7 +163,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="c" %}
 [import:33-43, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:51-65, lang:"java"](code/java/Verlet.java)
+[import:39-51, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
@@ -189,6 +193,8 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 [import:73-101, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
 [import:32-42, lang:"kotlin"](code/kotlin/verlet.kt)
+{% sample lang="nim" %}
+[import:34-45, lang:"nim"](code/nim/verlet.nim)
 {% endmethod %}
 
 Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
@@ -213,6 +219,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="c" %}
 [import, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
+[import, lang:"java"](code/java/VerletValues.java)
 [import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/verlet.py)
@@ -247,6 +254,8 @@ Submitted by P. Mekhail
 [import, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
 [import, lang:"kotlin"](code/kotlin/verlet.kt)
+{% sample lang="nim" %}
+[import, lang="nim"](code/nim/verlet.nim)
 {% endmethod %}
 
 

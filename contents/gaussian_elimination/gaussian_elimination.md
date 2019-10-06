@@ -350,7 +350,7 @@ $$
 \end{array}
 \right] \\
 \begin{align}
-    f &= A(\text{pivot}_{\text{row}}, \text{pivot}_{\text{col}}) / A(\text{curr_row}_{\text{row}}, \text{pivot}_{\text{col}}) \\
+    f &= A(\text{curr_row}, \text{pivot}_{\text{col}}) /  A(\text{pivot}_{\text{row}}, \text{pivot}_{\text{col}}) \\
       &= \frac{1}{3}
 \end{align}
 $$
@@ -419,6 +419,8 @@ When we put everything together, it looks like this:
 [import:5-47, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:9-53, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 To be clear: if the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
@@ -459,6 +461,8 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:49-70, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:55-82, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side instead of the right-hand side of each equation.
@@ -501,6 +505,8 @@ In code, it looks like this:
 [import:72-87, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:40-55, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:84-98, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 ## Visual Representation
@@ -569,6 +575,8 @@ Here's a video describing Gaussian elimination:
 [import, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 

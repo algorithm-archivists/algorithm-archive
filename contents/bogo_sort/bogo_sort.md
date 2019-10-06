@@ -22,7 +22,7 @@ In code, it looks something like this:
 {% sample lang="c" %}
 [import:25-29, lang:"c"](code/c/bogo_sort.c)
 {% sample lang="java" %}
-[import:2-6, lang:"java"](code/java/bogo.java)
+[import:2-6, lang:"java"](code/java/Bogo.java)
 {% sample lang="js" %}
 [import:11-15, lang:"javascript"](code/javascript/bogo.js)
 {% sample lang="py" %}
@@ -90,7 +90,7 @@ We are done here!
 {% sample lang="c" %}
 [import, lang:"c"](code/c/bogo_sort.c)
 {% sample lang="java" %}
-[import, lang:"java"](code/java/bogo.java)
+[import, lang:"java"](code/java/Bogo.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/bogo.js)
 {% sample lang="py" %}
