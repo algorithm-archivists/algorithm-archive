@@ -72,6 +72,8 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 <p>
   <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
 </p>
+{% sample lang="r" %}
+[import:1-12, lang="r"](code/r/bubble_sort.R)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -147,6 +149,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"bash"](code/bash/bubble_sort.bash)
 {% sample lang="scratch" %}
 The code snippet was taken from this [Scratch project](https://scratch.mit.edu/projects/316483792)
+{% sample lang="r" %}
+[import, lang="r"](code/r/bubble_sort.R)
 {% endmethod %}
 
 <script>
