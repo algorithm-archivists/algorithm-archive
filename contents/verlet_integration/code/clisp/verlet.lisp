@@ -1,7 +1,7 @@
 ;;;; Verlet integration implementation in Common Lisp
 
 (defun verlet (pos acc dt)
-  "Finds the time it takes for an object to hit the ground using Verlet integration."
+  "Integrates Newton's equation for motion while pos > 0 using Verlet integration."
   (loop
     with prev-pos = pos
     for time = 0 then (incf time dt)
@@ -13,7 +13,7 @@
     finally (return time)))
 
 (defun stormer-verlet (pos acc dt)
-  "Finds the time and velocity when an object hits the ground using the Stormer-Verlet method."
+  "Integrates Newton's equation for motion while pos > 0 using the Stormer-Verlet method."
   (loop
     with prev-pos = pos
     for time = 0 then (incf time dt)
@@ -26,7 +26,7 @@
     finally (return (list time vel))))
 
 (defun velocity-verlet (pos acc dt)
-  "Finds the time and velocity when an object hits the ground using the velocity in calculations."
+  "Integrates Newton's equation for motion while pos > 0 using the velocity in calculations."
   (loop
     for time = 0 then (incf time dt)
     for vel = 0 then (incf vel (* acc dt))
