@@ -38,7 +38,7 @@ PROGRAM main
     !        WRITE(*,*) i, B_transposed(i,:)
     !END DO
 
-    WRITE(*,*) "Rows: ", size(A,1), "Cols: ", size(A,2)
+    !WRITE(*,*) "Rows: ", size(A,1), "Cols: ", size(A,2)
 
     CALL gaussian_elimination(A)
 
@@ -49,9 +49,9 @@ CONTAINS
         REAL(8), DIMENSION(4)   :: temp_vector
         REAL(8)                 :: frac 
         INTEGER                 :: cols = size(A,2), rows = size(A,1), &
-                                   row = 1, col = 1, max_index, i, j
+                                   row = 1, col = 1, max_index, &
+                                   i, j, k
         !LOGICAL                 :: singular = .false. 
-
 
         ! Main loop going through all columns
 
@@ -60,7 +60,7 @@ CONTAINS
             ! find the element with the highest value
 
             max_index = maxloc(abs(A(:,col)),1)
-            !WRITE(*,*) "max_index: ", max_index, "max_col_value: ", A(max_index, col) 
+            WRITE(*,*) "max_index: ", max_index, "max_col_value: ", A(max_index, col) 
             
             ! Check if matrix is singular
 
@@ -75,8 +75,9 @@ CONTAINS
             A(max_index, :) = A(row, :)
             A(row, :) = temp_vector
 
-            DO i = 1, SIZE(A, 1)
-                WRITE(*,*) i, A(i,:)
+            !Print Debug Matrix
+            DO k = 1, SIZE(A, 1)
+                WRITE(*,*) k, A(k,:)
             END DO
 
             DO i = (row + 1), rows
@@ -94,11 +95,12 @@ CONTAINS
 
             ! Set lower elements to 0
 
-            A(i, col) = 0
+            A(i, col) = 0d0
 
         END DO
         
         row = row + 1
+
 
     END SUBROUTINE
 END PROGRAM main
