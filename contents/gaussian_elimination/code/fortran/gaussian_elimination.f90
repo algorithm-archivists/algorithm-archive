@@ -23,9 +23,9 @@ PROGRAM main
        3d0, -4d0, 0d0, 10d0 /), &
        (/ size(A,2), size(A,1) /) ) )
 
-    DO i = 1, SIZE(A, 1)
-            WRITE(*,*) i, A(i,:)
-    END DO
+    !DO i = 1, SIZE(A, 1)
+    !        WRITE(*,*) i, A(i,:)
+    !END DO
 
     ! Alternatively one can use the old DATA instruction which assigns
     ! the array elements the data given in the same column-first
@@ -34,9 +34,12 @@ PROGRAM main
 
     B_transposed = transpose(B)
 
-    DO i = 1, SIZE(B_transposed, 1)
-            WRITE(*,*) i, B_transposed(i,:)
-    END DO
+    !DO i = 1, SIZE(B_transposed, 1)
+    !        WRITE(*,*) i, B_transposed(i,:)
+    !END DO
+
+    WRITE(*,*) "Rows: ", size(A,1), "Cols: ", size(A,2)
+
 
 
 !CONTAINS 
