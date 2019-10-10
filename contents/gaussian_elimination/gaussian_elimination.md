@@ -409,8 +409,6 @@ When we put everything together, it looks like this:
 [import:15-48, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
 [import:8-34, lang:"cpp"](code/c++/gaussian_elimination.cpp)
-{% sample lang="rs" %}
-[import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
 [import:10-36, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -452,9 +450,6 @@ Here it is in code:
 [import:64-82, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
 [import:36-54, lang:"cpp"](code/c++/gaussian_elimination.cpp)
-{% sample lang="rs" %}
-This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
-[import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
 {% sample lang="hs" %}
 [import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}

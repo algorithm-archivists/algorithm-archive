@@ -78,7 +78,7 @@ fn gaussian_elimination(a: &mut Matrix) {
 
 fn gauss_jordan(a: &mut Matrix) {
     let mut row = 0;
-    for k in 0..(a.cols-1) {
+    for k in 0..(a.cols - 1) {
         if a[(row, k)] != 0.0 {
             for i in (k..a.cols).rev() {
                 a[(row, i)] /= a[(row, k)];
@@ -86,7 +86,7 @@ fn gauss_jordan(a: &mut Matrix) {
 
             for i in 0..row {
                 for j in (k..a.cols).rev() {
-                    a[(i,j)] -= a[(i,k)] * a[(row, j)];
+                    a[(i, j)] -= a[(i, k)] * a[(row, j)];
                 }
             }
 
@@ -124,4 +124,3 @@ fn main() {
     let soln = back_substitution(&a);
     println!("Solution: {:?}", soln);
 }
-
