@@ -93,6 +93,8 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"asm-x64"](code/asm-x64/huffman.s)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/huffman_encoding.scala)
+{% sample lang="kotlin" %}
+[import, lang:"kotlin"](code/kotlin/huffman.kt)
 {% endmethod %}
 
 <script>
