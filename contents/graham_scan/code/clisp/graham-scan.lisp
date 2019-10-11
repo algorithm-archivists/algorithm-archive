@@ -21,7 +21,7 @@
     ((and (eql x 0) (> y 0))    (/ pi 2))
     ((and (eql x 0) (< y 0))    (- (/ pi 2)))
     ;the -1 signifies an exception and is usefull later for sorting by the polar angle
-    ((and (eql x 0) (eql y 0))  (- 1))))
+    ((and (eql x 0) (eql y 0)) -1)))
 
 (defun polar-angle (ref point)
   "Returns the polar angle from a point relative to a reference point"
@@ -37,15 +37,15 @@
 (defun graham-scan (gift)
   "Finds the convex hull of any distribution of points destructively"
   (loop
-    with n = (length gift)
     with lowest = (lowest-point gift)
     with sorted = (sort gift #'< :key (lambda (p) (polar-angle lowest p)))
     with hull = (subseq sorted 0 3)
 
-    for point in (subseq sorted 3 nil) do
+    for point in (subseq sorted 3 nil)
+    do
       (loop
-        until (counterclockwise-p (nth (- (length hull) 2) hull) (nth (1- (length hull)) hull) point) do
-          (setf hull (butlast hull)))
+        until (counterclockwise-p (nth (- (length hull) 2) hull) (nth (1- (length hull)) hull) point)
+        do (setf hull (butlast hull)))
       (setf hull (append hull (list point)))
     finally (return hull)))
 
