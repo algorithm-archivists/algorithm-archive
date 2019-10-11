@@ -32,6 +32,8 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 [import:18-20, lang="cpp"](code/c++/graham_scan.cpp)
 {% sample lang="coco" %}
 [import:4-8, lang="coconut"](code/coconut/graham_scan.coco)
+{% sample lang="nim" %}
+[import:14-15, lang:"nim"](code/nim/graham.nim)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -66,6 +68,8 @@ In the end, the code should look something like this:
 [import:26-62, lang="cpp"](code/c++/graham_scan.cpp)
 {% sample lang="coco" %}
 [import:17-30, lang="coconut"](code/coconut/graham_scan.coco)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/graham.nim)
 {% endmethod %}
 
 ### Bibliography
@@ -95,6 +99,8 @@ In the end, the code should look something like this:
 [import, lang="cpp"](code/c++/graham_scan.cpp)
 {%sample lang="coco" %}
 [import, lang="coconut"](code/coconut/graham_scan.coco)
+{% sample lang="nim" %}
+[import, lang:"nim"](code/nim/graham.nim)
 {% endmethod %}
 
 <script>
