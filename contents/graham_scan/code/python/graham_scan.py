@@ -1,13 +1,13 @@
 from math import atan2
 
 
-# Is the turn counter clockwise?
 def counter_clockwise(p1, p2, p3):
+    """Is the turn counter-clockwise?"""
     return (p3[1] - p1[1]) * (p2[0] - p1[0]) >= (p2[1] - p1[1]) * (p3[0] - p1[0])
 
 
-# Find the polar angle of a point relative to a reference point
 def polar_angle(ref, point):
+    """Find the polar angle of a point relative to a reference point"""
     return atan2(point[1] - ref[1], point[0] - ref[0])
 
 
