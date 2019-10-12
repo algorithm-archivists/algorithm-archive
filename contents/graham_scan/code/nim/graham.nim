@@ -1,6 +1,6 @@
 from algorithm import sorted
 from math import arctan2
-from sequtils import deduplicate, map
+from sequtils import deduplicate, map, toSeq
 import sugar
 
 type Point[T: SomeNumber] = tuple[x, y: T]
@@ -20,22 +20,30 @@ proc flipped_point_cmp(pa, pb: Point): int =
   else: 1
 
 proc graham_scan(gift: seq[Point]): seq[Point] =
-  # TODO make sure input has length >= 3
+  assert(gift.len >= 3)
   let
     gift_without_duplicates = sorted(deduplicate(gift), flipped_point_cmp)
-    start = gift_without_duplicates[0]
-    candidates = sorted(gift_without_duplicates[1..^1],
-                        proc (pa, pb: Point): int =
-                          if polar_angle(start, pa) < polar_angle(start, pb): -1
-                          else: 1)
-  # TODO take the approach outlined in the text where we perform rotations on
-  # the candidates, rather than add to a new sequence
-  var hull = @[start, candidates[0], candidates[1]]
-  for candidate in candidates:
-    while not is_counter_clockwise(hull[^2], hull[^1], candidate):
-      discard pop(hull)
-    add(hull, candidate)
-  hull
+    pivot = gift_without_duplicates[0]
+  var
+    points = sorted(gift_without_duplicates[1..^1],
+                    proc (pa, pb: Point): int =
+                      if polar_angle(pivot, pa) < polar_angle(pivot, pb): -1
+                      else: 1)
+  points.insert(pivot, 0)
+  var
+    m = 1
+    en = toSeq(low(points) + 2..high(points))
+  for i in mitems(en):
+    while is_counter_clockwise(points[m - 1], points[m], points[i]):
+      if m > 1:
+        m -= 1
+      elif i == points.len:
+        break
+      else:
+        i += 1
+    m += 1
+    swap(points[i], points[m])
+  points[0..m]
 
 when isMainModule:
   let
