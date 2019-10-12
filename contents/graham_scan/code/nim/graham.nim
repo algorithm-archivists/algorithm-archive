@@ -9,7 +9,7 @@ proc tup_to_point[T](t: (T, T)): Point[T] =
   (x: t[0], y: t[1])
 
 proc is_counter_clockwise(p1, p2, p3: Point): bool =
-  (p3.y - p1.y) * (p2.x - p1.x) >= (p2.y - p1.y) * (p3.x - p1.x)
+  (p3.y - p1.y) * (p2.x - p1.x) < (p2.y - p1.y) * (p3.x - p1.x)
 
 proc polar_angle(reference, point: Point): float =
   arctan2(float(point.y - reference.y), float(point.x - reference.x))
