@@ -8,9 +8,12 @@ type Point[T: SomeNumber] = tuple[x, y: T]
 proc tup_to_point[T](t: (T, T)): Point[T] =
   (x: t[0], y: t[1])
 
-proc is_counter_clockwise(p1, p2, p3: Point): bool =
-  ## Do the given points form a counter-clockwise turn?
-  (p3.y - p1.y) * (p2.x - p1.x) < (p2.y - p1.y) * (p3.x - p1.x)
+proc cross_product[T](p1, p2, p3: Point[T]): T =
+  ## Form the cross product of three points. If the result is
+  ## - zero, the points are collinear.
+  ## - positive, the points form a counter-clockwise "left" turn.
+  ## - negative, the points form a clockwise "right" turn.
+  (p3.y - p1.y) * (p2.x - p1.x) - (p2.y - p1.y) * (p3.x - p1.x)
 
 proc polar_angle(reference, point: Point): float =
   ## Find the polar angle of a point relative to a reference point
@@ -37,7 +40,7 @@ proc graham_scan(gift: seq[Point]): seq[Point] =
     # Needed because the iteration variable from a slice is immutable
     en = toSeq(low(points) + 2..high(points))
   for i in mitems(en):
-    while is_counter_clockwise(points[m - 1], points[m], points[i]):
+    while cross_product(points[m - 1], points[m], points[i]) <= 0:
       if m > 1:
         m -= 1
       # All points are collinear
