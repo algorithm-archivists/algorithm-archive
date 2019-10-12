@@ -1,4 +1,4 @@
-from algorithm import sorted
+from algorithm import sort, sorted
 from math import arctan2
 from sequtils import deduplicate, map, toSeq
 import sugar
@@ -21,15 +21,12 @@ proc flipped_point_cmp(pa, pb: Point): int =
 
 proc graham_scan(gift: seq[Point]): seq[Point] =
   assert(gift.len >= 3)
-  let
-    gift_without_duplicates = sorted(deduplicate(gift), flipped_point_cmp)
-    pivot = gift_without_duplicates[0]
-  var
-    points = sorted(gift_without_duplicates[1..^1],
-                    proc (pa, pb: Point): int =
-                      if polar_angle(pivot, pa) < polar_angle(pivot, pb): -1
-                      else: 1)
-  points.insert(pivot, 0)
+  var points = sorted(deduplicate(gift), flipped_point_cmp)
+  let pivot = points[0]
+  sort(toOpenArray(points, 1, high(points)),
+       proc (pa, pb: Point): int =
+         if polar_angle(pivot, pa) < polar_angle(pivot, pb): -1
+         else: 1)
   var
     m = 1
     en = toSeq(low(points) + 2..high(points))
