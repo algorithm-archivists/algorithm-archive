@@ -9,7 +9,7 @@ import fftw3
 # For some reason this isn't in the Nim fftw3 bindings.
 const FFTW_FORWARD = -1
 
-proc allClose[T](reference: openArray[T], calculated: openArray[T], thresh = 1.0e-13): bool =
+proc allClose[T: SomeNumber | Complex[SomeFloat]](reference: openArray[T], calculated: openArray[T], thresh = 1.0e-13): bool =
   if reference.len != calculated.len:
     return false
   result = true
@@ -60,10 +60,10 @@ proc dft[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
     for k in 0..n - 1:
       result[i] += x[k] * exp(-complex(0.0, 2.0) * PI * float(i * k / n))
 
-proc cooley_tukey[T: SomeFloat](x: openArray[T]): seq[Complex[T]] =
+proc cooley_tukey[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
   let n = x.len
-  # if n <= 1:
-  #   return x.map(m => complex(m, m))
+  if n <= 1:
+    return toSeq(x)
   result = newSeq[Complex[T]](n)
   let
     even = cooley_tukey(skip(x, 2))
@@ -84,10 +84,10 @@ when isMainModule:
   randomize()
   let
     x = toSeq(1..64).map(i => complex64(rand(1.0), 0.0))
-    # y = cooley_tukey(x)
+    y = cooley_tukey(x)
     # z = iterative_cooley_tukey(x)
     t = dft(x)
     reference = dft_fftw3(x)
-  # assert(allClose(reference, y))
+  assert(allClose(reference, y))
   # assert(allClose(reference, z))
   assert(allClose(reference, t))
