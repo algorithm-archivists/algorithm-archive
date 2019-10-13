@@ -7,12 +7,15 @@ import complex
 # $ nimble install fftw3
 import fftw3
 
-# For some reason this isn't in the Nim fftw3 bindings.
+# For some reason this isn't in the Nim fftw3 bindings, but this is the
+# current definition from the C header.
 const FFTW_FORWARD = -1
 
 type InpNumber = SomeNumber | Complex[SomeFloat]
 
-proc allClose[T: InpNumber](reference: openArray[T], calculated: openArray[T], thresh = 1.0e-11): bool =
+proc allClose[T: InpNumber](reference: openArray[T], calculated: openArray[T],
+    thresh = 1.0e-11): bool =
+  ## Are all the numbers in the reference equal to those that were calculated within some threshold?
   if reference.len != calculated.len:
     return false
   result = true
@@ -43,7 +46,9 @@ proc nim_to_fftw(inp: openArray[Complex64]): seq[fftw_complex] =
 proc fftw_to_nim(inp: openArray[fftw_complex]): seq[Complex64] =
   inp.map(v => fftw_to_nim(v))
 
+# Anything other than 64-bit floats isn't currently supported by the binding.
 proc dft_fftw3(inp: openArray[Complex64]): seq[Complex64] =
+  ## Perform a forward Fourier transform using a binding to FFTW3.
   var
     fftw_inp = nim_to_fftw(inp)
     fftw_out = newSeq[fftw_complex](inp.len)
@@ -57,6 +62,7 @@ proc dft_fftw3(inp: openArray[Complex64]): seq[Complex64] =
   fftw_to_nim(fftw_out)
 
 proc dft[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
+  ## Perform a forward Fourier transform using the naive quadratic algorithm.
   let n = x.len
   result = newSeq[Complex[T]](n)
   for i in 0..n - 1:
@@ -64,6 +70,7 @@ proc dft[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
       result[i] += x[k] * exp(-complex(0.0, 2.0) * PI * float(i * k / n))
 
 proc cooley_tukey[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
+  ## Perform a forward Fourier transform using the recursive Cooley-Tukey algorithm.
   let n = x.len
   if n <= 1:
     return toSeq(x)
@@ -92,6 +99,7 @@ proc bit_reverse[T: InpNumber](x: openArray[T]): seq[T] =
     result[b] = x[k]
 
 proc iterative_cooley_tukey[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
+  ## Perform a forward Fourier transform using the iterative Cooley-Tukey algorithm.
   let n = x.len
   result = bit_reverse(x)
   for i in 1..fastLog2(n):
