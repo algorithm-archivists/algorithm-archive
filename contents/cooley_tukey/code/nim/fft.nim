@@ -1,4 +1,5 @@
-from math import PI
+from bitops import fastLog2
+from math import PI, `^`
 from random import rand, randomize
 from sequtils import map, toSeq, zip
 from sugar import `=>`
@@ -9,7 +10,9 @@ import fftw3
 # For some reason this isn't in the Nim fftw3 bindings.
 const FFTW_FORWARD = -1
 
-proc allClose[T: SomeNumber | Complex[SomeFloat]](reference: openArray[T], calculated: openArray[T], thresh = 1.0e-13): bool =
+type InpNumber = SomeNumber | Complex[SomeFloat]
+
+proc allClose[T: InpNumber](reference: openArray[T], calculated: openArray[T], thresh = 1.0e-11): bool =
   if reference.len != calculated.len:
     return false
   result = true
@@ -74,20 +77,44 @@ proc cooley_tukey[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
     result[k] = even[k] + exp_term
     result[k + midpoint] = even[k] - exp_term
 
-# proc bit_reverse[T: SomeNumber](x: openArray[T]): seq[T]
+proc bit_reverse[T: InpNumber](x: openArray[T]): seq[T] =
+  let
+    n = x.len
+    l2 = fastLog2(n)
+  result = newSeq[T](n)
+  for k in 0..n - 1:
+    let s = toSeq(0..l2 - 1)
+    var b = 0
+    for i in s:
+      if (k shr i and 1) == 1:
+        b += 1 shl (l2 - 1 - i)
+    result[k] = x[b]
+    result[b] = x[k]
 
-# proc iterative_cooley_tukey[T: SomeFloat](x: openArray[T]): seq[Complex[T]] =
-#   let n = x.len
-#   result = bit_reverse(x)
+proc iterative_cooley_tukey[T: SomeFloat](x: openArray[Complex[T]]): seq[Complex[T]] =
+  let n = x.len
+  result = bit_reverse(x)
+  for i in 1..fastLog2(n):
+    let
+      stride = 2 ^ i
+      w = exp(-complex(0.0, 2.0) * PI / float(stride))
+    for j in skip(toSeq(0..n - 1), stride):
+      var v = complex(1.0, 0.0)
+      let s = stride div 2
+      for k in 0..s - 1:
+        result[k + j + s] = result[k + j] - v * result[k + j + s]
+        result[k + j] -= result[k + j + s] - result[k + j]
+        v *= w
 
 when isMainModule:
   randomize()
   let
     x = toSeq(1..64).map(i => complex64(rand(1.0), 0.0))
     y = cooley_tukey(x)
-    # z = iterative_cooley_tukey(x)
+    z = iterative_cooley_tukey(x)
     t = dft(x)
     reference = dft_fftw3(x)
+  assert(bit_reverse(@[1, 2, 3, 4, 7, 11]) == @[7, 3, 11, 4, 1, 3])
   assert(allClose(reference, y))
-  # assert(allClose(reference, z))
+  assert(allClose(reference, z))
   assert(allClose(reference, t))
