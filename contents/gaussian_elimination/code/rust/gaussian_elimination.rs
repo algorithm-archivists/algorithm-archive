@@ -76,6 +76,25 @@ fn gaussian_elimination(a: &mut Matrix) {
     }
 }
 
+fn gauss_jordan(a: &mut Matrix) {
+    let mut row = 0;
+    for k in 0..(a.cols - 1) {
+        if a[(row, k)] != 0.0 {
+            for i in (k..a.cols).rev() {
+                a[(row, i)] /= a[(row, k)];
+            }
+
+            for i in 0..row {
+                for j in (k..a.cols).rev() {
+                    a[(i, j)] -= a[(i, k)] * a[(row, j)];
+                }
+            }
+
+            row += 1;
+        }
+    }
+}
+
 fn back_substitution(a: &Matrix) -> Vec<f64> {
     let mut soln = vec![0.0; a.rows];
 
@@ -101,6 +120,7 @@ fn main() {
     );
 
     gaussian_elimination(&mut a);
+    gauss_jordan(&mut a);
     let soln = back_substitution(&a);
     println!("Solution: {:?}", soln);
 }

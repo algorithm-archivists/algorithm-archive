@@ -196,6 +196,10 @@
         {
           "lang": "coffee",
           "name": "CoffeeScript"
+        },
+        {
+          "lang": "kotlin",
+          "name": "Kotlin"
         }
       ]
     }

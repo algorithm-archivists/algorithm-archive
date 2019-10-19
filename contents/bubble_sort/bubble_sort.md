@@ -68,6 +68,10 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:2-14, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% sample lang="bash" %}
 [import:2-21, lang:"bash"](code/bash/bubble_sort.bash)
+{% sample lang="scratch" %}
+<p>
+  <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
+</p>
 {% sample lang="coffeescript" %}
 [import:1-6, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)
 {% endmethod %}
@@ -143,6 +147,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"emojicode"](code/emojicode/bubble_sort.emojic)
 {% sample lang="bash" %}
 [import, lang:"bash"](code/bash/bubble_sort.bash)
+{% sample lang="scratch" %}
+The code snippet was taken from this [Scratch project](https://scratch.mit.edu/projects/316483792)
 {% sample lang="coffeescript" %}
 [import, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)
 {% endmethod %}
