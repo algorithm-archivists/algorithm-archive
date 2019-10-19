@@ -56,4 +56,5 @@ const points = [
 ];
 
 const convexHull = grahamScan(points);
+console.log("The points in the hull are:");
 convexHull.forEach(p => console.log(`(${p.x}, ${p.y})`));
