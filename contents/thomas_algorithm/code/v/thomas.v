@@ -28,8 +28,8 @@ fn main() {
 	println("[2.0  3.0  5.0][y] = [5.0]")
 	println("[0.0  3.0  6.0][z] = [3.0]")
 	println("has the solution:")
-	solve := thomas(a, b, c, d)
-	for i in solve {
+	solution := thomas(a, b, c, d)
+	for i in solution {
 		println("[$i]")
 	}
 }
