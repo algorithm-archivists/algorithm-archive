@@ -15,8 +15,7 @@ fn check(result []f64, threshold, timestep f64) bool {
 		solution := math.exp(-3.0 * f64(x) * timestep)
 		if math.abs(result[x]-solution) > threshold {
 			tmp := result[x]
-			println(tmp)
-			println(solution)
+			println("There is a mismatch: abs($tmp-$solution) > $threshold!")
 			approx = false
 		}
 	}
