@@ -20,7 +20,7 @@ fn (p Point) equal(o Point) bool {
 }
 
 fn counter_clock_wise(p1, p2, p3 Point) bool {
-	return (p3.y-p1.y)*(p2.x-p1.x) >= (p2.y-p1.y)*(p3.x-p1.x)
+	return (p3.y-p1.y) * (p2.x-p1.x) >= (p2.y-p1.y) * (p3.x-p1.x)
 }
 
 fn jarvis_march(points []Point) []Point {
