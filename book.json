@@ -194,6 +194,10 @@
           "name": "Scheme"
         },
         {
+          "lang": "v",
+          "name": "Vlang"
+        },
+        {
           "lang": "coffee",
           "name": "CoffeeScript"
         },

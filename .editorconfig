@@ -150,6 +150,10 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
+# V
+[*.v]
+indent_style = tab
+
 # Whitespace
 [*.ws]
 indent_style = space
