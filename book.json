@@ -196,6 +196,13 @@
         {
           "lang": "v",
           "name": "Vlang"
+        },
+          "lang": "coffee",
+          "name": "CoffeeScript"
+        },
+        {
+          "lang": "kotlin",
+          "name": "Kotlin"
         }
       ]
     }

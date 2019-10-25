@@ -162,3 +162,8 @@ indent_size = 0
 trim_trailing_whitespace = false
 insert_final_newline = false
 end_of_line = lf
+
+# CoffeeScript
+[*.coffee]
+indent_style = space
+indent_size = 2
