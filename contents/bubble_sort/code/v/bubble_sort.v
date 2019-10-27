@@ -11,7 +11,7 @@ fn bubblesort(arr mut []int) {
 }
 
 fn main() {
-	arr := [1, 45, 756, 4569, 56, 3, 8, 5, -10, -4]
+	mut arr := [1, 45, 756, 4569, 56, 3, 8, 5, -10, -4]
 	println('Array unsorted:')
 	println(arr)
 	bubblesort(mut arr)
