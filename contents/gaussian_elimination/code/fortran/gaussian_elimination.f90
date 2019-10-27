@@ -60,7 +60,7 @@ CONTAINS
             ! find the element with the highest value
 
             max_index = maxloc(abs(A(:,col)),1)
-            WRITE(*,*) "max_index: ", max_index, "max_col_value: ", A(max_index, col) 
+            WRITE(*,*) "col: ", col, "max_index: ", max_index, "max_col_value: ", A(max_index, col) 
             
             ! Check if matrix is singular
 
