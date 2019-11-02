@@ -21,7 +21,7 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="js" %}
 [import:36-38, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
-[import:4-6, lang:"python"](code/python/grahamScan.py)
+[import:4-6, lang:"python"](code/python/graham_scan.py)
 {% sample lang="go" %}
 [import:13-15, lang:"go"](code/golang/graham.go)
 {% sample lang="java" %}
@@ -51,7 +51,7 @@ In the end, the code should look something like this:
 {% sample lang="js" %}
 [import:1-30, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
-[import:14-27, lang:"python"](code/python/grahamScan.py)
+[import:14-28, lang:"python"](code/python/graham_scan.py)
 {% sample lang="go" %}
 [import:21-42, lang:"go"](code/golang/graham.go)
 {% sample lang="java" %}
@@ -76,7 +76,7 @@ In the end, the code should look something like this:
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/graham-scan.js)
 {% sample lang="py" %}
-[import, lang:"python"](code/python/grahamScan.py)
+[import, lang:"python"](code/python/graham_scan.py)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/graham.go)
 {% sample lang="java" %}

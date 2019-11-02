@@ -113,6 +113,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/thomas.go)
+{% sample lang="v" %}
+[import, lang:"v"](code/v/thomas.v)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/thomas.swift)
 {% sample lang="php" %}

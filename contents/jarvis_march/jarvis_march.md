@@ -46,6 +46,8 @@ Since this algorithm, there have been many other algorithms that have advanced t
 [import, lang:"java"](code/java/JarvisMarch.java)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/jarvis.go)
+{% sample lang="v" %}
+[import, lang:"v"](code/v/jarvis.v)
 {% endmethod %}
 
 <script>
