@@ -23,9 +23,10 @@ std::vector<point> graham_scan(std::vector<point>& points) {
   point pivot = points[0];
 
   // sorting points by polar angle
-  std::sort(points.begin() + 1, points.end(), [pivot](point a, point b) {
-    return ccw(pivot, a, b);
-  });
+  std::sort(
+      points.begin() + 1,
+      points.end(),
+      [&pivot](const point& a, const point& b) { return ccw(pivot, a, b); });
 
   // creating convex hull
   size_t m = 1;

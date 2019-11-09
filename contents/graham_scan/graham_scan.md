@@ -57,7 +57,7 @@ In the end, the code should look something like this:
 {% sample lang="java" %}
 [import:35-70, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="cpp" %}
-[import:14-47, lang="cpp"](code/c++/graham_scan.cpp)
+[import:14-48, lang="cpp"](code/c++/graham_scan.cpp)
 {% endmethod %}
 
 ### Bibliography
