@@ -7,11 +7,11 @@ struct point {
   double y;
 };
 
-bool ccw(const point &a, const point &b, const point &c) {
+bool ccw(const point& a, const point& b, const point& c) {
   return ((b.x - a.x) * (c.y - a.y) > (b.y - a.y) * (c.x - a.x));
 }
 
-std::vector<point> graham_scan(std::vector<point> &points) {
+std::vector<point> graham_scan(std::vector<point>& points) {
   // selecting lowest point as pivot
   int lowIndex = 0;
   for (size_t i = 1; i < points.size(); i++) {
@@ -46,10 +46,11 @@ std::vector<point> graham_scan(std::vector<point> &points) {
   return std::vector<point>(points.begin(), points.begin() + m + 1);
 }
 
-void print(const std::vector<point> &points) {
+std::ostream& operator<<(std::ostream& os, const std::vector<point>& points) {
   for (auto p : points) {
-    std::cout << "(" << p.x << ", " << p.y << ")\n";
+    os << "(" << p.x << ", " << p.y << ")\n";
   }
+  return os;
 }
 
 int main() {
@@ -68,10 +69,8 @@ int main() {
                                {6, -5},
                                {0, 14},
                                {2, 8}};
-  std::cout << "original points are as follows:\n";
-  print(points);
+  std::cout << "original points are as follows:\n" << points;
   const std::vector<point> hull = graham_scan(points);
-  std::cout << "points in hull are as follows:\n";
-  print(hull);
+  std::cout << "points in hull are as follows:\n" << hull;
   return 0;
 }
