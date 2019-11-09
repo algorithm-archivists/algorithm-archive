@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <vector>
 
@@ -7,26 +8,39 @@ struct point {
   double y;
 };
 
-bool ccw(const point& a, const point& b, const point& c) {
-  return ((b.x - a.x) * (c.y - a.y) > (b.y - a.y) * (c.x - a.x));
+std::ostream& operator<<(std::ostream& os, const std::vector<point>& points) {
+  for (auto p : points) {
+    os << "(" << p.x << ", " << p.y << ")\n";
+  }
+  return os;
+}
+
+double ccw(const point& a, const point& b, const point& c) {
+  return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+}
+
+double polar_angle(const point& origin, const point& p) {
+  return std::atan2(p.y - origin.y, p.x - origin.x);
 }
 
 std::vector<point> graham_scan(std::vector<point>& points) {
   // selecting lowest point as pivot
-  int lowIndex = 0;
+  size_t low_index = 0;
   for (size_t i = 1; i < points.size(); i++) {
-    if (points[i].y < points[lowIndex].y) {
-      lowIndex = i;
+    if (points[i].y < points[low_index].y) {
+      low_index = i;
     }
   }
-  std::swap(points[0], points[lowIndex]);
+  std::swap(points[0], points[low_index]);
   point pivot = points[0];
 
   // sorting points by polar angle
   std::sort(
       points.begin() + 1,
       points.end(),
-      [&pivot](const point& a, const point& b) { return ccw(pivot, a, b); });
+      [&pivot](const point& pa, const point& pb) {
+        return polar_angle(pivot, pa) < polar_angle(pivot, pb);
+      });
 
   // creating convex hull
   size_t m = 1;
@@ -45,13 +59,6 @@ std::vector<point> graham_scan(std::vector<point>& points) {
     std::swap(points[i], points[m]);
   }
   return std::vector<point>(points.begin(), points.begin() + m + 1);
-}
-
-std::ostream& operator<<(std::ostream& os, const std::vector<point>& points) {
-  for (auto p : points) {
-    os << "(" << p.x << ", " << p.y << ")\n";
-  }
-  return os;
 }
 
 int main() {
