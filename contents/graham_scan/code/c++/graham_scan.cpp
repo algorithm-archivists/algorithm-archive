@@ -11,7 +11,7 @@ bool ccw(point a, point b, point c) {
   return ((b.x - a.x) * (c.y - a.y) > (b.y - a.y) * (c.x - a.x));
 }
 
-std::vector<point> grahamScan(std::vector<point> points) {
+std::vector<point> graham_scan(std::vector<point> points) {
   // selecting lowest point as pivot
   int lowIndex = 0;
   for (size_t i = 1; i < points.size(); i++) {
@@ -70,7 +70,7 @@ int main() {
                                {2, 8}};
   std::cout << "original points are as follows:\n";
   print(points);
-  std::vector<point> hull = grahamScan(points);
+  std::vector<point> hull = graham_scan(points);
   std::cout << "points in hull are as follows:\n";
   print(hull);
   return 0;
