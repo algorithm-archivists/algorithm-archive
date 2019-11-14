@@ -5,6 +5,8 @@ Computer science is (almost by definition) a science about computers -- a device
 The algorithm is a simple way to find the *greatest common divisor* (GCD) of two numbers, which is useful for a number of different applications (like reducing fractions). The first method (envisioned by Euclid) uses simple subtraction:
 
 {% method %}
+{% sample lang="vim" %}
+[import:14-27, lang="vim"](code/viml/euclidean.vim)
 {% sample lang="c" %}
 [import:17-30, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
@@ -87,6 +89,8 @@ Here, we simply line the two numbers up every step and subtract the lower value 
 Modern implementations, though, often use the modulus operator (%) like so
 
 {% method %}
+{% sample lang="vim" %}
+[import:1-12, lang="vim"](code/viml/euclidean.vim)
 {% sample lang="c" %}
 [import:4-16, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
@@ -179,6 +183,8 @@ Here's a video on the Euclidean algorithm:
 ## Example Code
 
 {% method %}
+{% sample lang="vim" %}
+[import, lang="vim"](code/viml/euclidean.vim)
 {% sample lang="c" %}
 [import, lang="c_cpp"](code/c/euclidean_example.c)
 {% sample lang="cs" %}
