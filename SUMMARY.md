@@ -34,3 +34,6 @@
 * [Data Compression](contents/data_compression/data_compression.md)
     * [Huffman Encoding](contents/huffman_encoding/huffman_encoding.md)
 * [Quantum Information](contents/quantum_information/quantum_information.md)
+* [Graph Algorithms](contents/graph_algorithms/README.md)
+   * [Dijkstra's Algorithm](contents/dijkstra/dijkstra.md)
+
