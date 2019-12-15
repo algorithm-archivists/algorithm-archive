@@ -162,7 +162,13 @@ trim_trailing_whitespace = false
 insert_final_newline = false
 end_of_line = lf
 
+# PowerShell
+[*.ps1]
+indent_style = space
+indent_size = 4
+
 # CoffeeScript
 [*.coffee]
 indent_style = space
 indent_size = 2
+

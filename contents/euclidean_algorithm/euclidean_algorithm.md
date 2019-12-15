@@ -75,6 +75,10 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 <p>
   <img  class="center" src="code/scratch/euclid_sub.svg" width="200" />
 </p>
+# leave one line empty:
+
+{% sample lang="ps1" %}
+[import:1-14, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 
 {% endmethod %}
 
@@ -157,6 +161,10 @@ Modern implementations, though, often use the modulus operator (%) like so
 <p>
   <img  class="center" src="code/scratch/euclid_mod.svg" width="200" />
 </p>
+# leave one line empty:
+
+{% sample lang="ps1" %}
+[import:16-27, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 
 {% endmethod %}
 
@@ -264,6 +272,10 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 <p>
   <img  class="center" src="code/scratch/main.svg" width="200" />
 </p>
+# leave one line empty:
+
+{% sample lang="ps1" %}
+[import, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 
 {% endmethod %}
 
