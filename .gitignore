@@ -509,3 +509,5 @@ __pycache__/
 # Settings directory for visual studio code
 vscode/
 
+# Data file extension for Algorithm Archive
+*.dat
