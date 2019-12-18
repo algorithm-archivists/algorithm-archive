@@ -35,19 +35,23 @@
     gift))
 
 (defun graham-scan (gift)
-  "Finds the convex hull of any distribution of points destructively"
-  (loop
-    with lowest = (lowest-point gift)
-    with sorted = (sort gift #'< :key (lambda (p) (polar-angle lowest p)))
-    with hull = (subseq sorted 0 3)
-
-    for point in (subseq sorted 3 nil)
-    do
-      (loop
-        until (counterclockwise-p (nth (- (length hull) 2) hull) (nth (1- (length hull)) hull) point)
-        do (setf hull (butlast hull)))
-      (setf hull (append hull (list point)))
-    finally (return hull)))
+  "Finds the convex hull of a distribution of points with a graham scan"
+  (if gift
+    (labels ((wrap (sorted-points hull)
+           (if sorted-points
+             ;; This covers the case where the hull has one or more element.
+             ;; We aren't concerned about the hull being empty, because then the gift must also be
+             ;; empty and this function is never given an empty gift.
+             (if (rest hull)
+               (if (counterclockwise-p (first sorted-points) (first hull) (second hull))
+                 (wrap sorted-points (rest hull))
+                 (wrap (rest sorted-points) (cons (first sorted-points) hull)))
+               (wrap (rest sorted-points) (list (first sorted-points) (first hull))))
+             hull)))
+    (let* ((lowest (lowest-point gift))
+           (sorted (sort gift #'< :key (lambda (p) (polar-angle lowest p)))))
+      (wrap sorted (list lowest))))
+    nil))
 
 (defvar gift
   (map
@@ -57,4 +61,7 @@
       (-1 -1) (-10 11) (-6 15) (-6 -8) (15 -9)
       (7 -7) (-2 -9) (6 -5) (0 14) (2 8))))
 
+;; This should print out the following:
+;; (#S(POINT :X -10 :Y 11) #S(POINT :X -6 :Y 15) #S(POINT :X 0 :Y 14)
+;; #S(POINT :X 9 :Y 9) #S(POINT :X 7 :Y -7) #S(POINT :X -6 :Y -12))
 (print (graham-scan gift))
