@@ -57,7 +57,7 @@ In the end, the code should look something like this:
 {% sample lang="java" %}
 [import:35-70, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="lisp" %}
-[import:15-50, lang:"lisp"](code/clisp/graham-scan.lisp)
+[import:15-58, lang:"lisp"](code/clisp/graham-scan.lisp)
 {% endmethod %}
 
 ### Bibliography
