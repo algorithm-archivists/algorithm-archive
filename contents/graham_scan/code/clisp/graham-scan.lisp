@@ -2,15 +2,15 @@
 
 (defstruct (point (:constructor make-point (x y))) x y)
 
-(defun counterclockwise-p (p1 p2 p3)
+(defun ccw (p1 p2 p3)
   "Determines if a turn between three points is counterclockwise"
-  (>=
-    (*
-      (- (point-y p3) (point-y p1))
-      (- (point-x p2) (point-x p1)))
+  (-
     (*
       (- (point-y p2) (point-y p1))
-      (- (point-x p3) (point-x p1)))))
+      (- (point-x p3) (point-x p1)))
+    (*
+      (- (point-y p3) (point-y p1))
+      (- (point-x p2) (point-x p1)))))
 
 (defun atan2 (y x)
   "Calculates the angle of a point in the euclidean plane in radians"
@@ -45,7 +45,7 @@
                    ;; We aren't concerned about the hull being empty, because then the gift must
                    ;; also be empty and this function is never given an empty gift.
                      (if (rest hull)
-                         (if (counterclockwise-p (first sorted-points) (first hull) (second hull))
+                         (if (<= (ccw (first sorted-points) (first hull) (second hull)) 0)
                              (wrap sorted-points (rest hull))
                              (wrap (rest sorted-points) (cons (first sorted-points) hull)))
                          (wrap (rest sorted-points) (list (first sorted-points) (first hull))))
