@@ -21,7 +21,7 @@
     ((and (eql x 0) (> y 0))    (/ pi 2))
     ((and (eql x 0) (< y 0))    (- (/ pi 2)))
     ;; The -1 signifies an exception and is usefull later for sorting by the polar angle
-    ((and (eql x 0) (eql y 0)) -1)))
+    ((and (eql x 0) (eql y 0))  -1)))
 
 (defun polar-angle (ref point)
   "Returns the polar angle from a point relative to a reference point"
