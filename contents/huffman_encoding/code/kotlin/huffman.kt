@@ -1,130 +1,108 @@
-import java.util.*
+import java.util.PriorityQueue
 
-// node type
+// Node type
 sealed class Node(val frequency: Int): Comparable<Node> {
-  // we can sort nodes by frequency
-  override fun compareTo(other: Node) = frequency - other.frequency
+    // So can sort nodes by frequency
+    override fun compareTo(other: Node) = frequency - other.frequency
 }
+
 class Leaf(freq: Int, val letter: Char): Node(freq)
-class Branch(freq: Int, val left: Node, val right: Node): Node(freq)
+class Branch(val left: Node, val right: Node): Node(left.frequency + right.frequency)
 
-class HuffmanTree (val textSample: String) {
-  val root: Node
-  val codeBook: CodeBook
-  
-  init {
-    // calculate frequencies
-    val frequencyMap = HashMap<Char, Int>()
-    for (char in textSample) {
-      val newFrequency = (frequencyMap.get(char) ?: 0) + 1
-      frequencyMap.put(char, newFrequency)
+
+// Class to contain the decoder and encoder
+class HuffmanTree (textSample: String) {
+    private val root: Branch
+    private val codeBook: MutableMap<Char, String>
+
+    init {
+        // Calculate frequencies
+        val frequencyMap = textSample.groupingBy { it }.eachCount()
+
+        // Populate the queue with leaves
+        val priorityQueue = PriorityQueue<Node>(frequencyMap.map{(char,freq)->
+            Leaf(freq, char)
+        })
+
+        // Join leaves
+        while (priorityQueue.size > 1) {
+            val left = priorityQueue.remove()
+            val right = priorityQueue.remove()
+            priorityQueue.add(Branch(left, right))
+        }
+
+        // The root node is the last remaining branch. If it's a leaf, we only had 1 unique letter
+        root = priorityQueue.remove() as? Branch ?: error("No support for string of one unique letter")
+
+        // Initialize the code book
+        codeBook = mutableMapOf()
+        populateCodeBook(root,"")
     }
-    // populate the queue with leaves
-    val priorityQueue = PriorityQueue<Node>()
-    for (m in frequencyMap.entries) {
-      priorityQueue.add(Leaf(m.value, m.key))
+
+    // Recursively populate a codebook with encodings from a node
+    private fun populateCodeBook(node: Node, code: String) {
+        when(node) {
+            // Leaf node, set this char's code
+            is Leaf -> codeBook[node.letter] = code
+
+            // Branch node, recursively populate the children
+            is Branch -> {
+                populateCodeBook(node.left, code + "0")
+                populateCodeBook(node.right, code + "1")
+            }
+        }
     }
-    // join leaves
-    while (priorityQueue.size > 1) {
-      val left = priorityQueue.remove()
-      val right = priorityQueue.remove()
-      priorityQueue.add(Branch(left.frequency + right.frequency, left, right))
+
+    // Print the code book to stdout
+    fun print() {
+        for ((k,v) in codeBook.entries) {
+            println("$k: $v")
+        }
+        println()
     }
-    // the root node is the last remaining leaf
-    root = priorityQueue.remove()
-    // initialize the code book
-    codeBook = CodeBook(root)
-  }
-  
-  // encode a string using the tree
-  fun encode(source: String): String {
-    val encoder = StringBuilder()
-    for (char in source) {
-      encoder.append(codeBook.encode(char))
+
+    // Encode a string using this tree
+    fun encode(source: String): String {
+        val encoder = StringBuilder()
+        for (char in source) {
+            encoder.append(codeBook[char])
+        }
+        return encoder.toString()
     }
-    return encoder.toString()
-  }
-  
-  // decode an encoded string
-  fun decode(encoded: String) = buildString {
-    var currentSequence = StringBuilder()
-    for (k in encoded) {
-      currentSequence.append(k)
-      val decoded = codeBook.decode(currentSequence.toString())
-      if(decoded != null) {
-        append(decoded)
-        currentSequence = StringBuilder()
-      }
+
+
+    // Decode an encoded string
+    fun decode(encoded: String) = buildString {
+        val endNode = encoded.fold(root){current, char->
+            val next = when(char){
+                '0' -> current.left
+                '1' -> current.right
+                else -> error("Found `$char` in the encoded string")
+            }
+            when(next){
+                is Branch -> next
+                is Leaf -> {
+                    append(next.letter)
+                    root
+                }
+            }
+        }
+
+        if(endNode != root)
+            error("Unexpected end of string")
     }
-  }
 }
 
-// a codebook is a mapping between a huffman code and a character, and the other way around
-class CodeBook(tree: Node) {
-  val codebook: Map<Char, String>
-        
-  init {
-    codebook = HashMap<Char, String>()
-    populateCodebook(tree, "", codebook)
-  }
-  
-  // recursively populate a codebook with encodings from a node
-  fun populateCodebook(node: Node, code: String, codebook: MutableMap<Char, String>) {
-    when(node) {
-      // leaf node, add current children
-      is Leaf -> codebook.put(node.letter, code.toString())
-      is Branch -> {
-        // populate using left and right children
-        populateCodebook(node.left, code + "0", codebook)
-        populateCodebook(node.right, code + "1", codebook)
-      }
-    }
-  }
-  
-  // encode a letter
-  fun encode(letter: Char) = codebook[letter]
-  
-  // the reverse codebook is just the original one with keys as values and values as keys
-  val reverseCodebook: HashMap<String, Char> by lazy {
-    val reversed = HashMap<String, Char>()
-    for (m in codebook.entries) {
-      reversed.put(m.value, m.key)
-    }
-    reversed
-  }
-  // decode a sequence of bits by looking them up in the reverse codebook
-  fun decode(encoded: String) = reverseCodebook[encoded]
-  
-  // print the codebook to stdout
-  fun print() {
-    for (m in codebook.entries) {
-      println(m.key + ": " + m.value)
-    }
-    println()
-  }
-  
-  // print the reverse codebook to stdout
-  fun printReverse() {
-    for (m in reverseCodebook.entries) {
-      println(m.key + ": " + m.value)
-    }
-    println()
-  }
-}
 
-fun main(args: Array<String>) {
-  val sourceText = "bibbity_bobbity"
-  // create huffman tree
-  val huffmanTree = HuffmanTree(sourceText)
-  // encode the text
-  val encoded = huffmanTree.encode(sourceText)
-  println("Encoded String: " + encoded)
-  println("Decoded String: " + huffmanTree.decode(encoded))
-  // create a separate codebook and print it
-  val codeBook = CodeBook(huffmanTree.root)
-  println("Codebook:")
-  codeBook.print()
-  println("Reverse codebook:")
-  codeBook.printReverse()
-}
+fun main() {
+    val sourceText = "bibbity_bobbity"
+    // Create huffman tree
+    val huffmanTree = HuffmanTree(sourceText)
+    // Encode the text
+    val encoded = huffmanTree.encode(sourceText)
+    println("Encoded String: $encoded")
+    println("Decoded String: ${huffmanTree.decode(encoded)}")
 
+    println("CodeBook:")
+    huffmanTree.print()
+}
