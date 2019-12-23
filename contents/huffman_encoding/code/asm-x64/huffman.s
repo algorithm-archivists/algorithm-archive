@@ -250,7 +250,7 @@ generate_codebook_recurse:
   push   rbp
   push   r12
   push   r13
-  test   rdi, rdi                             # If we reached a null pointer we're done
+  test   rsi, rsi                             # If we reached a null pointer we're done
   jz     generate_codebook_recurse_done
   mov    r12, rsi
   cmp    QWORD PTR [r12 + tree_left], 0       # If at least one of the children is not null
@@ -314,7 +314,7 @@ generate_tree_count_chars:
 generate_tree_leaves_setup:
   mov    r12, 255                             # The loop counter. We can only get here if the "test" on line 301 resulted in a zero so the next jl instruction will do the right thing
 generate_tree_leaves:
-  jl     generate_tree_branches               # If not then it's time to generate the branches
+  jl     generate_tree_one_leaf               # If not then it's time to generate the branches
   mov    r13d, DWORD PTR [rsp + 4*r12]        # Load the count at the ith position
   test   r13d, r13d                           # And check if it's zero
   jz     generate_tree_leaves_counters        # If it is we can skip this iteration
@@ -329,6 +329,18 @@ generate_tree_leaves:
 generate_tree_leaves_counters:
   dec    r12                                  # Decrement the loop counter and start over
   jmp    generate_tree_leaves
+generate_tree_one_leaf:
+  cmp    DWORD PTR [rsp + counts_size], 1     # Check if there is only one element in the heap
+  jne    generate_tree_branches
+  lea    rdi, [rsp + counts_size]             # Get the element
+  call   heap_pop
+  mov    r12, rax
+  mov    rdi, tree_size                       # Create the new tree node, the pointer to it will be in rax
+  call   malloc
+  mov    QWORD PTR [rax + tree_left], r12     # Save element in the left node
+  mov    ecx, DWORD PTR [r12 + tree_count]    # Save element count in branch
+  mov    DWORD PTR [rax + tree_count], ecx
+  jmp    generate_tree_ret                    # Returning
 generate_tree_branches:
   cmp    DWORD PTR [rsp + counts_size], 1     # Check if there are still at least two elements in the heap
   jle    generate_tree_done                   # If not, we're done
@@ -352,6 +364,7 @@ generate_tree_branches:
 generate_tree_done:
   lea    rdi, [rsp + counts_size]             # The tree's root will be in rax after the pop
   call   heap_pop
+generate_tree_ret:
   add    rsp, 5128
   pop    r13
   pop    r12
@@ -524,3 +537,4 @@ free_tree:
 free_tree_done:
   pop    rbx
   ret
+
