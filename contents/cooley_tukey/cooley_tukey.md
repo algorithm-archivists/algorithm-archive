@@ -87,6 +87,8 @@ For some reason, though, putting code to this transformation really helped me fi
 [import:15-74, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
 [import:3-15, lang:"javascript"](code/javascript/fft.js)
+{% sample lang="go" %}
+[import:31-41, lang:"go"](code/go/fft.go)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -138,6 +140,8 @@ In the end, the code looks like:
 [import:76-165, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
 [import:17-39, lang="javascript"](code/javascript/fft.js)
+{% sample lang="go" %}
+[import:43-83, lang:"go"](code/go/fft.go)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -249,6 +253,8 @@ Some rather impressive scratch code was submitted by Jie and can be found here: 
 [import, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/fft.js)
+{% sample lang="go" %}
+[import, lang:"go"](code/go/fft.go)
 {% endmethod %}
 
 <script>
