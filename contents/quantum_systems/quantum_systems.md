@@ -235,6 +235,8 @@ This ultimately looks like this:
 [import:26-, lang:"cpp"](code/c++/energy.cpp)
 {% sample lang="py" %}
 [import:4-17, lang:"python"](code/python/energy.py)
+{% sample lang="go" %}
+[import:31-63, lang:"go"](code/go/energy.go)
 {% endmethod %}
 
 This calculation will be used in many different simulations of quantum systems to check our results.
