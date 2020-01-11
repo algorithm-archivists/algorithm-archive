@@ -52,7 +52,8 @@ func fft(x []complex128, inv bool) {
 
 }
 
-func initParams(par *params, xmax, dt float64, res, timesteps int, im bool) {
+func initParams(xmax, dt float64, res, timesteps int, im bool) params {
+	var par params
 	par.xmax = xmax
 	par.res = res
 	par.dt = dt
@@ -71,9 +72,11 @@ func initParams(par *params, xmax, dt float64, res, timesteps int, im bool) {
 			par.k[i] = float64(i-res) * math.Pi / xmax
 		}
 	}
+	return par
 }
 
-func initOperators(opr *operators, par params, voffset, wfcoffset float64) {
+func initOperators(par params, voffset, wfcoffset float64) operators {
+	var opr operators
 	opr.size = par.res
 	opr.v = make([]complex128, par.res)
 	opr.pe = make([]complex128, par.res)
@@ -92,6 +95,7 @@ func initOperators(opr *operators, par params, voffset, wfcoffset float64) {
 			opr.pe[i] = cmplx.Exp(complex(-imag(opr.v[i]), -0.5*par.dt*real(opr.v[i])))
 		}
 	}
+	return opr
 }
 
 func splitOp(par params, opr operators) {
@@ -184,11 +188,8 @@ func calculateEnergy(par params, opr operators) float64 {
 }
 
 func main() {
-	var par params
-	var opr operators
-
-	initParams(&par, 5.0, 0.05, 256, 100, true)
-	initOperators(&opr, par, 0.0, -1.0)
+	par := initParams(5.0, 0.05, 256, 100, true)
+	opr := initOperators(par, 0.0, -1.0)
 
 	splitOp(par, opr)
 
