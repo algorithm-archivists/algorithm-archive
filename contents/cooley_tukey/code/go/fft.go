@@ -23,7 +23,7 @@ func fft(x []complex128) {
 	forward.Execute()
 	forward.Destroy()
 
-	for i := 0; i < len(x); i++ {
+	for i := range x {
 		x[i] = y.At(i) / cmplx.Sqrt(complex(float64(len(x)), 0))
 	}
 }
