@@ -53,7 +53,7 @@ func calculateEnergy(wfc, h_r, h_k []complex128, dx float64) float64 {
 		energy_r[i] = wfc_c[i] * h_r[i] * wfc[i]
 	}
 
-	energy_final := 0.0
+	energyFinal := 0.0
 
 	for i := 0; i < len(wfc); i++ {
 		energy_final += real(energy_k[i] + energy_r[i])
@@ -61,4 +61,3 @@ func calculateEnergy(wfc, h_r, h_k []complex128, dx float64) float64 {
 
 	return energy_final * dx
 }
-
