@@ -32,7 +32,7 @@ type operators struct {
 
 func fft(x []complex128, inv bool) {
 	y := fftw.NewArray(len(x))
-	for i := 0; i < len(x); i++ {
+	for i := range(x) {
 		y.Set(i, x[i])
 	}
 
@@ -46,23 +46,23 @@ func fft(x []complex128, inv bool) {
 		plan.Destroy()
 	}
 
-	for i := 0; i < len(x); i++ {
+	for i := range(x) {
 		x[i] = y.At(i) / cmplx.Sqrt(complex(float64(len(x)), 0))
 	}
 
 }
 
-func initParams(xmax, dt float64, res, timesteps int, im bool) params {
-	var par params
-	par.xmax = xmax
-	par.res = res
-	par.dt = dt
-	par.timesteps = timesteps
-	par.dx = 2.0 * xmax / float64(res)
-	par.x = make([]float64, res)
-	par.dk = math.Pi / xmax
-	par.k = make([]float64, res)
-	par.im_time = im
+func newParams(xmax, dt float64, res, timesteps int, im bool) params {
+	par := params{
+		xmax : xmax,
+		res : res,
+		dt : dt,
+		timesteps : timesteps,
+		dx : 2.0 * xmax / float64(res),
+		x : make([]float64, res),
+		dk : math.Pi / xmax,
+		k : make([]float64, res), im_time:im
+		}
 
 	for i := 0; i < res; i++ {
 		par.x[i] = xmax/float64(res) - xmax + float64(i)*(2.0*xmax/float64(res))
@@ -75,13 +75,14 @@ func initParams(xmax, dt float64, res, timesteps int, im bool) params {
 	return par
 }
 
-func initOperators(par params, voffset, wfcoffset float64) operators {
-	var opr operators
-	opr.size = par.res
-	opr.v = make([]complex128, par.res)
-	opr.pe = make([]complex128, par.res)
-	opr.ke = make([]complex128, par.res)
-	opr.wfc = make([]complex128, par.res)
+func newOperators(par params, voffset, wfcoffset float64) operators {
+	opr := operators{
+		size : par.res,
+		v : make([]complex128, par.res),
+		pe : make([]complex128, par.res),
+		ke : make([]complex128, par.res),
+		wfc : make([]complex128, par.res)
+		}
 
 	for i := 0; i < par.res; i++ {
 		opr.v[i] = 0.5 * cmplx.Pow(complex(par.x[i]-voffset, 0), 2)
@@ -188,8 +189,8 @@ func calculateEnergy(par params, opr operators) float64 {
 }
 
 func main() {
-	par := initParams(5.0, 0.05, 256, 100, true)
-	opr := initOperators(par, 0.0, -1.0)
+	par := newParams(5.0, 0.05, 256, 100, true)
+	opr := newOperators(par, 0.0, -1.0)
 
 	splitOp(par, opr)
 
