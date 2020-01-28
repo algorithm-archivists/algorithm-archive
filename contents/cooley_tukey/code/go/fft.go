@@ -15,7 +15,7 @@ func printSlice(x []complex128) {
 
 func fft(x []complex128) {
 	y := fftw.NewArray(len(x))
-	for i := 0; i < len(x); i++ {
+	for i, v := range x {
 		y.Set(i, x[i])
 	}
 
