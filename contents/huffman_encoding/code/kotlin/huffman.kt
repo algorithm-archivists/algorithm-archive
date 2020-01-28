@@ -74,20 +74,24 @@ class HuffmanTree (textSample: String) {
     // Decode an encoded string
     fun decode(encoded: String) = buildString {
         val endNode = encoded.fold(root){current, char->
+            // Get the next node
             val next = when(char){
                 '0' -> current.left
                 '1' -> current.right
                 else -> error("Found `$char` in the encoded string")
             }
+
             when(next){
                 is Branch -> next
                 is Leaf -> {
                     append(next.letter)
+                    // Restart from root
                     root
                 }
             }
         }
 
+        // If endNode isn't root, then the last visited node wasn't a leaf and the string is therefore missing bits.
         if(endNode != root)
             error("Unexpected end of string")
     }
