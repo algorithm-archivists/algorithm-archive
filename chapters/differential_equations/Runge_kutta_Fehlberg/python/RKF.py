@@ -78,7 +78,7 @@ def RKF_method(f, a, b, alpha, tol, hmax, hmin):
         elif(t + h > b):
             h = b - t
             step[-1] = h
-        #if computation forces h below the minimum threshold, we abandon problem
+        #if computation forces h below the minimum threshold, we abandon problem.
         elif(h<hmin):
             flag = 0
             print("min h exceeded")
