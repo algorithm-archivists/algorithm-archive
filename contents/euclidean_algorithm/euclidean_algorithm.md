@@ -23,7 +23,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:3-12, lang="lisp"](code/clisp/euclidean.lisp)
 {% sample lang="py" %}
 [import:11-22, lang="python"](code/python/euclidean_example.py)
-{% sample lang="haskell" %}
+{% sample lang="hs" %}
 [import:2-8, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 [import:3-15, lang="rust"](code/rust/euclidean_example.rs)
@@ -33,7 +33,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:25-38, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:1-14, lang="swift"](code/swift/euclidean_algorithm.swift)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 [import:3-17, lang="matlab"](code/matlab/euclidean.m)
 {% sample lang="lua" %}
 [import:1-14, lang="lua"](code/lua/euclidean.lua)
@@ -109,7 +109,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:14-18, lang="lisp"](code/clisp/euclidean.lisp)
 {% sample lang="py" %}
 [import:1-9, lang="python"](code/python/euclidean_example.py)
-{% sample lang="haskell" %}
+{% sample lang="hs" %}
 [import:10-14, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 [import:17-27, lang="rust"](code/rust/euclidean_example.rs)
@@ -119,7 +119,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:14-23, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import:16-27, lang="swift"](code/swift/euclidean_algorithm.swift)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 [import:19-31, lang="matlab"](code/matlab/euclidean.m)
 {% sample lang="lua" %}
 [import:16-25, lang="lua"](code/lua/euclidean.lua)
@@ -206,7 +206,7 @@ Here's a video on the Euclidean algorithm:
 [import, lang="lisp"](code/clisp/euclidean.lisp)
 {% sample lang="py" %}
 [import, lang="python"](code/python/euclidean_example.py)
-{% sample lang="haskell" %}
+{% sample lang="hs" %}
 [import, lang="haskell"](code/haskell/euclidean_example.hs)
 {% sample lang="rs" %}
 [import, lang="rust"](code/rust/euclidean_example.rs)
@@ -216,7 +216,7 @@ Here's a video on the Euclidean algorithm:
 [import, lang="go"](code/go/euclidean.go)
 {% sample lang="swift" %}
 [import, lang="swift"](code/swift/euclidean_algorithm.swift)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 [import, lang="matlab"](code/matlab/euclidean.m)
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/euclidean.lua)

@@ -74,7 +74,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 <p>
   <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
 </p>
-{% sample lang="coffeescript" %}
+{% sample lang="coffee" %}
 [import:1-6, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)
 {% endmethod %}
 
@@ -153,7 +153,7 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 [import, lang:"v"](code/v/bubble_sort.v)
 {% sample lang="scratch" %}
 The code snippet was taken from this [Scratch project](https://scratch.mit.edu/projects/316483792)
-{% sample lang="coffeescript" %}
+{% sample lang="coffee" %}
 [import, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)
 {% endmethod %}
 
