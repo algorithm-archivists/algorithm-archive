@@ -119,7 +119,7 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"swift"](code/swift/thomas.swift)
 {% sample lang="php" %}
 [import, lang:"php"](code/php/thomas.php)
-{%sample lang="nim" %}
+{% sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/thomas.cpp)

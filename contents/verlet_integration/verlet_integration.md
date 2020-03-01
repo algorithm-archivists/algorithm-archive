@@ -45,13 +45,13 @@ Here is what it looks like in code:
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="LabVIEW" %}
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:1-14, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
@@ -103,13 +103,13 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="LabVIEW" %}
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
@@ -175,13 +175,13 @@ Here is the velocity Verlet method in code:
 {% sample lang="scratch" %}
 Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="LabVIEW" %}
 Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
@@ -237,14 +237,14 @@ Submitted by Jie
     <img  class="center" src="code/scratch/verlet_scratch.png" />
 </p>
 Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
-{% sample lang="matlab" %}
+{% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/verlet.m)
 {% sample lang="LabVIEW" %}
 Submitted by P. Mekhail
 <p>
     <img  class="center" src="code/labview/verlet_labview.png" />
 </p>
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/verlet.rs)
