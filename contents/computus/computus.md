@@ -135,7 +135,7 @@ $$
 This expression represents the fact that the Metonic cycle will be 8 days off every 2500 years and adds an additional offset of 13 to ensure the Metonic cycle aligns with emperical observation.
 
 At this point, we know what year we are at on the Metonic calendar and have calculated an offset accordingly; however, we have yet to take into account leap years.
-As stated above, there are 97 leap days every 400 years.
+As stated above, there are 97 leap days every 400 years, and the calculation of $$p$$ above requires correction for the 3 leap days missed.
 If one adds 25 leap days per century and subtracts $$k$$, they will find 96 leap days every 400 years instead, which is a close approximation, but off by one.
 This accounts for the fact that leap days are not celebrated on years that are multiples of 100.
 There is, however, an exception made for years that are multiples of 400, which is why Gauss calculated an additional variable,
