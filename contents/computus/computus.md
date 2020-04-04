@@ -151,7 +151,7 @@ $$
 M = (15-p+k-q)\%30
 $$
 
-where 15 is an offset indicating that the full moon on year 0 is 15 days from March 21st, $$p$$ is the number of days we are off from the Metonic cycle, and $$k-q$$ are leap days.
+where 15 is an offset indicating that the full moon on year 0 is 15 days from March 21st, $$p$$ is the number of days we are off from the Metonic cycle, and $$k-q$$ are non-observed leap days.
 The values of $$p$$, $$k$$, and $$q$$ all provide *century* offsets, which means that the value of $$M$$ will provide the correct starting point for each century.
 The $$\%30$$ (modulo 30 arithmetic) constricts our calculation to be within a single synodic lunar month of approximately 30 days.
 
@@ -186,16 +186,26 @@ Which shows that the date of the paschal full moon for 2020 is April 9th.
 Now we can move on to finding the precise date of Easter, which should be the following Sunday
 
 ### Calculating the next Sunday
-This calculation will take a few variables from the previous section, namely $$k-q$$ (the number of leap days), and $$d$$ (the number of days since March 21st to the next full moon).
+This calculation will take a few variables from the previous section, namely $$k-q$$ (the number of non-observed leap days), and $$d$$ (the number of days since March 21st to the next full moon).
 For the last calculation, we synchronized the number of days in a lunar month with the Gregorian (solar) calendar.
 For this computation, we do similar operations, but for the weekly calendar of 7 days, this value will be stored in $$e$$.
-The first step is calculating the number of days we are offset within a week due to leap days,
+The first step is calculating the correct offset each century based on the fact that Jan 1st, 1 was a Friday and then accounting for all the non-observed leap days ($$k-q$$),
 
 $$
 N = (4+k-q)\%7
 $$
 
 There are 52 weeks in a year, but $$52\times7=364$$, meaning we are essentially one day off every year, with exception of leap years where we are two days off.
+As an example, look at the following table
+
+| January 1st | Day of the week | Special considerations |
+| ----------- | --------------- | ---------------------- |
+| 2017        | Sunday          |  None                  |
+| 2018        | Monday          |  None                  |
+| 2019        | Tuesday         |  None                  |
+| 2020        | Wednesday       |  Leap Year             |
+| 2021        | Friday          |  None                  |
+
 Simply put, every year we should subtract one day of the week, but on leap years, we should subtract 2.
 To keep tabs on this, we need two separate counts,
 
