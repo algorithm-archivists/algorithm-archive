@@ -14,7 +14,7 @@ Suffice it to say that the date of Easter bamboozled many historical scholars, w
 The calculation was so complicated hat even Frederick Gauss had to try his hand at it (and failed before being corrected by one of his students).
 
 As an important note, because Easter depends on the lunar cycle, the date of the paschal full moon is static in the lunar calendar.
-In this way, computus is the act of mapping a lunar cycle onto the Gregorian 9solar) calendar everyone knows and loves.
+In this way, computus is the act of mapping a lunar cycle onto the Gregorian (solar) calendar everyone knows and loves.
 Because many different calendar systems have existed throughout history, there was a natural question as to *which* calendar system would be used to calculate the precise date of Easter.
 The western churches chose the Gregorian calendar and the eastern chose Julian.
 The Gregorian calendar more accurately represents the true date of the paschal full moon; however, this is one reason why western and eastern churches sometimes celebrate on different dates.
@@ -42,7 +42,7 @@ I have definitely met a few fledgling programmers who feel the same, but none of
 
 One of the most important fans of Gauss's work was Servois, who created a calendar based on Gauss's 1800 publication, shown below:
 
-ADD TABLE
+<img class="center" src="res/servois_1800.png" alt="Servois' 1800 table"  width="750">
 
 This calendar shows the date the paschal full moon, indicating that Easter will be the following Sunday {{ "servois" | cite }}.
 In this table, a value greater than 22 indicates the full moon will be on the presented number in March and a value less than 22 indicates the full moon will be on that date in April.
@@ -94,6 +94,15 @@ Here, we see the Sun at the center, with the Earth and Moon starting the year at
 The initial location of the Earth and Moon are initially shown an outline with an A at their center.
 After a full synodic lunar year (12 lunar months), another outline of the Earth and Moon are shown at position B, and after a full Gregorian year, they are shown in position C.
 An arc is then drawn showing the difference of 11 days between the Earth's position after a synodic year, and another arc is drawn to show the difference between the Moon's position after a full Gregorian year.
+
+Another way to interpret the Metonic is to imagine sinusoidal oscillations with frequencies corresponding to the Gregorian year and synodic months, as shown below:
+
+ADD IMAGE of 1-year sinusoid
+
+Here, we see an offset after one full Gregorian year and 12 Lunar months of 11 days.
+If we plot the entire 19-year cycle, we find no points at which the two oscillations meet on the axis except at the start of year 1 and end of year 19 (the beginning and en-points of the plot shown below).
+
+ADD IMAGE of 19-year sinusoid
 
 As a final note, there is a small offset in the Metonic cycle of 1 hour and 45 minutes every 19 years, so in 2500 years, it will be 8 days off.
 With this in-mind, we should be able to start discussing the algorithm, itself.
@@ -180,7 +189,7 @@ Interestingly, this is all the information necessary to replicate Servois's tabl
 From here, we simply need to create a two-dimensional array with the decade on the $$y$$ axis and year on the $$x$$ axis and set within it the value of $$(21+d)\%31$$, where the 21 represents the 21st of March, and the $$\%31$$ comes from the fact that there are 31 days in March.
 For example, if we were to do this computation for the years from 2000 to 2100, we would find the following table:
 
-ADD NEW TABLE
+<img class="center" src="res/servois_2000.png" alt="Servois' 2000 table"  width="750">
 
 Which shows that the date of the paschal full moon for 2020 is April 9th.
 Now we can move on to finding the precise date of Easter, which should be the following Sunday
@@ -268,12 +277,36 @@ The sheer complexity of this calculation both baffles and astounds me -- especia
 
 Sure, this can be done straightforwardly with a calculator, but it is no doubt an algorithm worth discussing and celebrating for its ingenuity at the time of creation.
 
-## Example code
+## Example Code
 Unlike many other chapters in the Algorithm Archive, this particular method can be described almost entirely by mathematical expressions.
 As such, it should be relatively straightforward to implement in a number of different languages, and I heartily encourage you to do so!
 For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can use this to calculate either the date of Easter or Servois's table, depending on their use-case; however, please modify the code however you wish!
 
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/gauss_easter.jl)
+{% endmethod %}
+
+
 ### Bibliography
 
 {% references %} {% endreferences %}
+
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leio) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
 
