@@ -74,7 +74,7 @@ That said, space is complicated and the Moon is not the only revolving body.
 Lunar phases are related to the time it takes for the Moon to return to its location *in relation to* the line connecting the Sun and Earth, as shown below.
 This is called the synodic month and will be the approximation used for this chapter.
 
-ADD IMAGE OF 6 SYNODIC MONTHS!
+<img class="center" src="res/synodic_half_year.png" alt="Synodic half year"  width="750">
 
 Here, we show an outline of the Earth and Moon in an arbitrary initial position, each with an angle of $$-\frac{\pi}{4}$$ from the horizontal axis.
 In addition, we show the location of the Moon and Earth again after 6 synodic months.
@@ -88,21 +88,12 @@ For example, if there is a new moon on January 1st, 2020, there will not be a ne
 This 19-year cycle where the Moon and Sun are waiting to re-synchronize is known as the Metonic cycle and has been studied for centuries.
 The following is a pictorial representation of offset between a solar and lunar year:
 
-ADD IMAGE
+<img class="center" src="res/orbit.png" alt="Full year"  width="750">
 
 Here, we see the Sun at the center, with the Earth and Moon starting the year at an angle of $$-\frac{\pi}{4}$$ from the horizontal axis.
-The initial location of the Earth and Moon are initially shown an outline with an A at their center.
+The initial location of the Earth and Moon are initially shown as an outline with an A at their center.
 After a full synodic lunar year (12 lunar months), another outline of the Earth and Moon are shown at position B, and after a full Gregorian year, they are shown in position C.
 An arc is then drawn showing the difference of 11 days between the Earth's position after a synodic year, and another arc is drawn to show the difference between the Moon's position after a full Gregorian year.
-
-Another way to interpret the Metonic is to imagine sinusoidal oscillations with frequencies corresponding to the Gregorian year and synodic months, as shown below:
-
-ADD IMAGE of 1-year sinusoid
-
-Here, we see an offset after one full Gregorian year and 12 Lunar months of 11 days.
-If we plot the entire 19-year cycle, we find no points at which the two oscillations meet on the axis except at the start of year 1 and end of year 19 (the beginning and en-points of the plot shown below).
-
-ADD IMAGE of 19-year sinusoid
 
 As a final note, there is a small offset in the Metonic cycle of 1 hour and 45 minutes every 19 years, so in 2500 years, it will be 8 days off.
 With this in-mind, we should be able to start discussing the algorithm, itself.
@@ -309,4 +300,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leio)
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-
+- The image "[Servois 1800 Colored Table](res/servois_1800.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Synodic Half Year](res/synodic_half_year.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Full Year Orbit](res/orbit.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Servois 2000 Colored Table](res/servois_2000.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
