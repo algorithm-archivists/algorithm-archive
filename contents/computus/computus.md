@@ -2,16 +2,16 @@
 
 Though the word *Computus* can technically describe any sort of computation {{ "bede725" | cite }} or else a set of medieval tables for calculating various astrological events {{ "dictcomputus" | cite }}, it is also one of the most common historical names for the calculation of the Christian holiday of Easter every year.
 Nominally, Easter happens the Sunday after the first full moon after the spring equinox (roughly March 21st).
-This particular full moon is known by a number of names, such as the Pink (strawberry) Moon, Hunter's Moon, Snow Moon, along with several others.
+This particular full moon is known by a number of names, such as the Pink (strawberry) Moon, Hunter's Moon, and the Snow Moon, along with several others.
 The most common name for it is the paschal full moon, which translates to "Passover" in Greek and signifies an important Jewish festival.
 
 For the first few centuries, the date of Easter each year was dictated by the Pope; however, after the church grew, it was no longer straightforward to communicate this date to all of Christendom.
 As such, the church did what they could to algorithmically generate tables for clergy to determine the date of Easter each year.
 To this day, the calculation of Easter still poses a problem, with western and eastern (orthodox) churches celebrating on different dates approximately 50% of the time.
 
-I'll be honest, there is a lot of good, Christian drama surrounding the calculation of this event and it's remarkably interesting to read about it {{ "bien2004" | cite }}.
-Suffice it to say that the date of Easter bamboozled many historical scholars, with at least one algorithm appearing in the early archives of the now famous scientific journal of Nature {{ "computus1876" | cite }}.
-The calculation was so complicated hat even Frederick Gauss had to try his hand at it (and failed before being corrected by one of his students).
+I'll be honest, there is a lot of good, Christian drama surrounding the calculation of this event and it's remarkably interesting to read about {{ "bien2004" | cite }}.
+Suffice it to say that the date of Easter bamboozled many historical scholars, with at least one algorithm appearing in the early archives of the now famous scientific journal of *Nature* {{ "computus1876" | cite }}.
+The calculation was so complicated that even Frederick Gauss had to try his hand at it (and failed before being corrected by one of his students).
 
 As an important note, because Easter depends on the lunar cycle, the date of the paschal full moon is static in the lunar calendar.
 In this way, computus is the act of mapping a lunar cycle onto the Gregorian (solar) calendar everyone knows and loves.
@@ -46,6 +46,7 @@ One of the most important fans of Gauss's work was Servois, who created a calend
 
 This calendar shows the date the paschal full moon, indicating that Easter will be the following Sunday {{ "servois" | cite }}.
 In this table, a value greater than 22 indicates the full moon will be on the presented number in March and a value less than 22 indicates the full moon will be on that date in April.
+The $$y$$-axis of this table indicates the decade and the $$x$$-axis indicates the precise year.
 Admittedly, the notation is a bit funky, but it was 1813.
 Times were different then.
 
@@ -71,8 +72,12 @@ In addition to the solar year, Gauss's Easter algorithm also needs to keep the l
 A lunar month corresponds to the time it takes the Moon to complete one full revolution around the Earth.
 In most cases, this is approximately 27.5 days {{ "lunar_month_wiki" | cite }}.
 That said, space is complicated and the Moon is not the only revolving body.
-Lunar phases are related to the time it takes for the Moon to return to its location *in relation to* the line connecting the Sun and Earth, as shown below.
+Lunar phases are related to the time it takes for the Moon to return to its location *in relation to* the line connecting the Sun and Earth, as shown below:
+
+<img class="center" src="res/orbit.svg" alt="Synodic half year"  width="750">
+
 This is called the synodic month and will be the approximation used for this chapter.
+Below, we also show a snapshot of this simulation after 6 synodic months:
 
 <img class="center" src="res/synodic_half_year.png" alt="Synodic half year"  width="750">
 
@@ -81,11 +86,6 @@ In addition, we show the location of the Moon and Earth again after 6 synodic mo
 In both positions, the Moon is hidden behind the Earth, creating a full moon phase.
 In this way, the synodic month is the time between two consecutive phases, which is slightly longer than the time it takes to revolve around the Earth and return to the same angle (here $$\frac{\pi}{4}$$).
 Each synodic month is approximately 29.5 days, so a synodic year of 12 lunar months is 354 days, which is 11 days shorter than the normal 365 days in a Gregorian year.
-
-Because the synodic month and the solar year are not synchronized, the phase of the Moon will be different on the same day of the Gregorian year.
-That said, the lunar and solar calendars will re-synchronize roughly every 19 years.
-For example, if there is a new moon on January 1st, 2020, there will not be a new moon on January 1st, 2021; however, there will be a new moon on January 1st, 2039.
-This 19-year cycle where the Moon and Sun are waiting to re-synchronize is known as the Metonic cycle and has been studied for centuries.
 The following is a pictorial representation of offset between a solar and lunar year:
 
 <img class="center" src="res/orbit.png" alt="Full year"  width="750">
@@ -95,17 +95,22 @@ The initial location of the Earth and Moon are initially shown as an outline wit
 After a full synodic lunar year (12 lunar months), another outline of the Earth and Moon are shown at position B, and after a full Gregorian year, they are shown in position C.
 An arc is then drawn showing the difference of 11 days between the Earth's position after a synodic year, and another arc is drawn to show the difference between the Moon's position after a full Gregorian year.
 
+Because the synodic month and the solar year are not synchronized, the phase of the Moon will be different on the same day of the Gregorian year.
+That said, the lunar and solar calendars will re-synchronize roughly every 19 years.
+For example, if there is a new moon on January 1st, 2020, there will not be a new moon on January 1st, 2021; however, there will be a new moon on January 1st, 2039.
+This 19-year cycle where the Moon and Sun are waiting to re-synchronize is known as the Metonic cycle and has been studied for centuries.
+
 As a final note, there is a small offset in the Metonic cycle of 1 hour and 45 minutes every 19 years, so in 2500 years, it will be 8 days off.
-With this in-mind, we should be able to start discussing the algorithm, itself.
+With this in mind, we should be able to start discussing the algorithm, itself.
 
 ## The algorithm
 
 As alluded to in Gauss's quote above, the Easter algorithm is closer to a set of formulas than a method used to compute anything on a modern computer.
-This is in-part because of bad software engineering by Gauss and in-part because computers did not really exist at that point.
+This is partially because of bad software engineering by Gauss and partially because computers did not really exist at that point.
 Considering this method was literally called *Computus*, there probably was not much to compute at all at the time.
 Nowadays, you could more easily find the date of Easter with loops and conditions, but this is the *Arcane* Algorithm Archive, and this is definitely an arcane algorithm, so let's go!
 
-For this section, we will be following something similar to Gauss's in his original 1800 work, which is a bit terse and hard to follow; however, each term is significantly meaningful.
+For this section, we will be following similar notation to Gauss's original 1800 work, which is a bit terse and hard to follow; however, each term is significantly meaningful.
 If you are reading this and think you have a better way to present anything, please let us know (with an issue or pull request on github) and we can correct the text!
 
 This method can be split into 2 parts:
@@ -126,7 +131,7 @@ $$
 k = \left\lfloor\frac{\text{year}}{100}\right\rfloor,
 $$
 where $$\lfloor\cdot\rfloor$$ is a flooring operation of rounding the value down to the nearest integer.
-This allows us to calculate the shift in the Metonic cycle to be, 
+With this, we can calculate the shift in the Metonic cycle to be, 
 
 $$
 p = \left\lfloor\frac{13+8k}{25}\right\rfloor.
@@ -178,7 +183,7 @@ No one really keeps track of lunar years, just solar ones.
 Regardless, we now have $$d$$, the number of days until the next full moon.
 Interestingly, this is all the information necessary to replicate Servois's table above.
 From here, we simply need to create a two-dimensional array with the decade on the $$y$$ axis and year on the $$x$$ axis and set within it the value of $$(21+d)\%31$$, where the 21 represents the 21st of March, and the $$\%31$$ comes from the fact that there are 31 days in March.
-For example, if we were to do this computation for the years from 2000 to 2100, we would find the following table:
+For example, if we were to do this computation for the years from 2000 to 2099, we would find the following table:
 
 <img class="center" src="res/servois_2000.png" alt="Servois' 2000 table"  width="750">
 
@@ -189,7 +194,7 @@ Now we can move on to finding the precise date of Easter, which should be the fo
 This calculation will take a few variables from the previous section, namely $$k-q$$ (the number of non-observed leap days), and $$d$$ (the number of days since March 21st to the next full moon).
 For the last calculation, we synchronized the number of days in a lunar month with the Gregorian (solar) calendar.
 For this computation, we do similar operations, but for the weekly calendar of 7 days, this value will be stored in $$e$$.
-The first step is calculating the correct offset each century based on the fact that Jan 1st, 1 was a Friday and then accounting for all the non-observed leap days ($$k-q$$),
+The first step is calculating the correct offset each century based on the fact that Jan 1st, in year 1 was a Friday and then accounting for all the non-observed leap days ($$k-q$$),
 
 $$
 N = (4+k-q)\%7
@@ -241,23 +246,23 @@ $$
 \right.
 $$
 
-Remember that March 22nd would be the first possible day to celebrate Easter because March 21s would be the first possible full moon of spring.
+Remember that March 22nd would be the first possible day to celebrate Easter because March 21st would be the first possible full moon of spring.
 All said, there are a few exceptions that are somewhat tricky to understand.
 
 $$
 e = \left\{
     \begin{align}
        &e \\
-       &e-1, \qquad \text{if } d=29 \text{ and } e=6 \text{ or } d=28, e=6, \text{ and } a>10
+       &-1, \qquad \text{if } d=29 \text{ and } e=6 \text{ or } d=28, e=6, \text{ and } a>10
     \end{align}
 \right.
 $$
 
 These conditionals are placed on the output of $$d$$ and correspond to when Easter falls on April 26th (if $$d = 29$$) or April 25th (if $$d = 28$$).
-In both of these cases, we are setting $$e=e-1$$, which has the effect of removing a week from the date of Easter.
+In both of these cases, we are setting $$e=-1$$, which has the effect of removing a week from the date of Easter.
 For example, an Easter that would be celebrated on the 26th would instead be celebrated on the 19th.
 
-The story is that these conditionals are placed on the output for historical reasons, but between you and me, I feel there is a more mathematical reason that I do not fully understand.
+Many say that these conditionals are placed on the output for historical reasons, but between you and me, I feel there is a more mathematical reason that I do not fully understand.
 After all, why is the correction for $$d=28$$ only placed on the Easter date output on the second half of the Metonic cycle (if $$a > 10$$)?
 If you think you might have a better idea as to why these dates are corrected as such, please let us know!
 
@@ -301,6 +306,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leio)
 
 ##### Images/Graphics
 - The image "[Servois 1800 Colored Table](res/servois_1800.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Relative Orbits](res/orbit.svg)" was created by [Xadisten](https://github.com/lockcmpxchg8beax) and was provided during a discussion on Twitch. It is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).
 - The image "[Synodic Half Year](res/synodic_half_year.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[Full Year Orbit](res/orbit.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[Servois 2000 Colored Table](res/servois_2000.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
