@@ -123,7 +123,7 @@ In the following sections, we will discuss both individually.
 To start, we will be calculating $$d$$, which is the number of days until the next full moon from March 21st (the first day of spring according to the pope).
 To calculate this, we need to first calculate a number of auxiliary variables, starting with the current year's location on the Metonic calendar,
 $$
-a = year~\%~19,
+a = \text{year}~\%~19,
 $$
 where $$\%$$ is the modulo operator and 19 is the length of the Metonic calendar in years.
 From here, we also need to calculate an offset to $$a$$, and for this we need the century index,
@@ -153,7 +153,7 @@ This means that $$100-k-q$$ will provide the appropriate number of leap days eve
 After this is found, we then calculate a sum of all offsets within a lunar month.
 
 $$
-M = (15-p+k-q)\%30
+M = (15-p+k-q)~\%~30
 $$
 
 where 15 is an offset indicating that the full moon on year 0 is 15 days from March 21st, $$p$$ is the number of days we are off from the Metonic cycle, and $$k-q$$ are non-observed leap days.
@@ -163,10 +163,10 @@ The $$\%30$$ (modulo 30 arithmetic) constricts our calculation to be within a si
 With all this information, we can finally calculate the number of days from March 21st until the first full moon, as
 
 $$
-d = (19a+M)\%30
+d = (19a+M)~\%~30
 $$
 
-Again, the $$\%30$$ operation makes sense here because there is no way the next full moon could occur over 30 days (a synodic lunar month) from March 21st.
+Again, the $$\%~30$$ operation makes sense here because there is no way the next full moon could occur over 30 days (a synodic lunar month) from March 21st.
 At first glance, this is simply a calculation of $$a$$ (where we are on the Metonic cycle) with some offset, $$M$$.
 This is true, but there is an additional multiplicative factor of 19.
 One might be tempted to wave this away by saying, "19 is the number of years in the Metonic cycle, so this makes sense!"
@@ -175,14 +175,14 @@ This calculation is a calculation of *days*, not years.
 
 Every 12 lunar months is roughly 354 days, which is 11 days shorter than 365.
 This means that every year in the Metonic cycle, the lunar phase will be 11 days behind.
-It just so happens that $$-11\%30 = 19$$.
+It just so happens that $$-11~\%~30 = 19$$.
 Thus, $$19a$$ is a combination of this 11 day offset and the fact that we are using modulo 30 arithmetic.
 After 19 years, the lunar calendar will be a full 365 days off in the solar calendar, but again, we only care about *day* offsets in this calculation.
 No one really keeps track of lunar years, just solar ones.
 
 Regardless, we now have $$d$$, the number of days until the next full moon.
 Interestingly, this is all the information necessary to replicate Servois's table above.
-From here, we simply need to create a two-dimensional array with the decade on the $$y$$ axis and year on the $$x$$ axis and set within it the value of $$(21+d)\%31$$, where the 21 represents the 21st of March, and the $$\%31$$ comes from the fact that there are 31 days in March.
+From here, we simply need to create a two-dimensional array with the decade on the $$y$$ axis and year on the $$x$$ axis and set within it the value of $$(21+d)~\%~31$$, where the 21 represents the 21st of March, and the $$\%~31$$ comes from the fact that there are 31 days in March.
 For example, if we were to do this computation for the years from 2000 to 2099, we would find the following table:
 
 <img class="center" src="res/servois_2000.png" alt="Servois' 2000 table"  width="750">
@@ -197,7 +197,7 @@ For this computation, we do similar operations, but for the weekly calendar of 7
 The first step is calculating the correct offset each century based on the fact that Jan 1st, in year 1 was a Friday and then accounting for all the non-observed leap days ($$k-q$$),
 
 $$
-N = (4+k-q)\%7
+N = (4+k-q)~\%~7
 $$
 
 There are 52 weeks in a year, but $$52\times7=364$$, meaning we are essentially one day off every year, with exception of leap years where we are two days off.
@@ -215,11 +215,11 @@ Simply put, every year we should subtract one day of the week, but on leap years
 To keep tabs on this, we need two separate counts,
 
 $$
-b = \text{year}\%4,
+b = \text{year}~\%~4,
 $$
 and
 $$
-c = \text{year}\%7,
+c = \text{year}~\%~7,
 $$
 where $$b$$ keeps track of leap years, and $$c$$ simply increments by 1 every year.
 Through a bit of mathematical magic, we can find the expression $$2b+4c$$, which will be -1 in modulo 7 arithmetic for every year, except leap years where it will be -2.
@@ -227,7 +227,7 @@ Through a bit of mathematical magic, we can find the expression $$2b+4c$$, which
 With all these terms put together, we can finally calculate the offset from the full moon to Easter Sunday as
 
 $$
-e = (2b+4c+6d+N)\%7.
+e = (2b+4c+6d+N)~\%~7.
 $$
 
 Here, all terms are described as above and the multiplicative factor of 6 to $$d$$ will provide an offset to Sunday without correcting for leap days.
