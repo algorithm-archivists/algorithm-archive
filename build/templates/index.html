@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel=stylesheet href="/pygments.css" type="text/css">
+    <link rel=stylesheet href="/styles/style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title id="ttl"></title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$']]}
+        });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        var bjs = {{bjs}};		    
+        var lang = "jl";
+        var langs = {};
+        var langNames = bjs.pluginsConfig["api-language-selector"].languages;
+        var translations = {
+            "python": "Python",
+            "bf": "Brainfuck",
+            "st": "Smalltalk",
+            "ruby": "Ruby",
+            "kotlin": "Kotlin",
+            "bash": "Bash",
+            "haskell": "Haskell",
+            "matlab": "Matlab",
+            "javascript": "JavaScript"
+        };
+	
+        function initLangs () {
+            var samples = document.getElementsByClassName("code-section");
+            for (var a = 0; a < samples.length; a++) {
+                var sample = samples[a];
+                var children = sample.children;
+                for (var b = 0; b < children.length; b++)  {
+                    var element = children[b];
+                    langs[element.className] = true;
+                };
+            };
+	    langs = Object.keys(langs);
+	    if (langs.length == 1) {
+		lang = langs[0];
+	    }
+            langNames.forEach(function(element) { translations[element.lang] = element.name });
+        }
+        function reload() {
+            var samples = document.getElementsByClassName("code-section");
+            for (var a = 0; a < samples.length; a++) {
+                var sample = samples[a];
+                var children = sample.children;
+                for (var b = 0; b < children.length; b++)  {
+                    var element = children[b];
+                    if (element.className == lang) {
+                        element.style.display = 'block';
+                    } else {
+                        element.style.display = 'none';
+                    }
+                };
+            };
+        };
+        window.onload = () => {
+            initLangs();
+            reload();
+            document.getElementById("name").innerText = pages[index];
+            document.getElementById("ttl").innerText = pages[index];
+            initLs();
+        };
+        var index = {{index}};
+        var pages = [];
+	var lsed = false;
+				
+        function flipLs () {
+            var ls = document.getElementById("ls");
+            var ls2 = document.getElementById("ls2");
+            if (lsed) {
+                ls.style.display = 'none';
+                ls2.style.display = 'none';
+            } else {
+                ls.style.display = 'block';
+                ls2.style.display = 'block';
+            }
+            lsed = !lsed
+        }
+
+	var funcs = {};
+        function initLs () {
+            if (langs.length === 0) {
+                document.getElementById("flipper").remove();
+            } else {
+                var h1 = 0;
+                var h2 = 0;
+                for (var i = 0; i < langs.length; i++) {
+                    let language = langs[i];
+		    console.log(language);
+		    var elem = document.createElement("p");
+                    funcs[language] = {}
+                    funcs[language] = () => {
+                        lang = language;
+                        reload();
+                    };
+                    elem.innerHTML = "<a onclick='funcs[\"" + language + "\"]()' href='#' class=ls-link>" + translations[language] + "</a>";
+                    if (i % 2) {
+                        h2 += 1
+                        document.getElementById("ls2").appendChild(elem);
+                    } else {
+                        h1 += 1
+                        document.getElementById("ls").appendChild(elem);
+                    }
+                }
+                if (h1 > h2) {
+                    var elem = document.createElement("p");
+                    elem.innerHTML = "&nbsp;";
+                    document.getElementById("ls2").appendChild(elem);
+                } else if (h2 > h1) {
+                    var elem = document.createElement("p");
+                    elem.innerHTML = "&nbsp;";
+                    document.getElementById("ls").appendChild(elem);
+                }
+                document.getElementById("ls").style.display = "none";
+                document.getElementById("ls2").style.display = "none";
+            }
+        }
+        function toggleSidenav () {
+            $("#sidebar").toggleClass("hide");
+            $("#content").toggleClass("on-sidebar");
+            $("#navbar").toggleClass("no-sidebar");
+        }
+    </script>
+    <div class="sidebar-wrapper" id="sidebar">
+        {% for i, line in enumerate(summary) %}
+            <p>
+                {% for _ in range(line[2]) %}
+                    &nbsp;
+                {% endfor %}
+                <a name="{{line[0]}}"></a>
+                <a href="{{line[1]}}#{{line[0]}}">{{line[0]}}</a>
+                <script>pages[{{i}}] = "{{line[0]}}"</script>
+            </p>
+        {% endfor %}
+        <hr>
+    </div>
+    <nav class="navbarrio" id=navbar>
+        <ul class="navbarro">
+            <li>
+                <span onclick="toggleSidenav()">
+                    <i class="fas fa-align-left"></i>
+                </button>
+            </li>
+            <li>
+                <span onclick="flipLs()" id=flipper>
+                    <i class="fas fa-code"></i>
+                    <div class=ls id=ls></div>
+                    <div class=ls2 id=ls2></div>
+                </span>
+            </li>
+            <li>
+                <span id=name></span>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid on-sidebar" id="content">
+        {{md_text|safe}}
+        <hr>
+    </div>
+</body>
+</html>

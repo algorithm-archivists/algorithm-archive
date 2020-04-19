@@ -81,7 +81,7 @@ node_modules
 package-lock.json
 
 # Book build output
-_book
+website/contents
 
 # eBook build output
 *.epub

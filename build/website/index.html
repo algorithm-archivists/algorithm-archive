@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel=stylesheet href="/pygments.css" type="text/css">
+    <link rel=stylesheet href="/styles/style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title id="ttl"></title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$']]}
+        });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        var bjs = {"gitbook": "3.x.x", "plugins": ["fontsettings", "mathjax@https://github.com/algorithm-archivists/plugin-mathjax", "bibtex-cite", "wordcount", "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git", "include-codeblock", "ga", "bulk-redirect", "prism", "-highlight"], "lunr": {"maxIndexSize": 1000000000}, "pluginsConfig": {"mathjax": {"version": "2.6.1"}, "include-codeblock": {"fixlang": true, "unindent": true}, "bulk-redirect": {"basepath": "/", "redirectsFile": "redirects.json"}, "ga": {"token": "UA-118252470-1"}, "prism": {"lang": {"asm-x64": "nasm"}, "ignore": ["emojicode", "text"], "css": ["prismjs/themes/prism-tomorrow.css"]}, "api-language-selector": {"languages": [{"lang": "jl", "name": "Julia", "default": true}, {"lang": "bash", "name": "Bash"}, {"lang": "cs", "name": "C#"}, {"lang": "cpp", "name": "C++"}, {"lang": "c", "name": "C"}, {"lang": "c8", "name": "chip-8"}, {"lang": "py", "name": "Python"}, {"lang": "js", "name": "JavaScript"}, {"lang": "scratch", "name": "Scratch"}, {"lang": "hs", "name": "Haskell"}, {"lang": "rs", "name": "Rust"}, {"lang": "ml", "name": "OCaml"}, {"lang": "java", "name": "Java"}, {"lang": "clj", "name": "Clojure"}, {"lang": "elm", "name": "Elm"}, {"lang": "LabVIEW", "name": "LabVIEW"}, {"lang": "d", "name": "D"}, {"lang": "go", "name": "Go"}, {"lang": "swift", "name": "Swift"}, {"lang": "racket", "name": "Racket"}, {"lang": "m", "name": "Matlab"}, {"lang": "r", "name": "R"}, {"lang": "ti83b", "name": "TI-83 Basic"}, {"lang": "lua", "name": "Lua"}, {"lang": "crystal", "name": "Crystal"}, {"lang": "php", "name": "PHP"}, {"lang": "lisp", "name": "Common Lisp"}, {"lang": "nim", "name": "Nim"}, {"lang": "asm-x64", "name": "X86-64 Assembly"}, {"lang": "f90", "name": "Fortran90"}, {"lang": "factor", "name": "Factor"}, {"lang": "ws", "name": "Whitespace"}, {"lang": "scala", "name": "Scala"}, {"lang": "emojic", "name": "Emojicode"}, {"lang": "lolcode", "name": "LOLCODE"}, {"lang": "piet", "name": "Piet"}, {"lang": "ss", "name": "Scheme"}, {"lang": "ps1", "name": "PowerShell"}, {"lang": "v", "name": "Vlang"}, {"lang": "coffee", "name": "CoffeeScript"}, {"lang": "kotlin", "name": "Kotlin"}]}}};		    
+        var lang = "jl";
+        var langs = {};
+        var langNames = bjs.pluginsConfig["api-language-selector"].languages;
+        var translations = {
+            "python": "Python",
+            "bf": "Brainfuck",
+            "st": "Smalltalk",
+            "ruby": "Ruby",
+            "kotlin": "Kotlin",
+            "bash": "Bash",
+            "haskell": "Haskell",
+            "matlab": "Matlab",
+            "javascript": "JavaScript"
+        };
+	
+        function initLangs () {
+            var samples = document.getElementsByClassName("code-section");
+            for (var a = 0; a < samples.length; a++) {
+                var sample = samples[a];
+                var children = sample.children;
+                for (var b = 0; b < children.length; b++)  {
+                    var element = children[b];
+                    langs[element.className] = true;
+                };
+            };
+	    langs = Object.keys(langs);
+	    if (langs.length == 1) {
+		lang = langs[0];
+	    }
+            langNames.forEach(function(element) { translations[element.lang] = element.name });
+        }
+        function reload() {
+            var samples = document.getElementsByClassName("code-section");
+            for (var a = 0; a < samples.length; a++) {
+                var sample = samples[a];
+                var children = sample.children;
+                for (var b = 0; b < children.length; b++)  {
+                    var element = children[b];
+                    if (element.className == lang) {
+                        element.style.display = 'block';
+                    } else {
+                        element.style.display = 'none';
+                    }
+                };
+            };
+        };
+        window.onload = () => {
+            initLangs();
+            reload();
+            document.getElementById("name").innerText = pages[index];
+            document.getElementById("ttl").innerText = pages[index];
+            initLs();
+        };
+        var index = 0;
+        var pages = [];
+	var lsed = false;
+				
+        function flipLs () {
+            var ls = document.getElementById("ls");
+            var ls2 = document.getElementById("ls2");
+            if (lsed) {
+                ls.style.display = 'none';
+                ls2.style.display = 'none';
+            } else {
+                ls.style.display = 'block';
+                ls2.style.display = 'block';
+            }
+            lsed = !lsed
+        }
+
+	var funcs = {};
+        function initLs () {
+            if (langs.length === 0) {
+                document.getElementById("flipper").remove();
+            } else {
+                var h1 = 0;
+                var h2 = 0;
+                for (var i = 0; i < langs.length; i++) {
+                    let language = langs[i];
+		    console.log(language);
+		    var elem = document.createElement("p");
+                    funcs[language] = {}
+                    funcs[language] = () => {
+                        lang = language;
+                        reload();
+                    };
+                    elem.innerHTML = "<a onclick='funcs[\"" + language + "\"]()' href='#' class=ls-link>" + translations[language] + "</a>";
+                    if (i % 2) {
+                        h2 += 1
+                        document.getElementById("ls2").appendChild(elem);
+                    } else {
+                        h1 += 1
+                        document.getElementById("ls").appendChild(elem);
+                    }
+                }
+                if (h1 > h2) {
+                    var elem = document.createElement("p");
+                    elem.innerHTML = "&nbsp;";
+                    document.getElementById("ls2").appendChild(elem);
+                } else if (h2 > h1) {
+                    var elem = document.createElement("p");
+                    elem.innerHTML = "&nbsp;";
+                    document.getElementById("ls").appendChild(elem);
+                }
+                document.getElementById("ls").style.display = "none";
+                document.getElementById("ls2").style.display = "none";
+            }
+        }
+        function toggleSidenav () {
+            $("#sidebar").toggleClass("hide");
+            $("#content").toggleClass("on-sidebar");
+            $("#navbar").toggleClass("no-sidebar");
+        }
+    </script>
+    <div class="sidebar-wrapper" id="sidebar">
+        
+            <p>
+                
+                <a name="Algorithm Archive"></a>
+                <a href="/index.html#Algorithm Archive">Algorithm Archive</a>
+                <script>pages[0] = "Algorithm Archive"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Introduction"></a>
+                <a href="/contents/introduction/introduction.html#Introduction">Introduction</a>
+                <script>pages[1] = "Introduction"</script>
+            </p>
+        
+            <p>
+                
+                <a name="How To Contribute"></a>
+                <a href="/contents/how_to_contribute/how_to_contribute.html#How To Contribute">How To Contribute</a>
+                <script>pages[2] = "How To Contribute"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Plotting"></a>
+                <a href="/contents/plotting/plotting.html#Plotting">Plotting</a>
+                <script>pages[3] = "Plotting"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Data Structures"></a>
+                <a href="/contents/data_structures/data_structures.html#Data Structures">Data Structures</a>
+                <script>pages[4] = "Data Structures"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Stacks and Queues"></a>
+                <a href="/contents/stacks_and_queues/stacks_and_queues.html#Stacks and Queues">Stacks and Queues</a>
+                <script>pages[5] = "Stacks and Queues"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Mathematical Background"></a>
+                <a href="/contents/mathematical_background/mathematical_background.html#Mathematical Background">Mathematical Background</a>
+                <script>pages[6] = "Mathematical Background"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Complexity Notation"></a>
+                <a href="/contents/notation/notation.html#Complexity Notation">Complexity Notation</a>
+                <script>pages[7] = "Complexity Notation"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Bit Logic"></a>
+                <a href="/contents/bitlogic/bitlogic.html#Bit Logic">Bit Logic</a>
+                <script>pages[8] = "Bit Logic"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Taylor Series"></a>
+                <a href="/contents/taylor_series_expansion/taylor_series_expansion.html#Taylor Series">Taylor Series</a>
+                <script>pages[9] = "Taylor Series"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Sorting and Searching"></a>
+                <a href="/contents/sorting_and_searching/sorting_and_searching.html#Sorting and Searching">Sorting and Searching</a>
+                <script>pages[10] = "Sorting and Searching"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Bubble Sort"></a>
+                <a href="/contents/bubble_sort/bubble_sort.html#Bubble Sort">Bubble Sort</a>
+                <script>pages[11] = "Bubble Sort"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Bogo Sort"></a>
+                <a href="/contents/bogo_sort/bogo_sort.html#Bogo Sort">Bogo Sort</a>
+                <script>pages[12] = "Bogo Sort"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Tree Traversal"></a>
+                <a href="/contents/tree_traversal/tree_traversal.html#Tree Traversal">Tree Traversal</a>
+                <script>pages[13] = "Tree Traversal"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Euclidean Algorithm"></a>
+                <a href="/contents/euclidean_algorithm/euclidean_algorithm.html#Euclidean Algorithm">Euclidean Algorithm</a>
+                <script>pages[14] = "Euclidean Algorithm"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Monte Carlo"></a>
+                <a href="/contents/monte_carlo_integration/monte_carlo_integration.html#Monte Carlo">Monte Carlo</a>
+                <script>pages[15] = "Monte Carlo"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Matrix Methods"></a>
+                <a href="/contents/matrix_methods/matrix_methods.html#Matrix Methods">Matrix Methods</a>
+                <script>pages[16] = "Matrix Methods"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Gaussian Elimination"></a>
+                <a href="/contents/gaussian_elimination/gaussian_elimination.html#Gaussian Elimination">Gaussian Elimination</a>
+                <script>pages[17] = "Gaussian Elimination"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Thomas Algorithm"></a>
+                <a href="/contents/thomas_algorithm/thomas_algorithm.html#Thomas Algorithm">Thomas Algorithm</a>
+                <script>pages[18] = "Thomas Algorithm"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Computational Geometry"></a>
+                <a href="/contents/computational_geometry/computational_geometry.html#Computational Geometry">Computational Geometry</a>
+                <script>pages[19] = "Computational Geometry"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Gift Wrapping"></a>
+                <a href="/contents/gift_wrapping/gift_wrapping.html#Gift Wrapping">Gift Wrapping</a>
+                <script>pages[20] = "Gift Wrapping"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                    &nbsp;
+                
+                <a name="Jarvis March"></a>
+                <a href="/contents/jarvis_march/jarvis_march.html#Jarvis March">Jarvis March</a>
+                <script>pages[21] = "Jarvis March"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                    &nbsp;
+                
+                <a name="Graham Scan"></a>
+                <a href="/contents/graham_scan/graham_scan.html#Graham Scan">Graham Scan</a>
+                <script>pages[22] = "Graham Scan"</script>
+            </p>
+        
+            <p>
+                
+                <a name="FFT"></a>
+                <a href="/contents/cooley_tukey/cooley_tukey.html#FFT">FFT</a>
+                <script>pages[23] = "FFT"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Decision Problems"></a>
+                <a href="/contents/decision_problems/decision_problems.html#Decision Problems">Decision Problems</a>
+                <script>pages[24] = "Decision Problems"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Stable Marriage Problem"></a>
+                <a href="/contents/stable_marriage_problem/stable_marriage_problem.html#Stable Marriage Problem">Stable Marriage Problem</a>
+                <script>pages[25] = "Stable Marriage Problem"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Differential Equation Solvers"></a>
+                <a href="/contents/differential_equations/differential_equations.html#Differential Equation Solvers">Differential Equation Solvers</a>
+                <script>pages[26] = "Differential Equation Solvers"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Forward Euler Method"></a>
+                <a href="/contents/forward_euler_method/forward_euler_method.html#Forward Euler Method">Forward Euler Method</a>
+                <script>pages[27] = "Forward Euler Method"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Physics Solvers"></a>
+                <a href="/contents/physics_solvers/physics_solvers.html#Physics Solvers">Physics Solvers</a>
+                <script>pages[28] = "Physics Solvers"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Verlet Integration"></a>
+                <a href="/contents/verlet_integration/verlet_integration.html#Verlet Integration">Verlet Integration</a>
+                <script>pages[29] = "Verlet Integration"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Quantum Systems"></a>
+                <a href="/contents/quantum_systems/quantum_systems.html#Quantum Systems">Quantum Systems</a>
+                <script>pages[30] = "Quantum Systems"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                    &nbsp;
+                
+                <a name="Split-Operator Method"></a>
+                <a href="/contents/split-operator_method/split-operator_method.html#Split-Operator Method">Split-Operator Method</a>
+                <script>pages[31] = "Split-Operator Method"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Data Compression"></a>
+                <a href="/contents/data_compression/data_compression.html#Data Compression">Data Compression</a>
+                <script>pages[32] = "Data Compression"</script>
+            </p>
+        
+            <p>
+                
+                    &nbsp;
+                
+                <a name="Huffman Encoding"></a>
+                <a href="/contents/huffman_encoding/huffman_encoding.html#Huffman Encoding">Huffman Encoding</a>
+                <script>pages[33] = "Huffman Encoding"</script>
+            </p>
+        
+            <p>
+                
+                <a name="Quantum Information"></a>
+                <a href="/contents/quantum_information/quantum_information.html#Quantum Information">Quantum Information</a>
+                <script>pages[34] = "Quantum Information"</script>
+            </p>
+        
+        <hr>
+    </div>
+    <nav class="navbarrio" id=navbar>
+        <ul class="navbarro">
+            <li>
+                <span onclick="toggleSidenav()">
+                    <i class="fas fa-align-left"></i>
+                </button>
+            </li>
+            <li>
+                <span onclick="flipLs()" id=flipper>
+                    <i class="fas fa-code"></i>
+                    <div class=ls id=ls></div>
+                    <div class=ls2 id=ls2></div>
+                </span>
+            </li>
+            <li>
+                <span id=name></span>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid on-sidebar" id="content">
+        <h1>The Arcane Algorithm Archive</h1>
+<p>The Arcane Algorithm Archive is a collaborative effort to create a guide for all important algorithms in all languages.
+This goal is obviously too ambitious for a book of any size, but it is a great project to learn from and work on and will hopefully become an incredible resource for programmers in the future.</p>
+<p>Here are some essential links:</p>
+<ul>
+<li>Book / website: <https://www.algorithm-archive.org/></li>
+<li>GitHub repository: <https://github.com/algorithm-archivists/algorithm-archive></li>
+<li>YouTube channel (LeiosOS): <https://www.youtube.com/user/LeiosOS></li>
+<li>Twitch livestream (simuleios): <https://www.twitch.tv/simuleios></li>
+<li>Discord server: <https://discord.gg/Pr2E9S6></li>
+</ul>
+<p>Note that this project is essentially a book about algorithms collaboratively written by an online community.
+Fortunately, there are a lot of algorithms out there, which means that there is a lot of content material available.
+Unfortunately, this means that we will probably never cover every algorithm ever created and instead need to focus on what the community sees as useful and necessary.
+That said, we'll still cover a few algorithms for fun that have very little, if any practical purpose.</p>
+<p>If you would like to contribute, feel free to go to any chapter with code associated with it and implement that algorithm in your favorite language, and then submit the code via pull request.
+You can find help and instructions regarding the contribution process in our <a href="https://github.com/algorithm-archivists/algorithm-archive/wiki/How-to-Contribute">How to Contribute</a> wiki entry.</p>
+<p>Hopefully, this project will grow and allow individuals to learn about and try their hand at implementing different algorithms for fun and (potentially) useful projects.
+If nothing else, it will be an enjoyable adventure for our community.</p>
+<p>Thanks for reading and let me know if there's anything wrong or if you want to see something implemented in the future!</p>
+<hr />
+<h2>License</h2>
+<p>The code examples for this project are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md">LICENSE.md</a>).
+All text content is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">Creative Commons Attribution-ShareAlike 4.0 International License</a> with attribution specified at the end of every chapter.
+All graphics are licensed under the license stated at the end of every chapter.
+If no attribution is specified, please attribute James Schloss.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><p><img  class="center" src="contents/cc/CC-BY-SA_icon.svg" /></p></a></p>
+        <hr>
+    </div>
+</body>
+</html>
