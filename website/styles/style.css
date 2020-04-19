@@ -1,0 +1,194 @@
+#navbar {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    margin-left: 250px;
+    font-size: 20px !important;
+    text-align: left;
+}
+
+#navbar.no-sidebar {
+    margin-left: 0px;
+}
+
+#sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 15px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    background: #fafafa;
+    border-width: 1px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .07);
+    font-size: 15px;
+}
+
+#sidebar.hide {
+    margin-left: -250px;
+}
+
+#sidebar p a {
+    color: #364149;
+}
+
+#sidebar p a:active {
+    color: #008cff;
+}
+
+.navbarro li {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+}
+
+.navbarro li span {
+    font-weight: 300;
+    color: rgba(0, 0, 0, .4);
+}
+
+.navbarro {
+    overflow: hidden;
+    list-style-type: none;
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+}
+
+.navbarrio {
+    background: #fafafa;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .07);
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+
+#content {
+    margin-left: 0px;
+    text-align: justify;
+    padding-top: 60px;
+    overflow-x: hidden;
+    max-width: calc(100% - 250px);
+    padding-right: 100px;
+    padding-left: 100px;
+    font-size: 15px;
+}
+
+#content.on-sidebar {
+    margin-left: 250px;
+    max-width: calc(100% - 250px);
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -100%;
+    }
+
+    #sidebar.hide {
+        margin-left: 0;
+        width: 60%;
+    }
+
+    #content {
+        padding-left: 15px;
+        padding-right: 0px;
+        margin-left: 60%;
+        margin-right: 0px;
+        max-width: 40%;
+    }
+
+    #content.on-sidebar {
+        margin-left: 0px;
+        margin-right: 0px;
+        max-width: 95%;
+    }
+
+    #navbar {
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    #navbar.no-sidebar {
+        margin-left: 60%;
+    }
+}
+
+blockquote {
+    color: #858585;
+    border-left: 6px solid #858585;
+    padding-left: 10px;
+    margin-left: 30px;
+}
+
+div .codehilite {
+    border-radius: 5px !important;
+    padding: 10px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+    overflow: hidden;
+}
+
+.bib-link:target {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    padding: 7px;
+}
+
+a {
+    color: #008cff;
+}
+
+.ls, .ls2 {
+    display: none;
+    position: absolute;
+    background-color: #fafafa;
+    width: 100px;
+    z-index: 1010;
+    top: 52px;
+    padding: 1px;
+    font-weight: 200;
+    text-align: center;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, .07);
+    border-style: solid;
+
+}
+
+.ls {
+    left: -1px;
+}
+
+.ls2 {
+    left: 99px;
+}
+
+.ls p, .ls2 p {
+    margin: 2px;
+    font-size: 19px;
+}
+
+.ls p a, .ls2 p a {
+    color: rgba(0, 0, 0, .2);
+    font-weight: 300;
+    color: rgba(0, 0, 0, .4);
+    text-align: center
+}
+
+
+body {
+    overflow-x: hidden
+}

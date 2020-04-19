@@ -82,6 +82,7 @@ package-lock.json
 
 # Book build output
 website/contents
+website/index.html
 
 # eBook build output
 *.epub
