@@ -5,11 +5,11 @@ This goal is obviously too ambitious for a book of any size, but it is a great p
 
 Here are some essential links:
 
-- Book / website: <https://www.algorithm-archive.org/>
-- GitHub repository: <https://github.com/algorithm-archivists/algorithm-archive>
-- YouTube channel (LeiosOS): <https://www.youtube.com/user/LeiosOS>
-- Twitch livestream (simuleios): <https://www.twitch.tv/simuleios>
-- Discord server: <https://discord.gg/Pr2E9S6>
+- [Book / website](https://www.algorithm-archive.org/)
+- [GitHub repository](https://github.com/algorithm-archivists/algorithm-archive)
+- [YouTube channel (LeiosOS)](https://www.youtube.com/user/LeiosOS)
+- [Twitch livestream (simuleios)](https://www.twitch.tv/simuleios)
+- [Discord server](https://discord.gg/Pr2E9S6)
 
 Note that this project is essentially a book about algorithms collaboratively written by an online community.
 Fortunately, there are a lot of algorithms out there, which means that there is a lot of content material available.
