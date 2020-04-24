@@ -2,7 +2,7 @@
 
 O_NAME = "website"
 CONTENTS_NAME = "contents"
-INDEX_NAME = "contents/README.md"
+INDEX_NAME = "README.md"
 SUMMARY_NAME = "SUMMARY.md"
 AAA_PATH = "contents"
 CONTENTS_PATH = "contents"

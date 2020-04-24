@@ -30,7 +30,7 @@ def build():
 
     print("Done making, looking for chapters...")
     chapters = filter(lambda a: re.match('^[a-zA-Z0-9_-]+$', a),
-                      os.listdir(os.path.join(AAA_PATH, CONTENTS_NAME)))
+                      os.listdir(CONTENTS_NAME))
 
     print("Looking for the template...")
     with open(TEMPLATE_PATH, 'r') as template_file:
@@ -42,14 +42,14 @@ def build():
     os.system(f"pygmentize -S {PYGMENT_THEME} -f html -a .codehilite > {O_NAME}/pygments.css")
 
     print("Parsing SUMMARY.md...")
-    with open(os.path.join(AAA_PATH, SUMMARY_NAME)) as s:
+    with open(SUMMARY_NAME) as s:
         summary = parse_summary(s.read())
 
     print("Opening bibtex...")
-    bib_database = pybtex.database.parse_file(f"{AAA_PATH}/literature.bib")
+    bib_database = pybtex.database.parse_file("literature.bib")
 
     print("Opening book.json...")
-    with open(os.path.join(CONTENTS_NAME, "book.json")) as bjs:
+    with open("book.json") as bjs:
         book_json = json.load(bjs)
 
     print("Creating rendering pipeline...")
@@ -66,7 +66,7 @@ def build():
     shutil.copytree(STYLE_PATH, f"{O_NAME}/styles")
 
     print("Parsing redirects...")
-    with open(f"{AAA_PATH}/redirects.json") as rjs_file:
+    with open("redirects.json") as rjs_file:
         rjs = json.load(rjs_file)
     rjs = {i["from"]: i["to"] for i in rjs["redirects"]}
     with open(f"{O_NAME}/redirects.json", 'w') as rjs_file:
@@ -109,12 +109,12 @@ def render_chapter(chapter, renderer, template, summary, book_json):
     except FileNotFoundError:
         pass
     try:
-        shutil.copytree(f"{AAA_PATH}/{CONTENTS_PATH}/{chapter}/res",
+        shutil.copytree(f"{CONTENTS_PATH}/{chapter}/res",
                         f"{O_NAME}/{CONTENTS_NAME}/{chapter}/res")
     except FileNotFoundError:
         pass
     try:
-        shutil.copytree(f"{AAA_PATH}/{CONTENTS_PATH}/{chapter}/code",
+        shutil.copytree(f"{CONTENTS_PATH}/{chapter}/code",
                         f"{O_NAME}/{CONTENTS_NAME}/{chapter}/code")
     except FileNotFoundError:
         pass
@@ -122,20 +122,20 @@ def render_chapter(chapter, renderer, template, summary, book_json):
     try:
         # (CONTENTS_NAME)^2 ?
         md_file: str = next(filter(lambda a: a.endswith(".md"),
-                                   os.listdir(f"{CONTENTS_NAME}/{CONTENTS_NAME}/{chapter}")))
+                                   os.listdir(f"{CONTENTS_NAME}/{chapter}")))
     except StopIteration:
         return
 
     out_file = f"{O_NAME}/{CONTENTS_NAME}/{chapter}/{md_file.replace('.md', '.html')}"
 
-    with open(f"{CONTENTS_NAME}/{CONTENTS_NAME}/{chapter}/{md_file}", 'r') as r:
+    with open(f"{CONTENTS_NAME}/{chapter}/{md_file}", 'r') as r:
         try:
             index = [k[0] for k in filter(lambda x: out_file.split('/')[-1] in x[1],
                                           [(i, a[1]) for i, a in enumerate(summary)])][0]
         except IndexError:
             return
         contents: str = render_one(r.read(),
-                                   f"{CONTENTS_NAME}/{CONTENTS_NAME}/{chapter}",
+                                   f"{CONTENTS_NAME}/{chapter}",
                                    index,
                                    renderer,
                                    template,
