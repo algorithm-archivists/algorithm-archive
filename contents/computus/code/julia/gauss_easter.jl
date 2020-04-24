@@ -2,15 +2,15 @@ function computus(year; servois=false)
 
     # Year's position on the 19 year metonic cycle
     a = mod(year, 19)
-    
+
     # Century index
-    k = floor(Int, year/100)
+    k = fld(year, 100)
 
     # Shift of metonic cycle, add a day offset every 300 years
-    p = floor(Int, (13 + 8 * k) / 25) 
+    p = fld(13 + 8 * k, 25)
 
     # Correction for non-observed leap days
-    q = floor(Int, k / 4)
+    q = fld(k, 4)
 
     # Correction to starting point of calculation each century
     M = mod(15 - p + k - q, 30)
@@ -20,7 +20,7 @@ function computus(year; servois=false)
 
     # Returning if user wants value for Servois' table
     if servois
-        return mod(21+d,31)
+        return mod(21 + d,31)
     end
 
     # Finding the next Sunday
@@ -40,24 +40,23 @@ function computus(year; servois=false)
     end
 
     # Determination of the correct month for Easter
-    if(22+ d + e > 31)
-        return "April "*string(d + e - 9)
+    if(22 + d + e > 31)
+        return "April " * string(d + e - 9)
     else
-        return "March "*string(22+d+e)
+        return "March " * string(22 + d + e)
     end
 end
 
 # Here, we will output the date of the Paschal full moon
 # (using Servois notation), and Easter for 2020-2030
 
-a = [i for i = 2020:2030]
-servois_numbers = computus.(a;servois=true)
+a = collect(2020:2030)
+servois_numbers = computus.(a; servois=true)
 easter_dates = computus.(a)
 
-println("The following are the dates of the Paschal full moon (using Servois "*
+println("The following are the dates of the Paschal full moon (using Servois " *
         "notation) and the date of Easter for 2020-2030 AD:")
-println("Year	Servois number	Easter")
+println("Year\tServois number\tEaster")
 for i = 1:length(a)
-    println(string(a[i])*"\t"*string(servois_numbers[i])*"\t\t"*
-            string(easter_dates[i]))
+    println("$(a[i])\t$(servois_numbers[i])\t\t\t\t$(easter_dates[i])")
 end
