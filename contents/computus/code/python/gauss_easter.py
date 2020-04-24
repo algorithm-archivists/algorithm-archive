@@ -52,4 +52,4 @@ print(
 )
 print("Year\tServois number\tEaster")
 for year in range(2020, 2031):
-    print(str(year) + "\t" + str(computus(year, servois=True)) + "\t" + computus(year))
+    print(f"{year}\t{computus(year, servois=True)}\t{computus(year)}")
