@@ -21,11 +21,10 @@ the smaller value and difference b/w values as new inputs
 euclidMod :: Integer -> Integer -> Integer
 euclidMod a b = inner (abs a) (abs b)   
   where
-    inner x 0 = x                       --Exit condition for recursion (seen in next step).
-    inner x y = inner y (x `mod` y)     --Recursion with b and (a mod b) as new inputs 
-                                                -- (with a, b being old inputs)
-
---___________________________________________________________________________________________
+    inner x 0 = x                       --(*)
+    inner x y = inner y (x `mod` y)     --(**)
+                                                
+{-
 (*) if a divides b, then the gcd is a.
 (**) otherwise, recursively call inner with 
 b and (a mod b) as new inputs.
