@@ -41,7 +41,7 @@ computus mode year =
 
             -- Historical corrections for April 26 and 25
             f = if (d == 29 && e == 6) || (d == 28 && e == 6 && a > 10)
-                    then e - 1
+                    then -1
                     else e
             in
             -- Determination of the correct month for Easter
