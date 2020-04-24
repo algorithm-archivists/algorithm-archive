@@ -1,17 +1,20 @@
--- contributed by Nicole Mazzuca (ubsan)
-
 --Method 1: Euclid's original subtraction algorithm
 
 euclidSub :: Integer -> Integer -> Integer
 euclidSub a b = inner (abs a) (abs b) 
   where
     inner x y
-      | x == y = x                      --Exit condition for recursion (seen in next step).
-      | x < y = euclidSub x (y - x)     --Recursion with smaller value and difference b/w values as new inputs
-      | otherwise = euclidSub (x - y) y --Recursion with smaller value and difference b/w values as new inputs
+      | x == y = x                      --(*)
+      | x < y = euclidSub x (y - x)     --(**)
+      | otherwise = euclidSub (x - y) y --(**)
 
+{-
+(*) if a = b, then the gcd is a. 
+(**) otherwise, recursively call euclidSub with 
+the smaller value and difference b/w values as new inputs
+-}
 
--- _____________________________________________________________________________________________
+-- _______________________________________________________________________
 
 --Method 2: Modern implemetation - The modulus method.
 
@@ -23,6 +26,12 @@ euclidMod a b = inner (abs a) (abs b)
                                                 -- (with a, b being old inputs)
 
 --___________________________________________________________________________________________
+(*) if a divides b, then the gcd is a.
+(**) otherwise, recursively call inner with 
+b and (a mod b) as new inputs.
+-}
+
+--_________________________________________________________________________
 
 --  Examples
 
