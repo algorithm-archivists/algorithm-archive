@@ -4,11 +4,11 @@ euclidSub :: Integer -> Integer -> Integer
 euclidSub a b = inner (abs a) (abs b)
   where
     inner x y
-    -- if a = b, then the gcd is a
+      -- if a = b, then the gcd is a
       | x == y = x
-    -- if a < b: Recursively call euclidSub with the a and (b-a) as new inputs
+      -- if a < b: Recursively call euclidSub with the a and (b-a) as new inputs
       | x < y = euclidSub x (y - x)
-    -- otherwise: Recursively call euclidSub with the a and (b-a) as new inputs
+      -- otherwise: Recursively call euclidSub with the a and (b-a) as new inputs
       | otherwise = euclidSub (x - y) y
 
 -- _______________________________________________________________________
