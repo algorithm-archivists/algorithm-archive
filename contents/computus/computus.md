@@ -281,6 +281,8 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/gauss_easter.jl)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/gauss_easter.hs)
 {% endmethod %}
 
 
