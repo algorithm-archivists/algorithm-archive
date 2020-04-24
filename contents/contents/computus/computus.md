@@ -205,11 +205,11 @@ As an example, look at the following table
 
 | January 1st | Day of the week | Special considerations |
 | ----------- | --------------- | ---------------------- |
-| 2017        | Sunday          |  None                  |
-| 2018        | Monday          |  None                  |
-| 2019        | Tuesday         |  None                  |
-| 2020        | Wednesday       |  Leap Year             |
-| 2021        | Friday          |  None                  |
+| 2017        | Sunday          | None                   |
+| 2018        | Monday          | None                   |
+| 2019        | Tuesday         | None                   |
+| 2020        | Wednesday       | Leap Year              |
+| 2021        | Friday          | None                   |
 
 Simply put, every year we should subtract one day of the week, but on leap years, we should subtract 2.
 To keep tabs on this, we need two separate counts,
@@ -281,6 +281,10 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/gauss_easter.jl)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/gauss_easter.py)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/gauss_easter.cr)
 {% endmethod %}
 
 
