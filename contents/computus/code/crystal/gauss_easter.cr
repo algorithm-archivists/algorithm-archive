@@ -19,7 +19,7 @@ def computus(year, servois = false)
 
   # Returning if user wants value for Servois' table
   if servois
-    return (21 + d) % 31
+    return ((21 + d) % 31).to_s
   end
 
   # Finding the next Sunday

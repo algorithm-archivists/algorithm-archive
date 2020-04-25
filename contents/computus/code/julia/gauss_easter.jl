@@ -20,7 +20,7 @@ function computus(year; servois=false)
 
     # Returning if user wants value for Servois' table
     if servois
-        return mod(21 + d,31)
+        return string(mod(21 + d,31))
     end
 
     # Finding the next Sunday
@@ -58,5 +58,5 @@ println("The following are the dates of the Paschal full moon (using Servois " *
         "notation) and the date of Easter for 2020-2030 AD:")
 println("Year\tServois number\tEaster")
 for i = 1:length(a)
-    println("$(a[i])\t$(servois_numbers[i])\t\t\t\t$(easter_dates[i])")
+    println("$(a[i])\t$(servois_numbers[i])\t\t$(easter_dates[i])")
 end
