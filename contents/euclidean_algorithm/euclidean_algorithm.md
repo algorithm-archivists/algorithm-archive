@@ -24,7 +24,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="py" %}
 [import:11-22, lang="python"](code/python/euclidean_example.py)
 {% sample lang="hs" %}
-[import:2-8, lang="haskell"](code/haskell/euclidean_example.hs)
+[import:3-13, lang="haskell"](code/haskell/euclidean_algorithm.hs)
 {% sample lang="rs" %}
 [import:3-15, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
@@ -110,7 +110,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="py" %}
 [import:1-9, lang="python"](code/python/euclidean_example.py)
 {% sample lang="hs" %}
-[import:10-14, lang="haskell"](code/haskell/euclidean_example.hs)
+[import:18-25, lang="haskell"](code/haskell/euclidean_algorithm.hs)
 {% sample lang="rs" %}
 [import:17-27, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
@@ -207,7 +207,7 @@ Here's a video on the Euclidean algorithm:
 {% sample lang="py" %}
 [import, lang="python"](code/python/euclidean_example.py)
 {% sample lang="hs" %}
-[import, lang="haskell"](code/haskell/euclidean_example.hs)
+[import, lang="haskell"](code/haskell/euclidean_algorithm.hs)
 {% sample lang="rs" %}
 [import, lang="rust"](code/rust/euclidean_example.rs)
 {% sample lang="ml" %}
