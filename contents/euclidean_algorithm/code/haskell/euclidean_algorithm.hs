@@ -1,4 +1,4 @@
---Method 1: Euclid's original subtraction algorithm
+-- Method 1: Euclid's original subtraction algorithm
 
 euclidSub :: Integer -> Integer -> Integer
 euclidSub a b = inner (abs a) (abs b)
@@ -13,19 +13,19 @@ euclidSub a b = inner (abs a) (abs b)
 
 -- _______________________________________________________________________
 
---Method 2: Modern implemetation - The modulus method.
+-- Method 2: Modern implemetation - The modulus method.
 
 euclidMod :: Integer -> Integer -> Integer
 euclidMod a b = inner (abs a) (abs b)
   where
-    --if a divides b, then gcd is a
+    -- if a divides b, then gcd is a
     inner x 0 = x
     -- otherwise, recursively call inner with b and (a mod b) as new inputs
     inner x y = inner y (x `mod` y)
 
---_________________________________________________________________________
+-- _________________________________________________________________________
 
---  Examples
+-- Examples
 
 main :: IO ()
 main = do
