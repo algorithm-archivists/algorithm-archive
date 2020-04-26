@@ -19,7 +19,7 @@ def computus(year, servois=False):
 
     # Returning if user wants value for Servois' table
     if servois:
-        return (21 + d) % 31
+        return str((21 + d) % 31)
 
     # Finding the next Sunday
     # Century-based offset in weekly calculation
@@ -52,4 +52,4 @@ print(
 )
 print("Year\tServois number\tEaster")
 for year in range(2020, 2031):
-    print(f"{year}\t{computus(year, servois=True)}\t{computus(year)}")
+    print(f"{year}\t{computus(year, servois=True)}\t\t{computus(year)}")
