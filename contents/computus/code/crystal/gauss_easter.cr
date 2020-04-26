@@ -57,7 +57,7 @@ def main
        "notation) and the date of Easter for 2020-2030 AD:"
   puts "Year\tServois number\tEaster"
   a.each_index { |i|
-    puts "#{a[i]}\t#{servois_numbers[i]}\t\t\t\t#{easter_dates[i]}"
+    puts "#{a[i]}\t#{servois_numbers[i]}\t\t#{easter_dates[i]}"
   }
 end
 
