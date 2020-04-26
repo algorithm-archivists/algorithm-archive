@@ -22,13 +22,13 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 <p>
   <img  class="center" src="code/scratch/struct.svg" width="250" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:1-4, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:1-9, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:4-37, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -61,13 +61,13 @@ Because of this, the most straightforward way to traverse the tree might be recu
 <p>
   <img  class="center" src="code/scratch/dfs-pre.svg" width="250" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:6-7, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:41-49, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -109,13 +109,13 @@ Now, in this case the first element searched through is still the root of the tr
 <p>
   <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:51-57, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -152,13 +152,13 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 <p>
   <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:25-40, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:59-78, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -205,13 +205,13 @@ In code, it looks like this:
 <p>
   <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:41-48, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:80-91, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -250,13 +250,13 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 <p>
   <img  class="center" src="code/scratch/bfs.svg" width="400" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:50-58, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:93-104, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -308,13 +308,13 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 <p>
   <img  class="center" src="code/scratch/all.svg" width="400" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/tree-traversal.cr)

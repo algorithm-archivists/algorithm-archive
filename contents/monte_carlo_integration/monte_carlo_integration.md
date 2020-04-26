@@ -142,13 +142,13 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
-{%sample lang="rs" %}
+{% sample lang="rs" %}
 [import, lang:"rust"](code/rust/monte_carlo.rs)
-{%sample lang="d" %}
+{% sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
-{%sample lang="go" %}
+{% sample lang="go" %}
 [import, lang:"go"](code/go/monteCarlo.go)
-{%sample lang="r" %}
+{% sample lang="r" %}
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/MonteCarlo.java)

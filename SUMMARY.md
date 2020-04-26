@@ -3,6 +3,7 @@
 * [Algorithm Archive](README.md)
 * [Introduction](contents/introduction/introduction.md)
 * [How To Contribute](contents/how_to_contribute/how_to_contribute.md)
+* [Plotting](contents/plotting/plotting.md)
 * [Data Structures](contents/data_structures/data_structures.md)
     * [Stacks and Queues](contents/stacks_and_queues/stacks_and_queues.md)
 * [Mathematical Background](contents/mathematical_background/mathematical_background.md)
@@ -34,3 +35,4 @@
 * [Data Compression](contents/data_compression/data_compression.md)
     * [Huffman Encoding](contents/huffman_encoding/huffman_encoding.md)
 * [Quantum Information](contents/quantum_information/quantum_information.md)
+* [Computus](contents/computus/computus.md)

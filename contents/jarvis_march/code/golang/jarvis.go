@@ -21,7 +21,7 @@ func leftMostPoint(points []point) point {
 }
 
 func (p point) equal(o point) bool {
-	return p.x == o.x && p.y == o.x
+	return p.x == o.x && p.y == o.y
 }
 
 func counterClockWise(p1, p2, p3 point) bool {
