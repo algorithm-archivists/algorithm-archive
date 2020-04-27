@@ -78,7 +78,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="php" %}
 [import:4-7, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
-[import:1-3, lang="lua"](code/lua/monte_carlo.lua)
+[import:2-4, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
 [import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
