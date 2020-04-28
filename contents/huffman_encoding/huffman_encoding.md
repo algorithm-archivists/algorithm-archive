@@ -93,6 +93,11 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 [import, lang:"asm-x64"](code/asm-x64/huffman.s)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/huffman_encoding.scala)
+{% sample lang="scratch" %}
+The code snippet was taken from this [scratch project](https://scratch.mit.edu/projects/389604255/)
+<p>
+    <img  class="center" src="code/scratch/huffman.svg" width="700" />
+</p>
 {% endmethod %}
 
 <script>
