@@ -80,7 +80,7 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="hs" %}
 [import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
-[import:5-11, lang:"python"](code/python/fft.py)
+[import:6-12, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="asm-x64" %}
@@ -131,7 +131,7 @@ In the end, the code looks like:
 {% sample lang="hs" %}
 [import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
-[import:13-24, lang:"python"](code/python/fft.py)
+[import:15-26, lang:"python"](code/python/fft.py)
 {% sample lang="scratch" %}
 [import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="asm-x64" %}
