@@ -285,6 +285,8 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 [import, lang:"python"](code/python/gauss_easter.py)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/gauss_easter.cr)
+{% sample lang="ps1" %}
+[import, lang:"powershell"](code/powershell/gauss_easter.ps1)
 {% endmethod %}
 
 
