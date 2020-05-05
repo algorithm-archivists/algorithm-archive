@@ -17,7 +17,7 @@ We will also introduce a number of interesting concepts for further exploration,
 
 To begin the discussion of Iterated Function Systems (IFSs), we will first discuss what might be one of the most famous fractals currently known, the Sierpinski triangle, shown below.
 
-<img class="center" src="res/IFS_triangle_1.png" alt="Servois' 1800 table"  width="750">
+<img class="center" src="res/IFS_triangle_1.png" alt="Sierpinsky Triangle Chaos Game"  style="width:100%">
 
 This image is clearly a set of triangles embedded in a larger triangle in such a way that it can be continually cut into three identical pieces and still retain its internal structure.
 This idea is known as self-similarity {{"self-similar" | cite }}, and it is usually the first aspect of fractals that will catch an audience's attention.
@@ -28,7 +28,7 @@ Though this is an incredibly interesting concept, the discussion of this chapter
 To start, imagine creating a triangle from three points, $$A$$, $$B$$, and $$C$$.
 These points can be arbitrarily chosen, but for this conversation, we will constrict them to the vertices of an equilateral triangle, as shown below.
 
-<img class="center" src="res/IFS_triangle_2.png" alt="Servois' 1800 table"  width="750">
+<img class="center" src="res/IFS_triangle_2.png" alt="Triangle Vertices"  style="width:100%">
 
 Now let's create three separate functions that can act on a 2-dimensional space:
 
@@ -52,26 +52,32 @@ For example, let's use all three functions on all three existing points, which w
 This operation has essentially "shrunk" the larger triangle we had before into three smaller ones, all of which have been constricted towards one of the vertices.
 An image of this can be seen below.
 
-<img class="center" src="res/IFS_triangle_3.png" alt="Servois' 1800 table"  width="750">
+<img class="center" src="res/IFS_triangle_3.png" alt="Triangle Midpoints"  style="width:100%">
 
 From here, each new point ($$D$$, $$E$$, and $$F$$) will spawn 3 children, and each child will move according to one of the three possible functions in the Hutchinson operator.
 Like before, this will cause each existing triangle to shrink and move to a new location.
 Here, if all the vertices on the left triangle are subjected to all three functions, 9 new points will spawn and three new triangles will be generated on the left edge of the previously existing triangles, as indicated below:
 
-ADD ANIMATION
+<div style="text-align:center">
+<video style="width:100%" autoplay controls>
+  <source src="res/IFS_triangle_vid_1.mp4" type="video/mp4">
+  <img class="center" src="res/IFS_triangle_4.png" alt="First Children"  style="width:100%">
+</video>
+</div>
 
 After all of the children vertices are subjected to all functions, 27 new points and 9 new triangles will form, creating triangles within triangles within a larger triangle.
 From here, the children will then spawn 3 more children, each of which will move according to a different function.
 Those children will then spawn more children, who act accordingly.
 As this process continues on and on, we begin to see an interesting pattern form:
 
-ADD ANIMATION
+<div style="text-align:center">
+<video style="width:100%" autoplay controls>
+  <source src="res/IFS_triangle_vid_2.mp4" type="video/mp4">
+  <img class="center" src="res/IFS_triangle_5.png" alt="Last children"  style="width:100%">
+</video>
+</div>
 
 This is the Sierpinski triangle.
-Here is the final result of the simulation:
-
-ADD IMAGE
-
 At first, it might seem like mathematical magic that a simple set of 3 functions can create such a pattern.
 After all, why aren't any of the children migrating to the empty space of the structure?
 This will require some thought, but the simplest answer is that no function within the Hutchinson operator allows for children to enter that space.
