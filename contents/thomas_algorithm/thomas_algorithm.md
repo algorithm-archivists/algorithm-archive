@@ -131,6 +131,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"kotlin"](code/kotlin/thomas.kt)
 {% sample lang="ruby" %}
 [import, lang="ruby"](code/ruby/thomas.rb)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/thomas.js)
 {% endmethod %}
 
 <script>
