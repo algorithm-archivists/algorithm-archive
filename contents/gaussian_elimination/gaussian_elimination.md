@@ -321,6 +321,8 @@ In code, this process might look like this:
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="js" %}
 [import:7-23, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:15-32, lang:"go"](code/go/gaussian_elimination.go)
 {% sample lang="py" %}
 [import:13-19, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
@@ -393,6 +395,8 @@ Here is what it might look like in code:
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="js" %}
 [import:25-30, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:38-49, lang:"go"](code/go/gaussian_elimination.go)
 {% sample lang="py" %}
 [import:21-26, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
