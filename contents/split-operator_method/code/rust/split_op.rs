@@ -8,6 +8,8 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 
+// This implementation is based on the C and C++ implementations.
+
 #[derive(Clone)]
 struct Parameters {
     xmax: f64,
@@ -104,26 +106,22 @@ fn split_op(par: &Parameters, opr: &mut Operators) {
     let mut density: Vec<f64>;
 
     for i in 0..par.timesteps {
-        // this should use an iterator
         for j in 0..par.res {
             opr.wfc[j] *= opr.pe[j];
         }
 
         fft(&mut opr.wfc, false);
 
-        // this should use an iterator
         for j in 0..par.res {
             opr.wfc[j] *= opr.ke[j];
         }
 
         fft(&mut opr.wfc, true);
 
-        // this should use an iterator
         for j in 0..par.res {
             opr.wfc[j] *= opr.pe[j];
         }
 
-        // this is a good example (c.f. the cpp implementation)
         density = opr.wfc.iter().map(|x| x.norm().powi(2)).collect();
 
         if par.im_time {

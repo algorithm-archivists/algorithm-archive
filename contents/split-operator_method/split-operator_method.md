@@ -109,7 +109,7 @@ Regardless, we first need to set all the initial parameters, including the initi
 {% sample lang="hs" %}
 [import:17-47, lang:"haskell"](code/haskell/splitOp.hs)
 {% sample lang="rs" %}
-[import:11-49, lang:"rust"](code/rust/split_op.rs)
+[import:14-51, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
@@ -132,7 +132,7 @@ Afterwards, we turn them into operators:
 {% sample lang="hs" %}
 [import:49-66, lang:"haskell"](code/haskell/splitOp.hs)
 {% sample lang="rs" %}
-[import:51-90, lang:"rust"](code/rust/split_op.rs)
+[import:53-92, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a gaussian distribution for an initial guess for the probability distribution.
@@ -155,7 +155,7 @@ The final step is to do the iteration, itself.
 {% sample lang="hs" %}
 [import:68-73, lang:"haskell"](code/haskell/splitOp.hs)
 {% sample lang="rs" %}
-[import:103-157, lang:"rust"](code/rust/split_op.rs)
+[import:105-155, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 And that's it.
