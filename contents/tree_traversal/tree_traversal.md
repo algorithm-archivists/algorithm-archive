@@ -178,6 +178,11 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:64-82, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
+<p>	
+    <img  class="center" src="res/DFS_in.png" width="500" />	
+</p>	
+
+
 The order here seems to be some mix of the other 2 methods and works through the binary tree from left to right.
 
 Now, at this point, it might seem that the only way to search through a recursive data structure is with recursion, but this is not necessarily the case! Rather surprisingly, we can perform a DFS non-recursively by using a stack, which are data structures that hold multiple elements, but only allow you to interact with the very last element you put in. The idea here is simple:
@@ -231,7 +236,7 @@ In code, it looks like this:
 All this said, there are a few details about DFS that might not be ideal, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
 <p>
-  <img  class="center" src="res/BFS_simple.png" width="500" />
+   <img  class="center" src="res/BFS_simple.png" width="500" />
 </p>
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, except that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
