@@ -72,7 +72,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:1-11, lang:"v"](code/v/bubble_sort.v)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
+  <img  class="center" src="code/scratch/bubble_sort.svg" style="width:50%"/>
 </p>
 {% sample lang="coffee" %}
 [import:1-6, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)

@@ -28,7 +28,7 @@ To plot from the terminal, you can either:
 This command will create a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sine.png" width="480" />
+    <img  class="center" src="res/gnuplot/sine.png" style="width:70%" />
 </p>
 
 For most gnuplot scripts, this command is written in short-hand.
@@ -49,7 +49,7 @@ In this case, we need to add the following line to our script:
 Which will create an image that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos.png" style="width:70%" />
 </p>
 
 If you would prefer to plot everything on a single line (which will become more relevant when plotting directly to an image file), then you can use the following command:
@@ -94,7 +94,7 @@ Here, the keywords `xrange` and `yrange` are known by gnuplot and take a range f
 For this script, we generate a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_range.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_range.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -118,7 +118,7 @@ unset ytics
 This will create a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_notics.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_notics.png" style="width:70%" />
 </p>
 
 If you want to set particular x or y tic values, use
@@ -131,7 +131,7 @@ set ytics ("bottom" 0 , "top" 1)
 which creates a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_customtics.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_customtics.png" style="width:70%" />
 </p>
 
 Here, we are selecting 3 values to use for the x-axis and using words or phrases for the "bottom" and "top" of the y-axis.
@@ -165,7 +165,7 @@ As a simple example, let's take the `exp(x)` function.
 In gnuplot, we can plot this by using `p exp(x) w l`, which will create the following:
 
 <p>
-    <img  class="center" src="res/gnuplot/exp.png" width="480" />
+    <img  class="center" src="res/gnuplot/exp.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -176,7 +176,7 @@ Now let's plot the same function with log-scale along the $$y$$ axis:
 {% sample lang="gnuplot" %}
 
 <p>
-    <img  class="center" src="res/gnuplot/explog.png" width="480" />
+    <img  class="center" src="res/gnuplot/explog.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -187,7 +187,7 @@ When we use log-scale on the sine and cosine waves from before, we get the follo
 {% method %}
 {% sample lang="gnuplot" %}
 <p>
-    <img  class="center" src="res/gnuplot/sincos_log.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_log.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -215,7 +215,7 @@ p sin(x) w l title "sine wave", cos(x) w l title "cos(x)"
 ```
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_label.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_label.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -239,7 +239,7 @@ set nokey
 which will produce a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_nokey.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_nokey.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -259,7 +259,7 @@ set key top left
 which will produce a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_movekey.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_movekey.png" style="width:70%" />
 </p>
 
 In addition, we can specify exact coordinates in the plot to place the legend.
@@ -272,7 +272,7 @@ set key at 1, 0.5
 which will produce a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_movekey2.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_movekey2.png" style="width:70%" />
 </p>
 
 This is certainly an awful place to put a legend for this plot, but this command could be useful for other plots.
@@ -291,7 +291,7 @@ set title "Gnuplot Test"
 ```
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_title.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_title.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -313,7 +313,7 @@ set size square
 which will output the following plot:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_square.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_square.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -327,7 +327,7 @@ Finally, it's important to show your individuality by choosing your own point an
 To find all the point or line types available in gnuplot, simply open the REPL and run the `test` command, which outputs something that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/test.png" width="480" />
+    <img  class="center" src="res/gnuplot/test.png" style="width:70%" />
 </p>
 
 As a note, changing the line color is not mentioned in the test image above, this can be done with the `linecolor` command, which takes an argument in a color space like `rgb`.
@@ -342,7 +342,7 @@ rep cos(x) w p pt 17 lc rgb "purple" t "cos(x)"
 This will create a plot that looks like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/sincos_lt.png" width="480" />
+    <img  class="center" src="res/gnuplot/sincos_lt.png" style="width:70%" />
 </p>
 
 With this script, we are using a bunch of aliases, which can be found in the following section.
@@ -385,7 +385,7 @@ set terminal pngcairo
 set output "check.png"
 ```
 
-In this case, we are changing the REPL type to work with png images with the cairo back-end, which is a vector drawing library in C.
+In this case, we are changing the REPL type to work with png images with the Cairo back-end, which is a vector drawing library in C.
 We are also setting the output to "check.png".
 
 If we would like to set the resolution of the output image, we could do the following:
@@ -399,9 +399,9 @@ As an example, here is the script for the image we generated above:
 [import, lang:"gnuplot"](code/gnuplot/sine_to_file.gp)
 
 As mentioned above, for a lot of scientific papers and articles, it is worth outputting images into a format that is used commonly for typesetting, such as LaTeX.
-There are multiple ways to create tex output with gnuplot by using different REPL modes like `epslatex`.
+There are multiple ways to create TeX output with gnuplot by using different REPL modes like `epslatex`.
 
-The easiest method to generate a pdf output with gnuplot that uses LaTeX would be to create a `standalone` tex file, like so
+The easiest method to generate a pdf output with gnuplot that uses LaTeX would be to create a `standalone` TeX file, like so
 
 ```
 set terminal epslatex standalone size 10cm, 10cm
@@ -425,7 +425,7 @@ We will have a standalone pdf that uses LaTeX features in the file `out.pdf`.
 This file should look like this:
 
 <p>
-    <img  class="center" src="res/gnuplot/exponential_tex.png" width="480" />
+    <img  class="center" src="res/gnuplot/exponential_tex.png" style="width:70%" />
 </p>
 
 Note that in this process, we create auxiliary files like `*.eps` and `*.aux`, which are expected with LaTeX.
@@ -474,7 +474,7 @@ plot "sample_data.dat" with lines
 Which will provide the following output:
 
 <p>
-    <img  class="center" src="res/gnuplot/1d_sample.png" width="480" />
+    <img  class="center" src="res/gnuplot/1d_sample.png" style="width:70%" />
 </p>
 
 
@@ -498,7 +498,7 @@ splot "sample_data.dat" matrix with image
 ```
 
 <p>
-    <img  class="center" src="res/gnuplot/2d_sample.png" width="480" />
+    <img  class="center" src="res/gnuplot/2d_sample.png" style="width:70%" />
 </p>
 
 {% endmethod %}
@@ -523,7 +523,7 @@ The integer value corresponds to the location of the color on the color bar and 
 This example will output the following plot:
 
 <p>
-    <img  class="center" src="res/gnuplot/2d_sample_cb.png" width="480" />
+    <img  class="center" src="res/gnuplot/2d_sample_cb.png" style="width:70%" />
 </p>
 
 
@@ -554,7 +554,7 @@ p "scatterplot_data.dat" pt 7
 Which will create the following image
 
 <p>
-    <img  class="center" src="res/gnuplot/scatterplot.png" width="480" />
+    <img  class="center" src="res/gnuplot/scatterplot.png" style="width:70%" />
 </p>
 
 Here, we have chosen `pointtype 7`, simply because it is easier to see when compared to the default crosses.
@@ -584,27 +584,27 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 
 {% method %}
 {% sample lang="gnuplot" %}
-- The image "[gnuplot_sine_wave](res/gnuplot/sine.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_wave](res/gnuplot/sincos.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_wave_range](res/gnuplot/sincos_range.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_notics](res/gnuplot/sincos_notics.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_customtics](res/gnuplot/sincos_customtics.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[exp_fn](res/gnuplot/exp.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[exp_fn_log](res/gnuplot/explog.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_log](res/gnuplot/sincos_log.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_label](res/gnuplot/sincos_label.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_nokey](res/gnuplot/sincos_nokey.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_movekey](res/gnuplot/sincos_movekey.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_movekey2](res/gnuplot/sincos_movekey2.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_title](res/gnuplot/sincos_title.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_sine_cosine_square](res/gnuplot/sincos_square.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_wave](res/gnuplot/sine.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_wave](res/gnuplot/sincos.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_wave_range](res/gnuplot/sincos_range.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_notics](res/gnuplot/sincos_notics.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_customtics](res/gnuplot/sincos_customtics.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[exp_fn](res/gnuplot/exp.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[exp_fn_log](res/gnuplot/explog.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_log](res/gnuplot/sincos_log.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_label](res/gnuplot/sincos_label.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_nokey](res/gnuplot/sincos_nokey.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_movekey](res/gnuplot/sincos_movekey.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_movekey2](res/gnuplot/sincos_movekey2.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_title](res/gnuplot/sincos_title.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_square](res/gnuplot/sincos_square.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[gnuplot_test](res/gnuplot/test.png)" was created by the `gnuplot test` command, and gnuplot has [this copyright](https://sourceforge.net/p/gnuplot/gnuplot-main/ci/master/tree/Copyright).
-- The image "[gnuplot_sine_cosine_linetype](res/gnuplot/sincos_lt.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_exp_tex](res/gnuplot/exponential_tex.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_1d_sample](res/gnuplot/1d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_2d_sample](res/gnuplot/2d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_2d_sample_colorbar](res/gnuplot/2d_sample_cb.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[gnuplot_scatterplot](res/gnuplot/scatterplot.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_sine_cosine_linetype](res/gnuplot/sincos_lt.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_exp_tex](res/gnuplot/exponential_tex.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_1d_sample](res/gnuplot/1d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_2d_sample](res/gnuplot/2d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_2d_sample_colorbar](res/gnuplot/2d_sample_cb.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_scatterplot](res/gnuplot/scatterplot.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 {% endmethod %}
 

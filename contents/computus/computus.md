@@ -42,7 +42,7 @@ I have definitely met a few fledgling programmers who feel the same, but none of
 
 One of the most important fans of Gauss's work was Servois, who created a calendar based on Gauss's 1800 publication, shown below:
 
-<img class="center" src="res/servois_1800.png" alt="Servois' 1800 table"  width="750">
+<img class="center" src="res/servois_1800.png" alt="Servois' 1800 table"  style="width:80%">
 
 This calendar shows the date the paschal full moon, indicating that Easter will be the following Sunday {{ "servois" | cite }}.
 In this table, a value greater than 22 indicates the full moon will be on the presented number in March and a value less than 22 indicates the full moon will be on that date in April.
@@ -74,12 +74,12 @@ In most cases, this is approximately 27.5 days {{ "lunar_month_wiki" | cite }}.
 That said, space is complicated and the Moon is not the only revolving body.
 Lunar phases are related to the time it takes for the Moon to return to its location *in relation to* the line connecting the Sun and Earth, as shown below:
 
-<img class="center" src="res/orbit.svg" alt="Synodic half year"  width="750">
+<img class="center" src="res/orbit.svg" alt="Synodic half year"  style="width:90%">
 
 This is called the synodic month and will be the approximation used for this chapter.
 Below, we also show a snapshot of this simulation after 6 synodic months:
 
-<img class="center" src="res/synodic_half_year.png" alt="Synodic half year"  width="750">
+<img class="center" src="res/synodic_half_year.png" alt="Synodic half year"  style="width:90%">
 
 Here, we show an outline of the Earth and Moon in an arbitrary initial position, each with an angle of $$-\frac{\pi}{4}$$ from the horizontal axis.
 In addition, we show the location of the Moon and Earth again after 6 synodic months.
@@ -88,7 +88,7 @@ In this way, the synodic month is the time between two consecutive phases, which
 Each synodic month is approximately 29.5 days, so a synodic year of 12 lunar months is 354 days, which is 11 days shorter than the normal 365 days in a Gregorian year.
 The following is a pictorial representation of offset between a solar and lunar year:
 
-<img class="center" src="res/orbit.png" alt="Full year"  width="750">
+<img class="center" src="res/orbit.png" alt="Full year"  style="width:90%">
 
 Here, we see the Sun at the center, with the Earth and Moon starting the year at an angle of $$-\frac{\pi}{4}$$ from the horizontal axis.
 The initial location of the Earth and Moon are initially shown as an outline with an A at their center.
@@ -137,7 +137,7 @@ $$
 p = \left\lfloor\frac{13+8k}{25}\right\rfloor.
 $$
 
-This expression represents the fact that the Metonic cycle will be 8 days off every 2500 years and adds an additional offset of 13 to ensure the Metonic cycle aligns with emperical observation.
+This expression represents the fact that the Metonic cycle will be 8 days off every 2500 years and adds an additional offset of 13 to ensure the Metonic cycle aligns with empirical observation.
 
 At this point, we know what year we are at on the Metonic calendar and have calculated an offset accordingly; however, we have yet to take into account leap years.
 As stated above, there are 97 leap days every 400 years, and the calculation of $$p$$ above requires correction for the 3 leap days missed.
@@ -185,7 +185,7 @@ Interestingly, this is all the information necessary to replicate Servois's tabl
 From here, we simply need to create a two-dimensional array with the decade on the $$y$$ axis and year on the $$x$$ axis and set within it the value of $$(21+d)~\%~31$$, where the 21 represents the 21st of March, and the $$\%~31$$ comes from the fact that there are 31 days in March.
 For example, if we were to do this computation for the years from 2000 to 2099, we would find the following table:
 
-<img class="center" src="res/servois_2000.png" alt="Servois' 2000 table"  width="750">
+<img class="center" src="res/servois_2000.png" alt="Servois' 2000 table"  style="width:90%">
 
 Which shows that the date of the paschal full moon for 2020 is April 9th.
 Now we can move on to finding the precise date of Easter, which should be the following Sunday
@@ -309,8 +309,8 @@ The text of this chapter was written by [James Schloss](https://github.com/leio)
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The image "[Servois 1800 Colored Table](res/servois_1800.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Servois 1800 Colored Table](res/servois_1800.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[Relative Orbits](res/orbit.svg)" was created by [Xadisten](https://github.com/lockcmpxchg8beax) and was provided during a discussion on Twitch. It is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).
-- The image "[Synodic Half Year](res/synodic_half_year.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[Full Year Orbit](res/orbit.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[Servois 2000 Colored Table](res/servois_2000.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Synodic Half Year](res/synodic_half_year.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Full Year Orbit](res/orbit.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Servois 2000 Colored Table](res/servois_2000.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).

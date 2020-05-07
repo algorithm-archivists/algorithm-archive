@@ -105,7 +105,7 @@ The transformations are quite easy too, isn't that neat?
 {% sample lang="scratch" %}
 You will find this algorithm implemented [in this project](https://scratch.mit.edu/projects/169418273/).
 <p>
-  <img  class="center" src="code/scratch/thomas.svg" width="1000" />
+  <img  class="center" src="code/scratch/thomas.svg" style="width:100%" />
 </p>
 {% sample lang="java" %}
 [import, lang:"java"](code/java/Thomas.java)

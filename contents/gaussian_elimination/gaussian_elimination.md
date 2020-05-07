@@ -523,7 +523,7 @@ Well, this analogy breaks down quickly when we start moving beyond 3D, so it is 
 That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
 
 <div style="text-align:center">
-<video width="560" height="315" autoplay controls loop>
+<video style="width:70%" controls loop>
   <source src="res/GE_vis.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -600,7 +600,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Pull Requests
 
