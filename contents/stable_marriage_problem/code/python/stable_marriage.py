@@ -79,6 +79,7 @@ class Person:
         self.pref_index = 0
         self._partner = None
 
+    @property
     def next_choice(self):
         """Return the next person in the own preference list"""
         if self.pref_index >= len(self.preference):
@@ -88,7 +89,7 @@ class Person:
 
     def propose_to_next(self):
         """Propose to the next person in the own preference list"""
-        person = self.next_choice()
+        person = self.next_choice
         person.candidates.append(self)
         self.pref_index += 1
 
