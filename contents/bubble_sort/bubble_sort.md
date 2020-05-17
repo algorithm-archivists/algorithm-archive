@@ -72,10 +72,12 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 [import:1-11, lang:"v"](code/v/bubble_sort.v)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/bubble_sort.svg" width="400" />
+  <img  class="center" src="code/scratch/bubble_sort.svg" style="width:75%"/>
 </p>
 {% sample lang="coffee" %}
 [import:1-6, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)
+{% sample lang="r" %}
+[import:1-12, lang:"r"](code/r/bubble_sort.R)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
@@ -155,6 +157,8 @@ Trust me, there are plenty of more complicated algorithms that do precisely the 
 The code snippet was taken from this [Scratch project](https://scratch.mit.edu/projects/316483792)
 {% sample lang="coffee" %}
 [import, lang:"coffeescript"](code/coffeescript/bubblesort.coffee)
+{% sample lang="r" %}
+[import, lang:"r"](code/r/bubble_sort.R)
 {% endmethod %}
 
 <script>
