@@ -108,6 +108,8 @@ Regardless, we first need to set all the initial parameters, including the initi
 [import:11-30, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
 [import:17-47, lang:"haskell"](code/haskell/splitOp.hs)
+{% sample lang="rs" %}
+[import:14-51, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 As a note, when we generate our grid in momentum space `k`, we need to split the grid into two lines, one that is going from `0` to `-kmax` and is then discontinuous and goes from `kmax` to `0`.
@@ -129,6 +131,8 @@ Afterwards, we turn them into operators:
 [import:33-54, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
 [import:49-66, lang:"haskell"](code/haskell/splitOp.hs)
+{% sample lang="rs" %}
+[import:53-92, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 Here, we use a standard harmonic potential for the atoms to sit in and a Gaussian distribution for an initial guess for the probability distribution.
@@ -150,6 +154,8 @@ The final step is to do the iteration, itself.
 [import:57-95, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
 [import:68-73, lang:"haskell"](code/haskell/splitOp.hs)
+{% sample lang="rs" %}
+[import:105-155, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 And that's it.
@@ -185,6 +191,8 @@ Checking to make sure your code can output the correct energy for a harmonic tra
 [import:5-127, lang:"python"](code/python/split_op.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/splitOp.hs)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/split_op.rs)
 {% endmethod %}
 
 <script>
