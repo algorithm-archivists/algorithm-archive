@@ -3,12 +3,12 @@
 As I am sure you have heard, the quantum world is weird.
 As you deal with progressively smaller and smaller systems, at some point, it becomes less accurate to describe objects as particles.
 Instead, it is better to describe objects as probability densities.
-These densities are easiest to understand in terms of _wavefunctions_, which are complex functions characterizing a quantum system's behaviour.
+These densities are easiest to understand in terms of _wavefunctions_, which are complex functions characterizing a quantum system's behavior.
 
 Again, this is pretty common knowledge; however, there is a distinct lack of readable literature on how to simulate quantum systems, even though there are numerous methods for exactly that!
 This section will deal with the computation of quantum states with classical machines.
 Now, I know what you are thinking, "Wait. Why are we simulating quantum systems on classical computers? Why not simulate it with some sort of experiment or with quantum computers?"
-Well, here's where the notation get's really sticky.
+Well, here's where the notation gets really sticky.
 
 There is a clear difference between quantum computers and quantum simulators.
 A _quantum computer_ is the quantum analog to a classical computer, replacing bits with qubits by using quantum information theory.
@@ -16,7 +16,7 @@ Quantum computers are usually thought of as a way to use quantum mechanics to ev
 Both Grover's and Shor's algorithms are good examples of cases where quantum computation could greatly change the landscape of modern computation as we know it!
 
 _Quantum simulators_ on the other hand are quantum systems used to better understand quantum mechanics.
-These will often come in the form of experimental quantum systems that express quantum behaviour and allow us to better understand other areas of quantum systems.
+These will often come in the form of experimental quantum systems that express quantum behavior and allow us to better understand other areas of quantum systems.
 In other words, quantum simulators are general techniques to study quantum systems on quantum hardware; however, quantum computers are quantum hardware used for the explicit purpose of quantum computation with qubits.
 Because supercomputers are not great at performing quantum computations, certain quantum simulators exist as a building block for quantum computation.
 A _universal quantum simulator_ is often called a quantum computer for this reason.
@@ -29,7 +29,7 @@ $$
 i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \left[-\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r},t) \right] \Psi(\mathbf{r},t)
 $$
 
-Where $$\Psi(\mathbf{r},t)$$ is a quantum wavefunction, $$V(\mathbf{r},t)$$ is a _trapping potential_, $$\nabla^2$$ is a _laplacian_, $$\mathbf{r}$$ is some sort of spatial component, and $$t$$ is time.
+Where $$\Psi(\mathbf{r},t)$$ is a quantum wavefunction, $$V(\mathbf{r},t)$$ is a _trapping potential_, $$\nabla^2$$ is a _Laplacian_, $$\mathbf{r}$$ is some sort of spatial component, and $$t$$ is time.
 There is a lot to take in here; however, it's ultimately just some time derivative on the left-hand side and a spatial derivative (with some extra steps) on the right-hand side.
 In this way, it isn't too different from the diffusion (heat) equation:
 
@@ -95,18 +95,18 @@ In this case, $$\sigma$$ is the standard deviation, $$\mu$$ is the statistical m
 Ultimately, this means that if we have a higher precision in position space, we will have a lower precision in momentum space.
 The converse is also true: a higher precision in momentum space will lead to a lower precision in position space.
 
-This makes the most sense if we imagine having a gaussian-like probability density ($$|\Psi(x)|^2$$) in position space, which will provide a gaussian-like density when in momentum space.
+This makes the most sense if we imagine having a Gaussian-like probability density ($$|\Psi(x)|^2$$) in position space, which will provide a Gaussian-like density when in momentum space.
 Here, we see that if we have a broader distribution in one space, we must have a thinner distribution in the opposite space, as shown here:
 
 <p>
-    <img  class="center" src="res/gaussian.gif" width="500" />
+    <img  class="center" src="res/gaussian.gif" style="width:70%" />
 </p>
 
 
 Because the density can be interpreted as "the probability of finding a quantum particle at any provided location in position ($$x_i$$) or momentum ($$k_i$$) space, the interpretation is clear: the more we understand about a particle's position, the less we understand about it's momentum.
 This is a powerful statement and should be given some thought.
 
-To me, the most interesting part of this description is not the physical interpretation, but the fact that this act of transforming between larger and smaller gaussians is precisely what Fourier transforms do!
+To me, the most interesting part of this description is not the physical interpretation, but the fact that this act of transforming between larger and smaller Gaussians is precisely what Fourier transforms do!
 This further strengthens our argument from before.
 Position and momentum space are related by the Fourier transform!
 
@@ -269,7 +269,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The animation "[FTgaussian](res/gaussian.gif)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[FTgaussian](res/gaussian.gif)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Pull Requests
 
