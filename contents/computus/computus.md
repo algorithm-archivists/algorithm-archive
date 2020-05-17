@@ -131,7 +131,7 @@ $$
 k = \left\lfloor\frac{\text{year}}{100}\right\rfloor,
 $$
 where $$\lfloor\cdot\rfloor$$ is a flooring operation of rounding the value down to the nearest integer.
-With this, we can calculate the shift in the Metonic cycle to be, 
+With this, we can calculate the shift in the Metonic cycle to be,
 
 $$
 p = \left\lfloor\frac{13+8k}{25}\right\rfloor.
@@ -285,6 +285,8 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 [import, lang:"python"](code/python/gauss_easter.py)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/gauss_easter.cr)
+{% sample lang="c" %}
+[import, lang:"c"](code/c/gauss_easter.c)
 {% endmethod %}
 
 
