@@ -561,6 +561,8 @@ Here, we have chosen `pointtype 7`, simply because it is easier to see when comp
 
 {% endmethod %}
 
+If you are interested in seeing this type of plot generate fractal patterns, please look at the chapter on [iterated function systems](../IFS/IFS.md).
+
 ## Conclusions
 
 Plotting is a powerful tool that is essential for most of computational science.
