@@ -179,7 +179,7 @@ In addition, we have written the chaos game code to take in a set of points so t
 
 {% method %}
 {% sample lang="jl" %}
-[import:4-17, lang:"julia"](code/julia/IFS.jl)
+[import, lang:"julia"](code/julia/IFS.jl)
 {% endmethod %}
 
 ### Bibliography
