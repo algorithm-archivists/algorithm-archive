@@ -9,8 +9,8 @@ def chaos_game(n, shape_points, output_file = "out.dat"):
     with open(output_file, "w") as f:
         for _ in range(n):
             # Update the point position and write it to the file
-            point = [_p + _s for _p, _s in zip(point, choice(shape_points))]
-            f.write(",".join([str(_p) for _p in p]) + '\n')
+            point = [(_p + _s) / 2 for _p, _s in zip(point, choice(shape_points))]
+            f.write(",".join([str(_p) for _p in point]) + '\n')
 
 # This will generate a Sierpinski triangle with a chaos game of n points for an
 # initial triangle with three points on the vertices of an equilateral triangle:
