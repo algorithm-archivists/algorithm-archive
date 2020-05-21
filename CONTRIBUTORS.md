@@ -42,9 +42,10 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Christopher Milan
 - Vexatos
 - Raven-Blue Dragon
-- Björn Heinrichs 
+- Björn Heinrichs
 - Olav Sundfør
 - Ben Chislett
 - dovisutu
 - Antetokounpo
 - Akash Dhiman
+- Jonathan D. B. Van Schenck
