@@ -26,7 +26,7 @@ double drand() {
   return std::uniform_real_distribution<double>(0.0, 1.0)(rng());
 }
 
-// Returns a random integer in [0, numElems-1)
+// Returns a random integer in [0, numElems-1]
 std::size_t randrange(std::size_t numElems) {
   return std::uniform_int_distribution<std::size_t>(0, numElems - 1)(rng());
 }
