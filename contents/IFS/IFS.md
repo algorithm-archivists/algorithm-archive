@@ -171,6 +171,17 @@ Which brings us to another topic entirely: restricted chaos games.
 Discussing restricted chaos games in more detail is a chapter in its own right, so I will forego the discussion here.
 If you are interested, please let me know and I will be more than willing to add the chapter in the future!
 
+## Video Explanation
+
+Here is a video describing iterated function systems:
+
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nIIp-vo8rHg"
+ frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
+ture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 
 For the code in this chapter, we have decided to write it specifically for the Chaos game, not the hutchinson animations shown at the start of the chapter.
