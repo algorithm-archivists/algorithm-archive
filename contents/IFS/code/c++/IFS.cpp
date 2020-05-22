@@ -3,6 +3,7 @@
 #include <random>
 #include <vector>
 
+// Simple X-Y point structure, along with some operators
 struct Point {
   double x, y;
 };
@@ -13,24 +14,29 @@ Point operator*(Point pt, double k) { return k * pt; }
 
 using PointVector = std::vector<Point>;
 
+// Returns a pseudo-random number generator
 std::default_random_engine& rng() {
   // Initialize static pseudo-random engine with non-deterministic random seed
   static std::default_random_engine randEngine(std::random_device{}());
   return randEngine;
 }
 
+// Returns a random double in [0, 1)
 double drand() {
   return std::uniform_real_distribution<double>(0.0, 1.0)(rng());
 }
 
+// Returns a random integer in [0, numElems-1)
 std::size_t randrange(std::size_t numElems) {
   return std::uniform_int_distribution<std::size_t>(0, numElems - 1)(rng());
 }
 
+// Return a random point from the non-empty PointVector
 Point choose(const PointVector& points) {
   return points[randrange(points.size())];
 }
 
+// This is a function to simulate a "chaos game"
 PointVector chaosGame(int numOutputPoints, const PointVector& inputPoints) {
   // Choose first point randomly
   Point curPoint = {drand(), drand()};
