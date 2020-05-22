@@ -129,7 +129,7 @@ Here, instead of tracking children of children, we track a single individual tha
 {% sample lang="jl" %}
 [import:4-17, lang:"julia"](code/julia/IFS.jl)
 {% sample lang="cpp" %}
-[import:32-44, lang:"cpp"](code/c++/IFS.cpp)
+[import:34-46, lang:"cpp"](code/c++/IFS.cpp)
 {% endmethod %}
 
 If we set the initial points to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:

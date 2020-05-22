@@ -23,10 +23,12 @@ double drand() {
   return std::uniform_real_distribution<double>(0.0, 1.0)(rng());
 }
 
-Point chooseRandPoint(const PointVector& points) {
-  auto index =
-      std::uniform_int_distribution<std::size_t>(0, points.size() - 1)(rng());
-  return points[index];
+std::size_t randrange(std::size_t numElems) {
+  return std::uniform_int_distribution<std::size_t>(0, numElems - 1)(rng());
+}
+
+Point choose(const PointVector& points) {
+  return points[randrange(points.size())];
 }
 
 PointVector chaosGame(int numOutputPoints, const PointVector& inputPoints) {
@@ -37,7 +39,7 @@ PointVector chaosGame(int numOutputPoints, const PointVector& inputPoints) {
   PointVector outputPoints(numOutputPoints);
   for (auto& outPoint : outputPoints) {
     outPoint = curPoint;
-    curPoint = 0.5 * (curPoint + chooseRandPoint(inputPoints));
+    curPoint = 0.5 * (curPoint + choose(inputPoints));
   }
 
   return outputPoints;
@@ -47,8 +49,7 @@ int main() {
   // This will generate a Sierpinski triangle with a chaos game of n points for
   // an initial triangle with three points on the vertices of an equilateral
   // triangle.
-  PointVector inputPoints = {
-      {0.0, 0.0}, {0.5, std::sqrt(0.75)}, {1.0, 0.0}};
+  PointVector inputPoints = {{0.0, 0.0}, {0.5, std::sqrt(0.75)}, {1.0, 0.0}};
   auto outputPoints = chaosGame(10000, inputPoints);
 
   // It will output the file sierpinski.dat, which can be plotted after
