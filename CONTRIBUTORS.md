@@ -48,4 +48,5 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - dovisutu
 - Antetokounpo
 - Akash Dhiman
-- Jonathan D. B. Van Schenck
+- Vincent Zalzal
+- Jonathan D B Van Schenck
