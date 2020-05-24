@@ -1,6 +1,9 @@
-monte_carlo(10000000);
+pi_estimate = monte_carlo(10000000);
 
-function monte_carlo(n)
+fprintf("The pi estimate is: %f\n", pi_estimate);
+fprintf("Percent error is: %f%%", 100 * abs(pi_estimate - pi) / pi);
+
+function pi_estimate=monte_carlo(n)
 
     % a 2 by n array, rows are xs and ys
     xy_array = rand(2, n);   
@@ -14,7 +17,5 @@ function monte_carlo(n)
     % determine the average number of points in the circle
     pi_estimate = 4*sum(incircle_array)/n;  
     
-    fprintf("The pi estimate is: %f\n", pi_estimate);
-    fprintf("Percent error is: %f%%", 100 * abs(pi_estimate - pi) / pi);
-    
 end
+

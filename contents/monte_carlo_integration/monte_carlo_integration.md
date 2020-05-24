@@ -92,7 +92,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="kotlin" %}
 [import:3-3, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
 {% sample lang="m" %}
-[import:5-12, lang:"matlab"](code/matlab/monte.m)
+[import:8-15, lang:"matlab"](code/matlab/monte.m)
 {% sample lang="scratch" %}
 <p>
     <img  class="center" src="code/scratch/InCircle.svg" width="314" />
