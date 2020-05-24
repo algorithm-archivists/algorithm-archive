@@ -1,7 +1,7 @@
 pi_estimate = monte_carlo(10000000);
 
 fprintf("The pi estimate is: %f\n", pi_estimate);
-fprintf("Percent error is: %f%%", 100 * abs(pi_estimate - pi) / pi);
+fprintf("Percent error is: %f%%\n", 100 * abs(pi_estimate - pi) / pi);
 
 function pi_estimate=monte_carlo(n)
 
