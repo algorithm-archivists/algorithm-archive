@@ -2,7 +2,17 @@ data Mode = Servois | Easter
 
 computus :: Mode -> Int -> String
 computus mode year =
-    let
+    case mode of
+        Servois ->  
+            -- Value for Servois' table
+            show $ (21 + d) `mod` 31
+
+        Easter ->
+            -- Determination of the correct month for Easter
+            if 22+ d + f > 31
+                then "April " ++ show (d + f - 9)
+                else "March " ++ show (22 + d + f)
+  where
     -- Year's position on the 19 year metonic cycle
     a = year `mod` 19
     
@@ -20,35 +30,22 @@ computus mode year =
 
     -- Number of days from March 21st until the full moon
     d = (19 * a + m) `mod` 30
-    in
-    case mode of
-        -- Returning if user wants value for Servois' table
-        Servois -> 
-            show $ (21 + d) `mod` 31
 
-        -- Finding the next Sunday
-        Easter ->
-            let
-            -- Century-based offset in weekly calculation
-            n = (4 + k - q) `mod` 7
+    -- Finding the next Sunday
+    -- Century-based offset in weekly calculation
+    n = (4 + k - q) `mod` 7
 
-            -- Correction for leap days
-            b = year `mod` 4
-            c = year`mod` 7
+    -- Correction for leap days
+    b = year `mod` 4
+    c = year `mod` 7
 
-            -- Days from d to next Sunday
-            e = (2 * b + 4 * c + 6 * d + n) `mod` 7
+    -- Days from d to next Sunday
+    e = (2 * b + 4 * c + 6 * d + n) `mod` 7
 
-            -- Historical corrections for April 26 and 25
-            f = if (d == 29 && e == 6) || (d == 28 && e == 6 && a > 10)
-                    then -1
-                    else e
-            in
-            -- Determination of the correct month for Easter
-            if 22+ d + f > 31
-                then "April " ++ show (d + f - 9)
-                else "March " ++ show (22 + d + f)
-
+    -- Historical corrections for April 26 and 25
+    f = if (d == 29 && e == 6) || (d == 28 && e == 6 && a > 10)
+        then -1
+        else e
 
 -- Here, we will output the date of the Paschal full moon
 -- (using Servois notation), and Easter for 2020-2030
