@@ -33,9 +33,10 @@ fn computus(year: usize, servois: bool) -> String {
     let temp_e = ((2 * b + 4 * c + 6 * d + n) % 7) as isize;
 
     // Historical corrections for April 26 and 25
-    let e = match (d == 29 && temp_e == 6) || (d == 28 && temp_e == 6 && a > 10) {
-        true => -1,
-        _ => temp_e,
+    let e = if (d == 29 && temp_e == 6) || (d == 28 && temp_e == 6 && a > 10) {
+        -1
+    } else {
+        temp_e
     };
 
     // Determination of the correct month for Easter
