@@ -84,9 +84,9 @@ fn main() {
         let real = rng.gen_range(0.0_f64, 1.0_f64);
         x.push(Complex::new(real, 0.0_f64));
     }
-    let y = cooley_tukey(&x.clone());
-    let z = iterative_cooley_tukey(&x.clone());
-    let t = dft(&x.clone());
+    let y = cooley_tukey(&x);
+    let z = iterative_cooley_tukey(&x);
+    let t = dft(&x);
 
     println!(
         "{}",
