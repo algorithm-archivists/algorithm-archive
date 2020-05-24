@@ -1,5 +1,3 @@
-// This implementation is based on the C++ implementation.
-
 fn thomas(a: &[f64], b: &[f64], c: &[f64], x: &mut Vec<f64>) {
     let size = a.len();
     let mut y = vec![0.0; size];
