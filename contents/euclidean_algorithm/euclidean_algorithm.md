@@ -75,7 +75,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:1-7, lang="scheme"](code/scheme/euclidalg.ss)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/euclid_sub.svg" width="200" />
+  <img  class="center" src="code/scratch/euclid_sub.svg" style="width:30%" />
 </p>
 # leave one line empty:
 
@@ -87,7 +87,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 Here, we simply line the two numbers up every step and subtract the lower value from the higher one every timestep. Once the two values are equal, we call that value the greatest common divisor. A graph of `a` and `b` as they change every step would look something like this:
 
 <p>
-    <img  class="center" src="res/subtraction.png" width="500" />
+    <img  class="center" src="res/subtraction.png" style="width:70%" />
 </p>
 
 Modern implementations, though, often use the modulus operator (%) like so
@@ -163,7 +163,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:9-12, lang="scheme"](code/scheme/euclidalg.ss)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/euclid_mod.svg" width="200" />
+  <img  class="center" src="code/scratch/euclid_mod.svg" style="width:30%" />
 </p>
 # leave one line empty:
 
@@ -175,7 +175,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 Here, we set `b` to be the remainder of `a%b` and `a` to be whatever `b` was last timestep. Because of how the modulus operator works, this will provide the same information as the subtraction-based implementation, but when we show `a` and `b` as they change with time, we can see that it might take many fewer steps:
 
 <p>
-    <img  class="center" src="res/modulus.png" width="500" />
+    <img  class="center" src="res/modulus.png" style="width:70%" />
 </p>
 
 The Euclidean Algorithm is truly fundamental to many other algorithms throughout the history of computer science and will definitely be used again later. At least to me, it's amazing how such an ancient algorithm can still have modern use and appeal. That said, there are still other algorithms out there that can find the greatest common divisor of two numbers that are arguably better in certain cases than the Euclidean algorithm, but the fact that we are discussing Euclid two millennia after his death shows how timeless and universal mathematics truly is. I think that's pretty cool.
@@ -276,7 +276,7 @@ A text version of the program is provided for both versions.
 The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/278727055/)
 
 <p>
-  <img  class="center" src="code/scratch/main.svg" width="200" />
+  <img  class="center" src="code/scratch/main.svg" style="width:30%" />
 </p>
 # leave one line empty:
 
@@ -303,8 +303,8 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The image "[Euclidsub](res/subtraction.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[Euclidmod](res/modulus.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Euclidsub](res/subtraction.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Euclidmod](res/modulus.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 
 ##### Pull Requests
