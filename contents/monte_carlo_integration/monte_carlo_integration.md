@@ -91,6 +91,8 @@ each point is tested to see whether it's in the circle or not:
 [import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
 {% sample lang="kotlin" %}
 [import:3-3, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
+{% sample lang="m" %}
+[import:8-15, lang:"matlab"](code/matlab/monte.m)
 {% sample lang="scratch" %}
 <p>
     <img  class="center" src="code/scratch/InCircle.svg" style="width:40%" />
@@ -193,6 +195,8 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"bash"](code/bash/monte_carlo.bash)
 {% sample lang="kotlin" %}
 [import, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/monte.m)
 {% sample lang="scratch" %}
 The code snippets were taken from this [scratch project](https://scratch.mit.edu/projects/319610349)
 <p>
