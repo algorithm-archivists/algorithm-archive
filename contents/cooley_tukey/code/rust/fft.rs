@@ -65,11 +65,10 @@ fn iterative_cooley_tukey(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
         for j in (0..n).step_by(stride as usize) {
             let mut v = Complex::new(1.0_f64, 0.0_f64);
             for k in 0..((stride / 2) as usize) {
-                let k_plus_j = new_x[k + j];
-                let k_plus_j_plus_half_stride = new_x[k + j + ((stride / 2) as usize)];
-                new_x[k + j + ((stride / 2) as usize)] = k_plus_j - v * k_plus_j_plus_half_stride;
-                let k_plus_j_plus_half_stride_2 = new_x[k + j + ((stride / 2) as usize)];
-                new_x[k + j] -= k_plus_j_plus_half_stride_2 - k_plus_j;
+                new_x[k + j + ((stride / 2) as usize)] =
+                    { new_x[k + j] - v * new_x[k + j + ((stride / 2) as usize)] };
+                new_x[k + j] =
+                    { new_x[k + j] - (new_x[k + j + ((stride / 2) as usize)] - new_x[k + j]) };
                 v *= w;
             }
         }
