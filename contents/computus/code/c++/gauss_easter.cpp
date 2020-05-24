@@ -21,8 +21,9 @@ std::string computus(int year, bool servois = false) {
   int d = (19 * a + M) % 30;
 
   // Returning if user wants value for Servois' table
-  if (servois)
+  if (servois) {
     return std::to_string((21 + d) % 31);
+  }
 
   // Finding the next Sunday
   // Century-based offset in weekly calculation
@@ -36,8 +37,9 @@ std::string computus(int year, bool servois = false) {
   int e = (2 * b + 4 * c + 6 * d + N) % 7;
 
   // Historical corrections for April 26 and 25
-  if ((d == 29 && e == 6) || (d == 28 && e == 6 && a > 10))
+  if ((d == 29 && e == 6) || (d == 28 && e == 6 && a > 10)) {
     e = -1;
+  }
 
   // Determination of the correct month for Easter
   return 22 + d + e > 31 ? "April " + std::to_string(d + e - 9)
@@ -51,7 +53,8 @@ int main() {
                "Servois notation) and the date of Easter for 2020-2030 AD:\n"
                "Year\tServois number\tEaster\n";
 
-  for (int year = 2020; year <= 2030; year++)
+  for (int year = 2020; year <= 2030; year++) {
     std::cout << year << "\t\t" << computus(year, true) << '\t'
               << computus(year) << std::endl;
+  }
 }
