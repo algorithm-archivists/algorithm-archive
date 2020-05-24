@@ -19,7 +19,7 @@ fn dft(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
                 })
                 .sum()
         })
-        .collect::<Vec<_>>()
+        .collect()
 }
 
 fn cooley_tukey(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
