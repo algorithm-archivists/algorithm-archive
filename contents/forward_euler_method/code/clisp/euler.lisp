@@ -5,7 +5,7 @@
   (loop
     with result = (make-array n :initial-element 1)
     for i from 1 upto (1- n) do
-      (setf (svref result i) (- (svref result (1- i)) (* 3 (svref result (1- i)) timestep)))
+    (setf (svref result i) (- (svref result (1- i)) (* 3 (svref result (1- i)) timestep)))
     finally (return result)))
 
 (defun approximatep (result threshold timestep)
@@ -14,14 +14,14 @@
     with approximatep = t
     with solution = 0
     for i from 0 upto (1- (length result)) do
-      (setf solution (exp (* (- 3) i timestep)))
-      (when (> (- (svref result i) solution) threshold)
-        (setf approximatep nil)
-        (format t "~d ~d~%" (svref result i) solution))
+    (setf solution (exp (* (- 3) i timestep)))
+    (when (> (- (svref result i) solution) threshold)
+      (setf approximatep nil)
+      (format t "~d ~d~%" (svref result i) solution))
     finally (return approximatep)))
 
 (defvar timestep 0.01)
-(defvar n 100) ;number of steps
+(defvar n 100) ; number of steps
 (defvar threshold 0.01)
 
 (defvar result (solve-euler timestep n))
