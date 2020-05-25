@@ -72,7 +72,7 @@ function DFS_recursive_inorder_btree(n)
         fprintf('%u ', ID)
         DFS_recursive_inorder_btree(children{2})
     elseif length(children) == 1
-        if length(children{1})
+        if ~isempty(children{1})
             DFS_recursive_inorder_btree(children{1})
         end
         fprintf('%u ', ID)
@@ -86,7 +86,7 @@ function DFS_stack(n)
     cell_index = @(a, b) a{b};
     node_stack = {n};
     
-    while length(node_stack) > 0
+    while ~isempty(node_stack)
     
         parent = node_stack{end};
         node_stack(end) = [];
@@ -110,7 +110,7 @@ function BFS_queue(n)
     cell_index = @(a, b) a{b};
     node_queue = {n};
     
-    while length(node_queue) > 0
+    while ~isempty(node_queue)
         next_nodes = {};
         for parent_cell = node_queue
             parent = parent_cell{1};
