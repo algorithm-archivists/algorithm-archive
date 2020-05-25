@@ -38,7 +38,7 @@ function DFS_recursive(n)
     children = cell_index(values(n), 1);
     for i = children
         child = i{1};
-        if length(child)
+        if ~isempty(child)
             DFS_recursive(child);
         end
     end
@@ -51,7 +51,7 @@ function DFS_recursive_postorder(n)
     children = cell_index(values(n), 1);
     for i = children
         child = i{1};
-        if length(child)
+        if ~isempty(child)
             DFS_recursive_postorder(child);
         end
     end
@@ -98,7 +98,7 @@ function DFS_stack(n)
         
         for i = flip(children)
             child = i{1};
-            if length(child)
+            if ~isempty(child)
                 node_stack = {node_stack{:} child};
             end
         end
@@ -119,7 +119,7 @@ function BFS_queue(n)
             children = cell_index(values(parent), 1);
             for i = children
                 child = i{1};
-                if length(child)
+                if ~isempty(child)
                     next_nodes = {next_nodes{:}, child};
                 end
             end
@@ -146,4 +146,5 @@ function main()
 
     fprintf('\nBFS Queue\n')
     BFS_queue(root) 
+    fprintf('\n')
 end
