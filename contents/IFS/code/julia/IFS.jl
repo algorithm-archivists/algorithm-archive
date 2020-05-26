@@ -1,19 +1,19 @@
 using DelimitedFiles
 
 # This is a function to simulate a "chaos game"
-function chaos_game(n::Int, shape_points; output_file="out.dat")
+function chaos_game(n::Int, shape_points)
 
     # Initializing the output array and the initial point
-    out = zeros(n,2)
+    output_points = zeros(n,2)
     point = [rand(), rand()]
 
     for i = 1:n
-        out[i,:] .= point
+        output_points[i,:] .= point
         point = 0.5*(rand(shape_points) .+ point)
     end
 
-    writedlm(output_file, out)
-    
+    return output_points
+
 end
 
 # This will generate a Sierpinski triangle with a chaos game of n points for an 
@@ -25,4 +25,5 @@ end
 shape_points = [[0.0, 0.0],
                 [0.5, sqrt(0.75)],
                 [1.0, 0.0]]
-chaos_game(10000, shape_points)
+output_points = chaos_game(10000, shape_points)
+writedlm("out.dat", output_points)

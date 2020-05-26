@@ -133,6 +133,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang="ruby"](code/ruby/thomas.rb)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/thomas.js)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/thomas.rs)
 {% endmethod %}
 
 <script>
