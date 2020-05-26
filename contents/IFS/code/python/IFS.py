@@ -1,5 +1,5 @@
 from random import random, choice
-from math import sqrt, sin, cos, pi
+from math import sqrt
 
 # This generator simulates a "chaos game"
 def chaos_game(n, shape_points):
@@ -8,7 +8,7 @@ def chaos_game(n, shape_points):
 
     for _ in range(n):
         # Update the point position and yield the result
-        point = [(_p + _s) / 2 for _p, _s in zip(point, choice(shape_points))]
+        point = [(p + s) / 2 for p, s in zip(point, choice(shape_points))]
         yield point
 
 # This will generate a Sierpinski triangle with a chaos game of n points for an
@@ -22,4 +22,4 @@ shape_points = [[0.0, 0.0],
                 [1.0, 0.0]]
 with open("sierpinski.dat", "w") as f:
     for point in chaos_game(10000, shape_points):
-        f.write("{0},{1}\n".format(*point))
+        f.write("{0}\t{1}\n".format(*point))
