@@ -1,0 +1,22 @@
+<(((x) * (x)) + ((y) * (y))) < ((radius) * (radius)) >
+
+
+define Monte Carlo with point number (num)
+set [Count v] to (0)
+repeat (num)
+    set [x v] to (pick random (0.0) to (1.0))
+    set [y v] to (pick random (0.0) to (1.0))
+    if <(((x) * (x)) + ((y) * (y))) < ((radius) * (radius)) > then // the radius is 1
+        change [Count] by (1)
+    end
+end
+set [EstPI v] to ((4) * ((Count) / (num)))
+
+when @greenflag clicked
+set [PI v] to (3.1415926535897932384626433832795028841971493993)
+ask [Number of point?] and wait
+Monte Carlo with point number (answer)
+say [Pi estimate done.] for (2) seconds
+say (join [Estimate pi: ] (EstPI)) for (2) seconds
+say (join [Real Pi: ] (PI)) for (2) seconds
+say (join [Percent Error: ] (join ((([abs v] of ((EstPI) - (PI))) / (PI)) * (100)) [%])) for (2) seconds

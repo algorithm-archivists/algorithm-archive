@@ -1,4 +1,4 @@
-function bubble_sort(arr)
+local function bubble_sort(arr)
   for i = 1,#arr-1 do
     for j = 1,#arr-1 do
       if arr[j] > arr[j+1] then
