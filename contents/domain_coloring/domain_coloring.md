@@ -1,30 +1,34 @@
 # Domain coloring
 
-Domain coloring is a much more complicated plotting technique than those outlined above and is used to plot complex functions where both the input and output have imaginary and real components.
-Imagine the following function:
+Domain coloring is a much more complicated plotting technique than those outlined in the [plotting chapter](../plotting/plotting.md) and is used to plot complex functions where both the input and output have imaginary and real components.
+As stated in similar chapters, when discussing plotting methods, we will focus on plotting languages, instead of languages meant for number crunching or other purposes.
+That is to say that this chapter will certainly have a code implementation in gnuplot, but it will not likely have an implementation in C, Fortran, or Java because these chapters do not have plotting capabilities in-built.
 
-$$f(z) = z^2$$
-
+Imagine the following function: $$f(z) = z^2$$.
 In this case, we could create a plot that looks like this:
 
-ADD IMAGE
+<p>
+    <img  class="center" src="res/z2.png" style="width:70%" />
+</p>
 
-This indicated that for various input values along $$z$$, we have different function outputs from $$f(z)$$.
+This indicates that for various input values along $$z$$, we have different function outputs from $$f(z)$$.
 
-Unfortunately, complex variables and functions cannot be easily plotted in this way because the input variable and the output of $$f(z)$$ both need a two-dimensional space for plotting -- one axis for their real component and another for their imaginary component.
-
-Now let's imagine another function:
+Now let's imagine another function with complex input $$(z \in \mathbb{C})$$, but a purely real output $$(f(z) \in \mathbb{R})$$:
 
 $$f(z) = |z|$$
 
 In this case, each complex input has a real output.
 This can be plotted as a two-dimensional dataset like so:
 
-Here, the $$x$$-axis and $$y$$-axis represent the real and imaginary components of the input variable respectively.
+<p>
+    <img  class="center" src="res/absz.png" style="width:84%" />
+</p>
 
-Here we see the problem.
-If the output also requires plotting of the real and imaginary components, we need four dimensions to appropriately represent complex functions!
-Unfortunately, feeble human minds are incapable of understanding four spatial dimensions, so we need to imoprovise.
+Here, the $$x$$-axis and $$y$$-axis represent the real and imaginary components of the input variable, respectively.
+
+At this point, we can start to see the problem.
+If the output of $$f(z)$$ also requires plotting of the real and imaginary components, then we would need four dimensions to appropriately represent complex functions, one axis for their real component and another for their imaginary component of both the input ($$z$$) and the output of $$f(z)$$!
+Unfortunately, feeble human minds are incapable of understanding four spatial dimensions without projecting onto lower dimensionality, so we need to improvise.
 
 We do this by assuming the complex output can be represented in the following form:
 
@@ -35,14 +39,19 @@ This is the formula for a circle in the complex plane and we can easily find $$r
 
 $$
 \begin{align}
-    r &= \sqrt{\text{real}(z)^2 + \text{imag}(z)^2} \\
-    \theta &= 
+    r &= \sqrt{\text{Re}(z)^2 + \text{Im}(z)^2} \\ 
+    \theta &= \text{atan}(\frac{\text{Im}(z)}{\text{Re}(z)})
 \end{align}
 $$
 
-Where $$\text{real}(z)$$ and $$\text{image}(z)$$ represent the real and imaginary components of $$z$$.
+Once we have our complex function output in this form, we then color the output domain according to a number space with 2 or more dimensions, for example black and white, RGB (Red, Green, Blue), or HSV (Hue, Saturation, Value).
+The choice of color space is completely dependent on what the users feel is most visually intuitive.
+In any case, one dimension of the color system will be used to represent the complex magnitude of the output and another dimension of the color system will be used to represent the complex phase.
+The $xy$ grid will be representing the real and imaginary inputs to these functions.
+That is to say, we plug every value in the 2D complex plane into the function and then color each pixel based on the function output.
 
-Once we have our complex function output in this form, we then color the output domain according to a number space with more than 2 dimensions -- Often HSV or HSL.
+As an example, let's again look at the fuction $$f(z) = z^2$$, but in this case $$z \in \mathbb{C}$$.
+
 
 THESE WORK LIKE SO
 
@@ -56,8 +65,11 @@ $$
 \end{align}
 $$
 
-### Algorithms using this method:
-- Split operator method
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+## License
 
 ##### Code Examples
 
