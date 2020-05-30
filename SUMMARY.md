@@ -4,6 +4,7 @@
 * [Introduction](contents/introduction/introduction.md)
 * [How To Contribute](contents/how_to_contribute/how_to_contribute.md)
 * [Plotting](contents/plotting/plotting.md)
+    * [Iterated Function Systems](contents/IFS/IFS.md)
 * [Data Structures](contents/data_structures/data_structures.md)
     * [Stacks and Queues](contents/stacks_and_queues/stacks_and_queues.md)
 * [Mathematical Background](contents/mathematical_background/mathematical_background.md)

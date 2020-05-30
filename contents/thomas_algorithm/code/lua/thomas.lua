@@ -1,4 +1,4 @@
-function thomas(a, b, c, d)
+local function thomas(a, b, c, d)
 
   -- Create tables and set initial elements
   local c_prime = {c[1] / b[1]}

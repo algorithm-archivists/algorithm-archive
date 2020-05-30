@@ -208,6 +208,10 @@
         {
           "lang": "kotlin",
           "name": "Kotlin"
+        },
+        {
+          "lang": "vim",
+          "name": "VimL"
         }
       ]
     }
