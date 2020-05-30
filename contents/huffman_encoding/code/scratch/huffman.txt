@@ -1,17 +1,18 @@
 define Huffman encodes (string)
 set [encoded v] to () // empty here
-if <(string) = ()> then
+if <(string) = ()> then // empty here
 else
     delete all of [Letter-Node Pointer v]
     delete all of [Nodes' Values List v]
     delete all of [Operating Nodes' List v]
     delete all of [Node-lhs Index v]
+    delete all of [Node-rhs Index v]
     delete all of [bit list v]
     delete all of [codebook v]
     initialize leaves with (string)
     make tree
     if <(0) = (item (root) of [Node-lhs Index v])> then
-        binary count
+        binary count // special care: see issue #659
     else
         repeat (length of [Letter-Node Pointer v])
             add (plcaceholder) to [codebook v]
@@ -24,7 +25,7 @@ end
 define initialize leaves with (string)
 set [i v] to (1)
 repeat (length of (string))
-    if <[Letter-Node Pointer v] contains (letter (i) of (string))> then // increment
+    if <[Letter-Node Pointer v] contains (letter (i) of (string))> then // increment: if didn't exist, add it
         set [temp v] to ((1) + (item (item # of (letter (i) of (string)) in [Letter-Node Pointer v]) of [Nodes' Values List v]))
         replace item (item # of (letter (i) of (string)) in [Letter-Node Pointer v]) of [Nodes' Values List v] with (tmp)
     else
@@ -76,8 +77,8 @@ end
 set [root v] to (length of [Nodes' Values List])
 
 define generate codebook from (root) // depth-first search
-if <(0) = (item (root) of [Node-lhs Index v])> then
-    set [tmp v] to () // empty hehre
+if <(0) = (item (root) of [Node-lhs Index v])> then // reached a leaf
+    set [tmp v] to () // empty here
     set [i v] to (1)
     repeat (length of [bit list v])
         set [tmp v] to (join (tmp) (item (i) of [bit list v]))
