@@ -16,7 +16,6 @@ def main():
         # did not set it as a number, use default value of 5
         num_pairs = 5
 
-
     # There are only 26 possible names for each sex
     if num_pairs > 26:
         print("You can't have more than 26 pairs.")
@@ -36,23 +35,27 @@ def main():
         shuffle(woman.preference)
 
     # Run the algorithm
-    resolve(men, women)
+    stable_marriage(men, women)
 
     # Print preferences and the result
+    print('Preferences of the men:')
     for man in men:
-        print(f"{man.name}: {', '.join((p.name for p in man.preference))}")
+        print(f'{man.name}: {", ".join((p.name for p in man.preference))}')
 
-    print('')
+    print()
 
+    print('Preferences of the women:')
     for woman in women:
-        print(f"{woman.name}: {', '.join((p.name for p in woman.preference))}")
+        print(f'{woman.name}: {", ".join((p.name for p in woman.preference))}')
 
     print('\n')
 
+    print('The algorithm gave this solution:')
     for man in men:
         print(f'{man.name} + {man.partner.name}')
 
-def resolve(men, women):
+
+def stable_marriage(men, women):
     """Finds pairs with stable marriages"""
 
     while True:
@@ -120,21 +123,22 @@ class Person:
         person as well"""
 
         # Do nothing if nothing would change
-        if person != self.partner:
+        if person != self._partner:
             # Remove self from current partner
-            if self.partner is not None:
+            if self._partner is not None:
                 self._partner._partner = None
 
             # Set own and the other person's partner
             self._partner = person
-            if self.partner is not None:
+            if self._partner is not None:
                 self._partner._partner = self
 
-    # This allows use of self.has_parnter instead of self.has_partner()
+    # This allows use of self.has_partner instead of self.has_partner()
     @property
     def has_partner(self):
         """Determine whether this person currently has a partner or not."""
         return self.partner is not None
+
 
 if __name__ == '__main__':
     main()
