@@ -58,6 +58,8 @@ Here is a video describing the stable marriage problem:
 [import, lang:"php"](code/php/stable_marriage.php)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/stable_marriage.scala)
+{% sample lang="rust" %}
+[import, lang:"rust"](code/rust/stable_marriage.rs)
 {% endmethod %}
 
 <script>
