@@ -50,3 +50,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Akash Dhiman
 - Vincent Zalzal
 - Jonathan D B Van Schenck
+- Ishaan Verma

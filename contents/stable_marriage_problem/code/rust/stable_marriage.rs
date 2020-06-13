@@ -123,7 +123,7 @@ fn main() {
         }
     }
 
-    println!("\nPairs: ");
+    println!("\nStable Matching: ");
     for man in &men {
         match man.partner {
             Some(p) => {
