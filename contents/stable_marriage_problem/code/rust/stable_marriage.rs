@@ -1,136 +1,107 @@
-#[derive(Eq, PartialEq, PartialOrd)]
+use std::vec::Vec;
+use std::collections::HashMap;
+use std::fmt;
+
+#[derive(Hash, Eq, PartialEq, Copy, Clone)]
+struct PersonId(pub char);
+
+impl fmt::Display for PersonId {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", self.0)
+    }
+}
+
+#[derive(Clone)]
 struct Person {
-    name: char,     // a single character denoting the person e.g 'A', 'B', 'F'
-    index: usize,   // index in men/women vecotr
-    preference: Vec<usize>,
-    pref_index: usize,
-    candidates: Vec<usize>, // all those men/women who have proposed to self
-    partner: Option<usize>
+    id: PersonId,
+    partner: Option<PersonId>,
+    preferences: Vec<PersonId>,
 }
 
-impl Person {
-    fn propose_to_next(&mut self, women: &mut Vec<Person>) {
-        /* propose to next most preferred person */
+fn gale_shapley(people: Vec<Person>) -> HashMap<PersonId, PersonId> {
+    let mut stable_matching: HashMap<PersonId, PersonId> = HashMap::new();
 
-        if self.pref_index >= self.preference.len() {
-            ()
-        }
+    for person in people {
+        let partner = stable_matching
+            .get(&person.id)
+            .or_else(||     // execute this if person doesn't have partner
+                person.preferences
+                .iter()
+                // skip all preferences which already have a pair
+                .skip_while(|id| stable_matching.contains_key(id))
+                .next()
+            )
+            .map(|&id| id);
 
-        let person = self.preference[self.pref_index];
-        // add self to the preferred woman's candidates
-        women[person].candidates.push(self.index);
-
-        self.pref_index += 1;
-
-    }
-
-    fn pick_preferred(&mut self, men: &mut Vec<Person>) {
-        /* pick the highest preferred man among candidates */
-
-        for person in &self.preference {
-            if Some(*person) == self.partner {
-                break
-            } else if self.candidates.contains(&person) {
-                match self.partner {
-                    Some(ind) => {
-                        // If self currently has a partner, set self's partner's partner to None
-                        men[ind].partner = None;
-                    },
-                    None => {
-                        self.partner = Some(*person);
-                        men[*person].partner = Some(self.index);
-                    }
-                }
-                break
-            }
+        if let Some(partner) = partner {    // set partner
+            stable_matching.insert(person.id, partner);
+            stable_matching.insert(partner, person.id);
         }
     }
-
-}
-
-fn init_person(name: char, index: usize, pref: Vec<usize>) -> Person {
-    let person = Person {
-        name: name,
-        index: index,
-        preference: pref,
-        pref_index: 0,
-        candidates: Vec::new(),
-        partner: None
-    };
-    person
+    stable_matching
 }
 
 fn main() {
-    let mut men = vec![
-        init_person('A', 0, vec![1, 0, 3, 2]),
-        init_person('B', 1, vec![3, 0, 2, 1]),
-        init_person('C', 2, vec![2, 3, 1, 0]),
-        init_person('D', 3, vec![1, 2, 0, 3])
-    ];
+    // create men vector
+    let men: Vec<Person> = vec![
+        ('A', vec!['E', 'G', 'F', 'H']),
+        ('B', vec!['F', 'H', 'E', 'F']),
+        ('C', vec!['F', 'E', 'H', 'G']),
+        ('D', vec!['E', 'H', 'F', 'G'])
+    ]
+    .into_iter()
+    .map(|(id, pref)|
+        Person {
+            id: PersonId(id),
+            partner: None,
+            preferences: pref.into_iter().map(PersonId).collect(),
+        }
+    ).collect();
 
-    let mut women = vec![
-        init_person('E', 0, vec![3, 2, 0, 1]),
-        init_person('F', 1, vec![0, 2, 1, 3]),
-        init_person('G', 2, vec![0, 1, 2, 3]),
-        init_person('H', 3, vec![2, 0, 1, 3])
-    ];
+    // create women vector
+    let women: Vec<Person> = vec![
+        ('E', vec!['A', 'D', 'C', 'B']),
+        ('F', vec!['D', 'B', 'A', 'C']),
+        ('G', vec!['D', 'A', 'C', 'B']),
+        ('H', vec!['B', 'A', 'D', 'C'])
+    ]
+    .into_iter()
+    .map(|(id, pref)|
+        Person {
+            id: PersonId(id),
+            partner: None,
+            preferences: pref.into_iter().map(PersonId).collect(),
+        }
+    ).collect();
 
-    println!("Men: ");
+    let people: Vec<Person> = men.iter().cloned().chain(
+        women.iter().cloned()).collect();
+
+    println!("Men: \n");
     for man in &men {
-        println!("\t{}, preference = {:?}", man.name, {
-            let mut vect: Vec<char> = Vec::new();
-            for man in &man.preference {
-                vect.push(women[*man].name);
-            }
-            vect
-        });
+        println!("\t{}: {:?}", man.id, man.preferences.clone()
+            // convert men.preference to vector of chars
+            .into_iter()
+            .map(|person| person.0)
+            .collect::<Vec<char>>());
     }
-
-    println!("Women: ");
+    println!("Women: \n");
     for woman in &women {
-        println!("\t{}, preference = {:?}", woman.name, {
-            let mut vect: Vec<char> = Vec::new();
-            for woman in &woman.preference {
-                vect.push(men[*woman].name);
-            }
-            vect
-        });
+        println!("\t{}: {:?}", woman.id, woman.preferences.clone()
+            // convert women.preference to vector of chars
+            .into_iter()
+            .map(|person| person.0)
+            .collect::<Vec<char>>());
     }
 
+    let stable_matching: HashMap<PersonId, PersonId> = gale_shapley(people);
 
-    /* Resolve */
-    let mut cont = true;
-    while cont {
-        // Each man proposes to his highest preference
-        for man in &mut men {
-            if man.partner.is_none() {
-                man.propose_to_next(&mut women);
-            }
-        }
-
-        // Each woman picks here highest preference
-        for woman in &mut women {
-            woman.pick_preferred(&mut men);
-        }
-
-        // If there is a single man who does not have a partner, continue resolving
-        cont = false;
-        for man in &men {
-            if man.partner.is_none() {
-                cont = true;
-                break;
-            }
-        }
-    }
-
-    println!("\nStable Matching: ");
-    for man in &men {
-        match man.partner {
-            Some(p) => {
-                println!("\t{} + {}", man.name, women[p].name);
-            },
+    // display stable matches
+    for man in men {
+        let partner_id = stable_matching.get(&man.id);
+        match partner_id {
+            Some(p) => println!("{} + {}", man.id, p),
             None => ()
         }
     }
-
 }
