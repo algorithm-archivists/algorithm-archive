@@ -132,6 +132,8 @@ Here, instead of tracking children of children, we track a single individual tha
 [import:39-52, lang:"cpp"](code/c++/IFS.cpp)
 {% sample lang="py" %}
 [import:5-12, lang:"python"](code/python/IFS.py)
+{% sample lang="c" %}
+[import:18-29, lang:"c"](code/c/IFS.c)
 {% endmethod %}
 
 If we set the initial points to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
@@ -199,6 +201,8 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"cpp"](code/c++/IFS.cpp)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/IFS.py)
+{% sample lang="c" %}
+[import, lang:"c"](code/c/IFS.c)
 {% endmethod %}
 
 ### Bibliography
