@@ -45,19 +45,19 @@ set samples 1000, 1000
 # setting functions necessary for domain coloring
 # setting threshold for gridlines. Smaller threshold will make smaller lines
 thresh = 0.1
-#f(z) = z
-f(z) = z**2
+f(z) = z
+#f(z) = z**2
 
 rgb(r,g,b) = 65536 * int(r) + 256 * int(g) + int(b)
 angle(x,y) = (pi + atan2(-y,-x)) / (2*pi)
 r(x,y) = sqrt(x*x + y*y)
-theta(x,y) = atan2(x,y)
+theta(x,y) = atan2(y,x)
 z(x,y) = r(x,y)*exp(theta(x,y)*sqrt(-1))
 ip(x,y) = imag(z(x,y))
 rp(x,y) = real(z(x,y))
 if(z) = imag(f(z))
 rf(z) = real(f(z))
-color(x,y) = rgb(angle(rf(z(x,y)), if(z(x,y)))*255, 0, abs(f(z(x,y)))*255/8)
+color(x,y) = rgb(angle(rf(z(x,y)), if(z(x,y)))*255, 0, abs(f(z(x,y)))*255/sqrt(8))
 save_encoding = "utf8"
 
 # Last datafile plotted: "++"
