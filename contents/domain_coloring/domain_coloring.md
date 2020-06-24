@@ -164,6 +164,11 @@ We will be using domain coloring in other contexts throughtout this text when de
 
 Here is the full script to generate a domain colored output of $$f(z)=z^2$$.
 
+{% method %}
+{% sample lang="gnuplot" %}
+[import, lang:"gnuplot"](code/gnuplot/domain_coloring.gp)
+{% endmethod %}
+
 ### Bibliography
 
 {% references %} {% endreferences %}
@@ -177,12 +182,6 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 ##### Code Examples
 
 The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
-
-{% method %}
-{% sample lang="gnuplot" %}
-[import, lang:"gnuplot"](code/gnuplot/domain_coloring.gp)
-{% endmethod %}
-
 
 ##### Text
 
