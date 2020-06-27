@@ -61,9 +61,9 @@ If we use an RGB color scheme, where red represents $$\theta$$ and blue represen
     <img  class="center" src="res/rgb1.png" style="width:84%" />
 </p>
 
-As a note here, there is a clear phase discontinuity along the vertical axis.
-That is to say that the complex phase wraps around the origin, ranging from 0 (clear) to $$2\pi$$ (red).
-In addition, the edges of the plot are blue because the function value increases linearly as we move from the origin.
+As a note here, there is a clear phase discontinuity along the horizontal axis, which is a consequence of the fact that
+the complex phase wraps around the origin, ranging from 0 (clear) to $$2\pi$$ (red).
+In addition, the edges of the plot are blue because the function's magnitude increases linearly as we move from the origin.
 
 If we instead look at the function $$f(z) = z^2$$, we can generate a similar plot:
 
@@ -75,20 +75,20 @@ Here, it is clear that the complex phase wraps around the origin twice, creating
 This indicates a $$4\pi$$ phase winding.
 For some purposes, such as vortex tracking for inviscid fluids, this visualization is ideal, because a vortex is located precisely at the center of the phase discontinuity {{ "schloss2019" | cite }} {{ "pethick2008" | cite }}.
 For other purposes, the discontinuity is visually distracting, and for this reason, many people use an HSV scheme for plotting complex functions {{ "wegert2012" | cite }} {{ "poelkedomain" | cite }} {{ "lundmark2004" | cite }}.
-So here is the same function $$\left(f(z)=z^2\right)$$, but using hue to represent the complex phase and saturation to represent the magnitude.
+So here is the same function $$\left(f(z)=z^2\right)$$, but using hue to represent the complex phase and saturation to represent the magnitude:
 
 <p>
     <img  class="center" src="res/hsv.png" style="width:84%" />
 </p>
 
-Here, the value for HSV was always set to 1.
+In this plot, the Value for HSV was always set to 1.
 When looking at the edges of the plot, the hue changes rapidly, but each color is mirrored on the opposite edge.
 This indicates the $$4\pi$$ phase winding we saw in the RGB plot.
 Also, because the complex magnitude increases as we move further from the center of the plot, the saturation also increases.
 Thus the center of the plot is completely washed out!
 We need to fix this in subsequent plots to make them more representative of the actual data.
 
-One easy way to show that the complex magnitude is increasing as we move further from the origin is with contours.
+One easy way to show the increasing complex magnitude without sacrificing phase information is by using contours.
 Essentially, at ever integer value of the magnitude, we want to draw some kind of line.
 There are a number of ways to generate these lines, and one simple way is by using an alternative shading function like so:
 
@@ -133,7 +133,7 @@ If we draw lines on this plot, corresponding to integer values in the output, we
 
 Like before, the choice of which function to use in order to create the grid lines is somewhat arbitrary.
 It is important to choose a function that sharply drops to 0 or peaks at 1 for all integer values, and then we simply plug values of $$f(z)$$ into this function.
-For these purposes, we chose the following function
+For the purposes of this chapter, we chose the following function
 
 $$
 h(z) = |\sin(\pi\times\text{Re}(f(z)))^t|\times|\sin(\pi\times\text{Im}(f(z)))^t|,
@@ -154,11 +154,18 @@ So, putting it all together and returning to the function of $$f(z) = z^2$$, we 
 
 Here, the diagonal lines through the center represent integer values along the imaginary axis for $$f(z)$$ and the vertical and horizontal lines represent integer values of the real axis for $$f(z)$$.
 An easy way to determine which lines correspond to which integer values is by plugging in certain values for $$z$$ into $$f(z)$$.
-For example, there is a black line at $$z = 1 + 1i$$ where $$f(z) = 2i$$, this means that all values along that contour correspond to values that are constrainged to having an imaginary component of precisely 2.
+For example, there is a black line at $$z = 1 + 1i$$ where $$f(z) = 2i$$, this means that all values along that contour correspond to values that are constrained to having an imaginary component of precisely 2.
 
 Overall, there are plenty of interesting ways to plot complex functions and make really compelling and beautiful images!
-We will be using domain coloring in other contexts throughtout this text when describing methods that heavily use complex space.
+We will be using domain coloring in other contexts throughout this text when describing methods that heavily use complex space.
 
+## Video Explanation
+
+Here is a video describing domain coloring:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EbanExb75mc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Example Code
 
