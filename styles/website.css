@@ -20,6 +20,11 @@ img.center {
   color: #4183C4;
 }
 
-.search-results-item h3{
-  color: #7C746F;
+#book-search-results .search-results .has-results .search-results-item a {
+  color: #777;
+}
+
+
+#book-search-input input, #book-search-input input:focus, #book-search-input input:hover{
+  color: #222;
 }
