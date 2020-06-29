@@ -6,15 +6,14 @@ node_js:
   - "12"
 
 install:
-  - npm install gitbook-cli -g
-  - gitbook install
+  - npm install honkit -g
 
 before_script:
   - mkdir -p "${TRAVIS_BUILD_DIR}"/build
 
 script:
   - env | sort
-  - gitbook build . "${TRAVIS_BUILD_DIR}"/build
+  - honkit build . "${TRAVIS_BUILD_DIR}"/build
 
 after_success:
     - |
