@@ -1,11 +1,26 @@
 extern crate num;
 extern crate rand;
+extern crate rustfft;
 
 use num::complex::Complex;
 use rand::prelude::*;
+use rustfft::FFTplanner;
 use std::f64::consts::PI;
 
-// This is based on the Python implementation.
+// This is based on the Python and C implementations.
+
+fn fft(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
+    let n = x.len();
+    let mut new_x = x.to_vec();
+    let mut y = vec![Complex::new(0.0_f64, 0.0_f64); n];
+
+    let mut planner = FFTplanner::new(false);
+    let transformer = planner.plan_fft(n);
+    transformer.process(&mut new_x, &mut y);
+
+    // y.into_iter().map(|i| i / (n as f64).sqrt()).collect()
+    y
+}
 
 fn dft(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
     let n = x.len();
@@ -66,9 +81,9 @@ fn iterative_cooley_tukey(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
             let mut v = Complex::new(1.0_f64, 0.0_f64);
             for k in 0..((stride / 2) as usize) {
                 new_x[k + j + ((stride / 2) as usize)] =
-                    { new_x[k + j] - v * new_x[k + j + ((stride / 2) as usize)] };
+                    new_x[k + j] - v * new_x[k + j + ((stride / 2) as usize)];
                 new_x[k + j] =
-                    { new_x[k + j] - (new_x[k + j + ((stride / 2) as usize)] - new_x[k + j]) };
+                    new_x[k + j] - (new_x[k + j + ((stride / 2) as usize)] - new_x[k + j]);
                 v *= w;
             }
         }
@@ -84,17 +99,22 @@ fn main() {
         let real = rng.gen_range(0.0_f64, 1.0_f64);
         x.push(Complex::new(real, 0.0_f64));
     }
+    let v = fft(&x);
     let y = cooley_tukey(&x);
     let z = iterative_cooley_tukey(&x);
     let t = dft(&x);
 
     println!(
         "{}",
-        y.iter().zip(z.iter()).all(|i| (i.0 - i.1).norm() < 1.0)
+        v.iter().zip(y.iter()).all(|i| (i.0 - i.1).norm() < 1.0)
     );
     println!(
         "{}",
-        y.iter()
+        v.iter().zip(z.iter()).all(|i| (i.0 - i.1).norm() < 1.0)
+    );
+    println!(
+        "{}",
+        v.iter()
             .zip(t.into_iter())
             .all(|i| (i.0 - i.1).norm() < 1.0)
     );
