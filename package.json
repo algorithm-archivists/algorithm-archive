@@ -18,18 +18,11 @@
     "gitbook-plugin-wordcount": "^0.0.1",
     "honkit": "^3.4.1"
   },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/algorithm-archivists/algorithm-archive.git"
-    }
-  ],
-  "licenses": [
-    {
-      "name": "MIT",
-      "url": "https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md"
-    }
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algorithm-archivists/algorithm-archive.git"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "honkit build",
     "serve": "honkit serve"
