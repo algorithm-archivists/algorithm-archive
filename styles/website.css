@@ -15,3 +15,16 @@ img.center {
   margin-left: auto;
   margin-right: auto;
 }
+
+.search-results-item p{
+  color: #4183C4;
+}
+
+#book-search-results .search-results .has-results .search-results-item a {
+  color: #777;
+}
+
+
+#book-search-input input, #book-search-input input:focus, #book-search-input input:hover{
+  color: #222;
+}
