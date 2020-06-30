@@ -7,8 +7,10 @@ node_js:
 
 before_script:
   - mkdir -p "${TRAVIS_BUILD_DIR}"/build
+  - cp package.json "${TRAVIS_BUILD_DIR}"/build
 
 script:
+  - npm install
   - npm build . ${TRAVIS_BUILD_DIR}/build
 
 after_success:
