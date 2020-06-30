@@ -10,18 +10,18 @@ before_script:
   - |
       CHANGED_FILES=
 
-      if [ -z "${TRAVIS_COMMIT_RANGE}" ] ; then
+      if [[ -z "${TRAVIS_COMMIT_RANGE}" ]] ; then
           # This is a new branch.
       else
           # This isn't a new branch.
-          if [ "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
+          if [[ "${TRAVIS_PULL_REQUEST}" = "false" ]] ; then
               # This isn't a PR build.
 
               # We need the individual commits to detect force pushes.
               COMMIT1="$(echo ${TRAVIS_COMMIT_RANGE} | cut -f 1 -d '.')"
               COMMIT2="$(echo ${TRAVIS_COMMIT_RANGE} | cut -f 4 -d '.')"
 
-              if [ "$(git cat-file -t ${COMMIT1} 2>/dev/null)" = commit -a "$(git cat-file -t ${COMMIT2} 2>/dev/null)" = commit ] ; then
+              if [[ "$(git cat-file -t ${COMMIT1} 2>/dev/null)" = commit -a "$(git cat-file -t ${COMMIT2} 2>/dev/null)" = commit ]] ; then
                   # This was a history rewrite.
               else
                   # This is a 'normal' build.
@@ -33,13 +33,15 @@ before_script:
           fi
       fi
   - |
-      if echo $CHANGED_FILES | grep "package.json"; then
+      if echo $CHANGED_FILES | grep "package.json"
+      then
         cp package.json "${TRAVIS_BUILD_DIR}"/build
       fi
 
 script:
   - |
-      if echo $CHANGED_FILES | grep "package.json"; then
+      if echo $CHANGED_FILES | grep "package.json"
+      then
         npm build --reload . ${TRAVIS_BUILD_DIR}/build
       else
         npm build . ${TRAVIS_BUILD_DIR}/build
