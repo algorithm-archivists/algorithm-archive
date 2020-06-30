@@ -11,7 +11,7 @@ Before continuing, please be sure you have read the [How to contribute guide for
 
 1. discussed the chapter with James Schloss (Leios) first and know where this chapter fits into the broader scope of the project
 2. edited the Markdown file with the appropriate line numbers for your submission
-3. built the algorithm archive with `honkit serve` to make sure your code can be seen on your branch
+3. built the algorithm archive with `npm install && npm run serve` to make sure your code can be seen on your branch
 4. followed all necessary [style guidelines](https://github.com/algorithm-archivists/algorithm-archive/wiki/Code-style-guide) for the initial submission language, if available
 5. agreed to share your chapter under [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 

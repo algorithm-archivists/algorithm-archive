@@ -6,14 +6,14 @@ node_js:
   - "12"
 
 install:
-  - npm install honkit -g
+  - npm install
 
 before_script:
   - mkdir -p "${TRAVIS_BUILD_DIR}"/build
 
 script:
   - env | sort
-  - honkit build . "${TRAVIS_BUILD_DIR}"/build
+  - npm build . "${TRAVIS_BUILD_DIR}"/build
 
 after_success:
     - |
