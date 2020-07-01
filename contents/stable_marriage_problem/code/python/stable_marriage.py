@@ -30,13 +30,13 @@ def main():
     # Print preferences and the result
     print('Preferences of the men:')
     for man in men:
-        print(f'{man.name}: {", ".join((p.name for p in man.preference))}')
+        print(man)
 
     print()
 
     print('Preferences of the women:')
     for woman in women:
-        print(f'{woman.name}: {", ".join((p.name for p in woman.preference))}')
+        print(woman)
 
     print('\n')
 
@@ -75,10 +75,10 @@ class Person:
     @property
     def next_choice(self):
         """Return the next person in the own preference list"""
-        if self.pref_index >= len(self.preference):
+        try:
+            return self.preference[self.pref_index]
+        except IndexError:
             return None
-
-        return self.preference[self.pref_index]
 
     def propose_to_next(self):
         """Propose to the next person in the own preference list"""
@@ -129,6 +129,10 @@ class Person:
     def has_partner(self):
         """Determine whether this person currently has a partner or not."""
         return self.partner is not None
+
+    # This allows the preferences to be printed more elegantly
+    def __str__(self):
+        return f'{self.name}: {", ".join(p.name for p in self.preference)}'
 
 
 if __name__ == '__main__':
