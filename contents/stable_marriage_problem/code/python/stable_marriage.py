@@ -1,25 +1,15 @@
 # Submitted by Marius Becker
 # Updated by Amaras
 
-import sys
+
 from random import shuffle
 from copy import copy
 from string import ascii_uppercase, ascii_lowercase
 
 
 def main():
-    # Set this to however many men and women you want
-    try:
-        num_pairs = int(sys.argv[1])
-    except (IndexError, ValueError):
-        # If you either did not set how many pairs you wanted or you
-        # did not set it as a number, use default value of 5
-        num_pairs = 5
-
-    # There are only 26 possible names for each sex
-    if num_pairs > 26:
-        print("You can't have more than 26 pairs.")
-        return
+    # Set this to however many men and women you want, up to 26
+    num_pairs = 5
 
     # Create all Person objects
     men = [Person(name) for name in ascii_uppercase[:num_pairs]]
@@ -108,15 +98,16 @@ class Person:
                 self.partner = person
                 break
 
-        # Rejected candidates don't get a second chance. :(
+        # Rejected candidates don't get a second chance
         self.candidates.clear()
 
     @property
     def partner(self):
         return self._partner
 
-    # This allows one to change both self.partner and person.partner
-    # with the simple call: "self.partner = person"
+    # The call self.partner = person sets self._partner as person
+    # However, since engagement is symmetrical, self._partner._partner
+    # (which is then person._partner) also needs to be set to self
     @partner.setter
     def partner(self, person):
         """Set a person as the new partner and sets the partner of that
