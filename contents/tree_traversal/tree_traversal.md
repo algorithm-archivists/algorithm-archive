@@ -20,15 +20,15 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:1-4, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/struct.svg" width="250" />
+  <img  class="center" src="code/scratch/struct.svg" style="width:25%" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:4-7, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:1-4, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:1-9, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:4-37, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -40,6 +40,8 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:1-3, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import:3-3, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import:6-6, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -61,16 +63,15 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs.svg" width="250" />
-  <img  class="center" src="code/scratch/dfs-from.svg" width="250" />
+  <img  class="center" src="code/scratch/dfs-pre.svg" style="width:40%" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:6-7, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:41-49, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -82,12 +83,14 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:27-34, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import:5-10, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import:31-45, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
 
 <p>
-    <img  class="center" src="res/DFS_pre.png" width="500" />
+    <img  class="center" src="res/DFS_pre.png" style="width:70%" />
 </p>
 
 Note that the in the code above, we are missing a crucial step: *checking to see if the node we are using actually exists!* Because we are using a vector to store all the nodes, we will be careful not to run into a case where we call `DFS_recursive(...)` on a node that has yet to be initialized; however, depending on the language we are using, we might need to be careful of this to avoid recursion errors!
@@ -112,15 +115,15 @@ Now, in this case the first element searched through is still the root of the tr
 [import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs-post.svg" width="300" />
+  <img  class="center" src="code/scratch/dfs-post.svg" style="width:40%" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:51-57, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -132,10 +135,12 @@ Now, in this case the first element searched through is still the root of the tr
 [import:36-43, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import:12-17, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import:47-62, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
 <p>
-    <img  class="center" src="res/DFS_post.png" width="500" />
+    <img  class="center" src="res/DFS_post.png" style="width:70%" />
 </p>
 
 In this case, the first node visited is at the bottom of the tree and moves up the tree branch by branch. In addition to these two types, binary trees have an *in-order* traversal scheme that looks something like this:
@@ -157,15 +162,15 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs-in.svg" width="300" />
+  <img  class="center" src="code/scratch/dfs-in.svg" style="width:40%" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:25-40, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:59-78, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -177,12 +182,13 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:45-62, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import:19-32, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import:64-82, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
 <p>
     <img  class="center" src="res/DFS_in.png" width="500" />
 </p>
-
 
 The order here seems to be some mix of the other 2 methods and works through the binary tree from left to right.
 
@@ -212,15 +218,15 @@ In code, it looks like this:
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/dfs-stack.svg" width="400" />
+  <img  class="center" src="code/scratch/dfs-stack.svg" style="width:70%" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:41-48, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:80-91, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -232,12 +238,14 @@ In code, it looks like this:
 [import:64-79, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import:34-43, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import:84-106, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
-All this said, there are a few details about DFS that might not be idea, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
+All this said, there are a few details about DFS that might not be ideal, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
 
 <p>
-    <img  class="center" src="res/BFS_simple.png" width="500" />
+    <img  class="center" src="res/BFS_simple.png" style="width:70%" />
 </p>
 
 And this is exactly what Breadth-First Search (BFS) does! On top of that, it can be implemented in the same way as the `DFS_stack(...)` function above, simply by swapping the `stack` for a `queue`, which is similar to a stack, except that it only allows you to interact with the very first element instead of the last. In code, this looks something like:
@@ -259,15 +267,15 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
 <p>
-  <img  class="center" src="code/scratch/bfs.svg" width="400" />
+  <img  class="center" src="code/scratch/bfs.svg" style="width:70%" />
 </p>
-{% sample lang="rs"%}
+{% sample lang="rs" %}
 [import:50-58, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import:93-104, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -279,6 +287,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:81-96, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import:45-56, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import:108-129, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
 ## Video Explanation
@@ -318,13 +328,16 @@ Here is a video describing tree traversal:
 
 The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/174017753/)
 
-{% sample lang="rs"%}
+<p>
+  <img  class="center" src="code/scratch/all.svg" style="width:100%" />
+</p>
+{% sample lang="rs" %}
 [import, lang:"rust"](code/rust/tree.rs)
-{% sample lang="hs"%}
+{% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/TreeTraversal.hs)
-{% sample lang="swift"%}
+{% sample lang="swift" %}
 [import, lang:"swift"](code/swift/tree.swift)
-{% sample lang="php"%}
+{% sample lang="php" %}
 [import, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/tree-traversal.cr)
@@ -336,6 +349,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
 {% sample lang="lisp" %}
 [import, lang:"lisp"](code/clisp/tree-traversal.lisp)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
 
@@ -356,10 +371,10 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The image "[DFSpreorder](res/DFS_pre.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[DFSpostorder](res/DFS_post.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[DFSinorder](res/DFS_in.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[BFSsimple](res/BFS_simple.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DFSpreorder](res/DFS_pre.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DFSpostorder](res/DFS_post.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DFSinorder](res/DFS_in.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[BFSsimple](res/BFS_simple.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 
 ##### Pull Requests

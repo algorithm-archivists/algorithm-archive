@@ -41,4 +41,13 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - crafter312
 - Christopher Milan
 - Vexatos
-- Björn Heinrichs 
+- Raven-Blue Dragon
+- Björn Heinrichs
+- Olav Sundfør
+- Ben Chislett
+- dovisutu
+- Antetokounpo
+- Akash Dhiman
+- Vincent Zalzal
+- Jonathan D B Van Schenck
+- James Goytia

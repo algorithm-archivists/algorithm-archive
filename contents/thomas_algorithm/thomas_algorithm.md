@@ -105,7 +105,7 @@ The transformations are quite easy too, isn't that neat?
 {% sample lang="scratch" %}
 You will find this algorithm implemented [in this project](https://scratch.mit.edu/projects/169418273/).
 <p>
-  <img  class="center" src="code/scratch/thomas.svg" width="1000" />
+  <img  class="center" src="code/scratch/thomas.svg" style="width:100%" />
 </p>
 {% sample lang="java" %}
 [import, lang:"java"](code/java/Thomas.java)
@@ -113,11 +113,13 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/thomas.go)
+{% sample lang="v" %}
+[import, lang:"v"](code/v/thomas.v)
 {% sample lang="swift" %}
 [import, lang:"swift"](code/swift/thomas.swift)
 {% sample lang="php" %}
 [import, lang:"php"](code/php/thomas.php)
-{%sample lang="nim" %}
+{% sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/thomas.cpp)
@@ -127,6 +129,12 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"crystal"](code/crystal/thomas.cr)
 {% sample lang="kotlin" %}
 [import, lang:"kotlin"](code/kotlin/thomas.kt)
+{% sample lang="ruby" %}
+[import, lang="ruby"](code/ruby/thomas.rb)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/thomas.js)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/thomas.rs)
 {% endmethod %}
 
 <script>
