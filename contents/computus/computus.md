@@ -285,6 +285,18 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 [import, lang:"python"](code/python/gauss_easter.py)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/gauss_easter.cr)
+(defun computus (year &optional (servois nil))
+  "Calculates the day of Easter for a given year and optionally its Servois number"
+  (let*
+    ((a (mod year 19))                  ; year's position on the 19 year metonic cycle
+      (k (floor year 100))              ; century index
+      (p (floor (+ 13 (* 8 k)) 25))     ; shift of metonic cycle, add a day offset every 300 years
+      (q (floor k 4))                   ; correction for non-observed leap days
+      (m (mod (+ 15 (- p) k (- q)) 30)) ; correction to starting point of calculation each century
+      (d (mod (+ (* 19 a) m) 30))       ; number of days from March 21st until the full moon
+      (n (mod (+ 4 k (- q)) 7))         ; century-based offset in weekly calculation
+      (b (mod year 4))                  ; correction for leap days
+      (c (mod year 7))
 {% sample lang="rust" %}
 [import, lang:"rust"](code/rust/gauss_easter.rs)
 {% sample lang="ps1" %}
