@@ -23,4 +23,4 @@
 (with-open-file (out "out.dat" :direction :output :if-exists :supersede)
   (flet ((format-point (p)
            (format nil "~f~c~f" (point-x p) #\tab (point-y p)))) ; this is a bit ugly, but it works
-    (format out "~{~a~%~}" (map 'list #'format-point (chaos-game 1000000 *shape-points*)))))
+    (format out "~{~a~%~}" (map 'list #'format-point (chaos-game 10000 *shape-points*)))))
