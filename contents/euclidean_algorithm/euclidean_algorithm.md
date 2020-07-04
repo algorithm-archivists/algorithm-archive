@@ -288,6 +288,7 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 {% sample lang="coco" %}
 [import, lang="coconut"](code/coconut/euclidean.coco)
+
 {% endmethod %}
 
 <script>
