@@ -82,7 +82,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="ps1" %}
 [import:1-14, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 {% sample lang="coco" %}
-[import:1-10, lang="coconut"](code/coconut/euclidean.coco)
+[import:1-9, lang="coconut"](code/coconut/euclidean.coco)
 
 {% endmethod %}
 
