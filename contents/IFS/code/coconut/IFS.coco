@@ -12,7 +12,7 @@ def chaos_game(n, shape_points):
     p = point(random(), random())
 
     for _ in range(n):
-        p = 1/2 * (p + choice(shape_points))
+        p = (1/2) * (p + choice(shape_points))
         yield p
 
 

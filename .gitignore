@@ -511,3 +511,6 @@ vscode/
 
 # Data file extension for Algorithm Archive
 *.dat
+
+# Coconut compilation files
+**/coconut/*.py
