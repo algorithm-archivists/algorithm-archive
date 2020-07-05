@@ -212,6 +212,10 @@
         {
           "lang": "vim",
           "name": "VimL"
+        },
+        {
+          "lang": "coco",
+          "name": "Coconut"
         }
       ]
     }
