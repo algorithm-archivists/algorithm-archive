@@ -1,11 +1,11 @@
 ;;;; Tree traversal in Common Lisp
 
 (defstruct node data children)
-	 
+
 (defun dfs-recursive (node)
   "A depth first approach for printing out all values in a tree."
   (when (not (eql (node-data node) nil))
-    (print (node-data node)))
+    (format t "~a " (node-data node)))
   (loop for child in (node-children node)
      do (dfs-recursive child)))
 
@@ -14,20 +14,20 @@
   (loop for child in (node-children node)
      do (dfs-recursive-postorder child))
   (when (not (eql (node-data node) nil))
-    (print (node-data node))))
+    (format t "~a "  (node-data node))))
 
 (defun dfs-recursive-inorder-btree (node)
   "A depth first search approach for printing all values in a binary tree."
   (case (length (node-children node))
     (2
      (dfs-recursive-inorder-btree (first (node-children node)))
-     (print (node-data node))
+     (format t "~a " (node-data node))
      (dfs-recursive-inorder-btree (second (node-children node))))
     (1
      (dfs-recursive-inorder-btree (first (node-children node)))
-     (print (node-data node)))
+     (format t "~a " (node-data node)))
     (0
-     (print (node-data node)))
+     (format t "~a " (node-data node)))
     (t
      (print "Invalid binary tree."))))
 
@@ -37,7 +37,7 @@
       ((stack (list node))
        (temp nil))
     (loop while (> (length stack) 0)
-       do (print (node-data (first stack)))
+       do (format t "~a " (node-data (first stack)))
 	 (setf temp (pop stack))
 	 (loop for child in (node-children temp)
 	    do (push child stack)))))
@@ -48,7 +48,7 @@
       ((queue (list node))
        (temp nil))
     (loop while (> (length queue) 0)
-       do (print (node-data (first queue)))
+       do (format t "~a " (node-data (first queue)))
 	     (setf temp (pop queue))
 	     ;; If the queue is empty, the queue should be filled with the children nodes.
 	     (if (eql queue nil)
@@ -74,15 +74,20 @@
 
 ;; Should print: 3, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1
 (dfs-recursive tree)
+(format t "~%")
 
 ;; Should print: 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 3
 (dfs-recursive-postorder tree)
+(format t "~%")
 
 ;; Should print: 1, 2, 1, 3, 1, 2, 1
 (dfs-recursive-inorder-btree binary-tree)
+(format t "~%")
 
 ;; Should print: 3, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1
 (dfs-stack tree)
+(format t "~%")
 
 ;; Should print: 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1
 (bfs-queue tree)
+(format t "~%")
