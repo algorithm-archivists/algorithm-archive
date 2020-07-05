@@ -1,5 +1,4 @@
 
-// Define a point to be a tuple of two integers
 type Point = (i64, i64);
 
 // Is the turn counter clockwise?
@@ -7,7 +6,7 @@ fn turn_counter_clockwise(p1: Point, p2: Point, p3: Point) -> bool {
     (p3.1 - p1.1) * (p2.0 - p1.0) >= (p2.1 - p1.1) * (p3.0 - p1.0)
 }
 
-fn jarvis_march(gift: Vec<Point>) -> Option<Vec<Point>> {
+fn jarvis_march(gift: &[Point]) -> Option<Vec<Point>> {
     // There can only be a convex hull if there are more than 2 points
     if gift.len() < 3 {
         return None;
@@ -16,14 +15,14 @@ fn jarvis_march(gift: Vec<Point>) -> Option<Vec<Point>> {
     let leftmost_point = gift
         // Iterate over all points
         .iter()
-        .cloned()
         // Find the point with minimum x
         .min_by_key(|i| i.0)
         // If there are no points in the gift, there might
         // not be a minimum. Unwrap fails (panics) the program
         // if there wasn't a minimum, but we know there always
         // is because we checked the size of the gift.
-        .unwrap();
+        .unwrap()
+        .clone();
 
     let mut hull = vec![leftmost_point];
 
@@ -59,7 +58,7 @@ fn main() {
         (7, -7), (-2, -9), (6, -5), (0, 14), (2, 8)
     ];
 
-    let hull = jarvis_march(test_gift);
+    let hull = jarvis_march(&test_gift);
 
     println!("The points in the hull are: {:?}", hull);
 }
