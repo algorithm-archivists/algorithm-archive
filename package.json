@@ -8,15 +8,15 @@
     }
   ],
   "dependencies": {
-    "gitbook-plugin-api-language-selector": "https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
+    "gitbook-plugin-api-language-selector": "git+https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "gitbook-plugin-bibtex-cite": "^1.1.0",
     "gitbook-plugin-bulk-redirect": "^0.2.1",
     "gitbook-plugin-ga": "^2.0.0",
     "gitbook-plugin-include-codeblock": "^3.2.2",
-    "gitbook-plugin-mathjax": "https://github.com/algorithm-archivists/plugin-mathjax",
+    "gitbook-plugin-mathjax": "git+https://github.com/algorithm-archivists/plugin-mathjax.git",
     "gitbook-plugin-prism": "^2.4.0",
     "gitbook-plugin-wordcount": "^0.0.1",
-    "honkit": "^3.4.1"
+    "honkit": "^3.5.2"
   },
   "repository": {
     "type": "git",
