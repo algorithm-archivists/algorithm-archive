@@ -1,9 +1,8 @@
-extern crate num;
 extern crate rand;
 extern crate rustfft;
 
-use num::complex::Complex;
 use rand::prelude::*;
+use rustfft::num_complex::Complex;
 use rustfft::FFTplanner;
 use std::f64::consts::PI;
 
@@ -15,8 +14,8 @@ fn fft(x: &[Complex<f64>]) -> Vec<Complex<f64>> {
     let mut y = vec![Complex::new(0.0_f64, 0.0_f64); n];
 
     let mut planner = FFTplanner::new(false);
-    let transformer = planner.plan_fft(n);
-    transformer.process(&mut new_x, &mut y);
+    let this_fft = planner.plan_fft(n);
+    this_fft.process(new_x.as_mut_slice(), y.as_mut_slice());
 
     // y.into_iter().map(|i| i / (n as f64).sqrt()).collect()
     y
