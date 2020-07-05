@@ -55,11 +55,26 @@ size_t jarvis_march(struct point *points, struct point *hull_points,
 }
 
 int main() {
-    struct point points[] = {{0.0, 0.0}, {-1.0, -1.0}, {1.0, 1.0}, {0.0, 1.0},
-                                {0.0, -1.0}, {2.0, 2.0}};
-    struct point hull_points[6];
+    struct point points[] = {
+        { -5.0, 2.0 },
+        { 5.0, 7.0 },
+        { -6.0, -12.0 },
+        { -14.0, -14.0 },
+        { 9.0, 9.0 },
+        { -1.0, -1.0 },
+        { -10.0, 11.0 },
+        { -6.0, 15.0 },
+        { -6.0, -8.0 },
+        { 15.0, -9.0 },
+        { 7.0, -7.0 },
+        { -2.0, -9.0 },
+        { 6.0, -5.0 },
+        { 0.0, 14.0 },
+        { 2.0, 8.0 }
+    };
+    struct point hull_points[15];
 
-    size_t num_hull_points = jarvis_march(points, hull_points, 6);
+    size_t num_hull_points = jarvis_march(points, hull_points, 15);
 
     printf("The Hull points are:\n");
     for (size_t i = 0; i < num_hull_points; ++i) {

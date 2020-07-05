@@ -136,12 +136,16 @@ Full code for the visualization follows:
 [import, lang:"fortran"](code/fortran/euler.f90)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/euler.go)
+{% sample lang="v" %}
+[import, lang:"v"](code/v/euler.v)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/euler.s)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/ForwardEuler.java)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/forwardeuler.nim)
+{% sample lang="lisp" %}
+[import, lang="lisp"](code/clisp/euler.lisp)
 {% endmethod %}
 
 <script>

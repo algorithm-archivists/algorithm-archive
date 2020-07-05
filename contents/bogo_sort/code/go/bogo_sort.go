@@ -8,10 +8,10 @@ import (
     "time"
 )
 
-func shuffle(a *[]int) {
-    for i := len(*a) - 1; i > 0; i-- {
+func shuffle(a []int) {
+    for i := len(a) - 1; i > 0; i-- {
         j := rand.Intn(i + 1)
-        (*a)[i], (*a)[j] = (*a)[j], (*a)[i]
+        a[i], a[j] = a[j], a[i]
     }
 }
 
@@ -24,8 +24,8 @@ func isSorted(a []int) bool {
     return true
 }
 
-func bogoSort(a *[]int) {
-    for !isSorted(*a) {
+func bogoSort(a []int) {
+    for !isSorted(a) {
         shuffle(a)
     }
 }
@@ -33,6 +33,6 @@ func bogoSort(a *[]int) {
 func main() {
     rand.Seed(time.Now().UnixNano())
     a := []int{1, 3, 4, 2}
-    bogoSort(&a)
+    bogoSort(a)
     fmt.Println(a)
 }

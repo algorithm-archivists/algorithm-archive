@@ -32,7 +32,7 @@ In code, it looks something like this:
 {% sample lang="m" %}
 [import:21-28, lang:"matlab"](code/matlab/bogosort.m)
 {% sample lang="lua" %}
-[import:1-22, lang="lua"](code/lua/bogosort.lua)
+[import:17-22, lang="lua"](code/lua/bogosort.lua)
 {% sample lang="cpp" %}
 [import:33-38, lang:"cpp"](code/c++/bogosort.cpp)
 {% sample lang="rs" %}

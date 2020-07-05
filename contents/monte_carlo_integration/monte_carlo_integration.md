@@ -14,7 +14,7 @@ If we embed a circle into the square with a radius $$r = \tfrac{length}{2}$$ (sh
 For simplicity, we can also say that $$\text{Area}_{\text{square}}=4r^2$$.
 
 <p>
-    <img  class="center" src="res/square_circle.png" width="300"/>
+    <img  class="center" src="res/square_circle.png" style="width:40%"/>
 </p>
 
 Now, let's say we want to find the area of the circle without an equation.
@@ -78,7 +78,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="php" %}
 [import:4-7, lang:"php"](code/php/monte_carlo.php)
 {% sample lang="lua" %}
-[import:1-3, lang="lua"](code/lua/monte_carlo.lua)
+[import:2-4, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
 [import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
@@ -91,6 +91,12 @@ each point is tested to see whether it's in the circle or not:
 [import:2-10, lang:"bash"](code/bash/monte_carlo.bash)
 {% sample lang="kotlin" %}
 [import:3-3, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
+{% sample lang="m" %}
+[import:8-15, lang:"matlab"](code/matlab/monte.m)
+{% sample lang="scratch" %}
+<p>
+    <img  class="center" src="code/scratch/InCircle.svg" style="width:40%" />
+</p>
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -102,7 +108,7 @@ $$
 If we use a small number of points, this will only give us a rough approximation, but as we start adding more and more points, the approximation becomes much, much better (as shown below)!
 
 <p>
-    <img  class="center" src="res/monte_carlo.gif" width="400"/>
+    <img  class="center" src="res/monte_carlo.gif" style="width:60%"/>
 </p>
 
 The true power of Monte Carlo comes from the fact that it can be used to integrate literally any object that can be embedded into the square.
@@ -142,13 +148,13 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/monteCarlo.hs)
-{%sample lang="rs" %}
+{% sample lang="rs" %}
 [import, lang:"rust"](code/rust/monte_carlo.rs)
-{%sample lang="d" %}
+{% sample lang="d" %}
 [import, lang:"d"](code/d/monte_carlo.d)
-{%sample lang="go" %}
+{% sample lang="go" %}
 [import, lang:"go"](code/go/monteCarlo.go)
-{%sample lang="r" %}
+{% sample lang="r" %}
 [import, lang:"r"](code/r/monte_carlo.R)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/MonteCarlo.java)
@@ -189,6 +195,13 @@ Feel free to submit your version via pull request, and thanks for reading!
 [import, lang:"bash"](code/bash/monte_carlo.bash)
 {% sample lang="kotlin" %}
 [import, lang:"kotlin"](code/kotlin/MonteCarlo.kt)
+{% sample lang="m" %}
+[import, lang:"matlab"](code/matlab/monte.m)
+{% sample lang="scratch" %}
+The code snippets were taken from this [scratch project](https://scratch.mit.edu/projects/319610349)
+<p>
+    <img  class="center" src="code/scratch/Algorithm.svg" style="width:100%" />
+</p>
 {% endmethod %}
 
 <script>
@@ -208,8 +221,8 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The image "[squarecircle](res/square_circle.png)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The animation "[simplemontecarlo](res/monte_carlo.gif)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[squarecircle](res/square_circle.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[simplemontecarlo](res/monte_carlo.gif)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 
 ##### Pull Requests

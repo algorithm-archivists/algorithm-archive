@@ -5,7 +5,7 @@ local function shuffle(arr)
   end
 end
 
-local function issorted(arr)
+local function is_sorted(arr)
   for i = 1,#arr-1 do
     if arr[i] > arr[i+1] then
       return false
@@ -14,8 +14,8 @@ local function issorted(arr)
   return true
 end
 
-function bogosort(arr)
-  while not issorted(arr) do
+local function bogo_sort(arr)
+  while not is_sorted(arr) do
     shuffle(arr)
   end
 end
@@ -23,6 +23,6 @@ end
 local arr = {1, 45, 756, 4569, 56, 3, 8, 5, -10, -4}
 print(("Unsorted array: {%s}"):format(table.concat(arr,", ")))
 
-bogosort(arr)
+bogo_sort(arr)
 
 print(("Sorted array: {%s}"):format(table.concat(arr,", ")))
