@@ -172,7 +172,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="ps1" %}
 [import:16-27, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 {% sample lang="coco" %}
-[import:13-16, lang="coconut"](code/coconut/euclidean.coco)
+[import:12-15, lang="coconut"](code/coconut/euclidean.coco)
 
 {% endmethod %}
 
