@@ -3,10 +3,7 @@ from random import random, choice
 
 data point(x=0, y=0):
     def __add__(self, other):
-        match point(x1, y1) in other:
-            return point(self.x + x1, self.y + y1)
-        else:
-            return self
+        return point(self.x + other.x, self.y + other.y)
 
     def __rmul__(self, other):
         return point(self.x * other, self.y * other)
