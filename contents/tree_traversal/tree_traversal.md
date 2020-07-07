@@ -38,6 +38,8 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:24-27, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import:1-3, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import:3-3, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:6-6, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
@@ -79,6 +81,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:290-314, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import:27-34, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import:5-10, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:31-45, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
@@ -129,6 +133,8 @@ Now, in this case the first element searched through is still the root of the tr
 [import:316-344, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import:36-43, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import:12-17, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:47-62, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
@@ -174,13 +180,15 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:346-396, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import:45-62, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import:19-32, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:64-82, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
 
-<p>	
-    <img  class="center" src="res/DFS_in.png" width="500" />	
-</p>	
+<p>
+    <img  class="center" src="res/DFS_in.png" width="500" />
+</p>
 
 The order here seems to be some mix of the other 2 methods and works through the binary tree from left to right.
 
@@ -228,6 +236,8 @@ In code, it looks like this:
 [import:398-445, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import:64-79, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import:34-43, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:84-106, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
@@ -275,6 +285,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:447-498, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import:81-96, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import:45-56, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:108-129, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
@@ -335,6 +347,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
 [import, lang:"emojicode"](code/emojicode/tree_traversal.emojic)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/tree.m)
 {% endmethod %}
