@@ -26,5 +26,5 @@ shape_points = [point(0.0, 0.0),
                 point(0.5, sqrt(0.75)),
                 point(1.0, 0.0)]
 with open("sierpinski.dat", "w") as f:
-    for point in chaos_game(10000, shape_points):
-        f.write("{0}\t{1}\n".format(*point))
+    for p in chaos_game(10000, shape_points):
+        f.write("{0}\t{1}\n".format(p.x, p.y))
