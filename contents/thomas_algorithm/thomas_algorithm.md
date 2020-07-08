@@ -129,6 +129,8 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 [import, lang:"crystal"](code/crystal/thomas.cr)
 {% sample lang="kotlin" %}
 [import, lang:"kotlin"](code/kotlin/thomas.kt)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/thomas.lisp)
 {% sample lang="ruby" %}
 [import, lang="ruby"](code/ruby/thomas.rb)
 {% sample lang="js" %}
