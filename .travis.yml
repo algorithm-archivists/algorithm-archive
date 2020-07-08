@@ -6,7 +6,8 @@ node_js:
   - "12"
 
 before_script:
-  - BOOK_BUILD_DIR="${TRAVIS_BUILD_DIR}"/_book
+  - export BOOK_BUILD_DIR="${TRAVIS_BUILD_DIR}"/_book
+  - env | sort
 
 script:
   - npm run build
