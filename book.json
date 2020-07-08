@@ -1,7 +1,7 @@
 {
-  "gitbook": "3.x.x",
+  "honkit": ">= 3.0.0",
+  "root": "./",
   "plugins": [
-    "fontsettings",
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
     "wordcount",

@@ -5,16 +5,23 @@ language: node_js
 node_js:
   - "12"
 
-install:
-  - npm install gitbook-cli -g
-  - gitbook install
-
 before_script:
   - mkdir -p "${TRAVIS_BUILD_DIR}"/build
+  - CHANGED_FILES=$(git diff --name-only HEAD~1...HEAD .)
+  - |
+      if echo $CHANGED_FILES | grep "package.json"
+      then
+        cp package.json "${TRAVIS_BUILD_DIR}"/build
+      fi
 
 script:
-  - env | sort
-  - gitbook build . "${TRAVIS_BUILD_DIR}"/build
+  - |
+      if echo $CHANGED_FILES | grep "package.json"
+      then
+        npm build --reload . ${TRAVIS_BUILD_DIR}/build
+      else
+        npm build . ${TRAVIS_BUILD_DIR}/build
+      fi
 
 after_success:
     - |
