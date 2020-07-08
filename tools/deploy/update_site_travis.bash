@@ -33,14 +33,13 @@ git config user.email "travis@travis-ci.org"
 
 GH_REPO_REF="github.com/${DOCS_REPO_OWNER}/${DOCS_REPO_NAME}.git"
 
-# Assume the book has already been built, and was moved to `build/`
-# inside the same directory as this script.
+# Assume the book has already been built and lives in $BOOK_BUILD_DIR.
 
-if [ -d build ]; then
+if [ -d "${BOOK_BUILD_DIR}" ]; then
     echo "${bold}Cloning the website repo...${normal}"
     git clone -b "${DOCS_BRANCH_NAME}" https://git@"${GH_REPO_REF}"
     rm -rf ./"${DOCS_REPO_NAME}"/*
-    cp -a ./build/* ./"${DOCS_REPO_NAME}"
+    cp -a "${BOOK_BUILD_DIR}"/* ./"${DOCS_REPO_NAME}"
     pushd ./"${DOCS_REPO_NAME}"
     echo "www.algorithm-archive.org" > CNAME
     echo "${bold}Adding changes...${normal}"
