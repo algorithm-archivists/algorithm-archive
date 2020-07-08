@@ -11,6 +11,13 @@ before_script:
 
 script:
   - npm run build
+  # Make sure the book built.
+  - |
+      book_check_file="${BOOK_BUILD_DIR}/index.html"
+      if [[ ! -f  "${book_check_file}" ]]; then
+          echo "${book_check_file} not found"
+          exit 1
+      fi
 
 after_success:
     - |
