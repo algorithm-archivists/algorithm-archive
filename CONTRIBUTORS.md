@@ -52,3 +52,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Jonathan D B Van Schenck
 - James Goytia
 - Amaras
+- Jonathan Dönszelmann
