@@ -49,33 +49,6 @@ def build_huffman_tree(message):
 
     return trees[0]
 
-# constructs the mapping with recursion
-"""def build_codebook(tree, code=''):
-
-    frequencies = Counter(message)
-    trees = frequencies.most_common()
-
-    # while there is more than one tree
-    while len(trees) > 1:
-
-        # pop off the two trees of least weight from the trees list
-        tree_left,weight_left = trees.pop()
-        tree_right,weight_right = trees.pop()
-
-        # combine the nodes and add back to the nodes list
-        new_tree = [tree_left, tree_right]
-        new_weight = weight_left + weight_right
-
-        # find the first tree that has a weight smaller than new_weight and returns its index in the list
-        # If no such tree can be found, use len(trees) instead to append
-        index = next((i for i, tree in enumerate(trees) if tree[1] < new_weight), len(trees))
-
-        # insert the new tree there
-        trees.insert(index, (new_tree, new_weight))
-
-    huffman_tree = trees[0][0]
-    return huffman_tree"""
-
 def build_codebook(Empty(), code='') = []
 addpattern def build_codebook(Leaf(char, n), code='') = [(char, code)]
 addpattern def build_codebook(Node(left, right), code='') = build_codebook(left, code+'0') + build_codebook(right, code+'1')
@@ -83,21 +56,15 @@ addpattern def build_codebook(Node(left, right), code='') = build_codebook(left,
 # encodes the message
 def huffman_encode(codebook, message):
 
-    encoded_message = ''
-
     # build a char -> code dictionary
     forward_dict = dict(codebook)
 
-    # replace each character with its code
-    for char in message:
-        encoded_message += forward_dict[char]
-
-    return encoded_message
+    return ''.join(message |> map$(forward_dict[]))
 
 # decodes a message
 def huffman_decode(codebook, encoded_message):
 
-    decoded_message = ''
+    decoded_message = []
     key = ''
 
     # build a code -> char dictionary
@@ -107,13 +74,13 @@ def huffman_decode(codebook, encoded_message):
     # if the bit is in the dictionary, replace the bit with the paired character
     # else look at the bit and the following bits together until a match occurs
     # move to the next bit not yet looked at
-    for index, bit in enumerate(encoded_message):
+    for bit in encoded_message:
         key += bit
         if key in inverse_dict:
-            decoded_message += inverse_dict[key]
+            decoded_message.append(inverse_dict[key])
             key = ''
 
-    return decoded_message
+    return ''.join(decoded_message)
 
 
 if __name__ == '__main__':
@@ -121,14 +88,14 @@ if __name__ == '__main__':
     message = 'bibbity_bobbity'
     tree = build_huffman_tree(message)
     codebook = build_codebook(tree)
-    #encoded_message = huffman_encode(codebook, message)
-    #decoded_message = huffman_decode(codebook, encoded_message)
+    encoded_message = huffman_encode(codebook, message)
+    decoded_message = huffman_decode(codebook, encoded_message)
 
     print('message:', message)
     print('huffman tree:', tree)
     print('codebook:', codebook)
-    #print('encoded message: ' + encoded_message)
-    #print('decoded message: ' + decoded_message)
+    print('encoded message:', encoded_message)
+    print('decoded message: ' + decoded_message)
 
     # prints the following:
     #
