@@ -28,28 +28,26 @@ def build_huffman_tree(message):
 
     # get sorted list of character and frequency pairs
     frequencies = Counter(message)
-    trees = frequencies.most_common() |> map$(t -> Leaf(*t)) |> list
+    trees = frequencies.most_common() |> map$(t -> Leaf(*t)) |> reversed |> deque
 
     # while there is more than one tree
     while len(trees) > 1:
-        print(trees)
 
         # pop off the two trees of least weight from the trees list
-        tree_left = trees.pop()
-        tree_right = trees.pop()
+        tree_left = trees.popleft()
+        tree_right = trees.popleft()
 
         # combine the nodes and add back to the nodes list
         new_tree = Node(tree_left, tree_right)
 
         # find the first tree that has a weight smaller than new_weight and returns its index in the list
         # If no such tree can be found, use len(trees) instead to append
-        index = bisect_left(trees |> map$(weight) |> list, weight(new_tree))
+        index = bisect(trees |> map$(weight) |> list, weight(new_tree))
 
         # insert the new tree there
         trees.insert(index, new_tree)
 
-    huffman_tree = trees[0]
-    return huffman_tree
+    return trees[0]
 
 # constructs the mapping with recursion
 """def build_codebook(tree, code=''):
@@ -126,9 +124,9 @@ if __name__ == '__main__':
     #encoded_message = huffman_encode(codebook, message)
     #decoded_message = huffman_decode(codebook, encoded_message)
 
-    print('message: ' + message)
-    print('huffman tree: ' + str(tree))
-    print('codebook: ' + str(codebook))
+    print('message:', message)
+    print('huffman tree:', tree)
+    print('codebook:', codebook)
     #print('encoded message: ' + encoded_message)
     #print('decoded message: ' + decoded_message)
 
