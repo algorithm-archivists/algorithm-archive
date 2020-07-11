@@ -3,8 +3,7 @@
 # Submitted by Matthew Giallourakis
 
 from collections import Counter, deque
-from bisect import bisect, bisect_left
-
+from bisect import bisect
 class Tree
 
 data Empty() from Tree
@@ -100,8 +99,9 @@ if __name__ == '__main__':
     # prints the following:
     #
     #  message: bibbity_bobbity
-    #  huffman_tree: ['b', [[['_', 'o'], 'y'], ['t', 'i']]]
-    #  codebook: [('b', '0'), ('_', '1000'), ('o', '1001'),
-    #             ('y', '101'), ('t', '110'), ('i', '111')]
-    #  encoded_message: 01110011111010110000100100111110101
+    #  huffman_tree: Node(Leaf(b, 6), Node(Node(Leaf(y, 2), Leaf(t, 2)), Node(Node(Leaf(o, 1), Leaf(_, 1)), Leaf(i, 3))))
+
+    #  codebook: [('b', '0'), ('y', '100'), ('t', '101'),
+    #             ('o', '1100'), ('_', '1101'), ('i', '111')]
+    #  encoded_message: 01110011110110011010110000111101100
     #  decoded_message: bibbity_bobbity
