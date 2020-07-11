@@ -1,6 +1,7 @@
 # Huffman Encoding
-# Python 2.7+
-# Submitted by Matthew Giallourakis
+# Coconut
+# Submitted by Amaras
+# Inspired by Matthew Giallourakis
 
 from collections import Counter, deque
 from bisect import bisect
