@@ -14,16 +14,16 @@ set -o errexit
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-if [ -z ${DOCS_BRANCH_NAME+x} ]; then
+if [[ -z ${DOCS_BRANCH_NAME+x} ]]; then
     echo "${bold}\$DOCS_BRANCH_NAME is not set!${normal}"
     exit 1
-elif [ -z ${DOCS_REPO_NAME+x} ]; then
+elif [[ -z ${DOCS_REPO_NAME+x} ]]; then
     echo "${bold}\$DOCS_REPO_NAME is not set!${normal}"
     exit 1
-elif [ -z ${DOCS_REPO_OWNER+x} ]; then
+elif [[ -z ${DOCS_REPO_OWNER+x} ]]; then
     echo "${bold}\$DOCS_REPO_OWNER is not set!${normal}"
     exit 1
-elif [ -z ${GH_TOKEN+x} ]; then
+elif [[ -z ${GH_TOKEN+x} ]]; then
     echo "${bold}\$GH_TOKEN is not set!${normal}"
     exit 1
 fi
@@ -33,14 +33,23 @@ git config user.email "travis@travis-ci.org"
 
 GH_REPO_REF="github.com/${DOCS_REPO_OWNER}/${DOCS_REPO_NAME}.git"
 
-# Assume the book has already been built, and was moved to `build/`
-# inside the same directory as this script.
+# Assume the book has already been built and lives in $BOOK_BUILD_DIR.
+book_check_file="${BOOK_BUILD_DIR}/index.html"
 
-if [ -d build ]; then
+if [[ ! -d "${BOOK_BUILD_DIR}" ]]; then
+    echo "" >&2
+    echo "${bold}Warning: The book directory wasn't found!${normal}" >&2
+    echo "${bold}Warning: Not going to push the book to GitHub!${normal}" >&2
+    exit 1
+elif [[ ! -f "${book_check_file}" ]]; then
+    echo "${bold}${book_check_file} not found!${normal}" >&2
+    echo "${bold}${BOOK_BUILD_DIR} is present though.${normal}" >&2
+    exit 1
+else
     echo "${bold}Cloning the website repo...${normal}"
     git clone -b "${DOCS_BRANCH_NAME}" https://git@"${GH_REPO_REF}"
     rm -rf ./"${DOCS_REPO_NAME}"/*
-    cp -a ./build/* ./"${DOCS_REPO_NAME}"
+    cp -a "${BOOK_BUILD_DIR}"/* ./"${DOCS_REPO_NAME}"
     pushd ./"${DOCS_REPO_NAME}"
     echo "www.algorithm-archive.org" > CNAME
     echo "${bold}Adding changes...${normal}"
@@ -53,9 +62,4 @@ if [ -d build ]; then
         -m "Commit: ${TRAVIS_COMMIT}" || ret=$?
     git push "https://${GH_TOKEN}@${GH_REPO_REF}"
     popd
-else
-    echo "" >&2
-    echo "${bold}Warning: The book wasn't found!${normal}" >&2
-    echo "${bold}Warning: Not going to push the book to GitHub!${normal}" >&2
-    exit 1
 fi
