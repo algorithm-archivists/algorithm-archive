@@ -9,15 +9,15 @@ class Tree
 
 data Empty() from Tree
 data Leaf(char, n is int) from Tree:
-    def __str__(self):
+    def __repr__(self):
         return f'Leaf({self.char}, {self.n})'
 
-    __repr__ = __str__
+    __str__ = __repr__
 
 data Node(left is Tree, right is Tree) from Tree:
-    def __str__(self):
+    def __repr__(self):
         return f'Node({str(self.left)}, {str(self.right)})'
-    __repr__ = __str__
+    __str__ = __repr__
 
 def weight(Tree()) = 0
 addpattern def weight(Leaf(char, n)) = n
@@ -28,7 +28,7 @@ def build_huffman_tree(message):
 
     # get sorted list of character and frequency pairs
     frequencies = Counter(message)
-    trees = frequencies.most_common() |> map$(t -> Leaf(*t)) |> reversed |> list
+    trees = frequencies.most_common() |> map$(t -> Leaf(*t)) |> list
 
     # while there is more than one tree
     while len(trees) > 1:
@@ -43,7 +43,7 @@ def build_huffman_tree(message):
 
         # find the first tree that has a weight smaller than new_weight and returns its index in the list
         # If no such tree can be found, use len(trees) instead to append
-        index = bisect(trees |> map$(weight) |> list, weight(new_tree))
+        index = bisect_left(trees |> map$(weight) |> list, weight(new_tree))
 
         # insert the new tree there
         trees.insert(index, new_tree)
