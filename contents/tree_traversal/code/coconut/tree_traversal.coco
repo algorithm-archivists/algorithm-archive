@@ -48,11 +48,13 @@ def bfs_queue(node is Node):
             queue.append(child)
 
 def create_tree(num_rows, num_child):
-    """Creates a simple tree, where every node has 'num_child' children and is 'num_rows' deep."""
+    """Creates a simple tree, where every node has
+    'num_child' children and is 'num_rows' deep."""
     if num_rows == 1:
         return Node(1, ())
     else:
-        return Node(num_rows, tuple(create_tree(num_rows-1, num_child) for _ in range(num_child)))
+        return Node(num_rows, tuple(create_tree(num_rows-1, num_child)
+                                    for _ in range(num_child)))
 
 
 if __name__ =='__main__':
