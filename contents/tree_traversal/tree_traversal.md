@@ -42,6 +42,8 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:3-3, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:6-6, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import:3-3, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 Because of this, the most straightforward way to traverse the tree might be recursive. This naturally leads us to the Depth-First Search (DFS) method:
@@ -85,6 +87,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:5-10, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:31-45, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import:5-9, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -137,6 +141,8 @@ Now, in this case the first element searched through is still the root of the tr
 [import:12-17, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:47-62, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import:11-15, lang:="coconut"](codo/coconut/tree_traversal.coco)
 {% endmethod %}
 
 <p>
@@ -184,6 +190,8 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:19-32, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:64-82, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import:17-30, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 <p>
@@ -240,6 +248,8 @@ In code, it looks like this:
 [import:34-43, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:84-106, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import:32-39, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 All this said, there are a few details about DFS that might not be ideal, depending on the situation. For example, if we use DFS on an incredibly long tree, we will spend a lot of time going further and further down a single branch without searching the rest of the data structure. In addition, it is not the natural way humans would order a tree if asked to number all the nodes from top to bottom. I would argue a more natural traversal order would look something like this:
@@ -289,6 +299,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:45-56, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import:108-129, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import:41-48, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 ## Video Explanation
@@ -351,6 +363,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"lisp"](code/clisp/tree-traversal.lisp)
 {% sample lang="m" %}
 [import, lang:"matlab"](code/matlab/tree.m)
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 
