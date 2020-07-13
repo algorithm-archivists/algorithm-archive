@@ -97,6 +97,8 @@ each point is tested to see whether it's in the circle or not:
 <p>
     <img  class="center" src="code/scratch/InCircle.svg" style="width:40%" />
 </p>
+{% sample land="coco" %}
+[import:4-9, lang:"coconut"](code/coconut/monte_carlo.coco)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -202,6 +204,8 @@ The code snippets were taken from this [scratch project](https://scratch.mit.edu
 <p>
     <img  class="center" src="code/scratch/Algorithm.svg" style="width:100%" />
 </p>
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/monte_carlo.coco)
 {% endmethod %}
 
 <script>

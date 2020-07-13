@@ -1,0 +1,32 @@
+import math
+import random
+
+data point(x, y):
+    def __abs__(self) = (self.x, self.y) |> map$(pow$(?, 2)) |> sum |> math.sqrt
+
+def in_circle(p is point, radius = 1):
+    """Return True if the point is in the circle and False otherwise."""
+    return abs(p) < radius
+
+def monte_carlo(n_samples, radius = 1):
+    """Return the estimate of pi using the monte carlo algorithm."""
+    coordinates = [(random.uniform(0, radius), random.uniform(0, radius)) for _ in range(n_samples)]
+    points =  coordinates |> map$(t -> point(*t))
+    in_circle_points = points |> filter$(in_circle$(?, radius))
+    pi_estimate = (in_circle_points |> tuple |> len) * 4 / n_samples
+
+
+    return pi_estimate
+
+if __name__ == '__main__':
+
+    samples = 100_000
+
+    print(f"Using {samples:_} samples.")
+
+    pi_estimate = monte_carlo(samples)
+    percent_error = 100*abs(math.pi - pi_estimate)/math.pi
+
+    print("The estimate of pi is: {:.3f}".format(pi_estimate))
+    print("The percent error is: {:.3f}".format(percent_error))
+
