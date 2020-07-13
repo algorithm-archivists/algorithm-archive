@@ -97,7 +97,7 @@ each point is tested to see whether it's in the circle or not:
 <p>
     <img  class="center" src="code/scratch/InCircle.svg" style="width:40%" />
 </p>
-{% sample land="coco" %}
+{% sample lang="coco" %}
 [import:4-9, lang:"coconut"](code/coconut/monte_carlo.coco)
 {% endmethod %}
 
