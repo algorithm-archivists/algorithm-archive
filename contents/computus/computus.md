@@ -295,6 +295,8 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 [import, lang:"c"](code/c/gauss_easter.c)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/gauss_easter.cpp)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/gauss-easter.lisp)
 {% endmethod %}
 
 
