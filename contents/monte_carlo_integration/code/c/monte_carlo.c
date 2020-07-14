@@ -4,33 +4,32 @@
 #include <stdlib.h>
 #include <time.h>
 
-bool in_circle(double x, double y, double radius) {
-    return x * x + y * y < radius * radius;
+bool in_circle(double x, double y) {
+    return x * x + y * y < 1;
 }
 
-void monte_carlo(int samples) {
-    double radius = 1.0;
-    int count = 0;
+double monte_carlo(unsigned int samples) {
+    unsigned int count = 0;
 
-    for (int i = 0; i < samples; ++i) {
-        double x = (double)rand() * 2.0 / RAND_MAX - 1.0;
-        double y = (double)rand() * 2.0 / RAND_MAX - 1.0;
+    for (unsigned int i = 0; i < samples; ++i) {
+        double x = (double)rand() / RAND_MAX;
+        double y = (double)rand() / RAND_MAX;
 
-        if (in_circle(x, y, radius)) {
+        if (in_circle(x, y)) {
             count += 1;
         }
     }
 
-    double estimate = 4.0 * count / (samples * radius * radius);
-
-    printf("The estimate of pi is %f\n", estimate);
-    printf("Which has an error of %0.2f%\n", 100 * (M_PI - estimate) / M_PI);
+    return 4.0 * count / samples;
 }
 
 int main() {
     srand(time(NULL));
 
-    monte_carlo(1000000);
+    double estimate = monte_carlo(1000000);
+
+    printf("The estimate of pi is %g\n", estimate);
+    printf("Percentage error: %0.2f%%\n", 100 * fabs(M_PI - estimate) / M_PI);
 
     return 0;
 }

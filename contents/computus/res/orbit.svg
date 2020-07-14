@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   viewBox="0 0 512 512"
+   height="512"
+   width="512"
+   transform="rotate(45,0,0)">
+  <g>
+    <path
+       id="earth-axis"
+       d="m 256,256 h 224"
+       style="stroke:#000000;stroke-width:1px" />
+    <path
+       id="earth-perp"
+       d="m 400,176 v 160"
+       style="stroke:#000000;stroke-width:1px" />
+    <svg
+       id="earth-frame"
+       viewBox="-128 -128 256 256"
+       height="256"
+       width="256"
+       x="272"
+       y="128">
+      <g
+         id="earth-local">
+        <path
+           id="moon-axis"
+           d="m 0,0 h 80"
+           style="stroke:#000000;stroke-width:1px" />
+        <circle
+           id="moon-orbit"
+           r="80"
+           cx="0"
+           cy="0"
+           style="fill:none;stroke:#000000;stroke-width:2" />
+        <circle
+           id="moon"
+           r="8"
+           cx="80"
+           cy="0"
+           style="fill:#7f7f7f" />
+        <animateTransform
+           attributeType="XML"
+           attributeName="transform"
+           type="rotate"
+           begin="2s"
+           from="360 0 0"
+           to="0 0 0"
+           dur="2.953s"
+           repeatCount="indefinite" />
+      </g>
+    </svg>
+    <circle
+        id="earth-orbit"
+        r="144"
+        cx="256"
+        cy="256"
+        style="fill:none;stroke:#000000;stroke-width:2" />
+    <circle
+       id="earth"
+       r="16"
+       cx="400"
+       cy="256"
+       style="fill:#00bfbf" />
+    <circle
+       id="sun"
+       r="32"
+       cy="256"
+       cx="256"
+       style="fill:#ffe600" />
+  </g>
+  <animateTransform
+     attributeType="XML"
+     attributeName="transform"
+     type="rotate"
+     begin="2s"
+     from="45 0 0"
+     to="-315 0 0"
+     dur="36.52425s"
+     repeatCount="indefinite" />
+</svg>

@@ -24,24 +24,51 @@ Since this algorithm, there have been many other algorithms that have advanced t
 
 {% method %}
 {% sample lang="cs" %}
-JarvisMarch.cs
+##### JarvisMarch.cs
 [import, lang="csharp"](code/csharp/JarvisMarch.cs)
-Program.cs
+##### Program.cs
 [import, lang="csharp"](code/csharp/Program.cs)
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/jarvis.jl)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/jarvisMarch.hs)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/jarvis_march.c)
+[import, lang:"c"](code/c/jarvis_march.c)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/jarvis-march.js)
 {% sample lang="py" %}
-[import, lang:"python"](code/python/jarvisMarch.py)
+[import, lang:"python"](code/python/jarvis_march.py)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/jarvis_march.cpp)
+[import, lang:"cpp"](code/c++/jarvis_march.cpp)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/jarvis-march.lisp)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/JarvisMarch.java)
+{% sample lang="go" %}
+[import, lang:"go"](code/golang/jarvis.go)
+{% sample lang="v" %}
+[import, lang:"v"](code/v/jarvis.v)
+{% sample lang="rust" %}
+[import, lang:"rust"](code/rust/jarvis_march.rs)
 {% endmethod %}
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

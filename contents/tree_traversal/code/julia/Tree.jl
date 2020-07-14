@@ -43,7 +43,7 @@ function DFS_recursive_inorder_btree(n::Node)
 end
 
 function DFS_stack(n::Node)
-    s = Stack(Node)
+    s = Stack{Node}()
     push!(s, n)
 
     while(length(s) > 0)
@@ -56,7 +56,7 @@ function DFS_stack(n::Node)
 end
 
 function BFS_queue(n::Node)
-    q = Queue(Node)
+    q = Queue{Node}()
     enqueue!(q, n)
 
     while(length(q) > 0)

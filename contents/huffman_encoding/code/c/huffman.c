@@ -134,6 +134,15 @@ struct tree* generate_tree(const char* str) {
         }
     }
 
+    if (heap.length == 1) {
+        struct tree* leaf = heap_pop(&heap);
+        struct tree* root = calloc(0, sizeof(struct tree));
+        root->left = leaf;
+        root->count = leaf->count;
+        heap_free(&heap);
+        return root;
+    }
+
     while (heap.length > 1) {
         struct tree* left = heap_pop(&heap);
         struct tree* right = heap_pop(&heap);

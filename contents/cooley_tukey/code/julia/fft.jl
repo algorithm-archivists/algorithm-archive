@@ -1,3 +1,5 @@
+using FFTW
+
 #simple DFT function
 function DFT(x)
     N = length(x)
@@ -24,8 +26,8 @@ function cooley_tukey(x)
     n = 0:N-1
     half = div(N,2)
     factor = exp.(-2im*pi*n/N)
-    return vcat(x_odd + x_even .* factor[1:half],
-                x_odd - x_even .* factor[1:half])
+    return vcat(x_odd .+ x_even .* factor[1:half],
+                x_odd .- x_even .* factor[1:half])
 
 end
 
@@ -37,7 +39,7 @@ function bitreverse(a::Array)
 
     bit_indices = []
     for i = 1:length(indices)
-        push!(bit_indices, bits(indices[i]))
+        push!(bit_indices, bitstring(indices[i]))
     end
 
     # Now stripping the unnecessary numbers
@@ -50,11 +52,11 @@ function bitreverse(a::Array)
         bit_indices[i] = reverse(bit_indices[i])
     end
 
-    #replacing indices
+    # Replacing indices
     for i = 1:length(indices)
         indices[i] = 0
         for j = 1:digits
-            indices[i] += 2^(j-1) * parse(string(bit_indices[i][end-j]))
+            indices[i] += 2^(j-1) * parse(Int, string(bit_indices[i][end-j]))
         end
        indices[i] += 1
     end
@@ -108,23 +110,17 @@ function butterfly(x)
     return y
 end
 
-function approx(x, y)
-    val = true
-    for i = 1:length(x)
-        if (abs(x[i]) - abs(y[i]) > 1e-5)
-            val = false
-        end
-    end
-    println(val)
-end
-
 function main()
     x = rand(128)
     y = cooley_tukey(x)
     z = iterative_cooley_tukey(x)
     w = fft(x)
-    approx(y, w)
-    approx(z, w)
+    if(isapprox(y, w))
+        println("Recursive Cooley Tukey matches fft() from FFTW package.")
+    end
+    if(isapprox(z, w))
+        println("Iterative Cooley Tukey matches fft() from FFTW package.")
+    end
 end
 
 main()

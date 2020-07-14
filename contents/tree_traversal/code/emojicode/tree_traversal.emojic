@@ -1,0 +1,143 @@
+🦃 ⏹ 🍇
+  🔘 ⏫
+
+  ❗️ 🔡 ➡️ 🔡 🍇
+    ↪️ 🐕 🙌 🆕⏹⏫❗️ 🍇
+      ↩️ 🔤The given tree is not binary!🔤
+    🍉
+    ↩️ 🔤🔤
+  🍉
+🍉
+
+🐇 🌲 🍇
+  🖍🆕 id 🔢
+  🖍🆕 children 🍨🐚🌲🍆
+
+  🆕 depth_count 🔢 children_count 🔢 🍇
+    1 ➡️ 🖍id
+    🍨🍆 ➡️ 🖍children
+
+    🌌🐕 depth_count children_count❗️
+  🍉
+
+  🔐 🆕 ⭐️ given_id 🔢 depth_count 🔢 children_count 🔢 🍇
+    given_id ➡️ 🖍id
+    🍨🍆 ➡️ 🖍children
+
+    🌌🐕 depth_count children_count❗️
+  🍉
+
+  ❗️ 🆔 ➡️ 🔢 🍇
+    ↩️ id
+  🍉
+
+  ❗️ 🧒 ➡️ 🍨🐚🌲🍆 🍇
+    ↩️ children
+  🍉
+
+  📗 Depth-First Search Recursive pre-order 📗
+  ❗️ 🌀 🍇
+    😀 🔡 id 10❗️❗️
+
+    🔂 child children 🍇
+      🌀 child❗️
+    🍉
+  🍉
+
+  📗 Depth-First Search Recursive post-order 📗
+  ❗️ 🍥 🍇
+    🔂 child children 🍇
+      🍥 child❗️
+    🍉
+
+    😀 🔡 id 10❗️❗️
+  🍉
+
+  📗
+    Depth-First Search Recursive Inorder Binary
+    This assumes only 2 children.
+  📗
+  ❗️ 🍭 ➡️ 🍬⏹ 🍇
+    ↪️ 🐔 children❗️ ▶️ 2 🍇
+      ↩️ 🆕⏹⏫❗️
+    🍉
+
+    ↪️ 🐔 children❗️ ▶️ 0 🍇
+      🍭🐽 children 0❗️❗️
+      😀 🔡 id 10❗️❗️
+      🍭🐽 children 1❗️❗️
+    🍉
+    🙅 🍇
+      😀 🔡 id 10❗️❗️
+    🍉
+    ↩️ 🤷‍♀️
+  🍉
+
+  📗 Depth-First Search Stack 📗
+  ❗️ 🥞 🍇
+    🍨 🐕 🍆 ➡️ stack
+
+    🔁 ❎ 🐔 stack❗️ 🙌  0❗️ 🍇
+      🐽 stack 🐔 stack❗️ ➖ 1❗️ ➡️ temp
+      🐨 stack 🐔 stack❗️ ➖ 1❗️
+
+      😀 🔡 🆔 temp❗️ 10❗️❗️
+
+      🧒 temp❗️ ➡️ temp_children
+      🔂 child temp_children 🍇
+        🐻 stack child❗️
+      🍉
+    🍉
+  🍉
+
+  📗 Breadth-First Search Queue 📗
+  ❗️ 🏢 🍇
+    🍨 🐕 🍆 ➡️ queue
+
+    🔁 ❎ 🐔 queue❗️ 🙌  0❗️ 🍇
+      🐽 queue 0❗️ ➡️ temp
+      🐨 queue 0❗️
+
+      😀 🔡 🆔 temp❗️ 10❗️❗️
+
+      🧒 temp❗️ ➡️ temp_children
+      🔂 child temp_children 🍇
+        🐻 queue child❗️
+      🍉
+    🍉
+  🍉
+
+  🔐 ❗️ 🌌 depth_count 🔢 children_count 🔢 🍇
+    ↪️ ❎ depth_count ◀️🙌 1❗️ 🍇
+      🔂 i 🆕⏩⏩ 0 children_count❗️ 🍇
+        🐻 children 🆕🌲⭐️ 🤜id ✖️ 10 ➕ i ➕ 1🤛 🤜depth_count ➖ 1🤛 children_count❗️❗️
+      🍉
+    🍉
+  🍉
+🍉
+
+🏁 🍇
+  🆕🌲🆕 3 3❗️ ➡️ tree
+  😀 🔤Tree Traversal🔤️❗️
+  😀 🔤🌀  - Depth-First Search Recursive pre-order🔤❗️
+  🌀tree❗️
+  😀 🔤🍥  - Depth-First Search Recursive post-order🔤❗️
+  🍥tree❗️
+  😀 🔤🥞  - Depth-First Search Stack🔤❗️
+  🥞tree❗️
+  😀 🔤🏢  - Breadth-First Search Queue🔤❗️
+  🏢tree❗️
+
+  😀 🔤🍭  - Depth-First Search Recursive Inorder Binary - Error🔤❗️
+  💭 Calling the Depth-First Search Recursive Inorder Binary method here does
+  💭 result in an error, since "tree" is not a binary tree.
+  ️↪️ 🍭tree❗️ ➡️ return 🍇
+    😀 🔡return❗❗️️
+  🍉
+
+  🆕🌲🆕 3 2❗️ ➡️ binary_tree
+  😀 🔤🍭  - Depth-First Search Recursive Inorder Binary🔤❗️
+  ️↪️ 🍭binary_tree❗️ ➡️ return 🍇
+    😀 🔡return❗❗️️
+  🍉
+🍉

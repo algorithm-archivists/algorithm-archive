@@ -1,0 +1,53 @@
+from math import atan2
+
+
+data point(x=0, y=0):
+    def angle(self, other):
+        """Computes the angle between the two points"""
+        match point(x1, y1) in other:
+            return atan2(y1 - self.y, x1 - self.x)
+    def __str__(self):
+        return f'({self.x}, {self.y})'
+
+# Is the turn counter-clockwise?
+def counter_clockwise(p1, p2, p3) =
+    (p3.y - p1.y) * (p2.x - p1.x) >= (p2.y - p1.y) * (p3.x - p1.x)
+
+
+def graham_scan(gift):
+    gift = list(set(gift)) # Remove the duplicate points if any.
+    start = min(gift, key=(p -> (p.x, p.y)))
+    gift.remove(start)
+
+    s = sorted(gift, key=(point -> start.angle(point)))
+    hull = [start, s[0], s[1]]
+
+    # Remove the hull points that make the hull concave
+    for point in s[2:]:
+        while not counter_clockwise(hull[-2], hull[-1], point):
+            del hull[-1]
+        hull.append(point)
+    return hull
+
+
+if __name__ == '__main__':
+    test_gift = [
+            (-5, 2),
+            (5, 7),
+            (-6, -12),
+            (-14, -14),
+            (9, 9),
+            (-1, -1),
+            (-10, 11),
+            (-6, 15),
+            (-6, -8),
+            (15, -9),
+            (7, -7),
+            (-2, -9),
+            (6, -5),
+            (0, 14),
+            (2, 8),
+    ] |> map$(p -> point(*p)) |> list
+    hull = graham_scan(test_gift)
+    "The points in the hull are:" |> print
+    "\n".join(map(str, hull)) |> print
