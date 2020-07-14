@@ -12,7 +12,7 @@ def jarvis_march(gift):
     hull = [point_on_hull] # It is guaranteed it will be on the hull.
 
     while True:
-        # Candidate for the
+        # Candidate for the next point in the hull
         endpoint = gift[0]
         for p in gift:
             if (endpoint == point_on_hull
