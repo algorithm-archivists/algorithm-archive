@@ -8,15 +8,11 @@ def in_circle(p is point, radius = 1):
     """Return True if the point is in the circle and False otherwise."""
     return abs(p) < radius
 
-def monte_carlo(n_samples, radius = 1):
-    """Return the estimate of pi using the monte carlo algorithm."""
-    coordinates = [(random.uniform(0, radius), random.uniform(0, radius)) for _ in range(n_samples)]
-    points =  coordinates |> map$(t -> point(*t))
-    in_circle_points = points |> filter$(in_circle$(?, radius))
-    pi_estimate = (in_circle_points |> tuple |> len) * 4 / n_samples
-
-
-    return pi_estimate
+def monte_carlo(n_samples, radius = 1) = (range(n_samples)
+    |> map$(-> point(random.uniform(0, radius), random.uniform(0, radius)))
+    |> filter$(in_circle$(?, radius))
+    |> tuple
+    |> len) * 4 / n_samples
 
 if __name__ == '__main__':
 
