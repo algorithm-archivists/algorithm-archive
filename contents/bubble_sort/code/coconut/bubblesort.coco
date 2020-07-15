@@ -1,0 +1,15 @@
+import random
+
+def bubble_sort(array):
+	length = len(array)
+	for i in range(length):
+		for j in range(length - i - 1):
+			if array[j] > array[j + 1]:
+				array[j], array[j + 1] = array[j + 1], array[j]
+
+
+if __name__ == '__main__':
+	array = range(10) |> map$(-> random.randint(0, 1000)) |> list
+	print('Before sorting:', array)
+	bubble_sort(array)
+	print('After sorting:', array)
