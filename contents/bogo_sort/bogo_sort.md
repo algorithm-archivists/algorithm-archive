@@ -69,6 +69,8 @@ In code, it looks something like this:
 [import:12-16, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
 [import:27-31, lang:"go"](code/go/bogo_sort.go)
+{% sample lang="coco" %}
+[import:11-13, lang:"coconut"](code/coconut/bogo.coco)
 {% endmethod %}
 
 That's it.
@@ -137,6 +139,8 @@ We are done here!
 [import, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
 [import, lang:"go"](code/go/bogo_sort.go)
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/bogo.coco)
 {% endmethod %}
 
 
