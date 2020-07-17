@@ -162,7 +162,7 @@ The code snippet was taken from this [Scratch project](https://scratch.mit.edu/p
 {% sample lang="r" %}
 [import, lang:"r"](code/r/bubble_sort.R)
 {% sample lang="coco" %}
-[import, long:"coconut"](code/coconut/bubblesort.coco)
+[import, lang:"coconut"](code/coconut/bubblesort.coco)
 {% endmethod %}
 
 <script>
