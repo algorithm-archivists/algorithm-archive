@@ -7,8 +7,6 @@ addpattern def swap_till(x, y is int) = [min(x, y), max(x, y)]
 addpattern def swap_till(x, [y] + rest) =
     [min(x, y)] + swap_till(max(x, y), rest)
 
-
-
 bubble_sort = reduce$((x, y) -> swap_till(y, x))
 
 if __name__ == '__main__':

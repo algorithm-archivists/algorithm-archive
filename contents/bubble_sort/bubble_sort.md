@@ -79,7 +79,7 @@ This means that we need to go through the vector $$\mathcal{O}(n^2)$$ times with
 {% sample lang="r" %}
 [import:1-12, lang:"r"](code/r/bubble_sort.R)
 {% sample lang="coco" %}
-[import:3-8, lang:"coconut"](code/coconut/bubblesort.coco)
+[import:3-10, lang:"coconut"](code/coconut/bubblesort.coco)
 {% endmethod %}
 
 ... And that's it for the simplest bubble sort method.
