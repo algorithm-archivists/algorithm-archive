@@ -1,15 +1,15 @@
 import random
 
-def bubble_sort(array):
-	length = len(array)
-	for i in range(length):
-		for j in range(length - i - 1):
-			if array[j] > array[j + 1]:
-				array[j], array[j + 1] = array[j + 1], array[j]
+def swap_till(x, []) = [x]
+addpattern def swap_till(x, [y] + rest) =
+    [min(x, y)] + swap_till(max(x, y), rest)
+addpattern def swap_till(x, y is int) = [min(x, y), max(x, y)]
 
+
+bubble_sort = reduce$((x, y) -> swap_till(y, x))
 
 if __name__ == '__main__':
-	array = range(10) |> map$(-> random.randint(0, 1000)) |> list
-	print('Before sorting:', array)
-	bubble_sort(array)
-	print('After sorting:', array)
+    array = range(10) |> map$(-> random.randint(0, 1000)) |> list
+    print('Before sorting:', array)
+    array = bubble_sort(array) |> list
+    print('After sorting:', array)
