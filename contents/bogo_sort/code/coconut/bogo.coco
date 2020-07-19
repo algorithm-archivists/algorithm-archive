@@ -1,12 +1,7 @@
 import random
 
 
-def is_sorted(a):
-    for x, y in zip(a, a[1:]):
-        if x > y:
-            return False
-    return True
-
+is_sorted = l -> (l, l[1:]) |*> zip |> map$(t -> t[0] <= t[1]) |> all
 
 def bogo_sort(a):
     while not is_sorted(a):

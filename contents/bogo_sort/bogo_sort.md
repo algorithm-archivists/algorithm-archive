@@ -70,7 +70,7 @@ In code, it looks something like this:
 {% sample lang="go" %}
 [import:27-31, lang:"go"](code/go/bogo_sort.go)
 {% sample lang="coco" %}
-[import:11-13, lang:"coconut"](code/coconut/bogo.coco)
+[import:6-8, lang:"coconut"](code/coconut/bogo.coco)
 {% endmethod %}
 
 That's it.
