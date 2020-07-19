@@ -33,7 +33,6 @@ def build_huffman_tree(message):
 
     # while there is more than one tree
     while len(trees) > 1:
-        print(trees)
 
         # pop off the two trees of least weight from the trees list
         tree_left = trees.popleft()
