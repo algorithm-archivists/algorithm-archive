@@ -22,6 +22,6 @@ if __name__ == '__main__':
     n = 100
     threshold = 0.01
 
-    result = list(forward_euler(time_step, n))
+    result = forward_euler(time_step, n)
     approx = check(result, threshold, time_step)
     print("All values within threshold") if approx else print("Value(s) not in threshold")
