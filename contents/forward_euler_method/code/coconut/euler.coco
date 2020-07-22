@@ -1,4 +1,4 @@
-import numpy as np
+import math
 
 def forward_euler(time_step, n):
     y = 1
@@ -8,9 +8,13 @@ def forward_euler(time_step, n):
 
 
 def check(result, threshold, time_step):
-    x = np.linspace(0, 1, 1 / time_step)
-    solution = np.exp(-3 * x)
-    return np.abs(solution - result) <= threshold).all()
+    approx = True
+    for i, y in enumerate(result):
+        solution = math.exp(-3 * i * time_step)
+        if not math.isclose(y, solution, abs_tol=threshold):
+            print(y, solution)
+            approx = False
+    return approx
 
 
 if __name__ == '__main__':
@@ -18,6 +22,6 @@ if __name__ == '__main__':
     n = 100
     threshold = 0.01
 
-    result = np.array(list(forward_euler(time_step, n)))
+    result = list(forward_euler(time_step, n))
     approx = check(result, threshold, time_step)
     print("All values within threshold") if approx else print("Value(s) not in threshold")
