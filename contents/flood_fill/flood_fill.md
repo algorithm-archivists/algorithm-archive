@@ -211,6 +211,14 @@ Simply put: depth-first traversal is slightly more efficient in this case unless
 As stated before, the method discussed in this chapter is just the tip of the iceberg and many other flood fill methods exist that are likely to be more efficient for most purposes.
 These will all be covered in subsequent chapters which will come out somewhat regularly throughout the next few months, lest we flood that archive with flood fill methods.
 
+## Video Explanation
+
+Here is a video describing tree traversal:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ldqAmkdthHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 
 The example code for this chapter will be the simplest application of flood fill that still adequately tests the code to ensure it is stopping at boundaries appropriately.
@@ -254,5 +262,3 @@ The text of this chapter was written by [James Schloss](https://github.com/leio)
 - The image "[Grid 6](res/grid_6.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The video "[Stack Fill](res/recurse_animation.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The video "[Queue Fill](res/queue_animation.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-
-
