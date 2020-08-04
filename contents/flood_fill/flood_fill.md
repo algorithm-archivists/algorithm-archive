@@ -162,7 +162,9 @@ The code would look something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:155-178, lang:"julia"](code/julia/flood_fill.jl)
+[import:80-104, lang:"julia"](code/julia/flood_fill.jl)
+{% sample lang="c" %}
+[import:155-178, lang:"c"](code/c/flood_fill.c)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
