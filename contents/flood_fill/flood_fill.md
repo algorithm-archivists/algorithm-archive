@@ -88,6 +88,8 @@ In code, this might look like this:
 {% method %}
 {% sample lang="jl" %}
 [import:37-55, lang:"julia"](code/julia/flood_fill.jl)
+{% sample lang="c" %}
+[import:34-52, lang:"c"](code/c/flood_fill.c)
 {% endmethod %}
 
 
@@ -102,10 +104,17 @@ In code, it might look like this:
 {% method %}
 {% sample lang="jl" %}
 [import:106-118, lang:"julia"](code/julia/flood_fill.jl)
+{% sample lang="c" %}
+[import:180-195, lang:"c"](code/c/flood_fill.c)
+{% endmethod %}
 
-All Julia code snippets for this chapter rely on an exterior `color!(...)` function, defined as
+All code snippets for this chapter rely on an exterior `color` function, defined as
 
+{% method %}
+{% sample lang="jl" %}
 [import:23-35, lang:"julia"](code/julia/flood_fill.jl)
+{% sample lang="c" %}
+[import:28-32, lang:"c"](code/c/flood_fill.c)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -115,6 +124,8 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 {% method %}
 {% sample lang="jl" %}
 [import:57-77, lang:"julia"](code/julia/flood_fill.jl)
+{% sample lang="c" %}
+[import:85-108, lang:"c"](code/c/flood_fill.c)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -151,7 +162,7 @@ The code would look something like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:80-104, lang:"julia"](code/julia/flood_fill.jl)
+[import:155-178, lang:"julia"](code/julia/flood_fill.jl)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
@@ -228,6 +239,8 @@ After, we will fill in the left-hand side of the array to be all ones by choosin
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/flood_fill.jl)
+{% sample lang="c" %}
+[import, lang:"c"](code/c/flood_fill.c)
 {% endmethod %}
 
 
