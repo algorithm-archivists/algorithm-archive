@@ -92,6 +92,8 @@ In code, this might look like this:
 [import:28-46, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:10-25, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:25-30, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -110,6 +112,8 @@ In code, it might look like this:
 [import:174-189, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:55-63, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:64-70, lang:"coconut"](code/coconut/flood_fill.jl)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -123,6 +127,8 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 [import:79-102, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:27-36, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:33-44, lang:"coconut"](code/coconut/flood_fill.jl)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -164,6 +170,8 @@ The code would look something like this:
 [import:149-172, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:38-53, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:47-61, lang:"coconut"](code/coconut/flood_fill.jl)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
@@ -244,6 +252,8 @@ After, we will fill in the left-hand side of the array to be all ones by choosin
 [import, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/flood_fill.jl)
 {% endmethod %}
 
 
