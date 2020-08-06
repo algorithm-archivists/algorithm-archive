@@ -31,6 +31,9 @@ def build_huffman_tree(message):
     frequencies = Counter(message)
     trees = frequencies.most_common() |> map$(t -> Leaf(*t)) |> reversed |> deque
 
+    if not trees:
+        return Empty()
+
     # while there is more than one tree
     while len(trees) > 1:
 
@@ -62,7 +65,7 @@ def huffman_encode(codebook, message):
     # build a char -> code dictionary
     forward_dict = dict(codebook)
 
-    return ''.join(message |> forward_dict[])
+    return ''.join(message |> map$(forward_dict[]))
 
 # decodes a message
 def huffman_decode(codebook, encoded_message):
@@ -70,14 +73,20 @@ def huffman_decode(codebook, encoded_message):
     decoded_message = []
     key = ''
 
+    if not codebook:
+        return ''
+
     # build a code -> char dictionary
-    inverse_dict = dict([(v, k) for k, v in codebook])
+    inverse_dict = dict((v, k) for k, v in codebook)
 
     # for each bit in the encoding
     # if the bit is in the dictionary, replace the bit with the paired character
     # else look at the bit and the following bits together until a match occurs
     # move to the next bit not yet looked at
-    for index, bit in enumerate(encoded_message):
+    if encoded_message == '':
+        return inverse_dict['']
+
+    for bit in encoded_message:
         key += bit
         if key in inverse_dict:
             decoded_message.append(inverse_dict[key])
