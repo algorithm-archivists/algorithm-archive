@@ -1,4 +1,4 @@
-# Submitted by Gustorn
+using Random
 
 const mnames = ["A", "B", "C", "D"]
 const wnames = ["E", "F", "G", "H"]
@@ -21,7 +21,7 @@ prefers(prefs, person, first, second) =
 
 isfree(person, pairs) = !haskey(pairs, person)
 
-function galeshapely(men::Preferences, women::Preferences)
+function galeshapley(men::Preferences, women::Preferences)
     mentowomen = Dict{String,String}()
     womentomen = Dict{String,String}()
     while true
@@ -62,7 +62,7 @@ end
 
 function main()
     men, women = genpreferences(mnames, wnames)
-    mentowomen, womentomen = galeshapely(men, women)
+    mentowomen, womentomen = galeshapley(men, women)
     println(mentowomen)
     println(isstable(men, women, mentowomen, womentomen) ? "Stable" : "Unstable")
 end
