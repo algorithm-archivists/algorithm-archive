@@ -1,5 +1,5 @@
-use std::collections::VecDeque;
 use ndarray::prelude::*; // 0.13.1
+use std::collections::VecDeque;
 
 fn color(canvas: &mut Array<usize, Ix2>, loc: &[usize; 2], old_val: usize, new_val: usize) {
     // do not color a nonexistent pixel
