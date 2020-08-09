@@ -42,8 +42,8 @@ fn stack_fill(canvas: &mut Array<usize, Ix2>, loc: &[usize; 2], old_val: usize, 
     while let Some(current_loc) = stack.pop() {
         if canvas[current_loc] == old_val {
             color(canvas, &current_loc, old_val, new_val);
-            let mut neighbors = find_neighbors(canvas, &current_loc, old_val);
-            stack.append(&mut neighbors);
+            let neighbors = find_neighbors(canvas, &current_loc, old_val);
+            stack.extend(neighbors);
         }
     }
 }
