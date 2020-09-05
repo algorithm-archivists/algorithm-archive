@@ -21,7 +21,7 @@ let str_to_charlist str =
    unique characters with their frequency
 
    TL;DR : 
-    "bibbity_bob" -> 
+    "bibbity_bobbity" -> 
     [('b', 6); ('i', 3); ('t', 2); ('y', 2); ('_', 1); ('o', 1)]
 *)
 let counter str =
@@ -104,11 +104,8 @@ let encode_msg codebook msg =
   List.fold_left (fun acc x -> acc ^ x) ""
 
 let decode codebook key =
-  let value = List.find_opt (fun (ch,code) -> key = code) codebook in
-  let it_contains = match value with
-    | None -> false
-    | Some _ -> true in
-  value
+  List.find_opt (fun (ch,code) -> key = code) codebook
+  
 
 let decode_msg codebook msg =
   let decoded_message = ref "" in
