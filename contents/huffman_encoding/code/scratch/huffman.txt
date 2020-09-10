@@ -1,0 +1,155 @@
+define Huffman encodes (string)
+set [encoded v] to () // empty here
+if <(string) = ()> then // empty here
+else
+    delete all of [Letter-Node Pointer v]
+    delete all of [Nodes' Values List v]
+    delete all of [Operating Nodes' List v]
+    delete all of [Node-lhs Index v]
+    delete all of [Node-rhs Index v]
+    delete all of [bit list v]
+    delete all of [codebook v]
+    initialize leaves with (string)
+    make tree
+    if <(0) = (item (root) of [Node-lhs Index v])> then
+        binary count // special care: see issue #659
+    else
+        repeat (length of [Letter-Node Pointer v])
+            add (plcaceholder) to [codebook v]
+        end
+        generate codebook from (root)
+        format (string) using codebook
+    end
+end
+
+define initialize leaves with (string)
+set [i v] to (1)
+repeat (length of (string))
+    if <[Letter-Node Pointer v] contains (letter (i) of (string))> then // increment: if didn't exist, add it
+        set [temp v] to ((1) + (item (item # of (letter (i) of (string)) in [Letter-Node Pointer v]) of [Nodes' Values List v]))
+        replace item (item # of (letter (i) of (string)) in [Letter-Node Pointer v]) of [Nodes' Values List v] with (tmp)
+    else
+        add (1) to [Nodes' Values List v]
+        add (letter (i) of (string)) to [Letter-Node Pointer v]
+    end
+    change [i v] by (1)
+end
+
+define Make tree
+set [i v] to (1)
+repeat (length of [Nodes' Values List v]) // initialize
+    add (item (i) of [Nodes' Values List v]) to [Operating Nodes' List v]
+    add (0) to [Node-lhs Index v] // leaves don't have children
+    add (0) to [Node-rhs Index v]
+    change [i v] by (1)
+end
+set [count v] to (length of [Nodes' Values List v])
+repeat until <(count) = (1)>
+    set [i v] to (2) // find smallest 2 nodes
+    set [minimum v] to (item (1) of [Operating Nodes' List v])
+    set [lhs-index v] to (1)
+    set [rhs-index v] to (1)
+    repeat ((length of [Operating Nodes' List]) - (1))
+        if <(item (i) of [Operating Nodes' List v]) < (minimum)> then
+            set [minimum v] to (item (i) of [Operating Nodes' List v])
+            set [lhs-index v] to (i)
+        end
+        change [i v] by (1)
+    end
+    set [i v] to (2)
+    replace item (lhs-index) of [Operating Nodes' List v] with (2147483647) // Int.MaxValue
+    set [2nd minimum v] to (item (1) of [Operating Nodes' List v])
+    repeat ((length of [Operating Nodes' List]) - (1))
+        if <(item (i) of [Operating Nodes' List v]) < (2nd minimum)> then
+            set [2nd minimum v] to (item (i) of [Operating Nodes' List v])
+            set [rhs-index v] to (i)
+        end
+        change [i v] by (1)
+    end
+    set [i v] to (2)
+    replace item (rhs-index) of [Operating Nodes' List v] with (2147483647) // Int.MaxValue
+    change [count v] by (-1)
+    add ((minimum) + (2nd minimum)) to [Nodes' Values List v]
+    add ((minimum) + (2nd minimum)) to [Operating Nodes' List v]
+    add (lhs-index) to [Node-lhs Index v]
+    add (rhs-index) to [Node-rhs Index v]
+end
+set [root v] to (length of [Nodes' Values List])
+
+define generate codebook from (root) // depth-first search
+if <(0) = (item (root) of [Node-lhs Index v])> then // reached a leaf
+    set [tmp v] to () // empty here
+    set [i v] to (1)
+    repeat (length of [bit list v])
+        set [tmp v] to (join (tmp) (item (i) of [bit list v]))
+        change [i v] by (1)
+    end
+    replace item (root) of [codebook v] with (tmp)
+else
+    add (1) to [bit list v] // 1 for lhs
+    generate codebook from (item (root) of [Node-lhs Index v])
+    delete (length of [bit list v]) of [bit list v]
+    add (0) to [bit list v] // 0 for rhs
+    generate codebook from (item (root) of [Node-rhs Index v])
+    delete (length of [bit list v]) of [bit list v]
+end
+
+define format (string) using codebook
+set [i v] to (1)
+repeat (length of (string))
+    set [encoded v] to (join (encoded) (item (item # of (letter (i) of (string)) in [Letter-Node Pointer v]) of [codebook v]))
+    change [i v] by (1)
+end
+
+define binary count
+set [tmp v] to (item (1) of [Nodes' Values List v])
+repeat until <(0) = (tmp)>
+    add ((tmp) mod (2)) to [bit list v]
+    set [tmp v] to (((tmp) - ((tmp) mod (2))) / (2))
+end
+set [i v] to (length of [bit list v])
+repeat until <(0) = (i)>
+    set [encoded v] to (join (encoded) (item (i) of [bit list v]))
+    change [i v] by (-1)
+end
+
+define Huffman decodes (string)
+set [decoded v] to () // empty here
+if <(1) = (length of [Letter-Node Pointer v])> then
+    binary resume using (string) // special care: see issue #659
+else
+    set [i v] to (1)
+    set [index v] to (root)
+    repeat (length of (string))
+        if <(letter (i) of (string)) = (1)> then
+            set [index v] to (item (index) of [Node-lhs Index v])
+        else
+            set [index v] to (item (index) of [Node-rhs Index v])
+        end
+        if <(item (index) of [Node-lhs Index v]) = (0)> then
+            set [decoded v] to (join (decoded) (item (index) of [Letter-Node Pointer v]))
+            set [index v] to (root)
+        end
+        change [i v] by (1)
+    end
+end
+
+define binary resume using (string)
+set [tmp v] to (0)
+set [i v] to (1)
+repeat (length of (string))
+    set [tmp v] to (((tmp) * (2)) + (letter (i) of (string)))
+    change [i v] by (1)
+end
+repeat (tmp)
+    set [decoded v] to (join (decoded) (item (1) of [Letter-Node Pointer v]))
+end
+
+when @greenflag clicked
+set [to be encoded v] to [bibbity bobbity]
+Huffman encodes (to be encoded)
+say (join [Encoded, the string looks like: ] (encoded)) for (3) seconds
+Huffman decodes (encoded)
+say (join [And decoded, the string looks like: ] (decoded)) for (3) seconds
+say (join (join [As opposed to the original, which is ] ((length of (to be encoded)) * (8))) [bits,]) for (2) seconds
+say (join (join [The encoded has size ] (length of (encoded))) [.]) for (1) seconds
