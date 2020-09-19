@@ -90,6 +90,8 @@ In code, this might look like this:
 [import:37-55, lang:"julia"](code/julia/flood_fill.jl)
 {% sample lang="c" %}
 [import:34-52, lang:"c"](code/c/flood_fill.c)
+{% sample lang="py" %}
+[import:15-30, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
 
@@ -106,6 +108,8 @@ In code, it might look like this:
 [import:106-118, lang:"julia"](code/julia/flood_fill.jl)
 {% sample lang="c" %}
 [import:180-195, lang:"c"](code/c/flood_fill.c)
+{% sample lang="py" %}
+[import:62-70, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
 All code snippets for this chapter rely on an exterior `color` function, defined as
@@ -115,6 +119,8 @@ All code snippets for this chapter rely on an exterior `color` function, defined
 [import:23-35, lang:"julia"](code/julia/flood_fill.jl)
 {% sample lang="c" %}
 [import:28-32, lang:"c"](code/c/flood_fill.c)
+{% sample lang="py" %}
+[import:12-13, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -126,6 +132,8 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 [import:57-77, lang:"julia"](code/julia/flood_fill.jl)
 {% sample lang="c" %}
 [import:85-108, lang:"c"](code/c/flood_fill.c)
+{% sample lang="py" %}
+[import:32-43, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -165,6 +173,8 @@ The code would look something like this:
 [import:80-104, lang:"julia"](code/julia/flood_fill.jl)
 {% sample lang="c" %}
 [import:155-178, lang:"c"](code/c/flood_fill.c)
+{% sample lang="py" %}
+[import:45-60, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
@@ -243,6 +253,8 @@ After, we will fill in the left-hand side of the array to be all ones by choosin
 [import, lang:"julia"](code/julia/flood_fill.jl)
 {% sample lang="c" %}
 [import, lang:"c"](code/c/flood_fill.c)
+{% sample lang="py" %}
+[import:, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
 
