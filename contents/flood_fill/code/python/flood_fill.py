@@ -9,7 +9,7 @@ def inbounds(canvas, p):
         return False
     return True
 
-def color(canvas, p, old_val, new_val):
+def color(canvas, p, new_val):
     canvas.data[p.x][p.y] = new_val
 
 def find_neighbors(canvas, p, old_val, new_val):
@@ -39,7 +39,7 @@ def stack_fill(canvas, p, old_val, new_val):
     while len(S) > 0:
         cur_loc = S.pop()
         if canvas.data[cur_loc.x][cur_loc.y] == old_val:
-            color(canvas, cur_loc, old_val, new_val)
+            color(canvas, cur_loc, new_val)
             S+= find_neighbors(canvas, cur_loc, old_val, new_val)
 
 def queue_fill(canvas, p, old_val, new_val):
@@ -49,21 +49,21 @@ def queue_fill(canvas, p, old_val, new_val):
     Q = Queue()
     Q.put(p)
 
-    color(canvas, p, old_val, new_val)
+    color(canvas, p, new_val)
 
     while not Q.empty():
         cur_loc = Q.get()
         neighbors = find_neighbors(canvas, cur_loc, old_val, new_val)
 
         for neighbor in neighbors:
-            color(canvas, neighbor, old_val, new_val)
+            color(canvas, neighbor, new_val)
             Q.put(neighbor)
 
 def recursive_fill(canvas, p, old_val, new_val):
     if old_val == new_val:
         return
 
-    color(canvas, p, old_val, new_val)
+    color(canvas, p, new_val)
 
     neighbors = find_neighbors(canvas, p, old_val, new_val)
     for neighbor in neighbors:
