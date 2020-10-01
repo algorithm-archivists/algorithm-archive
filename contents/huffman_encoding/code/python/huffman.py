@@ -29,11 +29,17 @@ def build_huffman_tree(message):
         # insert the new tree there
         trees.insert(index, (new_tree, new_weight))
 
-    huffman_tree = trees[0][0]
+    # Return an empty list if the message was empty, else the tree
+    huffman_tree = [] if not trees else trees[0][0]
     return huffman_tree
 
 # constructs the mapping with recursion
 def build_codebook(tree, code=''):
+    # Check wether our tree contains more than 1 element or not
+    if not tree:
+        return []
+    elif type(tree) != list:
+        return [(tree, '0')]
 
     codebook = []
 
