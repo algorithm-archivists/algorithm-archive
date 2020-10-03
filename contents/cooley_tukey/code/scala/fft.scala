@@ -20,22 +20,16 @@ object FT {
   /** Calculates a single DFT coefficient. */
   private def coefficient(n: Int, k: Int, ftLength: Int): Complex = 
     Complex.fromPolar(1.0, -2.0 * Math.PI * k * n / ftLength)
-    
-  /** Calculates one value of the DFT of signal */
-  private def dftValue(signal: IndexedSeq[Double], k: Int): Complex = {
-    // Multiply the signal with the coefficients vector
-    val terms = for (i <- signal.indices) yield coefficient(i, k, signal.length) * signal(i)
-
-    terms reduce { _ + _ }
-  }
-    
+  
   def dft(signal: IndexedSeq[Double]): IndexedSeq[Complex] = 
-    signal.indices map { dftValue(signal, _) }
+    signal.indices map { k => 
+      val terms = for (n <- signal.indices) yield coefficient(n, k, signal.length) * signal(n)
+      terms reduce { _ + _ }
+    }
 
   /** Combines the transforms of the even and odd indices */
   private def mergeTransforms(evens: IndexedSeq[Complex], odds: IndexedSeq[Complex]): IndexedSeq[Complex] = {
-    val oddTerms = for (i <- odds.indices) 
-      yield coefficient(1, i, 2 * odds.length) * odds(i)
+    val oddTerms = for (i <- odds.indices) yield coefficient(1, i, 2 * odds.length) * odds(i)
     
     val pairs = evens.zip(oddTerms)
 
@@ -46,19 +40,19 @@ object FT {
     case 2 => mergeTransforms(
       Vector(new Complex(signal(0), 0)),
       Vector(new Complex(signal(1), 0)))
-    case _ => {
+    case _ => 
       // Split signal into even and odd indices and call cooleyTukey recursively on each.
       val evens = cooleyTukey(for (i <- 0 until signal.length by 2) yield signal(i))
       val odds = cooleyTukey(for (i <- 1 until signal.length by 2) yield signal(i))
 
       mergeTransforms(evens, odds)
-    }
+    
   }
 
   /** Reverses the bits in value. */
   private def reverseBits(value: Int, length: Int): Int = length match {
     case 1 => value
-    case _ => {
+    case _ => 
       // Split bits in the middle.
       val lowerHalf = length / 2
 
@@ -69,7 +63,6 @@ object FT {
       // Reverse each half recursively and then swap them.
       (reverseBits(value & mask, lowerHalf) << upperHalf) + 
         reverseBits(value >> lowerHalf, upperHalf)
-    }
   }
 
 
