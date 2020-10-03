@@ -65,53 +65,28 @@ def recursive_fill(canvas, p, old_val, new_val):
     for neighbor in neighbors:
         recursive_fill(canvas, neighbor, old_val, new_val)
 
-if __name__ == "__main__":
-    TestResults = namedtuple('TestResults', 'passes failures')
-    pass_count = failure_count = 0
-
+def main():
     grid = np.zeros((5, 5))
     grid[2,:] = 1
-    solution_grid = np.zeros((5, 5))
-    solution_grid[:3,] = 1
+    
+    answer = np.zeros((5, 5))
+    answer[:3,] = 1
 
-    starting_location = Point(0, 0)
+    c0 = grid.copy()
+    c1 = grid.copy()
+    c2 = grid.copy()
 
+    start_loc = Point(0, 0)
 
-    # The following is manual unit testing of the function
-    recursive_fill(grid, starting_location, 0, 1)
-    try:
-        assert (grid == solution_grid).all()
-    except AssertionError:
-        print('F', end='')
-        failure_count += 1
-    else:
-        print('.', end='')
-        pass_count += 1
+    recursive_fill(c0, start_loc, 0, 1)
+    queue_fill(c1, start_loc, 0, 1)
+    stack_fill(c2, start_loc, 0, 1)
 
-    # Resetting the grid, if everything went well.
-    grid[:2,] = 0
+    assert (c0 == answer).all()
+    assert (c1 == answer).all()
+    assert (c2 == answer).all()
 
-    stack_fill(grid, starting_location, 0, 1)
-    try:
-        assert (grid == solution_grid).all()
-    except AssertionError:
-        print('F', end='')
-        failure_count += 1
-    else:
-        print('.', end='')
-        pass_count += 1
+    print("Tests Passed")
 
-    grid[:2,] = 0
-
-    queue_fill(grid, starting_location, 0, 1)
-    try:
-        assert (grid == solution_grid).all()
-    except AssertionError:
-        print('F', end='')
-        failure_count += 1
-    else:
-        print('.', end='')
-        pass_count += 1
-
-    print('')
-    print(TestResults(pass_count, failure_count))
+if __name__ == "__main__":
+    main()
