@@ -35,7 +35,7 @@ def build_huffman_tree(message):
 
 # constructs the mapping with recursion
 def build_codebook(tree, code=''):
-    # Check wether our tree contains more than 1 element or not
+    # Check whether our tree contains more than 1 element or not
     if not tree:
         return []
     elif type(tree) != list:
