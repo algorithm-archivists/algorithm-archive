@@ -91,7 +91,7 @@ In code, this might look like this:
 {% sample lang="c" %}
 [import:34-52, lang:"c"](code/c/flood_fill.c)
 {% sample lang="js" %}
-[import:11-22, lang:"javascript"](code/javascript/flood_fill.js)
+[import:6-17, lang:"javascript"](code/javascript/flood_fill.js)
 {% endmethod %}
 
 
@@ -109,18 +109,7 @@ In code, it might look like this:
 {% sample lang="c" %}
 [import:180-195, lang:"c"](code/c/flood_fill.c)
 {% sample lang="js" %}
-[import:56-61, lang:"javascript"](code/javascript/flood_fill.js)
-{% endmethod %}
-
-All code snippets for this chapter rely on an exterior `color` function, defined as
-
-{% method %}
-{% sample lang="jl" %}
-[import:23-35, lang:"julia"](code/julia/flood_fill.jl)
-{% sample lang="c" %}
-[import:28-32, lang:"c"](code/c/flood_fill.c)
-{% sample lang="js" %}
-[import:6-9, lang:"javascript"](code/javascript/flood_fill.js)
+[import:51-56, lang:"javascript"](code/javascript/flood_fill.js)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -133,7 +122,7 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 {% sample lang="c" %}
 [import:85-108, lang:"c"](code/c/flood_fill.c)
 {% sample lang="js" %}
-[import:24-36, lang:"javascript"](code/javascript/flood_fill.js)
+[import:19-31, lang:"javascript"](code/javascript/flood_fill.js)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -174,7 +163,7 @@ The code would look something like this:
 {% sample lang="c" %}
 [import:155-178, lang:"c"](code/c/flood_fill.c)
 {% sample lang="js" %}
-[import:38-54, lang:"javascript"](code/javascript/flood_fill.js)
+[import:33-49, lang:"javascript"](code/javascript/flood_fill.js)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.

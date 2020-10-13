@@ -3,11 +3,6 @@ function isInBounds(canvas, x, y) {
   return (x >= 0) && (x < canvas[0].length) && (y >= 0) && (y < canvas.length)
 }
 
-function color(canvas, x, y, oldColor, newColor) {
-  if (isInBounds(canvas, x, y) && canvas[y][x] == oldColor) 
-    canvas[y][x] = newColor
-}
-
 function findNeighbors(canvas, x, y, oldColor) {
   const allNeighbors = [
     [x, y - 1],  // North
@@ -27,10 +22,10 @@ function stackFill(canvas, x, y, oldColor, newColor) {
   ]
 
   while (stack.length > 0) {
-    const currentLoc = stack.pop()
-    color(canvas, ...currentLoc, oldColor, newColor)
+    const [x, y] = stack.pop()
+    canvas[y][x] = newColor
 
-    for(const n of findNeighbors(canvas, ...currentLoc, oldColor))
+    for(const n of findNeighbors(canvas, x, y, oldColor))
       stack.push(n)
   }
 }
@@ -41,20 +36,20 @@ function queueFill(canvas, x, y, oldColor, newColor) {
   ]
 
   while (queue.length > 0) {
-    const currentLoc = queue.shift()
-    color(canvas, ...currentLoc, oldColor, newColor)
+    const [x, y] = queue.shift()
+    canvas[y][x] = newColor
 
-    for (const n of findNeighbors(canvas, ...currentLoc, oldColor)) {
+    for (const n of findNeighbors(canvas, x, y, oldColor)) {
       // Color neighbor pixel before enqueuing to prevent
       // it from being colored multiple times
-      color(canvas, ...n, oldColor, newColor)
+      canvas[n[1]][n[0]] = newColor
       queue.push(n)
     }
   }
 }
 
 function recursiveFill(canvas, x, y, oldColor, newColor) {
-  color(canvas, x, y, oldColor, newColor)
+  canvas[y][x] = newColor
 
   for(const n of findNeighbors(canvas, x, y, oldColor))
     recursiveFill(canvas, ...n, oldColor, newColor)
