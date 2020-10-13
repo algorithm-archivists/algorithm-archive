@@ -112,17 +112,6 @@ In code, it might look like this:
 [import:58-66, lang="python"](code/python/flood_fill.py)
 {% endmethod %}
 
-All code snippets for this chapter rely on an exterior `color` function, defined as
-
-{% method %}
-{% sample lang="jl" %}
-[import:23-35, lang:"julia"](code/julia/flood_fill.jl)
-{% sample lang="c" %}
-[import:28-32, lang:"c"](code/c/flood_fill.c)
-{% sample lang="py" %}
-[import:10-11, lang="python"](code/python/flood_fill.py)
-{% endmethod %}
-
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
 
 Additionally, it is possible to do the same type of traversal by managing a stack, like so:

@@ -7,9 +7,6 @@ Point = namedtuple("Point", "x y")
 def inbounds(canvas_shape, p):
     return min(p) >= 0 and p.x < canvas_shape[0] and p.y < canvas_shape[1]
 
-def color(canvas, p, new_val):
-    canvas[p] = new_val
-
 def find_neighbors(canvas, p, old_val, new_val):
     # north, south, east, west neighbors
     possible_neighbors = [
@@ -35,7 +32,7 @@ def stack_fill(canvas, p, old_val, new_val):
 
     while stack:
         cur_loc = stack.pop()
-        color(canvas, cur_loc, new_val)
+        canvas[cur_loc] = new_val
         stack += find_neighbors(canvas, cur_loc, old_val, new_val)
 
 def queue_fill(canvas, p, old_val, new_val):
@@ -45,21 +42,21 @@ def queue_fill(canvas, p, old_val, new_val):
     q = Queue()
     q.put(p)
 
-    color(canvas, p, new_val)
+    canvas[p] = new_val
 
     while not q.empty():
         cur_loc = q.get()
         neighbors = find_neighbors(canvas, cur_loc, old_val, new_val)
 
         for neighbor in neighbors:
-            color(canvas, neighbor, new_val)
+            canvas[neighbor] = new_val
             q.put(neighbor)
 
 def recursive_fill(canvas, p, old_val, new_val):
     if old_val == new_val:
         return
 
-    color(canvas, p, new_val)
+    canvas[p] = new_val
 
     neighbors = find_neighbors(canvas, p, old_val, new_val)
     for neighbor in neighbors:

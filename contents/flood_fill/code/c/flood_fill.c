@@ -25,12 +25,6 @@ int inbounds(struct point p, struct canvas c) {
     return (p.x < 0 || p.y < 0 || p.y >= c.max_y || p.x >= c.max_x) ? 0 : 1;
 }
 
-void color(struct canvas c, struct point p, int old_val, int new_val) {
-    if (inbounds(p, c) && c.data[p.x + c.max_x * p.y] == old_val) {
-        c.data[p.x + c.max_x * p.y] = new_val;
-    }
-}
-
 int find_neighbors(struct canvas c, struct point p, int old_val, int new_val,
         struct point *neighbors) {
     int cnt = 0;
@@ -93,7 +87,7 @@ void stack_fill(struct canvas c, struct point p, int old_val, int new_val) {
     while (!stack_empty(stk)) {
         struct point cur_loc = stack_pop(&stk);
         if (c.data[cur_loc.x + c.max_x * cur_loc.y] == old_val) {
-            color(c, cur_loc, old_val, new_val);
+            c.data[cur_loc.x + c.max_x * cur_loc.y] = new_val;
 
             struct point neighbors[4];
             int cnt = find_neighbors(c, cur_loc, old_val, new_val, neighbors);
@@ -163,7 +157,7 @@ void queue_fill(struct canvas c, struct point p, int old_val, int new_val) {
     while (!queue_empty(q)) {
         struct point cur_loc = dequeue(&q);
         if (c.data[cur_loc.x + c.max_x * cur_loc.y] == old_val) {
-            color(c, cur_loc, old_val, new_val);
+            c.data[cur_loc.x + c.max_x * cur_loc.y] = new_val;
 
             struct point neighbors[4];
             int cnt = find_neighbors(c, cur_loc, old_val, new_val, neighbors);
@@ -184,7 +178,7 @@ void recursive_fill(struct canvas c, struct point p, int old_val,
         return;
     }
 
-    color(c, p, old_val, new_val);
+    c.data[p.x + c.max_x * p.y] = new_val;
 
     struct point neighbors[4];
     int cnt = find_neighbors(c, p, old_val, new_val, neighbors);
