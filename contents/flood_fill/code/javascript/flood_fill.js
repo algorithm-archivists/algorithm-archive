@@ -14,13 +14,11 @@ function isColor(x, y, color) {
 }
 
 function recolorPixel(x, y, oldColor, newColor) {
-  if (isInBounds(x, y) && isColor(x, y, oldColor)) {
-    const index = (x + y * width) * 4
-    pixels[index] = red(newColor)
-    pixels[index + 1] = green(newColor)
-    pixels[index + 2] = blue(newColor)
-    pixels[index + 3] = alpha(newColor)
-  }
+  const index = (x + y * width) * 4
+  pixels[index] = red(newColor)
+  pixels[index + 1] = green(newColor)
+  pixels[index + 2] = blue(newColor)
+  pixels[index + 3] = alpha(newColor)
 }
 
 function findNeighbors(x, y, oldColor) {
@@ -45,7 +43,7 @@ function stackFill(x, y, oldColor, newColor) {
     const currentLoc = stack.pop()
     recolorPixel(...currentLoc, oldColor, newColor)
 
-    for(const n of findNeighbors(...currentLoc, oldColor))
+    for (const n of findNeighbors(...currentLoc, oldColor))
       stack.push(n)
   }
 }
@@ -71,7 +69,7 @@ function queueFill(x, y, oldColor, newColor) {
 function recursiveFill(x, y, oldColor, newColor) {
   recolorPixel(x, y, oldColor, newColor)
 
-  for(const n of findNeighbors(x, y, oldColor))
+  for (const n of findNeighbors(x, y, oldColor))
     recursiveFill(...n, oldColor, newColor)
 }
 
