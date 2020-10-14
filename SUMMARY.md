@@ -36,5 +36,7 @@
         * [Split-Operator Method](contents/split-operator_method/split-operator_method.md)
 * [Data Compression](contents/data_compression/data_compression.md)
     * [Huffman Encoding](contents/huffman_encoding/huffman_encoding.md)
+* [Computer Graphics](contents/computer_graphics/computer_graphics.md)
+    * [Flood Fill](contents/flood_fill/flood_fill.md)
 * [Quantum Information](contents/quantum_information/quantum_information.md)
 * [Computus](contents/computus/computus.md)

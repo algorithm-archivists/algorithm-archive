@@ -16,7 +16,7 @@ if [ $# -ge 1 ]; then
         exit 1
     fi
 
-    gitbook build . /tmp/algorithm-archivists.github.io
+    npm run build . /tmp/algorithm-archivists.github.io
 
     if [ $? -ne 0 ]; then
         echo "Failed to build the book"
