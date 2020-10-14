@@ -24,12 +24,15 @@ void bubble_sort(Iter first, Iter last) {
 
 int main() {
   int input[] = {1, 45, 756, 4569, 56, 3, 8, 5, -10, -4};
-
+  
+  //before sorting
   std::cout << "Unsorted array:\n";
   print_range(std::begin(input), std::end(input));
-
+   
+   //calling bubble_sort function
   bubble_sort(std::begin(input), std::end(input));
-
+  
+  //after sorting
   std::cout << "\nSorted array:\n";
   print_range(std::begin(input), std::end(input));
 }
