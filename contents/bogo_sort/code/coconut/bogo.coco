@@ -1,0 +1,15 @@
+import random
+
+
+is_sorted = l -> (l, l[1:]) |*> zip |> map$(t -> t[0] <= t[1]) |> all
+
+def bogo_sort(a):
+    while not is_sorted(a):
+        random.shuffle(a)
+
+
+if __name__ == '__main__':
+    a = [1, 3, 2, 4]
+    print('Unsorted:', a)
+    bogo_sort(a)
+    print('Sorted:', a)
