@@ -20,20 +20,6 @@ function inbounds(canvas_size, loc)
     end
 end
 
-function color!(canvas, loc::CartesianIndex, old_val, new_val)
-    # bounds check, do not color if no in bounds!
-    if !inbounds(size(canvas), loc)
-        return
-    end
-
-    # Only change color if the element value is the old value
-    if (canvas[loc] != old_val)
-        return
-    else
-        canvas[loc] = new_val
-    end
-end
-
 function find_neighbors(canvas, loc::CartesianIndex, old_val, new_val)
     
     # Finding north, south, east, west neighbors
@@ -65,7 +51,7 @@ function stack_fill!(canvas, loc::CartesianIndex, old_val, new_val)
     while length(s) > 0
         current_loc = pop!(s)
         if canvas[current_loc] == old_val
-            color!(canvas, current_loc, old_val, new_val)
+            canvas[current_loc] = new_val
             possible_neighbors = find_neighbors(canvas, current_loc,
                                                 old_val, new_val)
             for neighbor in possible_neighbors
@@ -86,7 +72,7 @@ function queue_fill!(canvas, loc::CartesianIndex, old_val, new_val)
     enqueue!(q, loc)
 
     # Coloring the initial location
-    color!(canvas, loc, old_val, new_val)
+    canvas[loc] = new_val
 
     while length(q) > 0
         current_loc = dequeue!(q)
@@ -96,7 +82,7 @@ function queue_fill!(canvas, loc::CartesianIndex, old_val, new_val)
 
         # Coloring as we are enqueuing neighbors
         for neighbor in possible_neighbors
-            color!(canvas, neighbor, old_val, new_val)
+            canvas[neighbor] = new_val
             enqueue!(q,neighbor)
         end
         
@@ -109,7 +95,7 @@ function recursive_fill!(canvas, loc::CartesianIndex, old_val, new_val)
         return
     end
 
-    color!(canvas, loc, old_val, new_val)
+    canvas[loc] = new_val
 
     possible_neighbors = find_neighbors(canvas, loc, old_val, new_val)
     for possible_neighbor in possible_neighbors
