@@ -15,6 +15,12 @@ The notation for this depends on the language you are using. Queues, for example
 
 ## License
 
+## Example Code
+{% method %}
+{% sample lang="py" %}
+[import, lang:"python"](code/python/stack_queue.py)
+{% endmethod %}
+
 ##### Code Examples
 
 The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
