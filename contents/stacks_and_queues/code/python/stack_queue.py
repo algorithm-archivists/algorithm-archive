@@ -46,7 +46,7 @@ class Queue:
             self.queue_list = temp
         else:
             curr = self.queue_list
-            while curr.next != None:
+            while curr.next:
                 curr = curr.next
             curr.next = temp
 
