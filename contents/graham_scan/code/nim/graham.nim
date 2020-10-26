@@ -5,33 +5,33 @@ import sugar
 
 type Point[T: SomeNumber] = tuple[x, y: T]
 
-proc tup_to_point[T](t: (T, T)): Point[T] =
+func tup_to_point[T](t: (T, T)): Point[T] =
   (x: t[0], y: t[1])
 
-proc cross_product[T](p1, p2, p3: Point[T]): T =
+func cross_product[T](p1, p2, p3: Point[T]): T =
   ## Form the cross product of three points. If the result is
   ## - zero, the points are collinear.
   ## - positive, the points form a counter-clockwise "left" turn.
   ## - negative, the points form a clockwise "right" turn.
   (p3.y - p1.y) * (p2.x - p1.x) - (p2.y - p1.y) * (p3.x - p1.x)
 
-proc polar_angle(reference, point: Point): float =
+func polar_angle(reference, point: Point): float =
   ## Find the polar angle of a point relative to a reference point
   arctan2(float(point.y - reference.y), float(point.x - reference.x))
 
-proc flipped_point_cmp(pa, pb: Point): int =
+func flipped_point_cmp(pa, pb: Point): int =
   ## Compare points first by their y-coordinate, then x-coordinate.
   if (pa.y, pa.x) < (pb.y, pb.x): -1
   elif pa == pb: 0
   else: 1
 
-proc graham_scan(gift: seq[Point]): seq[Point] =
+func graham_scan(gift: seq[Point]): seq[Point] =
   assert(gift.len >= 3)
   var points = sorted(deduplicate(gift), flipped_point_cmp)
   let pivot = points[0]
   # Mimic sorting a sliced sequence without copying
   sort(toOpenArray(points, 1, high(points)),
-       proc (pa, pb: Point): int =
+       func (pa, pb: Point): int =
          if polar_angle(pivot, pa) < polar_angle(pivot, pb): -1
          else: 1)
   var
