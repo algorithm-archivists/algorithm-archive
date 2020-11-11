@@ -89,6 +89,8 @@ For some reason, though, putting code to this transformation really helped me fi
 [import:3-15, lang:"javascript"](code/javascript/fft.js)
 {% sample lang="rs" %}
 [import:24-37, lang:"rust"](code/rust/fft.rs)
+{% sample lang="lisp" %}
+[import:2-12, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -142,6 +144,8 @@ In the end, the code looks like:
 [import:17-39, lang="javascript"](code/javascript/fft.js)
 {% sample lang="rs" %}
 [import:39-55, lang:"rust"](code/rust/fft.rs)
+{% sample lang="lisp" %}
+[import:14-36, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -255,6 +259,8 @@ Some rather impressive scratch code was submitted by Jie and can be found here: 
 [import, lang:"javascript"](code/javascript/fft.js)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/fft.rs)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
 
 <script>

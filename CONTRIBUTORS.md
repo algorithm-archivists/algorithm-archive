@@ -54,3 +54,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Amaras
 - Jonathan Dönszelmann
 - Ishaan Verma
+- Delphi1024
