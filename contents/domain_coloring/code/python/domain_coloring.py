@@ -4,16 +4,20 @@ import matplotlib.pyplot as plt
 import matplotlib.colors
 from matplotlib.cm import ScalarMappable
 
+
 def f(z):
     return z**2
+
 
 def magnitude_shading(f_val):
     f_val_abs = np.abs(f_val)
     return 0.5 + 0.5 * (f_val_abs - np.floor(f_val_abs))
 
+
 def gridlines(f_val, threshold):
-    return np.abs(np.sin(np.pi * np.real(f_val))) ** threshold * \
-           np.abs(np.sin(np.pi * np.imag(f_val))) ** threshold
+    return (np.abs(np.sin(np.pi * np.real(f_val))) ** threshold
+            * np.abs(np.sin(np.pi * np.imag(f_val))) ** threshold)
+
 
 def color(f_val, threshold):
     hue = (np.pi - np.angle(f_val)) / (2.0 * np.pi)
@@ -25,6 +29,7 @@ def color(f_val, threshold):
     hsv = np.moveaxis((hue, saturation, value), 0, -1)
     return matplotlib.colors.hsv_to_rgb(hsv)
 
+
 if __name__ == "__main__":
     # Create a new figure containing a single plot
     fig, axes = plt.subplots(1, 1)
@@ -33,8 +38,10 @@ if __name__ == "__main__":
     axes.set_title("$f(x)=z^2$")
 
     # Create color bar
-    cbar = fig.colorbar(ScalarMappable(matplotlib.colors.Normalize(0.0, 2.0 * np.pi), "hsv"),
-                        ax=axes, label="Phase Angle")
+    cbar = fig.colorbar(
+        ScalarMappable(matplotlib.colors.Normalize(0.0, 2.0 * np.pi), "hsv"),
+        ax=axes,
+        label="Phase Angle")
 
     # Set x and y labels
     axes.set_xlabel("$Re(z)$")
@@ -63,10 +70,14 @@ if __name__ == "__main__":
     colors = color(f_val, 0.1)
 
     # Plot the colors
-    #   origin='lower' places index (0,0) of the color array in the lower-left corner
-    #   aspect='equal' ensures that the plot is square
     #   extent=(-2.0, 2.0, -2.0, 2.0) sets the x and y ranges
-    axes.imshow(colors, extent=(-2.0, 2.0, -2.0, 2.0), origin='lower', aspect='equal')
+    #   origin="lower" places index (0,0) of the color array in the lower-left corner
+    #   aspect="equal" ensures that the plot is square
+    axes.imshow(
+        colors,
+        extent=(-2.0, 2.0, -2.0, 2.0),
+        origin="lower",
+        aspect="equal")
 
     # Save output
     fig.savefig("domain.png")
