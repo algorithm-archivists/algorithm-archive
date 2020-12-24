@@ -1,0 +1,47 @@
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          node-version: '12'
+      - run: npm install
+
+      - name: Building book
+        run: |
+          npm run build
+
+      - name: Checking build
+        run: |
+          book_check_file="_book/index.html"
+          if [[ ! -f  "${book_check_file}" ]]; then
+            echo "${book_check_file} not found"
+            exit 1
+          fi
+
+      - name: Finishing build and pushing to algorithm-archivists.github.io
+        if: github.event.pull_request.merged == true
+        run: |
+          bash tools/deploy/update_site.bash $GH_TOKEN
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          TERM: xterm
