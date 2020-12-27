@@ -3,6 +3,7 @@
 (defstruct (point (:constructor make-point (x y))) x y)
 
 (defun chaos-game (iterations shape-points)
+  "Plays a chaos game with a certain shape for a determined amount of iterations"
   (loop
     repeat iterations
     for rand-point = (svref shape-points (random (length shape-points)))
@@ -22,5 +23,6 @@
 ;; output the data to the "out.dat" file
 (with-open-file (out "out.dat" :direction :output :if-exists :supersede)
   (flet ((format-point (p)
-           (format nil "~f~c~f" (point-x p) #\tab (point-y p)))) ; this is a bit ugly, but it works
+           ;; this is not very clean, but it's the simplest way to insert a tab into a string.
+           (format nil "~f~c~f" (point-x p) #\tab (point-y p))))
     (format out "~{~a~%~}" (map 'list #'format-point (chaos-game 10000 *shape-points*)))))
