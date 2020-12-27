@@ -1,7 +1,7 @@
 
 (defun coefficient (time-index freq-index dft-len)
   "Calculates a single twiddle factor for the Fourier Transform."
-  (exp (- (/ (* #c( 0 1) 2.0 pi time-index freq-index)
+  (exp (- (/ (* #c(0 1) 2.0 pi time-index freq-index)
              dft-len))))
 
 (defun dft (data)
@@ -14,38 +14,46 @@
 (defun merge-sub-ffts (evens odds)
   "Combines the FFTs of the even and odd indices"
   (let* ((fft-length (+ (length evens) (length odds)))
-         (indices (loop for i from 0 below (length odds) collect i))
-         (odd-terms (mapcar #'(lambda (v i) (* v (coefficient 1.0 i fft-length)))
-                            odds
-                            indices)))
+         ;; Calculate coefficients for the odd indices.
+         (twiddle-factors (loop for i from 0 below (length odds)
+                             collect (coefficient 1.0 i fft-length)))
+         ;; Multiply values with coefficients
+         (odd-terms (mapcar #'* odds twiddle-factors)))
+    ;; Combine the two FFTs
     (concatenate 'list 
                  (mapcar #'+ evens odd-terms)
                  (mapcar #'- evens odd-terms))))
 
 (defun cooley-tukey-rec (data)
-  "Performs the DFT using the recursive Cooley-Tukey method."
+  "Performs the Fourier Transform using the recursive Cooley-Tukey method."
   (if (<= (length data) 1)
-    data
-    (loop for i from 0 below (length data)
-      if (evenp i)
-        collect (elt data i) into evens
-      else
-        collect (elt data i) into odds
-      finally
-        (return (merge-sub-ffts (cooley-tukey-rec evens)
-                                (cooley-tukey-rec odds))))))
+      data
+      (loop
+        for i from 0 below (length data)
+        ;; Split input into even and odd indices into two smaller lists.
+        if (evenp i)
+          collect (elt data i) into evens
+        else
+          collect (elt data i) into odds
+        finally
+          ;; Calculate the Fourier Transform for the two smaller lists and
+          ;; combine them into the Fourier Transform for the full input.
+          (return (merge-sub-ffts (cooley-tukey-rec evens)
+                                  (cooley-tukey-rec odds))))))
 
 (defun reverse-bits (value num-bits)
   "Reverses the bits of a value"
   (if (= num-bits 1)
-    value
-    (let* ((num-low-bits (floor (/ num-bits 2)))
-           (num-high-bits (- num-bits num-low-bits))
-           (bit-mask (- (expt 2 num-low-bits) 1))
-           (lower-half (logand value bit-mask))
-           (upper-half (ash value (- num-low-bits))))
-      (logior (ash (reverse-bits lower-half num-low-bits) num-high-bits)
-              (reverse-bits upper-half num-high-bits)))))
+      value
+      ;; Split bits into two parts
+      (let* ((num-low-bits (floor (/ num-bits 2))) 
+             (num-high-bits (- num-bits num-low-bits))
+             (bit-mask (- (expt 2 num-low-bits) 1))
+             (lower-half (logand value bit-mask))
+             (upper-half (ash value (- num-low-bits))))
+        ;; Reverse the bits of each part, then swap the results.
+        (logior (ash (reverse-bits lower-half num-low-bits) num-high-bits)
+                (reverse-bits upper-half num-high-bits)))))
 
 (defun bit-shuffle-indices (data)
   "Rearanges the elements in a list according to their bit-reversed indices."
@@ -61,27 +69,29 @@
 (defun butterfly-group (data start stride)
   "Calculates a single group of butterflies."
   (dotimes (i stride)
-    (let* ((a-index (+ start i))
-           (b-index (+ start i stride))
-           (a (elt data a-index))
-           (b (elt data b-index))
+    ;; Take two elements which are stride apart and perform a butterfly on them.
+    (let* ((first-elt-index (+ start i))
+           (second-elt-index (+ start i stride))
+           (first-elt (elt data first-elt-index))
+           (second-elt (elt data second-elt-index))
            (coeff (coefficient 1.0 i (* 2 stride))))
-    (multiple-value-bind (sum difference) (butterfly a b coeff)
-      (setf (elt data a-index) sum)
-      (setf (elt data b-index) difference)))))
-
-(defun cooley-tukey-tailrec (data stride)
-  "Actual iterative implementation of the Cooley-Tukey method."
-  (if (>= stride (length data))
-    data
-    (progn
-      (loop for i from 0 below (length data) by (* 2 stride) do
-        (butterfly-group data i stride))
-      (cooley-tukey-tailrec data (* 2 stride)))))
+    (multiple-value-bind (sum difference) (butterfly first-elt second-elt coeff)
+      ;; Write results back into the list.
+      (setf (elt data first-elt-index) sum)
+      (setf (elt data second-elt-index) difference)))))
 
 (defun cooley-tukey-iter (data)
-  "Performs the DFT using the iterative Cooley-Tukey method."
-  (cooley-tukey-tailrec (bit-shuffle-indices data) 1))
+  "Performs the Fourier Transform using the iterative Cooley-Tukey method."
+  (loop
+    ;; Bit-shuffle indices.
+    with shuffled-data = (bit-shuffle-indices data)
+    for stride = 1 then (* 2 stride)
+    while (< stride (length shuffled-data))
+    do
+      ;; Compute butterfly groups for the current stride.
+      (loop for i from 0 below (length shuffled-data) by (* 2 stride) do
+        (butterfly-group shuffled-data i stride))
+    finally (return shuffled-data)))
 
 (defun approx-eql (list1 list2)
   (let ((diffs (mapcar #'(lambda (e1 e2) (abs (- e1 e2)))
