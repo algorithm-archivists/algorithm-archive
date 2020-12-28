@@ -12,7 +12,7 @@
         (* (coefficient time-index freq-index dft-len) (elt data time-index))))))
 
 (defun merge-sub-ffts (evens odds)
-  "Combines the FFTs of the even and odd indices"
+  "Combines the FFTs of the even and odd indices."
   (let* ((fft-length (+ (length evens) (length odds)))
          ;; Calculate coefficients for the odd indices.
          (twiddle-factors (loop for i from 0 below (length odds)
