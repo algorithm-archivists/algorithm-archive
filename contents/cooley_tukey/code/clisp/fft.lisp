@@ -37,7 +37,7 @@
           collect (elt data i) into odds
         finally
           ;; Calculate the Fourier Transform for the two smaller lists and
-          ;; combine them into the Fourier Transform for the full input.
+          ;; combine them into the Fourier Transform of the full input.
           (return (merge-sub-ffts (cooley-tukey-rec evens)
                                   (cooley-tukey-rec odds))))))
 
