@@ -19,7 +19,7 @@
                              collect (coefficient 1.0 i fft-length)))
          ;; Multiply values with coefficients.
          (odd-terms (mapcar #'* odds twiddle-factors)))
-    ;; Combine the two FFTs
+    ;; Combine the two FFTs.
     (concatenate 'list 
                  (mapcar #'+ evens odd-terms)
                  (mapcar #'- evens odd-terms))))
