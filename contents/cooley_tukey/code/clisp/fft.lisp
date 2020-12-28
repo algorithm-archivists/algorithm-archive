@@ -17,7 +17,7 @@
          ;; Calculate coefficients for the odd indices.
          (twiddle-factors (loop for i from 0 below (length odds)
                              collect (coefficient 1.0 i fft-length)))
-         ;; Multiply values with coefficients
+         ;; Multiply values with coefficients.
          (odd-terms (mapcar #'* odds twiddle-factors)))
     ;; Combine the two FFTs
     (concatenate 'list 
