@@ -45,7 +45,7 @@
   "Reverses the bits of a value"
   (if (= num-bits 1)
       value
-      ;; Split bits into two parts
+      ;; Split bits into two parts.
       (let* ((num-low-bits (floor (/ num-bits 2))) 
              (num-high-bits (- num-bits num-low-bits))
              (bit-mask (- (expt 2 num-low-bits) 1))
