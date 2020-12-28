@@ -30,7 +30,7 @@
       data
       (loop
         for i from 0 below (length data)
-        ;; Split input into even and odd indices into two smaller lists.
+        ;; Split even and odd indexed elements into two seperate lists.
         if (evenp i)
           collect (elt data i) into evens
         else
