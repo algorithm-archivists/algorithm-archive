@@ -145,7 +145,7 @@ In the end, the code looks like:
 {% sample lang="rs" %}
 [import:39-55, lang:"rust"](code/rust/fft.rs)
 {% sample lang="lisp" %}
-[import:14-36, lang:"lisp"](code/clisp/fft.lisp)
+[import:14-42, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
