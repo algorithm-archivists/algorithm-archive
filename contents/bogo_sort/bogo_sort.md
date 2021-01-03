@@ -65,6 +65,8 @@ In code, it looks something like this:
 [import:10-14, lang:"crystal"](code/crystal/bogo.cr)
 {% sample lang="r" %}
 [import:1-6, lang:"r"](code/r/bogo_sort.r)
+{% sample lang="pde" %}
+[import:55-59, lang:"java"](code/processing/bogoSort.pde)
 {% sample lang="scala" %}
 [import:12-16, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
@@ -76,6 +78,17 @@ In code, it looks something like this:
 That's it.
 Ship it!
 We are done here!
+
+Here's a visual representation of what's happening:
+
+<p>
+    <img  class="center" src="res/bogo.gif" width="500" />
+</p>
+
+
+You can check out the code for this visualization by changing the language to `Processing`.
+Here, we see that the array shuffles about at random until it eventually finds the correct result.
+Obviously, bogo sort is almost impossible with a large array.
 
 ## Example Code
 
@@ -135,6 +148,8 @@ We are done here!
 [import, lang:"crystal"](code/crystal/bogo.cr)
 {% sample lang="r" %}
 [import, lang:"r"](code/r/bogo_sort.r)
+{% sample lang="pde" %}
+[import:1-53, lang:"java"](code/processing/bogoSort.pde)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/bogo.scala)
 {% sample lang="go" %}
@@ -142,7 +157,6 @@ We are done here!
 {% sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/bogo.coco)
 {% endmethod %}
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

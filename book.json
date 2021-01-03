@@ -186,6 +186,10 @@
           "name": "LOLCODE"
         },
         {
+          "lang": "pde",
+          "name": "Processing"
+        },
+        {
           "lang": "piet",
           "name": "Piet"
         },
