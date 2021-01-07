@@ -10,7 +10,7 @@ How does it work? This implementation is known as top-down implementation, the a
 [import:1-11, lang:"javascript"](code/javascript/mergesort.js)
 {% endmethod %}
 
-The merge part of the algorithm is responsible of go over the two parts to fill up the resulting array with the elements sorted.
+The merge part of the algorithm is responsible of going over the two parts to fill up the resulting array with the sorted elements.
 
 {% method %}
 {% sample lang="js" %}
