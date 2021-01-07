@@ -15,6 +15,7 @@
 * [Sorting and Searching](contents/sorting_and_searching/sorting_and_searching.md)
     * [Bubble Sort](contents/bubble_sort/bubble_sort.md)
     * [Bogo Sort](contents/bogo_sort/bogo_sort.md)
+    * [Merge Sort](contents/merge_sort/merge_sort.md)
 * [Tree Traversal](contents/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](contents/euclidean_algorithm/euclidean_algorithm.md)
 * [Monte Carlo](contents/monte_carlo_integration/monte_carlo_integration.md)
