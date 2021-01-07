@@ -71,6 +71,8 @@ In code, it looks something like this:
 [import:27-31, lang:"go"](code/go/bogo_sort.go)
 {% sample lang="coco" %}
 [import:6-8, lang:"coconut"](code/coconut/bogo.coco)
+{% sample lang="elv" %}
+[import:19-26, lang:"elvish"](code/elvish/bogo_sort.elv)
 {% endmethod %}
 
 That's it.
@@ -141,6 +143,8 @@ We are done here!
 [import, lang:"go"](code/go/bogo_sort.go)
 {% sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/bogo.coco)
+{% sample lang="elv" %}
+[import, lang:"elvish"](code/elvish/bogo_sort.elv)
 {% endmethod %}
 
 
