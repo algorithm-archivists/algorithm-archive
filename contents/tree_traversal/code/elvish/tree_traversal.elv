@@ -7,9 +7,7 @@ fn make-node [id child-num]{
   put [&id=$id &child-num=$child-num &children=[(repeat $child-num 0)]]
 }
 
-# function recursion doesn't work properly for some reason
-# so I used a little trick
-create-tree~ = [levels child-num]{
+fn create-tree [levels child-num]{
   if (== $levels 0) {
     make-node $levels 0
   } else {
@@ -24,7 +22,7 @@ create-tree~ = [levels child-num]{
   }
 }
 
-dfs-recursive~ = [node]{
+fn dfs-recursive [node]{
   print $node[id]' '
 
   for child $node[children] {
@@ -32,7 +30,7 @@ dfs-recursive~ = [node]{
   }
 }
 
-dfs-recursive-postorder~ = [node]{
+fn dfs-recursive-postorder [node]{
   for child $node[children] {
     dfs-recursive-postorder $child
   }
@@ -40,7 +38,7 @@ dfs-recursive-postorder~ = [node]{
   print $node[id]' '
 }
 
-dfs-inorder~ = [node]{
+fn dfs-inorder [node]{
   if (== $node[child-num] 2) {
     dfs-inorder $node[children][0]
     print $node[id]' '
