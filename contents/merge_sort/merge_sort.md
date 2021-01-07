@@ -3,7 +3,7 @@ Merge sort or mergesort is one of the most efficient and popular sorting algorit
 
 Merge sort guarantees to sort an array of N items in time proportional to $$\mathcal{O}(nLogn)$$, no matter what the input. It’s good to keep in mind that it works better with larger amounts of data than small sets, in which case should be considered another algorithm, like insertion sort. Another caracteritics is that it's a stable sort which means that the same element in an array maintain their original positions with respect to each other.
 
-How does it work? This implementation is known as top-down implementation, the array is splitted into two parts that are used to call mergesort recursively. The result of these calls is merged into a sorted array and returnted to the upper call.
+How does it work? This implementation is known as top-down implementation, the array is split into two parts that are used to call mergesort recursively. The result of these calls is merged into a sorted array and returned to the upper call.
 
 {% method %}
 {% sample lang="js" %}
