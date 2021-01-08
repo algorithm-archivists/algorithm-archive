@@ -49,7 +49,7 @@ fn take-if [cond list]{
 
 # find out if list is empty, `count` can be used as well
 # but this function should be faster
-fn empty [list]{
+fn is-empty [list]{
   for elem $list {
     put $false
     return
@@ -60,7 +60,7 @@ fn empty [list]{
 
 # select the best candidate out of the males in $propos
 fn select-best [pref propos]{
-  if (empty $propos) {
+  if (is-empty $propos) {
     put $nil
     return
   }
@@ -76,7 +76,7 @@ fn select-best [pref propos]{
   put $best
 }
 
-fn gale-shapely [men-pref fem-pref]{
+fn gale-shapley [men-pref fem-pref]{
   exit = 0
 
   fem-names = [(keys $fem-pref)]
@@ -93,14 +93,15 @@ fn gale-shapely [men-pref fem-pref]{
       # choose men who have $female as their first choice
       proposals = [(take-if [elem]{ $proposal-cond $elem $female } $men-names)]
 
-      # if we found proposals
-      if (not (empty $proposals)) {
-        exit = 0
-      } else {
+      # there's no reason to continue this loop if $proposals is empty
+      # and if we didn't find any proposals, the algorithm should end
+      if (is-empty $proposals) {
         continue
+      } else {
+        exit = 0
       }
 
-      # eliminate those who can't marry because she's already married
+      # if $female already has a pair, $fem-pref[$female] is of type string
       if (==s (kind-of $fem-pref[$female]) string) {
         for elem $proposals {
           men-pref[$elem] = $men-pref[$elem][1..]
@@ -111,7 +112,7 @@ fn gale-shapely [men-pref fem-pref]{
 
       # choose the best choice accordng to the $fem-pref[$female] map
       best = (select-best $fem-pref[$female] $proposals)
-      echo for $female, chosen $best
+      echo 'for $female, chosen $best'
       fem-pref[$female] = $best
       men-pref[$best] = $female
 
@@ -137,4 +138,4 @@ echo 'Generated preferences:'
 put $men-pref
 pprint $fem-pref
 
-gale-shapely $men-pref $fem-pref
+gale-shapley $men-pref $fem-pref
