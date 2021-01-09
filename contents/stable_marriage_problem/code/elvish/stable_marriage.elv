@@ -25,15 +25,15 @@ fn return-same [thing]{ put $thing }
 
 # pref format for females: [&name=[&name=number ..] ..] for O(1) lookup
 # pref format for males: [&name=[name1 name2 ..] ..] because it's used like a stack
-fn gen-pref [names1 names2 &switch-idx=0]{
+fn gen-pref [names1 names2 &switch-idx=$false]{
   map = [&]
 
-  fn = [thing]{ return-same $thing }
-  if (== $switch-idx 1) {
-    fn = [list]{ switch-index $list }
+  each-fn = [name]{ map[$name] = (shuffle $names2) }
+  if $switch-idx {
+    each-fn = [name]{ map[$name] = (switch-index (shuffle $names2)) }
   }
 
-  each [name]{ map[$name] = ($fn (shuffle $names2)) } $names1
+  each $each-fn $names1
 
   put $map
 }
@@ -112,7 +112,7 @@ fn gale-shapley [men-pref fem-pref]{
 
       # choose the best choice accordng to the $fem-pref[$female] map
       best = (select-best $fem-pref[$female] $proposals)
-      echo 'for $female, chosen $best'
+      echo for $female, chosen $best
       fem-pref[$female] = $best
       men-pref[$best] = $female
 
@@ -132,7 +132,7 @@ men-names = [a b c d]
 fem-names = [e f g h]
 
 men-pref = (gen-pref $men-names $fem-names)
-fem-pref = (gen-pref $fem-names $men-names &switch-idx=1)
+fem-pref = (gen-pref $fem-names $men-names &switch-idx)
 
 echo 'Generated preferences:'
 put $men-pref
