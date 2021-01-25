@@ -3,6 +3,12 @@
 The Arcane Algorithm Archive is a collaborative effort to create a guide for all important algorithms in all languages.
 This goal is obviously too ambitious for a book of any size, but it is a great project to learn from and work on and will hopefully become an incredible resource for programmers in the future.
 
+To change the language, please use the UI at the top of the site:
+
+<p>
+  <img  class="center" src="res/languages.gif" style="width:50%" />
+</p>
+
 Here are some essential links:
 
 - Book / website: <https://www.algorithm-archive.org/>
