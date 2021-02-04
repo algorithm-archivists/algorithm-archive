@@ -23,52 +23,53 @@ def colour(canvas, location is Point, old_value, new_value):
 
 
 def find_neighbours(canvas, location is Point, old_value, new_value):
-    possible_neighbours = (Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0)) |> map$(location.__add__)
+    possible_neighbours = ((Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
+                          |> map$(location.__add__))
 
-    for neighbour in possible_neighbours:
-        if inbounds(canvas.shape, neighbour) and canvas[neighbour] == old_value:
-            yield neighbour
+    yield from possible_neighbours |> filter$(x -> (inbounds(canvas.shape, x) and canvas[x] == old_value))
 
 
 def stack_fill(canvas, location is Point, old_value, new_value):
-    if new_value == old_value:
+    if new_value == old_value or not inbounds(canvas.shape, location):
         return
 
     stack = [location]
 
     while stack:
         current_location = stack.pop()
-        colour(canvas, current_location, old_value, new_value)
+        canvas[current_location] = new_value
         for neighbour in find_neighbours(canvas, current_location, old_value,
                                          new_value):
             stack.append(neighbour)
 
 
 def queue_fill(canvas, location is Point, old_value, new_value):
-    if new_value == old_value:
+    if new_value == old_value or not inbounds(canvas.shape, location):
         return
 
     queue = deque()
     queue.append(location)
 
-    colour(canvas, location, old_value, new_value)
+    canvas[location] = new_value
 
     while queue:
         current_location = queue.popleft()
         for neighbour in find_neighbours(canvas, current_location, old_value,
                                          new_value):
             queue.append(neighbour)
-            colour(canvas, neighbour, old_value, new_value)
+            canvas[neighbour] = new_value
 
 
 def recursive_fill(canvas, location is Point, old_value, new_value):
-    if new_value == old_value:
+    if new_value == old_value or not inbounds(canvas.shape, location):
         return
-    colour(canvas, location, old_value, new_value)
 
-    for neighbour in find_neighbours(canvas, location, old_value, new_value):
-        recursive_fill(canvas, neighbour, old_value, new_value)
-
+    canvas[location] = new_value
+    # consume is important here, because otherwise, the recursive function is not called again
+    consume(
+        find_neighbours(canvas, location, old_value, new_value)
+        |> map$(recursive_fill$(canvas, ?, old_value, new_value))
+    )
 
 if __name__ == '__main__':
     # Testing setup
