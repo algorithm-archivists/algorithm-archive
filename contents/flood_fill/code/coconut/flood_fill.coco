@@ -37,10 +37,11 @@ def stack_fill(canvas, location is Point, old_value, new_value):
 
     while stack:
         current_location = stack.pop()
-        canvas[current_location] = new_value
-        for neighbour in find_neighbours(canvas, current_location, old_value,
-                                         new_value):
-            stack.append(neighbour)
+        if canvas[current_location] == old_value:
+            canvas[current_location] = new_value
+            for neighbour in find_neighbours(canvas, current_location, old_value,
+                                             new_value):
+                stack.append(neighbour)
 
 
 def queue_fill(canvas, location is Point, old_value, new_value):

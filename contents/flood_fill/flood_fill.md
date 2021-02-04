@@ -93,7 +93,7 @@ In code, this might look like this:
 {% sample lang="py" %}
 [import:10-25, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:25-30, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:25-29, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -113,7 +113,7 @@ In code, it might look like this:
 {% sample lang="py" %}
 [import:55-63, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:64-70, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:64-73, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -128,7 +128,7 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 {% sample lang="py" %}
 [import:27-36, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:33-44, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:32-44, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
