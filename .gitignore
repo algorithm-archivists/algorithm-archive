@@ -516,3 +516,4 @@ vscode/
 **/coconut/*.py
 
 res/*
+*.bak
