@@ -515,5 +515,4 @@ vscode/
 # Coconut compilation files
 **/coconut/*.py
 
-res/*
 *.bak
