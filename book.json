@@ -7,7 +7,6 @@
     "wordcount",
     "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
-    "ga",
     "bulk-redirect",
     "prism",
     "-highlight"
@@ -26,9 +25,6 @@
     "bulk-redirect": {
       "basepath": "/",
       "redirectsFile": "redirects.json"
-    },
-    "ga": {
-      "token": "UA-118252470-1"
     },
     "prism": {
       "lang": {

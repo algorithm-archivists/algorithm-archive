@@ -16,7 +16,7 @@
     "gitbook-plugin-mathjax": "git+https://github.com/algorithm-archivists/plugin-mathjax.git",
     "gitbook-plugin-prism": "^2.4.0",
     "gitbook-plugin-wordcount": "^0.0.1",
-    "honkit": "^3.5.2"
+    "honkit": "^3.6.16"
   },
   "repository": {
     "type": "git",

@@ -10,6 +10,7 @@
     * [Stacks and Queues](contents/stacks_and_queues/stacks_and_queues.md)
 * [Mathematical Background](contents/mathematical_background/mathematical_background.md)
     * [Complexity Notation](contents/notation/notation.md)
+    * [Affine Transformations](contents/affine_transformations/affine_transformations.md)
     * [Bit Logic](contents/bitlogic/bitlogic.md)
     * [Taylor Series](contents/taylor_series_expansion/taylor_series_expansion.md)
 * [Sorting and Searching](contents/sorting_and_searching/sorting_and_searching.md)
