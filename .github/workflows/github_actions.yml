@@ -6,6 +6,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
+    types: [ opened, reopened, synchronize, closed ]
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
