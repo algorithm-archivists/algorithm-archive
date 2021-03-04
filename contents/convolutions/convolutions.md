@@ -18,13 +18,14 @@ f*g=c
 $$
 
 provides a third function, $$c$$, that is a blended version of $$f$$ and $$g$$.
-This concept is known as a *convolution*, and as a rather important side-note: there is an incredibly similar operation known as a *correlation* which will be discussed in the near future.
+As a rather important side-note: there is an incredibly similar operation known as a *correlation* which will be discussed in the near future.
 Now we are left with a rather vague question: how do we *blend* functions?
 
-To answer this question, we will need to show off a few simple graphics and animations in the [Convolutions in 1D](1d/1d.md) section while also discussing the mathematical definition.
-We will then move on to the most stereotypical application of convolutions in the [Convolutions of Images](2d/2d.md) section, where we will discuss two important filters: the Gaussian kernel and the Sobel operator.
+To answer this question, we will need to show off a few simple graphics and animations in the [Convolutions in 1D](1d/1d.md) section while also discussing the mathematical definition of convolutions.
+After, there will be a brief discussion on an interesting application of one dimensional convolutions in integer multiplication in the [Multiplication as a Convolution](multiplication/multiplication.md) section.
+We will then move on to the most stereotypical application of convolutions in the [Convolutions of Images](2d/2d.md) section, where we will also discuss two important filters: the Gaussian kernel and the Sobel operator.
 As a note: convolutions can be extended to $$n$$-dimensions, but after seeing how they are extended to two dimensions, it should be possible for the reader to extend it to three dimensions and beyond if that is needed, so we will not cover that in great detail here unless is is useful for another algorithm.
-In addition, we will be touching on a rather difficult but powerful topic with the [Convolutional Theorem](convolutional_theorem/convolutional_therem.md) section where convolutions can be computed by using [Fourier transforms](../Cooley_tukey/cooley_tukey.md).
+In addition, we will be touching on a rather difficult but powerful topic with the [Convolutional Theorem](convolutional_theorem/convolutional_theorem.md) section where convolutions can be computed by using [Fourier transforms](../Cooley_tukey/cooley_tukey.md).
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
