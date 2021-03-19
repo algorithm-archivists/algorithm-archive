@@ -1,6 +1,7 @@
 {
   "honkit": ">= 3.0.0",
   "root": "./",
+  "title": "Arcane Algorithm Archive",
   "plugins": [
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
