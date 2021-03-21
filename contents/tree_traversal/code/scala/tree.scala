@@ -2,7 +2,7 @@ import scala.collection.mutable._
 
 object TreeTraversal {
 
-  class Tree(val rowCount: Int, val childrenCount: Int) {
+  class Tree(val rowCount: Int = 0, val childrenCount: Int = 0) {
 
     private case class Node(var id: String) {
 
@@ -13,7 +13,7 @@ object TreeTraversal {
     
     createAllChildren(root, rowCount, childrenCount)
 
-    private def createAllChildren(node: Node, rowCount: Int = 0, childrenCount: Int = 0): Unit = {
+    private def createAllChildren(node: Node, rowCount: Int, childrenCount: Int): Unit = {
       if (rowCount <= 1) return
 
       0 until childrenCount foreach { i =>
