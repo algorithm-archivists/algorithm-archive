@@ -4,26 +4,27 @@ object TreeTraversal {
 
   class Tree(val rowCount: Int, val childrenCount: Int) {
 
-    private case class Node(var id: Int) {
+    private case class Node(var id: String) {
 
       var children = ListBuffer[Node]()
     }
 
-    private val root: Node = Node(1)
+    private val root: Node = Node("root")
+    
     createAllChildren(root, rowCount, childrenCount)
 
-    private def createAllChildren(node: Node, rowCount: Int, childrenCount: Int): Unit = {
+    private def createAllChildren(node: Node, rowCount: Int = 0, childrenCount: Int = 0): Unit = {
       if (rowCount <= 1) return
 
       0 until childrenCount foreach { i =>
-        node.children += Node(node.id * 10 + i + 1)
+        node.children += Node(node.id + "-" + i)
         createAllChildren(node.children(i), rowCount - 1, childrenCount)
       }
     }
 
     private def doSomethingWithNode(node: Node) = Console.println(node.id)
 
-    def dfsRecursive(): Unit = {
+    def dfsRecursive: Unit = {
       def dfsRecursive(node: Node): Unit = {
         doSomethingWithNode(node)
         node.children.foreach(dfsRecursive)
@@ -32,7 +33,7 @@ object TreeTraversal {
       dfsRecursive(root)
     }
 
-    def dfsRecursivePostOrder(): Unit = {
+    def dfsRecursivePostOrder: Unit = {
       def dfsRecursivePostOrder(node: Node): Unit = {
         node.children.foreach(dfsRecursivePostOrder)
         doSomethingWithNode(node)
@@ -41,7 +42,7 @@ object TreeTraversal {
       dfsRecursivePostOrder(root)
     }
 
-    def dfsRecursiveInOrderBinary(): Unit = {
+    def dfsRecursiveInOrderBinary: Unit = {
       def processIfChildExists(children: ListBuffer[Node], index: Int) =
         if (children.isDefinedAt(index))
           dfsRecursiveInOrderBinary(children(index))
@@ -58,21 +59,23 @@ object TreeTraversal {
       dfsRecursiveInOrderBinary(this.root)
     }
 
-    def dfsStack(): Unit = {
+    def dfsStack: Unit = {
       val stack = new ArrayBuffer[Node]()
       stack += root
       while (stack.nonEmpty) {
         doSomethingWithNode(stack(0))
-        stack ++= stack.remove(0).children
+        val firstNode = stack.remove(0)
+        stack ++= firstNode.children 
       }
     }
 
-    def bfsQueue(): Unit = {
+    def bfsQueue: Unit = {
       val queue = new Queue[Node]()
       queue.enqueue(root)
       while (queue.nonEmpty) {
         doSomethingWithNode(queue.head)
-        queue ++= queue.dequeue.children
+        val firstNode = queue.dequeue()
+        queue ++= firstNode.children
       }
     }
 
@@ -80,28 +83,24 @@ object TreeTraversal {
 
   def main(args: Array[String]): Unit = {
     Console.println("Creating Tree")
-    var tree = new Tree(3, 3)
+    var theTree = new Tree(3, 3)
 
     Console.println("Using recursive DFS :")
-    tree.dfsRecursive
+    theTree.dfsRecursive
 
     Console.println("Using stack-based DFS :")
-    tree.dfsStack
+    theTree.dfsStack
 
     Console.println("Using queue-based BFS :")
-    tree.bfsQueue
+    theTree.bfsQueue
 
     Console.println("Using post-order recursive DFS :")
-    tree.dfsRecursivePostOrder
-
-    // Uncommenting the following 2 lines will result in an exception thrown because at least one Node of the Tree
-    // has more than 2 children and therefor a DFSRecursiveInorderBinary doesn't work.
-    Console.println("Using in-order binary recursive DFS : (fail)")
-    tree.dfsRecursiveInOrderBinary
-
-    tree = new Tree(3, 2)
-    Console.println("Using in-order binary recursive DFS : (succeed)")
-    tree.dfsRecursiveInOrderBinary
+    theTree.dfsRecursivePostOrder
+  
+    //Create a binary tree to test inOrder traversal
+    theTree = new Tree(3, 2)
+    Console.println("Using in-order binary recursive DFS :")
+    theTree.dfsRecursiveInOrderBinary
   }
 
 }
