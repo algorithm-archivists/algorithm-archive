@@ -92,7 +92,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="coco" %}
 [import:5-9, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% sample lang="scala" %}
-[import:26-33, lang:"scala"](code/scala/tree.scala)
+[import:26-34, lang:"scala"](code/scala/tree.scala)
 {% endmethod %}
 
 At least to me, this makes a lot of sense. We fight recursion with recursion! First, we first output the node we are on and then we call `DFS_recursive(...)` on each of its children nodes. This method of tree traversal does what its name implies: it goes to the depths of the tree first before going through the rest of the branches. In this case, the ordering looks like:
@@ -148,7 +148,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="coco" %}
 [import:11-15, lang:="coconut"](codo/coconut/tree_traversal.coco)
 {% sample lang="scala" %}
-[import:35-42, lang:"scala"](code/scala/tree.scala)
+[import:36-43, lang:"scala"](code/scala/tree.scala)
 {% endmethod %}
 
 <p>
@@ -199,7 +199,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="coco" %}
 [import:17-30, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% sample lang="scala" %}
-[import:44-59, lang:"scala"](code/scala/tree.scala)
+[import:45-60, lang:"scala"](code/scala/tree.scala)
 {% endmethod %}
 
 <p>
@@ -312,7 +312,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="coco" %}
 [import:41-48, lang:"coconut"](code/coconut/tree_traversal.coco)
 {% sample lang="scala" %}
-[import:71-78, lang:"scala"](code/scala/tree.scala)
+[import:72-80, lang:"scala"](code/scala/tree.scala)
 {% endmethod %}
 
 ## Video Explanation
@@ -380,7 +380,6 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/tree.scala)
 {% endmethod %}
-
 
 
 <script>
