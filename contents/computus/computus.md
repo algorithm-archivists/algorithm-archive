@@ -286,6 +286,14 @@ The sheer complexity of this calculation both baffles and astounds me -- especia
 
 Sure, this can be done straightforwardly with a calculator, but it is no doubt an algorithm worth discussing and celebrating for its ingenuity at the time of creation.
 
+## Video Explanation
+
+Here is a video describing key elements of Gauss's Easter Algorithm:
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x6Yud882QKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Example Code
 Unlike many other chapters in the Algorithm Archive, this particular method can be described almost entirely by mathematical expressions.
 As such, it should be relatively straightforward to implement in a number of different languages, and I heartily encourage you to do so!
