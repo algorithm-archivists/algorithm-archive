@@ -320,6 +320,10 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 [import, lang:"lisp"](code/clisp/gauss-easter.lisp)
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/gauss_easter.nim)
+{% sample lang="javascript" %}
+[import, lang:"nim"](code/javascript/gauss_easter.js)
+{% sample lang="typescript" %}
+[import, lang:"nim"](code/typescript/gauss_easter.ts)
 {% endmethod %}
 
 
