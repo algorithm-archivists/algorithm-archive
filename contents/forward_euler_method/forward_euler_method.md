@@ -146,6 +146,8 @@ Full code for the visualization follows:
 [import, lang:"nim"](code/nim/forwardeuler.nim)
 {% sample lang="lisp" %}
 [import, lang="lisp"](code/clisp/euler.lisp)
+{%sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/euler.coco)
 {% endmethod %}
 
 <script>
