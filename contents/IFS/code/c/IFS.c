@@ -36,7 +36,7 @@ int main() {
 
     chaos_game(shape_points, 3, out_points, 1000);
 
-    FILE *fp = fopen("out.dat", "w+");
+    FILE *fp = fopen("sierpinksi.dat", "w+");
 
     for (int i = 0; i < 1000; ++i) {
         fprintf(fp, "%f\t%f\n", out_points[i].x, out_points[i].y);
