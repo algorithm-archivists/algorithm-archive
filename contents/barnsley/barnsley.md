@@ -85,7 +85,7 @@ To account for this, each function is also given a probability of being chosen:
 | Function | Probability |
 | -------- | ----------- |
 | $$f_1(P) = \begin{bmatrix} 0 &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$ | 0.01 |
-| $$f_2(P) = \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | 0.85 | 
+| $$f_2(P) = \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | 0.85 |
 | $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &022 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | 0.07 |
 | $$f_4(P) = \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix}$$ | 0.07 |
 
@@ -125,6 +125,8 @@ The biggest differences between the two code implementations is that the Barnsle
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/barnsley.jl)
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/julia/barnsley.coco)
 {% endmethod %}
 
 ### Bibliography
