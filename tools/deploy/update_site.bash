@@ -3,7 +3,15 @@
 # update_site_travis.bash: Update a GitHub repo with the book build
 # products.
 
+GH_TOKEN=$1
+
 set -o errexit
+
+DOCS_BRANCH_NAME=master
+DOCS_REPO_NAME=algorithm-archivists.github.io
+DOCS_REPO_OWNER=algorithm-archivists
+
+BOOK_BUILD_DIR=_book
 
 # Required environment variables:
 # - DOCS_BRANCH_NAME: name of the remote branch serving the book
@@ -28,8 +36,8 @@ elif [[ -z ${GH_TOKEN+x} ]]; then
     exit 1
 fi
 
-git config user.name "Travis CI User"
-git config user.email "travis@travis-ci.org"
+git config --global user.name "James Schloss"
+git config --global user.email "jrs.schloss@gmail.com"
 
 GH_REPO_REF="github.com/${DOCS_REPO_OWNER}/${DOCS_REPO_NAME}.git"
 
@@ -57,9 +65,7 @@ else
     echo "${bold}Committing...${normal}"
     # This will return 1 if there are no changes, which should not
     # result in failure.
-    git commit \
-        -m "Deploy book to GitHub Pages Travis build: ${TRAVIS_BUILD_NUMBER}" \
-        -m "Commit: ${TRAVIS_COMMIT}" || ret=$?
+    git commit -m "Deploy book to GitHub Pages build" || ret=$?
     git push "https://${GH_TOKEN}@${GH_REPO_REF}"
     popd
 fi
