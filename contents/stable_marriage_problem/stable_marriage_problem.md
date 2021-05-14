@@ -58,6 +58,8 @@ Here is a video describing the stable marriage problem:
 [import, lang:"php"](code/php/stable_marriage.php)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/stable_marriage.scala)
+{% sample lang="elv" %}
+[import, lang:"elvish"](code/elvish/stable_marriage.elv)
 {% endmethod %}
 
 <script>
