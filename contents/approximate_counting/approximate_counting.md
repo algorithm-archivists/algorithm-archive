@@ -12,7 +12,7 @@ ADD IMAGE of different hand configurations showing different binary numbers.
 If your fingers are out, they count as a 1 for that register.
 If they are not, they count as a 0 for that register.
 After you have decided on the appropriate finger configuration, you can just read them back to get your actual count.
-Because you have 10 fingers and each one represents a power of 2, you can count up to $$2^10$$ or 1023, which is 100 times more than simple finger counting!
+Because you have 10 fingers and each one represents a power of 2, you can count up to $$2^{10}$$ or 1023, which is 100 times more than simple finger counting!
 
 This is great, but what if we wanted to go beyond 1024?
 How high can we go with only 10 bits?
@@ -21,8 +21,39 @@ This is precisely problem that Morris encountered in Bell Labs around 1977 [CITE
 There, he was given an 8-bit register and asked to count much higher than $$2^8 = 256$$.
 
 His solution was to invent a new algorithm known as the approximate counting algorithm.
+With this method, he could count to about $$130,000$$ with a relatively low error (standard deviation, $$\sigma \approx 17,000$$).
+Using 10 registers (fingers), this method can count to about $$1.15\times 10^{16}$$ when using similar parameters, which is undoubtedly impressive!
+
+This method has was an early predecessor to streaming algorithms where information must be roughly processed in real-time.
+As we dive into those methods later, this chapter will certainly be updated.
+For the purposes of this chapter, we will not be showing any proofs (though those might come later), but a rigorous mathematical description of this method can be found in the original paper [CITE], or a follow-up paper by ... [CITE].
+In addition, there are several blogs and resources online that cover the method to varying degrees.
+
+Here, we hope to provide a basic understanding of the method, along with code implementations for anyone who might want to try something similar in the future.
 
 ## A Simple Example
+
+If we need to count more than 256 events in 8 bits, there is one somewhat simple strategy: just count every other item.
+This means that we will increment our counter with 2, 4, 6, 8... events, effectively doubling the number of events we can count!
+Similarly, if we need to count above 512, we can count every 3 or 4 events; however, there is an obvious drawback to this method.
+
+Let's say we are counting every other event, but there are an odd number of events total.
+Well, there would be no way to represent this number with that counting method.
+Similarly, if you count every 3rd or 4th event, you would miss out on any numbers that are not multiples of your increment number.
+
+Hypothetically, if you needed to count to some number around 1,000,000 with 8 bits, then you would need to count every ~4000 events.
+This has a few important consequences:
+1. If your number is not a multiple of 4000, then you will have an error associated with your count of up to 4000 (0.4%).
+2. There is no way to determine the final count if it is not a multiple of 4000.
+3. We now need some way to count up to 4000 before incrementing the main counter!
+
+In ths way, 4000 would be a type of "counting resolution" for your system.
+Overall, this error is not bad, but it is possible to ensure that the approximate count is more specific by using some random numbers.
+
+That is to say, instead of counting every 4000th item, we could instead give each item a 0.025% chance of incrementing our counter.
+This averages out to be roughly 1 count every 4000 items, but the expectation value of a large number of counting experiments will be the correct number.
+Each counting experiment will have some associ
+
 
 ## Adding a logarithm
 
