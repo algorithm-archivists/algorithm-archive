@@ -178,6 +178,10 @@
           "lang": "emojic",
           "name": "Emojicode"
         },
+		    {
+		      "lang": "smalltalk",
+		      "name": "Smalltalk"
+		    },
         {
           "lang": "lolcode",
           "name": "LOLCODE"
