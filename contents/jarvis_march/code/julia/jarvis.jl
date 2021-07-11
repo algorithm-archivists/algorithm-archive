@@ -48,8 +48,11 @@ function jarvis_march(points::Vector{Pos})
 end
 
 function main()
-
-    points = [Pos(2,1.5), Pos(1, 1), Pos(2, 4), Pos(3, 1)]
+    points = [
+        Pos(-5, 2), Pos(5, 7), Pos(-6, -12), Pos(-14, -14), Pos(9, 9),
+        Pos(-1, -1), Pos(-10, 11), Pos(-6, 15), Pos(-6, -8), Pos(15, -9),
+        Pos(7, -7), Pos(-2, -9), Pos(6, -5), Pos(0, 14), Pos(2, 8)
+    ]
     hull = jarvis_march(points)
     println(hull)
 end
