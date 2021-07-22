@@ -27,16 +27,19 @@ $$
 512 + 256 + 128 + 16 + 4 + 1 = 917
 $$
 
-Because you have 10 fingers and each one represents a power of 2, you can count up to a maximum of $$2^{10}$$ or 1023, which is about 100 times more than simple finger counting!
+Because you have 10 fingers and each one represents a power of 2, you can count up to a maximum of $$2^{10}-1$$ or 1023, which is about 100 times more than simple finger counting!
+For those who might be wondering why you can count to $$2^{10}-1$$ instead of $$2^{10}$$ exactly, remember that each finger represents a power of 2.
+The right thumb counts as $$2^0 = 1$$ and the left thumb is $$2^9$$.
+With all fingers out, we have  counted to $$\sum_{n=0}^9 2^n = 1023 = 2^{10}-1$$.
 
-This is great, but what if we wanted to go beyond 1024?
+This is great, but what if we wanted to go beyond 1023?
 More concretely: how high can we go with only 10 bits?
 
-This is precisely the problem that Morris encountered in Bell Labs around 1977 {{"morris1978counting" | cite }}.
-There, he was given an 8-bit register and asked to count much higher than $$2^8 = 256$$.
+That was almost precisely the problem that Morris encountered in Bell Labs around 1977 {{"morris1978counting" | cite }}.
+There, he was given an 8-bit register and asked to count much higher than $$2^8 - 1= 255$$.
 His solution was to invent a new method known as the approximate counting algorithm.
 With this method, he could count to about $$130,000$$ with a relatively low error (standard deviation, $$\sigma \approx 17,000$$).
-Using 10 registers (fingers), this method can count to about $$1.15\times 10^{16}$$ when using similar parameters, which is undoubtedly impressive!
+Using 10 registers (fingers), this method can count to about $$1.15\times 10^{16}$$ with similar parameters, which is undoubtedly impressive!
 
 This method is an early predecessor to streaming algorithms where information must be roughly processed in real-time.
 As we dive into those methods later, this chapter will certainly be updated.
@@ -47,14 +50,20 @@ Here, we hope to provide a basic understanding of the method, along with code im
 
 ## A Simple Example
 
-If we need to count more than 256 events with 8 bits, there is one somewhat simple strategy: just count every other item.
-This means that we will increment our counter with 2, 4, 6, 8... events, effectively doubling the number of events we can count to 512!
-Similarly, if we need to count above 512, we can increment our counter every 3 or 4 events; however, the obvious drawback to this method is that if we only count every other event, there is no way to represent odd numbers.
-Similarly, if we count every 3rd or 4th event, you would miss out on any numbers that are not multiples of your increment number.
+If we need to count more than 256 items with 8 bits, there is one somewhat simple strategy: just count every other item.
+This means that we will increment our counter with 2, 4, 6, 8... items, effectively doubling the number of items we can count to 512!
+Similarly, if we need to count above 512, we can increment our counter every 3 or 4 items; however, the obvious drawback to this method is that if we only count every other item, there is no way to represent odd numbers.
+Similarly, if we count every 3rd or 4th item, you would miss out on any numbers that are not multiples of your increment number.
+
+The most important thing to take away from this line of reasoning is that counting can be done somewhat approximately by splitting the act into two distinct actions: incrementing the counter and storing the count, itself.
+The act of incrementing a count requires some form of trigger.
+For example, every time a sheep walks by, you lift a finger.
+As mentioned, you could also lift a finger every time 2 or 3 sheep go by to count higher on your hand.
+The act of storing the count requires some form of memory, whether that be your hand or a bitstring.
 
 As a hypothetical example, imagine counting 1,000,000 sheep, if we wanted to save all of them on 8 bits (maximum size of 256), we could increment our counter every ~4000 sheep.
 By counting in this way, we would first need to count 4000 sheep before incrementing the main counter by 1.
-After all the sheep have gone by, we would have counted up to 250 on our counter, and also counted up to 4000 on a separate counter 250 times.
+After all the sheep have gone by, we would have counted up to 250 on our counter, and also counted up to $$4000-1=3999$$ on a separate counter 250 times.
 This has a few important consequences:
 1. If the final number of sheep is not a multiple of 4000, then we will have an error associated with the total count of up to 4000 (0.4%).
 2. There is no way to determine the final number of sheep if it is not a multiple of 4000.
@@ -68,37 +77,225 @@ This averages out to be roughly 1 count every 4000 sheep, but the expectation va
 This means that even though we need to count all the sheep multiple times to get the right expectation value, we no longer need to keep a separate counter for the counting resolution of 4000.
 
 As expected, each counting experiment will have some associated error (sometimes much higher than 0.4%).
-To quantify this error, let's actually perform the experiment
+To quantify this error, let's actually perform the experiment:
 
-ADD image of counting to 1,000,000
+<p>
+    <img  class="center" src="res/approximations.png" style="width:100%" />
+</p>
 
-For this image, we have performed _____ counting experiments and have also plotted a Gaussian distribution on top of it.
-This distribution is known as a Binomial distribution, which we'll cover in the near future.
-For now, it is alright to assume that it is *close enough* to a Gaussian to use Gaussian approximations.
-This means that we can estimate the error with standard deviations and find the final count with the expectation value of the distribution.
-Here, the expectation value is _____ and the standard deviation is ____.
+In this image, we have counted to 1,000,000 10,000 different times.
+In each run, we have given each item a 0.025% chance to flip our primary counter and given each increment in our primary counter a weight of 4000 items.
+We have plotted 10 of the 10,000 runs (chosen at random), and each upward tick of the lines represents one of the items winning a game of chance and adding 1 to the primary counter and thus adding 4000 to the approximate count.
+On top of the plot, we have shown the distribution of all 10,000 runs for the approximate count at 10,000, 500,000, and 1,000,000 items.
 
-As an interesting side-note, let's plot a few experiments alongside a counting line $$y=x$$ (which represents simply incrementing by 1 each item instead of in steps of 4000 at a 0.024% chance).
+There's a lot to unpack here, so let's start with the upward trending lines.
+Here, it seems like the approximate counts are roughly following the line of $$y=x$$, which would be simple counting, as in a perfect world, the approximate count would always be exactly equal to the true number of items being counted.
+Unfortunately, none of the lines shown here exactly follow $$y=x$$.
+In fact, it would be impossible for any of the approximations to do so because we are always increasing the approximation in steps of 4000.
+That said, the *average* of all these counts together is a really good approximation for the true number of items.
 
-ADD image tracking the total count of different counting experiments with y=x.
+This is where the 3 additional plots come in:
 
-Here, it is clear that by averaging all of the distributions, we roughly get the same $$y=x$$ counting line, but none of the experiments seem to be particularly close to the true count without averaging them together.
-We have also shown snapshots of all distributions at 1000, 500,000 and 1,000,000 to show how good this approximation is at different stages of the experiment.
-If we are only interested in an order-of-magnitude estimate, the average does the job quite well when we have counted 1,000,000 objects; however, for smaller counts, like 1000, the estimate is harder to justify.
+<p>
+    <img  class="center" src="res/histograms.png" style="width:100%" />
+</p>
 
-For this reason, Morris introduced logarithmic counting, which should allow us to more closely track the counting line and find a better order-of-magnitude estimate at all scales.
+Each of these is a histogram of the approximate count for all 10,000 runs at 10,000 (left), 500,000 (middle), and 1,000,000 (left).
+All three (especially the approximation for 1,000,000) look Gaussian, and the peak of the Gaussian seems to be the correct count.
+In fact, the expectation value for out approximate counting scheme will always be correct.
+In practice, this means that we can approximate any count on a small number of bits by doing a large number of counting trials and averaging their results.
+
+There is still a little catch that becomes more evident as we look towards the approximation for 10,000 items.
+In this case, even though the expectation value for the Gaussian distribution looks correct, it's kinda hard to tell exactly because there are only 8 (or so) possible values for each individual experiment.
+Essentially, we are trying to count to 10,000 in steps of 4,000.
+Clearly the closest we can get on any individual run is either 8,000 or 12,000, as these are multiples of 4,000.
+
+Does this mean that this counting method is less useful for a small number of items?
+In a sense, yes.
+Here is a table for the true count, approximate count, and percent error for 10,000, 500,000, and 1,000,000 for the case where we do 10,000 counting experiments:
+
+| True Count | Approximate Count | Percent Error |
+| ---------- | ----------------- | ------------- |
+| 10,000     | 9,958.0           | 0.42          |
+| 500,000    | 499,813.2         | 0.037         |
+| 1,000,000  | 999,466.0         | 0.053         |
+
+With these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
+A 0.42% error is still really good, right?
+Right.
+It's definitely not bed, but this was with 10,000 counting experiments.
+Here a new table where we only did 10:
+
+| True Count | Approximate Count | Percent Error |
+| ---------- | ----------------- | ------------- |
+| 10,000     | 8,000.0           | 20.0          |
+| 500,000    | 483,200.0         | 3.36          |
+| 1,000,000  | 961,600.0         | 3.84          |
+
+This time, there is a 20% error when counting to 10,000!
+That's unacceptably high!
+
+To solve this problem, we need to find some way to for the value of each increment on the actual counter to be more meaningful for lower counts.
+This is precisely the job for a logarithm, which is what we will be looking at in the next section.
+For now, it's important to look at another anomaly: why are the percent error for the 500,000 and 1,000,000 cases so close?
+
+The simple answers are that:
+1. Both 500,000 and 1,000,000 are multiples of 4,000
+2. Once we count beyond some arbitrary number (like 100,000 or so), the step size of 4,000 becomes much less relevant
+
+The more complicated answer is that because we re not counting with Gaussian probability distributions instead of integer increments, we now need to quantify our error with the tools of probability, namely standard deviations.
+Along with the introduction to a logarithmic counting scale, we will also introduce more meaningful error measurements in the following section.
+
+So I guess we should hop to it!
 
 ## Adding a logarithm
 
-At this stage, we will begin to talk about events events, which are a general abstraction to the sheep previous sheep analogy.
+At this stage, I feel it's important to use terminology that more closely matches Morris's original paper {{"morris1978counting" | cite}}, so we will begin to talk about events, which are a general abstraction to the previous item / sheep analogy.
 We will also introduce three different values:
 
 * $$n$$: the number of events that have occurred.
-* $$v(n)$$: the approximate count we have stored in our bitstring.
-* 
+* $$v$$: the number we have stored in our bitstring.
+* $$n_v$$: the approximate number of events that have occurred.
 
+It's important to stop here and think about what's actually going on.
+We have a certain number of events ($$n$$) that have occurred and have stored that number on a binary register as $$v$$.
+Traditionally, the number stored on the binary register would be exactly equal to the number of events, but because we do not have enough space on the register, we end up settling for an approximation of the number of events, $$n_v$$.
+This is precisely what we did in the previous example, where $$v = \frac{n}{4000}$$ and $$n(v) = 4000*v$$.
 
-Histogram + tracking line images
+As mentioned, it might be more appropriate to create a new method of storing the number of events by using a logarithmic scale, such that
+
+$$
+v(n) = \log_2(1+n),
+$$
+
+which would mean that the approximate count would be
+
+$$
+n_v = 2^v - 1.
+$$
+
+For this, we can use any base logarithm (like $$e$$), but because we are dealing with bits, it makes sense to use base 2.
+To be clear, here is a table of several approximate counts along with corresponding values stored in the bitstring
+:
+| $$v(n)$$           | $$n_v$$                 |
+| ------------------ | ----------------------- |
+| $$00000000 = 0$$   | 0                       |
+| $$00000001 = 1$$   | $$1$$                   |
+| $$00000010 = 2$$   | $$3$$                   |
+| $$00000100 = 4$$   | $$15$$                  |
+| $$00010000 = 16$$  | $$65535$$               |
+| $$01000000 = 64$$  | $$1.85 \times 10^{19}$$ |
+| $$10000000 = 128$$ | $$3.40 \times 10^{38}$$ | 
+| $$11111111 = 255$$ | $$5.79 \times 10^{76}$$ |
+
+This means that we can hold from $$0$$ to $$2^{255} - 1 \approx 5.79 \times 10^{76}$$ with this new storing method.
+
+So let's now think about what happens every time a new event occurs.
+To do this, Morris calculated a new value:
+
+$$
+\Delta = \frac{1}{n_{v+1} - n_{v}}
+$$
+
+where $$n_{v+1}$$ is the approximate count for the next possible value $$v$$ stored in the register.
+In this case, $$\Delta$$ will always be between 0 and 1, so we can consider it to be the probability of whether we should increment our stored count or not.
+For example, if we have a stored value of 2 ($$v=2$$), then
+
+$$
+\Delta = \frac{1}{n_3 - n_2} = \frac{1}{(2^3-1)-(2^2-1)} \approx \frac{1}{7-3} \approx 0.25.
+$$
+
+This indicates that there will be a 25% chance to increment $$v$$ from 2 to 3.
+In practice, this means that we need to create another random variable $$r$$ and set our counter such that
+
+$$
+\begin{align}
+\text{if } & \Delta > r, \qquad v = v + 1 \\
+\text{if } & \Delta < r, \qquad v = v.
+\end{align}
+$$
+
+Again, $$\Delta$$ is essentially the probability that we will increment our counter with each object, and as we count higher, the probability decreases exponentially.
+
+ADD IMAGE OF DELTA VS V
+
+Before leaving this section, it's important to note that the highest anyone can count with this method in base 2 using an 8-bit register is $$5.79 \times 10^{76}$$.
+That's great!
+Way, way better than 255, but we can still go higher with a different base of logarithm.
+For example, if we use $$e$$ as our base, we can get up to $$e^{255}-1 = 5.56 \times 10^{110}$$.
+In addition, by choosing smaller bases, we can also find a more accurate approximate count.
+
+In the next section, we will consider how to generalize our logarithm method to take arbitrary bases into account.
+
+## A slightly more general logarithm
+
+Let's start by considering the differences between base $$2$$ and base $$e$$ solutions.
+This would mean that
+
+$$
+\begin{align}
+n_v &= e^v - 1
+v &= \log_e(1+n).
+\end{align}
+$$
+
+If we were to update our count and wanted to keep the value in the counter as accurate as possible, then the new value in the register with every new event would be
+
+$$
+v = \log_e(1+e^v).
+$$
+
+This is generally not an integer value, but $$v$$ *must* be an integer value, so what do we do in this situation?
+
+Well, let's look at the very first event where we need to increment our count from 0 to 1.
+With base $$e$$, there would only be a 59% chance of counting the first event, and if the event is counted, the value in the register would be $$\approx 1.71 \neq 1$$.
+Again, the expectation value for a bunch of trials is correct, but we did not have this issue with base 2, because
+
+$$
+v = \frac{\log_e(n+1)}{\log_e(2)} = 1
+$$
+
+when $$n=1$$.
+As a reminder, the above formula is a way to convert any logarithm from a given base (in this case $$e$$) to another base (in this case 2).
+
+So we need to chose a specific base to a logarithm that will at least ensure that the first count is correct, and for this reason, Morris studied a specific solution:
+
+$$
+v(n,a) = \frac{\log(1+n/a)}{\log(1+1/a)}.
+$$
+
+Here, $$a$$ is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
+Like before, the demonimator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
+If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm).
+
+ADD tracking image
+
+Also, by rearranging the equation for $$v(n,a)$$ a bit, we can find that the maximum count allowed by a bitstring  is
+
+$$
+n(v) = a((1+\frac{1}{a})^v-1).
+$$
+
+So if the bitstring can be a maximum of 256 (for 8 bits) and we arbitrarily set 
+$$a=30$$, then the highest possible count with this approach will be $$\approx 130,000$$, which was the number reported in Morris's paper.
+As an important note, the expected error estimate (variance) for each count will
+ be
+
+$$
+\sigma(n,a)^2 = \frac{n(n-1)}{2a}.
+$$
+
+If we plot this with $$n$$ for $$a=30$$, we find that ...
+
+ADD IMAGE and several histograms.
+
+This makes sense as with higher counts, we more accurately represent a normal distribution.
+Also, if we increase $$a$$, we will decrease the maximum count and relative error.
+It is important to twiddle $$a$$ based on what the maximum count is expected for
+ each experiment.
+
+Finally, before ending the paper, Morris mentioned that it is possible to precompute all values $$\Delta_j = (a/(a+1))^j$$ for all $$j \in [1,N]$$ where $$N$$ is the largest value possible integer with that bitstring (as an example, 255 for 8 bits).
+This was probably more useful in 1978 than it is now, but it's still nice to keep in mind if you find yourself working on a machine with compute constrictions.
 
 ## Video Explanation
 
@@ -111,6 +308,11 @@ ture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code
+
+For this example, we have returned to the question asked above: how high can someone count on their fingers using the approximate counting algorithm?
+We know from the formula that with $$a=30$$ and 10 bits, we should be able to count to ____, but what happens when we perform the actual experiment?
+
+As we do not have any objects to count, we will instead simulate the counting with a `while` loop that keeps going until out bitstring is 1023 ($$2^{10}$$).
 
 {% method %}
 {% sample lang="jl" %}
