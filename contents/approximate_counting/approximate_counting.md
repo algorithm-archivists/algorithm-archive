@@ -1,7 +1,7 @@
 # The Approximate Counting Algorithm
 
 This might seem like a straightforward question, but how high can you count on your fingers?
-I mean, this depends on how many fingers you have, but in general the answer has to be 10, right?
+This depends on how many fingers you have, but in general the answer has to be 10, right?
 
 Well, not exactly, it can actually go much, much higher with a few simple abstractions.
 
@@ -12,12 +12,12 @@ The first strategy is to think of your fingers as binary registers, like so {{ "
 </p>
 
 If your fingers are out, they count as a 1 for that register.
-If they are not, they count as a 0 for that register.
-After you have decided on the appropriate finger configuration, you have created a bitstring that can be read from left to right, where each number represents a power of 2.
+If they are not, they count as a 0.
+This means that after you have decided on the appropriate finger configuration, you have created a bitstring that can be read from left to right, where each number represents a power of 2.
 For this example, we would have a bitstring of 1110010101, which reads to 917:
 
 $$
-1 \cdot 2^9 + 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 0 \cdot 2^5 + 1 \cdot 2*4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0
+1 \cdot 2^9 + 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 0 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0
 $$
 $$
 =
@@ -27,21 +27,22 @@ $$
 512 + 256 + 128 + 16 + 4 + 1 = 917
 $$
 
-Because you have 10 fingers and each one represents a power of 2, you can count up to a maximum of $$2^{10}-1$$ or 1023, which is about 100 times more than simple finger counting!
+Because you have 10 fingers and each one represents a power of 2, you can count up to a maximum of $$2^{10}-1$$ or 1023, which is about 100 times higher than simple finger counting!
 For those who might be wondering why you can count to $$2^{10}-1$$ instead of $$2^{10}$$ exactly, remember that each finger represents a power of 2.
 The right thumb counts as $$2^0 = 1$$ and the left thumb is $$2^9$$.
 With all fingers out, we have  counted to $$\sum_{n=0}^9 2^n = 1023 = 2^{10}-1$$.
 
-This is great, but what if we wanted to go beyond 1023?
-More concretely: how high can we go with only 10 bits?
+So what if we wanted to go beyond 1023?
+Well, we could start counting with our fingers as trits where 0 is closed, 1 is half-up, and 2 is fully up.
+There are actually a huge variety of different ways we could move our hands about and count in odd ways, but we are interested in a more concrete problem: how high can we count with only 10 bits?
 
-That was almost precisely the problem that Morris encountered in Bell Labs around 1977 {{"morris1978counting" | cite }}.
+This is almost exactly the problem that Morris encountered in Bell Labs around 1977 {{"morris1978counting" | cite }}.
 There, he was given an 8-bit register and asked to count much higher than $$2^8 - 1= 255$$.
 His solution was to invent a new method known as the approximate counting algorithm.
 With this method, he could count to about $$130,000$$ with a relatively low error (standard deviation, $$\sigma \approx 17,000$$).
-Using 10 registers (fingers), this method can count to about $$1.15\times 10^{16}$$ with similar parameters, which is undoubtedly impressive!
+Using 10 registers (fingers), he could count to about $$1.15\times 10^{16}$$ with similar parameters, which is undoubtedly impressive!
 
-This method is an early predecessor to streaming algorithms where information must be roughly processed in real-time.
+The approximate counting algorithm is an early predecessor to streaming algorithms where information must be roughly processed in real-time.
 As we dive into those methods later, this chapter will certainly be updated.
 For now, we will not be showing any proofs (though those might come later as well), but a rigorous mathematical description of this method can be found in a follow-up paper by Philippe Flajolet {{ "flajolet1985approximate" | cite }}.
 In addition, there are several blogs and resources online that cover the method to varying degrees of accessibility {{"arpit_counting" | cite }} {{"greggunderson_counting" | cite }}.
@@ -50,19 +51,20 @@ Here, we hope to provide a basic understanding of the method, along with code im
 
 ## A Simple Example
 
-If we need to count more than 256 items with 8 bits, there is one somewhat simple strategy: just count every other item.
-This means that we will increment our counter with 2, 4, 6, 8... items, effectively doubling the number of items we can count to 512!
-Similarly, if we need to count above 512, we can increment our counter every 3 or 4 items; however, the obvious drawback to this method is that if we only count every other item, there is no way to represent odd numbers.
-Similarly, if we count every 3rd or 4th item, you would miss out on any numbers that are not multiples of your increment number.
+If we need to count more than 255 items with 8 bits, there is one somewhat simple strategy: count every other item.
+This means that we will increment our counter with 2, 4, 6, 8... items, effectively doubling the number of items we can count to 511!
+Similarly, if we need to count above 511, we can increment our counter every 3 or 4 items; however, the obvious drawback to this method is that if we only count every other item, there is no way to represent odd numbers.
+Similarly, if we count every 3rd or 4th item, we would miss out on any numbers that are not multiples of our increment number.
 
-The most important thing to take away from this line of reasoning is that counting can be done somewhat approximately by splitting the act into two distinct actions: incrementing the counter and storing the count, itself.
-The act of incrementing a count requires some form of trigger.
-For example, every time a sheep walks by, you lift a finger.
+The most important thing to take away from this line of reasoning is that counting can be done somewhat approximately by splitting the process into two distinct actions: incrementing the counter and storing the count, itself.
+For example, every time a sheep walks by, you could lift a finger.
+In this case, the act of seeing a sheep is a trigger for incrementing your counter, which is stored on your hand.
 As mentioned, you could also lift a finger every time 2 or 3 sheep go by to count higher on your hand.
-The act of storing the count requires some form of memory, whether that be your hand or a bitstring.
+In code, bits are obviously preferred to hands for long-term storage.
 
-As a hypothetical example, imagine counting 1,000,000 sheep, if we wanted to save all of them on 8 bits (maximum size of 256), we could increment our counter every ~4000 sheep.
-By counting in this way, we would first need to count 4000 sheep before incrementing the main counter by 1.
+Taking this example a bit further, imagine counting 1,000,000 sheep.
+If we wanted to save all of them on 8 bits (maximum size of 255), we could increment our counter every $$\sim 4000$$ sheep.
+By counting in this way, we would first need to count around 4000 sheep before incrementing the main counter by 1.
 After all the sheep have gone by, we would have counted up to 250 on our counter, and also counted up to $$4000-1=3999$$ on a separate counter 250 times.
 This has a few important consequences:
 1. If the final number of sheep is not a multiple of 4000, then we will have an error associated with the total count of up to 4000 (0.4%).
@@ -265,7 +267,7 @@ v(n,a) = \frac{\log(1+n/a)}{\log(1+1/a)}.
 $$
 
 Here, $$a$$ is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
-Like before, the demonimator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
+Like before, the denominator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
 If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm).
 
 ADD tracking image
@@ -294,7 +296,7 @@ Also, if we increase $$a$$, we will decrease the maximum count and relative erro
 It is important to twiddle $$a$$ based on what the maximum count is expected for
  each experiment.
 
-Finally, before ending the paper, Morris mentioned that it is possible to precompute all values $$\Delta_j = (a/(a+1))^j$$ for all $$j \in [1,N]$$ where $$N$$ is the largest value possible integer with that bitstring (as an example, 255 for 8 bits).
+Finally, before ending the paper, Morris mentioned that it is possible to pre-compute all values $$\Delta_j = (a/(a+1))^j$$ for all $$j \in [1,N]$$ where $$N$$ is the largest value possible integer with that bitstring (as an example, 255 for 8 bits).
 This was probably more useful in 1978 than it is now, but it's still nice to keep in mind if you find yourself working on a machine with compute constrictions.
 
 ## Video Explanation
