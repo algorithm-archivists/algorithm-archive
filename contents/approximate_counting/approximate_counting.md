@@ -34,7 +34,7 @@ With all fingers out, we have  counted to $$\sum_{n=0}^9 2^n = 1023 = 2^{10}-1$$
 
 So what if we wanted to go beyond 1023?
 Well, we could start counting with our fingers as trits where 0 is closed, 1 is half-up, and 2 is fully up.
-There are actually a huge variety of different ways we could move our hands about and count in odd ways, but we are interested in a more concrete problem: how high can we count with only 10 bits?
+There are actually a huge variety of different ways we could move our hands about to count in odd ways, but we are interested in a more concrete problem: how high can we count with only 10 bits?
 
 This is almost exactly the problem that Morris encountered in Bell Labs around 1977 {{"morris1978counting" | cite }}.
 There, he was given an 8-bit register and asked to count much higher than $$2^8 - 1= 255$$.
@@ -65,21 +65,21 @@ In code, bits are obviously preferred to hands for long-term storage.
 Taking this example a bit further, imagine counting 1,000,000 sheep.
 If we wanted to save all of them on 8 bits (maximum size of 255), we could increment our counter every $$\sim 4000$$ sheep.
 By counting in this way, we would first need to count around 4000 sheep before incrementing the main counter by 1.
-After all the sheep have gone by, we would have counted up to 250 on our counter, and also counted up to $$4000-1=3999$$ on a separate counter 250 times.
+After all the sheep have gone by, we would have counted up to 250 on our counter, and also counted up to $$4000$$ on a separate counter 250 times.
 This has a few important consequences:
 1. If the final number of sheep is not a multiple of 4000, then we will have an error associated with the total count of up to 4000 (0.4%).
 2. There is no way to determine the final number of sheep if it is not a multiple of 4000.
 3. We now need some way to count up to 4000 before incrementing the main counter!
 
-In this way, 4000 would be a type of "counting resolution" for our system.
-Overall, a 0.4% error is not bad, but it is possible to ensure that the approximate count is more accurate by using randomness to our advantage.
+In a sense, 4000 would be a type of "counting resolution" for our system.
+Overall,  a 0.4% error is not bad, but it is possible to ensure that the approximate count is more accurate (but potentially less precise) by using randomness to our advantage.
 
 That is to say, instead of incrementing out counter every 4000th sheep, we could instead give each item a 0.025% chance of incrementing our main counter.
 This averages out to be roughly 1 count every 4000 sheep, but the expectation value of a large number of counting experiments should be the correct number.
 This means that even though we need to count all the sheep multiple times to get the right expectation value, we no longer need to keep a separate counter for the counting resolution of 4000.
 
-As expected, each counting experiment will have some associated error (sometimes much higher than 0.4%).
-To quantify this error, let's actually perform the experiment:
+Becsause multiple counting trials are necessary to ensure the correct result, each counting experiment will have some associated error (sometimes much higher than 0.4%).
+To quantify this error, let's actually perform the experiment, as shown below:
 
 <p>
     <img  class="center" src="res/approximations.png" style="width:100%" />
@@ -91,9 +91,10 @@ We have plotted 10 of the 10,000 runs (chosen at random), and each upward tick o
 On top of the plot, we have shown the distribution of all 10,000 runs for the approximate count at 10,000, 500,000, and 1,000,000 items.
 
 There's a lot to unpack here, so let's start with the upward trending lines.
-Here, it seems like the approximate counts are roughly following the line of $$y=x$$, which would be simple counting, as in a perfect world, the approximate count would always be exactly equal to the true number of items being counted.
+Here, it seems like the approximate counts are roughly following the line of $$y=x$$, which would indicate simple counting (without any randomness or approximation).
+This makes sense because in a perfect world, the approximate count would always be exactly equal to the true number of items being counted.
 Unfortunately, none of the lines shown here exactly follow $$y=x$$.
-In fact, it would be impossible for any of the approximations to do so because we are always increasing the approximation in steps of 4000.
+In fact, it would be impossible for any of the approximations to do so because we are always increasing the approximation in steps of 4000 while the true count increments by 1 with each new item.
 That said, the *average* of all these counts together is a really good approximation for the true number of items.
 
 This is where the 3 additional plots come in:
@@ -102,7 +103,7 @@ This is where the 3 additional plots come in:
     <img  class="center" src="res/histograms.png" style="width:100%" />
 </p>
 
-Each of these is a histogram of the approximate count for all 10,000 runs at 10,000 (left), 500,000 (middle), and 1,000,000 (left).
+Each of these is a histogram of the approximate count for all 10,000 runs at 10,000 (left), 500,000 (middle), and 1,000,000 (left) items.
 All three (especially the approximation for 1,000,000) look Gaussian, and the peak of the Gaussian seems to be the correct count.
 In fact, the expectation value for out approximate counting scheme will always be correct.
 In practice, this means that we can approximate any count on a small number of bits by doing a large number of counting trials and averaging their results.
@@ -122,7 +123,8 @@ Here is a table for the true count, approximate count, and percent error for 10,
 | 500,000    | 499,813.2         | 0.037         |
 | 1,000,000  | 999,466.0         | 0.053         |
 
-With these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
+Here, it seems that the percent error is 10 times higher for the case where we are counting 10,000 items; however, 
+with these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
 A 0.42% error is still really good, right?
 Right.
 It's definitely not bed, but this was with 10,000 counting experiments.
@@ -141,12 +143,16 @@ To solve this problem, we need to find some way to for the value of each increme
 This is precisely the job for a logarithm, which is what we will be looking at in the next section.
 For now, it's important to look at another anomaly: why are the percent error for the 500,000 and 1,000,000 cases so close?
 
-The simple answers are that:
-1. Both 500,000 and 1,000,000 are multiples of 4,000
-2. Once we count beyond some arbitrary number (like 100,000 or so), the step size of 4,000 becomes much less relevant
+I gotta be honest, I don't know the correct answer here, but I would guess that it has somehting to do with the fact that both 500,000 and 1,000,000 are multiples of 4000 so our counting scheme can resolve both of them with roughly equal precision.
+On top of that, both values are significantly higher than 4,000 so the counting resolution does not have as significant of an impact on the measured count.
+Simply put, 4000 is a big step size when couting to 10,000, but a smaller one when counting to 500,000 or 1,000,000.
 
-The more complicated answer is that because we re not counting with Gaussian probability distributions instead of integer increments, we now need to quantify our error with the tools of probability, namely standard deviations.
-Along with the introduction to a logarithmic counting scale, we will also introduce more meaningful error measurements in the following section.
+As an important note, each approximate count shown in the tables abobe was the expectation value for a Gaussian probability distribution of different counting experiments all providing a guess at what the count could be.
+Because we are no longer counting with integer increments, we now need to quantify our error with the tools of probability, namely standard deviations.
+
+In the next section, we will tackle both issues brought up here:
+1. In order to better approximate different scales of counting, it makes sense to use a logarithmic scale.
+2. Because we are counting by using the expectation value of a Gaussian probability distribution of s set of counting experiments, it makes sense to quantify error with the tools we learned from probability and statistics.
 
 So I guess we should hop to it!
 
