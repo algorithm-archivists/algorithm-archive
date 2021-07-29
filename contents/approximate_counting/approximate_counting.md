@@ -168,9 +168,10 @@ We will also introduce three different values:
 It's important to stop here and think about what's actually going on.
 We have a certain number of events ($$n$$) that have occurred and have stored that number on a binary register as $$v$$.
 Traditionally, the number stored on the binary register would be exactly equal to the number of events, but because we do not have enough space on the register, we end up settling for an approximation of the number of events, $$n_v$$.
-This is precisely what we did in the previous example, where $$v = \frac{n}{4000}$$ and $$n(v) = 4000*v$$.
+This is precisely what we did in the previous example, where $$v = \frac{n}{4000}$$ and $$n_v = 4000*v$$.
 
-As mentioned, it might be more appropriate to create a new method of storing the number of events by using a logarithmic scale, such that
+As mentioned, using a constant scaling value (4000) for our approximate counting scheme means that the approximation is not ideal for a smaller number of events.
+For this reason, it might be more appropriate to create a new method of storing the number of events by using a logarithmic scale, such that
 
 $$
 v(n) = \log_2(1+n),
@@ -179,12 +180,12 @@ $$
 which would mean that the approximate count would be
 
 $$
-n_v = 2^v - 1.
+n_v = 2^v-1.
 $$
 
 For this, we can use any base logarithm (like $$e$$), but because we are dealing with bits, it makes sense to use base 2.
-To be clear, here is a table of several approximate counts along with corresponding values stored in the bitstring
-:
+To be clear, here is a table of several approximate counts along with corresponding values stored in the bitstring:
+
 | $$v(n)$$           | $$n_v$$                 |
 | ------------------ | ----------------------- |
 | $$00000000 = 0$$   | 0                       |
