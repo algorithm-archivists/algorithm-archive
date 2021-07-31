@@ -40,7 +40,7 @@ This is almost exactly the problem that Morris encountered in Bell Labs around 1
 There, he was given an 8-bit register and asked to count much higher than $$2^8 - 1= 255$$.
 His solution was to invent a new method known as the approximate counting algorithm.
 With this method, he could count to about $$130,000$$ with a relatively low error (standard deviation, $$\sigma \approx 17,000$$).
-Using 10 registers (fingers), he could count to about $$1.15\times 10^{16}$$ with similar parameters, which is undoubtedly impressive!
+Using 10 registers (fingers), he could count to about $$1.1\times 10^{16}$$ with similar parameters, which is undoubtedly impressive!
 
 The approximate counting algorithm is an early predecessor to streaming algorithms where information must be roughly processed in real-time.
 As we dive into those methods later, this chapter will certainly be updated.
@@ -174,7 +174,7 @@ As mentioned, using a constant scaling value (4000) for our approximate counting
 For this reason, it might be more appropriate to create a new method of storing the number of events by using a logarithmic scale, such that
 
 $$
-v(n) = \log_2(1+n),
+v = \log_2(1+n),
 $$
 
 which would mean that the approximate count would be
@@ -183,8 +183,9 @@ $$
 n_v = 2^v-1.
 $$
 
-For this, we can use any base logarithm (like $$e$$), but because we are dealing with bits, it makes sense to use base 2.
-To be clear, here is a table of several approximate counts along with corresponding values stored in the bitstring:
+In this case, we are adding 1 to the argument of the logarithm for $$v$$ because $$\log_2(1) = 0$$ and we start counting at 1; therefore, we need some way to represent the value of 0.
+Also, for this we can use any base logarithm (like $$e$$), but because we are dealing with bits, it makes sense to use base 2.
+To be clear, here is a table of several values that could be stored in a bitstring along with their corresponding approximate counts:
 
 | $$v(n)$$           | $$n_v$$                 |
 | ------------------ | ----------------------- |
@@ -197,7 +198,7 @@ To be clear, here is a table of several approximate counts along with correspond
 | $$10000000 = 128$$ | $$3.40 \times 10^{38}$$ | 
 | $$11111111 = 255$$ | $$5.79 \times 10^{76}$$ |
 
-This means that we can hold from $$0$$ to $$2^{255} - 1 \approx 5.79 \times 10^{76}$$ with this new storing method.
+This means that we can hold from $$0$$ to $$2^{255} - 1 \approx 5.79 \times 10^{76}$$ with this new method.
 
 So let's now think about what happens every time a new event occurs.
 To do this, Morris calculated a new value:
@@ -226,20 +227,23 @@ $$
 
 Again, $$\Delta$$ is essentially the probability that we will increment our counter with each object, and as we count higher, the probability decreases exponentially.
 
-ADD IMAGE OF DELTA VS V
+<p>
+    <img  class="center" src="res/deltas.png" style="width:100%" />
+</p>
 
 Before leaving this section, it's important to note that the highest anyone can count with this method in base 2 using an 8-bit register is $$5.79 \times 10^{76}$$.
 That's great!
 Way, way better than 255, but we can still go higher with a different base of logarithm.
 For example, if we use $$e$$ as our base, we can get up to $$e^{255}-1 = 5.56 \times 10^{110}$$.
 In addition, by choosing smaller bases, we can also find a more accurate approximate count.
+In practice, we want to select a base that allows us to count to a value of the same order (or one order higher) than the number of events we are expected to have.
 
 In the next section, we will consider how to generalize our logarithm method to take arbitrary bases into account.
 
 ## A slightly more general logarithm
 
-Let's start by considering the differences between base $$2$$ and base $$e$$ solutions.
-This would mean that
+Let's start by considering the differences between base $$2$$ and base $$e$$.
+For base $$e$$, 
 
 $$
 \begin{align}
@@ -254,7 +258,7 @@ $$
 v = \log_e(1+e^v).
 $$
 
-This is generally not an integer value, but $$v$$ *must* be an integer value, so what do we do in this situation?
+This is generally not an integer value, but $$v$$ *must* be an integer value (unless we want to try and use floating-point values (which we definitely don't have space for)), so what do we do in this situation?
 
 Well, let's look at the very first event where we need to increment our count from 0 to 1.
 With base $$e$$, there would only be a 59% chance of counting the first event, and if the event is counted, the value in the register would be $$\approx 1.71 \neq 1$$.
@@ -274,15 +278,21 @@ v(n,a) = \frac{\log(1+n/a)}{\log(1+1/a)}.
 $$
 
 Here, $$a$$ is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
-Like before, the denominator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
-If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm).
+The denominator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
+If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm):
 
 ADD tracking image
+Use a ribbon plot where we keep track of max and min for each event on old 4000 counting scheme and then show a new distribution of 10 ontop
 
-Also, by rearranging the equation for $$v(n,a)$$ a bit, we can find that the maximum count allowed by a bitstring  is
+This makes sense as with higher counts, we more accurately represent a normal distribution.
+Also, if we increase $$a$$, we will decrease the maximum count and relative error.
+It is important to twiddle $$a$$ based on what the maximum count is expected for
+ each experiment.
+
+In addition, by rearranging the equation for $$v$$ a bit, we can find that the maximum count allowed by a bitstring is
 
 $$
-n(v) = a((1+\frac{1}{a})^v-1).
+n_v = a((1+\frac{1}{a})^v-1).
 $$
 
 So if the bitstring can be a maximum of 256 (for 8 bits) and we arbitrarily set 
@@ -294,21 +304,12 @@ $$
 \sigma(n,a)^2 = \frac{n(n-1)}{2a}.
 $$
 
-If we plot this with $$n$$ for $$a=30$$, we find that ...
-
-ADD IMAGE and several histograms.
-
-This makes sense as with higher counts, we more accurately represent a normal distribution.
-Also, if we increase $$a$$, we will decrease the maximum count and relative error.
-It is important to twiddle $$a$$ based on what the maximum count is expected for
- each experiment.
-
 Finally, before ending the paper, Morris mentioned that it is possible to pre-compute all values $$\Delta_j = (a/(a+1))^j$$ for all $$j \in [1,N]$$ where $$N$$ is the largest value possible integer with that bitstring (as an example, 255 for 8 bits).
 This was probably more useful in 1978 than it is now, but it's still nice to keep in mind if you find yourself working on a machine with compute constrictions.
 
 ## Video Explanation
 
-Here is a video describing the Barnsley fern:
+Here is a video describing the Approximate Counting Algorithm:
 
 <div style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xoXe0AljUMA"
@@ -319,7 +320,7 @@ ture-in-picture" allowfullscreen></iframe>
 ## Example Code
 
 For this example, we have returned to the question asked above: how high can someone count on their fingers using the approximate counting algorithm?
-We know from the formula that with $$a=30$$ and 10 bits, we should be able to count to ____, but what happens when we perform the actual experiment?
+We know from the formula that with $$a=30$$ and 10 bits, we should be able to count to $$1.1\times 10^{16}$$, but what happens when we perform the actual experiment?
 
 As we do not have any objects to count, we will instead simulate the counting with a `while` loop that keeps going until out bitstring is 1023 ($$2^{10}$$).
 
