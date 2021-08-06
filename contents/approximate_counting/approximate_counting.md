@@ -29,7 +29,7 @@ $$
 
 Because you have 10 fingers and each one represents a power of 2, you can count up to a maximum of $$2^{10}-1$$ or 1023, which is about 100 times higher than simple finger counting!
 For those who might be wondering why you can count to $$2^{10}-1$$ instead of $$2^{10}$$ exactly, remember that each finger represents a power of 2.
-The right thumb counts as $$2^0 = 1$$ and the left thumb is $$2^9$$.
+The right thumb counts as $$2^0 = 1$$ and the left thumb is $$2^9 = 512$$.
 With all fingers out, we have  counted to $$\sum_{n=0}^9 2^n = 1023 = 2^{10}-1$$.
 
 So what if we wanted to go beyond 1023?
@@ -53,6 +53,7 @@ Here, we hope to provide a basic understanding of the method, along with code im
 
 If we need to count more than 255 items with 8 bits, there is one somewhat simple strategy: count every other item.
 This means that we will increment our counter with 2, 4, 6, 8... items, effectively doubling the number of items we can count to 511!
+(Note: that "!" is out of excitement and is not a factorial.)
 Similarly, if we need to count above 511, we can increment our counter every 3 or 4 items; however, the obvious drawback to this method is that if we only count every other item, there is no way to represent odd numbers.
 Similarly, if we count every 3rd or 4th item, we would miss out on any numbers that are not multiples of our increment number.
 
@@ -69,29 +70,31 @@ After all the sheep have gone by, we would have counted up to 250 on our counter
 This has a few important consequences:
 1. If the final number of sheep is not a multiple of 4000, then we will have an error associated with the total count of up to 4000 (0.4%).
 2. There is no way to determine the final number of sheep if it is not a multiple of 4000.
-3. We now need some way to count up to 4000 before incrementing the main counter!
+3. We now need some way to count up to 4000 before incrementing the main counter.
+This means we need a second counter!
 
 In a sense, 4000 would be a type of "counting resolution" for our system.
 Overall,  a 0.4% error is not bad, but it is possible to ensure that the approximate count is more accurate (but potentially less precise) by using randomness to our advantage.
 
-That is to say, instead of incrementing out counter every 4000th sheep, we could instead give each item a 0.025% chance of incrementing our main counter.
+That is to say, instead of incrementing out counter every 4000th sheep, we could instead give each item a $$1/4000 = 0.025\%$$ chance of incrementing our main counter.
 This averages out to be roughly 1 count every 4000 sheep, but the expectation value of a large number of counting experiments should be the correct number.
 This means that even though we need to count all the sheep multiple times to get the right expectation value, we no longer need to keep a separate counter for the counting resolution of 4000.
 
 Becsause multiple counting trials are necessary to ensure the correct result, each counting experiment will have some associated error (sometimes much higher than 0.4%).
-To quantify this error, let's actually perform the experiment, as shown below:
+To quantify this error, let's actually perform multiple the experiment, as shown below:
 
 <p>
     <img  class="center" src="res/approximations.png" style="width:100%" />
 </p>
 
-In this image, we have counted to 1,000,000 10,000 different times.
-In each run, we have given each item a 0.025% chance to flip our primary counter and given each increment in our primary counter a weight of 4000 items.
+In this image, we have counted 1,000,000 sheep (items) 10,000 different times.
+In each run, we have given each item a 0.025% chance to flip our primary counter and have given each increment in our primary counter a weight of 4000 items.
 We have plotted 10 of the 10,000 runs (chosen at random), and each upward tick of the lines represents one of the items winning a game of chance and adding 1 to the primary counter and thus adding 4000 to the approximate count.
+We have also shaded the maximum and minimum approximate count for each true count of the 10,000 trials in grey, thereby highlighting the range of possible outputs.
 On top of the plot, we have shown the distribution of all 10,000 runs for the approximate count at 10,000, 500,000, and 1,000,000 items.
 
 There's a lot to unpack here, so let's start with the upward trending lines.
-Here, it seems like the approximate counts are roughly following the line of $$y=x$$, which would indicate simple counting (without any randomness or approximation).
+Here, it seems like the approximate counts are roughly following the line of $$y=x$$ (dotted black line), which would indicate simple counting (without any randomness or approximation).
 This makes sense because in a perfect world, the approximate count would always be exactly equal to the true number of items being counted.
 Unfortunately, none of the lines shown here exactly follow $$y=x$$.
 In fact, it would be impossible for any of the approximations to do so because we are always increasing the approximation in steps of 4000 while the true count increments by 1 with each new item.
@@ -105,10 +108,10 @@ This is where the 3 additional plots come in:
 
 Each of these is a histogram of the approximate count for all 10,000 runs at 10,000 (left), 500,000 (middle), and 1,000,000 (left) items.
 All three (especially the approximation for 1,000,000) look Gaussian, and the peak of the Gaussian seems to be the correct count.
-In fact, the expectation value for out approximate counting scheme will always be correct.
+In fact, the expectation value for our approximate counting scheme will always be correct.
 In practice, this means that we can approximate any count on a small number of bits by doing a large number of counting trials and averaging their results.
 
-There is still a little catch that becomes more evident as we look towards the approximation for 10,000 items.
+There is still a little catch that becomes more evident as we look at the approximation for 10,000 items.
 In this case, even though the expectation value for the Gaussian distribution looks correct, it's kinda hard to tell exactly because there are only 8 (or so) possible values for each individual experiment.
 Essentially, we are trying to count to 10,000 in steps of 4,000.
 Clearly the closest we can get on any individual run is either 8,000 or 12,000, as these are multiples of 4,000.
@@ -127,7 +130,7 @@ Here, it seems that the percent error is 10 times higher for the case where we a
 with these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
 A 0.42% error is still really good, right?
 Right.
-It's definitely not bed, but this was with 10,000 counting experiments.
+It's definitely not bad, but this was with 10,000 counting experiments.
 Here a new table where we only did 10:
 
 | True Count | Approximate Count | Percent Error |
@@ -136,23 +139,23 @@ Here a new table where we only did 10:
 | 500,000    | 483,200.0         | 3.36          |
 | 1,000,000  | 961,600.0         | 3.84          |
 
-This time, there is a 20% error when counting to 10,000!
+This time, there is a 20% error when counting to 10,000.
 That's unacceptably high!
 
 To solve this problem, we need to find some way to for the value of each increment on the actual counter to be more meaningful for lower counts.
 This is precisely the job for a logarithm, which is what we will be looking at in the next section.
 For now, it's important to look at another anomaly: why are the percent error for the 500,000 and 1,000,000 cases so close?
 
-I gotta be honest, I don't know the correct answer here, but I would guess that it has somehting to do with the fact that both 500,000 and 1,000,000 are multiples of 4000 so our counting scheme can resolve both of them with roughly equal precision.
+I gotta be honest, I don't know the correct answer here, but I would guess that it has something to do with the fact that both 500,000 and 1,000,000 are multiples of 4000 so our counting scheme can resolve both of them with roughly equal precision.
 On top of that, both values are significantly higher than 4,000 so the counting resolution does not have as significant of an impact on the measured count.
 Simply put, 4000 is a big step size when couting to 10,000, but a smaller one when counting to 500,000 or 1,000,000.
 
-As an important note, each approximate count shown in the tables abobe was the expectation value for a Gaussian probability distribution of different counting experiments all providing a guess at what the count could be.
+As an important note, each approximate count shown in the tables above was the expectation value for a Gaussian probability distribution of different counting experiments all providing a guess at what the count could be.
 Because we are no longer counting with integer increments, we now need to quantify our error with the tools of probability, namely standard deviations.
 
 In the next section, we will tackle both issues brought up here:
 1. In order to better approximate different scales of counting, it makes sense to use a logarithmic scale.
-2. Because we are counting by using the expectation value of a Gaussian probability distribution of s set of counting experiments, it makes sense to quantify error with the tools we learned from probability and statistics.
+2. Because we are counting by using the expectation value of a Gaussian probability distribution from a set of counting experiments, it makes sense to quantify error with the tools we learned from probability and statistics.
 
 So I guess we should hop to it!
 
@@ -231,6 +234,8 @@ Again, $$\Delta$$ is essentially the probability that we will increment our coun
     <img  class="center" src="res/deltas.png" style="width:100%" />
 </p>
 
+Note: the $$y$$-axis to this figure is in logscale, which is why it looks like a straight line.
+
 Before leaving this section, it's important to note that the highest anyone can count with this method in base 2 using an 8-bit register is $$5.79 \times 10^{76}$$.
 That's great!
 Way, way better than 255, but we can still go higher with a different base of logarithm.
@@ -247,7 +252,7 @@ For base $$e$$,
 
 $$
 \begin{align}
-n_v &= e^v - 1
+n_v &= e^v - 1 \\
 v &= \log_e(1+n).
 \end{align}
 $$
@@ -258,10 +263,10 @@ $$
 v = \log_e(1+e^v).
 $$
 
-This is generally not an integer value, but $$v$$ *must* be an integer value (unless we want to try and use floating-point values (which we definitely don't have space for)), so what do we do in this situation?
+This is generally not an integer value, but $$v$$ *must* be an integer value (unless we want to try and store floating-point values (which we definitely don't have space for)), so what do we do in this situation?
 
 Well, let's look at the very first event where we need to increment our count from 0 to 1.
-With base $$e$$, there would only be a 59% chance of counting the first event, and if the event is counted, the value in the register would be $$\approx 1.71 \neq 1$$.
+With base $$e$$, there would only be a 58% chance of counting the first event ($$\Delta = \frac{1}{1.72-0} = 0.58$$), and if the event is counted, the value in the register would be $$\approx 1.71 \neq 1$$.
 Again, the expectation value for a bunch of trials is correct, but we did not have this issue with base 2, because
 
 $$
@@ -274,29 +279,49 @@ As a reminder, the above formula is a way to convert any logarithm from a given 
 So we need to chose a specific base to a logarithm that will at least ensure that the first count is correct, and for this reason, Morris studied a specific solution:
 
 $$
-v(n,a) = \frac{\log(1+n/a)}{\log(1+1/a)}.
+\begin{align}
+    v &= \frac{\log(1+n/a)}{\log(1+1/a)}.
+    n_v &= a\left(\left(1+\frac{1}{a}\right)^v-1\right).
+\end{align}
 $$
 
 Here, $$a$$ is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
 The denominator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
-If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm):
-
-ADD tracking image
-Use a ribbon plot where we keep track of max and min for each event on old 4000 counting scheme and then show a new distribution of 10 ontop
-
-This makes sense as with higher counts, we more accurately represent a normal distribution.
-Also, if we increase $$a$$, we will decrease the maximum count and relative error.
-It is important to twiddle $$a$$ based on what the maximum count is expected for
- each experiment.
-
-In addition, by rearranging the equation for $$v$$ a bit, we can find that the maximum count allowed by a bitstring is
-
-$$
-n_v = a((1+\frac{1}{a})^v-1).
-$$
-
 So if the bitstring can be a maximum of 256 (for 8 bits) and we arbitrarily set 
 $$a=30$$, then the highest possible count with this approach will be $$\approx 130,000$$, which was the number reported in Morris's paper.
+If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm):
+
+<p>
+    <img  class="center" src="res/approximationsexp.png" style="width:100%" />
+</p>
+
+Now, let's pause for a second and look back at the case where our counting resolution was a constant 4000:
+
+<p>
+    <img  class="center" src="res/approximations.png" style="width:100%" />
+</p>
+
+It would seem that for higher counts, the previous method is actually better!
+Remember that in the case of a constant counting resolution, the step size is really small for higher counts, so we get a higher resolution probability distribution for when we count 500,000 and 1,000,000 items.
+With the logarithmic scale, this is not the case, as the counting resolution now changes with the count, itself.
+This is also why all three probability distributions for the logarithmic scaling have a similar distance between each bar.
+In fact, it is probably worthwhile to look at each case more specitically:
+
+| Static Counting Resolution | Logarithmic Counting Resolution |
+| -------------------------- | ------------------------------- |
+| <img  class="center" src="res/hist_1.png" style="width:100%" /> | <img  class="center" src="res/histexp_1.png" style="width:100%" /> |
+| <img  class="center" src="res/hist_2.png" style="width:100%" /> | <img  class="center" src="res/histexp_2.png" style="width:100%" /> |
+| <img  class="center" src="res/hist_3.png" style="width:100%" /> | <img  class="center" src="res/histexp_3.png" style="width:100%" /> |
+
+In the case where we count only to 10,000, we see a moderate increase in the resolution of the probability distribution, but in the 500,000 and 1,000,000 cases, we do not.
+It's also important to notice that the logarithmic plots are a bit skewed to the left and are only Gaussian on logarithmic scales along $$x$$.
+On the one hand, the logarithmic plots are nice in that they have the same relative error for all scales, but on the other hand, the error is relatively high.
+
+How do we fix this?
+Well, by modifying the base of the logarithm with the variable $$a$$.
+For example, if we increase $$a$$, we will decrease the maximum count and relative error.
+It is important to twiddle $$a$$ based on what the maximum count is expected for
+ each experiment.
 As an important note, the expected error estimate (variance) for each count will
  be
 
@@ -351,18 +376,14 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 
 #### Images/Graphics
 
-- The image "[IFS triangle 1](../IFS/res/IFS_triangle_1.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[IFS square 3](../IFS/res/IFS_square_3.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[Simple Barnsley fern](res/full_fern.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine random transform 0](res/affine_rnd_0.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine random transform 1](res/affine_rnd_1.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine random transform 2](res/affine_rnd_2.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine random transform 3](res/affine_rnd_3.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine fern transform 0](res/affine_fern_0.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine fern transform 1](res/affine_fern_1.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine fern transform 2](res/affine_fern_2.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Affine fern transform 3](res/affine_fern_3.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Fern twiddle 0](res/fern_twiddle_0.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Fern twiddle 1](res/fern_twiddle_1.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Fern twiddle 2](res/fern_twiddle_2.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The video "[Fern twiddle 3](res/fern_twiddle_3.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Finger Counting](../approximate_counting/res/hands.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Approximate trials](../approximate_counting/res/approximations.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms](../approximate_counting/res/histograms.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Delta v v](../approximate_counting/res/deltas.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Approximate trials Logarithm](../approximate_counting/res/approximationsexp.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms 10,000](../approximate_counting/res/hist_1.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms exp 10,000](../approximate_counting/res/histexp_1.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms 500,000](../approximate_counting/res/hist_2.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms exp 500,000](../approximate_counting/res/histexp_2.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms 1,000,000](../approximate_counting/res/hist_3.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Histograms exp 1,000,000](../approximate_counting/res/histexp_3.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
