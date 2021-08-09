@@ -80,7 +80,7 @@ That is to say, instead of incrementing out counter every 4000th sheep, we could
 This averages out to be roughly 1 count every 4000 sheep, but the expectation value of a large number of counting experiments should be the correct number.
 This means that even though we need to count all the sheep multiple times to get the right expectation value, we no longer need to keep a separate counter for the counting resolution of 4000.
 
-Becsause multiple counting trials are necessary to ensure the correct result, each counting experiment will have some associated error (sometimes much higher than 0.4%).
+Because multiple counting trials are necessary to ensure the correct result, each counting experiment will have some associated error (sometimes much higher than 0.4%).
 To quantify this error, let's actually perform multiple the experiment, as shown below:
 
 <p>
@@ -90,7 +90,7 @@ To quantify this error, let's actually perform multiple the experiment, as shown
 In this image, we have counted 1,000,000 sheep (items) 10,000 different times.
 In each run, we have given each item a 0.025% chance to flip our primary counter and have given each increment in our primary counter a weight of 4000 items.
 We have plotted 10 of the 10,000 runs (chosen at random), and each upward tick of the lines represents one of the items winning a game of chance and adding 1 to the primary counter and thus adding 4000 to the approximate count.
-We have also shaded the maximum and minimum approximate count for each true count of the 10,000 trials in grey, thereby highlighting the range of possible outputs.
+We have also shaded the maximum and minimum approximate count for each true count of the 10,000 trials in gray, thereby highlighting the range of possible outputs.
 On top of the plot, we have shown the distribution of all 10,000 runs for the approximate count at 10,000, 500,000, and 1,000,000 items.
 
 There's a lot to unpack here, so let's start with the upward trending lines.
@@ -115,6 +115,7 @@ There is still a little catch that becomes more evident as we look at the approx
 In this case, even though the expectation value for the Gaussian distribution looks correct, it's kinda hard to tell exactly because there are only 8 (or so) possible values for each individual experiment.
 Essentially, we are trying to count to 10,000 in steps of 4,000.
 Clearly the closest we can get on any individual run is either 8,000 or 12,000, as these are multiples of 4,000.
+Simply put: we cannot resolve 10,000 items with this method!
 
 Does this mean that this counting method is less useful for a small number of items?
 In a sense, yes.
@@ -126,7 +127,7 @@ Here is a table for the true count, approximate count, and percent error for 10,
 | 500,000    | 499,813.2         | 0.037         |
 | 1,000,000  | 999,466.0         | 0.053         |
 
-Here, it seems that the percent error is 10 times higher for the case where we are counting 10,000 items; however, 
+Here, it seems that the percent error is 10 times higher when we count 10,000 items; however, 
 with these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
 A 0.42% error is still really good, right?
 Right.
@@ -144,14 +145,14 @@ That's unacceptably high!
 
 To solve this problem, we need to find some way to for the value of each increment on the actual counter to be more meaningful for lower counts.
 This is precisely the job for a logarithm, which is what we will be looking at in the next section.
-For now, it's important to look at another anomaly: why are the percent error for the 500,000 and 1,000,000 cases so close?
+For now, it's important to look at another anomaly: why are the percent errors for the 500,000 and 1,000,000 cases so close?
 
 I gotta be honest, I don't know the correct answer here, but I would guess that it has something to do with the fact that both 500,000 and 1,000,000 are multiples of 4000 so our counting scheme can resolve both of them with roughly equal precision.
 On top of that, both values are significantly higher than 4,000 so the counting resolution does not have as significant of an impact on the measured count.
-Simply put, 4000 is a big step size when couting to 10,000, but a smaller one when counting to 500,000 or 1,000,000.
+Simply put, 4000 is a big step size when counting to 10,000, but a smaller one when counting to 500,000 or 1,000,000.
 
 As an important note, each approximate count shown in the tables above was the expectation value for a Gaussian probability distribution of different counting experiments all providing a guess at what the count could be.
-Because we are no longer counting with integer increments, we now need to quantify our error with the tools of probability, namely standard deviations.
+Because we are no longer counting with integer increments but instead with probability distributions, we now need to quantify our error with the tools of probability, namely standard deviations.
 
 In the next section, we will tackle both issues brought up here:
 1. In order to better approximate different scales of counting, it makes sense to use a logarithmic scale.
@@ -188,6 +189,7 @@ $$
 
 In this case, we are adding 1 to the argument of the logarithm for $$v$$ because $$\log_2(1) = 0$$ and we start counting at 1; therefore, we need some way to represent the value of 0.
 Also, for this we can use any base logarithm (like $$e$$), but because we are dealing with bits, it makes sense to use base 2.
+We'll talk about different bases next.
 To be clear, here is a table of several values that could be stored in a bitstring along with their corresponding approximate counts:
 
 | $$v(n)$$           | $$n_v$$                 |
@@ -201,7 +203,7 @@ To be clear, here is a table of several values that could be stored in a bitstri
 | $$10000000 = 128$$ | $$3.40 \times 10^{38}$$ | 
 | $$11111111 = 255$$ | $$5.79 \times 10^{76}$$ |
 
-This means that we can hold from $$0$$ to $$2^{255} - 1 \approx 5.79 \times 10^{76}$$ with this new method.
+This means that we can hold from $$0$$ to $$2^{255} - 1 \approx 5.79 \times 10^{76}$$ with 8 bits using this new method.
 
 So let's now think about what happens every time a new event occurs.
 To do this, Morris calculated a new value:
@@ -223,8 +225,8 @@ In practice, this means that we need to create another random variable $$r$$ and
 
 $$
 \begin{align}
-\text{if } & \Delta > r, \qquad v = v + 1 \\
-\text{if } & \Delta < r, \qquad v = v.
+\text{if } & r < \Delta, \qquad v = v + 1 \\
+\text{if } & r > \Delta, \qquad v = v.
 \end{align}
 $$
 
@@ -240,10 +242,10 @@ Before leaving this section, it's important to note that the highest anyone can 
 That's great!
 Way, way better than 255, but we can still go higher with a different base of logarithm.
 For example, if we use $$e$$ as our base, we can get up to $$e^{255}-1 = 5.56 \times 10^{110}$$.
-In addition, by choosing smaller bases, we can also find a more accurate approximate count.
+In addition, by choosing smaller bases, we can also find a more accurate approximate count for lower values.
 In practice, we want to select a base that allows us to count to a value of the same order (or one order higher) than the number of events we are expected to have.
 
-In the next section, we will consider how to generalize our logarithm method to take arbitrary bases into account.
+In the next section, we will consider how to generalize this logarithmic method to take arbitrary bases into account.
 
 ## A slightly more general logarithm
 
@@ -276,18 +278,19 @@ $$
 when $$n=1$$.
 As a reminder, the above formula is a way to convert any logarithm from a given base (in this case $$e$$) to another base (in this case 2).
 
-So we need to chose a specific base to a logarithm that will at least ensure that the first count is correct, and for this reason, Morris studied a specific solution:
+
+Going one step further, we need to chose a specific base to a logarithm that will at least ensure that the first count is correct, and for this reason, Morris studied a specific solution:
 
 $$
 \begin{align}
-    v &= \frac{\log(1+n/a)}{\log(1+1/a)}.
+    v &= \frac{\log(1+n/a)}{\log(1+1/a)}. \\ 
     n_v &= a\left(\left(1+\frac{1}{a}\right)^v-1\right).
 \end{align}
 $$
 
 Here, $$a$$ is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
-The denominator $$\log(1+1/a)$$ serves to ensure that the first count of $$n=1$$ will also set the value $$v=1$$.
-So if the bitstring can be a maximum of 256 (for 8 bits) and we arbitrarily set 
+The expression $$1+1/a$$ acts as a base for the logarithm and exponents and ensures that the first count of $$n=1$$ will also set the value $$v=1$$.
+As an example, if the bitstring can be a maximum of 255 (for 8 bits) and we arbitrarily set 
 $$a=30$$, then the highest possible count with this approach will be $$\approx 130,000$$, which was the number reported in Morris's paper.
 If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm):
 
@@ -301,14 +304,14 @@ Now, let's pause for a second and look back at the case where our counting resol
     <img  class="center" src="res/approximations.png" style="width:100%" />
 </p>
 
-It would seem that for higher counts, the previous method is actually better!
+It would seem that for higher counts, the previous method (with a constant counting resolution) is actually better!
 Remember that in the case of a constant counting resolution, the step size is really small for higher counts, so we get a higher resolution probability distribution for when we count 500,000 and 1,000,000 items.
 With the logarithmic scale, this is not the case, as the counting resolution now changes with the count, itself.
 This is also why all three probability distributions for the logarithmic scaling have a similar distance between each bar.
-In fact, it is probably worthwhile to look at each case more specitically:
+In fact, it is probably worthwhile to look at each case more specifically:
 
-| Static Counting Resolution | Logarithmic Counting Resolution |
-| -------------------------- | ------------------------------- |
+| Constant Counting Resolution | Logarithmic Counting Resolution |
+| ---------------------------- | ------------------------------- |
 | <img  class="center" src="res/hist_1.png" style="width:100%" /> | <img  class="center" src="res/histexp_1.png" style="width:100%" /> |
 | <img  class="center" src="res/hist_2.png" style="width:100%" /> | <img  class="center" src="res/histexp_2.png" style="width:100%" /> |
 | <img  class="center" src="res/hist_3.png" style="width:100%" /> | <img  class="center" src="res/histexp_3.png" style="width:100%" /> |
@@ -318,8 +321,13 @@ It's also important to notice that the logarithmic plots are a bit skewed to the
 On the one hand, the logarithmic plots are nice in that they have the same relative error for all scales, but on the other hand, the error is relatively high.
 
 How do we fix this?
-Well, by modifying the base of the logarithm with the variable $$a$$.
-For example, if we increase $$a$$, we will decrease the maximum count and relative error.
+Well, by modifying the base of the logarithm with the variable $$a$$:
+
+<p>
+    <img  class="center" src="res/a_change.png" style="width:100%" />
+</p>
+
+Here, we show the differences in $$n_v$$ for $$25 \leq a \leq 35$$ when $$v=255$$.
 It is important to twiddle $$a$$ based on what the maximum count is expected for
  each experiment.
 As an important note, the expected error estimate (variance) for each count will
@@ -351,7 +359,7 @@ As we do not have any objects to count, we will instead simulate the counting wi
 
 {% method %}
 {% sample lang="jl" %}
-[import, lang:"julia"](code/julia/barnsley.jl)
+[import, lang:"julia"](code/julia/approximate_counting.jl)
 {% endmethod %}
 
 ### Bibliography
@@ -387,3 +395,4 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 - The image "[Histograms exp 500,000](../approximate_counting/res/histexp_2.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[Histograms 1,000,000](../approximate_counting/res/hist_3.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[Histograms exp 1,000,000](../approximate_counting/res/histexp_3.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[A from 25 to 35](../approximate_counting/res/a_change.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).

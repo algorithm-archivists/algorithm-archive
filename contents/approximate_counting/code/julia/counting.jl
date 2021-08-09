@@ -118,6 +118,6 @@ function multi_count(n, m, l, prob; a=30, prob_calc=false, file_mod="",
         writedlm(histogram_file, formatted_histograms[i])
         close(histogram_file)
     end
-    return histograms
+    return formatted_histograms
 end
 
