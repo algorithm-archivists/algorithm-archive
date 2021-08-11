@@ -12,6 +12,5 @@ jobs:
 
       - name: Install and build
         run: |
-          npm install -g honkit
           npm install
-          npm run honkit build
+          npx honkit build
