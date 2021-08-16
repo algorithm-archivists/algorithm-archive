@@ -1,0 +1,1313 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Affine Transformations · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../bitlogic/bitlogic.html" />
+    
+    
+    <link rel="prev" href="../notation/notation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../plotting/plotting.html">
+            
+                <a href="../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../domain_coloring/domain_coloring.html">
+            
+                <a href="../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../IFS/IFS.html">
+            
+                <a href="../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../barnsley/barnsley.html">
+            
+                <a href="../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../data_structures/data_structures.html">
+            
+                <a href="../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mathematical_background/mathematical_background.html">
+            
+                <a href="../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../notation/notation.html">
+            
+                <a href="../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="affine_transformations.html">
+            
+                <a href="affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bitlogic/bitlogic.html">
+            
+                <a href="../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../convolutions/convolutions.html">
+            
+                <a href="../convolutions/convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../convolutions/1d/1d.html">
+            
+                <a href="../convolutions/1d/1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../convolutions/multiplication/multiplication.html">
+            
+                <a href="../convolutions/multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../convolutions/2d/2d.html">
+            
+                <a href="../convolutions/2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../tree_traversal/tree_traversal.html">
+            
+                <a href="../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../matrix_methods/matrix_methods.html">
+            
+                <a href="../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../computational_geometry/computational_geometry.html">
+            
+                <a href="../computational_geometry/computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../jarvis_march/jarvis_march.html">
+            
+                <a href="../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../graham_scan/graham_scan.html">
+            
+                <a href="../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../decision_problems/decision_problems.html">
+            
+                <a href="../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../differential_equations/differential_equations.html">
+            
+                <a href="../differential_equations/differential_equations.html">
+            
+                    
+                    Differential Equation Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../forward_euler_method/forward_euler_method.html">
+            
+                <a href="../forward_euler_method/forward_euler_method.html">
+            
+                    
+                    Forward Euler Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../physics_solvers/physics_solvers.html">
+            
+                <a href="../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../verlet_integration/verlet_integration.html">
+            
+                <a href="../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../quantum_systems/quantum_systems.html">
+            
+                <a href="../quantum_systems/quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="../split-operator_method/split-operator_method.html">
+            
+                <a href="../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../data_compression/data_compression.html">
+            
+                <a href="../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../computer_graphics/computer_graphics.html">
+            
+                <a href="../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../flood_fill/flood_fill.html">
+            
+                <a href="../flood_fill/flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../quantum_information/quantum_information.html">
+            
+                <a href="../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../computus/computus.html">
+            
+                <a href="../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../approximate_counting/approximate_counting.html">
+            
+                <a href="../approximate_counting/approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Affine Transformations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="affine-transformations">Affine Transformations</h1>
+<p>Affine transformations are a class of mathematical operations that encompass rotation, scaling, translation, shearing, and several similar transformations that are regularly used for various applications in mathematics and computer graphics.
+To start, we will draw a distinct (yet thin) line between affine and linear transformations before discussing the augmented matrix formalism typically used in practice.</p>
+<h2 id="a-quick-intro-to-affine-and-linear-transforms">A quick intro to affine (and linear) transforms</h2>
+<p>Let us start with a provided point, <script type="math/tex; ">(x,y)</script>, on a two-dimensional plane.
+If we treat this point as a <script type="math/tex; ">1 \times 2</script> vector, we can transform it into another <script type="math/tex; ">1 \times 2</script> vector by multiplying it with a <script type="math/tex; ">2 \times 2</script> transformation matrix.
+Similarly, a three-dimensional point could be seen as a <script type="math/tex; ">1\times 3</script> vector and would need a <script type="math/tex; ">3 \times 3 </script> transformation matrix.
+These types of operations are known as linear transformations and are often notated as,</p>
+<p><script type="math/tex; mode=display">
+\mathbf{v} = \mathbf{A}\mathbf{v}_0.
+</script></p>
+<p>Here, <script type="math/tex; ">\mathbf{A}</script> is an <script type="math/tex; ">n\times n</script> transformation matrix, where <script type="math/tex; ">n</script> is the length of the input and output vectors, <script type="math/tex; ">\mathbf{v_0}</script> and <script type="math/tex; ">\mathbf{v}</script>, respectively.
+Though these transformations are powerful, all of them are centered about the origin.
+Affine transformations extend linear transformations beyond this limitation and allow us to also translate our initial vector locations such that</p>
+<p><script type="math/tex; mode=display">
+\textbf{v} = \mathbf{A}\mathbf{v}_0 + \ell.
+</script></p>
+<p>Here, <script type="math/tex; ">\ell</script> is an <script type="math/tex; ">n\times 1</script> translation vector.
+To understand the power of these transformations, it is important to see them in practice:</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Transform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scaling along <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a11_square_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Scaling along <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a22_square_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Shearing along <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a12_square_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Shearing along <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a21_square_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Translation along <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a13_square_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Translation along <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a23_square_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+</tbody>
+</table>
+<p>For all of these visualizations, we show a set of 4 points that are assigned to the vertices of a square.
+Initially, <script type="math/tex; ">\mathbf{A}</script> is set to be the identity matrix and <script type="math/tex; ">\ell = [0,0]</script>, such that there is no transformation or translation to the input vectors.
+From there, each element of <script type="math/tex; ">\mathbf{A}</script> and <script type="math/tex; ">\ell</script> are modified individually and the resulting transformation can be seen on the left.
+The amount by which each element has been modified is shown numerically in the matrix representation and also as small dials underneath.</p>
+<p>The hope is that these visualizations show that each element within <script type="math/tex; ">\mathbf{A}</script> and <script type="math/tex; ">\ell</script> are simply dials that can be manipulated to perform a specified transformation on the set of input vectors.
+Of course, it is entirely possible to move more than one dial at a time, which is why it is worth diving into an example that everyone loves: rotation.</p>
+<h3 id="rotation-a-special-side-note">Rotation: a special side-note</h3>
+<p>I will be honest, when I initially learned how to perform rotation with a linear transformation, I did not really understand how it worked.
+For this reason, I think it is important to delve a bit deeper into this topic, hopefully providing an intuitive explanation for those who are new (and potentially those who already use the rotation matrix regularly, but do not fully understand it).</p>
+<p>If someone were to take the set of dials shown above and mix them to create a rotational effect, they might start by shearing in one direction along <script type="math/tex; ">x</script> and then another direction along <script type="math/tex; ">y</script> which will create a &quot;pseudo-rotation&quot; effect.
+This is definitely a step in the right direction, but if the shearing components are modified while the other components remain 1, the points will also move further away from the origin.
+For this reason, an additional scaling along <script type="math/tex; ">x</script> and <script type="math/tex; ">y</script> is necessary.
+This is shown in the following animation:</p>
+<div style="text-align:center">
+<video style="width:100%" controls loop>
+  <source src="res/semi_rotate_white.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>Here, we see that (at least for angles less than <script type="math/tex; ">\pi/2</script>), rotation is simply a matter of shearing in opposite directions and scaling accordingly.
+Now the only question is, <em>&quot;How do we know the amount we need to shear and scale?&quot;</em></p>
+<p>Well, the answer is not particularly surprising.
+If we want to rotate our points, we probably are already imagining this rotation along a circle with some angle <script type="math/tex; ">\theta</script>.
+We know that the identity matrix should correspond to a non-rotated object with <script type="math/tex; ">\theta = 0</script>.
+For this reason, we know that two elements should start at 1 (note: <script type="math/tex; ">\cos(0) = 1</script>) and the other two should start at 0 (note: <script type="math/tex; ">\sin(0) = 0</script>).
+We also know that the shearing should happen in opposite directions, so we might guess that the rotation matrix would be:</p>
+<p><script type="math/tex; mode=display">
+\mathbf{A}_{\text{rot}} = \begin{bmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta) \\
+\end{bmatrix}
+</script></p>
+<p>In this case, the amount we want to shear should start at 0 when <script type="math/tex; ">\theta = 0</script> and then go to <script type="math/tex; ">\pm 1</script> when <script type="math/tex; ">\theta = \pm \pi/2</script>.
+Meanwhile, the scale factor should start at 1 when <script type="math/tex; ">\theta = 0</script> and go to <script type="math/tex; ">0</script> when <script type="math/tex; ">\theta = \pi/2</script>.</p>
+<p>This <em>seems</em> right, but it is worth dwelling on this a bit more.
+If the scale factor is 0 at <script type="math/tex; ">\pi/2</script>, surely this means that all points on the square are also at 0, right?
+After all, anything scaled by 0 should be 0!
+Well, not exactly.
+In this case,</p>
+<p><script type="math/tex; mode=display">
+\mathbf{A} = \begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}
+</script></p>
+<p>This means that even though the scaling components are 0, the shear components are <script type="math/tex; ">\pm 1</script>.
+This might still be a little confusing so let us multiply the vector <script type="math/tex; ">[1,2]</script> with both of these matrices:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+2 \\
+\end{bmatrix}
+&=
+\begin{bmatrix}
+1 \\
+2 \\
+\end{bmatrix},\\
+
+
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+2 \\
+\end{bmatrix}
+&=
+\begin{bmatrix}
+-2 \\ 
+1 \\
+\end{bmatrix}.
+
+\end{align}
+</script></p>
+<p>Here, we see that when multiplying by the identity matrix, the vector remains the same, but when multiplying by the second matrix, the x and y components flip.
+Essentially, all of the vector magnitude moved into the &quot;shear&quot; component, while none of it remains in the &quot;scale&quot; component.</p>
+<p>My point is that even though it is useful to think of two of our dials as scale factors along <script type="math/tex; ">x</script> and <script type="math/tex; ">y</script>, it does not necessarily paint the whole picture and it is important to consider how these different components work together.</p>
+<p>Before continuing to show what the <script type="math/tex; ">\mathbf{A}_{\text{rot}}</script> matrix does when applied to a square, it is worth considering two somewhat related matrices where the identity matrix is modified with only the <script type="math/tex; ">\sin(\theta)</script> or <script type="math/tex; ">\cos(\theta)</script> components.</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Transform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Just sines</td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/sines_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Just cosines</td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/cosines_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+</tbody>
+</table>
+<p>Here, we see two completely different behaviors:</p>
+<ol>
+<li>In the sine-only case, we see that as <script type="math/tex; ">\theta</script> wraps around from <script type="math/tex; ">0 \rightarrow 2\pi</script>, the square seems to grow and rotate like expected, but at <script type="math/tex; ">\pi/2</script>, it somewhat abruptly decides to move in the other direction.</li>
+<li>In cosine-only case, we see the square flip around entirely at <script type="math/tex; ">\pi/2</script>.</li>
+</ol>
+<p>Before watching the next video, it is important to think for a little bit about how these two different interactions will work together in practice.
+When you are ready, go ahead and click the play button:</p>
+<div style="text-align:center">
+<video style="width:100%" controls loop>
+  <source src="res/rotation_square_white.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>At least for me, it took some thinking to figure out why the two animations above create rotation when put together.
+When thinking about it, it makes sense that at <script type="math/tex; ">\pi/2</script>, the sine component will start to encourage the square to slowly oscillate back towards the original position, but will be tugged in the opposite direction by the cosine component that has turned negative at the same time.
+This &quot;coincidence&quot; is what creates a rotational effect.</p>
+<p>Overall, the rotation matrix is a fun and interesting application to linear transformations that really helped me understand how the entire class of operations can be used to create more complicated movements.</p>
+<h3 id="guarantees-of-affine-transformations">Guarantees of affine transformations</h3>
+<p>At this stage, we have discussed what affine transforms are from a functional perspective; however, (as always) there is a lot more to discuss.
+This particular chapter is meant to provide an intuitive feel for the transformations for those who might need to use them for whatever application they need, so I am hesitant to dive too deeply into more rigorous definitions; however, it is important to talk about certain properties of affine transforms that make them suitable for a wide variety of applications.
+Namely, affine transformations preserve the following:</p>
+<ol>
+<li><strong>collinearity between points</strong>. This means that any points that are on the same line before an affine transform must be on that same line after the transformation. The line can still change in slope or position.</li>
+<li><strong>parallelism between lines</strong>. Any lines parallel before the transform must also be parallel after.</li>
+<li><strong>ratios of the lengths of parallel line segments</strong>. This means if you have two different line segments, one of which is parameterized by <script type="math/tex; ">p_1</script> and <script type="math/tex; ">p_2</script>, while the other is parameterized by <script type="math/tex; ">p_3</script> and <script type="math/tex; ">p_4</script>, then <script type="math/tex; ">\frac{\vec{p_1 p_2}}{\vec{p_3 p_4}}</script> must be the same before and after transformation.</li>
+<li><strong>convexity of any transformed shape</strong>. If a shape does not have any concave component (a point that points in towards its center), then it cannot have a concave component after the transformation.</li>
+<li><strong>barycenters of the collection of points</strong>. The barycenter is the collective center of mass of the system, like the balancing point for a plate. Essentially, there is an equal amount of &quot;stuff&quot; on either side of the barycenter. This location must remain at the same location relative to each point after transformation.</li>
+</ol>
+<p>Again, there is a lot more we could talk about, but I feel we will leave more rigorous discussions for later if we need them for subsequent algorithms.
+Instead, I believe it is useful to move on to a relatively common implementation of affine transformations: the augmented matrix formalism.</p>
+<h2 id="augmented-matrix-implementation">Augmented matrix implementation</h2>
+<p>As stated before, affine transformations are basically a mix of a transformation matrix and translation.
+For two-dimensional input vectors, the augmented matrix formalism combines both of these into a large <script type="math/tex; ">3 \times 3</script> transformation matrix.
+If you are like me, this might be a bit confusing.
+After all, if the two-dimensional vector is described by a <script type="math/tex; ">1 \times 2</script> array, then how do you do a matrix multiplication with a <script type="math/tex; ">3 \times 3</script> array?</p>
+<p>To be honest, the answer <em>feels</em> like a bit of a hack: we simply append a 1 to the end of the input, output, and translation vectors, such that:</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+\mathbf{v} \\
+1 \\
+\end{bmatrix}
+=
+\left[\begin{array}{@{}ccc|c@{}}
+ & \mathbf{A} &  & \ell \\
+0 & \cdots & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}
+\mathbf{v}_0 \\
+1
+\end{bmatrix}
+</script></p>
+<p>So, using </p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\mathbf{v}_0 &= \begin{bmatrix}
+1 \\ 
+2 \\
+\end{bmatrix} \\
+\mathbf{A} &= \begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix} \\
+\ell &= \begin{bmatrix}
+0 \\ 
+0 \\
+\end{bmatrix}
+\end{align},
+</script></p>
+<p>we would perform the following computation:</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+\mathbf{v} \\
+1 \\
+\end{bmatrix}
+=
+\left[\begin{array}{@{}cc|c@{}}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+\end{array}\right]
+\begin{bmatrix}
+1 \\
+2 \\
+1
+\end{bmatrix}
+</script></p>
+<p>Doing this, we find that <script type="math/tex; ">\mathbf{v} = [-2,1]</script>, just as we found in the previous example.
+Ok, now we need to talk about why this works.</p>
+<p>Appending the 1 to the end of the two-dimensional vectors essentially turn them into three-dimensional vectors, with the <script type="math/tex; ">z</script> dimension simply set to be 1.
+The easiest way to visualize this is by thinking of the top plane on a larger cube, so here are the same vector operations as before on that cube:</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Transform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scaling along <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a11_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Scaling along <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a22_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Shearing along <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a12_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Shearing along <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a21_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Translation along <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a13_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Translation along <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a23_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+</tbody>
+</table>
+<p>The shear and scaling operations seem about the same as before; however, the translation operations are now clearly a shear along the entire cube!
+The only reason this acts as translation for two dimensions is because we only care about the slice through the cube at <script type="math/tex; ">z=1</script>.</p>
+<p>Now, the reason I always feel this implementation is a bit hacky is because there is a little magic that everyone keeps quiet about: the last row in the matrix.
+With all of the operations shown above, it was simply set to <script type="math/tex; ">[0,0,1]</script> and never touched again...
+But that is terribly unsatisfying!</p>
+<p>What would happen if we actually moved those dials and modified the bottom row?
+Well...</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Transform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shearing along <script type="math/tex; ">z</script> and <script type="math/tex; ">x</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a31_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Shearing along <script type="math/tex; ">z</script> and <script type="math/tex; ">y</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a32_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+<tr>
+<td>Scaling along <script type="math/tex; ">z</script></td>
+<td><div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/a33_cube_white.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div></td>
+</tr>
+</tbody>
+</table>
+<p>In this case, the first two components are shearing along <script type="math/tex; ">z</script> and <script type="math/tex; ">x</script> and <script type="math/tex; ">z</script> and <script type="math/tex; ">y</script>, while the last component is a scale along <script type="math/tex; ">z</script>.
+If someone was taking a picture from above, none of these transformations would be visible.
+Because we are hyper-focused on the top-down view for affine transformations, none of these operations are technically affine; however, they are still linear, and it is still nice to show all possible linear transforms for the cube as well.</p>
+<p>Finally, let us go back to the rotation example:</p>
+<div style="text-align:center">
+<video style="width:100%" controls loop>
+  <source src="res/rotation_cube_white.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>Here, we see that we can embed just about any affine transformation into three dimensional space and still see the same results as in the two dimensional case.
+I think that is a nice note to end on: affine transformations are linear transformations in an <script type="math/tex; ">n+1</script> dimensional space.</p>
+<h2 id="video-explanation">Video Explanation</h2>
+<p>Here is a video describing affine transformations:</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E3Phj6J287o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="code-examples">Code Examples</h5>
+<p>The code examples are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md" target="_blank">LICENSE.md</a>).</p>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h5 id="imagesgraphics">Images/Graphics</h5>
+<ul>
+<li>The video &quot;<a href="res/a11_square_white.mp4">A11 square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a22_square_white.mp4">A22 square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a12_square_white.mp4">A12 square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a21_square_white.mp4">A21 square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a13_square_white.mp4">A13 square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a23_square_white.mp4">A23 square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/semi_rotate_white.mp4">Semi Rotate</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/sines_white.mp4">Sines</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/cosines_white.mp4">Cosines</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/rotation_square_white.mp4">Rotate Square</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a11_cube_white.mp4">A11 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a22_cube_white.mp4">A22 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a12_cube_white.mp4">A12 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a21_cube_white.mp4">A21 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a13_cube_white.mp4">A13 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a23_cube_white.mp4">A23 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a31_cube_white.mp4">A31 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a32_cube_white.mp4">A32 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/a33_cube_white.mp4">A33 cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/rotation_cube_white.mp4">Rotation cube</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../notation/notation.html" class="navigation navigation-prev " aria-label="Previous page: Complexity Notation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../bitlogic/bitlogic.html" class="navigation navigation-next " aria-label="Next page: Bit Logic">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Affine Transformations","level":"1.6.2","depth":2,"next":{"title":"Bit Logic","level":"1.6.3","depth":2,"path":"contents/bitlogic/bitlogic.md","ref":"contents/bitlogic/bitlogic.md","articles":[]},"previous":{"title":"Complexity Notation","level":"1.6.1","depth":2,"path":"contents/notation/notation.md","ref":"contents/notation/notation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}}],"gitbook":"*"},"file":{"path":"contents/affine_transformations/affine_transformations.md","mtime":"2021-08-16T03:21:55.280Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-16T03:22:29.158Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

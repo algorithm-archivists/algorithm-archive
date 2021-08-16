@@ -1,0 +1,1343 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Convolutions in 1D · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../multiplication/multiplication.html" />
+    
+    
+    <link rel="prev" href="../convolutions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../introduction/introduction.html">
+            
+                <a href="../../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../plotting/plotting.html">
+            
+                <a href="../../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../domain_coloring/domain_coloring.html">
+            
+                <a href="../../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../IFS/IFS.html">
+            
+                <a href="../../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../barnsley/barnsley.html">
+            
+                <a href="../../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../data_structures/data_structures.html">
+            
+                <a href="../../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../mathematical_background/mathematical_background.html">
+            
+                <a href="../../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../notation/notation.html">
+            
+                <a href="../../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../affine_transformations/affine_transformations.html">
+            
+                <a href="../../affine_transformations/affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../bitlogic/bitlogic.html">
+            
+                <a href="../../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../convolutions.html">
+            
+                <a href="../convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.5.1" data-path="1d.html">
+            
+                <a href="1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../multiplication/multiplication.html">
+            
+                <a href="../multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../2d/2d.html">
+            
+                <a href="../2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../tree_traversal/tree_traversal.html">
+            
+                <a href="../../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../matrix_methods/matrix_methods.html">
+            
+                <a href="../../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../computational_geometry/computational_geometry.html">
+            
+                <a href="../../computational_geometry/computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../../jarvis_march/jarvis_march.html">
+            
+                <a href="../../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../../graham_scan/graham_scan.html">
+            
+                <a href="../../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../decision_problems/decision_problems.html">
+            
+                <a href="../../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../differential_equations/differential_equations.html">
+            
+                <a href="../../differential_equations/differential_equations.html">
+            
+                    
+                    Differential Equation Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../forward_euler_method/forward_euler_method.html">
+            
+                <a href="../../forward_euler_method/forward_euler_method.html">
+            
+                    
+                    Forward Euler Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../physics_solvers/physics_solvers.html">
+            
+                <a href="../../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../verlet_integration/verlet_integration.html">
+            
+                <a href="../../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../../quantum_systems/quantum_systems.html">
+            
+                <a href="../../quantum_systems/quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="../../split-operator_method/split-operator_method.html">
+            
+                <a href="../../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../../data_compression/data_compression.html">
+            
+                <a href="../../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../computer_graphics/computer_graphics.html">
+            
+                <a href="../../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../../flood_fill/flood_fill.html">
+            
+                <a href="../../flood_fill/flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../../quantum_information/quantum_information.html">
+            
+                <a href="../../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../../computus/computus.html">
+            
+                <a href="../../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../../approximate_counting/approximate_counting.html">
+            
+                <a href="../../approximate_counting/approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Convolutions in 1D</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="convolutions-in-1d">Convolutions in 1D</h1>
+<p>As mentioned in the <a href="../convolutions.html">introductory section for convolutions</a>, convolutions allow mathematicians to &quot;blend&quot; two seemingly unrelated functions; however, this definition is not very rigorous, so it might be better to think of a convolution as a method to apply a filter to a signal or image.
+This, of course, brings up more questions: what is a filter? What is a signal? How is this all related to images?</p>
+<p>For this, we will start with some predefined signal.
+It does not matter too much what it is, so we will pick a square wave where everything is set to zero except for a few elements at the center, which will be set to one.
+This signal can be treated as an array, or a black and white, one-dimensional image where everything is black except for a white strip at the center.
+We will also introduce a filter, which will be a simple triangle wave that goes to 1.
+Both of these are shown below:</p>
+<p float="center">
+    <img src="../res/square_wave.png" style="width:49%">
+    <img src="../res/triangle_wave.png" style="width:49%">
+</p>
+
+<p>So now we have a signal and a filter.
+How do we apply the filter to the signal?
+The easiest way to do this is to iterate through every point in the signal and blend it with neighboring elements, where each neighboring element is weighted based on the filter value.
+So in the case where the triangle wave is only 3 elements (<code>[0.5, 1, 0.5]</code>), the output at each point would be</p>
+<p><script type="math/tex; mode=display">
+C_n = \frac{A_{n-1}}{2} + A_{n} + \frac{A_{n+1}}{2},
+</script></p>
+<p>where <script type="math/tex; ">C</script> is the output value, <script type="math/tex; ">A</script> is the input array (a signal or image), and <script type="math/tex; ">n</script> is an iterable element through that signal.
+In this way, the &quot;application of a filter,&quot; is simply a multiplication of the triangle wave centered around each point of the input array, followed by in integral or sum of the output.
+In some sense, this means we will shift the filter, then multiply and sum every step.
+This can be seen in the following animation:</p>
+<div style="text-align:center">
+<video style="width:90%" controls loop>
+  <source src="../res/triangle_square_conv.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>Here, the purple, dashed line is the output convolution <script type="math/tex; ">C</script>, the vertical line is the iteration <script type="math/tex; ">n</script>, the blue line is the original signal, the red line is the filter, and the green area is the signal multiplied by the filter at that location.
+The convolution at each point is the integral (sum) of the green area for each point.</p>
+<p>If we extend this concept into the entirety of discrete space, it might look like this:</p>
+<p><script type="math/tex; ">(f*g)[n] = \sum_{m = -\infty}^{\infty}f[m]g[n-m] = \sum_{m = -\infty}^{\infty}f[n-m]g[m]</script></p>
+<p>Where <code>f[n]</code> and <code>g[n]</code> are arrays of some form.
+This means that the convolution can calculated by shifting either the filter along the signal or the signal along the filter.
+This can be read as we said before: every step, we shift the filter, multiply, and sum.
+There is, of course, a small caveat here.
+Why are we subtracting <script type="math/tex; ">m</script>?
+Certainly, if we wanted to &quot;shift the filter along the signal,&quot; we could also do so by <em>adding</em> <script type="math/tex; ">m</script> instead, but that is actually an entirely separate operation known as a <em>correlation</em>, which will be discussed at a later time.</p>
+<p>The simplest interpretation for this equation is the same as the animation: we reverse the second array, and move it through the first array one step at a time, performing a simple element-wise multiplication and summation at each step.
+With this in mind, we can almost directly transcribe the discrete equation into code like so:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> convolve_linear<span class="token punctuation">(</span>signal<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> filter<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                         output_size<span class="token punctuation">)</span> where <span class="token punctuation">{</span>T <span class="token operator">&lt;:</span> Number<span class="token punctuation">}</span>
+
+    <span class="token comment"># convolutional output</span>
+    out <span class="token operator">=</span> Array<span class="token punctuation">{</span>Float64<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+        <span class="token keyword">for</span> j <span class="token operator">=</span> max<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">-</span>length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>i
+            <span class="token keyword">if</span> j <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>signal<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span>
+                sum <span class="token operator">+=</span> signal<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">*</span> filter<span class="token punctuation">[</span>i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum
+        sum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> out
+<span class="token keyword">end</span>
+</code></pre>
+</div></div></div>
+
+<p>The easiest way to reason about this code is to read it as you might read a textbook.
+For each element in the output domain, we are summing a certain subsets of elements from <code>i-length(filter)</code> to <code>i</code> after multiplying it by the reversed filter (<code>filter[i-j]</code>).
+In this way, it is precisely the same as the mathematical notation mentioned before.</p>
+<p>In contrast to the animation, where the filter continuously reappears on the left edge of the screen, the code we have written for this part of the chapter requires the user to specify what they expect the output array length to be.
+Determining what should happen at the edges of the convolution is a somewhat hotly debated topic and differs depending on what the user actually wants, so we will be discussing this in greater detail later in this chapter.</p>
+<p>As an important note, if we were to extend the convolution into continuous space, we might write something like:</p>
+<p><script type="math/tex; ">(f*g)(x) = \int_{-\infty}^{\infty}f(\xi)g(x-\xi)d\xi = \int_{-\infty}^{\infty}f(x-\xi)g(\xi)d\xi</script></p>
+<p>Note that in this case, <script type="math/tex; ">x</script> and <script type="math/tex; ">\xi</script> are not necessarily spatial elements, but the interpretation is otherwise the same as before.</p>
+<p>At this stage, the mathematics and code might still be a little opaque, so it is a good idea to play around a bit and think about how this operation might be used in practice with a few different filters.</p>
+<h2 id="playing-with-filters">Playing with filters</h2>
+<p>Honestly, the best way to learn how convolutions work is by using them for a number of different signals and filters, so
+let us extend the previous triangle filter a bit further by convolving a square wave with a relatively sharp Gaussian, which can be seen in the following animation:</p>
+<div style="text-align:center">
+<video style="width:90%" controls loop>
+  <source src="../res/1d_gaussian.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>In practice, the convolutional output here is very similar to the triangle wave we showed before.
+The final convolved image looks a lot like the square, except that its boundaries have been smoothed out or &quot;blurred.&quot;
+In practice whenever a Gaussian filter is used, it will always blur the other convolved signal, which is why a convolution with a Gaussian is also called a <em>blurring operation</em>.
+This operation is used very often when dealing with two-dimensional images, and we will discuss common kernels found in the wild in <a href="../2d/2d.html">the next section</a>.
+Still, it is interesting to see the blurring operation in action by convolving a random distribution with a larger Gaussian filter:</p>
+<div style="text-align:center">
+<video style="width:90%" controls loop>
+  <source src="../res/1d_rand_gaussian_cyclic.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>In this animation, the final convolution is so blurred that it does not seem related to the random input signal at all!
+In fact, this animation seems to blend much more when compared to the previous Gaussian and the triangle wave animations.
+This is because the Gaussian is wider than the previous to filters.
+In general, the wider the filter, the stronger the blurring effect.</p>
+<p>So what happens if we convolve a Gaussian with another Gaussian?
+Well, that is shown below:</p>
+<div style="text-align:center">
+<video style="width:90%" controls loop>
+  <source src="../res/double_gaussian.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>As one might expect, the output is a blurrier Gaussian, which is essentially just wider.
+If you were paying particularly close attention to the visualization, you might have noticed that the green area inside this visualization does not properly line up with the overlap of the two arrays.
+Don&apos;t worry!
+This is exactly what should happen!
+Remember that the convolution requires a <em>multiplication</em> of the signal and filter, which was the same as the overlap when the signal was a square wave; however, in the case of two distinct signals, we should expect the multiplied output to look somewhat distinct.</p>
+<p>Let us extend this concept to one final example of a square wave convolved with a triangular, sawtooth function that looks like this:</p>
+<p>
+  <img class="center" src="../res/sawtooth.png" style="width:60%">
+</p>
+
+<p>This is the first non-symmetric filter of this chapter, and its convolution would look like this:</p>
+<div style="text-align:center">
+<video style="width:90%" controls loop>
+  <source src="../res/1d_sawtooth.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>Non-symmetric filters are useful for testing convolutions to ensure that the output is correct, so it might be worthwhile to linger on this animation for a bit longer.
+Notice how the convolution has an accelerating, positive slope when the reversed sawtooth function interacts with the square.
+This makes sense as the smallest part of the triangle interacts first.
+Similarly, there is a negatively accelerating slope when the sawtooth function leaves the square.</p>
+<h2 id="dealing-with-boundaries">Dealing with boundaries</h2>
+<p>In all of the animations, we have shown the filter constantly reappearing on the left edge of the screen, which is not always the best thing to do at the boundaries.
+In fact, these boundary conditions are somewhat non-trivial to code, so for this section, we will start with relatively simple boundary conditions that were introduced in the previous code example.</p>
+<h3 id="simple-boundaries">Simple boundaries</h3>
+<p>In general, if a user wants to see a full convolution between two signals, the output size must be the size of the two signals put together, otherwise, we cannot iterate through the entire convolutional output domain.
+For example, here is random noise again convolved with a Gaussian function, but with non-periodic boundaries:</p>
+<div style="text-align:center">
+<video style="width:90%" controls>
+  <source src="../res/1d_rand_gaussian_full.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>This shows the full, unbounded convolution of the two signals, where
+we clearly see a &quot;ramp up&quot; and &quot;ramp down&quot; phase at the start and end of the animation.
+That said, there are many applications where the user actually needs to specify the output domain to be another length, such as the size of one of the input signals.</p>
+<p>In this case, the simplest boundary would be to assume that whenever the filter hits the end of the image, it simply disappears.
+Another way to think about this is that the signal only exists for the domain we specify it over, and is all 0s outside of this domain; therefore, the filter does not sum any signal from elements beyond its scope.
+As an example, let&apos;s take the same example as before:</p>
+<div style="text-align:center">
+<video style="width:90%" controls>
+  <source src="../res/1d_rand_gaussian_simple.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>Similar to the case without boundary conditions, this convolution needs to &quot;ramp up,&quot; but it does not need to &quot;ramp down.&quot;
+This is because the convolution output no longer extends past the bounds of the original signal so the bounded convolution is a subset of the full convolution.
+More than that, the convolution does not go all the way to 0 on the right side.
+This means that we are actually ignoring a rather important part of the convolution!</p>
+<p>This is 100% true; however, if the signal is large and the filter is small (as is the case with most of image processing), we do not really care that much about the bits of the convolution we missed.
+In addition, there is a way to center the convolution by modifying the location where the filter starts.
+For example, we could have half of the filter already existing and overlapping with the signal for the very first computed point of the convolution.
+For this reason, simple bounds are used frequently when performing convolutions on an image.</p>
+<p>In the previous code snippet, we were able to perform both a bounded and unbounded convolution.
+Here it is again for clarity:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> convolve_linear<span class="token punctuation">(</span>signal<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> filter<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                         output_size<span class="token punctuation">)</span> where <span class="token punctuation">{</span>T <span class="token operator">&lt;:</span> Number<span class="token punctuation">}</span>
+
+    <span class="token comment"># convolutional output</span>
+    out <span class="token operator">=</span> Array<span class="token punctuation">{</span>Float64<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+        <span class="token keyword">for</span> j <span class="token operator">=</span> max<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">-</span>length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>i
+            <span class="token keyword">if</span> j <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>signal<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span>
+                sum <span class="token operator">+=</span> signal<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">*</span> filter<span class="token punctuation">[</span>i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum
+        sum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> out
+<span class="token keyword">end</span>
+</code></pre>
+</div></div></div>
+
+<p>Here, the main difference between the bounded and unbounded versions is that the output array size is smaller in the bounded case.
+For an unbounded convolution, the function would be called with a the output array size specified to be the size of both signals put together:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token comment"># full convolution, output will be the size of x + y</span>
+full_linear_output <span class="token operator">=</span> convolve_linear<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> length<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> length<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</div></div></div>
+
+<p>On the other hand, the bounded call would set the output array size to simply be the length of the signal</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token comment"># simple boundaries</span>
+simple_linear_output <span class="token operator">=</span> convolve_linear<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> length<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</div></div></div>
+
+<p>Finally, as we mentioned before, it is possible to center bounded convolutions by changing the location where we calculate the each point along the filter.
+This can be done by modifying the following line:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">for</span> j <span class="token operator">=</span> max<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">-</span>length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>i
+</code></pre>
+</div></div></div>
+
+<p>Here, <code>j</code> counts from <code>i-length(filter)</code> to <code>i</code>.
+To center the convolution, it would need to count from <code>i-(length(filter)/2)</code> to <code>i+(length(filter)/2)</code> instead.</p>
+<p>I think this is a good place to stop discussions on simple boundary conditions.
+Now let us talk a bit more in detail about the case where we want the filter to continuously reappear every loop.
+This case is known as the &quot;periodic boundary condition&quot; and was used for the visualizations at the start of this chapter.</p>
+<h3 id="periodic-boundary-conditions">Periodic boundary conditions</h3>
+<p>Though periodic boundary conditions are more complicated that those mentioned in the previous section, they are still <em>relatively</em> straightforward to implement.
+With these conditions, the filter will wrap itself around to the other end of the signal whenever it hits a boundary.
+In this way, the signal is periodic, with an identical copy of itself acting as left and right neighbors.
+Those neighbors then have other neighbors, and those then have more neighbors, creating a sea of signals extending to infinity and beyond in both directions.
+For us, this means that when the filter leaves one edge of the domain, it simply appears on the other, opposite edge.</p>
+<p>This particular convolution is known as a <em>cyclic</em> convolution and is also the most common output of convolutions that work via the <a href="../convolutional_theorem/convolutional_theorem.html">convolutional theorem</a>, which will be discussed in another section.
+For clarity: here is the same cyclic visualization we showed above with a random distribution and a Gaussian signal.</p>
+<div style="text-align:center">
+<video style="width:90%" controls loop>
+  <source src="../res/1d_rand_gaussian_cyclic.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>In code, this typically amounts to using some form of modulus operation, as shown here:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> convolve_cyclic<span class="token punctuation">(</span>signal<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                         filter<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span> where <span class="token punctuation">{</span>T <span class="token operator">&lt;:</span> Number<span class="token punctuation">}</span>
+
+    <span class="token comment"># output size will be the size of sign</span>
+    output_size <span class="token operator">=</span> max<span class="token punctuation">(</span>length<span class="token punctuation">(</span>signal<span class="token punctuation">)</span><span class="token punctuation">,</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># convolutional output</span>
+    out <span class="token operator">=</span> Array<span class="token punctuation">{</span>Float64<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span>output_size<span class="token punctuation">)</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+        <span class="token keyword">for</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mod1<span class="token punctuation">(</span>i<span class="token operator">-</span>j<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                sum <span class="token operator">+=</span> signal<span class="token punctuation">[</span>mod1<span class="token punctuation">(</span>j<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">*</span> filter<span class="token punctuation">[</span>mod1<span class="token punctuation">(</span>i<span class="token operator">-</span>j<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum
+        sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> out
+<span class="token keyword">end</span>
+</code></pre>
+</div></div></div>
+
+<p>This is essentially the same as before, except for the modulus operations, which allow us to work on a periodic domain.</p>
+<p>As a final note before continuing: dealing with boundaries is tricky business and can dramatically change the behavior of the output convolution.
+For this reason, it is important to think about what types of boundaries will work best for what you, the programmer, actually need.
+The selection of boundary conditions will be a common trope for a large portion of computer graphics and physics algorithms where researchers often need to present and simulate data on an array of some sort.</p>
+<h2 id="example-code">Example Code</h2>
+<p>For the code associated with this chapter, we have used the convolution to generate a few files for the full convolution, along with the periodic and simple boundary conditions discussed in this chapter.</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">using</span> DelimitedFiles
+<span class="token keyword">using</span> LinearAlgebra
+
+<span class="token keyword">function</span> convolve_cyclic<span class="token punctuation">(</span>signal<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                         filter<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span> where <span class="token punctuation">{</span>T <span class="token operator">&lt;:</span> Number<span class="token punctuation">}</span>
+
+    <span class="token comment"># output size will be the size of sign</span>
+    output_size <span class="token operator">=</span> max<span class="token punctuation">(</span>length<span class="token punctuation">(</span>signal<span class="token punctuation">)</span><span class="token punctuation">,</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># convolutional output</span>
+    out <span class="token operator">=</span> Array<span class="token punctuation">{</span>Float64<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span>output_size<span class="token punctuation">)</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+        <span class="token keyword">for</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>mod1<span class="token punctuation">(</span>i<span class="token operator">-</span>j<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                sum <span class="token operator">+=</span> signal<span class="token punctuation">[</span>mod1<span class="token punctuation">(</span>j<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">*</span> filter<span class="token punctuation">[</span>mod1<span class="token punctuation">(</span>i<span class="token operator">-</span>j<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum
+        sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> out
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> convolve_linear<span class="token punctuation">(</span>signal<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> filter<span class="token punctuation">::</span>Array<span class="token punctuation">{</span>T<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                         output_size<span class="token punctuation">)</span> where <span class="token punctuation">{</span>T <span class="token operator">&lt;:</span> Number<span class="token punctuation">}</span>
+
+    <span class="token comment"># convolutional output</span>
+    out <span class="token operator">=</span> Array<span class="token punctuation">{</span>Float64<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>output_size
+        <span class="token keyword">for</span> j <span class="token operator">=</span> max<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> i<span class="token operator">-</span>length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>i
+            <span class="token keyword">if</span> j <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>signal<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;=</span> length<span class="token punctuation">(</span>filter<span class="token punctuation">)</span>
+                sum <span class="token operator">+=</span> signal<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">*</span> filter<span class="token punctuation">[</span>i<span class="token operator">-</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sum
+        sum <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> out
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># sawtooth functions for x and y</span>
+    x <span class="token operator">=</span> <span class="token punctuation">[</span>float<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">200</span> <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">200</span><span class="token punctuation">]</span>
+    y <span class="token operator">=</span> <span class="token punctuation">[</span>float<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">200</span> <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">200</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># Normalization is not strictly necessary, but good practice</span>
+    normalize<span class="token operator">!</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    normalize<span class="token operator">!</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+
+    <span class="token comment"># full convolution, output will be the size of x + y</span>
+    full_linear_output <span class="token operator">=</span> convolve_linear<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> length<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> length<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># simple boundaries</span>
+    simple_linear_output <span class="token operator">=</span> convolve_linear<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> length<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># cyclic convolution</span>
+    cyclic_output <span class="token operator">=</span> convolve_cyclic<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+
+    <span class="token comment"># outputting convolutions to different files for plotting in external code</span>
+    writedlm<span class="token punctuation">(</span><span class="token string">&quot;full_linear.dat&quot;</span><span class="token punctuation">,</span> full_linear_output<span class="token punctuation">)</span>
+    writedlm<span class="token punctuation">(</span><span class="token string">&quot;simple_linear.dat&quot;</span><span class="token punctuation">,</span> simple_linear_output<span class="token punctuation">)</span>
+    writedlm<span class="token punctuation">(</span><span class="token string">&quot;cyclic.dat&quot;</span><span class="token punctuation">,</span> cyclic_output<span class="token punctuation">)</span>
+
+<span class="token keyword">end</span>
+</code></pre>
+</div></div></div>
+
+<p>At a test case, we have chosen to use two sawtooth functions, which should produce the following images:</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple Boundaries</td>
+<td><img class="center" src="../res/simple_linear.png" style="width:100%"></td>
+</tr>
+<tr>
+<td>Full</td>
+<td><img class="center" src="../res/full_linear.png" style="width:100%"></td>
+</tr>
+<tr>
+<td>Cyclic</td>
+<td><img class="center" src="../res/cyclic.png" style="width:100%"></td>
+</tr>
+</tbody>
+</table>
+<p>As a sanity check, make sure that the bounded convolution is a subset of the full convolution.
+In this example, the bounded convolution is the start of the full convolution, but it is entirely possible it could be the middle or somewhere else entirely depending on how you counted within the inner, summation loop for the convolution.</p>
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="code-examples">Code Examples</h5>
+<p>The code examples are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md" target="_blank">LICENSE.md</a>).</p>
+<h5 id="imagesgraphics">Images/Graphics</h5>
+<ul>
+<li>The image &quot;<a href="../res/square_wave.png">Square Wave</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="../res/triangle_wave.png">Triangle Wave</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/triangle_square_conv.mp4">Triangle Square Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/1d_gaussian.mp4">Gaussian Square Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/1d_rand_gaussian_cyclic.mp4">Gaussian Random Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/double_gaussian.mp4">Double Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="../res/sawtooth.png">Sawtooth Wave</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/1d_sawtooth.mp4">Sawtooth Square Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/1d_rand_gaussian_full.mp4">Full Random Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="../res/1d_rand_gaussian_simple.mp4">Simple Random Convolution</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="../res/simple_linear.png">Simple Linear</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="../res/full_linear.png">Full Linear</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="../res/cyclic.png">Cyclic</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+</ul>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h5 id="pull-requests">Pull Requests</h5>
+<p>After initial licensing (<a href="https://github.com/algorithm-archivists/algorithm-archive/pull/560" target="_blank">#560</a>), the following pull requests have modified the text or graphics of this chapter:</p>
+<ul>
+<li>none</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../convolutions.html" class="navigation navigation-prev " aria-label="Previous page: Convolutions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../multiplication/multiplication.html" class="navigation navigation-next " aria-label="Next page: Multiplication as a Convolution">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Convolutions in 1D","level":"1.6.5.1","depth":3,"next":{"title":"Multiplication as a Convolution","level":"1.6.5.2","depth":3,"path":"contents/convolutions/multiplication/multiplication.md","ref":"contents/convolutions/multiplication/multiplication.md","articles":[]},"previous":{"title":"Convolutions","level":"1.6.5","depth":2,"path":"contents/convolutions/convolutions.md","ref":"contents/convolutions/convolutions.md","articles":[{"title":"Convolutions in 1D","level":"1.6.5.1","depth":3,"path":"contents/convolutions/1d/1d.md","ref":"contents/convolutions/1d/1d.md","articles":[]},{"title":"Multiplication as a Convolution","level":"1.6.5.2","depth":3,"path":"contents/convolutions/multiplication/multiplication.md","ref":"contents/convolutions/multiplication/multiplication.md","articles":[]},{"title":"Convolutions of Images (2D)","level":"1.6.5.3","depth":3,"path":"contents/convolutions/2d/2d.md","ref":"contents/convolutions/2d/2d.md","articles":[]},{"title":"Convolutional Theorem","level":"1.6.5.4","depth":3,"path":"contents/convolutions/convolutional_theorem/convolutional_theorem.md","ref":"contents/convolutions/convolutional_theorem/convolutional_theorem.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}}],"gitbook":"*"},"file":{"path":"contents/convolutions/1d/1d.md","mtime":"2021-08-16T03:21:55.512Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-16T03:22:29.158Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,174 @@
+root = true
+
+# Base for all text files
+[*]
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+
+# Bash
+[*.bash]
+indent_style = space
+indent_size = 4
+
+# C
+[*.c]
+indent_style = space
+indent_size = 4
+
+# Clojure
+[*.clj]
+indent_style = space
+indent_size = 2
+
+# C++
+[*.cpp]
+indent_style = space
+indent_size = 2
+
+# Crystal
+[*.cr]
+indent_style = space
+indent_size = 2
+
+# C#
+[*.cs]
+indent_style = space
+indent_size = 4
+
+# CSS
+[*.css]
+indent_style = space
+indent_size = 2
+
+# D
+[*.d]
+indent_style = space
+indent_size = 4
+
+# Elm
+[*.elm]
+indent_style = space
+indent_size = 2
+
+# Emojicode
+[*.emojic]
+indent_style = space
+indent_size = 2
+
+# Factor
+[*.factor]
+indent_style = space
+indent_size = 2
+
+# Go
+[*.go]
+indent_style = tab
+
+# Haskell
+[*.hs]
+indent_style = space
+indent_size = 2
+
+# HTML
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Java
+[*.java]
+indent_style = space
+indent_size = 4
+
+# Julia
+[*.jl]
+indent_style = space
+indent_size = 4
+
+# JavaScript
+[*.js]
+indent_style = space
+indent_size = 2
+
+# JSON
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Lisp
+[*.lisp]
+indent_style = space
+indent_size = 2
+
+# LOLCODE
+[*.lol]
+indent_style = space
+indent_size = 4
+
+# Lua
+[*.lua]
+indent_style = space
+indent_size = 2
+
+# Matlab
+[*.m]
+indent_style = space
+indent_size = 4
+
+# Markdown
+[*.md]
+indent_style = space
+indent_size = 2
+
+# OCAML
+[*.ml]
+indent_style = space
+indent_size = 2
+
+# PHP
+[*.php]
+indent_style = space
+indent_size = 4
+
+# Python
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Racket/Scheme
+[*.{rkt,ss,scm}]
+indent_style = space
+indent_size = 2
+
+# Rust
+[*.rs]
+indent_style = space
+indent_size = 4
+
+# Scratch (text code)
+[contents/*/code/scratch/*.txt]
+indent_style = space
+indent_size = 4
+
+# V
+[*.v]
+indent_style = tab
+
+# Whitespace
+[*.ws]
+indent_style = space
+indent_size = 0
+trim_trailing_whitespace = false
+insert_final_newline = false
+end_of_line = lf
+
+# PowerShell
+[*.ps1]
+indent_style = space
+indent_size = 4
+
+# CoffeeScript
+[*.coffee]
+indent_style = space
+indent_size = 2
+

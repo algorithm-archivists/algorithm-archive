@@ -1,0 +1,966 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Computational Geometry · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../gift_wrapping/gift_wrapping.html" />
+    
+    
+    <link rel="prev" href="../thomas_algorithm/thomas_algorithm.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../plotting/plotting.html">
+            
+                <a href="../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../domain_coloring/domain_coloring.html">
+            
+                <a href="../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../IFS/IFS.html">
+            
+                <a href="../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../barnsley/barnsley.html">
+            
+                <a href="../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../data_structures/data_structures.html">
+            
+                <a href="../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mathematical_background/mathematical_background.html">
+            
+                <a href="../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../notation/notation.html">
+            
+                <a href="../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../affine_transformations/affine_transformations.html">
+            
+                <a href="../affine_transformations/affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bitlogic/bitlogic.html">
+            
+                <a href="../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../convolutions/convolutions.html">
+            
+                <a href="../convolutions/convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../convolutions/1d/1d.html">
+            
+                <a href="../convolutions/1d/1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../convolutions/multiplication/multiplication.html">
+            
+                <a href="../convolutions/multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../convolutions/2d/2d.html">
+            
+                <a href="../convolutions/2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../tree_traversal/tree_traversal.html">
+            
+                <a href="../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../matrix_methods/matrix_methods.html">
+            
+                <a href="../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="computational_geometry.html">
+            
+                <a href="computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../jarvis_march/jarvis_march.html">
+            
+                <a href="../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../graham_scan/graham_scan.html">
+            
+                <a href="../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../decision_problems/decision_problems.html">
+            
+                <a href="../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../differential_equations/differential_equations.html">
+            
+                <a href="../differential_equations/differential_equations.html">
+            
+                    
+                    Differential Equation Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../forward_euler_method/forward_euler_method.html">
+            
+                <a href="../forward_euler_method/forward_euler_method.html">
+            
+                    
+                    Forward Euler Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../physics_solvers/physics_solvers.html">
+            
+                <a href="../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../verlet_integration/verlet_integration.html">
+            
+                <a href="../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../quantum_systems/quantum_systems.html">
+            
+                <a href="../quantum_systems/quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="../split-operator_method/split-operator_method.html">
+            
+                <a href="../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../data_compression/data_compression.html">
+            
+                <a href="../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../computer_graphics/computer_graphics.html">
+            
+                <a href="../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../flood_fill/flood_fill.html">
+            
+                <a href="../flood_fill/flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../quantum_information/quantum_information.html">
+            
+                <a href="../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../computus/computus.html">
+            
+                <a href="../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../approximate_counting/approximate_counting.html">
+            
+                <a href="../approximate_counting/approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Computational Geometry</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="computational-geometry">Computational Geometry</h1>
+<p>When it comes to the different sectors of computational mathematics, there are none that bring me more joy than computational geometry.
+In some sense, it is the foundation for almost every area of automatically generated two and three dimensional graphics.
+If you have time to spend poring through some interesting research, I would definitely recommend going to the <a href="https://arxiv.org/list/cs.CG/recent" target="_blank">arXiv.org section for computational geometry</a>.
+We will add more to this section as the Archive evolves, so let me know of any algorithms that you would like to cover in the future!</p>
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="code-examples">Code Examples</h5>
+<p>The code examples are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md" target="_blank">LICENSE.md</a>).</p>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h5 id="pull-requests">Pull Requests</h5>
+<p>After initial licensing (<a href="https://github.com/algorithm-archivists/algorithm-archive/pull/560" target="_blank">#560</a>), the following pull requests have modified the text or graphics of this chapter:</p>
+<ul>
+<li>none</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../thomas_algorithm/thomas_algorithm.html" class="navigation navigation-prev " aria-label="Previous page: Thomas Algorithm">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../gift_wrapping/gift_wrapping.html" class="navigation navigation-next " aria-label="Next page: Gift Wrapping">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Computational Geometry","level":"1.11","depth":1,"next":{"title":"Gift Wrapping","level":"1.11.1","depth":2,"path":"contents/gift_wrapping/gift_wrapping.md","ref":"contents/gift_wrapping/gift_wrapping.md","articles":[{"title":"Jarvis March","level":"1.11.1.1","depth":3,"path":"contents/jarvis_march/jarvis_march.md","ref":"contents/jarvis_march/jarvis_march.md","articles":[]},{"title":"Graham Scan","level":"1.11.1.2","depth":3,"path":"contents/graham_scan/graham_scan.md","ref":"contents/graham_scan/graham_scan.md","articles":[]}]},"previous":{"title":"Thomas Algorithm","level":"1.10.2","depth":2,"path":"contents/thomas_algorithm/thomas_algorithm.md","ref":"contents/thomas_algorithm/thomas_algorithm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}}],"gitbook":"*"},"file":{"path":"contents/computational_geometry/computational_geometry.md","mtime":"2021-08-16T03:21:55.508Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-16T03:22:29.158Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

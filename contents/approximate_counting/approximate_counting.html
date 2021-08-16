@@ -1,0 +1,1405 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Approximate Counting Algorithm · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../computus/computus.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../plotting/plotting.html">
+            
+                <a href="../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../domain_coloring/domain_coloring.html">
+            
+                <a href="../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../IFS/IFS.html">
+            
+                <a href="../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../barnsley/barnsley.html">
+            
+                <a href="../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../data_structures/data_structures.html">
+            
+                <a href="../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mathematical_background/mathematical_background.html">
+            
+                <a href="../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../notation/notation.html">
+            
+                <a href="../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../affine_transformations/affine_transformations.html">
+            
+                <a href="../affine_transformations/affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bitlogic/bitlogic.html">
+            
+                <a href="../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../convolutions/convolutions.html">
+            
+                <a href="../convolutions/convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../convolutions/1d/1d.html">
+            
+                <a href="../convolutions/1d/1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../convolutions/multiplication/multiplication.html">
+            
+                <a href="../convolutions/multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../convolutions/2d/2d.html">
+            
+                <a href="../convolutions/2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../tree_traversal/tree_traversal.html">
+            
+                <a href="../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../matrix_methods/matrix_methods.html">
+            
+                <a href="../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../computational_geometry/computational_geometry.html">
+            
+                <a href="../computational_geometry/computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../jarvis_march/jarvis_march.html">
+            
+                <a href="../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../graham_scan/graham_scan.html">
+            
+                <a href="../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../decision_problems/decision_problems.html">
+            
+                <a href="../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../differential_equations/differential_equations.html">
+            
+                <a href="../differential_equations/differential_equations.html">
+            
+                    
+                    Differential Equation Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../forward_euler_method/forward_euler_method.html">
+            
+                <a href="../forward_euler_method/forward_euler_method.html">
+            
+                    
+                    Forward Euler Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../physics_solvers/physics_solvers.html">
+            
+                <a href="../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../verlet_integration/verlet_integration.html">
+            
+                <a href="../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../quantum_systems/quantum_systems.html">
+            
+                <a href="../quantum_systems/quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="../split-operator_method/split-operator_method.html">
+            
+                <a href="../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../data_compression/data_compression.html">
+            
+                <a href="../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../computer_graphics/computer_graphics.html">
+            
+                <a href="../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../flood_fill/flood_fill.html">
+            
+                <a href="../flood_fill/flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../quantum_information/quantum_information.html">
+            
+                <a href="../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../computus/computus.html">
+            
+                <a href="../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.20" data-path="approximate_counting.html">
+            
+                <a href="approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Approximate Counting Algorithm</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="the-approximate-counting-algorithm">The Approximate Counting Algorithm</h1>
+<p>This might seem like a straightforward question, but how high can you count on your fingers?
+This depends on how many fingers you have, but in general the answer has to be 10, right?</p>
+<p>Well, not exactly, it can actually go much, much higher with a few simple abstractions.</p>
+<p>The first strategy is to think of your fingers as binary registers, like so <a href="#cite-1">[1]</a>:</p>
+<p>
+    <img class="center" src="res/hands.png" style="width:70%">
+</p>
+
+<p>If your fingers are out, they count as a 1 for that register.
+If they are not, they count as a 0.
+This means that after you have decided on the appropriate finger configuration, you have created a bitstring that can be read from left to right, where each number represents a power of 2.
+For this example, we would have a bitstring of 1110010101, which reads to 917:</p>
+<p><script type="math/tex; mode=display">
+1 \cdot 2^9 + 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 0 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0
+</script>
+<script type="math/tex; mode=display">
+=
+</script></p>
+<p><script type="math/tex; mode=display">
+512 + 256 + 128 + 16 + 4 + 1 = 917
+</script></p>
+<p>Because you have 10 fingers and each one represents a power of 2, you can count up to a maximum of <script type="math/tex; ">2^{10}-1</script> or 1023, which is about 100 times higher than simple finger counting!
+For those who might be wondering why you can count to <script type="math/tex; ">2^{10}-1</script> instead of <script type="math/tex; ">2^{10}</script> exactly, remember that each finger represents a power of 2.
+The right thumb counts as <script type="math/tex; ">2^0 = 1</script> and the left thumb is <script type="math/tex; ">2^9 = 512</script>.
+With all fingers out, we have  counted to <script type="math/tex; ">\sum_{n=0}^9 2^n = 1023 = 2^{10}-1</script>.</p>
+<p>So what if we wanted to go beyond 1023?
+Well, we could start counting with our fingers as trits where 0 is closed, 1 is half-up, and 2 is fully up.
+There are actually a huge variety of different ways we could move our hands about to count in odd ways, but we are interested in a more concrete problem: how high can we count with only 10 bits?</p>
+<p>This is almost exactly the problem that Morris encountered in Bell Labs around 1977 <a href="#cite-2">[2]</a>.
+There, he was given an 8-bit register and asked to count much higher than <script type="math/tex; ">2^8 - 1= 255</script>.
+His solution was to invent a new method known as the approximate counting algorithm.
+With this method, he could count to about <script type="math/tex; ">130,000</script> with a relatively low error (standard deviation, <script type="math/tex; ">\sigma \approx 17,000</script>).
+Using 10 registers (fingers), he could count to about <script type="math/tex; ">1.1\times 10^{16}</script> with similar parameters, which is undoubtedly impressive!</p>
+<p>The approximate counting algorithm is an early predecessor to streaming algorithms where information must be roughly processed in real-time.
+As we dive into those methods later, this chapter will certainly be updated.
+For now, we will not be showing any proofs (though those might come later as well), but a rigorous mathematical description of this method can be found in a follow-up paper by Philippe Flajolet <a href="#cite-3">[3]</a>.
+In addition, there are several blogs and resources online that cover the method to varying degrees of accessibility <a href="#cite-4">[4]</a> <a href="#cite-5">[5]</a>.</p>
+<p>Here, we hope to provide a basic understanding of the method, along with code implementations for anyone who might want to try something similar in the future.</p>
+<h2 id="a-simple-example">A Simple Example</h2>
+<p>If we need to count more than 255 items with 8 bits, there is one somewhat simple strategy: count every other item.
+This means that we will increment our counter with 2, 4, 6, 8... items, effectively doubling the number of items we can count to 511!
+(Note: that &quot;!&quot; is out of excitement and is not a factorial.)
+Similarly, if we need to count above 511, we can increment our counter every 3 or 4 items; however, the obvious drawback to this method is that if we only count every other item, there is no way to represent odd numbers.
+Similarly, if we count every 3rd or 4th item, we would miss out on any numbers that are not multiples of our increment number.</p>
+<p>The most important thing to take away from this line of reasoning is that counting can be done somewhat approximately by splitting the process into two distinct actions: incrementing the counter and storing the count, itself.
+For example, every time a sheep walks by, you could lift a finger.
+In this case, the act of seeing a sheep is a trigger for incrementing your counter, which is stored on your hand.
+As mentioned, you could also lift a finger every time 2 or 3 sheep go by to count higher on your hand.
+In code, bits are obviously preferred to hands for long-term storage.</p>
+<p>Taking this example a bit further, imagine counting 1,000,000 sheep.
+If we wanted to save all of them on 8 bits (maximum size of 255), we could increment our counter every <script type="math/tex; ">\sim 4000</script> sheep.
+By counting in this way, we would first need to count around 4000 sheep before incrementing the main counter by 1.
+After all the sheep have gone by, we would have counted up to 250 on our counter, and also counted up to <script type="math/tex; ">4000</script> on a separate counter 250 times.
+This has a few important consequences:</p>
+<ol>
+<li>If the final number of sheep is not a multiple of 4000, then we will have an error associated with the total count of up to 4000 (0.4%).</li>
+<li>There is no way to determine the final number of sheep if it is not a multiple of 4000.</li>
+<li>We now need some way to count up to 4000 before incrementing the main counter.
+This means we need a second counter!</li>
+</ol>
+<p>In a sense, 4000 would be a type of &quot;counting resolution&quot; for our system.
+Overall,  a 0.4% error is not bad, but it is possible to ensure that the approximate count is more accurate (but potentially less precise) by using randomness to our advantage.</p>
+<p>That is to say, instead of incrementing out counter every 4000th sheep, we could instead give each item a <script type="math/tex; ">1/4000 = 0.025\%</script> chance of incrementing our main counter.
+This averages out to be roughly 1 count every 4000 sheep, but the expectation value of a large number of counting experiments should be the correct number.
+This means that even though we need to count all the sheep multiple times to get the right expectation value, we no longer need to keep a separate counter for the counting resolution of 4000.</p>
+<p>Because multiple counting trials are necessary to ensure the correct result, each counting experiment will have some associated error (sometimes much higher than 0.4%).
+To quantify this error, let&apos;s actually perform multiple the experiment, as shown below:</p>
+<p>
+    <img class="center" src="res/approximations.png" style="width:100%">
+</p>
+
+<p>In this image, we have counted 1,000,000 sheep (items) 10,000 different times.
+In each run, we have given each item a 0.025% chance to flip our primary counter and have given each increment in our primary counter a weight of 4000 items.
+We have plotted 10 of the 10,000 runs (chosen at random), and each upward tick of the lines represents one of the items winning a game of chance and adding 1 to the primary counter and thus adding 4000 to the approximate count.
+We have also shaded the maximum and minimum approximate count for each true count of the 10,000 trials in gray, thereby highlighting the range of possible outputs.
+On top of the plot, we have shown the distribution of all 10,000 runs for the approximate count at 10,000, 500,000, and 1,000,000 items.</p>
+<p>There&apos;s a lot to unpack here, so let&apos;s start with the upward trending lines.
+Here, it seems like the approximate counts are roughly following the line of <script type="math/tex; ">y=x</script> (dotted black line), which would indicate simple counting (without any randomness or approximation).
+This makes sense because in a perfect world, the approximate count would always be exactly equal to the true number of items being counted.
+Unfortunately, none of the lines shown here exactly follow <script type="math/tex; ">y=x</script>.
+In fact, it would be impossible for any of the approximations to do so because we are always increasing the approximation in steps of 4000 while the true count increments by 1 with each new item.
+That said, the <em>average</em> of all these counts together is a really good approximation for the true number of items.</p>
+<p>This is where the 3 additional plots come in:</p>
+<p>
+    <img class="center" src="res/histograms.png" style="width:100%">
+</p>
+
+<p>Each of these is a histogram of the approximate count for all 10,000 runs at 10,000 (left), 500,000 (middle), and 1,000,000 (left) items.
+All three (especially the approximation for 1,000,000) look Gaussian, and the peak of the Gaussian seems to be the correct count.
+In fact, the expectation value for our approximate counting scheme will always be correct.
+In practice, this means that we can approximate any count on a small number of bits by doing a large number of counting trials and averaging their results.</p>
+<p>There is still a little catch that becomes more evident as we look at the approximation for 10,000 items.
+In this case, even though the expectation value for the Gaussian distribution looks correct, it&apos;s kinda hard to tell exactly because there are only 8 (or so) possible values for each individual experiment.
+Essentially, we are trying to count to 10,000 in steps of 4,000.
+Clearly the closest we can get on any individual run is either 8,000 or 12,000, as these are multiples of 4,000.
+Simply put: we cannot resolve 10,000 items with this method!</p>
+<p>Does this mean that this counting method is less useful for a small number of items?
+In a sense, yes.
+Here is a table for the true count, approximate count, and percent error for 10,000, 500,000, and 1,000,000 for the case where we do 10,000 counting experiments:</p>
+<table>
+<thead>
+<tr>
+<th>True Count</th>
+<th>Approximate Count</th>
+<th>Percent Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10,000</td>
+<td>9,958.0</td>
+<td>0.42</td>
+</tr>
+<tr>
+<td>500,000</td>
+<td>499,813.2</td>
+<td>0.037</td>
+</tr>
+<tr>
+<td>1,000,000</td>
+<td>999,466.0</td>
+<td>0.053</td>
+</tr>
+</tbody>
+</table>
+<p>Here, it seems that the percent error is 10 times higher when we count 10,000 items; however, 
+with these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
+A 0.42% error is still really good, right?
+Right.
+It&apos;s definitely not bad, but this was with 10,000 counting experiments.
+Here a new table where we only did 10:</p>
+<table>
+<thead>
+<tr>
+<th>True Count</th>
+<th>Approximate Count</th>
+<th>Percent Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10,000</td>
+<td>8,000.0</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>500,000</td>
+<td>483,200.0</td>
+<td>3.36</td>
+</tr>
+<tr>
+<td>1,000,000</td>
+<td>961,600.0</td>
+<td>3.84</td>
+</tr>
+</tbody>
+</table>
+<p>This time, there is a 20% error when counting to 10,000.
+That&apos;s unacceptably high!</p>
+<p>To solve this problem, we need to find some way to for the value of each increment on the actual counter to be more meaningful for lower counts.
+This is precisely the job for a logarithm, which is what we will be looking at in the next section.
+For now, it&apos;s important to look at another anomaly: why are the percent errors for the 500,000 and 1,000,000 cases so close?</p>
+<p>I gotta be honest, I don&apos;t know the correct answer here, but I would guess that it has something to do with the fact that both 500,000 and 1,000,000 are multiples of 4000 so our counting scheme can resolve both of them with roughly equal precision.
+On top of that, both values are significantly higher than 4,000 so the counting resolution does not have as significant of an impact on the measured count.
+Simply put, 4000 is a big step size when counting to 10,000, but a smaller one when counting to 500,000 or 1,000,000.</p>
+<p>As an important note, each approximate count shown in the tables above was the expectation value for a Gaussian probability distribution of different counting experiments all providing a guess at what the count could be.
+Because we are no longer counting with integer increments but instead with probability distributions, we now need to quantify our error with the tools of probability, namely standard deviations.</p>
+<p>In the next section, we will tackle both issues brought up here:</p>
+<ol>
+<li>In order to better approximate different scales of counting, it makes sense to use a logarithmic scale.</li>
+<li>Because we are counting by using the expectation value of a Gaussian probability distribution from a set of counting experiments, it makes sense to quantify error with the tools we learned from probability and statistics.</li>
+</ol>
+<p>So I guess we should hop to it!</p>
+<h2 id="adding-a-logarithm">Adding a logarithm</h2>
+<p>At this stage, I feel it&apos;s important to use terminology that more closely matches Morris&apos;s original paper <a href="#cite-2">[2]</a>, so we will begin to talk about events, which are a general abstraction to the previous item / sheep analogy.
+We will also introduce three different values:</p>
+<ul>
+<li><script type="math/tex; ">n</script>: the number of events that have occurred.</li>
+<li><script type="math/tex; ">v</script>: the number we have stored in our bitstring.</li>
+<li><script type="math/tex; ">n_v</script>: the approximate number of events that have occurred.</li>
+</ul>
+<p>It&apos;s important to stop here and think about what&apos;s actually going on.
+We have a certain number of events (<script type="math/tex; ">n</script>) that have occurred and have stored that number on a binary register as <script type="math/tex; ">v</script>.
+Traditionally, the number stored on the binary register would be exactly equal to the number of events, but because we do not have enough space on the register, we end up settling for an approximation of the number of events, <script type="math/tex; ">n_v</script>.
+This is precisely what we did in the previous example, where <script type="math/tex; ">v = \frac{n}{4000}</script> and <script type="math/tex; ">n_v = 4000*v</script>.</p>
+<p>As mentioned, using a constant scaling value (4000) for our approximate counting scheme means that the approximation is not ideal for a smaller number of events.
+For this reason, it might be more appropriate to create a new method of storing the number of events by using a logarithmic scale, such that</p>
+<p><script type="math/tex; mode=display">
+v = \log_2(1+n),
+</script></p>
+<p>which would mean that the approximate count would be</p>
+<p><script type="math/tex; mode=display">
+n_v = 2^v-1.
+</script></p>
+<p>In this case, we are adding 1 to the argument of the logarithm for <script type="math/tex; ">v</script> because <script type="math/tex; ">\log_2(1) = 0</script> and we start counting at 1; therefore, we need some way to represent the value of 0.
+Also, for this we can use any base logarithm (like <script type="math/tex; ">e</script>), but because we are dealing with bits, it makes sense to use base 2.
+We&apos;ll talk about different bases next.
+To be clear, here is a table of several values that could be stored in a bitstring along with their corresponding approximate counts:</p>
+<table>
+<thead>
+<tr>
+<th><script type="math/tex; ">v(n)</script></th>
+<th><script type="math/tex; ">n_v</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex; ">00000000 = 0</script></td>
+<td>0</td>
+</tr>
+<tr>
+<td><script type="math/tex; ">00000001 = 1</script></td>
+<td><script type="math/tex; ">1</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">00000010 = 2</script></td>
+<td><script type="math/tex; ">3</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">00000100 = 4</script></td>
+<td><script type="math/tex; ">15</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">00010000 = 16</script></td>
+<td><script type="math/tex; ">65535</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">01000000 = 64</script></td>
+<td><script type="math/tex; ">1.85 \times 10^{19}</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">10000000 = 128</script></td>
+<td><script type="math/tex; ">3.40 \times 10^{38}</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">11111111 = 255</script></td>
+<td><script type="math/tex; ">5.79 \times 10^{76}</script></td>
+</tr>
+</tbody>
+</table>
+<p>This means that we can hold from <script type="math/tex; ">0</script> to <script type="math/tex; ">2^{255} - 1 \approx 5.79 \times 10^{76}</script> with 8 bits using this new method.</p>
+<p>So let&apos;s now think about what happens every time a new event occurs.
+To do this, Morris calculated a new value:</p>
+<p><script type="math/tex; mode=display">
+\Delta = \frac{1}{n_{v+1} - n_{v}}
+</script></p>
+<p>where <script type="math/tex; ">n_{v+1}</script> is the approximate count for the next possible value <script type="math/tex; ">v</script> stored in the register.
+In this case, <script type="math/tex; ">\Delta</script> will always be between 0 and 1, so we can consider it to be the probability of whether we should increment our stored count or not.
+For example, if we have a stored value of 2 (<script type="math/tex; ">v=2</script>), then</p>
+<p><script type="math/tex; mode=display">
+\Delta = \frac{1}{n_3 - n_2} = \frac{1}{(2^3-1)-(2^2-1)} \approx \frac{1}{7-3} \approx 0.25.
+</script></p>
+<p>This indicates that there will be a 25% chance to increment <script type="math/tex; ">v</script> from 2 to 3.
+In practice, this means that we need to create another random variable <script type="math/tex; ">r</script> and set our counter such that</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\text{if } & r < \Delta, \qquad v = v + 1 \\
+\text{if } & r > \Delta, \qquad v = v.
+\end{align}
+</script></p>
+<p>Again, <script type="math/tex; ">\Delta</script> is essentially the probability that we will increment our counter with each object, and as we count higher, the probability decreases exponentially.</p>
+<p>
+    <img class="center" src="res/deltas.png" style="width:100%">
+</p>
+
+<p>Note: the <script type="math/tex; ">y</script>-axis to this figure is in logscale, which is why it looks like a straight line.</p>
+<p>Before leaving this section, it&apos;s important to note that the highest anyone can count with this method in base 2 using an 8-bit register is <script type="math/tex; ">5.79 \times 10^{76}</script>.
+That&apos;s great!
+Way, way better than 255, but we can still go higher with a different base of logarithm.
+For example, if we use <script type="math/tex; ">e</script> as our base, we can get up to <script type="math/tex; ">e^{255}-1 = 5.56 \times 10^{110}</script>.
+In addition, by choosing smaller bases, we can also find a more accurate approximate count for lower values.
+In practice, we want to select a base that allows us to count to a value of the same order (or one order higher) than the number of events we are expected to have.</p>
+<p>In the next section, we will consider how to generalize this logarithmic method to take arbitrary bases into account.</p>
+<h2 id="a-slightly-more-general-logarithm">A slightly more general logarithm</h2>
+<p>Let&apos;s start by considering the differences between base <script type="math/tex; ">2</script> and base <script type="math/tex; ">e</script>.
+For base <script type="math/tex; ">e</script>, </p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+n_v &= e^v - 1 \\
+v &= \log_e(1+n).
+\end{align}
+</script></p>
+<p>If we were to update our count and wanted to keep the value in the counter as accurate as possible, then the new value in the register with every new event would be</p>
+<p><script type="math/tex; mode=display">
+v = \log_e(1+e^v).
+</script></p>
+<p>This is generally not an integer value, but <script type="math/tex; ">v</script> <em>must</em> be an integer value (unless we want to try and store floating-point values (which we definitely don&apos;t have space for)), so what do we do in this situation?</p>
+<p>Well, let&apos;s look at the very first event where we need to increment our count from 0 to 1.
+With base <script type="math/tex; ">e</script>, there would only be a 58% chance of counting the first event (<script type="math/tex; ">\Delta = \frac{1}{1.72-0} = 0.58</script>), and if the event is counted, the value in the register would be <script type="math/tex; ">\approx 1.71 \neq 1</script>.
+Again, the expectation value for a bunch of trials is correct, but we did not have this issue with base 2, because</p>
+<p><script type="math/tex; mode=display">
+v = \frac{\log_e(n+1)}{\log_e(2)} = 1
+</script></p>
+<p>when <script type="math/tex; ">n=1</script>.
+As a reminder, the above formula is a way to convert any logarithm from a given base (in this case <script type="math/tex; ">e</script>) to another base (in this case 2).</p>
+<p>Going one step further, we need to chose a specific base to a logarithm that will at least ensure that the first count is correct, and for this reason, Morris studied a specific solution:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+    v &= \frac{\log(1+n/a)}{\log(1+1/a)}. \\ 
+    n_v &= a\left(\left(1+\frac{1}{a}\right)^v-1\right).
+\end{align}
+</script></p>
+<p>Here, <script type="math/tex; ">a</script> is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
+The expression <script type="math/tex; ">1+1/a</script> acts as a base for the logarithm and exponents and ensures that the first count of <script type="math/tex; ">n=1</script> will also set the value <script type="math/tex; ">v=1</script>.
+As an example, if the bitstring can be a maximum of 255 (for 8 bits) and we arbitrarily set 
+<script type="math/tex; ">a=30</script>, then the highest possible count with this approach will be <script type="math/tex; ">\approx 130,000</script>, which was the number reported in Morris&apos;s paper.
+If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm):</p>
+<p>
+    <img class="center" src="res/approximationsexp.png" style="width:100%">
+</p>
+
+<p>Now, let&apos;s pause for a second and look back at the case where our counting resolution was a constant 4000:</p>
+<p>
+    <img class="center" src="res/approximations.png" style="width:100%">
+</p>
+
+<p>It would seem that for higher counts, the previous method (with a constant counting resolution) is actually better!
+Remember that in the case of a constant counting resolution, the step size is really small for higher counts, so we get a higher resolution probability distribution for when we count 500,000 and 1,000,000 items.
+With the logarithmic scale, this is not the case, as the counting resolution now changes with the count, itself.
+This is also why all three probability distributions for the logarithmic scaling have a similar distance between each bar.
+In fact, it is probably worthwhile to look at each case more specifically:</p>
+<table>
+<thead>
+<tr>
+<th>Constant Counting Resolution</th>
+<th>Logarithmic Counting Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="center" src="res/hist_1.png" style="width:100%"></td>
+<td><img class="center" src="res/histexp_1.png" style="width:100%"></td>
+</tr>
+<tr>
+<td><img class="center" src="res/hist_2.png" style="width:100%"></td>
+<td><img class="center" src="res/histexp_2.png" style="width:100%"></td>
+</tr>
+<tr>
+<td><img class="center" src="res/hist_3.png" style="width:100%"></td>
+<td><img class="center" src="res/histexp_3.png" style="width:100%"></td>
+</tr>
+</tbody>
+</table>
+<p>In the case where we count only to 10,000, we see a moderate increase in the resolution of the probability distribution, but in the 500,000 and 1,000,000 cases, we do not.
+It&apos;s also important to notice that the logarithmic plots are a bit skewed to the left and are only Gaussian on logarithmic scales along <script type="math/tex; ">x</script>.
+On the one hand, the logarithmic plots are nice in that they have the same relative error for all scales, but on the other hand, the error is relatively high.</p>
+<p>How do we fix this?
+Well, by modifying the base of the logarithm with the variable <script type="math/tex; ">a</script>:</p>
+<p>
+    <img class="center" src="res/a_change.png" style="width:100%">
+</p>
+
+<p>Here, we show the differences in <script type="math/tex; ">n_v</script> for <script type="math/tex; ">25 \leq a \leq 35</script> when <script type="math/tex; ">v=255</script>.
+It is important to twiddle <script type="math/tex; ">a</script> based on what the maximum count is expected for
+ each experiment.
+As an important note, the expected error estimate (variance) for each count will
+ be</p>
+<p><script type="math/tex; mode=display">
+\sigma(n,a)^2 = \frac{n(n-1)}{2a}.
+</script></p>
+<p>Finally, before ending the paper, Morris mentioned that it is possible to pre-compute all values <script type="math/tex; ">\Delta_j = (a/(a+1))^j</script> for all <script type="math/tex; ">j \in [1,N]</script> where <script type="math/tex; ">N</script> is the largest value possible integer with that bitstring (as an example, 255 for 8 bits).
+This was probably more useful in 1978 than it is now, but it&apos;s still nice to keep in mind if you find yourself working on a machine with compute constrictions.</p>
+<h2 id="video-explanation">Video Explanation</h2>
+<p>Here is a video describing the Approximate Counting Algorithm:</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c4RJhPsc14s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
+ture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2 id="example-code">Example Code</h2>
+<p>For this example, we have returned to the question asked above: how high can someone count on their fingers using the approximate counting algorithm?
+We know from the formula that with <script type="math/tex; ">a=30</script> and 10 bits, we should be able to count to <script type="math/tex; ">1.1\times 10^{16}</script>, but what happens when we perform the actual experiment?</p>
+<p>As we do not have any objects to count, we will instead simulate the counting with a <code>while</code> loop that keeps going until out bitstring is 1023 (<script type="math/tex; ">2^{10}</script>).</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">using</span> Test 
+
+<span class="token comment"># This function takes </span>
+<span class="token comment">#     - v: value in register</span>
+<span class="token comment">#     - a: a  scaling value for the logarithm based on Morris&apos;s paper</span>
+<span class="token comment"># It returns n(v,a), the approximate count</span>
+<span class="token keyword">function</span> n<span class="token punctuation">(</span>v<span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+    a<span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span><span class="token number">1</span><span class="token operator">/</span>a<span class="token punctuation">)</span><span class="token operator">^</span>v<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  
+<span class="token keyword">end</span>
+
+<span class="token comment"># This function takes</span>
+<span class="token comment">#    - v: value in register</span>
+<span class="token comment">#    - a: a scaling value for the logarithm based on Morris&apos;s paper</span>
+<span class="token comment"># It returns a new value for v</span>
+<span class="token keyword">function</span> increment<span class="token punctuation">(</span>v<span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+    <span class="token comment"># delta is the probability of incrementing our counter</span>
+    delta <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span>n<span class="token punctuation">(</span>v<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token operator">-</span>n<span class="token punctuation">(</span>v<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> delta
+        <span class="token keyword">return</span> v <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> v
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># This simulates counting and takes</span>
+<span class="token comment">#     - n_items: number of items to count and loop over</span>
+<span class="token comment">#     - a: a scaling value for the logarithm based on Morris&apos;s paper</span>
+<span class="token comment"># It returns n(v,a), the approximate count</span>
+<span class="token keyword">function</span> approximate_count<span class="token punctuation">(</span>n_items<span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+    v <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>n_items
+        v <span class="token operator">=</span> increment<span class="token punctuation">(</span>v<span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> n<span class="token punctuation">(</span>v<span class="token punctuation">,</span> a<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># This function takes</span>
+<span class="token comment">#     - n_trials: the number of counting trials</span>
+<span class="token comment">#     - n_items: the number of items to count to</span>
+<span class="token comment">#     - a: a scaling value for the logarithm based on Morris&apos;s paper</span>
+<span class="token comment">#     - threshold: the maximum percent error allowed</span>
+<span class="token comment"># It returns a true / false test value</span>
+<span class="token keyword">function</span> test_approximate_count<span class="token punctuation">(</span>n_trials<span class="token punctuation">,</span> n_items<span class="token punctuation">,</span> a<span class="token punctuation">,</span> threshold<span class="token punctuation">)</span>
+    samples <span class="token operator">=</span> <span class="token punctuation">[</span>approximate_count<span class="token punctuation">(</span>n_items<span class="token punctuation">,</span> a<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>n_trials<span class="token punctuation">]</span>
+
+    avg <span class="token operator">=</span> sum<span class="token punctuation">(</span>samples<span class="token punctuation">)</span><span class="token operator">/</span>n_trials
+
+    @test <span class="token punctuation">(</span><span class="token punctuation">(</span>avg <span class="token operator">-</span> n_items<span class="token punctuation">)</span> <span class="token operator">/</span> n_items <span class="token operator">&lt;</span> threshold<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+@testset <span class="token string">&quot;Counting Tests, 100 trials&quot;</span> <span class="token keyword">begin</span>
+    <span class="token keyword">println</span><span class="token punctuation">(</span><span class="token string">&quot;testing 1,000, a = 30, 1% error&quot;</span><span class="token punctuation">)</span>
+        test_approximate_count<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span>
+    <span class="token keyword">println</span><span class="token punctuation">(</span><span class="token string">&quot;testing 12,345, a = 10, 1% error&quot;</span><span class="token punctuation">)</span>
+        test_approximate_count<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">12345</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token comment"># Note: with a lower a, we need more trials, so a higher % error here.</span>
+    <span class="token keyword">println</span><span class="token punctuation">(</span><span class="token string">&quot;testing 222,222, a = 0.5, 10% error&quot;</span><span class="token punctuation">)</span>
+        test_approximate_count<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">222222</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div></div></div>
+
+<h3 id="bibliography">Bibliography</h3>
+<p><div class="references"><div class="citation"><div class="citation-number" id="cite-1">1.</div><div class="citation-text">Sanderson, G, <a href="https://youtu.be/1SMmc9gQmHQ" target="_blank">How to count to 1000 on two hands</a>, 2015.</div></div><div class="citation"><div class="citation-number" id="cite-2">2.</div><div class="citation-text">Morris, R, Counting large numbers of events in small registers, <i>ACM New York, NY, USA</i>, 1978.</div></div><div class="citation"><div class="citation-number" id="cite-3">3.</div><div class="citation-text">Flajolet, P, Approximate counting: a detailed analysis, <i>Springer</i>, 1985.</div></div><div class="citation"><div class="citation-number" id="cite-4">4.</div><div class="citation-text">Bhayani, A, <a href="https://arpitbhayani.me/blogs/morris-counter" target="_blank">Morris&apos;s Algorithm for Approximate Counting</a>, 2020.</div></div><div class="citation"><div class="citation-number" id="cite-5">5.</div><div class="citation-text">Gundersen, G, <a href="http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/" target="_blank">Approximate Counting with Morris&apos;s Algorithm</a>, 2019.</div></div></div></p>
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="code-examples">Code Examples</h5>
+<p>The code examples are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md" target="_blank">LICENSE.md</a>).</p>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h4 id="imagesgraphics">Images/Graphics</h4>
+<ul>
+<li>The image &quot;<a href="res/hands.png">Finger Counting</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/approximations.png">Approximate trials</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/histograms.png">Histograms</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/deltas.png">Delta v v</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/approximationsexp.png">Approximate trials Logarithm</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/hist_1.png">Histograms 10,000</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/histexp_1.png">Histograms exp 10,000</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/hist_2.png">Histograms 500,000</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/histexp_2.png">Histograms exp 500,000</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/hist_3.png">Histograms 1,000,000</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/histexp_3.png">Histograms exp 1,000,000</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/a_change.png">A from 25 to 35</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../computus/computus.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Computus">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Approximate Counting Algorithm","level":"1.20","depth":1,"previous":{"title":"Computus","level":"1.19","depth":1,"path":"contents/computus/computus.md","ref":"contents/computus/computus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}}],"gitbook":"*"},"file":{"path":"contents/approximate_counting/approximate_counting.md","mtime":"2021-08-16T03:21:55.380Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-16T03:22:29.158Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,52 @@
+.book .book-body .page-wrapper .page-inner section.normal .hljs-meta-keyword {
+  color: #8959a8;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .hljs-meta-string {
+  color: #718c00;
+}
+
+.book .book-body .page-wrapper {
+  margin-bottom: 12em;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-results-item p{
+  color: #4183C4;
+}
+
+#book-search-results .search-results .has-results .search-results-item a {
+  color: #777;
+}
+
+
+#book-search-input input, #book-search-input input:focus, #book-search-input input:hover{
+  color: #222;
+}
+
+@media print {
+	/* Hide side bar */
+	.book-summary {
+		display: none;
+	}
+
+	/*Hide top bar*/
+	.book-header {
+		display: none;
+	}
+
+	/*Hide left and right navigation arrows*/
+	.navigation {
+		display: none;
+	}
+	
+	/*Make sure all content is displayed and not just the first page*/
+	.book-body {
+		position: static;
+	}
+}

@@ -1,0 +1,1855 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Flood Fill · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../quantum_information/quantum_information.html" />
+    
+    
+    <link rel="prev" href="../computer_graphics/computer_graphics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../plotting/plotting.html">
+            
+                <a href="../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../domain_coloring/domain_coloring.html">
+            
+                <a href="../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../IFS/IFS.html">
+            
+                <a href="../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../barnsley/barnsley.html">
+            
+                <a href="../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../data_structures/data_structures.html">
+            
+                <a href="../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mathematical_background/mathematical_background.html">
+            
+                <a href="../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../notation/notation.html">
+            
+                <a href="../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../affine_transformations/affine_transformations.html">
+            
+                <a href="../affine_transformations/affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bitlogic/bitlogic.html">
+            
+                <a href="../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../convolutions/convolutions.html">
+            
+                <a href="../convolutions/convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../convolutions/1d/1d.html">
+            
+                <a href="../convolutions/1d/1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../convolutions/multiplication/multiplication.html">
+            
+                <a href="../convolutions/multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../convolutions/2d/2d.html">
+            
+                <a href="../convolutions/2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../tree_traversal/tree_traversal.html">
+            
+                <a href="../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../matrix_methods/matrix_methods.html">
+            
+                <a href="../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../computational_geometry/computational_geometry.html">
+            
+                <a href="../computational_geometry/computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../jarvis_march/jarvis_march.html">
+            
+                <a href="../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../graham_scan/graham_scan.html">
+            
+                <a href="../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../decision_problems/decision_problems.html">
+            
+                <a href="../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../differential_equations/differential_equations.html">
+            
+                <a href="../differential_equations/differential_equations.html">
+            
+                    
+                    Differential Equation Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../forward_euler_method/forward_euler_method.html">
+            
+                <a href="../forward_euler_method/forward_euler_method.html">
+            
+                    
+                    Forward Euler Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../physics_solvers/physics_solvers.html">
+            
+                <a href="../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../verlet_integration/verlet_integration.html">
+            
+                <a href="../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../quantum_systems/quantum_systems.html">
+            
+                <a href="../quantum_systems/quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="../split-operator_method/split-operator_method.html">
+            
+                <a href="../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../data_compression/data_compression.html">
+            
+                <a href="../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../computer_graphics/computer_graphics.html">
+            
+                <a href="../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.17.1" data-path="flood_fill.html">
+            
+                <a href="flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../quantum_information/quantum_information.html">
+            
+                <a href="../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../computus/computus.html">
+            
+                <a href="../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../approximate_counting/approximate_counting.html">
+            
+                <a href="../approximate_counting/approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Flood Fill</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="flood-fill">Flood Fill</h1>
+<p>Flood fill is a method that is surprisingly useful in a large number of different situations and keeps finding me wherever I go.
+When I was completing my PhD, I had an idea to track superfluid vortices by using flood fill as a way to help mask out unnecessary features of the simulation.
+When I was making a terminal game, I thought of creating an animation that was just flood fill in disguise.
+When I decided to play minesweeper or Go with my girlfriend, flood fill was used in both!</p>
+<p>Flood fill is probably most commonly known as the &quot;Bucket Fill&quot; application in most art programs <a href="#cite-1">[1]</a>.
+It&apos;s usually indicated by an icon that looks like a bucket and is known to fill in any enclosed area, as shown below:</p>
+<p>
+    <img class="center" src="res/example.png" style="width:100%">
+</p>
+
+<p>Because flood fill is incredibly common, there are a large number of variations to the method, some of which are more optimal than others.
+For this chapter, we will cover the basics: how to fill a domain in a quick and dirty way.
+In subsequent chapters, we will continue our journey by creating more and more efficient flood fill methods, including scanline-based and fixed memory methods <a href="#cite-2">[2]</a>.</p>
+<p>I have decided to split the chapter up for a few important reasons:</p>
+<ol>
+<li>I did not want to flood the Algorithm Archive with flood fill methods all at the same time.
+I feel it&apos;s worth letting each chapter sit for a bit while we savor it&apos;s unique flavor.</li>
+<li>Many users are implementing versions of each algorithm in their own languages and it is difficult to review and submit code for chapters with a lot of code chunks.
+Several sub-chapters with less code is easier for everyone.</li>
+<li>I am kinda under a time-constraint right now and wanted to make sure we regularly get content into the Algorithm Archive.</li>
+</ol>
+<p>So, without further a-do, let&apos;s hop right into it!</p>
+<h2 id="what-does-flood-fill-do">What does flood fill do?</h2>
+<p>Flood fill is essentially composed of 2 parts:</p>
+<ol>
+<li>Determining the extents of the domain to fill</li>
+<li>Walking through all elements within a domain and changing some property</li>
+</ol>
+<p>For the purposes of this chapter, we will be using a set of floating-point values that range from 0 to 1 instead of a color-space like RGB.
+Though bucket fill is always used in art programs in some sort of color space, flood fill is more general and can be used in a space with any type of element.
+As such, it makes sense to use a simpler element type so we can better understand the method.</p>
+<p>So how do we go about finding the extents of the domain to fill?</p>
+<p>Here, a domain will be defined as any connected set of elements in an <script type="math/tex; ">n</script>-dimensional space whose values do not vary beyond a predefined threshold.
+As an example, if we take a circle embedded into a 2-dimensional grid, we have 3 separate domains:</p>
+<ol>
+<li>Inside the circle where all elements are 0.</li>
+<li>The circle, itself, where the elements are set to 0.75.</li>
+<li>Outside the circle where all elements are similarly 0.</li>
+</ol>
+<p>
+    <img class="center" src="res/simple_circle.png" style="width:70%">
+</p>
+
+<p>Though there are some more complicated ways to determine the extents of the domain, we will not focus on this aspect of the flood fill method for the remainder of this chapter and instead leave it for subsequent chapters.
+So now we will focus on the process of walking through each element in the domain and changing some property.</p>
+<h2 id="domain-traversal">Domain traversal</h2>
+<p>As before, the simplest example to work with is that of an image, where each element in our domain is a single pixel.
+Here, we can connect each pixel to all other pixels in its vicinity, like so:</p>
+<p>
+    <img class="center" src="res/grid_1.png" style="width:70%">
+</p>
+
+<p>In this image, a border is shown between each individual pixel and a grid is superimposed to show how each pixel is connected to its neighbors.
+This means that each element has 4 neighbors: north, south, east, and west.
+We could also include northeast, southeast, southwest, and northwest if we wanted to do an 8-way fill, but we will restrict the discussion to the 4-way fill for now, as the method is essentially the same and slightly easier to understand with fewer elements to worry about.</p>
+<p>By connecting each pixel to its neighbors in this way, the flood fill operation becomes a process of graph traversal, not too dissimilar from the <a href="../tree_traversal/tree_traversal.html">tree traversal</a> methods described before.
+This means that after selecting our initial location, we can then traverse through all elements in either a depth-first or breadth-first fashion.
+We will be covering the following this chapter:</p>
+<ol>
+<li>Finding all neighbors</li>
+<li>Depth-first node traversal</li>
+<li>Breadth-first node traversal and small-scale optimizations</li>
+</ol>
+<p>So let&apos;s start by discussing how we might go about finding the neighbors to fill.</p>
+<h3 id="finding-all-neighbors">Finding all neighbors</h3>
+<p>The first step of this method is to query the location of all possible neighbors.
+At first glance, this seems rather straightforward.
+One simply needs to look up, down, left, and right of the current location and add those elements to the list of neighbors if they are:</p>
+<ol>
+<li>On the canvas</li>
+<li>Have a value <em>close enough</em> to the old value we would like to replace</li>
+</ol>
+<p>In code, this might look like this:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+    <span class="token comment"># Finding north, south, east, west neighbors</span>
+    possible_neighbors <span class="token operator">=</span> <span class="token punctuation">[</span>loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># Exclusing neighbors that should not be colored</span>
+    neighbors <span class="token operator">=</span>  <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> possible_neighbor <span class="token keyword">in</span> possible_neighbors
+        <span class="token keyword">if</span> inbounds<span class="token punctuation">(</span>size<span class="token punctuation">(</span>canvas<span class="token punctuation">)</span><span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+           canvas<span class="token punctuation">[</span>possible_neighbor<span class="token punctuation">]</span> <span class="token operator">==</span> old_val
+            push<span class="token operator">!</span><span class="token punctuation">(</span>neighbors<span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> neighbors
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="c" data-name="C"><pre class="language-"><code class="lang-c"><span class="token keyword">int</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span> <span class="token keyword">int</span> new_val<span class="token punctuation">,</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span>neighbors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> points<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">inbounds</span><span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+                c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            neighbors<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="py" data-name="Python"><pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># north, south, east, west neighbors</span>
+    possible_neighbors <span class="token operator">=</span> <span class="token punctuation">[</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+
+    <span class="token comment"># exclude the neighbors that go out of bounds and should not be colored</span>
+    neighbors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> possible_neighbor <span class="token keyword">in</span> possible_neighbors<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> inbounds<span class="token punctuation">(</span>canvas<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> canvas<span class="token punctuation">[</span>possible_neighbor<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">:</span>
+                neighbors<span class="token punctuation">.</span>append<span class="token punctuation">(</span>possible_neighbor<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> neighbors
+</code></pre>
+</div></div></div>
+
+
+<p>This code is set up to return a vector of elements to then use for subsequent sections.</p>
+<h3 id="depth-first-node-traversal">Depth-first node traversal</h3>
+<p>Now that we have the ability to find all neighboring elements, we can proceed to traverse through those nodes in the most straightforward way: recursion.</p>
+<p>In code, it might look like this:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> recursive_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token keyword">end</span>
+
+    canvas<span class="token punctuation">[</span>loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    possible_neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> possible_neighbor <span class="token keyword">in</span> possible_neighbors
+        recursive_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="c" data-name="C"><pre class="language-"><code class="lang-c"><span class="token keyword">void</span> <span class="token function">recursive_fill</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span>
+        <span class="token keyword">int</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>p<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> p<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> new_val<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> neighbors<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">,</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cnt<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">recursive_fill</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> neighbors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="py" data-name="Python"><pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">recursive_fill</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> old_val <span class="token operator">==</span> new_val<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
+    canvas<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> neighbors<span class="token punctuation">:</span>
+        recursive_fill<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> neighbor<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+</code></pre>
+</div></div></div>
+
+<p>The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.</p>
+<p>Additionally, it is possible to do the same type of traversal by managing a stack, like so:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> stack_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> new_val <span class="token operator">==</span> old_val
+        <span class="token keyword">return</span>
+    <span class="token keyword">end</span>
+
+    s <span class="token operator">=</span> Stack<span class="token punctuation">{</span>CartesianIndex<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    push<span class="token operator">!</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> loc<span class="token punctuation">)</span>
+
+    <span class="token keyword">while</span> length<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+        current_loc <span class="token operator">=</span> pop<span class="token operator">!</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> canvas<span class="token punctuation">[</span>current_loc<span class="token punctuation">]</span> <span class="token operator">==</span> old_val
+            canvas<span class="token punctuation">[</span>current_loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+            possible_neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> current_loc<span class="token punctuation">,</span>
+                                                old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> possible_neighbors
+                push<span class="token operator">!</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>neighbor<span class="token punctuation">)</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="c" data-name="C"><pre class="language-"><code class="lang-c"><span class="token keyword">void</span> <span class="token function">stack_fill</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span> <span class="token keyword">int</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">stack</span> stk <span class="token operator">=</span> <span class="token function">get_stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">stack_push</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stk<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">stack_empty</span><span class="token punctuation">(</span>stk<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> cur_loc <span class="token operator">=</span> <span class="token function">stack_pop</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stk<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> new_val<span class="token punctuation">;</span>
+
+            <span class="token keyword">struct</span> <span class="token class-name">point</span> neighbors<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">,</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cnt<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">stack_push</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stk<span class="token punctuation">,</span> neighbors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">free_stack</span><span class="token punctuation">(</span>stk<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="py" data-name="Python"><pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">stack_fill</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> old_val <span class="token operator">==</span> new_val<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
+    stack <span class="token operator">=</span> <span class="token punctuation">[</span>p<span class="token punctuation">]</span>
+
+    <span class="token keyword">while</span> stack<span class="token punctuation">:</span>
+        cur_loc <span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        canvas<span class="token punctuation">[</span>cur_loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+        stack <span class="token operator">+=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+</code></pre>
+</div></div></div>
+
+<p>This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:</p>
+<ol>
+<li>The manually managed stack could be slightly slower and potentially more memory-intensive</li>
+<li>It is easy to reach the maximum recursion depth on certain hardware with the recursive method, so it is best to use the stack-based implementation in those cases.</li>
+</ol>
+<p>If we were to use either of these methods to fill a circle embedded in a two dimensional domain, we would see the following</p>
+<div style="text-align:center">
+<video style="width:70%" controls loop>
+  <source src="res/recurse_animation.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>Here, we see that these methods will traverse through one direction first before filling from there.
+This is potentially the easiest method to write, but it is not the most intuitive fill pattern.
+I suspect that if someone was asked to fill the contents of the circle on their own, they would fill it more evenly from the center, like so:</p>
+<div style="text-align:center">
+<video style="width:70%" controls loop>
+  <source src="res/queue_animation.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<p>This is simply another traversal strategy known as breadth-first traversal and comes with its own set of caveats.
+We will discuss this further in the next subsection</p>
+<h3 id="breadth-first-node-traversal-and-small-scale-optimizations">Breadth-first node traversal and small-scale optimizations</h3>
+<p>Breadth-first node traversal is as simple as switching the stack in the depth-first strategy with a queue.
+The code would look something like this:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">function</span> queue_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> new_val <span class="token operator">==</span> old_val
+        <span class="token keyword">return</span>
+    <span class="token keyword">end</span>
+
+    q <span class="token operator">=</span> Queue<span class="token punctuation">{</span>CartesianIndex<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    enqueue<span class="token operator">!</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> loc<span class="token punctuation">)</span>
+
+    <span class="token comment"># Coloring the initial location</span>
+    canvas<span class="token punctuation">[</span>loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    <span class="token keyword">while</span> length<span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+        current_loc <span class="token operator">=</span> dequeue<span class="token operator">!</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span>
+
+        possible_neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> current_loc<span class="token punctuation">,</span>
+                                            old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+        <span class="token comment"># Coloring as we are enqueuing neighbors</span>
+        <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> possible_neighbors
+            canvas<span class="token punctuation">[</span>neighbor<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+            enqueue<span class="token operator">!</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span>neighbor<span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="c" data-name="C"><pre class="language-"><code class="lang-c"><span class="token keyword">void</span> <span class="token function">queue_fill</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span> <span class="token keyword">int</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">queue</span> q <span class="token operator">=</span> <span class="token function">get_queue</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>q<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">queue_empty</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> cur_loc <span class="token operator">=</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> new_val<span class="token punctuation">;</span>
+
+            <span class="token keyword">struct</span> <span class="token class-name">point</span> neighbors<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">,</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cnt<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>q<span class="token punctuation">,</span> neighbors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">free_queue</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="py" data-name="Python"><pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">queue_fill</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> old_val <span class="token operator">==</span> new_val<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
+    q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+
+    canvas<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    <span class="token keyword">while</span> <span class="token keyword">not</span> q<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cur_loc <span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> neighbors<span class="token punctuation">:</span>
+            canvas<span class="token punctuation">[</span>neighbor<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+            q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>neighbor<span class="token punctuation">)</span>
+</code></pre>
+</div></div></div>
+
+<p>Now, there is a small trick in this code that must be considered to make sure it runs optimally.
+Namely, the nodes must be colored <em>when they are being enqueued</em>, not when visiting the node.
+At least for me, it was not immediately obvious why this would be the case, but let me try to explain.</p>
+<p>Let&apos;s imagine that we decided to write code that colored all neighboring nodes only when visiting them.
+When querying all possible neighbors, we will add 4 elements to the queue for the north, south, east, and west neighbors of the initial node, as shown below:</p>
+<p>
+    <img class="center" src="res/grid_2.png" style="width:70%">
+</p>
+
+<p>Now let&apos;s imagine we travel east first.
+It then enqueues three more nodes: north, south, and east again.
+This is shown below:</p>
+<p>
+    <img class="center" src="res/grid_3.png" style="width:70%">
+</p>
+
+<p>It does not enqueue its west neighbor because this has already been colored.
+At this stage, we will have six nodes ready to be colored and 2 that are already colored.
+Now let&apos;s say we travel north next.
+This node will enqueue three more nodes: west, north, and east, as shown below:</p>
+<p>
+    <img class="center" src="res/grid_4.png" style="width:70%">
+</p>
+
+<p>The problem is that the east element has <em>already been enqueued for coloring by the previous node</em>!.
+This shared element is colored in red.
+As we progress through all four initial neighbors, we will find 4 nodes that are doubly enqueued: all directions diagonal to the initial location!
+This is again shown below:</p>
+<p>
+    <img class="center" src="res/grid_5.png" style="width:70%">
+</p>
+
+<p>As the number of nodes increases, so does the number of duplicate nodes.
+A quick fix is to color the nodes <em>when they are being enqueued</em> like in the example code above.
+When doing this, duplicates will not be enqueued with a breadth-first scheme because they will already be colored when other nodes are trying to find their neighbors.
+This created a node connection pattern like so:</p>
+<p>
+    <img class="center" src="res/grid_6.png" style="width:70%">
+</p>
+
+<p>As some final food for thought: why wasn&apos;t this a problem with the depth-first strategy?
+The simple answer is that it actually was an issue, but it was way less prevalent.
+With the depth-first strategy, a number of unnecessary nodes are still pushed to the stack, but because we consistently push one direction before spreading out to other directions, it is more likely that the nodes have filled neighbors when they are looking for what to fill around them.</p>
+<p>Simply put: depth-first traversal is slightly more efficient in this case unless you can color as querying for neighbors, in which case breadth-first is more efficient.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>As stated before, the method discussed in this chapter is just the tip of the iceberg and many other flood fill methods exist that are likely to be more efficient for most purposes.
+These will all be covered in subsequent chapters which will come out somewhat regularly throughout the next few months, lest we flood that archive with flood fill methods.</p>
+<h2 id="video-explanation">Video Explanation</h2>
+<p>Here is a video describing tree traversal:</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ldqAmkdthHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2 id="example-code">Example Code</h2>
+<p>The example code for this chapter will be the simplest application of flood fill that still adequately tests the code to ensure it is stopping at boundaries appropriately.
+For this, we will create a two dimensional array of floats, all starting at 0.0, and then set a single vertical line of elements at the center to be 1.0.
+After, we will fill in the left-hand side of the array to be all ones by choosing any point within the left domain to fill.</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token keyword">using</span> DataStructures
+<span class="token keyword">using</span> Test
+
+<span class="token comment"># Function to check to make sure we are on the canvas</span>
+<span class="token keyword">function</span> inbounds<span class="token punctuation">(</span>canvas_size<span class="token punctuation">,</span> loc<span class="token punctuation">)</span>
+
+    <span class="token comment"># Make sure we are not beneath or to the left of the canvas</span>
+    <span class="token keyword">if</span> minimum<span class="token punctuation">(</span>Tuple<span class="token punctuation">(</span>loc<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+
+    <span class="token comment"># Make sure we are not to the right of the canvas</span>
+    <span class="token keyword">elseif</span> loc<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> canvas_size<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+
+    <span class="token comment"># Make sure we are not above the canvas</span>
+    <span class="token keyword">elseif</span> loc<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> canvas_size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+    <span class="token comment"># Finding north, south, east, west neighbors</span>
+    possible_neighbors <span class="token operator">=</span> <span class="token punctuation">[</span>loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                          loc <span class="token operator">+</span> CartesianIndex<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># Exclusing neighbors that should not be colored</span>
+    neighbors <span class="token operator">=</span>  <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> possible_neighbor <span class="token keyword">in</span> possible_neighbors
+        <span class="token keyword">if</span> inbounds<span class="token punctuation">(</span>size<span class="token punctuation">(</span>canvas<span class="token punctuation">)</span><span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+           canvas<span class="token punctuation">[</span>possible_neighbor<span class="token punctuation">]</span> <span class="token operator">==</span> old_val
+            push<span class="token operator">!</span><span class="token punctuation">(</span>neighbors<span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+
+    <span class="token keyword">return</span> neighbors
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> stack_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> new_val <span class="token operator">==</span> old_val
+        <span class="token keyword">return</span>
+    <span class="token keyword">end</span>
+
+    s <span class="token operator">=</span> Stack<span class="token punctuation">{</span>CartesianIndex<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    push<span class="token operator">!</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> loc<span class="token punctuation">)</span>
+
+    <span class="token keyword">while</span> length<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+        current_loc <span class="token operator">=</span> pop<span class="token operator">!</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> canvas<span class="token punctuation">[</span>current_loc<span class="token punctuation">]</span> <span class="token operator">==</span> old_val
+            canvas<span class="token punctuation">[</span>current_loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+            possible_neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> current_loc<span class="token punctuation">,</span>
+                                                old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> possible_neighbors
+                push<span class="token operator">!</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>neighbor<span class="token punctuation">)</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">end</span>
+
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+
+<span class="token keyword">function</span> queue_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> new_val <span class="token operator">==</span> old_val
+        <span class="token keyword">return</span>
+    <span class="token keyword">end</span>
+
+    q <span class="token operator">=</span> Queue<span class="token punctuation">{</span>CartesianIndex<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    enqueue<span class="token operator">!</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span> loc<span class="token punctuation">)</span>
+
+    <span class="token comment"># Coloring the initial location</span>
+    canvas<span class="token punctuation">[</span>loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    <span class="token keyword">while</span> length<span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span>
+        current_loc <span class="token operator">=</span> dequeue<span class="token operator">!</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span>
+
+        possible_neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> current_loc<span class="token punctuation">,</span>
+                                            old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+        <span class="token comment"># Coloring as we are enqueuing neighbors</span>
+        <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> possible_neighbors
+            canvas<span class="token punctuation">[</span>neighbor<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+            enqueue<span class="token operator">!</span><span class="token punctuation">(</span>q<span class="token punctuation">,</span>neighbor<span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> recursive_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">::</span>CartesianIndex<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token keyword">end</span>
+
+    canvas<span class="token punctuation">[</span>loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    possible_neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> possible_neighbor <span class="token keyword">in</span> possible_neighbors
+        recursive_fill<span class="token operator">!</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Creation of a 5x5 grid with a single row of 1.0 elements </span>
+    grid <span class="token operator">=</span> zeros<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+    grid<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token comment"># Create solution grid</span>
+    answer_grid <span class="token operator">=</span> zeros<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+    answer_grid<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token comment"># Start filling at 1,1</span>
+    start_loc <span class="token operator">=</span> CartesianIndex<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+    @testset <span class="token string">&quot;Fill Methods&quot;</span> <span class="token keyword">begin</span>
+        <span class="token comment"># Use recursive method and reinitialize grid</span>
+        recursive_fill<span class="token operator">!</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span>
+        @test grid <span class="token operator">==</span> answer_grid
+
+        grid<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token comment"># Use queue method and reinitialize grid</span>
+        queue_fill<span class="token operator">!</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span>
+        @test grid <span class="token operator">==</span> answer_grid
+
+        grid<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token number">0</span>
+
+        <span class="token comment"># Use stack method and reinitialize grid</span>
+        stack_fill<span class="token operator">!</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span>
+        @test grid <span class="token operator">==</span> answer_grid
+    <span class="token keyword">end</span>
+
+<span class="token keyword">end</span>
+
+main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="c" data-name="C"><pre class="language-"><code class="lang-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">canvas</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> max_x<span class="token punctuation">,</span> max_y<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">stack</span> <span class="token punctuation">{</span>
+    <span class="token class-name">size_t</span> top<span class="token punctuation">,</span> capacity<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span>data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">queue</span> <span class="token punctuation">{</span>
+    <span class="token class-name">size_t</span> front<span class="token punctuation">,</span> back<span class="token punctuation">,</span> capacity<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span>data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">inbounds</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> p<span class="token punctuation">.</span>y <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> p<span class="token punctuation">.</span>y <span class="token operator">&gt;=</span> c<span class="token punctuation">.</span>max_y <span class="token operator">||</span> p<span class="token punctuation">.</span>x <span class="token operator">&gt;=</span> c<span class="token punctuation">.</span>max_x<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span> <span class="token keyword">int</span> new_val<span class="token punctuation">,</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span>neighbors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> points<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>p<span class="token punctuation">.</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">inbounds</span><span class="token punctuation">(</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+                c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            neighbors<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> points<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> cnt<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">stack</span> <span class="token function">get_stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> <span class="token class-name">stack</span> stk<span class="token punctuation">;</span>
+
+    stk<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">4</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">point</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stk<span class="token punctuation">.</span>capacity <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    stk<span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> stk<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">stack_empty</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">stack</span> stk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> stk<span class="token punctuation">.</span>top <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">stack_push</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">stack</span> <span class="token operator">*</span>stk<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>stk<span class="token operator">-&gt;</span>top <span class="token operator">==</span> stk<span class="token operator">-&gt;</span>capacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        stk<span class="token operator">-&gt;</span>capacity <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        stk<span class="token operator">-&gt;</span>data <span class="token operator">=</span> <span class="token function">realloc</span><span class="token punctuation">(</span>stk<span class="token operator">-&gt;</span>data<span class="token punctuation">,</span> stk<span class="token operator">-&gt;</span>capacity <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>stk<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    stk<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span>stk<span class="token operator">-&gt;</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> element<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token function">stack_pop</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">stack</span> <span class="token operator">*</span>stk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> stk<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span><span class="token operator">--</span>stk<span class="token operator">-&gt;</span>top<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">free_stack</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">stack</span> stk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>stk<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">stack_fill</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span> <span class="token keyword">int</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">stack</span> stk <span class="token operator">=</span> <span class="token function">get_stack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">stack_push</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stk<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">stack_empty</span><span class="token punctuation">(</span>stk<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> cur_loc <span class="token operator">=</span> <span class="token function">stack_pop</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stk<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> new_val<span class="token punctuation">;</span>
+
+            <span class="token keyword">struct</span> <span class="token class-name">point</span> neighbors<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">,</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cnt<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">stack_push</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stk<span class="token punctuation">,</span> neighbors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">free_stack</span><span class="token punctuation">(</span>stk<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">queue</span> <span class="token function">get_queue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> <span class="token class-name">queue</span> q<span class="token punctuation">;</span>
+
+    q<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token function">calloc</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">point</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span>front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span>back <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    q<span class="token punctuation">.</span>capacity <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> q<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">queue_empty</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">queue</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> q<span class="token punctuation">.</span>front <span class="token operator">==</span> q<span class="token punctuation">.</span>back<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">queue</span> <span class="token operator">*</span>q<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>front <span class="token operator">==</span> <span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>back <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> q<span class="token operator">-&gt;</span>capacity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">size_t</span> size <span class="token operator">=</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span>tmp <span class="token operator">=</span> <span class="token function">calloc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>capacity <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">memcpy</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> q<span class="token operator">-&gt;</span>data <span class="token operator">+</span> q<span class="token operator">-&gt;</span>front<span class="token punctuation">,</span> <span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>capacity <span class="token operator">-</span> q<span class="token operator">-&gt;</span>front<span class="token punctuation">)</span> <span class="token operator">*</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">memcpy</span><span class="token punctuation">(</span>tmp <span class="token operator">+</span> q<span class="token operator">-&gt;</span>capacity <span class="token operator">-</span> q<span class="token operator">-&gt;</span>front<span class="token punctuation">,</span> q<span class="token operator">-&gt;</span>data<span class="token punctuation">,</span> <span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>front <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">free</span><span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        q<span class="token operator">-&gt;</span>data <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        q<span class="token operator">-&gt;</span>back <span class="token operator">=</span> q<span class="token operator">-&gt;</span>capacity <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        q<span class="token operator">-&gt;</span>front <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        q<span class="token operator">-&gt;</span>capacity <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    q<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span>q<span class="token operator">-&gt;</span>back<span class="token punctuation">]</span> <span class="token operator">=</span> element<span class="token punctuation">;</span>
+    q<span class="token operator">-&gt;</span>back <span class="token operator">=</span> <span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>back <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> q<span class="token operator">-&gt;</span>capacity<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">queue</span> <span class="token operator">*</span>q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> ret <span class="token operator">=</span> q<span class="token operator">-&gt;</span>data<span class="token punctuation">[</span>q<span class="token operator">-&gt;</span>front<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    q<span class="token operator">-&gt;</span>front <span class="token operator">=</span> <span class="token punctuation">(</span>q<span class="token operator">-&gt;</span>front <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> q<span class="token operator">-&gt;</span>capacity<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">free_queue</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">queue</span> q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">queue_fill</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span> <span class="token keyword">int</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">queue</span> q <span class="token operator">=</span> <span class="token function">get_queue</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">point</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>q<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">queue_empty</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">struct</span> <span class="token class-name">point</span> cur_loc <span class="token operator">=</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>cur_loc<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> cur_loc<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> new_val<span class="token punctuation">;</span>
+
+            <span class="token keyword">struct</span> <span class="token class-name">point</span> neighbors<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">,</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cnt<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">enqueue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>q<span class="token punctuation">,</span> neighbors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">free_queue</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">recursive_fill</span><span class="token punctuation">(</span><span class="token keyword">struct</span> <span class="token class-name">canvas</span> c<span class="token punctuation">,</span> <span class="token keyword">struct</span> <span class="token class-name">point</span> p<span class="token punctuation">,</span> <span class="token keyword">int</span> old_val<span class="token punctuation">,</span>
+        <span class="token keyword">int</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>old_val <span class="token operator">==</span> new_val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    c<span class="token punctuation">.</span>data<span class="token punctuation">[</span>p<span class="token punctuation">.</span>x <span class="token operator">+</span> c<span class="token punctuation">.</span>max_x <span class="token operator">*</span> p<span class="token punctuation">.</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> new_val<span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> neighbors<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">,</span> neighbors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cnt<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">recursive_fill</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> neighbors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">grid_cmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>a<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>b<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> grid<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> grid1<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> grid2<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> answer_grid<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">canvas</span> c <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> grid<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">canvas</span> c1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> grid1<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> <span class="token class-name">canvas</span> c2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> grid2<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">struct</span> <span class="token class-name">point</span> start_loc <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> pass_cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">recursive_fill</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pass_cnt <span class="token operator">+=</span> <span class="token function">grid_cmp</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> answer_grid<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">stack_fill</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pass_cnt <span class="token operator">+=</span> <span class="token function">grid_cmp</span><span class="token punctuation">(</span>grid1<span class="token punctuation">,</span> answer_grid<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">queue_fill</span><span class="token punctuation">(</span>c2<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pass_cnt <span class="token operator">+=</span> <span class="token function">grid_cmp</span><span class="token punctuation">(</span>grid2<span class="token punctuation">,</span> answer_grid<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Test Summary: | Pass\tTotal\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;Fill Methods  |\t%d\t3\n&quot;</span><span class="token punctuation">,</span> pass_cnt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="py" data-name="Python"><pre class="language-"><code class="lang-python"><span class="token keyword">from</span> collections <span class="token keyword">import</span> namedtuple
+<span class="token keyword">from</span> queue <span class="token keyword">import</span> Queue
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+Point <span class="token operator">=</span> namedtuple<span class="token punctuation">(</span><span class="token string">&quot;Point&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;x y&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">inbounds</span><span class="token punctuation">(</span>canvas_shape<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">min</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword">and</span> p<span class="token punctuation">.</span>x <span class="token operator">&lt;</span> canvas_shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">and</span> p<span class="token punctuation">.</span>y <span class="token operator">&lt;</span> canvas_shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">find_neighbors</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># north, south, east, west neighbors</span>
+    possible_neighbors <span class="token operator">=</span> <span class="token punctuation">[</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Point<span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token punctuation">,</span> p<span class="token punctuation">.</span>y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+
+    <span class="token comment"># exclude the neighbors that go out of bounds and should not be colored</span>
+    neighbors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> possible_neighbor <span class="token keyword">in</span> possible_neighbors<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> inbounds<span class="token punctuation">(</span>canvas<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> possible_neighbor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> canvas<span class="token punctuation">[</span>possible_neighbor<span class="token punctuation">]</span> <span class="token operator">==</span> old_val<span class="token punctuation">:</span>
+                neighbors<span class="token punctuation">.</span>append<span class="token punctuation">(</span>possible_neighbor<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> neighbors
+
+<span class="token keyword">def</span> <span class="token function">stack_fill</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> old_val <span class="token operator">==</span> new_val<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
+    stack <span class="token operator">=</span> <span class="token punctuation">[</span>p<span class="token punctuation">]</span>
+
+    <span class="token keyword">while</span> stack<span class="token punctuation">:</span>
+        cur_loc <span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        canvas<span class="token punctuation">[</span>cur_loc<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+        stack <span class="token operator">+=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">queue_fill</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> old_val <span class="token operator">==</span> new_val<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
+    q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+
+    canvas<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    <span class="token keyword">while</span> <span class="token keyword">not</span> q<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cur_loc <span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> cur_loc<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> neighbors<span class="token punctuation">:</span>
+            canvas<span class="token punctuation">[</span>neighbor<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+            q<span class="token punctuation">.</span>put<span class="token punctuation">(</span>neighbor<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">recursive_fill</span><span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> old_val <span class="token operator">==</span> new_val<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+
+    canvas<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> new_val
+
+    neighbors <span class="token operator">=</span> find_neighbors<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> p<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> neighbor <span class="token keyword">in</span> neighbors<span class="token punctuation">:</span>
+        recursive_fill<span class="token punctuation">(</span>canvas<span class="token punctuation">,</span> neighbor<span class="token punctuation">,</span> old_val<span class="token punctuation">,</span> new_val<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    grid <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    grid<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+    answer <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    answer<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+    c0 <span class="token operator">=</span> grid<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    c1 <span class="token operator">=</span> grid<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    c2 <span class="token operator">=</span> grid<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    start_loc <span class="token operator">=</span> Point<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+    recursive_fill<span class="token punctuation">(</span>c0<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    queue_fill<span class="token punctuation">(</span>c1<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    stack_fill<span class="token punctuation">(</span>c2<span class="token punctuation">,</span> start_loc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">assert</span> <span class="token punctuation">(</span>c0 <span class="token operator">==</span> answer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> <span class="token punctuation">(</span>c1 <span class="token operator">==</span> answer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">assert</span> <span class="token punctuation">(</span>c2 <span class="token operator">==</span> answer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Tests Passed&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</div></div></div>
+
+
+<h3 id="bibliography">Bibliography</h3>
+<p><div class="references"><div class="citation"><div class="citation-number" id="cite-1">1.</div><div class="citation-text"><a href="https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html" target="_blank">Bucket Fill in Gimp</a>, 2020.</div></div><div class="citation"><div class="citation-number" id="cite-2">2.</div><div class="citation-text">Torbert, Shane, Applied computer science, <i>Springer</i>, 2016.</div></div></div></p>
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="code-examples">Code Examples</h5>
+<p>The code examples are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md" target="_blank">LICENSE.md</a>).</p>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h5 id="imagesgraphics">Images/Graphics</h5>
+<ul>
+<li>The image &quot;<a href="res/example.png">Example Bucket Fill</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/simple_circle.png">Circle Domains</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/grid_1.png">Grid 1</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/grid_2.png">Grid 2</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/grid_3.png">Grid 3</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/grid_4.png">Grid 4</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/grid_5.png">Grid 5</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The image &quot;<a href="res/grid_6.png">Grid 6</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/recurse_animation.mp4">Stack Fill</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+<li>The video &quot;<a href="res/queue_animation.mp4">Queue Fill</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../computer_graphics/computer_graphics.html" class="navigation navigation-prev " aria-label="Previous page: Computer Graphics">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../quantum_information/quantum_information.html" class="navigation navigation-next " aria-label="Next page: Quantum Information">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flood Fill","level":"1.17.1","depth":2,"next":{"title":"Quantum Information","level":"1.18","depth":1,"path":"contents/quantum_information/quantum_information.md","ref":"contents/quantum_information/quantum_information.md","articles":[]},"previous":{"title":"Computer Graphics","level":"1.17","depth":1,"path":"contents/computer_graphics/computer_graphics.md","ref":"contents/computer_graphics/computer_graphics.md","articles":[{"title":"Flood Fill","level":"1.17.1","depth":2,"path":"contents/flood_fill/flood_fill.md","ref":"contents/flood_fill/flood_fill.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}}],"gitbook":"*"},"file":{"path":"contents/flood_fill/flood_fill.md","mtime":"2021-08-16T03:21:55.604Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-16T03:22:29.158Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

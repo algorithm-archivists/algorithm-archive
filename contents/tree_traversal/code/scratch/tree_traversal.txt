@@ -1,0 +1,78 @@
+delete [all] of [lChild v]
+delete [all] of [mChild v]
+delete [all] of [rChild v]
+add [0] to [lChild v]
+add [0] to [mChild v]
+add [0] to [rChild v]
+
+
+define dfs
+delete [all] of [dfs v]
+if <(length of [lChild v]) > (0) > then
+    dfs from (1)
+end
+
+define dfs from (i)
+if <(i) > (0)> then
+    add (i) to [dfs v]
+    dfs from (item (i) of [lChild v])
+    dfs from (item (i) of [mChild v])
+    dfs from (item (i) of [rChild v])
+end
+
+
+define dfs postorder from (i)
+if <(i) > (0)> then
+    dfs postorder from (item (i) of [lChild v])
+    dfs postorder from (item (i) of [mChild v])
+    dfs postorder from (item (i) of [rChild v])
+    add (i) to [dfs v]
+end
+
+
+define dfs in-order from (i)
+if <(i) > (0)> then
+    dfs in-order from (item (i) of [lChild v])
+    add (i) to [dfs v]
+    dfs in-order from (item (i) of [rChild v])
+end
+
+
+define dfs stack
+delete [all] of [dfs v]
+delete [all] of [stack v]
+if <(length of [lChild v]) > (0)> then
+    add (1) to [stack v]
+end
+repeat until <(length of [stack v]) = (0)>
+    repeat until <not <(item (1) of [stack v]) = (0)>>
+        delete (1) of [stack v]
+    end
+    if <(length of [stack v]) > (0)> then
+        add (item (1) of [stack v]) to [dfs v]
+        delete (1) of [stack v]
+        insert (item (item [last] of [dfs v]) of [rChild]) at (1) of [stack v]
+        insert (item (item [last] of [dfs v]) of [mChild]) at (1) of [stack v]
+        insert (item (item [last] of [dfs v]) of [lChild]) at (1) of [stack v]
+    end
+end
+
+
+define bfs
+delete [all] of [bfs v]
+delete [all] of [queue v]
+if <(length of [lChild v]) > (0)> then
+    add (1) to [queue v]
+end
+repeat until <(length of [queue v]) = (0)>
+    repeat until <not <(item (1) of [queue v]) = (0)>>
+        delete (1) of [queue v]
+    end
+    if <(length of [queue v]) > (0)> then
+        add (item (1) of [queue v]) to [dfs v]
+        add (item (item [1] of [dfs v]) of [rChild]) to [queue v]
+        add (item (item [1] of [dfs v]) of [mChild]) to [queue v]
+        add (item (item [1] of [dfs v]) of [lChild]) to [queue v]
+        delete (1) of [queue v]
+    end
+end

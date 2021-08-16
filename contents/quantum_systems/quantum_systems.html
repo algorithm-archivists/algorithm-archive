@@ -1,0 +1,1262 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Quantum Systems · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.20">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../split-operator_method/split-operator_method.html" />
+    
+    
+    <link rel="prev" href="../verlet_integration/verlet_integration.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/introduction.html">
+            
+                <a href="../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../plotting/plotting.html">
+            
+                <a href="../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../domain_coloring/domain_coloring.html">
+            
+                <a href="../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../IFS/IFS.html">
+            
+                <a href="../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../barnsley/barnsley.html">
+            
+                <a href="../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../data_structures/data_structures.html">
+            
+                <a href="../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mathematical_background/mathematical_background.html">
+            
+                <a href="../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../notation/notation.html">
+            
+                <a href="../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../affine_transformations/affine_transformations.html">
+            
+                <a href="../affine_transformations/affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../bitlogic/bitlogic.html">
+            
+                <a href="../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../convolutions/convolutions.html">
+            
+                <a href="../convolutions/convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../convolutions/1d/1d.html">
+            
+                <a href="../convolutions/1d/1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../convolutions/multiplication/multiplication.html">
+            
+                <a href="../convolutions/multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../convolutions/2d/2d.html">
+            
+                <a href="../convolutions/2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../tree_traversal/tree_traversal.html">
+            
+                <a href="../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../matrix_methods/matrix_methods.html">
+            
+                <a href="../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../computational_geometry/computational_geometry.html">
+            
+                <a href="../computational_geometry/computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../jarvis_march/jarvis_march.html">
+            
+                <a href="../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../graham_scan/graham_scan.html">
+            
+                <a href="../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../decision_problems/decision_problems.html">
+            
+                <a href="../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../differential_equations/differential_equations.html">
+            
+                <a href="../differential_equations/differential_equations.html">
+            
+                    
+                    Differential Equation Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../forward_euler_method/forward_euler_method.html">
+            
+                <a href="../forward_euler_method/forward_euler_method.html">
+            
+                    
+                    Forward Euler Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../physics_solvers/physics_solvers.html">
+            
+                <a href="../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../verlet_integration/verlet_integration.html">
+            
+                <a href="../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15.2" data-path="quantum_systems.html">
+            
+                <a href="quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.2.1" data-path="../split-operator_method/split-operator_method.html">
+            
+                <a href="../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../data_compression/data_compression.html">
+            
+                <a href="../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../computer_graphics/computer_graphics.html">
+            
+                <a href="../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../flood_fill/flood_fill.html">
+            
+                <a href="../flood_fill/flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../quantum_information/quantum_information.html">
+            
+                <a href="../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../computus/computus.html">
+            
+                <a href="../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../approximate_counting/approximate_counting.html">
+            
+                <a href="../approximate_counting/approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Quantum Systems</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="quantum-systems">Quantum Systems</h1>
+<p>As I am sure you have heard, the quantum world is weird.
+As you deal with progressively smaller and smaller systems, at some point, it becomes less accurate to describe objects as particles.
+Instead, it is better to describe objects as probability densities.
+These densities are easiest to understand in terms of <em>wavefunctions</em>, which are complex functions characterizing a quantum system&apos;s behavior.</p>
+<p>Again, this is pretty common knowledge; however, there is a distinct lack of readable literature on how to simulate quantum systems, even though there are numerous methods for exactly that!
+This section will deal with the computation of quantum states with classical machines.
+Now, I know what you are thinking, &quot;Wait. Why are we simulating quantum systems on classical computers? Why not simulate it with some sort of experiment or with quantum computers?&quot;
+Well, here&apos;s where the notation gets really sticky.</p>
+<p>There is a clear difference between quantum computers and quantum simulators.
+A <em>quantum computer</em> is the quantum analog to a classical computer, replacing bits with qubits by using quantum information theory.
+Quantum computers are usually thought of as a way to use quantum mechanics to eventually solve real-world problems with new quantum algorithms.
+Both Grover&apos;s and Shor&apos;s algorithms are good examples of cases where quantum computation could greatly change the landscape of modern computation as we know it!</p>
+<p><em>Quantum simulators</em> on the other hand are quantum systems used to better understand quantum mechanics.
+These will often come in the form of experimental quantum systems that express quantum behavior and allow us to better understand other areas of quantum systems.
+In other words, quantum simulators are general techniques to study quantum systems on quantum hardware; however, quantum computers are quantum hardware used for the explicit purpose of quantum computation with qubits.
+Because supercomputers are not great at performing quantum computations, certain quantum simulators exist as a building block for quantum computation.
+A <em>universal quantum simulator</em> is often called a quantum computer for this reason.</p>
+<p>The truth is that quantum simulators are hard to make in laboratories, so simulating quantum systems on classical hardware is as good as we can do in most cases.
+This section is devoted to all the different methods currently used to solve complex quantum systems, so let&apos;s start with the Schrödinger Equation, which has many different formulations.
+Here is the easiest one to explain:</p>
+<p><script type="math/tex; mode=display">
+i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \left[-\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r},t) \right] \Psi(\mathbf{r},t)
+</script></p>
+<p>Where <script type="math/tex; ">\Psi(\mathbf{r},t)</script> is a quantum wavefunction, <script type="math/tex; ">V(\mathbf{r},t)</script> is a <em>trapping potential</em>, <script type="math/tex; ">\nabla^2</script> is a <em>Laplacian</em>, <script type="math/tex; ">\mathbf{r}</script> is some sort of spatial component, and <script type="math/tex; ">t</script> is time.
+There is a lot to take in here; however, it&apos;s ultimately just some time derivative on the left-hand side and a spatial derivative (with some extra steps) on the right-hand side.
+In this way, it isn&apos;t too different from the diffusion (heat) equation:</p>
+<p><script type="math/tex; mode=display">
+\frac{\partial\phi(\mathbf{r},t)}{\partial t} = D \nabla^2 \phi(\mathbf{r},t)
+</script></p>
+<p>where <script type="math/tex; ">D</script> is some positive definite matrix and <script type="math/tex; ">\phi(\mathbf{r},t)</script> is the density (or temperature) of the system.
+In fact, this is why one of the most common types of quantum simulation is sometimes called  <em>diffusion Monte Carlo</em>.
+There really isn&apos;t that much of a difference between the two systems in terms of how they are simulated on classical hardware... but we are getting ahead of ourselves.
+For now, let&apos;s talk about how quantum mechanics differs from classical mechanics and how we can use this to our advantage.</p>
+<h2 id="probability-density">Probability Density</h2>
+<p>Quantum mechanics works fundamentally differently than classical mechanics in physics.
+The wavefunction can be thought of as a set of all possible states for an object to be in, where there is some probability for the particle to be found in each state.
+This means that it is not possible to say that a particle is at a particular location, and instead we often say that it could be at any location with probability, as shown in the <em>probability density</em>:</p>
+<p><script type="math/tex; mode=display">
+P(\mathbf{r}, t) = |\Psi(\mathbf{r},t)|^2 = \Psi(\mathbf{r},t)^{*}\Psi(\mathbf{r},t)
+</script></p>
+<p>Here, there are 2 things to note:</p>
+<ol>
+<li>The absolute value squared of a complex parameter <script type="math/tex; ">\Psi(\mathbf{r},t)</script> is a dot product (inner product) between a complex function and it&apos;s Hermitian conjugate. This means the value will always be real, while the wavefunction, itself, might not be.</li>
+<li>As you have probably heard, once a wavefunction is observed it collapses onto a single state. This can be simply interpreted as absolute knowledge of the particle&apos;s location. A probability density doesn&apos;t make sense if we know where the particle is!</li>
+</ol>
+<p>Now, to be clear: the probabilities must all sum to 1, or (more formally):</p>
+<p><script type="math/tex; mode=display">
+\int_{-\infty}^{+\infty}|\Psi(\mathbf{r},t)|^2 d\mathbf{r} = 1
+</script></p>
+<p>This simply means that the probability of finding our quantum particle <em>somewhere in real space</em> is 1.
+In other words, our particle must exist somewhere in the known universe.</p>
+<p>As another note: Just like position space can be parameterized by a position vector <script type="math/tex; ">\textbf{x}</script>, wavefunctions can also be parameterized by a <em>wave</em> vector <script type="math/tex; ">\textbf{k}</script> in frequency space.
+Any wavevector <script type="math/tex; ">\textbf{k}</script> has the same units as reciprocal space and is thus analogous to angular frequency <script type="math/tex; ">\omega</script>.
+Often times, the wavevector space is called <em>momentum</em> space, which makes sense when considering the de Broglie formula:</p>
+<p><script type="math/tex; mode=display">
+p = \frac{h}{\lambda} = \frac{2 \pi h}{2 \pi \lambda} = \hbar k
+</script></p>
+<p>where <script type="math/tex; ">h</script> is Planck&apos;s constant and <script type="math/tex; ">\lambda</script> is the wavelength.
+This means that we can ultimately move between position and momentum space by using <a href="../../algorithms/cooley_tukey/cooley_tukey.md">Fourier Transforms</a>, which is incredibly useful in a number of cases!</p>
+<p>Even though the relation between position and momentum space is an essential cornerstone of understanding modern quantum mechanics, it is difficult to understand at a fundamental level.
+Position space and momentum space are related by a Fourier transform; however, the rather hand-wavey argument above might not have been convincing enough and it does not offer any intuitive description of <em>why</em> the Fourier transform comes into this discussion at all.
+The easiest way to understand this might be to look at the <em>Heisenberg uncertainty principle</em>, which is a fundamental relation between position and momentum space.</p>
+<h2 id="heisenberg-uncertainty-principle">Heisenberg Uncertainty Principle</h2>
+<p>Simply put, the Heisenberg uncertainty principle states that we cannot definitely know both the position and momentum of a quantum particle.
+In particular, it says:</p>
+<p><script type="math/tex; mode=display">
+\sigma_x \sigma_p \geq \frac{\hbar}{2}
+</script></p>
+<p>where <script type="math/tex; ">\hbar</script> is Planck&apos;s constant and <script type="math/tex; ">\sigma_q = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(q_i-\mu)^2}</script>.
+In this case, <script type="math/tex; ">\sigma</script> is the standard deviation, <script type="math/tex; ">\mu</script> is the statistical mean of your distribution, <script type="math/tex; ">N</script> is the number of points sampled, <script type="math/tex; ">q_i</script> is the value for each point <script type="math/tex; ">i</script>, and <script type="math/tex; ">q</script> stands for <script type="math/tex; ">r</script> or <script type="math/tex; ">p</script>.
+Ultimately, this means that if we have a higher precision in position space, we will have a lower precision in momentum space.
+The converse is also true: a higher precision in momentum space will lead to a lower precision in position space.</p>
+<p>This makes the most sense if we imagine having a Gaussian-like probability density (<script type="math/tex; ">|\Psi(x)|^2</script>) in position space, which will provide a Gaussian-like density when in momentum space.
+Here, we see that if we have a broader distribution in one space, we must have a thinner distribution in the opposite space, as shown here:</p>
+<p>
+    <img class="center" src="res/gaussian.gif" style="width:70%">
+</p>
+
+
+<p>Because the density can be interpreted as &quot;the probability of finding a quantum particle at any provided location in position (<script type="math/tex; ">x_i</script>) or momentum (<script type="math/tex; ">k_i</script>) space, the interpretation is clear: the more we understand about a particle&apos;s position, the less we understand about it&apos;s momentum.
+This is a powerful statement and should be given some thought.</p>
+<p>To me, the most interesting part of this description is not the physical interpretation, but the fact that this act of transforming between larger and smaller Gaussians is precisely what Fourier transforms do!
+This further strengthens our argument from before.
+Position and momentum space are related by the Fourier transform!</p>
+<p>This is the heart of several algorithms for simulating quantum systems, including the <a href="../../algorithms/split-operator_method/split-operator_method">Split-operator method</a>.</p>
+<p>At least for me, I found this description to be intuitive, but not complete.
+There is still something missing from the picture that should be described in more depth, and to do that, we need to dive deeper into the heart of quantum mechanics and into <em>Hamiltonians</em>.</p>
+<h2 id="hamiltonian">Hamiltonian</h2>
+<p>Here is the Schrödinger equation again:</p>
+<p><script type="math/tex; mode=display">
+i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \left[-\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r},t) \right] \Psi(\mathbf{r},t)
+</script></p>
+<p>We described it in the initial section of this chapter.
+For the most part, when we are trying to solve this equation the left-hand side does not change.
+It&apos;s always <script type="math/tex; ">i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t}</script>.
+On the other hand, the right-hand side can change a lot depending on the situation.
+That is to say that we can easily simplify the Schrödinger equation by using a mathematical formalism known as the <em>Hamiltonian</em>.</p>
+<p>To be clear, Hamiltonian mechanics is not a quantum-specific idea.
+It&apos;s everywhere in statistical physics and is often taught in classical physics courses as an analogue to another notational form known as Lagrangian mechanics.
+For simplicity, we will restrict our discussion here to interpreting Hamiltonians physically.
+We can basically say that the Hamiltonian is a measure of the energy of our quantum system.
+More specifically, we can say that the Hamiltonian is a set of energy <em>operators</em> that act on our wavefunction.</p>
+<p>In the case of a 1D particle in a harmonic trap, we might use the following definitions:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\hat H &= \hat T + \hat V \\
+\hat T &= \frac{p^2}{2m} \\
+\hat V &= \frac{1}{2}\omega x^2
+\end{align}
+</script></p>
+<p>where <script type="math/tex; ">p = -i\hbar \nabla</script> is the <em>momentum operator</em> and <script type="math/tex; ">\omega</script> is the <em>trapping frequency</em> indicating how confined our quantum system will be.
+In this case, <script type="math/tex; ">\hat T</script> is an operator that works on our wavefunction in momentum space, while <script type="math/tex; ">\hat V</script> acts in position space.
+Both of these are operators.
+That is to say that they <em>operate</em> on our quantum system by transforming it in some way.
+Ultimately, this means that the operators are not meant to be interpreted on their own without acting on some other object, in this case, the wavefunction <script type="math/tex; ">\Psi(x)</script>.</p>
+<p>In the end, we can update our Schrödinger equation to be</p>
+<p><script type="math/tex; mode=display">
+i \hbar \frac{\partial \Psi(\mathbf{r},t)}{\partial t} = \hat H \Psi(\mathbf{r},t)
+</script></p>
+<p>Which is a lot cleaner and more general.
+Now, the Schrödinger equation can solve any quantum system so long as it can be written in terms of Hamiltonian mechanics!</p>
+<p>When looking at the operators, it is clear that the <script type="math/tex; ">\hat V</script> operator is in position space.
+We can clearly see that it operates as a function of <script type="math/tex; ">x</script>.
+That said, it is not immediately obvious why the <script type="math/tex; ">\hat T</script> is in momentum space.
+This is not an easy question to answer, but it is definitely important and will be covered in more depth when we discuss spectral methods.</p>
+<p>For now, we will blanketly say</p>
+<p><script type="math/tex; mode=display">
+\frac{\partial f}{\partial x} = \mathcal{F}^{-1}\left( 2\pi i k \mathcal{F}\left( f \right)\right)
+</script></p>
+<p>In other words, we can derive a function by performing a Fourier transform on the function, multiplying by some momentum-space grid, and then inverse-transforming it back.
+Because this operation inherently involves a transform into momentum space before transformation, it is a momentum-space operator.</p>
+<p>This is the most intuitive reasoning I can find; however, I am sure there are more intuitive explanations of why the derivatives are always momentum-space operations.
+This section will be updated further when we discuss spectral methods, but if you have better descriptions, please let me know!</p>
+<h2 id="bra-ket-notation">Bra Ket Notation</h2>
+<p>Unfortunately, the interpretation of quantum simulation is rather tricky and is sometimes easier to understand with slightly different notation.
+This notation is called <em>braket</em> notation, where a <em>ket</em> looks like this:</p>
+<p><script type="math/tex; mode=display">
+\lvert A \rangle
+</script></p>
+<p>and basically describes <script type="math/tex; ">A</script> as a column vector.
+The <em>bra</em> represents the Hermitian conjugate of the ket and looks like this:</p>
+<p><script type="math/tex; mode=display">
+\langle B \rvert
+</script></p>
+<p>The ket is often represented as a row vector for <script type="math/tex; ">B</script>.
+Because of this, <script type="math/tex; "> \langle B \rvert A \rangle </script> represents the inner product of the two vectors and <script type="math/tex; "> \lvert A \rangle \langle B \rvert </script> represents the outer product.
+Now, to this point, the braket notation does not have any particularly quantum-like features; however, it becomes useful when describing actual quantum phenomenon.
+For example, if we want to indicate the probability of a wavefunction <script type="math/tex; ">\psi</script> collapsing onto state <script type="math/tex; ">\phi</script>, we might write: <script type="math/tex; ">\langle \phi \rvert \psi \rangle</script>, which is precisely the same as the probability density defined above.</p>
+<p>Now that we have a basic understanding of the notation, we should go through several other important quantum mechanical ideas and properties.</p>
+<h2 id="eigenstates">Eigenstates</h2>
+<p>As mentioned, the wavefunction <script type="math/tex; ">\Psi(x)</script> is complex and has both real and imaginary parts; however, there are certain states that are exclusively real.
+These states are <em>eigenstates</em> of the system, and are often described as the constituent states that make up all other possible wavefunctions.
+In other words,</p>
+<p><script type="math/tex; mode=display">
+\lvert \Psi(x)\rangle = \sum_i c_i \lvert \Psi_i \rangle
+</script></p>
+<p>Where <script type="math/tex; ">c_i</script> is some constant describing <em>how much</em> of a given eigenstate <script type="math/tex; ">i</script> is in the full wavefunction.
+As you might expect, all of the <script type="math/tex; ">c_i</script>&apos;s should sum to 1.</p>
+<h2 id="energy-calculations">Energy Calculations</h2>
+<p>When it comes to quantum systems, there is no quantity more important than energy.
+Basically, every eigenstate of the system has a different energy associated with it, and you can find this energy with a simple calculation:</p>
+<p><script type="math/tex; mode=display">
+E = \langle \Psi \lvert \hat H \lvert \Psi \rangle
+</script></p>
+<p>Which can be done rather trivially in code by finding the conjugate of the wavefunction and multiplying it with another wavefunction after operation in position and momentum space.
+This ultimately looks like this:</p>
+<div class="code-method"><div class="code-method-definition"></div><div class="code-method-code"><div class="code-method-sample" data-lang="jl" data-name="Julia"><pre class="language-"><code class="lang-julia"><span class="token comment"># We are calculating the energy to check &lt;Psi|H|Psi&gt;</span>
+<span class="token keyword">function</span> calculate_energy<span class="token punctuation">(</span>wfc<span class="token punctuation">,</span> H_k<span class="token punctuation">,</span> H_r<span class="token punctuation">,</span> dx<span class="token punctuation">)</span>
+    <span class="token comment"># Creating momentum and conjugate wavefunctions</span>
+    wfc_k <span class="token operator">=</span> fft<span class="token punctuation">(</span>wfc<span class="token punctuation">)</span>
+    wfc_c <span class="token operator">=</span> conj<span class="token punctuation">(</span>wfc<span class="token punctuation">)</span>
+
+    <span class="token comment"># Finding the momentum and real-space energy terms</span>
+    energy_k <span class="token operator">=</span> wfc_c<span class="token punctuation">.</span><span class="token operator">*</span>ifft<span class="token punctuation">(</span><span class="token punctuation">(</span>H_k<span class="token punctuation">)</span> <span class="token punctuation">.</span><span class="token operator">*</span> wfc_k<span class="token punctuation">)</span>
+    energy_r <span class="token operator">=</span> wfc_c<span class="token punctuation">.</span><span class="token operator">*</span> H_r <span class="token punctuation">.</span><span class="token operator">*</span> wfc
+
+    <span class="token comment"># Integrating over all space</span>
+    energy_final <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span>length<span class="token punctuation">(</span>energy_k<span class="token punctuation">)</span>
+        energy_final <span class="token operator">+=</span> real<span class="token punctuation">(</span>energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> energy_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span> 
+
+    <span class="token keyword">return</span> energy_final<span class="token operator">*</span>dx
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="hs" data-name="Haskell"><pre class="language-"><code class="lang-haskell"><span class="token import-statement"><span class="token keyword">import</span> Data.Array.CArray</span>
+<span class="token import-statement"><span class="token keyword">import</span> Data.Complex</span>
+<span class="token import-statement"><span class="token keyword">import</span> Math.FFT</span> <span class="token punctuation">(</span><span class="token hvariable">dft</span><span class="token punctuation">,</span> <span class="token hvariable">idft</span><span class="token punctuation">)</span> <span class="token comment">-- Binding to fftw</span>
+
+<span class="token keyword">type</span> <span class="token constant">Vector</span> <span class="token operator">=</span> <span class="token constant">CArray</span> <span class="token constant">Int</span> <span class="token punctuation">(</span><span class="token constant">Complex</span> <span class="token constant">Double</span><span class="token punctuation">)</span>
+
+<span class="token hvariable">calculateEnergy</span> <span class="token operator">::</span> <span class="token constant">Double</span> <span class="token operator">-&gt;</span> <span class="token constant">Vector</span> <span class="token operator">-&gt;</span> <span class="token constant">Vector</span> <span class="token operator">-&gt;</span> <span class="token constant">Vector</span> <span class="token operator">-&gt;</span> <span class="token constant">Double</span>
+<span class="token hvariable">calculateEnergy</span> <span class="token hvariable">dx</span> <span class="token hvariable">kin</span> <span class="token hvariable">pot</span> <span class="token hvariable">wfc</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span> <span class="token hvariable">dx</span><span class="token punctuation">)</span><span class="token operator"> . </span><span class="token builtin">sum</span><span class="token operator"> . </span><span class="token builtin">map</span> <span class="token hvariable">realPart</span> <span class="token operator">$</span> <span class="token hvariable">elems</span> <span class="token hvariable">total</span>
+  <span class="token keyword">where</span>
+    <span class="token hvariable">total</span> <span class="token operator">=</span> <span class="token hvariable">liftArray2</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token hvariable">kineticE</span> <span class="token hvariable">potentialE</span>
+    <span class="token hvariable">potentialE</span> <span class="token operator">=</span> <span class="token hvariable">wfcConj</span> <span class="token operator">.*</span> <span class="token hvariable">pot</span> <span class="token operator">.*</span> <span class="token hvariable">wfc</span>
+    <span class="token hvariable">kineticE</span> <span class="token operator">=</span> <span class="token hvariable">wfcConj</span> <span class="token operator">.*</span> <span class="token hvariable">idft</span> <span class="token punctuation">(</span><span class="token hvariable">kin</span> <span class="token operator">.*</span> <span class="token hvariable">dft</span> <span class="token hvariable">wfc</span><span class="token punctuation">)</span>
+    <span class="token hvariable">wfcConj</span> <span class="token operator">=</span> <span class="token hvariable">liftArray</span> <span class="token hvariable">conjugate</span> <span class="token hvariable">wfc</span>
+    <span class="token hvariable">a</span> <span class="token operator">.*</span> <span class="token hvariable">b</span> <span class="token operator">=</span> <span class="token hvariable">liftArray2</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token hvariable">a</span> <span class="token hvariable">b</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="c" data-name="C"><pre class="language-"><code class="lang-c"><span class="token keyword">double</span> <span class="token function">calculate_energy</span><span class="token punctuation">(</span><span class="token keyword">double</span> complex <span class="token operator">*</span>wfc<span class="token punctuation">,</span> <span class="token keyword">double</span> complex <span class="token operator">*</span>h_r<span class="token punctuation">,</span>
+                        <span class="token keyword">double</span> complex <span class="token operator">*</span>h_k<span class="token punctuation">,</span> <span class="token keyword">double</span> dx<span class="token punctuation">,</span> <span class="token class-name">size_t</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">double</span> complex wfc_k<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> complex wfc_c<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">memcpy</span><span class="token punctuation">(</span>wfc_k<span class="token punctuation">,</span> wfc<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>wfc_k<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fft</span><span class="token punctuation">(</span>wfc_k<span class="token punctuation">,</span> size<span class="token punctuation">,</span> false<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        wfc_c<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">conj</span><span class="token punctuation">(</span>wfc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">double</span> complex energy_k<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> complex energy_r<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> wfc_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> h_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">fft</span><span class="token punctuation">(</span>energy_k<span class="token punctuation">,</span> size<span class="token punctuation">,</span> true<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*=</span> wfc_c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        energy_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> wfc_c<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> h_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> wfc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">double</span> energy_final <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">size_t</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        energy_final <span class="token operator">+=</span> <span class="token function">creal</span><span class="token punctuation">(</span>energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> energy_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> energy_final <span class="token operator">*</span> dx<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="cpp" data-name="C++"><pre class="language-"><code class="lang-cpp"><span class="token keyword">double</span> <span class="token function">calculate_energy</span><span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> wfc<span class="token punctuation">,</span>
+                        std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> h_r<span class="token punctuation">,</span>
+                        std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> h_k<span class="token punctuation">,</span>
+                        <span class="token keyword">double</span> dx<span class="token punctuation">,</span> size_t size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> <span class="token function">wfc_k</span><span class="token punctuation">(</span>wfc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> <span class="token function">wfc_c</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fft</span><span class="token punctuation">(</span>wfc_k<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        wfc_c<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">conj</span><span class="token punctuation">(</span>wfc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> <span class="token function">energy_k</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>complex<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;&gt;</span> <span class="token function">energy_r</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> wfc_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token function">pow</span><span class="token punctuation">(</span>h_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">fft</span><span class="token punctuation">(</span>energy_k<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*=</span> <span class="token number">0.5</span> <span class="token operator">*</span> wfc_c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        energy_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> wfc_c<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> h_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> wfc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">double</span> energy_final <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        energy_final <span class="token operator">+=</span> <span class="token function">real</span><span class="token punctuation">(</span>energy_k<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> energy_r<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> energy_final <span class="token operator">*</span> dx<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="code-method-sample" data-lang="py" data-name="Python"><pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">calculate_energy</span><span class="token punctuation">(</span>wfc<span class="token punctuation">,</span> H_k<span class="token punctuation">,</span> H_r<span class="token punctuation">,</span> dx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;Calculate the energy &lt;Psi|H|Psi&gt;.&quot;&quot;&quot;</span>
+    <span class="token comment"># Creating momentum conjugate wavefunctions</span>
+    wfc_k <span class="token operator">=</span> np<span class="token punctuation">.</span>fft<span class="token punctuation">.</span>fft<span class="token punctuation">(</span>wfc<span class="token punctuation">)</span>
+    wfc_c <span class="token operator">=</span> np<span class="token punctuation">.</span>conj<span class="token punctuation">(</span>wfc<span class="token punctuation">)</span>
+
+    <span class="token comment"># Finding the momentum and real-space energy terms</span>
+    energy_k <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">*</span> wfc_c <span class="token operator">*</span> np<span class="token punctuation">.</span>fft<span class="token punctuation">.</span>ifft<span class="token punctuation">(</span><span class="token punctuation">(</span>H_k <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> wfc_k<span class="token punctuation">)</span>
+    energy_r <span class="token operator">=</span> wfc_c <span class="token operator">*</span> H_r <span class="token operator">*</span> wfc
+
+    <span class="token comment"># Integrating over all space</span>
+    energy_final <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>energy_k <span class="token operator">+</span> energy_r<span class="token punctuation">)</span><span class="token punctuation">.</span>real
+
+    <span class="token keyword">return</span> energy_final <span class="token operator">*</span> dx
+</code></pre>
+</div></div></div>
+
+<p>This calculation will be used in many different simulations of quantum systems to check our results.
+In the end, many quantum simulations are focused on the <em>ground</em> state, which is the lowest energy state (<script type="math/tex; ">\Psi_0</script>); however, sometimes higher energy states are desired.</p>
+<h2 id="the-future">The Future</h2>
+<p>As we proceed to add new algorithms to simulate quantum systems, I will add more and more notation to this section; however, there are already huge textbooks out there related to understanding and studying quantum systems.
+We don&apos;t want to re-invent the wheel here.
+Instead, we want to focus on an area that is often not considered with too much detail: algorithms and methods researchers use to ascertain new knowledge about quantum mechanics, like the split-operator method, DMRG, quantum Monte Carlo, exact diagonalization, and many more.</p>
+<p>Quantum mechanics is one of those areas of physics that really does push the boundary of human knowledge in a number of different areas and computing is one of those areas.
+In fact, <a href="../quantum_information/quantum_information.html">quantum information theory</a> is currently set to be the next innovation to radically change the landscape of modern computation as we know it!
+Of course, because of the large-scale effects that this will likely have on the industry, it deserved it&apos;s own section.</p>
+<p>As always, if there is something that you feel is missing from this section, please feel free to contact me or create an issue on GitHub and we&apos;ll get to it as soon as we can!</p>
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="code-examples">Code Examples</h5>
+<p>The code examples are licensed under the MIT license (found in <a href="https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md" target="_blank">LICENSE.md</a>).</p>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h5 id="imagesgraphics">Images/Graphics</h5>
+<ul>
+<li>The animation &quot;<a href="res/gaussian.gif">FTgaussian</a>&quot; was created by <a href="https://github.com/leios" target="_blank">James Schloss</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</li>
+</ul>
+<h5 id="pull-requests">Pull Requests</h5>
+<p>After initial licensing (<a href="https://github.com/algorithm-archivists/algorithm-archive/pull/560" target="_blank">#560</a>), the following pull requests have modified the text or graphics of this chapter:</p>
+<ul>
+<li>none</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../verlet_integration/verlet_integration.html" class="navigation navigation-prev " aria-label="Previous page: Verlet Integration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../split-operator_method/split-operator_method.html" class="navigation navigation-next " aria-label="Next page: Split-Operator Method">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Quantum Systems","level":"1.15.2","depth":2,"next":{"title":"Split-Operator Method","level":"1.15.2.1","depth":3,"path":"contents/split-operator_method/split-operator_method.md","ref":"contents/split-operator_method/split-operator_method.md","articles":[]},"previous":{"title":"Verlet Integration","level":"1.15.1","depth":2,"path":"contents/verlet_integration/verlet_integration.md","ref":"contents/verlet_integration/verlet_integration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}}],"gitbook":"*"},"file":{"path":"contents/quantum_systems/quantum_systems.md","mtime":"2021-08-16T03:21:55.664Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-16T03:22:29.158Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

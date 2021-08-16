@@ -1,0 +1,19 @@
+.references {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.citation {
+  padding: 6px 13px;
+  display: grid;
+  grid-template-columns: 5% 95%;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  grid-template-areas:
+    ". .";
+}
+
+.citation:nth-of-type(even) {
+  background: #f8f8f8;
+}
+
