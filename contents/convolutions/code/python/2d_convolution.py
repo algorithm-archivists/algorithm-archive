@@ -86,7 +86,7 @@ def main():
     y = np.array([[0.2, 0.4], [0.6, 0.3]])
 
     # full convolution, output will be the size of x + y
-    full_linear_output = convolve_linear(x, y,)
+    full_linear_output = convolve_linear(x, y, sum_matrix_dimensions(x, y))
 
     # simple boundaries
     simple_linear_output = convolve_linear(x, y, x.shape)
