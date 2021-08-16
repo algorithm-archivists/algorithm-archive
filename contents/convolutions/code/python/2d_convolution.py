@@ -41,12 +41,12 @@ def create_sobel_operators():
 
 def sum_matrix_dimensions(mat1, mat2):
     return (mat1.shape[0] + mat2.shape[0], 
-            mat1.shape[1], mat2.shape[1])
+            mat1.shape[1] + mat2.shape[1])
 
 def compute_sobel(signal):
     Sx, Sy = create_sobel_operators()
 
-    Gx = convolve_linear(signal, Sx, sum_matrix_dimensions(signal, Sx)))
+    Gx = convolve_linear(signal, Sx, sum_matrix_dimensions(signal, Sx))
     Gy = convolve_linear(signal, Sy, sum_matrix_dimensions(signal, Sy))
 
     return np.sqrt(np.power(Gx, 2) + np.power(Gy, 2))
