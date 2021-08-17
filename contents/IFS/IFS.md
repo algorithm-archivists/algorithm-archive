@@ -140,6 +140,8 @@ Here, instead of tracking children of children, we track a single individual tha
 [import:18-29, lang:"c"](code/c/IFS.c)
 {% sample lang="coco" %}
 [import:4-16, lang:"coconut"](code/coconut/IFS.coco)
+{% sample lang="java" %}
+[import:16-39, lang:"java"](code/java/IFS.java)
 {% endmethod %}
 
 If we set the initial point to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
@@ -220,6 +222,8 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"c"](code/c/IFS.c)
 {%sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/IFS.coco)
+{%sample lang="java" %}
+[import, lang:"java"](code/java/IFS.java)
 {% endmethod %}
 
 ### Bibliography
