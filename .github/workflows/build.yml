@@ -2,7 +2,7 @@ name: build
 on: pull_request
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
