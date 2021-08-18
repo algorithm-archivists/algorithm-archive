@@ -45,7 +45,7 @@ def sum_matrix_dimensions(mat1, mat2):
 
 def compute_sobel(signal):
     Sx, Sy = create_sobel_operators()
-
+    
     Gx = convolve_linear(signal, Sx, sum_matrix_dimensions(signal, Sx))
     Gy = convolve_linear(signal, Sy, sum_matrix_dimensions(signal, Sy))
 
@@ -82,9 +82,6 @@ def main():
     x /= np.linalg.norm(x)
     y /= np.linalg.norm(y)
 
-    x = np.array([[5.0, 3.0], [4.0, 2.0]])
-    y = np.array([[0.2, 0.4], [0.6, 0.3]])
-
     # full convolution, output will be the size of x + y
     full_linear_output = convolve_linear(x, y, sum_matrix_dimensions(x, y))
 
@@ -109,12 +106,11 @@ def main():
     large_kernel_output = convolve_linear(circle, large_kernel,
                                           sum_matrix_dimensions(circle,
                                                                 large_kernel))
-                                            
 
     np.savetxt("small_kernel.dat", small_kernel_output)
     np.savetxt("large_kernel.dat", large_kernel_output)
 
-    circle = create_circle(10, 2, 0.2)
+    circle = create_circle(50, 2, 0.5)
 
     # Normalization
     circle = circle / np.linalg.norm(circle)
@@ -123,3 +119,4 @@ def main():
     sobel_output = compute_sobel(circle)
 
     np.savetxt("sobel_output.dat", sobel_output)
+
