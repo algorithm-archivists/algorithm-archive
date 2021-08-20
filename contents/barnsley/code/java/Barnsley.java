@@ -18,12 +18,10 @@ public class Barnsley {
         }
     }
 
-    /*
-      This is a function that reads in the Hutchinson operator and corresponding
-        probabilities and outputs a randomly selected transform
-      This works by choosing a random number and then iterating through all
-        probabilities until it finds an appropriate bin
-    */
+    // This is a function that reads in the Hutchinson operator and corresponding
+    //   probabilities and outputs a randomly selected transform
+    // This works by choosing a random number and then iterating through all
+    //   probabilities until it finds an appropriate bin
     public static double[][] selectArray(double[][][] hutchinsonOp, double[] probabilities) {
         Random rng = new Random();
         // Random number to be binned
@@ -40,14 +38,12 @@ public class Barnsley {
         return null;
     }
 
-    /*
-      This is a general function to simulate a chaos game
-      n is the number of iterations
-      initialLocation is the starting point of the chaos game
-      hutchinsonOp is the set of functions to iterate through
-      probabilities is the set of probabilities corresponding to the likelihood
-        of choosing their corresponding function in hutchinsonOp
-     */
+    // This is a general function to simulate a chaos game
+    // n is the number of iterations
+    // initialLocation is the starting point of the chaos game
+    // hutchinsonOp is the set of functions to iterate through
+    // probabilities is the set of probabilities corresponding to the likelihood
+    //   of choosing their corresponding function in hutchinsonOp
     public static Point[] chaosGame(int n, Point initialLocation, double[][][] hutchinsonOp, double[] probabilities) {
         // Initializing output points
         Point[] outputPoints = new Point[n];
