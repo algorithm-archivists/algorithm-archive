@@ -79,7 +79,6 @@ public class Barnsley {
                 {{-0.15, 0.28, 0.0},
                  {0.26, 0.24, 0.44},
                  {0.0, 0.0, 1.0}}
-
         };
         double[] barnsleyProbabilities = new double[]{0.01, 0.85, 0.07, 0.07};
         Point[] outputPoints = chaosGame(10000, new Point(0.0, 0.0, 1.0), barnsleyHutchinson, barnsleyProbabilities);
