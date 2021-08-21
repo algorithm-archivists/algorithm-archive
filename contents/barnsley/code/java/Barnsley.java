@@ -13,6 +13,12 @@ public class Barnsley {
             this.z = z;
         }
 
+        public Point(double[] coordinates) {
+            this.x = coordinates[0];
+            this.y = coordinates[1];
+            this.z = coordinates[2];
+        }
+
         public double[] toDoubleArray() {
             return new double[]{this.x, this.y, this.z};
         }
@@ -35,6 +41,8 @@ public class Barnsley {
                 return hutchinsonOp[i];
             rand -= probabilities[i];
         }
+        // This return will never be reached, as the loop above ensures that at some point rand will be smaller
+        // than a probability. However, Java does not know this and thus this return is needed for compilation.
         return null;
     }
 
@@ -51,21 +59,24 @@ public class Barnsley {
 
         for (int i = 0; i < n; i++) {
             outputPoints[i] = point;
-            point = matrixMultiplication(selectArray(hutchinsonOp, probabilities), point.toDoubleArray());
+            point = new Point(matrixMultiplication(selectArray(hutchinsonOp, probabilities), point.toDoubleArray()));
         }
 
         return outputPoints;
     }
 
-    public static Point matrixMultiplication(double[][] operation, double[] point) {
+    public static double[] matrixMultiplication(double[][] operation, double[] point) {
         double[] result = new double[3];
-        for (int j = 0; j < operation[0].length; j++)
-            for (int i = 0; i < operation.length; i++)
+        for (int j = 0; j < operation[0].length; j++) {
+            for (int i = 0; i < operation.length; i++){
                 result[j] += operation[j][i] * point[i];
-        return new Point(result[0], result[1], result[2]);
+            }
+        }
+
+        return result;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         double[][][] barnsleyHutchinson = {
                 {{0.0, 0.0, 0.0},
                  {0.0, 0.16, 0.0},
@@ -82,10 +93,14 @@ public class Barnsley {
         };
         double[] barnsleyProbabilities = new double[]{0.01, 0.85, 0.07, 0.07};
         Point[] outputPoints = chaosGame(10000, new Point(0.0, 0.0, 1.0), barnsleyHutchinson, barnsleyProbabilities);
-        FileWriter fw = new FileWriter("barnsley.dat");
-        for (Point p : outputPoints)
-            fw.write(p.x + "\t" + p.y + "\n");
-        fw.close();
+        try(FileWriter fw = new FileWriter("barnsley.dat")) {
+            for (Point p : outputPoints) {
+                fw.write(p.x + "\t" + p.y + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
