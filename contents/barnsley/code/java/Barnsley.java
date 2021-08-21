@@ -5,7 +5,7 @@ import java.util.Random;
 public class Barnsley {
 
     private static class Point {
-        double x, y, z;
+        public double x, y, z;
 
         public Point(double x, double y, double z) {
             this.x = x;
@@ -19,8 +19,12 @@ public class Barnsley {
             this.z = coordinates[2];
         }
 
-        public double[] toDoubleArray() {
-            return new double[]{this.x, this.y, this.z};
+        public Point matrixMultiplication(double[][] matrix) {
+            double[] results = new double[3];
+            for (int i = 0; i < 3; i++) {
+                results[i] = matrix[i][0] * x + matrix[i][1] * y + matrix[i][2] * z;
+            }
+            return new Point(results);
         }
     }
 
@@ -59,21 +63,10 @@ public class Barnsley {
 
         for (int i = 0; i < n; i++) {
             outputPoints[i] = point;
-            point = new Point(matrixMultiplication(selectArray(hutchinsonOp, probabilities), point.toDoubleArray()));
+            point = point.matrixMultiplication(selectArray(hutchinsonOp, probabilities));
         }
 
         return outputPoints;
-    }
-
-    public static double[] matrixMultiplication(double[][] operation, double[] point) {
-        double[] result = new double[3];
-        for (int j = 0; j < operation[0].length; j++) {
-            for (int i = 0; i < operation.length; i++) {
-                result[j] += operation[j][i] * point[i];
-            }
-        }
-
-        return result;
     }
 
     public static void main(String[] args) {
@@ -93,14 +86,13 @@ public class Barnsley {
         };
         double[] barnsleyProbabilities = new double[]{0.01, 0.85, 0.07, 0.07};
         Point[] outputPoints = chaosGame(10000, new Point(0.0, 0.0, 1.0), barnsleyHutchinson, barnsleyProbabilities);
-        try(FileWriter fw = new FileWriter("barnsley.dat")) {
+        try (FileWriter fw = new FileWriter("barnsley.dat")) {
             for (Point p : outputPoints) {
                 fw.write(p.x + "\t" + p.y + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }
