@@ -68,7 +68,7 @@ public class Barnsley {
     public static double[] matrixMultiplication(double[][] operation, double[] point) {
         double[] result = new double[3];
         for (int j = 0; j < operation[0].length; j++) {
-            for (int i = 0; i < operation.length; i++){
+            for (int i = 0; i < operation.length; i++) {
                 result[j] += operation[j][i] * point[i];
             }
         }
