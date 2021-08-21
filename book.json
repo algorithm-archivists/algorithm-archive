@@ -213,6 +213,10 @@
         {
           "lang": "coco",
           "name": "Coconut"
+        },
+        {
+          "lang": "elv",
+          "name": "Elvish"
         }
       ]
     }
