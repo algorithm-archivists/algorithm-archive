@@ -1,0 +1,128 @@
+from collections import deque
+import numpy as np
+
+
+data Point(x, y):
+    def __add__(self, other is Point) = Point(self.x + other.x, self.y + other.y)
+
+
+# This function is necessary, because negative indices wrap around the
+# array in Coconut.
+def inbounds(canvas_shape, location is Point) =
+    min(location) >= 0 and location.x < canvas_shape[0] and location.y < canvas_shape[1]
+
+
+def colour(canvas, location is Point, old_value, new_value):
+    if not inbounds(canvas.shape, location):
+        return
+
+    if canvas[location] != old_value:
+        return
+    else:
+        canvas[location] = new_value
+
+
+def find_neighbours(canvas, location is Point, old_value, new_value):
+    possible_neighbours = ((Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
+                          |> map$(location.__add__))
+
+    yield from possible_neighbours |> filter$(x -> (inbounds(canvas.shape, x) and canvas[x] == old_value))
+
+
+def stack_fill(canvas, location is Point, old_value, new_value):
+    if new_value == old_value or not inbounds(canvas.shape, location):
+        return
+
+    stack = [location]
+
+    while stack:
+        current_location = stack.pop()
+        if canvas[current_location] == old_value:
+            canvas[current_location] = new_value
+            for neighbour in find_neighbours(canvas, current_location, old_value,
+                                             new_value):
+                stack.append(neighbour)
+
+
+def queue_fill(canvas, location is Point, old_value, new_value):
+    if new_value == old_value or not inbounds(canvas.shape, location):
+        return
+
+    queue = deque()
+    queue.append(location)
+
+    canvas[location] = new_value
+
+    while queue:
+        current_location = queue.popleft()
+        for neighbour in find_neighbours(canvas, current_location, old_value,
+                                         new_value):
+            queue.append(neighbour)
+            canvas[neighbour] = new_value
+
+
+def recursive_fill(canvas, location is Point, old_value, new_value):
+    if new_value == old_value or not inbounds(canvas.shape, location):
+        return
+
+    canvas[location] = new_value
+    # consume is important here, because otherwise, the recursive function is not called again
+    consume(
+        find_neighbours(canvas, location, old_value, new_value)
+        |> map$(recursive_fill$(canvas, ?, old_value, new_value))
+    )
+
+if __name__ == '__main__':
+    # Testing setup
+    from collections import namedtuple
+
+    TestResults = namedtuple('TestResults', 'passes failures')
+    pass_count = failure_count = 0
+
+    grid = np.zeros((5, 5))
+    grid[2,:] = 1
+    solution_grid = np.zeros((5, 5))
+    solution_grid[:3,] = 1
+
+    starting_location = Point(0, 0)
+
+
+    # The following is manual unit testing of the function
+    recursive_fill(grid, starting_location, 0, 1)
+    try:
+        assert (grid == solution_grid).all()
+    except AssertionError:
+        print('F', end='')
+        failure_count += 1
+    else:
+        print('.', end='')
+        pass_count += 1
+
+    # Resetting the grid, if everything went well.
+    grid[:2,] = 0
+
+    stack_fill(grid, starting_location, 0, 1)
+    try:
+        assert (grid == solution_grid).all()
+    except AssertionError:
+        print('F', end='')
+        failure_count += 1
+    else:
+        print('.', end='')
+        pass_count += 1
+
+    grid[:2,] = 0
+
+    queue_fill(grid, starting_location, 0, 1)
+    try:
+        assert (grid == solution_grid).all()
+    except AssertionError:
+        print('F', end='')
+        failure_count += 1
+    else:
+        print('.', end='')
+        pass_count += 1
+
+    print('')
+    print(TestResults(pass_count, failure_count))
+
