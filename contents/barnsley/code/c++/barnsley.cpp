@@ -1,3 +1,6 @@
+// The code bellow uses C++-17 features, compile it with C++-17 flags, e.g.:
+// clang++ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -gdwarf-3 -D_GLIBCXX_DEBUG -std=c++17 -O3 -c ./barnsley.cpp barnsley
+
 #include <array>
 #include <cassert>
 #include <fstream>
