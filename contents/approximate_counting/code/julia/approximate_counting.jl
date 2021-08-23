@@ -17,7 +17,7 @@ function increment(v, a)
     delta = 1/(n(v+1, a)-n(v, a))
 
     if rand() <= delta
-        return v += 1
+        return v + 1
     else
         return v
     end
