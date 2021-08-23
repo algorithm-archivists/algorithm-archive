@@ -40,7 +40,9 @@ function computus(year, servois = false) {
   const d = (19 * a + M) % 30;
 
   // Returning if user wants value for Servois' table
-  if (servois) return ((21 + d) % 31).toString();
+  if (servois) {
+    return ((21 + d) % 31).toString();
+  }
 
   // Finding the next Sunday
   // Century-based offset in weekly calculation
@@ -54,11 +56,18 @@ function computus(year, servois = false) {
   let e = (2 * b + 4 * c + 6 * d + N) % 7;
 
   // Historical corrections for April 26 and 25
-  if (e === 6) if (d === 29 || (d === 28 && a > 10)) e = -1;
+  if (e === 6) {
+    if (d === 29 || (d === 28 && a > 10)) {
+      e = -1;
+    }
+  }
 
   // Determination of the correct month for Easter
-  if (22 + d + e > 31) return `April ${d + e - 9}`;
-  else return `March ${22 + d + e}`;
+  if (22 + d + e > 31) {
+    return `April ${d + e - 9}`;
+  } else {
+    return `March ${22 + d + e}`;
+  }
 }
 
 console.log(
