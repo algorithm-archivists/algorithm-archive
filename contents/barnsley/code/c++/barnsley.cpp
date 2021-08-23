@@ -11,7 +11,7 @@ using Vec3 = std::array<double, 3>;
 using Row = std::array<double, 3>;
 using Op = std::array<Row, 3>;
 
-constexpr auto OpN = 4;
+constexpr auto OpN = 4U;
 
 template <size_t N>
 auto operator+(std::array<double, N> x, std::array<double, N> y) {
