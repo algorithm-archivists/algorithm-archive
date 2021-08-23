@@ -10,30 +10,30 @@ using Op = std::array<Row, 3>;
 
 constexpr auto OpN = 4;
 
-template <int N>
+template <size_t N>
 auto operator+(std::array<double, N> x, std::array<double, N> y) {
   for (auto i = 0U; i < N; ++i)
     x[i] += y[i];
   return x;
 }
 
-template <int N>
+template <size_t N>
 auto operator*(double k, std::array<double, N> v) {
   for (auto i = 0U; i < N; ++i)
     v[i] *= k;
   return v;
 }
 
-template <int N>
+template <size_t N>
 auto operator*(std::array<double, N> v, double k) {
   return k * v;
 }
 
 auto operator*(const Op& x, const Vec3& y) {
   auto ret = Vec3{};
-  for (auto i = 0; i < 3; ++i) {
+  for (auto i = 0U; i < 3U; ++i) {
     ret[i] = 0;
-    for (auto j = 0; j < 3; ++j)
+    for (auto j = 0U; j < 3U; ++j)
       ret[i] += y[j] * x[i][j];
   }
   return ret;
@@ -71,7 +71,7 @@ auto select_array(
       return hutchinson_op[i];
     rnd -= probabilities[i];
   }
-  assert(!"check if probabilities adding up to 1");
+  assert(!static_cast<bool>("check if probabilities adding up to 1"));
 }
 
 // This is a general function to simulate a chaos game
