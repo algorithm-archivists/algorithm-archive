@@ -25,7 +25,7 @@ auto n(double v, double a) { return a * (pow((1 + 1 / a), v) - 1); }
 //    - v: value in register
 //    - a: a scaling value for the logarithm based on Morris's paper
 // It returns a new value for v
-auto increment(double v, double a) {
+auto increment(int v, double a) {
   // delta is the probability of incrementing our counter
   const auto delta = 1 / (n(v + 1, a) - n(v, a));
   return (drand() <= delta) ? v + 1 : v;
@@ -35,7 +35,7 @@ auto increment(double v, double a) {
 //     - n_items: number of items to count and loop over
 //     - a: a scaling value for the logarithm based on Morris's paper
 // It returns n(v,a), the approximate count
-auto approximate_count(int n_items, int a) {
+auto approximate_count(int n_items, double a) {
   auto v = 0;
   for (auto i = 0; i < n_items; ++i)
     v = increment(v, a);
@@ -55,7 +55,7 @@ auto test_approximate_count(
   for (auto i = 0; i < n_trials; ++i)
     sum += approximate_count(n_items, a);
   const auto avg = sum / n_trials;
-  return (avg - n_items) / n_items < threshold ? "pass" : "fail";
+  return std::abs((avg - n_items) / n_items) < threshold ? "pass" : "fail";
 }
 
 int main() {
