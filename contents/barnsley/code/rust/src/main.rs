@@ -1,5 +1,4 @@
 use rand::prelude::*;
-
 #[derive(Clone, Copy)]
 struct Point2 {
     x: f64,
@@ -16,6 +15,13 @@ struct Point3 {
 impl Point3 {
     fn new(x: f64, y: f64, z: f64) -> Self {
         Self { x, y, z }
+    }
+
+    fn matrix_mul(self, rhs: Vec<Point3>) -> Self {
+        let x = rhs[0].x * self.x + rhs[0].y * self.y + rhs[0].z * self.z;
+        let y = rhs[1].x * self.x + rhs[1].y * self.y + rhs[1].z * self.z;
+        let z = rhs[2].x * self.x + rhs[2].y * self.y + rhs[2].z * self.z;
+        Self::new(x, y, z)
     }
 }
 
@@ -39,7 +45,7 @@ fn chaos_game(
     hutchinson_op: &[Vec<Point3>],
     probabilities: &[f64],
 ) -> Vec<Point2> {
-    let mut p = Point3 {
+    let mut point = Point3 {
         x: initial_location.x,
         y: initial_location.y,
         z: 1.0,
@@ -47,11 +53,9 @@ fn chaos_game(
     (0..iters)
         .into_iter()
         .map(|_| {
-            let old_point = p;
+            let old_point = point;
             let operation = select_array(hutchinson_op, probabilities);
-            p.x = operation[0].x * p.x + operation[0].y * p.y + operation[0].z * p.z;
-            p.y = operation[1].x * p.x + operation[1].y * p.y + operation[1].z * p.z;
-            p.z = operation[2].x * p.x + operation[2].y * p.y + operation[2].z * p.z;
+            point = point.matrix_mul(operation);
             Point2 {
                 x: old_point.x,
                 y: old_point.y,
