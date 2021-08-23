@@ -6,6 +6,7 @@
 * [Plotting](contents/plotting/plotting.md)
     * [Domain Coloring](contents/domain_coloring/domain_coloring.md)
     * [Iterated Function Systems](contents/IFS/IFS.md)
+        * [The Barnsley Fern](contents/barnsley/barnsley.md)
 * [Data Structures](contents/data_structures/data_structures.md)
     * [Stacks and Queues](contents/stacks_and_queues/stacks_and_queues.md)
 * [Mathematical Background](contents/mathematical_background/mathematical_background.md)
@@ -43,3 +44,4 @@
     * [Flood Fill](contents/flood_fill/flood_fill.md)
 * [Quantum Information](contents/quantum_information/quantum_information.md)
 * [Computus](contents/computus/computus.md)
+* [Approximate Counting Algorithm](contents/approximate_counting/approximate_counting.md)
