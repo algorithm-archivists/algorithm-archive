@@ -207,6 +207,10 @@
           "name": "Kotlin"
         },
         {
+          "lang": "ts",
+          "name": "TypeScript"
+        },
+        {
           "lang": "vim",
           "name": "VimL"
         },
