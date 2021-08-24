@@ -44,3 +44,4 @@
     * [Flood Fill](contents/flood_fill/flood_fill.md)
 * [Quantum Information](contents/quantum_information/quantum_information.md)
 * [Computus](contents/computus/computus.md)
+* [Approximate Counting Algorithm](contents/approximate_counting/approximate_counting.md)
