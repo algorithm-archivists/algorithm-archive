@@ -56,3 +56,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Ishaan Verma
 - Delphi1024
 - ntindle
+- Ridham177
