@@ -127,6 +127,10 @@ The biggest differences between the two code implementations is that the Barnsle
 [import, lang:"julia"](code/julia/barnsley.jl)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/barnsley.cpp)
+{% sample lang="c" %}
+[import, lang:"c"](code/c/barnsley.c)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/Barnsley.java)
 {% endmethod %}
 
 ### Bibliography
