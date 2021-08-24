@@ -13,6 +13,20 @@ For the most part, though, queues and stacks are treated the same way. There mus
 
 The notation for this depends on the language you are using. Queues, for example, will often use `dequeue()` instead of `pop()` and `front()` instead of `top()`. You will see the language-specific details in the source code under the algorithms in this book, so for now it's simply important to know what stacks and queues are and how to access elements held within them.
 
+## Example Code
+Here is a simple implementation of a stack:
+{% method %}
+{% sample lang="ts" %}
+[import, lang:"typescript"](code/typescript/stack.ts)
+{% endmethod %}
+
+Here is a simple implementation of a queue:
+{% method %}
+{% sample lang="ts" %}
+[import, lang:"typescript"](code/typescript/queue.ts)
+{% endmethod %}
+
+
 ## License
 
 ##### Code Examples
