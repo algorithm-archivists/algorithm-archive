@@ -47,7 +47,7 @@ function test_approximate_count(n_trials, n_items, a, threshold)
 
     avg = sum(samples)/n_trials
 
-    @test ((avg - n_items) / n_items < threshold)
+    @test (abs((avg - n_items) / n_items) < threshold)
 end
 
 @testset "Counting Tests, 100 trials" begin
