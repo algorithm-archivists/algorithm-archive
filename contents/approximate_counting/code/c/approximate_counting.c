@@ -76,7 +76,7 @@ int main()
     printf("testing 12345, a = 10, 1%% error\n");
     test_approximation_count(100, 12345, 10, 0.1);
     printf("testing 222222, a = 0.5, 10%% error\n");
-    test_approximation_count(100, 222222, 0.5, 0.1);
+    test_approximation_count(100, 222222, 0.5, 0.2);
 
     return 0;
 }
