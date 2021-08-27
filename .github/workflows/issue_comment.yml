@@ -12,9 +12,9 @@ jobs:
         id: regex-match
         with:
           text: ${{ github.event.comment.body }}
-          regex: '^/\[lang:\s*(.*?)\s*\]$'
+          regex: '/\[lang:\s*(.*?)\s*\]$'
 
-      - run: echo  ${{ steps.regex-match.outputs }}
+      - run: echo  ${{ steps.regex-match.outputs.match }}
 
       - uses: actions-ecosystem/action-add-labels@v1
         if: ${{ steps.regex-match.outputs.match != '' }}
