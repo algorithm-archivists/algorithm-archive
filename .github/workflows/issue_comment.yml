@@ -12,7 +12,7 @@ jobs:
         id: regex-match
         with:
           text: ${{ github.event.comment.body }}
-          regex: '/\[lang:\s*(.*?)\s*\]$'
+          regex: '/\[lang:\s*(.*?)\s*\]'
 
       - run: echo  ${{ steps.regex-match.outputs.match }}
 
