@@ -17,7 +17,7 @@ function increment(v, a)
     delta = 1/(n(v+1, a)-n(v, a))
 
     if rand() <= delta
-        return v += 1
+        return v + 1
     else
         return v
     end
@@ -47,15 +47,15 @@ function test_approximate_count(n_trials, n_items, a, threshold)
 
     avg = sum(samples)/n_trials
 
-    @test ((avg - n_items) / n_items < threshold)
+    @test (abs((avg - n_items) / n_items) < threshold)
 end
 
 @testset "Counting Tests, 100 trials" begin
     println("testing 1,000, a = 30, 1% error")
-        test_approximate_count(0.1, 100, 1000, 30)
+        test_approximate_count(100, 1000, 30, 0.1)
     println("testing 12,345, a = 10, 1% error")
-        test_approximate_count(0.1, 100, 12345, 10)
+        test_approximate_count(100, 12345, 10, 0.1)
     # Note: with a lower a, we need more trials, so a higher % error here.
     println("testing 222,222, a = 0.5, 10% error")
-        test_approximate_count(0.1, 100, 222222, 0.5)
+        test_approximate_count(100, 222222, 0.5, 0.2)
 end

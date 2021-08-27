@@ -47,7 +47,7 @@ function DFS_stack(n::Node)
     push!(s, n)
 
     while(length(s) > 0)
-        println(top(s).ID)
+        println(first(s).ID)
         temp = pop!(s)
         for child in temp.children
             push!(s, child)
@@ -60,7 +60,7 @@ function BFS_queue(n::Node)
     enqueue!(q, n)
 
     while(length(q) > 0)
-        println(front(q).ID)
+        println(first(q).ID)
         temp = dequeue!(q)
         for child in temp.children
             enqueue!(q, child)
