@@ -1,4 +1,16 @@
 public class Verlet {
+    
+    private static class VerletValues {
+        public double time;
+        public double vel;
+    
+        public VerletValues(double time, double vel) {
+            this.time = time;
+            this.vel = vel;
+        }
+    }
+    
+
     static double verlet(double pos, double acc, double dt) {
 
       // Note that we are using a temp variable for the previous position
