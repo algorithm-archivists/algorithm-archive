@@ -19,3 +19,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: "lang: ${{ steps.regex-match.outputs.group1 }}"
+
+       - uses: actions-ecosystem/action-create-comment@v1
+        if: ${{ steps.regex-match.outputs.match != '' }}
+        with:
+          github_token: ${{ secrets.github_token }}
+          body: |
+            Hello, @${{ github.actor }}!
+
+            Test
+
+            ---
+
+            ${{ steps.regex-match.outputs.group1 }}
+
+            ---
