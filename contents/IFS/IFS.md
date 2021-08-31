@@ -132,6 +132,8 @@ Here, instead of tracking children of children, we track a single individual tha
 {% method %}
 {% sample lang="jl" %}
 [import:4-17, lang:"julia"](code/julia/IFS.jl)
+{% sample lang="hs" %}
+[import:7-13, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
 [import:39-52, lang:"cpp"](code/c++/IFS.cpp)
 {% sample lang="py" %}
@@ -214,6 +216,8 @@ In addition, we have written the chaos game code to take in a set of points so t
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/IFS.jl)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/IFS.cpp)
 {% sample lang="py" %}
