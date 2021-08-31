@@ -330,8 +330,6 @@ Here is a video describing tree traversal:
 {% sample lang="java" %}
 ##### Tree.java
 [import, lang:"java"](code/java/Tree.java)
-##### MainClass.java
-[import, lang:"java"](code/java/MainClass.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
