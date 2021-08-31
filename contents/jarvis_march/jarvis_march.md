@@ -50,6 +50,8 @@ Since this algorithm, there have been many other algorithms that have advanced t
 [import, lang:"v"](code/v/jarvis.v)
 {% sample lang="rust" %}
 [import, lang:"rust"](code/rust/jarvis_march.rs)
+{% sample lang="scala" %}
+[import, lang:"scala"](code/scala/jarvisMarch.scala)
 {% endmethod %}
 
 <script>
