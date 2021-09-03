@@ -62,22 +62,22 @@ if __name__ =='__main__':
     tree = create_tree(3, 3)
 
     # Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
-    print("Recursive DFS:")
+    print("[#] Recursive DFS:")
     dfs_recursive(tree)
     print()
 
     # Should print: 1 1 1 2 1 1 1 2 1 1 1 2 3
-    print("Recursive Postorder DFS:")
+    print("[#] Recursive Postorder DFS:")
     dfs_recursive_postorder(tree)
     print()
 
     # Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
-    print("Stack (DFS):")
+    print("[#] Stack (DFS):")
     dfs_stack(tree)
     print()
 
     # Should print: 3 2 2 2 1 1 1 1 1 1 1 1 1
-    print("Queue (BFS):")
+    print([#] "Queue (BFS):")
     bfs_queue(tree)
     print()
 
@@ -85,7 +85,7 @@ if __name__ =='__main__':
     binary_tree = create_tree(3, 2)
 
     # Should print: 1 2 1 3 1 2 1
-    print("Recursive Inorder Binary Tree:")
+    print("[#] Recursive Inorder Binary Tree:")
     dfs_recursive_inorder_btree(binary_tree)
     print()
 
