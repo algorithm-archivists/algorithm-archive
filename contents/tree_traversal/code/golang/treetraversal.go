@@ -8,7 +8,7 @@ type node struct {
 }
 
 func dfsRecursive(n *node) {
-	fmt.Println(n.id)
+    fmt.Printf("%d ", n.id)
 	for _, child := range n.children {
 		dfsRecursive(child)
 	}
@@ -18,20 +18,20 @@ func dfsRecursivePostorder(n *node) {
 	for _, child := range n.children {
 		dfsRecursive(child)
 	}
-	fmt.Println(n.id)
+	fmt.Printf("%d ", n.id)
 }
 
 func dfsRecursiveInorderBtree(n *node) {
 	switch len(n.children) {
 	case 2:
 		dfsRecursiveInorderBtree(n.children[0])
-		fmt.Println(n.id)
+		fmt.Printf("%d ", n.id)
 		dfsRecursiveInorderBtree(n.children[1])
 	case 1:
 		dfsRecursiveInorderBtree(n.children[0])
-		fmt.Println(n.id)
+		fmt.Printf("%d ", n.id)
 	case 0:
-		fmt.Println(n.id)
+		fmt.Printf("%d ", n.id)
 	default:
 		fmt.Println("This is not a binary tree")
 	}
@@ -43,7 +43,7 @@ func dfsStack(n *node) {
 	for len(stack) > 0 {
 		cur := stack[0]
 		stack = stack[1:]
-		fmt.Println(cur.id)
+		fmt.Printf("%d ", cur.id)
 		stack = append(cur.children, stack...)
 	}
 }
@@ -54,7 +54,7 @@ func bfsQueue(n *node) {
 	for len(queue) > 0 {
 		cur := queue[0]
 		queue = queue[1:]
-		fmt.Println(cur.id)
+		fmt.Printf("%d ", cur.id)
 		queue = append(queue, cur.children...)
 	}
 }
@@ -74,17 +74,27 @@ func createTree(numRow, numChild int) *node {
 }
 
 func main() {
-	root := createTree(3, 3)
+	root := createTree(2, 3)
 	binTree := createTree(3, 2)
 
-	fmt.Println("DFS recursive:")
+    fmt.Println("[#] DFS Recursive:")
 	dfsRecursive(root)
-	fmt.Println("DFS post order recursive:")
+    fmt.Println()
+
+    fmt.Println("[#] DFS Postorder Recursive:")
 	dfsRecursivePostorder(root)
-	fmt.Println("DFS inorder binary tree:")
-	dfsRecursiveInorderBtree(binTree)
-	fmt.Println("DFS stack:")
+    fmt.Println()
+
+    fmt.Println("[#] Stack-based DFS:")
 	dfsStack(root)
-	fmt.Println("BFS queue:")
+    fmt.Println()
+
+    fmt.Println("[#] Queue-based BFS:")
 	bfsQueue(root)
+    fmt.Println()
+
+    fmt.Println("[#] DFS Inorder for Binary Tree:")
+	dfsRecursiveInorderBtree(binTree)
+    fmt.Println()
+
 }
