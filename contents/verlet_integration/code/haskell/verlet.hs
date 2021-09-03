@@ -48,7 +48,17 @@ main = do
       dt = 0.001
       freefall _ = -10
       aboveGround (x, _, _, _) = x > 0
-      integrate m = last $ takeWhile aboveGround $ trajectory m freefall dt p0
-  print $ integrate verlet
-  print $ integrate stormerVerlet
-  print $ integrate velocityVerlet
+      timeVelocity m =
+        let (_, v, _, t) = last $ takeWhile aboveGround $ trajectory m freefall dt p0
+         in (show t, show v)
+
+  print "[#] Time for Verlet integration is:"
+  print $ fst $ timeVelocity verlet
+  print "[#] Time for Stormer Verlet integration is:"
+  print $ fst $ timeVelocity stormerVerlet
+  print "[#] Velocity for Stormer Verlet integration is:"
+  print $ snd $ timeVelocity stormerVerlet
+  print "[#] Time for velocity Verlet integration is:"
+  print $ fst $ timeVelocity velocityVerlet
+  print "[#] Velocity for velocity Verlet integration is:"
+  print $ snd $ timeVelocity velocityVerlet
