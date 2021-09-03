@@ -49,7 +49,7 @@ namespace Convolution1D
                 {
                     if (Mod(i - j, outputSize) < filter.Length)
                     {
-                        sum += signal[Mod(j, outputSize)] * filter[Mod(i - j, outputSize)];
+                        sum += signal[Mod(j - 1, outputSize)] * filter[Mod(i - j, outputSize)];
                     }
                 }
 
