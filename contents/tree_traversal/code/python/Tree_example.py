@@ -15,30 +15,30 @@ def create_tree(node, num_row, num_child):
     return node
 
 
-def DFS_recursive(node):
+def dfs_recursive(node):
     if node.data != None:
         print(node.data)
 
     for child in node.children:
-        DFS_recursive(child)
+        dfs_recursive(child)
 
 
-def DFS_recursive_postorder(node):
+def dfs_recursive_postorder(node):
     for child in node.children:
-        DFS_recursive_postorder(child)
+        dfs_recursive_postorder(child)
 
     if node.data != None:
         print(node.data)
 
 
 # This assumes only 2 children, but accounts for other possibilities
-def DFS_recursive_inorder_btree(node):
+def dfs_recursive_inorder_btree(node):
     if (len(node.children) == 2):
-        DFS_recursive_inorder_btree(node.children[0])
+        dfs_recursive_inorder_btree(node.children[0])
         print(node.data)
-        DFS_recursive_inorder_btree(node.children[1])
+        dfs_recursive_inorder_btree(node.children[1])
     elif (len(node.children) == 1):
-        DFS_recursive_inorder_btree(node.children[0])
+        dfs_recursive_inorder_btree(node.children[0])
         print(node.data)
     elif (len(node.children) == 0):
         print(node.data)
@@ -46,7 +46,7 @@ def DFS_recursive_inorder_btree(node):
         print("Not a binary tree!")
 
 
-def DFS_stack(node):
+def dfs_stack(node):
     stack = []
     stack.append(node)
 
@@ -60,7 +60,7 @@ def DFS_stack(node):
             stack.append(child)
 
 
-def BFS_queue(node):
+def bfs_queue(node):
     queue = []
     queue.append(node)
 
@@ -78,21 +78,21 @@ def main():
     tree = create_tree(Node(), 3, 3)
 
     print("Recursive:")
-    DFS_recursive(tree)
+    dfs_recursive(tree)
 
     print("Recursive Postorder:")
-    DFS_recursive_postorder(tree)
+    dfs_recursive_postorder(tree)
 
     print("Stack:")
-    DFS_stack(tree)
+    dfs_stack(tree)
 
     print("Queue:")
-    BFS_queue(tree)
+    bfs_queue(tree)
 
-    binaryTree = create_tree(Node(), 3, 2)
+    binary_tree = create_tree(Node(), 3, 2)
     
     print("Recursive Inorder Binary Tree:")
-    DFS_recursive_inorder_btree(binaryTree)
+    dfs_recursive_inorder_btree(binary_tree)
 
 if __name__ == '__main__':
     main()
