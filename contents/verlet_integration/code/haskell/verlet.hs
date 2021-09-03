@@ -52,13 +52,13 @@ main = do
         let (_, v, _, t) = last $ takeWhile aboveGround $ trajectory m freefall dt p0
          in (show t, show v)
 
-  print "[#] Time for Verlet integration is:"
-  print $ fst $ timeVelocity verlet
-  print "[#] Time for Stormer Verlet integration is:"
-  print $ fst $ timeVelocity stormerVerlet
-  print "[#] Velocity for Stormer Verlet integration is:"
-  print $ snd $ timeVelocity stormerVerlet
-  print "[#] Time for velocity Verlet integration is:"
-  print $ fst $ timeVelocity velocityVerlet
-  print "[#] Velocity for velocity Verlet integration is:"
-  print $ snd $ timeVelocity velocityVerlet
+  putStrLn "[#] Time for Verlet integration is:"
+  putStrLn $ fst $ timeVelocity verlet
+  putStrLn "[#] Time for Stormer Verlet integration is:"
+  putStrLn $ fst $ timeVelocity stormerVerlet
+  putStrLn "[#] Velocity for Stormer Verlet integration is:"
+  putStrLn $ snd $ timeVelocity stormerVerlet
+  putStrLn "[#] Time for velocity Verlet integration is:"
+  putStrLn $ fst $ timeVelocity velocityVerlet
+  putStrLn "[#] Velocity for velocity Verlet integration is:"
+  putStrLn $ snd $ timeVelocity velocityVerlet
