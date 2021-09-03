@@ -58,36 +58,41 @@
 (defun make-tree (num-rows num-child)
   "Creates a simple tree, where every node has 'num-child' children and is 'num-rows' deep."
   ;; A tree with 0 rows can't be created.
-  (if (eql num-rows 1)
+  (if (eql num-rows 0)
       (make-node
-       :data 1
+       :data 0
        :children nil)
       (make-node
        :data num-rows
        :children (loop repeat num-child collect (make-tree (1- num-rows) num-child)))))
 
 ;; A tree for testing
-(defvar tree (make-tree 3 3))
+(defvar tree (make-tree 2 3))
 
 ;; A binary tree for testing
 (defvar binary-tree (make-tree 3 2))
 
 ;; Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
+(format t "[#] Recursive DFS:~%")
 (dfs-recursive tree)
 (format t "~%")
 
 ;; Should print: 1 1 1 2 1 1 1 2 1 1 1 2 3
+(format t "[#] Recursive Postorder DFS:~%")
 (dfs-recursive-postorder tree)
 (format t "~%")
 
-;; Should print: 1 2 1 3 1 2 1
-(dfs-recursive-inorder-btree binary-tree)
-(format t "~%")
-
 ;; Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
+(format t "[#] Stack-based DFS:~%")
 (dfs-stack tree)
 (format t "~%")
 
 ;; Should print: 3 2 2 2 1 1 1 1 1 1 1 1 1
+(format t "[#] Queue-based BFS:~%")
 (bfs-queue tree)
+(format t "~%")
+
+;; Should print: 1 2 1 3 1 2 1
+(format t "[#] Recursive Inorder DFS for Binary Tree:~%")
+(dfs-recursive-inorder-btree binary-tree)
 (format t "~%")
