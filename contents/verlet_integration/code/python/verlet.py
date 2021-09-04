@@ -35,21 +35,21 @@ def velocity_verlet(pos, acc, dt):
 
 def main():
     time = verlet(5, -10, 0.01)
-    print("Verlet")
-    print("Time: {:.10f}".format(time))
-    print()
+    print("[#] Time for Verlet integration is:")
+    print("{:.10f}".format(time))
 
     time, vel = stormer_verlet(5, -10, 0.01)
-    print("Stormer-Verlet")
-    print("Time: {:.10f}".format(time))
-    print("Velocity: {:.10f}".format(vel))
-    print()
+    print("[#] Time for Stormer Verlet integration is:")
+    print("{:.10f}".format(time))
+    print("[#] Velocity for Stormer Verlet integration is:")
+    print("{:.10f}".format(vel))
 
     time, vel = velocity_verlet(5, -10, 0.01)
-    print("Velocity Verlet")
-    print("Time: {:.10f}".format(time))
-    print("Velocity: {:.10f}".format(vel))
-    print()
+    print("[#] Time for velocity Verlet integration is:")
+    print("{:.10f}".format(time))
+    print("[#] Velocity for velocity Verlet integration is:")
+    print("{:.10f}".format(vel))
+
 
 if __name__ == '__main__':
     main()
