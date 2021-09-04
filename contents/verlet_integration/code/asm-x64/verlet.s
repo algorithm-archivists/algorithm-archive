@@ -4,9 +4,9 @@
   zero:          .double 0.0
   two:           .double 2.0
   half:          .double 0.5
-  verlet_fmt:    .string "Time for Verlet integration is: %lf\n"
-  stormer_fmt:   .string "Time and Velocity for Stormer Verlet Integration is: %lf, %lf\n"
-  velocity_fmt:  .string "Time and Velocity for Velocity Verlet Integration is: %lf, %lf\n"
+  verlet_fmt:    .string "[#] Time for Verlet integration is:\n%lf\n"
+  stormer_fmt:   .string "[#] Time for Stormer Verlet Integration is:\n%lf\n[#] Velocity for Stormer Verlet Integration is:\n%lf\n"
+  velocity_fmt:  .string "[#] Time for Velocity Verlet Integration is:\n%lf\n[#] Velocity for Velocity Verlet Integration is:\n%lf\n"
   pos:           .double 5.0
   acc:           .double -10.0
   dt:            .double 0.01
