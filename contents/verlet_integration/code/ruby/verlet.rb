@@ -27,7 +27,7 @@ def stormer_verlet(pos, acc, dt)
         vel += acc*dt
     end
 
-   return time
+   return time, vel
 
 end
 
@@ -41,10 +41,21 @@ def velocity_verlet(pos, acc, dt)
         vel += acc*dt
     end
 
-   return time
+   return time, vel
 
 end
 
+puts "[#] Time for Verlet integration is:"
 p verlet(5.0, -10, 0.01)
-p stormer_verlet(5.0, -10, 0.01)
-p velocity_verlet(5.0, -10, 0.01)
+
+time, vel = stormer_verlet(5.0, -10, 0.01)
+puts "[#] Time for Stormer Verlet integration is:"
+p time
+puts "[#] Velocity for Stormer Verlet integration is:"
+p vel
+
+time, vel = velocity_verlet(5.0, -10, 0.01)
+puts "[#] Time for velocity Verlet integration is:"
+p time
+puts "[#] Velocity for velocity Verlet integration is:"
+p vel
