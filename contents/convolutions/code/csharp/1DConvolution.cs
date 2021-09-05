@@ -70,9 +70,9 @@ namespace Convolution1D
             {
                 for (var j = Math.Max(0, i - filter.Length); j <= i; j++)
                 {
-                    if (j < signal.Length && (i - j + 1) < filter.Length)
+                    if (j < signal.Length && (i - j) < filter.Length)
                     {
-                        sum += signal[j] * filter[i - j + 1];
+                        sum += signal[j] * filter[i - j];
                     }
                 }
 
