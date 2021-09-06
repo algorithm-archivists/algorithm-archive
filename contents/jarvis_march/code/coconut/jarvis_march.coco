@@ -3,11 +3,11 @@ data point(x=0, y=0):
         return f'({self.x}, {self.y})'
 
 # Is the turn counter-clockwise?
-def counter_clockwise(p1, p2, p3) =
+def counter_clockwise(p1 is point, p2 is point, p3 is point) =
     (p3.y - p1.y) * (p2.x - p1.x) >= (p2.y - p1.y) * (p3.x - p1.x)
 
 
-def jarvis_march(gift):
+def jarvis_march(gift: point[]) -> point[]:
     point_on_hull = min(gift) # The leftmost point in the gift
     hull = [point_on_hull] # It is guaranteed it will be on the hull.
 
@@ -35,6 +35,6 @@ if __name__ == '__main__':
     ] |> map$(t -> point(*t)) |> list
     hull = jarvis_march(test_gift)
 
-    print("The points in the hull are:")
+    print("[#] The points in the hull are:")
     for point in hull:
         print(point)
