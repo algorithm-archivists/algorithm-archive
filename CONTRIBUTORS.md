@@ -55,3 +55,7 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Jonathan Dönszelmann
 - Ishaan Verma
 - Delphi1024
+- ntindle
+- Mahdi Sarikhani
+- Ridham177
+- Hugo Salou

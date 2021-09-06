@@ -22,7 +22,7 @@ end
 
 # This is a general function to simulate a chaos game
 # n is the number of iterations
-# initial_location is the the starting point of the chaos game
+# initial_location is the starting point of the chaos game
 # hutchinson_op is the set of functions to iterate through
 # probabilities is the set of probabilities corresponding to the likelihood
 #     of choosing their corresponding function in hutchinson_op

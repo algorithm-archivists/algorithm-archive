@@ -84,5 +84,6 @@ main:
   call   printf
   add    rsp, 16
   pop    rbp
+  xor    rax, rax                   # Set exit code to 0
   ret
 

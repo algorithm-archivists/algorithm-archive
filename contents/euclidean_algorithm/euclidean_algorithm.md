@@ -210,6 +210,8 @@ Here's a video on the Euclidean algorithm:
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
