@@ -1,7 +1,8 @@
 data Tree a = Node
-  { node :: a
-  , forest :: [Tree a]
-  } deriving (Show)
+  { node :: a,
+    forest :: [Tree a]
+  }
+  deriving (Show)
 
 dfs :: Tree a -> [a]
 dfs (Node x ts) = x : concatMap dfs ts
@@ -19,7 +20,7 @@ dfsStack :: Tree a -> [a]
 dfsStack t = go [t]
   where
     go [] = []
-    go ((Node x ts):stack) = x : go (ts ++ stack)
+    go ((Node x ts) : stack) = x : go (ts ++ stack)
 
 bfs :: Tree a -> [a]
 bfs (Node x ts) = x : go ts
@@ -27,26 +28,22 @@ bfs (Node x ts) = x : go ts
     go [] = []
     go ts = map node ts ++ go (concatMap forest ts)
 
-toBin :: Tree a -> Tree a
-toBin (Node x ts) = Node x (map toBin $ take 2 ts)
+createTree :: Int -> Int -> Tree Int
+createTree 0 _ = Node 0 []
+createTree numRow numChild = Node numRow children
+  where
+    children = map (createTree (numRow - 1)) $ replicate numChild numChild
 
 main = do
-  print $ dfs testTree
-  print $ dfsPostOrder testTree
-  print $ dfsInOrder $ toBin testTree
-  print $ dfsStack testTree
-  print $ bfs testTree
-
-testTree :: Tree Int
-testTree =
-  Node
-    1
-    [ Node 2 [Node 3 [], Node 4 [Node 5 []]]
-    , Node
-        6
-        [ Node 7 []
-        , Node 8 [Node 9 [Node 10 [Node 11 []], Node 12 []]]
-        , Node 13 [Node 14 []]
-        ]
-    , Node 15 []
-    ]
+  let testTree = createTree 2 3
+      showNodes = unwords . map show
+  putStrLn "[#] Recursive DFS:"
+  putStrLn $ showNodes $ dfs testTree
+  putStrLn "[#] Recursive Postorder DFS:"
+  putStrLn $ showNodes $ dfsPostOrder testTree
+  putStrLn "[#] Stack-based DFS:"
+  putStrLn $ showNodes $ dfsStack testTree
+  putStrLn "[#] Queue-based BFS:"
+  putStrLn $ showNodes $ bfs testTree
+  putStrLn "[#] Recursive Inorder DFS for Binary Tree:"
+  putStrLn $ showNodes $ dfsInOrder $ createTree 3 2

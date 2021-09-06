@@ -72,7 +72,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="rs" %}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:6-7, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:7-8, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
@@ -128,7 +128,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="rs" %}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:10-11, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
@@ -179,7 +179,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="rs" %}
 [import:25-40, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:13-17, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
@@ -239,7 +239,7 @@ In code, it looks like this:
 {% sample lang="rs" %}
 [import:41-48, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:19-23, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
@@ -292,7 +292,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="rs" %}
 [import:50-58, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:25-29, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
