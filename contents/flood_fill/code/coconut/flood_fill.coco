@@ -12,7 +12,7 @@ def inbounds(canvas_shape, location is Point) =
     min(location) >= 0 and location.x < canvas_shape[0] and location.y < canvas_shape[1]
 
 
-def find_neighbours(canvas, location is Point, old_value, new_value):
+def find_neighbours(canvas, location is Point, old_value):
     possible_neighbours = ((Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
                           |> map$(location.__add__))
 
@@ -30,8 +30,7 @@ def stack_fill(canvas, location is Point, old_value, new_value):
         current_location = stack.pop()
         if canvas[current_location] == old_value:
             canvas[current_location] = new_value
-            stack.extend(find_neighbours(canvas, current_location, old_value,
-                                         new_value))
+            stack.extend(find_neighbours(canvas, current_location, old_value))
 
 
 def queue_fill(canvas, location is Point, old_value, new_value):
@@ -45,8 +44,7 @@ def queue_fill(canvas, location is Point, old_value, new_value):
 
     while queue:
         current_location = queue.popleft()
-        for neighbour in find_neighbours(canvas, current_location, old_value,
-                                         new_value):
+        for neighbour in find_neighbours(canvas, current_location, old_value):
             canvas[neighbour] = new_value
             queue.append(neighbour)
 
@@ -58,7 +56,7 @@ def recursive_fill(canvas, location is Point, old_value, new_value):
     canvas[location] = new_value
     # consume is important here, because otherwise, the recursive function is not called again
     consume(
-        find_neighbours(canvas, location, old_value, new_value)
+        find_neighbours(canvas, location, old_value)
         |> map$(recursive_fill$(canvas, ?, old_value, new_value))
     )
 
