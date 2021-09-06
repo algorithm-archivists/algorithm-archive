@@ -62,6 +62,12 @@ def recursive_fill(canvas, location is Point, old_value, new_value):
         |> map$(recursive_fill$(canvas, ?, old_value, new_value))
     )
 
+
+def test_grid(initial_canvas, final_canvas, function):
+    canvas = initial_canvas.copy() # ensure the initial_canvas is unchanged
+    function(canvas)
+    return (canvas == final_canvas).all()
+
 def test():
     from collections import namedtuple
 
@@ -75,49 +81,35 @@ def test():
 
     starting_location = Point(0, 0)
 
-
+    recursive_test_func = recursive_fill$(?, starting_location, 0, 1)
     # The following is manual unit testing of the function
-    recursive_fill(grid, starting_location, 0, 1)
-    try:
-        assert (grid == solution_grid).all()
-    except AssertionError:
-        print('F', end='')
-        failure_count += 1
+    if test_grid(grid, solution_grid, recursive_test_func):
+        pass_count += 1
+        print('.', end='')
     else:
+        failure_count += 1
+        print('F', end='')
+
+    stack_test_func = stack_fill$(?, starting_location, 0, 1)
+    if test_grid(grid, solution_grid, stack_test_func):
         print('.', end='')
         pass_count += 1
-
-    # Resetting the grid, if everything went well.
-    grid[:2,] = 0
-
-    stack_fill(grid, starting_location, 0, 1)
-    try:
-        assert (grid == solution_grid).all()
-    except AssertionError:
+    else:
         print('F', end='')
         failure_count += 1
-    else:
+
+    queue_test_func = queue_fill$(?, starting_location, 0, 1)
+    if test_grid(grid, solution_grid, queue_test_func):
         print('.', end='')
         pass_count += 1
-
-    grid[:2,] = 0
-
-    queue_fill(grid, starting_location, 0, 1)
-    try:
-        assert (grid == solution_grid).all()
-    except AssertionError:
+    else:
         print('F', end='')
         failure_count += 1
-    else:
-        print('.', end='')
-        pass_count += 1
 
-    print('')
+    print()
     print(TestResults(pass_count, failure_count))
 
 if __name__ == '__main__':
     # Testing setup
     test()
-
-
 
