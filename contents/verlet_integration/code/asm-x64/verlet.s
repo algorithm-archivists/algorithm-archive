@@ -124,5 +124,6 @@ main:
   mov    rax, 1
   call   printf
   pop    rbp
+  xor    rax, rax                      # Set exit code to 0
   ret
 
