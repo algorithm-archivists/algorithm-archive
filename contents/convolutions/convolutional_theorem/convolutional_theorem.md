@@ -31,7 +31,7 @@ This means that the convolution theorem is fundamental to creating fast convolut
 
 {% method %}
 {% sample lang="jl" %}
-[import:5-8, lang:"julia"](../code/julia/convolutional_theorem.jl)
+[import:5-8, lang:"julia"](code/julia/convolutional_theorem.jl)
 {% endmethod %}
 
 This method also has the added advantage that it will *always output an array of the size of your signal*; however, if your signals are not of equal size, we need to pad the smaller signal with zeros.
@@ -41,7 +41,7 @@ Also note that the Fourier Transform is a periodic or cyclic operation, so there
 
 {% method %}
 {% sample lang="jl" %}
-[import, lang:"julia"](../code/julia/convolutional_theorem.jl)
+[import, lang:"julia"](code/julia/convolutional_theorem.jl)
 {% endmethod %}
 
 <script>
