@@ -16,7 +16,7 @@ func dfsRecursive(n *node) {
 
 func dfsRecursivePostorder(n *node) {
 	for _, child := range n.children {
-		dfsRecursive(child)
+		dfsRecursivePostorder(child)
 	}
 	fmt.Printf("%d ", n.id)
 }
@@ -77,11 +77,11 @@ func main() {
 	root := createTree(2, 3)
 	binTree := createTree(3, 2)
 
-    fmt.Println("[#] DFS Recursive:")
+    fmt.Println("[#] Recursive DFS:")
 	dfsRecursive(root)
     fmt.Println()
 
-    fmt.Println("[#] DFS Postorder Recursive:")
+    fmt.Println("[#] Recursive Postorder DFS:")
 	dfsRecursivePostorder(root)
     fmt.Println()
 
@@ -93,7 +93,7 @@ func main() {
 	bfsQueue(root)
     fmt.Println()
 
-    fmt.Println("[#] DFS Inorder for Binary Tree:")
+    fmt.Println("[#] Recursive Inorder DFS for Binary Tree:")
 	dfsRecursiveInorderBtree(binTree)
     fmt.Println()
 
