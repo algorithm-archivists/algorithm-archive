@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -8,8 +8,8 @@ public class Tree {
 
     public Tree(int rowCount, int childrenCount) {
         // this.root is the root node of the Tree
-        this.root = new Node(1);
-        this.createAllChildren(this.root, rowCount, childrenCount);
+        this.root = new Node(rowCount);
+        this.createAllChildren(this.root, rowCount-1, childrenCount);
     }
 
 
@@ -18,7 +18,7 @@ public class Tree {
     }
 
     private void dfsRecursive(Node node) {
-        System.out.println(node.id);
+        System.out.print(node.id + " ");
 
         for (Node n : node.children) {
             dfsRecursive(n);
@@ -36,7 +36,7 @@ public class Tree {
         }
 
         // Here we are doing something ...
-        System.out.println(node.id);
+        System.out.print(node.id + " ");
     }
 
 
@@ -48,15 +48,15 @@ public class Tree {
         switch (node.children.size()) {
             case 2:
                 dfsRecursiveInOrderBinary(node.children.get(0));
-                System.out.println(node.id);
+                System.out.print(node.id + " ");
                 dfsRecursiveInOrderBinary(node.children.get(1));
                 break;
             case 1:
                 dfsRecursiveInOrderBinary(node.children.get(0));
-                System.out.println(node.id);
+                System.out.print(node.id + " ");
                 break;
             case 0:
-                System.out.println(node.id);
+                System.out.print(node.id + " ");
                 break;
             default:
                 System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
@@ -71,7 +71,7 @@ public class Tree {
         Node tmp;
 
         while (stack.size() != 0) {
-            System.out.println(stack.peek().id);
+            System.out.print(stack.peek().id + " ");
             tmp = stack.pop();
 
             for (Node c : tmp.children) {
@@ -81,11 +81,11 @@ public class Tree {
     }
 
     public void bfsQueue() {
-        Queue<Node> queue = new PriorityQueue<Node>();
+        Queue<Node> queue = new LinkedList<Node>();
         queue.add(this.root);
 
         while (queue.size() != 0) {
-            System.out.println(queue.peek().id);
+            System.out.print(queue.peek().id + " ");
             Node temp = queue.poll(); // return null if the queue is empty
 
             if (temp != null) {
@@ -98,12 +98,12 @@ public class Tree {
 
 
     private void createAllChildren(Node node, int rowCount, int childrenCount) {
-        if (rowCount <= 1) {
+        if (rowCount < 0) {
            return; 
         }
 
         for (int i = 0; i < childrenCount; i++) {
-            node.children.add(new Node(node.id * 10 + i + 1));
+            node.children.add(new Node(rowCount));
             createAllChildren(node.children.get(i), rowCount - 1, childrenCount);
         }
     }
