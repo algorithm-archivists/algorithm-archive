@@ -62,7 +62,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="js" %}
 [import:12-15, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:18-23, lang:"python"](code/python/Tree_example.py)
+[import:17-22, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-pre.svg" style="width:40%" />
@@ -116,7 +116,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="js" %}
 [import:17-20, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:26-31, lang:"python"](code/python/Tree_example.py)
+[import:25-30, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-post.svg" style="width:40%" />
@@ -142,7 +142,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="m" %}
 [import:47-62, lang:"matlab"](code/matlab/tree.m)
 {% sample lang="coco" %}
-[import:11-15, lang:="coconut"](codo/coconut/tree_traversal.coco)
+[import:11-15, lang:="coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 <p>
@@ -165,7 +165,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="js" %}
 [import:22-34, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:34-46, lang:"python"](code/python/Tree_example.py)
+[import:34-45, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-in.svg" style="width:40%" />
@@ -223,7 +223,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:49-60, lang:"python"](code/python/Tree_example.py)
+[import:48-59, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-stack.svg" style="width:70%" />
@@ -274,7 +274,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:63-75, lang:"python"](code/python/Tree_example.py)
+[import:62-72, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" style="width:70%" />
@@ -335,7 +335,7 @@ Here is a video describing tree traversal:
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import, lang:"python"](code/python/Tree_example.py)
+[import, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 
 The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/174017753/)
