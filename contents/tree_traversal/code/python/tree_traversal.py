@@ -84,7 +84,7 @@ def main():
     dfs_recursive_postorder(tree)
     print()
 
-    print("[#] Stack-based DFS :")
+    print("[#] Stack-based DFS:")
     dfs_stack(tree)
     print()
 
@@ -94,7 +94,7 @@ def main():
 
     binary_tree = create_tree(Node(), 3, 2)
     
-    print("[#] Recursive Inorder Binary Tree:")
+    print("[#] Recursive Inorder DFS for Binary Tree:")
     dfs_recursive_inorder_btree(binary_tree)
     print()
 
