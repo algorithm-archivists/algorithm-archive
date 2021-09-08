@@ -1,0 +1,7 @@
+import os
+
+env = Environment(ENV={'PATH': os.environ['PATH']})
+
+python_file = env.Command(target='barnsley.py', source='barnsley.coco', action='coconut --strict --target=3.8 $SOURCE')
+
+env.Command(target='out.dat', source=python_file, action='python3 $SOURCE')
