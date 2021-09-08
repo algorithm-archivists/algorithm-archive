@@ -1,0 +1,3 @@
+executable = Program('barnsley.out', 'barnsley.cpp', CCFLAGS='-std=c++17 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2')
+
+Command(target='out.dat', source=executable, action='./$SOURCE')

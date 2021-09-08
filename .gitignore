@@ -517,3 +517,10 @@ vscode/
 
 # aspell
 *.bak
+
+# SCons database files
+**/.sconsign.dblite
+
+# SCons compiled files
+*.out
+*.o

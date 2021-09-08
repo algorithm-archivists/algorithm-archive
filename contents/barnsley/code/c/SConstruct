@@ -1,0 +1,3 @@
+executable = Program('barnsley.out', 'barnsley.c', CCFLAGS='-Wall -Wextra -Wshadow -Wcast-align -Wunused -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2')
+
+data_file = Command(target='barnsley.dat', source=executable, action='./$SOURCE')

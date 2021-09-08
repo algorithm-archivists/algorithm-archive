@@ -1,0 +1,1 @@
+Command(target='out.dat', source='barnsley.jl', action='julia $SOURCE')

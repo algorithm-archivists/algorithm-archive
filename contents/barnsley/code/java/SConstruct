@@ -1,0 +1,3 @@
+class_files = Java('.', '.')
+
+Command(target='barnsley.dat', source=class_files, action='java Barnsley')
