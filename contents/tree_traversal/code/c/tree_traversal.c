@@ -140,3 +140,4 @@ int main() {
     
     destroy_tree(root_binary);
     return 0;
+}
