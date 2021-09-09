@@ -174,6 +174,8 @@ Here is the full script to generate a domain colored output of $$f(z)=z^2$$.
 {% method %}
 {% sample lang="gnuplot" %}
 [import, lang:"gnuplot"](code/gnuplot/domain_coloring.gp)
+{% sample lang="python & matplotlib" %}
+[import, lang:"python"](code/python/domain_coloring.py)
 {% endmethod %}
 
 ### Bibliography
