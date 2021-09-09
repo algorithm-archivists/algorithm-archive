@@ -44,7 +44,8 @@ def build_huffman_tree(message):
         # combine the nodes and add back to the nodes list
         new_tree = Node(tree_left, tree_right)
 
-        # find the first tree that has a weight smaller than new_weight and returns its index in the list
+        # find the first tree that has a weight smaller than new_weight
+        # and returns its index in the list.
         # If no such tree can be found, use len(trees) instead to append
         index = bisect(trees |> map$(weight) |> list, weight(new_tree))
 
@@ -57,7 +58,8 @@ def build_huffman_tree(message):
 
 def build_codebook(Empty(), code='') = []
 addpattern def build_codebook(Leaf(char, n), code='') = [(char, code)]
-addpattern def build_codebook(Node(left, right), code='') = build_codebook(left, code+'0') + build_codebook(right, code+'1')
+addpattern def build_codebook(Node(left, right), code='') = 
+    build_codebook(left, code+'0') + build_codebook(right, code+'1')
 
 # encodes the message
 def huffman_encode(codebook, message):
@@ -85,9 +87,9 @@ def huffman_decode(codebook, encoded_message):
     inverse_dict = dict((v, k) for k, v in codebook)
 
     # for each bit in the encoding
-    # if the bit is in the dictionary, replace the bit with the paired character
-    # else look at the bit and the following bits together until a match occurs
-    # move to the next bit not yet looked at
+    # if the bit is in the dictionary, replace the bit with the paired
+    # character else look at the bit and the following bits together
+    # until a match occurs move to the next bit not yet looked at.
     if encoded_message == '':
         return inverse_dict['']
 
