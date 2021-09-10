@@ -58,7 +58,7 @@ Now let's hop into disecting the Barnsley fern by seeing how each transform affe
 | $$f_4(P) = \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix}$$ <p> This operation flips every point and rotates to the right.| <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_rnd_3.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 
 At this stage, it *might* be clear what is going on, but it's not exactly obvious.
-Essentiallg, each operation corresponds to another part of the fern:
+Essentially, each operation corresponds to another part of the fern:
 
 * $$f_1$$ creates the stem.
 * $$f_2$$ creates successively smaller ferns moving up and to the right.
