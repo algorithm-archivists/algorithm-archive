@@ -1,5 +1,15 @@
 import java.util.*;
 
+class Huffman {
+    public static void main(String[] args) {
+        HuffmanTree huffmanTree = new HuffmanTree("bibbity_bobbity");
+        huffmanTree.createTree();
+        String encoded = huffmanTree.encode();
+        System.out.println("Encoded String: " + encoded);
+        System.out.println("Decoded String: " + huffmanTree.decode(encoded));
+    }
+}
+
 class TreeNode {
     String letter = "";
     int frequency = 0;
@@ -99,15 +109,5 @@ class HuffmanTree {
             }
         }
         return decoded.toString();
-    }
-}
-
-class Huffman {
-    public static void main(String[] args) {
-        HuffmanTree huffmanTree = new HuffmanTree("bibbity_bobbity");
-        huffmanTree.createTree();
-        String encoded = huffmanTree.encode();
-        System.out.println("Encoded String: " + encoded);
-        System.out.println("Decoded String: " + huffmanTree.decode(encoded));
     }
 }

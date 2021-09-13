@@ -92,6 +92,8 @@ In code, this might look like this:
 [import:28-46, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:10-25, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:15-19, lang="coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -110,6 +112,8 @@ In code, it might look like this:
 [import:174-189, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:55-63, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:54-63, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -123,6 +127,8 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 [import:79-102, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:27-36, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:23-34, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -164,6 +170,8 @@ The code would look something like this:
 [import:149-172, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:38-53, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import:37-51, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
@@ -244,6 +252,8 @@ After, we will fill in the left-hand side of the array to be all ones by choosin
 [import, lang:"c"](code/c/flood_fill.c)
 {% sample lang="py" %}
 [import:, lang="python"](code/python/flood_fill.py)
+{% sample lang="coco" %}
+[import, lang="coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -263,7 +273,7 @@ The code examples are licensed under the MIT license (found in [LICENSE.md](http
 
 ##### Text
 
-The text of this chapter was written by [James Schloss](https://github.com/leio) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
