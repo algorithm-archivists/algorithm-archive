@@ -97,7 +97,7 @@ namespace Convolution1D
             var fullLinearOutput = ConvolveLinear(x, y, x.Length + y.Length - 1);
             // Simple boundaries.
             var simpleLinearOutput = ConvolveLinear(x, y, x.Length);
-            // Cyclic convolution
+            // Cyclic convolution.
             var cyclicOutput = ConvolveCyclic(x, y);
 
             // Output convolutions to different files for plotting
