@@ -62,7 +62,7 @@ namespace Convolution1D
 
         static double[] ConvolveLinear(double[] signal, double[] filter, int outputSize)
         {
-            // Convolutional output
+            // Convolutional output.
             var output = new double[outputSize];
             var sum = 0.0;
 
