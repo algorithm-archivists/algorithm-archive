@@ -85,7 +85,7 @@ namespace Convolution1D
 
         static void Main()
         {
-            // Create sawtooth functions for x and y
+            // Create sawtooth functions for x and y.
             var x = CreateSawtooth(200);
             var y = CreateSawtooth(200);
 
