@@ -14,7 +14,7 @@ namespace Convolution1D
             return array;
         }
 
-        // Normalizes the given array
+        // Normalizes the given array.
         static void Normalize(double[] array)
         {
             var norm = Norm(array);
