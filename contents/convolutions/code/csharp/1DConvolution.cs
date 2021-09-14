@@ -89,7 +89,7 @@ namespace Convolution1D
             var x = CreateSawtooth(200);
             var y = CreateSawtooth(200);
 
-            // Normalization is not strictly necessary, but good practice
+            // Normalization is not strictly necessary, but good practice.
             Normalize(x);
             Normalize(y);
 
