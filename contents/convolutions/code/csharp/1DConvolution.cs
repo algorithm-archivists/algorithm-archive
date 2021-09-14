@@ -31,7 +31,7 @@ namespace Convolution1D
             return Math.Sqrt(sum);
         }
 
-        // Julia like modulus function which handles negative values properly
+        // Modulus function which handles negative values properly.
         // Assumes that y >= 0
         static int Mod(int x, int y) => ((x % y) + y) % y;
 
