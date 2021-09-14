@@ -39,7 +39,7 @@ namespace Convolution1D
         {
             var outputSize = Math.Max(signal.Length, filter.Length);
 
-            // Convolutional output
+            // Convolutional output.
             var output = new double[outputSize];
             var sum = 0.0;
 
