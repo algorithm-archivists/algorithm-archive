@@ -5,7 +5,7 @@ namespace Convolution1D
 {
     public class Convolution1D
     {
-        // Creates a sawtooth function with the given length
+        // Creates a sawtooth function with the given length.
         static double[] CreateSawtooth(int length)
         {
             var array = new double[length];
