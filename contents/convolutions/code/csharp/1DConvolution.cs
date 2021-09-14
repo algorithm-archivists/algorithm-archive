@@ -100,7 +100,7 @@ namespace Convolution1D
             // Cyclic convolution.
             var cyclicOutput = ConvolveCyclic(x, y);
 
-            // Output convolutions to different files for plotting
+            // Output convolutions to different files for plotting.
             File.WriteAllText("full_linear.dat", String.Join(Environment.NewLine, fullLinearOutput));
             File.WriteAllText("simple_linear.dat", String.Join(Environment.NewLine, simpleLinearOutput));
             File.WriteAllText("cyclic.dat", String.Join(Environment.NewLine, cyclicOutput));
