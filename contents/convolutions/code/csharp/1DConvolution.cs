@@ -32,7 +32,7 @@ namespace Convolution1D
         }
 
         // Modulus function which handles negative values properly.
-        // Assumes that y >= 0
+        // Assumes that y >= 0.
         static int Mod(int x, int y) => ((x % y) + y) % y;
 
         static double[] ConvolveCyclic(double[] signal, double[] filter)
