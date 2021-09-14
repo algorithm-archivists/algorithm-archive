@@ -93,7 +93,7 @@ namespace Convolution1D
             Normalize(x);
             Normalize(y);
 
-            // Full convolution, output will be the size of x + y - 1
+            // Full convolution, output will be the size of x + y - 1.
             var fullLinearOutput = ConvolveLinear(x, y, x.Length + y.Length - 1);
             // Simple boundaries
             var simpleLinearOutput = ConvolveLinear(x, y, x.Length);
