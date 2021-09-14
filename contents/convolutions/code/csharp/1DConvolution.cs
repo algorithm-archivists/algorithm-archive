@@ -22,7 +22,7 @@ namespace Convolution1D
                 array[i] /= norm;
         }
 
-        // Calculates the norm of the array
+        // Calculates the norm of the array.
         static double Norm(double[] array)
         {
             var sum = 0.0;
