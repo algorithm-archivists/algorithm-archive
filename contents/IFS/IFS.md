@@ -132,14 +132,20 @@ Here, instead of tracking children of children, we track a single individual tha
 {% method %}
 {% sample lang="jl" %}
 [import:4-17, lang:"julia"](code/julia/IFS.jl)
+{% sample lang="hs" %}
+[import:7-13, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
 [import:39-52, lang:"cpp"](code/c++/IFS.cpp)
 {% sample lang="py" %}
 [import:5-12, lang:"python"](code/python/IFS.py)
 {% sample lang="c" %}
 [import:18-29, lang:"c"](code/c/IFS.c)
+{% sample lang="lisp" %}
+[import:5-14, lang:"lisp"](code/clisp/ifs.lisp)
 {% sample lang="coco" %}
 [import:4-16, lang:"coconut"](code/coconut/IFS.coco)
+{% sample lang="java" %}
+[import:16-39, lang:"java"](code/java/IFS.java)
 {% endmethod %}
 
 If we set the initial point to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
@@ -212,14 +218,20 @@ In addition, we have written the chaos game code to take in a set of points so t
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/IFS.jl)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/IFS.cpp)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/IFS.py)
 {% sample lang="c" %}
 [import, lang:"c"](code/c/IFS.c)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/ifs.lisp)
 {%sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/IFS.coco)
+{%sample lang="java" %}
+[import, lang:"java"](code/java/IFS.java)
 {% endmethod %}
 
 ### Bibliography

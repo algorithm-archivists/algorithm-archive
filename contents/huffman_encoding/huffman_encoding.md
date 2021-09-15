@@ -98,6 +98,8 @@ The code snippet was taken from this [scratch project](https://scratch.mit.edu/p
 <p>
     <img  class="center" src="code/scratch/huffman.svg" width="700" />
 </p>
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/huffman.coco)
 {% endmethod %}
 
 <script>

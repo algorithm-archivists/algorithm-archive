@@ -193,8 +193,8 @@
         {
           "lang": "ps1",
           "name": "PowerShell"
-	},
-	{
+        },
+        {
           "lang": "v",
           "name": "Vlang"
         },
@@ -207,12 +207,20 @@
           "name": "Kotlin"
         },
         {
+          "lang": "ts",
+          "name": "TypeScript"
+        },
+        {
           "lang": "vim",
           "name": "VimL"
         },
         {
           "lang": "coco",
           "name": "Coconut"
+        },
+        {
+          "lang": "dart",
+          "name": "Dart"
         }
       ]
     }

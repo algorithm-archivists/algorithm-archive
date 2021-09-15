@@ -13,9 +13,7 @@ function convolve_cyclic(signal::Array{T, 1},
 
     for i = 1:output_size
         for j = 1:output_size
-            if (mod1(i-j, output_size) <= length(filter))
-                sum += signal[mod1(j, output_size)] * filter[mod1(i-j, output_size)]
-            end
+            sum += get(signal, mod1(j, output_size), 0) * get(filter, mod1(i-j, output_size), 0)
         end
 
         out[i] = sum
@@ -57,8 +55,8 @@ function main()
     normalize!(x)
     normalize!(y)
 
-    # full convolution, output will be the size of x + y
-    full_linear_output = convolve_linear(x, y, length(x) + length(y))
+    # full convolution, output will be the size of x + y - 1
+    full_linear_output = convolve_linear(x, y, length(x) + length(y) - 1)
 
     # simple boundaries
     simple_linear_output = convolve_linear(x, y, length(x))
