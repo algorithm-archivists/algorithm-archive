@@ -26,4 +26,4 @@ shape_points = [[0.0, 0.0],
                 [0.5, sqrt(0.75)],
                 [1.0, 0.0]]
 output_points = chaos_game(10000, shape_points)
-writedlm("out.dat", output_points)
+writedlm("sierpinski.dat", output_points)

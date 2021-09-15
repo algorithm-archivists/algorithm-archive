@@ -64,19 +64,19 @@ int main() {
   // each of these functions.
 
   double time = verlet(5.0, -10, 0.01);
-  std::cout << "Time for Verlet integration is: " \
+  std::cout << "[#] Time for Verlet integration is:\n" \
             << time << std::endl;
 
   timestep timestep_sv = stormer_verlet(5.0, -10, 0.01);
-  std::cout << "Time for Stormer Verlet integration is: " \
+  std::cout << "[#] Time for Stormer Verlet integration is:\n" \
             << timestep_sv.time << std::endl;
-  std::cout << "Velocity for Stormer Verlet integration is: " \
+  std::cout << "[#] Velocity for Stormer Verlet integration is:\n" \
             << timestep_sv.vel << std::endl;
 
   timestep timestep_vv = velocity_verlet(5.0, -10, 0.01);
-  std::cout << "Time for velocity Verlet integration is: " \
+  std::cout << "[#] Time for velocity Verlet integration is:\n" \
             << timestep_vv.time << std::endl;
-  std::cout << "Velocity for velocity Verlet integration is: " \
+  std::cout << "[#] Velocity for velocity Verlet integration is:\n" \
             << timestep_vv.vel << std::endl;
 
   return 0;

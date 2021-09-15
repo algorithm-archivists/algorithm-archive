@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="SVGRoot" width="100px" height="100px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <rect width="100" height="100" fill="#fff" opacity=".998" style="paint-order:stroke markers fill"/>
+  <path d="m46.289 44.187c-7.1938 3.1853-16.526 3.0936-17.708-3.4549-0.79037-4.3767 3.2731-7.5751 9.9619-11.337 7.5222-4.2304 17.682-12.854 20.268-7.7608 2.5861 5.0934-5.3279 19.367-12.522 22.553z" fill="#6eb9ff" opacity=".998" style="paint-order:stroke markers fill"/>
+  <g fill="#858585">
+   <rect transform="rotate(-47.902)" x="-11.894" y="52.925" width="42.556" height="48.307" rx="1.1502" ry="1.1502" opacity=".998" stroke="#fff" stroke-linecap="round" stroke-width="3" style="paint-order:stroke markers fill"/>
+   <rect transform="rotate(-47.902)" x="-13.626" y="55.116" width="46.006" height="11.502" rx="1.1502" ry="1.1502" opacity=".998" style="paint-order:stroke markers fill"/>
+   <rect x="48.5" y="5.7176" width="6.9009" height="31.635" rx="3.4505" ry="3.7962" opacity=".998" stroke="#fff" stroke-linecap="round" stroke-width="3" style="paint-order:stroke markers fill"/>
+  </g>
+  <path d="m33.805 63.7c1.8901 5.8738-0.60574 11.292-4.8548 11.173-4.9505-0.13856-6.6492-5.4822-4.9687-11.419 1.6105-5.6898 2.2427-11.237 4.9687-10.926 3.1006 0.35365 2.7774 4.7166 4.8548 11.173z" fill="#6eb9ff" opacity=".998" style="paint-order:stroke markers fill"/>
+  <ellipse cx="28.615" cy="86.901" rx="24.204" ry="6.6398" fill="#6eb9ff" opacity=".998" style="paint-order:stroke markers fill"/>
+ </g>
+</svg>

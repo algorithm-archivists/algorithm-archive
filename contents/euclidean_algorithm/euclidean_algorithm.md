@@ -24,7 +24,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="lisp" %}
 [import:3-12, lang="lisp"](code/clisp/euclidean.lisp)
 {% sample lang="py" %}
-[import:11-22, lang="python"](code/python/euclidean_example.py)
+[import:11-27, lang="python"](code/python/euclidean_example.py)
 {% sample lang="hs" %}
 [import:3-13, lang="haskell"](code/haskell/euclidean_algorithm.hs)
 {% sample lang="rs" %}
@@ -81,6 +81,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 
 {% sample lang="ps1" %}
 [import:1-14, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
+{% sample lang="coco" %}
+[import:1-9, lang="coconut"](code/coconut/euclidean.coco)
 
 {% endmethod %}
 
@@ -169,6 +171,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 
 {% sample lang="ps1" %}
 [import:16-27, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
+{% sample lang="coco" %}
+[import:12-15, lang="coconut"](code/coconut/euclidean.coco)
 
 {% endmethod %}
 
@@ -206,6 +210,8 @@ Here's a video on the Euclidean algorithm:
 [import, lang="c_cpp"](code/c++/euclidean.cpp)
 {% sample lang="java" %}
 [import, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -282,6 +288,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 
 {% sample lang="ps1" %}
 [import, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
+{% sample lang="coco" %}
+[import, lang="coconut"](code/coconut/euclidean.coco)
 
 {% endmethod %}
 
