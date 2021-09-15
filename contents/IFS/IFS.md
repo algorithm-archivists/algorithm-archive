@@ -135,7 +135,7 @@ Here, instead of tracking children of children, we track a single individual tha
 {% sample lang="c" %}
 [import:18-29, lang:"c"](code/c/IFS.c)
 {% sample lang="lisp" %}
-[import:5-13, lang:"lisp"](code/clisp/ifs.lisp)
+[import:5-14, lang:"lisp"](code/clisp/ifs.lisp)
 {% endmethod %}
 
 If we set the initial points to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
