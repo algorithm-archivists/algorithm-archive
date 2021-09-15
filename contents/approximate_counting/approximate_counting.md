@@ -362,6 +362,8 @@ As we do not have any objects to count, we will instead simulate the counting wi
 [import, lang:"julia"](code/julia/approximate_counting.jl)
 {% sample lang="c" %}
 [import, lang:"c"](code/c/approximate_counting.c)
+{% sample lang="cpp" %}
+[import, lang:"cpp"](code/c++/approximate_counting.cpp)
 {% endmethod %}
 
 ### Bibliography

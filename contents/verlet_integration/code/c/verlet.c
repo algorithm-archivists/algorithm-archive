@@ -46,16 +46,20 @@ int main() {
     double time, vel;
 
     verlet(&time, 5.0, -10, 0.01);
-    printf("Time for Verlet integration is: %lf\n",
-           time);
+    printf("[#] Time for Verlet integration is:\n");
+    printf("%lf\n", time);
 
     stormer_verlet(&time, &vel, 5.0, -10, 0.01);
-    printf("Time and velocity for Stormer Verlet integration is: %lf, %lf\n",
-           time, vel);
+    printf("[#] Time for Stormer Verlet integration is:\n");
+    printf("%lf\n", time);
+    printf("[#] Velocity for Stormer Verlet integration is:\n");
+    printf("%lf\n", vel);
 
     velocity_verlet(&time, &vel, 5.0, -10, 0.01);
-    printf("Time and velocity for velocity Verlet integration is: %lf, %lf\n",
-           time, vel);
+    printf("[#] Time for velocity Verlet integration is:\n");
+    printf("%lf\n", time);
+    printf("[#] Velocity for Stormer Verlet integration is:\n");
+    printf("%lf\n", vel);
 
     return 0;
 }
