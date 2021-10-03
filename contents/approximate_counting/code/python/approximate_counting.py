@@ -24,7 +24,7 @@ def increment(v, a):
 # It returns n(v,a), the approximate count
 def approximate_count(n_items, a):
     v = 0
-    for i in range(1, n_items):
+    for i in range(1, n_items + 1):
         v = increment(v, a)
     return n(v, a)
 
@@ -35,7 +35,7 @@ def approximate_count(n_items, a):
 #     - threshold: the maximum percent error allowed
 # It returns a true / false test value
 def test_approximate_count(n_trials, n_items, a, threshold):
-    samples = [approximate_count(n_items, a) for i in range(1, n_trials)]
+    samples = [approximate_count(n_items, a) for i in range(1, n_trials + 1)]
     avg = sum(samples)/n_trials
 
     if abs((avg - n_items)/n_items) < threshold:
