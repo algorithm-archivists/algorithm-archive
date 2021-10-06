@@ -12,8 +12,3 @@
   grid-template-areas:
     ". .";
 }
-
-.citation:nth-of-type(even) {
-  background: #f8f8f8;
-}
-
