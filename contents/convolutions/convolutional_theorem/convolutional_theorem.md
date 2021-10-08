@@ -42,10 +42,6 @@ Also note that the Fourier Transform is a periodic or cyclic operation, so there
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/convolutional_theorem.jl)
-{% endmethod %}
-
-
-{% method %}
 {% sample lang="py" %}
 [import, lang:"python"](code/python/convolutional_theorem.py)
 {% endmethod %}
