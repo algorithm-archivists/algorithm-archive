@@ -5,10 +5,8 @@ import numpy as np
 def convolve_fft(signal1, signal2):
     return ifft(np.multiply(fft(signal1),fft(signal2)))
 
-# Random distribution in x
+# Sawtooth functions
 x = [float(i)/200 for i in range(1,101)]
-
-# Gaussian signals
 y = [float(i)/200 for i in range(1,101)]
 
 x /= np.linalg.norm(x)
