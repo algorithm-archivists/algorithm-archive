@@ -6,7 +6,7 @@ def convolve_fft(signal1, signal2):
     return ifft(np.multiply(fft(signal1),fft(signal2)))
 
 # Random distribution in x
-x = np.random.rand(100)
+x = [float(i)/200 for i in range(1,101)]
 
 # Gaussian signals
 y = [np.exp(-((i-50)/100)**2/.01) for i in range(1,101)]
