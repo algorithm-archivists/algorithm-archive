@@ -39,6 +39,8 @@ Also note that the Fourier Transform is a periodic or cyclic operation, so there
 
 ## Example Code
 
+For this example code, we will be using two sawtooth functions as we did in the chapter on [one-dimensional convolutions](../1d/1d.md):
+
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/convolutional_theorem.jl)
@@ -46,6 +48,11 @@ Also note that the Fourier Transform is a periodic or cyclic operation, so there
 [import, lang:"python"](code/python/convolutional_theorem.py)
 {% endmethod %}
 
+This should produce the following output:
+
+<p>
+    <img class="center" src="../res/cyclic.png" style="width:75%">
+</p>
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
@@ -56,6 +63,11 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 ##### Code Examples
 
 The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Images/Graphics
+
+- The image "[Cyclic](../res/cyclic.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
 
 ##### Text
 
