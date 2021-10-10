@@ -44,6 +44,8 @@ For this example code, we will be using two sawtooth functions as we did in the 
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/convolutional_theorem.jl)
+{% sample lang="py" %}
+[import, lang:"python"](code/python/convolutional_theorem.py)
 {% endmethod %}
 
 This should produce the following output:
@@ -51,7 +53,6 @@ This should produce the following output:
 <p>
     <img class="center" src="../res/cyclic.png" style="width:75%">
 </p>
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
