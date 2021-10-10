@@ -91,16 +91,19 @@ PROGRAM verlet_integration
     ! Verlet 
     CALL verlet(pos, acc, dt, time)
     
-    WRITE(*,*) '[#] Time for Verlet integration:'
+    WRITE(*,*) '[#]'
+    WRITE(*,*) 'Time for Verlet integration:'
     WRITE(*,*) time 
     
     ! stormer Verlet 
     pos = 5d0
     CALL stormer_verlet(pos, acc, dt, time, vel)
     
-    WRITE(*,*) '[#] Time for Stormer Verlet integration:'
+    WRITE(*,*) '[#]'
+    WRITE(*,*) 'Time for Stormer Verlet integration:'
     WRITE(*,*) time
-    WRITE(*,*) '[#] Velocity for Stormer Verlet integration:'
+    WRITE(*,*) '[#]'
+    WRITE(*,*) 'Velocity for Stormer Verlet integration:'
     WRITE(*,*) vel
     
     
@@ -109,9 +112,11 @@ PROGRAM verlet_integration
     pos = 5d0
     CALL velocity_verlet(pos, acc, dt, time, vel)
     
-    WRITE(*,*) '[#] Time for velocity Verlet integration:'
+    WRITE(*,*) '[#]'
+    WRITE(*,*) 'Time for velocity Verlet integration:'
     WRITE(*,*) time
-    WRITE(*,*) '[#] Velocity for velocity Verlet integration:'
+    WRITE(*,*) '[#]'
+    WRITE(*,*) 'Velocity for velocity Verlet integration:'
     WRITE(*,*) vel
 
 END PROGRAM verlet_integration
