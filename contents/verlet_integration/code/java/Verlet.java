@@ -65,19 +65,19 @@ public class Verlet {
     public static void main(String[] args) {
 
         double verletTime = verlet(5.0, -10, 0.01);
-        System.out.println("[#] Time for Verlet integration is:");
+        System.out.println("[#]\nTime for Verlet integration is:");
         System.out.println(verletTime);
       
         VerletValues stormerVerlet = stormer_verlet(5.0, -10, 0.01);
-        System.out.println("[#] Time for Stormer Verlet integration is:");
+        System.out.println("[#]\nTime for Stormer Verlet integration is:");
         System.out.println(stormerVerlet.time);
-        System.out.println("[#] Velocity for Stormer Verlet integration is:");
+        System.out.println("[#]\nVelocity for Stormer Verlet integration is:");
         System.out.println(stormerVerlet.vel);
         
         VerletValues velocityVerlet = velocity_verlet(5.0, -10, 0.01);
-        System.out.println("[#] Time for velocity Verlet integration is:");
+        System.out.println("[#]\nTime for velocity Verlet integration is:");
         System.out.println(velocityVerlet.time);
-        System.out.println("[#] Velocity for velocity Verlet integration is:");
+        System.out.println("[#]\nVelocity for velocity Verlet integration is:");
         System.out.println(velocityVerlet.vel);
         
     }
