@@ -1,6 +1,6 @@
 import numpy as np
 
-def mod1(x, y): return ((x%y) + y) % y
+def mod1(x, y): return ((x % y) + y) % y
 
 def convolve_cyclic(signal, filter_array):
     output_size = max(len(signal), len(filter_array))
@@ -31,11 +31,11 @@ x = [float(i + 1)/200 for i in range(200)]
 y = [float(i + 1)/200 for i in range(200)]
 
 # Normalization is not strictly necessary, but good practice
-x = x/np.linalg.norm(x)
-y = y/np.linalg.norm(y)
+x /= np.linalg.norm(x)
+y /= np.linalg.norm(y)
 
 # full convolution, output will be the size of x + y - 1
-full_linear_output = convolve_linear(x, y, len(x) + len(y) -1)
+full_linear_output = convolve_linear(x, y, len(x) + len(y) - 1)
 
 # simple boundaries
 simple_linear_output = convolve_linear(x, y, len(x))
