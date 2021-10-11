@@ -72,11 +72,10 @@ ENV PATH=$PATH:/root/factor/factor
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 RUN sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
 
-# Setup Racket
+# Setup Racket and Scheme
+# To run scheme files, use `racket -f <file.ss>`
 ## Use: https://ubunlog.com/en/racket-install-ubuntu-programming-language
 
-# Setup Scheme
-## Use: https://github.com/ashinn/chibi-scheme
 
 # Setup Scratch
 ## using 1.x right now.... in future checkout snap or adobe air?
