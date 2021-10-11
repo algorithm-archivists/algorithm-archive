@@ -1,6 +1,6 @@
-from scipy import fft
 import numpy as np
 
+def mod1(x, y): return ((x%y) + y) % y
 
 def convolve_cyclic(signal, filter_array):
     output_size = max(len(signal), len(filter_array))
@@ -8,8 +8,8 @@ def convolve_cyclic(signal, filter_array):
     s = 0
     for i in range(output_size):
         for j in range(output_size):
-            if (i - j)% output_size < len(filter_array):
-                s += signal[(j - 1) % output_size] * filter_array[(i - j) % output_size]
+            if(mod1(i - j, output_size) < len(filter_array)):
+                s += signal[mod1(j - 1, output_size)] * filter_array[mod1(i - j, output_size)]
         out[i] = s
         s = 0
     return out
@@ -27,15 +27,15 @@ def convolve_linear(signal, filter_array, output_size):
     return out
 
 # sawtooth functions for x and y
-x = [float(i)/200 for i in range(1, 201)]
-y = [float(i)/200 for i in range(1, 201)]
+x = [float(i + 1)/200 for i in range(200)]
+y = [float(i + 1)/200 for i in range(200)]
 
 # Normalization is not strictly necessary, but good practice
 x = x/np.linalg.norm(x)
-y = y/np.linalg.norm(x)
+y = y/np.linalg.norm(y)
 
 # full convolution, output will be the size of x + y - 1
-full_linear_output = convolve_linear(x, y, len(x) + len(y) - 1)
+full_linear_output = convolve_linear(x, y, len(x) + len(y) -1)
 
 # simple boundaries
 simple_linear_output = convolve_linear(x, y, len(x))
