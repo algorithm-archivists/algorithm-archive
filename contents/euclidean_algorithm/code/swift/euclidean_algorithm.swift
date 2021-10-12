@@ -27,7 +27,9 @@ func euclidMod(a: Int, b: Int) -> Int {
 }
 
 func main() {
+    print("[#]\nModulus-based euclidean algorithm result:")
     print(euclidMod(a: 64 * 67, b: 64 * 81))
+    print("[#]\nSubtraction-based euclidean algorithm result:")
     print(euclidSub(a: 128 * 12, b: 128 * 77))
 }
 
