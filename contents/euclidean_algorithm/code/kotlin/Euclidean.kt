@@ -27,7 +27,7 @@ fun euclidMod(a: Int, b: Int): Int {
 
 fun main(args: Array<String>) {
     println("[#]\nModulus-based euclidean algorithm result:")
-    println(euclidSub(128 * 12, 128 * 77))
-    println("[#]\nSubtraction-based euclidean algorithm result:")
     println(euclidMod(64 * 67, 64 * 81))
+    println("[#]\nSubtraction-based euclidean algorithm result:")
+    println(euclidSub(128 * 12, 128 * 77))
 }
