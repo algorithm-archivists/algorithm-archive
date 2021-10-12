@@ -41,6 +41,8 @@ func main() {
 	check1 := euclidMod(64*67, 64*81)
 	check2 := euclidSub(128*12, 128*77)
 
+	fmt.Println("[#]\nModulus-based euclidean algorithm result:")
 	fmt.Println(check1)
+	fmt.Println("[#]\nSubtraction-based euclidean algorithm result:")
 	fmt.Println(check2)
 }
