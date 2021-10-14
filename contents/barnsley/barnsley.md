@@ -135,6 +135,8 @@ The biggest differences between the two code implementations is that the Barnsle
 [import, lang:"java"](code/java/Barnsley.java)
 {% sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/barnsley.coco)
+{% sample lang="python" %}
+[import, lang:"python"](code/python/barnsley.py)
 {% endmethod %}
 
 ### Bibliography
