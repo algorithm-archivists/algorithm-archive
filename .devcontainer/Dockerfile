@@ -83,7 +83,9 @@ RUN sudo add-apt-repository 'deb http://ppa.launchpad.net/plt/racket/ubuntu foca
 ## using 1.x right now.... in future checkout snap or adobe air?
 
 # Setup Swift
-## ?
+RUN mkdir -p ~/swift && wget https://swift.org/builds/swift-5.5-release/ubuntu2004/swift-5.5-RELEASE/swift-5.5-RELEASE-ubuntu20.04.tar.gz -O ~/swift/swift.tar.gz && \
+    tar -xzf ~/swift/swift.tar.gz -C ~/swift --strip-components=1
+ENV PATH=$PATH:~/swift/usr/bin
 
 # Setup viml
 ## ?
