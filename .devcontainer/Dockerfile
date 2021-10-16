@@ -72,12 +72,10 @@ ENV PATH=$PATH:/root/factor/factor
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 RUN sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
 
-# Setup Racket
+# Setup Racket and Scheme
+# To run scheme files, use `racket -f <file.ss>`
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D9D33FCD84D82C17288BA03B3C9A6980F827E01E
 RUN sudo add-apt-repository 'deb http://ppa.launchpad.net/plt/racket/ubuntu focal main'
-
-# Setup Scheme
-## Use: https://github.com/ashinn/chibi-scheme
 
 # Setup Scratch
 ## using 1.x right now.... in future checkout snap or adobe air?
