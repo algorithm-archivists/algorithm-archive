@@ -74,8 +74,8 @@ RUN sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu fo
 
 # Setup Racket and Scheme
 # To run scheme files, use `racket -f <file.ss>`
-## Use: https://ubunlog.com/en/racket-install-ubuntu-programming-language
-
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D9D33FCD84D82C17288BA03B3C9A6980F827E01E
+RUN sudo add-apt-repository 'deb http://ppa.launchpad.net/plt/racket/ubuntu focal main'
 
 # Setup Scratch
 ## using 1.x right now.... in future checkout snap or adobe air?
@@ -98,7 +98,7 @@ RUN sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu fo
 
 # Install the packages that needed extra help
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base
+    && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
 
 RUN pip install wheel matplotlib numpy coconut
 
