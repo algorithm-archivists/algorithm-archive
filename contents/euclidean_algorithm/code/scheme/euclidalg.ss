@@ -12,4 +12,5 @@
         (euclid-mod b (modulo a b))))
 
 (display (euclid-mod (* 64 67) (* 64 81))) (newline)
-(display (euclid-sub (* 64 12) (* 64 27))) (newline)
+(display (euclid-sub (* 128 12) (* 128 77))) (newline)
+
