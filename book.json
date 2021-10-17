@@ -103,6 +103,10 @@
           "name": "Elm"
         },
         {
+          "lang": "elisp",
+          "name": "Emacs Lisp"
+        },
+        {
           "lang": "LabVIEW",
           "name": "LabVIEW"
         },

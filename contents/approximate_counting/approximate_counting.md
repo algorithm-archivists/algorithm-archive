@@ -366,6 +366,8 @@ As we do not have any objects to count, we will instead simulate the counting wi
 [import, lang:"cpp"](code/c++/approximate_counting.cpp)
 {% sample lang="python" %}
 [import, lang:"python"](code/python/approximate_counting.py)
+{% sample lang="elisp" %}
+[import, lang:"elisp"](code/elisp/approximate-counting.el)
 {% endmethod %}
 
 ### Bibliography
