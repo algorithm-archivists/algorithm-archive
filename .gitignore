@@ -517,3 +517,10 @@ vscode/
 
 # aspell
 *.bak
+
+# SCons intermidiate files
+.sconsign.dblite
+*.o
+
+# SCons build directory
+build/

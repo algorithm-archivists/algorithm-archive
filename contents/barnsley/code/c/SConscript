@@ -1,0 +1,3 @@
+Import('*')
+
+env.C(f'{root_dir}/build/c/barnsley/barnsley', 'barnsley.c')
