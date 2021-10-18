@@ -9,13 +9,12 @@ To run the compilation for all implmeentations in one language, e.g. Rust, run t
 
 from pathlib import Path
 
+env = Environment()
+
 # Add other languages here when you want to add language targets
 languages = ['c']
 
-root_dir = Path.cwd()
-
-env = Environment()
 env.C = env.Program
 
-SConscript('SConscript', exports='env languages root_dir')
+SConscript('SConscript', exports='env languages')
 
