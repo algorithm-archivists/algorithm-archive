@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/verlet_integration/verlet', 'verlet.c')
+env.C('#/build/c/verlet_integration/verlet', 'verlet.c')

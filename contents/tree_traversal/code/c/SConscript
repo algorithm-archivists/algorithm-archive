@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/tree_treaversal/tree_traversal', 'tree_traversal.c')
+env.C('#/build/c/tree_traversal/tree_traversal', 'tree_traversal.c')

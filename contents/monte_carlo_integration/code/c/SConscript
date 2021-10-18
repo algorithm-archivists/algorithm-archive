@@ -1,4 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/monte_carlo_integration/monte_carlo',
-      'monte_carlo.c')
+env.C('#/build/c/monte_carlo_integration/monte_carlo', 'monte_carlo.c')

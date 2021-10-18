@@ -1,4 +1,3 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/euclidean_algorithm/euclidean_algorithm',
-      'euclidean_example.c', LDFLAGS='-lm')
+env.C('#/build/c/euclidean_algorithm/euclidean_algorithm',
+      'euclidean_example.c', LIBS='-lm')

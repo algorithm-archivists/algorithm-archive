@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(target=f'{root_dir}/build/c/IFS/IFS', source='IFS.c')
+env.C('#/build/c/IFS/IFS', 'IFS.c')

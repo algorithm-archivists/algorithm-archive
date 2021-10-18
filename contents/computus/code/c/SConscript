@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/computus/gauss_easter', 'gauss_easter.c')
+env.C('#/build/c/computus/gauss_easter', 'gauss_easter.c')

@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/huffman_encoding/huffman', 'huffman.c')
+env.C('#/build/c/huffman_encoding/huffman', 'huffman.c')

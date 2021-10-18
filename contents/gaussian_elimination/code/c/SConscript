@@ -1,4 +1,4 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/gaussian_elimination/gaussian_elimination', 'gaussian_elimination.c')
+env.C('#/build/c/gaussian_elimination/gaussian_elimination',
+      'gaussian_elimination.c')
 

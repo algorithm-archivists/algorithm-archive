@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/forward_euler_method/forward_euler', 'euler.c', LDFLAGS='-lm')
+env.C('#/build/c/forward_euler_method/forward_euler', 'euler.c', LIBS='-lm')

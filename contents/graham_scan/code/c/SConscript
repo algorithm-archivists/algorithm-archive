@@ -1,4 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/graham_scan/graham_scan', 'graham.c',
-      LDFLAGS='-lm')
+env.C('#/build/c/graham_scan/graham_scan', 'graham.c', LIBS='-lm')

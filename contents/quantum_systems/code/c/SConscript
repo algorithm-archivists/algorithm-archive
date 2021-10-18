@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/quantum_systems/energy/', 'energy.c')
+env.C('#/build/c/quantum_systems/energy', 'energy.c', LIBS=['-lm', '-lfftw3'])

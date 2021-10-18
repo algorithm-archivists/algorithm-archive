@@ -1,3 +1,2 @@
 Import('*')
-
-env.C(f'{root_dir}/build/c/jarvis_march/jarvis_march', 'jarvis_march.c')
+env.C('#/build/c/jarvis_march/jarvis_march', 'jarvis_march.c')
