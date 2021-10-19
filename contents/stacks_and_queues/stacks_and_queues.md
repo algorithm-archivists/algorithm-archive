@@ -16,12 +16,16 @@ The notation for this depends on the language you are using. Queues, for example
 ## Example Code
 Here is a simple implementation of a stack:
 {% method %}
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/stack.cr)
 {% sample lang="ts" %}
 [import, lang:"typescript"](code/typescript/stack.ts)
 {% endmethod %}
 
 Here is a simple implementation of a queue:
 {% method %}
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/queue.cr)
 {% sample lang="ts" %}
 [import, lang:"typescript"](code/typescript/queue.ts)
 {% endmethod %}
