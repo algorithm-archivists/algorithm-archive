@@ -23,12 +23,12 @@ class Queue(T)
   end
 
   # Returns the number of items in the queue.
-  def size
+  def size : Int32
     @queue.size
   end
 
   # Returns `true` if the queue is empty, `false` otherwise.
-  def empty?
+  def empty? : Bool
     @queue.empty?
   end
 end

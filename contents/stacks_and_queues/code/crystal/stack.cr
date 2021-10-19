@@ -18,7 +18,7 @@ class Stack(T)
   end
 
   # Returns the number of items in the stack.
-  def size
+  def size : Int32
     @stack.size
   end
 
