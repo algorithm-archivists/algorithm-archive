@@ -1,2 +1,6 @@
 Import('*')
-env.C('#/build/c/quantum_systems/energy', 'energy.c', LIBS=['-lm', '-lfftw3'])
+from pathlib import Path
+
+dirname = Path.cwd().parents[1].stem
+
+env.C(f'#/build/c/{dirname}', Glob('*.c'), LIBS=['m', 'fftw3'])
