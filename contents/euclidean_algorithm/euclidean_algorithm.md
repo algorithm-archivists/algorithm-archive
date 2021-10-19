@@ -83,6 +83,8 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:1-14, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 {% sample lang="coco" %}
 [import:1-9, lang="coconut"](code/coconut/euclidean.coco)
+{% sample lang="crystal" %}
+[import:13-27, lang="crystal"](code/crystal/euclidean.cr)
 
 {% endmethod %}
 
@@ -173,6 +175,8 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:16-27, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 {% sample lang="coco" %}
 [import:12-15, lang="coconut"](code/coconut/euclidean.coco)
+{% sample lang="crystal" %}
+[import:1-11, lang="crystal"](code/crystal/euclidean.cr)
 
 {% endmethod %}
 
@@ -290,6 +294,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang="powershell"](code/powershell/euclidean_algorithm.ps1)
 {% sample lang="coco" %}
 [import, lang="coconut"](code/coconut/euclidean.coco)
+{% sample lang="crystal" %}
+[import, lang="crystal"](code/crystal/euclidean.cr)
 
 {% endmethod %}
 
