@@ -9,7 +9,7 @@ authors:
   given-names: Nicole
 - family-names: Becker
   given-names: Marius
-- alias: Gathros
+- name: Gathros
 - family-names: Gillet
   given-names: Jeremie
   alias: (- Jie -)
@@ -17,57 +17,57 @@ authors:
   given-names: Salim
 - family-names: C
   given-names: Hitesh
-- alias: Shaurya
+- name: Shaurya
 - family-names: Dherbécourt
   given-names: Maxime
-- alias: Jess 3Jane
-- alias: Pen Pal
+- name: Jess 3Jane
+- name: Pen Pal
 - family-names: Mahesh
   given-names: Chinmaya
-- alias: Unlambder
+- name: Unlambder
 - family-names: Johannessen
   given-names: Kjetil
-- alias: CDsigma
-- alias: Gammison
-- alias: hsjoihs
-- alias: DominikRafacz
-- alias: lulucca12
-- alias: GuyPozner
+- name: CDsigma
+- name: Gammison
+- name: hsjoihs
+- name: DominikRafacz
+- name: lulucca12
+- name: GuyPozner
 - family-names: Boyles
   given-names: William
 - family-names: Weinstein
   given-names: Max
-- alias: Gibus Wearing Brony
-- alias: Gorzoid
+- name: Gibus Wearing Brony
+- name: Gorzoid
 - family-names: Sahadeo
   given-names: Arun
-- alias: NIFR91
+- name: NIFR91
 - family-names: Hanajik
   given-names: Michal
 - family-names: Samseth
   given-names: Bendik
-- alias: mukundan314
-- alias: Trashtalk
+- name: mukundan314
+- name: Trashtalk
 - family-names: Burt
   given-names: Cyrus
 - family-names: Power
   given-names: Ken
-- alias: PaddyKe
-- alias: nic-hartley
+- name: PaddyKe
+- name: nic-hartley
 - family-names: Raymakers
   given-names: Thijs
-- alias: crafter312
+- name: crafter312
 - family-names: Milan
   given-names: Christopher
-- alias: Raven-Blue Dragon
+- name: Raven-Blue Dragon
 - family-names: Heinrichs
   given-names: Björn
 - family-names: Sundfør
   given-names: Olav
 - family-names: Chislett
   given-names: Ben
-- alias: dovisutu
-- alias: Antetokounpo
+- name: dovisutu
+- name: Antetokounpo
 - family-names: Dhiman
   given-names: Akash
 - family-names: Zalzal
@@ -76,16 +76,16 @@ authors:
   given-names: Jonathan D B
 - family-names: Goytia
   given-names: James
-- alias: Amaras
+- name: Amaras
 - family-names: Dönszelmann
   given-names: Jonathan
 - family-names: Verma
   given-names: Ishaan
-- alias: Delphi1024
-- alias: ntindle
+- name: Delphi1024
+- name: ntindle
 - family-names: Sarikhani
   given-names: Mahdi
-- alias: Ridham177
+- name: Ridham177
 - family-names: Salou
   given-names: Hugo
 - family-names: Belopopsky
