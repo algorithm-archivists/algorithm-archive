@@ -1,15 +1,115 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Schloss"
-  given-names: "James"
+- family-names: Schloss
+  given-names: James
+  alias: Leios
   orcid: "https://orcid.org/0000-0002-3243-8918"
-- name: "Arcane Algorithme Archive Contributors"
+- name: "The Arcane Algorithm Archive Contributors"
   website: "https://github.com/algorithm-archivists/algorithm-archive/blob/master/CONTRIBUTORS.md"
 title: "The Arcane Algorithm Archive"
 version: 0.0.1
 date-released: 2017-01-11
 url: "https://algorithm-archive.org/"
 repository-code: "https://github.com/algorithm-archivists/algorithm-archive"
-referencess:
-- abbreviation: "The AAA"
+license: MIT
+references:
+  - type: website
+    authors:
+    - family-names: Schloss
+      given-names: James
+      alias: Leios
+    - family-names: Mazzuca
+      given-names: Nicole
+    - family-names: Becker
+      given-names: Marius
+    - family-names:
+      given-names: Gathros
+    - family-names: Gillet
+      given-names: Jeremie
+      alias: (- Jie -)
+    - family-names: Khatib
+      given-names: Salim
+    - family-names: C
+      given-names: Hitesh
+    - alias: Shaurya
+    - family-names: Dherbécourt
+      given-names: Maxime
+    - alias: Jess 3Jane
+    - alias: Pen Pal
+    - family-names: Mahesh
+      given-names: Chinmaya
+    - alias: Unlambder
+    - family-names: Johannessen
+      given-names: Kjetil
+    - alias: CDsigma
+    - alias: Gammison
+    - alias: hsjoihs
+    - alias: DominikRafacz
+    - alias: lulucca12
+    - alias: GuyPozner
+    - family-names: Boyles
+      given-names: William
+    - family-names: Weinstein
+      given-names: Max
+    - alias: Gibus Wearing Brony
+    - alias: Gorzoid
+    - family-names: Sahadeo
+      given-names: Arun
+    - alias: NIFR91
+    - family-names: Hanajik
+      given-names: Michal
+    - family-names: Samseth
+      given-names: Bendik
+    - alias: mukundan314
+    - alias: Trashtalk
+    - family-names: Burt
+      given-name: Cyrus
+    - family-names: Power
+      given-names: Ken
+    - alias: PaddyKe
+    - alias: nic-hartley
+    - family-names: Raymakers
+      given-names: Thijs
+    - alias: crafter312
+    - family-names: Milan
+      given-names: Christopher
+    - alias: Raven-Blue Dragon
+    - family-names: Heinrichs
+      given-names: Björn
+    - family-names: Sundfør
+      given-names: Olav
+    - family-names: Chislett
+      given-names: Ben
+    - alias: dovisutu
+    - alias: Antetokounpo
+    - family-names: Dhiman
+      given-names: Akash
+    - family-names: Zalzal
+      given-names: Vincent
+    - family-names: Van Schenck
+      given-names: Jonathan D B
+    - family-names: Goytia
+      given-names: James
+    - alias: Amaras
+    - family-names: Dönszelmann
+      given-names: Jonathan
+    - family-names: Verma
+      given-names: Ishaan
+    - alias: Delphi1024
+    - alias: ntindle
+    - family-names: Sarikhani
+      given-names: Mahdi
+    - alias: Ridham177
+    - family-names: Salou
+      given-names: Hugo
+    - family-names: Belopopsky
+      given-names: Dimitri
+      alias: ShadowMitia
+    title: The Arcane Algorithm Archive
+  - type: book
+    authors:
+    - family-names: Schloss
+      given-names: James
+      alias: Leios
+    title: The Arcane Algorithm Archive Book
