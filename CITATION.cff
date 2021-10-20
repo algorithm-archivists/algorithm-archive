@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Schloss"
+  given-names: "James"
+  orcid: "https://orcid.org/0000-0002-3243-8918"
+- name: "Arcane Algorithme Archive Contributors"
+  website: "https://github.com/algorithm-archivists/algorithm-archive/blob/master/CONTRIBUTORS.md"
+title: "The Arcane Algorithm Archive"
+version: 0.0.1
+date-released: 2017-01-11
+url: "https://algorithm-archive.org/"
+repository-code: "https://github.com/algorithm-archivists/algorithm-archive"
+referencess:
+- abbreviation: "The AAA"
