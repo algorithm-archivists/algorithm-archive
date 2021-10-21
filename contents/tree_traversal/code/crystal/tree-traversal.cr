@@ -63,25 +63,25 @@ end
 def main 
   root = create_tree levels: 2, num_childs: 3
 
-  puts "[#] Recursive DFS:"
+  puts "[#]\nRecursive DFS:"
   dfs_recursive root
   puts  
 
-  puts "[#] Recursive Postorder DFS:" 
+  puts "[#]\nRecursive Postorder DFS:" 
   dfs_recursive_postorder root 
   puts  
 
-  puts "[#] Stack-based DFS:"
+  puts "[#]\nStack-based DFS:"
   dfs_stack root 
   puts  
 
-  puts "[#] Queue-based BFS:"
+  puts "[#]\nQueue-based BFS:"
   bfs_queue root 
   puts  
 
   root_bin = create_tree levels: 3, num_childs: 2
 
-  puts "[#] Recursive Inorder DFS for Binary Tree:"
+  puts "[#]\nRecursive Inorder DFS for Binary Tree:"
   dfs_recursive_inorder_btree root_bin
   puts
 end 

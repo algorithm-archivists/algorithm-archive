@@ -37,13 +37,13 @@ createTree numRow numChild = Node numRow children
 main = do
   let testTree = createTree 2 3
       showNodes = unwords . map show
-  putStrLn "[#] Recursive DFS:"
+  putStrLn "[#]\nRecursive DFS:"
   putStrLn $ showNodes $ dfs testTree
-  putStrLn "[#] Recursive Postorder DFS:"
+  putStrLn "[#]\nRecursive Postorder DFS:"
   putStrLn $ showNodes $ dfsPostOrder testTree
-  putStrLn "[#] Stack-based DFS:"
+  putStrLn "[#]\nStack-based DFS:"
   putStrLn $ showNodes $ dfsStack testTree
-  putStrLn "[#] Queue-based BFS:"
+  putStrLn "[#]\nQueue-based BFS:"
   putStrLn $ showNodes $ bfs testTree
-  putStrLn "[#] Recursive Inorder DFS for Binary Tree:"
+  putStrLn "[#]\nRecursive Inorder DFS for Binary Tree:"
   putStrLn $ showNodes $ dfsInOrder $ createTree 3 2

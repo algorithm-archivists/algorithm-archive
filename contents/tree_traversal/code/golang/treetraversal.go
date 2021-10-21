@@ -77,23 +77,23 @@ func main() {
 	root := createTree(2, 3)
 	binTree := createTree(3, 2)
 
-    fmt.Println("[#] Recursive DFS:")
+    fmt.Println("[#]\nRecursive DFS:")
 	dfsRecursive(root)
     fmt.Println()
 
-    fmt.Println("[#] Recursive Postorder DFS:")
+    fmt.Println("[#]\nRecursive Postorder DFS:")
 	dfsRecursivePostorder(root)
     fmt.Println()
 
-    fmt.Println("[#] Stack-based DFS:")
+    fmt.Println("[#]\nStack-based DFS:")
 	dfsStack(root)
     fmt.Println()
 
-    fmt.Println("[#] Queue-based BFS:")
+    fmt.Println("[#]\nQueue-based BFS:")
 	bfsQueue(root)
     fmt.Println()
 
-    fmt.Println("[#] Recursive Inorder DFS for Binary Tree:")
+    fmt.Println("[#]\nRecursive Inorder DFS for Binary Tree:")
 	dfsRecursiveInorderBtree(binTree)
     fmt.Println()
 
