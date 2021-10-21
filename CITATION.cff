@@ -1,5 +1,32 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite it using the metadata from this file."
+
+# Citation information, which will be used for Github display
+# and for differnt file formats like BibTex
+title: "The Arcane Algorithm Archive"
+version: 0.0.1
+date-released: 2017-01-11
+url: "https://algorithm-archive.org/"
+repository-code: "https://github.com/algorithm-archivists/algorithm-archive"
+license: MIT
+license-url: https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md
+keywords:
+  - "algorithms"
+  - "language agnostic"
+  - "collection of algorithms"
+  - "open research"
+  - "data structures"
+  - "collection of data structures"
+type: software
+
+# To add a new author properly
+# see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsperson
+# Check also the following list if in doubt
+
+# To add only an author as a pseudonym only, using `name` works best
+# othersiwise just use `alias` to have both name and pseudonym
+#
+
 authors:
 - family-names: Schloss
   given-names: James
@@ -72,9 +99,10 @@ authors:
   given-names: Akash
 - family-names: Zalzal
   given-names: Vincent
-- family-names: Van Schenck
+- family-names: Schenck
+  name-particle: Van 
   given-names: Jonathan D B
-- family-names: Goytia
+- family-names: GoytiaVan
   given-names: James
 - name: Amaras
 - family-names: Dönszelmann
@@ -91,18 +119,15 @@ authors:
 - family-names: Belopopsky
   given-names: Dimitri
   alias: ShadowMitia
-- name: "The Arcane Algorithm Archive Contributors"
-  website: "https://github.com/algorithm-archivists/algorithm-archive/blob/master/CONTRIBUTORS.md"
-title: "The Arcane Algorithm Archive"
-version: 0.0.1
-date-released: 2017-01-11
-url: "https://algorithm-archive.org/"
-repository-code: "https://github.com/algorithm-archivists/algorithm-archive"
-license: MIT
+# - name: "The Arcane Algorithm Archive Contributors"
+#   website: "https://github.com/algorithm-archivists/algorithm-archive/blob/master/CONTRIBUTORS.md"
+
+# Add more references to the citation
 references:
-  - type: book
+  - type: website
     authors:
     - family-names: Schloss
       given-names: James
       alias: Leios
-    title: The Arcane Algorithm Archive Book
+    title: The Arcane Algorithm Archive
+    url: https://www.algorithm-archive.org/
