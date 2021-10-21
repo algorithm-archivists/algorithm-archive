@@ -86,24 +86,24 @@ end
 function main()
     root = create_tree(2, 3)
 
-    println("[#] Recursive DFS:")
+    println("[#]\nRecursive DFS:")
     DFS_recursive(root);
     println()
 
-    println("[#] Recursive Postorder DFS:")
+    println("[#]\nRecursive Postorder DFS:")
     DFS_recursive_postorder(root);
     println()
 
-    println("[#] Stack-based DFS:")
+    println("[#]\nStack-based DFS:")
     DFS_stack(root);
     println()
 
-    println("[#] Queue-based BFS:")
+    println("[#]\nQueue-based BFS:")
     BFS_queue(root);
     println()
 
     root_binary = create_tree(3,2)
-    println("[#] Recursive Inorder DFS for Binary Tree:")
+    println("[#]\nRecursive Inorder DFS for Binary Tree:")
     DFS_recursive_inorder_btree(root_binary)
     println()
 end

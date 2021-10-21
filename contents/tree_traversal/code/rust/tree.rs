@@ -78,23 +78,23 @@ fn create_tree(num_row: u64, num_child: u64) -> Node {
 fn main() {
     let root = create_tree(2, 3);
 
-    println!("[#] Recursive DFS:");
+    println!("[#]\nRecursive DFS:");
     dfs_recursive(&root);
     println!();
 
-    println!("[#] Recursive Postorder DFS:");
+    println!("[#]\nRecursive Postorder DFS:");
     dfs_recursive_postorder(&root);
     println!();
 
-    println!("[#] Stack-based DFS:");
+    println!("[#]\nStack-based DFS:");
     dfs_stack(&root);
     println!();
 
-    println!("[#] Queue-based BFS:");
+    println!("[#]\nQueue-based BFS:");
     bfs_queue(&root);
     println!();
 
-    println!("[#] Recursive Inorder DFS for Binary Tree:");
+    println!("[#]\nRecursive Inorder DFS for Binary Tree:");
     let root_binary = create_tree(3, 2);
     dfs_recursive_inorder_btree(&root_binary);
     println!();

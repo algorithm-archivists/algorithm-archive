@@ -102,19 +102,19 @@ int main() {
   // Creating Tree in main
   auto root = create_tree(2, 3);
   auto binary_root = create_tree(3, 2);
-  std::cout << "[#] Recursive DFS:\n";
+  std::cout << "[#]\nRecursive DFS:\n";
   dfs_recursive(root);
   std::cout << '\n';
-  std::cout << "[#] Recursive Postorder DFS:\n";
+  std::cout << "[#]\nRecursive Postorder DFS:\n";
   dfs_recursive_postorder(root);
   std::cout << '\n';
-  std::cout << "[#] Stack-based DFS:\n";
+  std::cout << "[#]\nStack-based DFS:\n";
   dfs_stack(root);
   std::cout << '\n';
-  std::cout << "[#] Queue-based BFS:\n";
+  std::cout << "[#]\nQueue-based BFS:\n";
   bfs_queue(root);
   std::cout << '\n';
-  std::cout << "[#] Recursive Inorder DFS for Binary Tree:\n";
+  std::cout << "[#]\nRecursive Inorder DFS for Binary Tree:\n";
   dfs_recursive_inorder_btree(binary_root);
   std::cout << '\n';
 

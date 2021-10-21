@@ -76,25 +76,25 @@ def bfs_queue(node):
 def main():
     tree = create_tree(Node(), 2, 3)
 
-    print("[#] Recursive DFS:")
+    print("[#]\nRecursive DFS:")
     dfs_recursive(tree)
     print()
 
-    print("[#] Recursive Postorder DFS:")
+    print("[#]\nRecursive Postorder DFS:")
     dfs_recursive_postorder(tree)
     print()
 
-    print("[#] Stack-based DFS:")
+    print("[#]\nStack-based DFS:")
     dfs_stack(tree)
     print()
 
-    print("[#] Queue-based BFS:")
+    print("[#]\nQueue-based BFS:")
     bfs_queue(tree)
     print()
 
     binary_tree = create_tree(Node(), 3, 2)
     
-    print("[#] Recursive Inorder DFS for Binary Tree:")
+    print("[#]\nRecursive Inorder DFS for Binary Tree:")
     dfs_recursive_inorder_btree(binary_tree)
     print()
 

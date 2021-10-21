@@ -73,26 +73,26 @@
 (defvar binary-tree (make-tree 3 2))
 
 ;; Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
-(format t "[#] Recursive DFS:~%")
+(format t "[#]~%Recursive DFS:~%")
 (dfs-recursive tree)
 (format t "~%")
 
 ;; Should print: 1 1 1 2 1 1 1 2 1 1 1 2 3
-(format t "[#] Recursive Postorder DFS:~%")
+(format t "[#]~%Recursive Postorder DFS:~%")
 (dfs-recursive-postorder tree)
 (format t "~%")
 
 ;; Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
-(format t "[#] Stack-based DFS:~%")
+(format t "[#]~%Stack-based DFS:~%")
 (dfs-stack tree)
 (format t "~%")
 
 ;; Should print: 3 2 2 2 1 1 1 1 1 1 1 1 1
-(format t "[#] Queue-based BFS:~%")
+(format t "[#]~%Queue-based BFS:~%")
 (bfs-queue tree)
 (format t "~%")
 
 ;; Should print: 1 2 1 3 1 2 1
-(format t "[#] Recursive Inorder DFS for Binary Tree:~%")
+(format t "[#]~%Recursive Inorder DFS for Binary Tree:~%")
 (dfs-recursive-inorder-btree binary-tree)
 (format t "~%")

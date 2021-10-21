@@ -115,26 +115,26 @@ void bfs_queue(struct node n) {
 int main() {
     struct node root = create_tree(2, 3);
 
-    printf("[#] Recursive DFS:\n");
+    printf("[#]\nRecursive DFS:\n");
     dfs_recursive(root);
     printf("\n");
     
-    printf("[#] Recursive Postorder DFS:\n");
+    printf("[#]\nRecursive Postorder DFS:\n");
     dfs_recursive_postorder(root);
     printf("\n");
     
-    printf("[#] Stack-based DFS:\n");
+    printf("[#]\nStack-based DFS:\n");
     dfs_stack(root);
     printf("\n");
     
-    printf("[#] Queue-based BFS:\n");
+    printf("[#]\nQueue-based BFS:\n");
     bfs_queue(root);
     printf("\n");
     
     destroy_tree(root);
     struct node root_binary = create_tree(3, 2);
 
-    printf("[#] Recursive Inorder DFS for Binary Tree:\n");
+    printf("[#]\nRecursive Inorder DFS for Binary Tree:\n");
     dfs_recursive_inorder_btree(root_binary);
     printf("\n");
     

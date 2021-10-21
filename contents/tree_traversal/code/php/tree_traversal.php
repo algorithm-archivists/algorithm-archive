@@ -118,19 +118,19 @@ function generate_tree(int $numOfRows, int $numOfChildren): Tree
 
 $node = generate_tree(2, 3);
 
-echo '[#] Recursive DFS:' . PHP_EOL;
+echo '[#]' . PHP_EOL . 'Recursive DFS:' . PHP_EOL;
 TreeTraversal::DFSRecursive($node);
 echo PHP_EOL;
 
-echo '[#] Recursive Postorder DFS:' . PHP_EOL;
+echo '[#]' . PHP_EOL . 'Recursive Postorder DFS:' . PHP_EOL;
 TreeTraversal::DFSRecursivePostorder($node);
 echo PHP_EOL;
 
-echo '[#] Stack-based DFS:' . PHP_EOL;
+echo '[#]' . PHP_EOL . 'Stack-based DFS:' . PHP_EOL;
 TreeTraversal::DFSStack($node);
 echo PHP_EOL;
 
-echo '[#] Queue-based BFS:' . PHP_EOL;
+echo '[#]' . PHP_EOL . 'Queue-based BFS:' . PHP_EOL;
 TreeTraversal::DFSQueue($node);
 echo PHP_EOL;
 
@@ -138,6 +138,6 @@ echo PHP_EOL;
 // comment out the generation of the new tree below.
 // If you do that, an exception will be thrown
 $node = generate_tree(3, 2);
-echo '[#] Recursive Inorder DFS for Binary Tree:' . PHP_EOL;
+echo '[#]' . PHP_EOL . 'Recursive Inorder DFS for Binary Tree:' . PHP_EOL;
 TreeTraversal::DFSRecursiveInorderBinary($node);
 echo PHP_EOL;

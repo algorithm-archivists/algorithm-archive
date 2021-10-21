@@ -52,20 +52,20 @@ function bfs(tree) {
 }
 
 const root = createTree(2, 3);
-console.log("[#] Recursive DFS:");
+console.log("[#]\nRecursive DFS:");
 dfsPreorder(root);
 console.log();
-console.log("[#] Recursive Postorder DFS:");
+console.log("[#]\nRecursive Postorder DFS:");
 dfsPostorder(root);
 console.log();
-console.log("[#] Stack-based DFS:");
+console.log("[#]\nStack-based DFS:");
 dfsIterative(root);
 console.log();
-console.log("[#] Queue-based BFS:");
+console.log("[#]\nQueue-based BFS:");
 bfs(root);
 console.log();
 const root_binary = createTree(3, 2);
-console.log("[#] Recursive Inorder DFS for Binary Tree:");
+console.log("[#]\nRecursive Inorder DFS for Binary Tree:");
 dfsInorder(root_binary);
 console.log();
 
