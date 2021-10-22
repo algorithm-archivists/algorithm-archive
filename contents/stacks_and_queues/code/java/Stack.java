@@ -47,24 +47,24 @@ public class Stack<T> implements IStack<T> {
     private List<T> list;
 
     public Stack() {
-	this.list = new ArrayList<>();
+        this.list = new ArrayList<>();
     }
 
     public T pop() {
-	return this.list.remove(this.size() - 1);
+        return this.list.remove(this.size() - 1);
     }
 
     public int push(T element) {
-	this.list.add(element);
-	return this.size();
+        this.list.add(element);
+        return this.size();
     }
 
     public int size() {
-	return this.list.size();
+        return this.list.size();
     }
 
     public T peek() {
-	return this.list.get(this.size() - 1);
+        return this.list.get(this.size() - 1);
     }
 
 }

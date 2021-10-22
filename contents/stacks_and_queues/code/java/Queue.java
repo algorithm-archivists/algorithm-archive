@@ -48,24 +48,24 @@ public class Queue<T> implements  IQueue<T> {
     private List<T> list;
 
     public Queue() {
-	this.list = new ArrayList();
+        this.list = new ArrayList();
     }
 
     public T dequeue() {
-	return this.list.remove(0);
+        return this.list.remove(0);
     }
 
     public int enqueue(T element) {
-	this.list.add(element);
-	return this.size();
+        this.list.add(element);
+        return this.size();
     }
 
     public int size() {
-	return this.list.size();
+        return this.list.size();
     }
 
     public T peek() {
-	return this.list.get(0);
+        return this.list.get(0);
     }
 
 }
