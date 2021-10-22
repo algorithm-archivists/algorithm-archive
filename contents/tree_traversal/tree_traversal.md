@@ -157,7 +157,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="cpp" %}
 [import:34-52 lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:60-79, lang:"csharp"](code/csharp/Tree.cs)
+[import:60-84, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -215,7 +215,7 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:55-70, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:81-94, lang:"csharp"](code/csharp/Tree.cs)
+[import:86-99, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -266,7 +266,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import:73-86, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:96-109, lang:"csharp"](code/csharp/Tree.cs)
+[import:101-114, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
