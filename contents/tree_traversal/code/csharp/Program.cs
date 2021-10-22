@@ -1,4 +1,3 @@
-// submitted by Julian Schacher (jspp)
 using System;
 
 namespace TreeTraversal
