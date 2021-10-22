@@ -234,7 +234,7 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"coconut"](code/coconut/IFS.coco)
 {%sample lang="java" %}
 [import, lang:"java"](code/java/IFS.java)
-{% sample, lang="rs" %}
+{% sample lang="rs" %}
 [import, lang:"rust"](code/rust/IFS.rs)
 {% endmethod %}
 
