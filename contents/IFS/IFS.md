@@ -147,7 +147,7 @@ Here, instead of tracking children of children, we track a single individual tha
 {% sample lang="java" %}
 [import:16-39, lang:"java"](code/java/IFS.java)
 {% sample lang="rs" %}
-[import:11-29 lang:"rust"](code/rust/IFS.rs)
+[import:11-29, lang:"rust"](code/rust/IFS.rs)
 {% endmethod %}
 
 If we set the initial point to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
