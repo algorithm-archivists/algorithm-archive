@@ -4,7 +4,6 @@ message: "If you use this software, please cite it using the metadata from this 
 # Citation information, which will be used for Github display
 # and for differnt file formats like BibTex
 title: "The Arcane Algorithm Archive"
-version: 0.0.1
 date-released: 2017-01-11
 url: "https://algorithm-archive.org/"
 repository-code: "https://github.com/algorithm-archivists/algorithm-archive"
@@ -18,6 +17,7 @@ keywords:
   - "data structures"
   - "collection of data structures"
 type: software
+commit: 16fd2180041821f8ee53ece14c535e5b25de34fe
 
 # To add a new author properly
 # see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsperson
@@ -86,6 +86,7 @@ authors:
 - name: crafter312
 - family-names: Milan
   given-names: Christopher
+- name: Vexatos
 - name: Raven-Blue Dragon
 - family-names: Heinrichs
   given-names: Björn
@@ -102,7 +103,7 @@ authors:
 - family-names: Schenck
   name-particle: Van 
   given-names: Jonathan D B
-- family-names: GoytiaVan
+- family-names: Goytia
   given-names: James
 - name: Amaras
 - family-names: Dönszelmann
@@ -131,3 +132,4 @@ references:
       alias: Leios
     title: The Arcane Algorithm Archive
     url: https://www.algorithm-archive.org/
+
