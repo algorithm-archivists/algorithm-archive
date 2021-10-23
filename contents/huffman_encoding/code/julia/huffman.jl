@@ -111,11 +111,8 @@ end
 function two_pass_huffman(phrase::String)
     huffman_tree = create_tree(phrase)
     codebook = create_codebook(huffman_tree)
-    println(codebook)
     bitstring = encode(codebook, phrase)
     final_string = decode(huffman_tree, bitstring)
-    println(bitstring)
-    println(final_string)
     return final_string
 end
 
