@@ -111,7 +111,10 @@ authors:
 - family-names: Verma
   given-names: Ishaan
 - name: Delphi1024
-- name: ntindle
+- family-names: Tindle
+  given-names: Nicholas
+  alias: ntindle
+  orcid: https://orcid.org/0000-0002-4110-4338
 - family-names: Sarikhani
   given-names: Mahdi
 - name: Ridham177
