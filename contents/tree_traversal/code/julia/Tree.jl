@@ -8,7 +8,7 @@ end
 
 function DFS_recursive(n::Node)
     # Here we are doing something...
-    @printf("%i ", n.ID)
+    print(n.ID, " ")
 
     for child in n.children
         DFS_recursive(child)
@@ -22,7 +22,7 @@ function DFS_recursive_postorder(n::Node)
     end
 
     # Here we are doing something...
-    @printf("%i ", n.ID)
+    print(n.ID, " ")
 end
 
 # This assumes only 2 children, but accounts for other possibilities
@@ -30,13 +30,13 @@ function DFS_recursive_inorder_btree(n::Node)
 
     if (length(n.children) == 2)
         DFS_recursive_inorder_btree(n.children[1])
-        @printf("%i ", n.ID)
+        print(n.ID, " ")
         DFS_recursive_inorder_btree(n.children[2])
     elseif (length(n.children) == 1)
         DFS_recursive_inorder_btree(n.children[1])
-        @printf("%i ", n.ID)
+        print(n.ID, " ")
     elseif (length(n.children) == 0)
-        @printf("%i ", n.ID)
+        print(n.ID, " ")
     else
         println("Not a binary tree!")
     end
@@ -47,7 +47,7 @@ function DFS_stack(n::Node)
     push!(s, n)
 
     while(length(s) > 0)
-        @printf("%i ", top(s).ID)
+        print(top(s).ID, " ")
         temp = pop!(s)
         for child in temp.children
             push!(s, child)
@@ -60,7 +60,7 @@ function BFS_queue(n::Node)
     enqueue!(q, n)
 
     while(length(q) > 0)
-        @printf("%i ", first(q).ID)
+        print(first(q).ID, " ")
         temp = dequeue!(q)
         for child in temp.children
             enqueue!(q, child)
