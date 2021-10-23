@@ -31,11 +31,10 @@ RUN sudo sh -c 'sudo dpkg -i packages-microsoft-prod.deb'
 RUN sudo sh -c 'rm packages-microsoft-prod.deb'
 
 # Setup D Lang
-RUN sudo sh -c 'mkdir -p ~/dlang && wget https://dlang.org/install.sh -O ~/dlang/install.sh'
-RUN sudo sh -c 'bash ~/dlang/install.sh'
-## From Docs not needed though
-# RUN sudo sh -c 'source ~/dlang/dmd-2.097.2/activate'
-ENV PATH=$PATH:/root/dlang/dmd-2.097.2/linux/bin64
+ENV DLANG_VERSION=2.097.2
+RUN mkdir -p ~/dlang && wget https://dlang.org/install.sh -O ~/dlang/install.sh
+RUN bash ~/dlang/install.sh dmd-$DLANG_VERSION
+ENV PATH=$PATH:~/dlang/dmd-$DLANG_VERSION/linux/bin64/
 
 # Setup Go
 RUN sudo sh -c 'wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local'
@@ -56,17 +55,14 @@ ENV PATH=$PATH:/usr/local/kotlinc/bin
 # Setup Matlab
 # ?????? This is a licensed language???
 
-# Setup Emojicode (in progress)
-RUN sudo sh -c 'wget -c https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz -O /usr/local/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz'
-RUN sudo tar -xvzf /usr/local/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz
-# && cd ~/emojicode/ && echo && ./install.sh'
-ENV PATH=$PATH:/usr/local/Emojicode-1.0-beta.2-Linux-x86_64
+# Setup Emojicode
+RUN mkdir -p ~/emojicode && wget -c https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz -O ~/emojicode/emojicode.tar.gz && \
+    tar -xzf ~/emojicode/emojicode.tar.gz -C ~/emojicode --strip-components=1
+ENV PATH=$PATH:~/emojicode
 
-# Setup Factor (in progress)
-RUN mkdir -p ~/factor && wget https://downloads.factorcode.org/releases/0.98/factor-linux-x86-64-0.98.tar.gz -O ~/factor/factor.tar.gz
-RUN tar -xzf /root/factor/factor.tar.gz
-# && rm ~/factor/factor.tar.gz
-ENV PATH=$PATH:/root/factor/factor
+# Setup Factor
+RUN mkdir -p ~/factor && wget https://downloads.factorcode.org/releases/0.98/factor-linux-x86-64-0.98.tar.gz -O ~/factor/factor.tar.gz && tar -xzf ~/factor/factor.tar.gz -C ~/factor --strip-components=1
+ENV PATH=$PATH:~/factor/factor
 
 # Setup R
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
