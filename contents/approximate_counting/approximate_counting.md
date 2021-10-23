@@ -127,7 +127,7 @@ Here is a table for the true count, approximate count, and percent error for 10,
 | 500,000    | 499,813.2         | 0.037         |
 | 1,000,000  | 999,466.0         | 0.053         |
 
-Here, it seems that the percent error is 10 times higher when we count 10,000 items; however, 
+Here, it seems that the percent error is 10 times higher when we count 10,000 items; however,
 with these numbers, I could imagine some people reading this are thinking that we are splitting hairs.
 A 0.42% error is still really good, right?
 Right.
@@ -200,7 +200,7 @@ To be clear, here is a table of several values that could be stored in a bitstri
 | $$00000100 = 4$$   | $$15$$                  |
 | $$00010000 = 16$$  | $$65535$$               |
 | $$01000000 = 64$$  | $$1.85 \times 10^{19}$$ |
-| $$10000000 = 128$$ | $$3.40 \times 10^{38}$$ | 
+| $$10000000 = 128$$ | $$3.40 \times 10^{38}$$ |
 | $$11111111 = 255$$ | $$5.79 \times 10^{76}$$ |
 
 This means that we can hold from $$0$$ to $$2^{255} - 1 \approx 5.79 \times 10^{76}$$ with 8 bits using this new method.
@@ -250,7 +250,7 @@ In the next section, we will consider how to generalize this logarithmic method 
 ## A slightly more general logarithm
 
 Let's start by considering the differences between base $$2$$ and base $$e$$.
-For base $$e$$, 
+For base $$e$$,
 
 $$
 \begin{align}
@@ -283,14 +283,14 @@ Going one step further, we need to chose a specific base to a logarithm that wil
 
 $$
 \begin{align}
-    v &= \frac{\log(1+n/a)}{\log(1+1/a)}. \\ 
+    v &= \frac{\log(1+n/a)}{\log(1+1/a)}. \\
     n_v &= a\left(\left(1+\frac{1}{a}\right)^v-1\right).
 \end{align}
 $$
 
 Here, $$a$$ is an effective tuning parameter and sets the maximum count allowed by the bitstring and the expected error.
 The expression $$1+1/a$$ acts as a base for the logarithm and exponents and ensures that the first count of $$n=1$$ will also set the value $$v=1$$.
-As an example, if the bitstring can be a maximum of 255 (for 8 bits) and we arbitrarily set 
+As an example, if the bitstring can be a maximum of 255 (for 8 bits) and we arbitrarily set
 $$a=30$$, then the highest possible count with this approach will be $$\approx 130,000$$, which was the number reported in Morris's paper.
 If we perform a few counting experiments, we find that this formula more closely tracks smaller numbers than before (when we were not using the logarithm):
 
@@ -360,8 +360,12 @@ As we do not have any objects to count, we will instead simulate the counting wi
 {% method %}
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/approximate_counting.jl)
+{% sample lang="c" %}
+[import, lang:"c"](code/c/approximate_counting.c)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/c++/approximate_counting.cpp)
+{% sample lang="python" %}
+[import, lang:"python"](code/python/approximate_counting.py)
 {% endmethod %}
 
 ### Bibliography

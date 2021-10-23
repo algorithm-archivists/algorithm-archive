@@ -61,11 +61,11 @@ auto test_approximate_count(
 int main() {
   std::cout << "Counting Tests, 100 trials\n";
 
-  std::cout << "testing 1,000, a = 30, 1% error "
+  std::cout << "testing 1,000, a = 30, 10% error "
             << test_approximate_count(100, 1000, 30, 0.1) << "\n";
-  std::cout << "testing 12,345, a = 10, 1% error "
+  std::cout << "testing 12,345, a = 10, 10% error "
             << test_approximate_count(100, 12345, 10, 0.1) << "\n";
   // Note : with a lower a, we need more trials, so a higher % error here.
-  std::cout << "testing 222,222, a = 0.5, 10% error "
+  std::cout << "testing 222,222, a = 0.5, 20% error "
             << test_approximate_count(100, 222222, 0.5, 0.2) << "\n";
 }

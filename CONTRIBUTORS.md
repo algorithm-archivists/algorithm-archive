@@ -59,3 +59,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Mahdi Sarikhani
 - Ridham177
 - Hugo Salou
+- Dimitri Belopopsky
