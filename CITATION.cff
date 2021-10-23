@@ -65,6 +65,10 @@ authors:
 - family-names: Weinstein
   given-names: Max
 - name: Gibus Wearing Brony
+- family-names: Berquist
+  given-names: Eric
+  alias: berquist
+  orcid: https://orcid.org/0000-0001-8186-9522
 - name: Gorzoid
 - family-names: Sahadeo
   given-names: Arun
@@ -101,7 +105,7 @@ authors:
 - family-names: Zalzal
   given-names: Vincent
 - family-names: Schenck
-  name-particle: Van 
+  name-particle: Van
   given-names: Jonathan D B
 - family-names: Goytia
   given-names: James
@@ -138,4 +142,3 @@ references:
       alias: Leios
     title: The Arcane Algorithm Archive
     url: https://www.algorithm-archive.org/
-
