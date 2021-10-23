@@ -20,17 +20,22 @@ function dfsPostorder(tree) {
 }
 
 function dfsInorder(tree) {
-  if (!tree) {
-    return;
+  switch (tree.children.length) {
+    case 2:
+      dfsInorder(tree.children[0]);
+      console.log(tree.id);
+      dfsInorder(tree.children[1]);
+      break;
+    case 1:
+      dfsInorder(tree.children[0]);
+      console.log(tree.id);
+      break;
+    case 0:
+      console.log(tree.id);
+      break;
+    default:
+      throw new Error("Postorder traversal is only valid for binary trees");
   }
-
-  if (tree.children.length > 2) {
-    throw new Error("Postorder traversal is only valid for binary trees");
-  }
-
-  dfsInorder(tree.children[0]);
-  console.log(tree.id);
-  dfsInorder(tree.children[1]);
 }
 
 function dfsIterative(tree) {

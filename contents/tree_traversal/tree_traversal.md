@@ -163,7 +163,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="java" %}
 [import:48-62, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:22-34, lang:"javascript"](code/javascript/tree.js)
+[import:22-39, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -221,7 +221,7 @@ In code, it looks like this:
 {% sample lang="java" %}
 [import:65-79, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:36-43, lang:"javascript"](code/javascript/tree.js)
+[import:41-48, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -272,7 +272,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="java" %}
 [import:81-95, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:45-52, lang:"javascript"](code/javascript/tree.js)
+[import:50-57, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
