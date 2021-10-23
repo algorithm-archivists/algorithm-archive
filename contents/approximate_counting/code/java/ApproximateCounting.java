@@ -69,13 +69,13 @@ public class ApproximateCounting {
 
 
     public static void main(String args[]) {
-        System.out.println("testing 1,000, a = 30, 1% error");
+        System.out.println("testing 1,000, a = 30, 10% error");
         testApproximateCount(100, 1_000, 30, 0.1);
 
-        System.out.println("testing 12,345, a = 10, 1% error");
+        System.out.println("testing 12,345, a = 10, 10% error");
         testApproximateCount(100, 12_345, 10, 0.1);
     
-        System.out.println("testing 222,222, a = 0.5, 10% error");
+        System.out.println("testing 222,222, a = 0.5, 20% error");
         testApproximateCount(100, 222_222, 0.5, 0.2);
     }
 
