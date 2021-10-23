@@ -105,7 +105,10 @@ authors:
   given-names: Jonathan D B
 - family-names: Goytia
   given-names: James
-- name: Amaras
+- family-names: Plat
+  given-names: Sammy
+  alias: Amaras
+  orcid: https://orcid.org/0000-0003-1441-3343
 - family-names: Dönszelmann
   given-names: Jonathan
 - family-names: Verma
