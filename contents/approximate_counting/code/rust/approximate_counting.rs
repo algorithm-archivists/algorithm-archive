@@ -1,8 +1,18 @@
+// This function takes
+//     - v: value in register
+//     - a: a  scaling value for the logarithm based on Morris's paper
+// It returns n(v,a), the approximate count
 fn n(v: f64, a: f64) -> f64 {
     a * ((1_f64 + 1_f64 / a).powf(v) - 1_f64)
 }
 
+
+// This function takes
+//    - v: value in register
+//    - a: a scaling value for the logarithm based on Morris's paper
+// It returns a new value for v
 fn increment(v: f64, a: f64) -> f64 {
+    // delta is the probability of incrementing our counter
     let delta = 1_f64 / (n(v + 1_f64, a) - n(v, a));
 
     if rand::random::<f64>() <= delta {
@@ -12,6 +22,10 @@ fn increment(v: f64, a: f64) -> f64 {
     }
 }
 
+// This simulates counting and takes
+//     - n_items: number of items to count and loop over
+//     - a: a scaling value for the logarithm based on Morris's paper
+// It returns n(v,a), the approximate count
 fn approximate_count(n_items: usize, a: f64) -> f64 {
     let mut v = 0_f64;
 
@@ -22,23 +36,24 @@ fn approximate_count(n_items: usize, a: f64) -> f64 {
     v
 }
 
+// This function takes
+//     - n_trials: the number of counting trials
+//     - n_items: the number of items to count to
+//     - a: a scaling value for the logarithm based on Morris's paper
+//     - threshold: the maximum percent error allowed
+// It returns a "pass" / "fail" test value
 fn test_approximate_count(n_trails: usize, n_items: usize, a: f64, threshold: f64) {
-    //let avg = std::iter::from_fn(|| Some(approximate_count(n_items, a)))
-    //                    .take(n_trails)
-    //                    .sum::<f64>() / n_trails as f64;
-    
-    let mut avg = 0_f64;
-    for _ in 0..n_trails {
-    	avg += approximate_count(n_items, a);
-    }
-    
-    avg /= n_trails as f64;
+    let avg = std::iter::from_fn(|| Some(approximate_count(n_items, a)))
+                        .take(n_trails)
+                        .sum::<f64>() / n_trails as f64;
     
     let n_items_float = n_items as f64;
     
     if ((avg - n_items_float) / n_items_float) < threshold {
         println!("pass");
-    } 
+    } else {
+        println!("fail");
+    }
     
 }
 
