@@ -64,6 +64,8 @@ public class ApproximateCounting {
     
         if (Math.abs((avg - nItems) / nItems) < threshold) {
             System.out.println("passed");
+        } else {
+            System.out.println("failed");
         }
     }
 
