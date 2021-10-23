@@ -44,7 +44,6 @@ public class Tree {
         dfsRecursiveInOrderBinary(this.root);
     }
 
-    // This assumes only 2 children
     private void dfsRecursiveInOrderBinary(Node node) {
         switch (node.children.size()) {
             case 2:

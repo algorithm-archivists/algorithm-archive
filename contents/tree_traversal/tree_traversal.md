@@ -12,7 +12,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:7-11, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:113-129, lang:"java"](code/java/Tree.java)
+[import:112-128, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:1-10, lang:"javascript"](code/javascript/tree.js)
 As a note, a `node` struct is not necessary in javascript, so this is an example of how a tree might be constructed.
@@ -161,7 +161,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="c" %}
 [import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:48-65, lang:"java"](code/java/Tree.java)
+[import:47-64, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:22-34, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
@@ -219,7 +219,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:68-82, lang:"java"](code/java/Tree.java)
+[import:67-81, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
@@ -270,7 +270,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="c" %}
 [import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:84-98, lang:"java"](code/java/Tree.java)
+[import:83-97, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
