@@ -12,7 +12,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:7-11, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:110-126, lang:"java"](code/java/Tree.java)
+[import:112-128, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:1-10, lang:"javascript"](code/javascript/tree.js)
 As a note, a `node` struct is not necessary in javascript, so this is an example of how a tree might be constructed.
@@ -58,7 +58,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="c" %}
 [import:37-45, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:21-27, lang:"java"](code/java/Tree.java)
+[import:20-26, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:12-15, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
@@ -112,7 +112,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="c" %}
 [import:47-53, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:34-41, lang:"java"](code/java/Tree.java)
+[import:33-40, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:17-20, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
@@ -161,7 +161,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="c" %}
 [import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:48-62, lang:"java"](code/java/Tree.java)
+[import:47-64, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:22-34, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
@@ -219,7 +219,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:65-79, lang:"java"](code/java/Tree.java)
+[import:67-81, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:36-43, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
@@ -270,7 +270,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="c" %}
 [import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:81-95, lang:"java"](code/java/Tree.java)
+[import:83-97, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:45-52, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
