@@ -50,9 +50,9 @@ fn test_approximate_count(n_trails: usize, n_items: usize, a: f64, threshold: f6
     let n_items_float = n_items as f64;
     
     if ((avg - n_items_float) / n_items_float) < threshold {
-        println!("pass");
+        println!("passed");
     } else {
-        println!("fail");
+        println!("failed");
     }
     
 }
