@@ -13,7 +13,7 @@ public class StackTest {
 
 	System.out.println(intStack.pop());
 	System.out.println(intStack.size());
-	System.out.println(intStack.peek());
+	System.out.println(intStack.top());
     }
 
 }
@@ -36,9 +36,9 @@ interface IStack<T> {
     int size();
 
    /*
-    * 'peek' returns the first element of the stack
+    * 'top' returns the first element of the stack
     */
-    T peek();
+    T top();
 }
 
 
@@ -63,7 +63,7 @@ public class Stack<T> implements IStack<T> {
         return this.list.size();
     }
 
-    public T peek() {
+    public T top() {
         return this.list.get(this.size() - 1);
     }
 

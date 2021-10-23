@@ -12,7 +12,7 @@ public class QueueTest {
 	
 	System.out.println(intQueue.dequeue());
 	System.out.println(intQueue.size());
-	System.out.println(intQueue.peek());
+	System.out.println(intQueue.front());
     }
 
 }
@@ -37,9 +37,9 @@ interface IQueue<T> {
     int size();
 
    /*
-    * 'peek' returns the first element of the queue without removing it
+    * 'front' returns the first element of the queue without removing it
     */
-    T peek();
+    T front();
 }
 
 
@@ -48,7 +48,7 @@ public class Queue<T> implements  IQueue<T> {
     private List<T> list;
 
     public Queue() {
-        this.list = new ArrayList();
+        this.list = new ArrayList<>();
     }
 
     public T dequeue() {
@@ -64,7 +64,7 @@ public class Queue<T> implements  IQueue<T> {
         return this.list.size();
     }
 
-    public T peek() {
+    public T front() {
         return this.list.get(0);
     }
 
