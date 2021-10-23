@@ -7,9 +7,10 @@ class Stack(T)
     @stack = Array(T).new
   end
 
-  # Pushes the given *item* onto the stack.
+  # Pushes the given *item* onto the stack and returns the size of the stack.
   def push(item : T)
     @stack << item
+    self.size
   end
 
   # Remove the last item from the stack.
@@ -26,28 +27,18 @@ class Stack(T)
   def top : T
     @stack[-1]
   end
-
-  # Returns `true` if the stack is empty, `false` otherwise.
-  def empty? : Bool
-    @stack.empty?
-  end
 end
 
 def stack_example
   stack = Stack(Int32).new
 
-  stack.push(1)
-  stack.push(2)
-  stack.push(3)
+  stack.push(4)
+  stack.push(5)
+  stack.push(9)
 
-  puts "#{stack.size} items in the stack"
-
-  puts "#{stack.pop} popped from the stack."
-  puts "Top item in the stack: #{stack.top}"
-  puts "#{stack.pop} popped from the stack."
-  puts "#{stack.pop} popped from the stack."
-
-  puts "The stack is empty" if stack.empty?
+  puts stack.pop
+  puts stack.size
+  puts stack.top
 end
 
 stack_example

@@ -7,9 +7,10 @@ class Queue(T)
     @queue = Array(T).new
   end
 
-  # Pushes the given *item* onto the queue.
+  # Pushes the given *item* onto the queue and returns the size of the queue.
   def enqueue(item : T)
     @queue << item
+    self.size
   end
 
   # Removes the first item in the queue (at index 0).
@@ -26,28 +27,18 @@ class Queue(T)
   def size : Int32
     @queue.size
   end
-
-  # Returns `true` if the queue is empty, `false` otherwise.
-  def empty? : Bool
-    @queue.empty?
-  end
 end
 
 def queue_example
   queue = Queue(Int32).new
 
-  queue.enqueue(1)
-  queue.enqueue(2)
-  queue.enqueue(3)
+  queue.enqueue(4)
+  queue.enqueue(5)
+  queue.enqueue(9)
 
-  puts "#{queue.size} items in the queue"
-
-  puts "#{queue.dequeue} removed from the queue."
-  puts "Front item in the queue: #{queue.front}"
-  puts "#{queue.dequeue} removed from the queue."
-  puts "#{queue.dequeue} removed from the queue."
-
-  puts "The queue is empty" if queue.empty?
+  puts queue.dequeue
+  puts queue.size
+  puts queue.front
 end
 
 queue_example
