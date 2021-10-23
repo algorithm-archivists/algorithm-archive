@@ -41,7 +41,7 @@ public class ApproximateCounting {
     static double approximateCount(int nItems, double a) {
         double v = 0;
     
-        for (int i = 1; i < nItems + 1; i++) {
+        for (int i = 0; i < nItems; i++) {
             v = increment(v, a);
         }
 
@@ -50,15 +50,15 @@ public class ApproximateCounting {
 
     /*
      * This function takes
-     *   - nTrails: the number of counting trails
+     *   - nTrials: the number of counting trails
      *   - nItems: the number of items to count
-     *   - a: a scaling value for th elogarithm based on Morris's paper
+     *   - a: a scaling value for the logarithm based on Morris's paper
      *   - threshold: the maximum percent error allowed
      * It terminates the program on failure
      */
-    static void testApproximateCount(int nTrails, int nItems, double a, double threshold) {
+    static void testApproximateCount(int nTrials, int nItems, double a, double threshold) {
         double avg = DoubleStream.generate(() -> approximateCount(nItems, a))
-                     .limit(nTrails)
+                     .limit(nTrials)
                      .average()
                      .getAsDouble();
     
