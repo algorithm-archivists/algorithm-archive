@@ -62,7 +62,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="java" %}
 [import:20-26, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:12-15, lang:"javascript"](code/javascript/tree.js)
+[import:12-19, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -118,7 +118,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="java" %}
 [import:33-40, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:17-20, lang:"javascript"](code/javascript/tree.js)
+[import:21-28, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -169,7 +169,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="java" %}
 [import:47-64, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:22-34, lang:"javascript"](code/javascript/tree.js)
+[import:30-51, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -229,7 +229,7 @@ In code, it looks like this:
 {% sample lang="java" %}
 [import:67-81, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:36-43, lang:"javascript"](code/javascript/tree.js)
+[import:53-60, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -282,7 +282,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="java" %}
 [import:83-97, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:45-52, lang:"javascript"](code/javascript/tree.js)
+[import:62-69, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
