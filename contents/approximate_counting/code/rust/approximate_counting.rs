@@ -41,11 +41,11 @@ fn approximate_count(n_items: usize, a: f64) -> f64 {
 //     - n_items: the number of items to count to
 //     - a: a scaling value for the logarithm based on Morris's paper
 //     - threshold: the maximum percent error allowed
-// It returns a "pass" / "fail" test value
-fn test_approximate_count(n_trails: usize, n_items: usize, a: f64, threshold: f64) {
+// It returns a "passed" / "failed" test value
+fn test_approximate_count(n_trials: usize, n_items: usize, a: f64, threshold: f64) {
     let avg = std::iter::from_fn(|| Some(approximate_count(n_items, a)))
-                        .take(n_trails)
-                        .sum::<f64>() / n_trails as f64;
+                        .take(n_trials)
+                        .sum::<f64>() / n_trials as f64;
     
     let n_items_float = n_items as f64;
     
@@ -58,10 +58,10 @@ fn test_approximate_count(n_trails: usize, n_items: usize, a: f64, threshold: f6
 }
 
 fn main() {
-    println!("testing 1,000, a = 30, 1% error");
+    println!("testing 1,000, a = 30, 10% error");
     test_approximate_count(100, 1000, 30_f64, 0.1);
-    println!("testing 12,345, a = 10, 1% error");
+    println!("testing 12,345, a = 10, 10% error");
     test_approximate_count(100, 12345, 10_f64, 0.1);
-    println!("testing 222,222, a = 0.5, 10% error");
+    println!("testing 222,222, a = 0.5, 20% error");
     test_approximate_count(100, 222222, 0.5, 0.2);
 }
