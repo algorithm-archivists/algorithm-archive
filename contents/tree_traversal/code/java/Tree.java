@@ -1,4 +1,3 @@
-// submitted by xam4lor
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -47,17 +46,21 @@ public class Tree {
 
     // This assumes only 2 children
     private void dfsRecursiveInOrderBinary(Node node) {
-        if (node.children.size() > 2) {
-            System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
-            return;
-        }
-
-        if (node.children.size() > 1) {
-            dfsRecursiveInOrderBinary(node.children.get(0));
-            System.out.println(node.id);
-            dfsRecursiveInOrderBinary(node.children.get(1));
-        } else {
-            System.out.println(node.id);
+        switch (node.children.size()) {
+            case 2:
+                dfsRecursiveInOrderBinary(node.children.get(0));
+                System.out.println(node.id);
+                dfsRecursiveInOrderBinary(node.children.get(1));
+                break;
+            case 1:
+                dfsRecursiveInOrderBinary(node.children.get(0));
+                System.out.println(node.id);
+                break;
+            case 0:
+                System.out.println(node.id);
+                break;
+            default:
+                System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
         }
     }
 
