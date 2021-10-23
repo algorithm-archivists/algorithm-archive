@@ -32,6 +32,8 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:4-37, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:1-20, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:5-8, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -77,6 +79,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:41-49, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:22-27, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:10-15, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -131,6 +135,8 @@ Now, in this case the first element searched through is still the root of the tr
 [import:51-57, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:29-34, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:17-22, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -180,6 +186,8 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:59-78, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:36-49, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:24-38, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -238,6 +246,8 @@ In code, it looks like this:
 [import:80-91, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:47-58, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:40-49, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -289,6 +299,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:93-104, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:60-71, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:51-60, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -351,6 +363,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
