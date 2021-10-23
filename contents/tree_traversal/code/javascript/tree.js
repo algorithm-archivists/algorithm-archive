@@ -10,16 +10,28 @@ function createTree(rows, children) {
 }
 
 function dfsPreorder(tree) {
+  if (!tree) {
+    return;
+  }
+
   console.log(tree.id);
   tree.children.forEach(dfsPreorder);
 }
 
 function dfsPostorder(tree) {
+  if (!tree) {
+    return;
+  }
+
   tree.children.forEach(dfsPostorder);
   console.log(tree.id);
 }
 
 function dfsInorder(tree) {
+  if (!tree) {
+    return;
+  }
+
   switch (tree.children.length) {
     case 2:
       dfsInorder(tree.children[0]);
