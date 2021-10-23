@@ -10,11 +10,19 @@ function createTree(rows, children) {
 }
 
 function dfsPreorder(tree) {
+  if (!tree) {
+    return;
+  }
+
   console.log(tree.id);
   tree.children.forEach(dfsPreorder);
 }
 
 function dfsPostorder(tree) {
+  if (!tree) {
+    return;
+  }
+
   tree.children.forEach(dfsPostorder);
   console.log(tree.id);
 }
@@ -24,13 +32,22 @@ function dfsInorder(tree) {
     return;
   }
 
-  if (tree.children.length > 2) {
-    throw new Error("Postorder traversal is only valid for binary trees");
+  switch (tree.children.length) {
+    case 2:
+      dfsInorder(tree.children[0]);
+      console.log(tree.id);
+      dfsInorder(tree.children[1]);
+      break;
+    case 1:
+      dfsInorder(tree.children[0]);
+      console.log(tree.id);
+      break;
+    case 0:
+      console.log(tree.id);
+      break;
+    default:
+      throw new Error("Postorder traversal is only valid for binary trees");
   }
-
-  dfsInorder(tree.children[0]);
-  console.log(tree.id);
-  dfsInorder(tree.children[1]);
 }
 
 function dfsIterative(tree) {
