@@ -12,7 +12,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="c" %}
 [import:7-11, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:110-126, lang:"java"](code/java/Tree.java)
+[import:112-128, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
 [import:1-10, lang:"javascript"](code/javascript/tree.js)
 As a note, a `node` struct is not necessary in javascript, so this is an example of how a tree might be constructed.
@@ -32,6 +32,8 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 [import:4-37, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:1-5, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:1-20, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:5-8, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -58,9 +60,9 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="c" %}
 [import:37-45, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:21-27, lang:"java"](code/java/Tree.java)
+[import:20-26, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:12-15, lang:"javascript"](code/javascript/tree.js)
+[import:12-19, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:18-23, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -77,6 +79,8 @@ Because of this, the most straightforward way to traverse the tree might be recu
 [import:41-49, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:22-27, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:10-15, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -112,9 +116,9 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="c" %}
 [import:47-53, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:34-41, lang:"java"](code/java/Tree.java)
+[import:33-40, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:17-20, lang:"javascript"](code/javascript/tree.js)
+[import:21-28, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:26-31, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -131,6 +135,8 @@ Now, in this case the first element searched through is still the root of the tr
 [import:51-57, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:29-34, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:17-22, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -161,9 +167,9 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="c" %}
 [import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:48-62, lang:"java"](code/java/Tree.java)
+[import:47-64, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:22-34, lang:"javascript"](code/javascript/tree.js)
+[import:30-51, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:34-46, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -180,6 +186,8 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 [import:59-78, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:36-49, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:24-38, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -219,9 +227,9 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:65-79, lang:"java"](code/java/Tree.java)
+[import:67-81, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:36-43, lang:"javascript"](code/javascript/tree.js)
+[import:53-60, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:49-60, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -238,6 +246,8 @@ In code, it looks like this:
 [import:80-91, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:47-58, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:40-49, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -270,9 +280,9 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="c" %}
 [import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
-[import:81-95, lang:"java"](code/java/Tree.java)
+[import:83-97, lang:"java"](code/java/Tree.java)
 {% sample lang="js" %}
-[import:45-52, lang:"javascript"](code/javascript/tree.js)
+[import:62-69, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
 [import:63-75, lang:"python"](code/python/Tree_example.py)
 {% sample lang="scratch" %}
@@ -289,6 +299,8 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 [import:93-104, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import:60-71, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import:51-60, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
@@ -351,6 +363,8 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 [import, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import, lang:"crystal"](code/crystal/tree-traversal.cr)
+{% sample lang="st" %}
+[import, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
 [import, lang:"go"](code/golang/treetraversal.go)
 {% sample lang="asm-x64" %}
