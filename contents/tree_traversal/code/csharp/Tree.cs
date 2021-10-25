@@ -66,15 +66,15 @@ namespace TreeTraversal
                 {
                     case 2:
                         DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.WriteLine(tree.Id + " ");
+                        Console.Write(tree.Id + " ");
                         DFSRecursiveInorderBinary(tree._children[1]);
                         break;
                     case 1:
                         DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.WriteLine(tree.Id + " ");
+                        Console.Write(tree.Id + " ");
                         break;
                     case 0:
-                        Console.WriteLine(tree.Id + " ");
+                        Console.Write(tree.Id + " ");
                         break;
                     default:
                         throw new Exception("Not binary tree!");
