@@ -50,8 +50,8 @@ def bfs_queue(node is Node):
 def create_tree(num_rows, num_child):
     """Creates a simple tree, where every node has
     'num_child' children and is 'num_rows' deep."""
-    if num_rows == 1:
-        return Node(1, ())
+    if num_rows == 0:
+        return Node(0, ())
     else:
         return Node(num_rows, tuple(create_tree(num_rows-1, num_child)
                                     for _ in range(num_child)))
@@ -59,33 +59,28 @@ def create_tree(num_rows, num_child):
 
 if __name__ =='__main__':
     # A ternary tree for testing
-    tree = create_tree(3, 3)
+    tree = create_tree(2, 3)
 
-    # Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
-    print("Recursive DFS:")
+    print("[#]\nRecursive DFS:")
     dfs_recursive(tree)
     print()
 
-    # Should print: 1 1 1 2 1 1 1 2 1 1 1 2 3
-    print("Recursive Postorder DFS:")
+    print("[#]\nRecursive Postorder DFS:")
     dfs_recursive_postorder(tree)
     print()
 
-    # Should print: 3 2 1 1 1 2 1 1 1 2 1 1 1
-    print("Stack (DFS):")
+    print("[#]\nStack-based DFS:")
     dfs_stack(tree)
     print()
 
-    # Should print: 3 2 2 2 1 1 1 1 1 1 1 1 1
-    print("Queue (BFS):")
+    print("[#]\nQueue-based BFS:")
     bfs_queue(tree)
     print()
 
     # And a binary tree for testing
     binary_tree = create_tree(3, 2)
 
-    # Should print: 1 2 1 3 1 2 1
-    print("Recursive Inorder Binary Tree:")
+    print("[#]\nRecursive Inorder DFS for Binary Tree:")
     dfs_recursive_inorder_btree(binary_tree)
     print()
 
