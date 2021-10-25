@@ -11,12 +11,12 @@ namespace TreeTraversal
 
         public Tree(int depthCount, int childrenCount)
         {
-            this.Id = 1;
+            this.Id = depthCount;
 
-            if (!(depthCount <= 1))
+            if (depthCount > 0)
             {
                 for (int i = 0; i < childrenCount; i++)
-                    this._children.Add(new Tree(this.Id * 10 + i + 1, depthCount - 1, childrenCount));
+                    this._children.Add(new Tree(depthCount - 1, childrenCount));
             }
         }
 
@@ -37,7 +37,7 @@ namespace TreeTraversal
 
             void DFSRecursive(Tree tree)
             {
-                Console.WriteLine(tree.Id);
+                Console.Write(tree.Id + " ");
 
                 foreach (var c in tree._children)
                     DFSRecursive(c);
@@ -53,7 +53,7 @@ namespace TreeTraversal
                 foreach (var c in tree._children)
                     DFSRecursivePostorder(c);
 
-                Console.WriteLine(tree.Id);
+                Console.Write(tree.Id + " ");
             }
         }
 
@@ -70,11 +70,11 @@ namespace TreeTraversal
                 if (tree._children.Count > 0)
                 {
                     DFSRecursiveInorderBinary(tree._children[0]);
-                    Console.WriteLine(tree.Id);
+                    Console.Write(tree.Id + " ");
                     DFSRecursiveInorderBinary(tree._children[1]);
                 }
                 else
-                    Console.WriteLine(tree.Id);
+                    Console.Write(tree.Id + " ");
             }
         }
 
@@ -85,7 +85,7 @@ namespace TreeTraversal
 
             while (stack.Count != 0)
             {
-                Console.WriteLine(stack.Peek().Id);
+                Console.Write(stack.Peek().Id + " ");
                 var temp = stack.Pop();
 
                 foreach (var c in temp._children)
@@ -100,7 +100,7 @@ namespace TreeTraversal
 
             while (queue.Count != 0)
             {
-                Console.WriteLine(queue.Peek().Id);
+                Console.Write(queue.Peek().Id + " ");
                 var temp = queue.Dequeue();
 
                 foreach (var c in temp._children)
