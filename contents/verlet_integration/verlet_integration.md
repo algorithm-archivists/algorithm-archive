@@ -42,15 +42,6 @@ Here is what it looks like in code:
 [import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:14-21, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="m" %}
-Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="LabVIEW" %}
-Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="js" %}
 [import:1-14, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
@@ -101,15 +92,6 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="hs" %}
 [import:23-28, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="m" %}
-Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="LabVIEW" %}
-Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="js" %}
 [import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
@@ -173,15 +155,6 @@ Here is the velocity Verlet method in code:
 {% sample lang="hs" %}
 [import:30-35, lang:"haskell"](code/haskell/verlet.hs)
 {% sample lang="scratch" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="m" %}
-Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="LabVIEW" %}
-Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="js" %}
 [import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
