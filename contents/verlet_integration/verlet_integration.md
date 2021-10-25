@@ -91,7 +91,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 [import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:23-28, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
+{% sample lang="js" %}
 [import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
@@ -154,7 +154,7 @@ Here is the velocity Verlet method in code:
 [import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:30-35, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
+{% sample lang="js" %}
 [import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
@@ -203,19 +203,6 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 [import, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
-Submitted by Jie
-<p>
-    <img  class="center" src="code/scratch/verlet_scratch.png" />
-</p>
-Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
-{% sample lang="m" %}
-[import, lang:"matlab"](code/matlab/verlet.m)
-{% sample lang="LabVIEW" %}
-Submitted by P. Mekhail
-<p>
-    <img  class="center" src="code/labview/verlet_labview.png" />
-</p>
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
