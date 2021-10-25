@@ -12,7 +12,7 @@ namespace TreeTraversal
         {
             Id = 1;
 
-            if (!(depthCount <= 1))
+            if (depthCount > 0)
             {
                 for (int i = 0; i < childrenCount; i++)
                     _children.Add(new Tree(Id * 10 + i + 1, depthCount - 1, childrenCount));
@@ -36,7 +36,7 @@ namespace TreeTraversal
 
             void DFSRecursive(Tree tree)
             {
-                Console.WriteLine(tree.Id);
+                Console.Write(tree.Id + " ");
 
                 foreach (var c in tree._children)
                     DFSRecursive(c);
@@ -52,7 +52,7 @@ namespace TreeTraversal
                 foreach (var c in tree._children)
                     DFSRecursivePostorder(c);
 
-                Console.WriteLine(tree.Id);
+                Console.Write(tree.Id + " ");
             }
         }
 
@@ -66,15 +66,15 @@ namespace TreeTraversal
                 {
                     case 2:
                         DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.WriteLine(tree.Id);
+                        Console.WriteLine(tree.Id + " ");
                         DFSRecursiveInorderBinary(tree._children[1]);
                         break;
                     case 1:
                         DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.WriteLine(tree.Id);
+                        Console.WriteLine(tree.Id + " ");
                         break;
                     case 0:
-                        Console.WriteLine(tree.Id);
+                        Console.WriteLine(tree.Id + " ");
                         break;
                     default:
                         throw new Exception("Not binary tree!");
@@ -89,7 +89,7 @@ namespace TreeTraversal
 
             while (stack.Count != 0)
             {
-                Console.WriteLine(stack.Peek().Id);
+                Console.Write(stack.Peek().Id + " ");
                 var temp = stack.Pop();
 
                 foreach (var c in temp._children)
@@ -104,7 +104,7 @@ namespace TreeTraversal
 
             while (queue.Count != 0)
             {
-                Console.WriteLine(queue.Peek().Id);
+                Console.Write(queue.Peek().Id + " ");
                 var temp = queue.Dequeue();
 
                 foreach (var c in temp._children)
