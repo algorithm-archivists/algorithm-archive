@@ -1,4 +1,3 @@
-// submitted by Julian Schacher (jspp)
 using System;
 using System.Collections.Generic;
 
@@ -11,23 +10,23 @@ namespace TreeTraversal
 
         public Tree(int depthCount, int childrenCount)
         {
-            this.Id = depthCount;
+            Id = 1;
 
             if (depthCount > 0)
             {
                 for (int i = 0; i < childrenCount; i++)
-                    this._children.Add(new Tree(depthCount - 1, childrenCount));
+                    _children.Add(new Tree(Id * 10 + i + 1, depthCount - 1, childrenCount));
             }
         }
 
         private Tree(int id, int depthCount, int childrenCount)
         {
-            this.Id = id;
+            Id = id;
 
             if (!(depthCount <= 1))
             {
                 for (int i = 0; i < childrenCount; i++)
-                    this._children.Add(new Tree(this.Id * 10 + i + 1, depthCount - 1, childrenCount));
+                    _children.Add(new Tree(Id * 10 + i + 1, depthCount - 1, childrenCount));
             }
         }
 
@@ -61,20 +60,25 @@ namespace TreeTraversal
         {
             DFSRecursiveInorderBinary(this);
 
-            // This assumes only 2 children
             void DFSRecursiveInorderBinary(Tree tree)
             {
-                if (tree._children.Count > 2)
-                    throw new Exception("Not binary tree!");
-
-                if (tree._children.Count > 0)
+                switch (tree._children.Count)
                 {
-                    DFSRecursiveInorderBinary(tree._children[0]);
-                    Console.Write(tree.Id + " ");
-                    DFSRecursiveInorderBinary(tree._children[1]);
+                    case 2:
+                        DFSRecursiveInorderBinary(tree._children[0]);
+                        Console.Write(tree.Id + " ");
+                        DFSRecursiveInorderBinary(tree._children[1]);
+                        break;
+                    case 1:
+                        DFSRecursiveInorderBinary(tree._children[0]);
+                        Console.Write(tree.Id + " ");
+                        break;
+                    case 0:
+                        Console.Write(tree.Id + " ");
+                        break;
+                    default:
+                        throw new Exception("Not binary tree!");
                 }
-                else
-                    Console.Write(tree.Id + " ");
             }
         }
 
