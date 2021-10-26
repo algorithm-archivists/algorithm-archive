@@ -8,7 +8,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="cpp" %}
 [import:12-15, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:7-11, lang:"csharp"](code/csharp/Tree.cs)
+[import:6-10, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:7-11, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -56,7 +56,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="cpp" %}
 [import:17-24, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:34-45, lang:"csharp"](code/csharp/Tree.cs)
+[import:33-44, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:37-45, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -112,7 +112,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="cpp" %}
 [import:26-31, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:47-58, lang:"csharp"](code/csharp/Tree.cs)
+[import:46-57, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:47-53, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -163,7 +163,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="cpp" %}
 [import:34-52 lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:60-79, lang:"csharp"](code/csharp/Tree.cs)
+[import:59-83, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -223,7 +223,7 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:55-70, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:81-94, lang:"csharp"](code/csharp/Tree.cs)
+[import:85-98, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -276,7 +276,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import:73-86, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:96-109, lang:"csharp"](code/csharp/Tree.cs)
+[import:100-113, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
