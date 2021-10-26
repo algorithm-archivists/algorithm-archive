@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk rustc libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch
+    && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk rustc libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch libfftw3-dev
 
 # Setup Crystal
 RUN echo 'deb http://download.opensuse.org/repositories/devel:/languages:/crystal/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/devel:languages:crystal.list
@@ -98,6 +98,7 @@ ENV PATH=$PATH:~/swift/usr/bin
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
 
-RUN pip install wheel matplotlib numpy coconut
+RUN pip install wheel matplotlib numpy coconut scons
 
 RUN sudo sh -c 'npm install -g typescript'
+
