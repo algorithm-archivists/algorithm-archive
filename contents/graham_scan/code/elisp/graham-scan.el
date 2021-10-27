@@ -10,7 +10,6 @@ Adapted from dash.el."
 
 (defun nthrev (n lst)
   "Return the Nth element of LST from the end."
-  ;; (car (nthcdr n (reverse lst)))
   (nth (- (length lst) (1+ n)) lst))
 
 (defun is-ccw (a b c)
