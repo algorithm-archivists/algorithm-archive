@@ -1,17 +1,12 @@
 (require 'cl-seq)
 
-(defun -concat (&rest lists)
-  "Return a new list with the concatenation of the elements in the supplied LISTS."
-  (declare (pure t) (side-effect-free t))
-  (apply 'append lists))
-
-(defun -snoc (list elem &rest elements)
+(defun snoc (list elem)
   "Append ELEM to the end of the list.
 
 This is like `cons', but operates on the end of list.
 
-If ELEMENTS is non nil, append these to the list as well."
-  (-concat list (list elem) elements))
+Adapted from dash.el."
+  (append list (list elem)))
 
 (defun nthrev (n lst)
   "Return the Nth element of LST from the end."
@@ -39,7 +34,7 @@ If ELEMENTS is non nil, append these to the list as well."
     (dolist (point (cddr points))
       (while (not (is-ccw (nthrev 1 hull) (nthrev 0 hull) point))
         (setq hull (-remove-at (1- (length hull)) hull)))
-      (setq hull (-snoc hull point)))
+      (setq hull (snoc hull point)))
     hull))
 
 (princ
