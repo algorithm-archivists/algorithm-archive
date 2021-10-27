@@ -13,17 +13,18 @@ Adapted from dash.el."
   (nth (- (length lst) (1+ n)) lst))
 
 (defun is-ccw (a b c)
+  "Determines if a turn between three points is counterclockwise."
   (>= (* (- (nth 1 c) (nth 1 a)) (- (nth 0 b) (nth 0 a)))
       (* (- (nth 1 b) (nth 1 a)) (- (nth 0 c) (nth 0 a)))))
 
 (defun polar-angle (ref point)
+  "Returns the polar angle from a point relative to a reference point"
   (atan (- (nth 1 point) (nth 1 ref)) (- (nth 0 point) (nth 0 ref))))
 
-(require 'dash)
-
 (defun graham-scan (initial-gift)
+  "Finds the convex hull of a distribution of points with a Graham scan."
   (let* ((gift (cl-remove-duplicates initial-gift))
-         ;; this is /only/ to get the starting point
+         ;; This is /only/ to get the starting point.
          (min-sorted-gift (sort gift (lambda (p1 p2) (< (nth 1 p1) (nth 1 p2)))))
          (start (car min-sorted-gift))
          (trimmed-gift (cdr min-sorted-gift))
@@ -32,7 +33,7 @@ Adapted from dash.el."
          (hull (list start (car points) (cadr points))))
     (dolist (point (cddr points))
       (while (not (is-ccw (nthrev 1 hull) (nthrev 0 hull) point))
-        (setq hull (-remove-at (1- (length hull)) hull)))
+        (setq hull (reverse (cdr (reverse hull)))))
       (setq hull (snoc hull point)))
     hull))
 
