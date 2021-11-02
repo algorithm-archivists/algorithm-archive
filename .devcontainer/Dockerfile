@@ -82,7 +82,8 @@ RUN mkdir -p ~/swift && wget https://swift.org/builds/swift-5.5-release/ubuntu20
 ENV PATH=$PATH:~/swift/usr/bin
 
 # Setup viml
-## ?
+# To run vim script commands use `/usr/bin/vim -c ":source %" <path_to_file>`
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends vim
 
 # Setup whitespace
 ## ?
