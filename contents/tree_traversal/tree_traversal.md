@@ -8,7 +8,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="cpp" %}
 [import:12-15, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:7-11, lang:"csharp"](code/csharp/Tree.cs)
+[import:6-10, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:7-11, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -17,7 +17,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 [import:1-10, lang:"javascript"](code/javascript/tree.js)
 As a note, a `node` struct is not necessary in javascript, so this is an example of how a tree might be constructed.
 {% sample lang="py" %}
-[import:1-4, lang:"python"](code/python/Tree_example.py)
+[import:1-4, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/struct.svg" style="width:25%" />
@@ -56,7 +56,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="cpp" %}
 [import:17-24, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:34-45, lang:"csharp"](code/csharp/Tree.cs)
+[import:33-44, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:37-45, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -64,7 +64,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="js" %}
 [import:12-19, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:18-23, lang:"python"](code/python/Tree_example.py)
+[import:17-22, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-pre.svg" style="width:40%" />
@@ -72,11 +72,11 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="rs" %}
 [import:9-15 lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:6-7, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:7-8, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:24-30, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
-[import:41-49, lang:"php"](code/php/tree_traversal.php)
+[import:41-47, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:7-10, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
@@ -112,7 +112,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="cpp" %}
 [import:26-31, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:47-58, lang:"csharp"](code/csharp/Tree.cs)
+[import:46-57, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:47-53, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -120,7 +120,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="js" %}
 [import:21-28, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:26-31, lang:"python"](code/python/Tree_example.py)
+[import:25-30, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-post.svg" style="width:40%" />
@@ -128,11 +128,11 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="rs" %}
 [import:17-24, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:9-10, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:10-11, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:32-38, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
-[import:51-57, lang:"php"](code/php/tree_traversal.php)
+[import:49-55, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:12-15, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
@@ -148,7 +148,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="m" %}
 [import:47-62, lang:"matlab"](code/matlab/tree.m)
 {% sample lang="coco" %}
-[import:11-15, lang:="coconut"](codo/coconut/tree_traversal.coco)
+[import:11-15, lang:="coconut"](code/coconut/tree_traversal.coco)
 {% endmethod %}
 
 <p>
@@ -163,7 +163,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="cpp" %}
 [import:34-52 lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:60-79, lang:"csharp"](code/csharp/Tree.cs)
+[import:59-83, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:55-73, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -171,7 +171,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="js" %}
 [import:30-51, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:34-46, lang:"python"](code/python/Tree_example.py)
+[import:34-45, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-in.svg" style="width:40%" />
@@ -179,11 +179,11 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="rs" %}
 [import:25-40, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:12-16, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:13-17, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:40-53, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
-[import:59-78, lang:"php"](code/php/tree_traversal.php)
+[import:57-76, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:17-31, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
@@ -223,7 +223,7 @@ In code, it looks like this:
 {% sample lang="cpp" %}
 [import:55-70, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:81-94, lang:"csharp"](code/csharp/Tree.cs)
+[import:85-98, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:75-93, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -231,7 +231,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:53-60, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:49-60, lang:"python"](code/python/Tree_example.py)
+[import:48-59, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-stack.svg" style="width:70%" />
@@ -239,11 +239,11 @@ In code, it looks like this:
 {% sample lang="rs" %}
 [import:41-48, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:18-22, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:19-23, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:55-67, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
-[import:80-91, lang:"php"](code/php/tree_traversal.php)
+[import:78-89, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:33-41, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
@@ -276,7 +276,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="cpp" %}
 [import:73-86, lang:"cpp"](code/c++/tree_example.cpp)
 {% sample lang="cs" %}
-[import:96-109, lang:"csharp"](code/csharp/Tree.cs)
+[import:100-113, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
 [import:95-113, lang:"c"](code/c/tree_traversal.c)
 {% sample lang="java" %}
@@ -284,7 +284,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:62-69, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:63-75, lang:"python"](code/python/Tree_example.py)
+[import:62-72, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" style="width:70%" />
@@ -292,11 +292,11 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="rs" %}
 [import:50-58, lang:"rust"](code/rust/tree.rs)
 {% sample lang="hs" %}
-[import:24-28, lang:"haskell"](code/haskell/TreeTraversal.hs)
+[import:25-29, lang:"haskell"](code/haskell/TreeTraversal.hs)
 {% sample lang="swift" %}
 [import:69-81, lang:"swift"](code/swift/tree.swift)
 {% sample lang="php" %}
-[import:93-104, lang:"php"](code/php/tree_traversal.php)
+[import:91-102, lang:"php"](code/php/tree_traversal.php)
 {% sample lang="crystal" %}
 [import:43-51, lang:"crystal"](code/crystal/tree-traversal.cr)
 {% sample lang="st" %}
@@ -345,7 +345,7 @@ Here is a video describing tree traversal:
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import, lang:"python"](code/python/Tree_example.py)
+[import, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 
 The code snippets were taken from this [Scratch project](https://scratch.mit.edu/projects/174017753/)
