@@ -92,7 +92,9 @@ ENV PATH=$PATH:~/swift/usr/bin
 
 # Setup V
 ## https://github.com/vlang/v/blob/master/doc/docs.md
-
+RUN mkdir -p ~/elm && curl -L -o ~/elm/elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz && \
+    gunzip ~/elm/elm.gz && chmod +x ~/elm/elm
+ENV PATH=$PATH:~/elm
 
 # Install the packages that needed extra help
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
