@@ -91,8 +91,9 @@ ENV PATH=$PATH:~/swift/usr/bin
 ## https://github.com/elm/compiler/blob/master/installers/linux/README.md
 
 # Setup V
-## https://github.com/vlang/v/blob/master/doc/docs.md
-
+RUN mkdir -p ~/vlang && wget https://github.com/vlang/v/releases/download/weekly.2021.44/v_linux.zip -O ~/vlang/vlang.zip && \
+    unzip ~/vlang/vlang.zip -d ~/vlang 
+ENV PATH=$PATH:~/vlang/v
 
 # Install the packages that needed extra help
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
