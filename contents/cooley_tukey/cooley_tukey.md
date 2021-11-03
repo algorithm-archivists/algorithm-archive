@@ -81,8 +81,6 @@ For some reason, though, putting code to this transformation really helped me fi
 [import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:6-12, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-[import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="asm-x64" %}
 [import:15-74, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
@@ -136,8 +134,6 @@ In the end, the code looks like:
 [import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:15-26, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-[import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="asm-x64" %}
 [import:76-165, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
@@ -251,8 +247,6 @@ Note: I implemented this in Julia because the code seems more straightforward in
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
