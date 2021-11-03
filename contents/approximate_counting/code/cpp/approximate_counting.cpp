@@ -55,17 +55,17 @@ auto test_approximate_count(
   for (auto i = 0; i < n_trials; ++i)
     sum += approximate_count(n_items, a);
   const auto avg = sum / n_trials;
-  return std::abs((avg - n_items) / n_items) < threshold ? "pass" : "fail";
+  return std::abs((avg - n_items) / n_items) < threshold ? "passed" : "failed";
 }
 
 int main() {
   std::cout << "Counting Tests, 100 trials\n";
 
-  std::cout << "testing 1,000, a = 30, 10% error "
+  std::cout << "[#]\ntesting 1,000, a = 30, 10% error \n"
             << test_approximate_count(100, 1000, 30, 0.1) << "\n";
-  std::cout << "testing 12,345, a = 10, 10% error "
+  std::cout << "[#]\ntesting 12,345, a = 10, 10% error \n"
             << test_approximate_count(100, 12345, 10, 0.1) << "\n";
   // Note : with a lower a, we need more trials, so a higher % error here.
-  std::cout << "testing 222,222, a = 0.5, 20% error "
+  std::cout << "[#]\ntesting 222,222, a = 0.5, 20% error \n"
             << test_approximate_count(100, 222222, 0.5, 0.2) << "\n";
 }
