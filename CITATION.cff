@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it using the metadata from this file."
+message: "If you use this resource, please cite it using the metadata from this file."
 
 # Citation information, which will be used for Github display
 # and for differnt file formats like BibTex
@@ -23,9 +23,8 @@ commit: 16fd2180041821f8ee53ece14c535e5b25de34fe
 # see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#definitionsperson
 # Check also the following list if in doubt
 
-# To add only an author as a pseudonym only, using `name` works best
-# othersiwise just use `alias` to have both name and pseudonym
-#
+# To add an author as a pseudonym only, use the `name` attribute
+# To add a pseudonym with a name use `alias`
 
 authors:
 - family-names: Schloss
@@ -40,6 +39,7 @@ authors:
 - family-names: Gillet
   given-names: Jeremie
   alias: (- Jie -)
+  orcid: "https://orcid.org/0000-0002-0337-8872"
 - family-names: Khatib
   given-names: Salim
 - family-names: C
