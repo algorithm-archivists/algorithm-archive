@@ -82,19 +82,21 @@ RUN mkdir -p ~/swift && wget https://swift.org/builds/swift-5.5-release/ubuntu20
 ENV PATH=$PATH:~/swift/usr/bin
 
 # Setup viml
-## ?
+# To run vim script commands use `/usr/bin/vim -c ":source %" <path_to_file>`
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends vim
 
 # Setup whitespace
 ## ?
 
 # Setup Elm
-## https://github.com/elm/compiler/blob/master/installers/linux/README.md
-
-# Setup V
-## https://github.com/vlang/v/blob/master/doc/docs.md
 RUN mkdir -p ~/elm && curl -L -o ~/elm/elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz && \
     gunzip ~/elm/elm.gz && chmod +x ~/elm/elm
 ENV PATH=$PATH:~/elm
+
+# Setup V
+RUN mkdir -p ~/vlang && wget https://github.com/vlang/v/releases/download/weekly.2021.44/v_linux.zip -O ~/vlang/vlang.zip && \
+    unzip ~/vlang/vlang.zip -d ~/vlang 
+ENV PATH=$PATH:~/vlang/v
 
 # Install the packages that needed extra help
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
