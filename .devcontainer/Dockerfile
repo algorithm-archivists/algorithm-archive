@@ -86,7 +86,8 @@ ENV PATH=$PATH:~/swift/usr/bin
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends vim
 
 # Setup whitespace
-## ?
+RUN mkdir -p ~/whitespace && git clone https://github.com/wspace/whitespace-haskell ~/whitespace && cd ~/whitespace && make -B
+ENV PATH=$PATH:~/whitespace
 
 # Setup Elm
 ## https://github.com/elm/compiler/blob/master/installers/linux/README.md
@@ -95,11 +96,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-rec
 ## https://github.com/vlang/v/blob/master/doc/docs.md
 
 
-# Install the packages that needed extra help
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
+# # Install the packages that needed extra help
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
 
-RUN pip install wheel matplotlib numpy coconut scons
+# RUN pip install wheel matplotlib numpy coconut scons
 
-RUN sudo sh -c 'npm install -g typescript'
+# RUN sudo sh -c 'npm install -g typescript'
 
