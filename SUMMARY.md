@@ -22,6 +22,7 @@
 * [Tree Traversal](contents/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](contents/euclidean_algorithm/euclidean_algorithm.md)
 * [Monte Carlo](contents/monte_carlo_integration/monte_carlo_integration.md)
+* [Metropolis Hastings](contents/metropolis_hastings/metropolis_hastings.md)
 * [Matrix Methods](contents/matrix_methods/matrix_methods.md)
     * [Gaussian Elimination](contents/gaussian_elimination/gaussian_elimination.md)
     * [Thomas Algorithm](contents/thomas_algorithm/thomas_algorithm.md)

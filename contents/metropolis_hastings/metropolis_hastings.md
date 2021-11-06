@@ -42,23 +42,27 @@ So far we used a very simple function for generating the next step: it will be e
 
 Let our target distribution be:
 $$
-P(x) = \frac{\exp\left[ -x^4 + x^3 - 2x^2 - x \right]}{\int_{-10}^{10} \exp\left[ -x^4 + x^3 - 2x^2 - x \right]}
+P(x) = \frac{f(x)}{\int_{-10}^{10} f(x)}
 $$
 
-and the function which is proportional to it is
+where $$f(x)$$ is the function proportional to it,
 $$
-f(x) = \exp\left[ -x^4 + x^3 - 2x^2 - x \right]
+f(x) = 10e^{-4(x+4)^2} + 3e^{-0.2(x+1)^2} + e^{-2(x-5)^2}
 $$
 
 {% method %}
 {% sample lang="py" %}
-[import:4-8, lang:"python"](code/python/metropolis.py)
+[import:4-13, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
+We chose a sum of three Guassians because it is easy to verify - we know what the integral of it will be. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
+<p>
+	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:40%"/>
+</p>
 Next, we choose some symmetric step generating function. Here we will use a random number in the interval $$(-1,1)$$
 {% method %}
 {% sample lang="py" %}
-[import:10-14, lang:"python"](code/python/metropolis.py)
+[import:15-17, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 Choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
