@@ -52,8 +52,8 @@ x0 =
 init : ( Model, Cmd Msg )
 init =
     ( { part = Particle [ x0 ] [ 0 ]
-      , dt = 0.5
-      , dt0 = 0.5
+      , dt = 0.25
+      , dt0 = 0.25
       , t = 0
       , status = Idle
       , wWidth = 0
@@ -64,7 +64,7 @@ init =
             { min = 0
             , max = 1
             , step = 0.01
-            , value = 0.5
+            , value = 0.25
             , minFormatter = \_ -> ""
             , maxFormatter = \_ -> ""
             , currentValueFormatter = \_ _ -> ""
@@ -126,6 +126,16 @@ getX0 m =
             getX m.part + scale current - scale start
 
 
+resetParticle : Particle -> Particle
+resetParticle { pos, vel } =
+    case ( List.reverse pos, List.reverse vel ) of
+        ( x :: _, v :: _ ) ->
+            Particle [ x ] [ v ]
+
+        _ ->
+            Particle [ x0 ] [ 0 ]
+
+
 
 -- UPDATE
 
@@ -151,6 +161,7 @@ update msg model =
                 , t = 0
                 , dt = model.dt0
                 , drag = Nothing
+                , part = resetParticle model.part
               }
             , Cmd.none
             )
@@ -158,7 +169,7 @@ update msg model =
         Stop ->
             ( { model
                 | status = Idle
-                , part = Particle [ x0 ] [ 0 ]
+                , part = resetParticle model.part
                 , t = 0
               }
             , Cmd.none
