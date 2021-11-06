@@ -56,10 +56,13 @@ $$
 {% endmethod %}
 
 We chose a sum of three Guassians because it is easy to verify - we know what the integral of it will be. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
+
 <p>
 	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:40%"/>
 </p>
+
 Next, we choose some symmetric step generating function. Here we will use a random number in the interval $$(-1,1)$$
+
 {% method %}
 {% sample lang="py" %}
 [import:15-17, lang:"python"](code/python/metropolis.py)
@@ -83,6 +86,7 @@ Then iterate:
 5. Increment $$t \rightarrow t + 1$$ and repeat from step 1.
 
 The code for steps 1 to 4 is:
+
 {% method %}
 {% sample lang="py" %}
 [import:19-31, lang:"python"](code/python/metropolis.py)
@@ -96,6 +100,7 @@ The following plot shows the result of running the algorithm for different numbe
 
 ## Full Example Code
 The following code puts everything discussed together, and runs Metropolis-Hastings algorithm for $$N$$ steps. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
+
 {% method %}
 {% sample lang="py" %}
 [import, lang:"python"](code/python/metropolis.py)
