@@ -49,8 +49,7 @@ ENV PATH=$PATH:/usr/local/kotlinc/bin
 ## Use: https://github.com/justinmeza/lci
 
 # Setup Piet
-## Use: https://github.com/boothby/repiet
-
+RUN pip install repiet
 
 # Setup Matlab
 # ?????? This is a licensed language???
