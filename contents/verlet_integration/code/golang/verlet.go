@@ -43,18 +43,18 @@ func velocityVerlet(pos, acc, dt float64) (time, vel float64) {
 
 func main() {
 	time := verlet(5., -10., .01)
-	fmt.Println("[#] Time for Verlet integration is:")
+	fmt.Println("[#]\nTime for Verlet integration is:")
 	fmt.Println(time)
 
 	time, vel := stormerVerlet(5., -10., .01)
-	fmt.Println("[#] Time for Stormer Verlet integration is:")
+	fmt.Println("[#]\nTime for Stormer Verlet integration is:")
 	fmt.Println(time)
-	fmt.Println("[#] Velocity for Stormer Verlet integration is:")
+	fmt.Println("[#]\nVelocity for Stormer Verlet integration is:")
 	fmt.Println(vel)
 	
 	time, vel = velocityVerlet(5., -10., .01)
-	fmt.Println("[#] Time for velocity Verlet integration is:")
+	fmt.Println("[#]\nTime for velocity Verlet integration is:")
 	fmt.Println(time)
-	fmt.Println("[#] Velocity for velocity Verlet integration is:")
+	fmt.Println("[#]\nVelocity for velocity Verlet integration is:")
 	fmt.Println(vel)
 }
