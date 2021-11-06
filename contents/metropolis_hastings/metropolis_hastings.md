@@ -66,9 +66,10 @@ Next, we choose some symmetric step generating function. Here we will use a rand
 {% endmethod %}
 
 Choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
+
 {% method %}
 {% sample lang="py" %}
-[import:30-31, lang:"python"](code/python/metropolis.py)
+[import:34-35, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 Then iterate:
