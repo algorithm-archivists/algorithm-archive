@@ -1,5 +1,4 @@
 using FFTW
-using LinearAlgebra
 using DelimitedFiles
 
 # using the convolutional theorem
@@ -9,9 +8,11 @@ end
 
 function main()
 
-    # sawtooth functions for x and y
-    x = [float(i)/200 for i = 1:200]
-    y = [float(i)/200 for i = 1:200]
+    # Random distribution in x
+    x = rand(100)
+
+    # Gaussian signals
+    y = [exp(-((i-50)/100)^2/.01) for i = 1:100]
 
     # Normalization is not strictly necessary, but good practice
     normalize!(x)
@@ -21,10 +22,6 @@ function main()
     fft_output = convolve_fft(x, y)
 
     # outputting convolutions to different files for plotting in external code
-    # note: we are outputting just the real component because the imaginary
-    #       component is virtually 0
-    writedlm("fft.dat", real(fft_output))
+    writedlm("fft.dat", fft_output)
 
 end
-
-main()

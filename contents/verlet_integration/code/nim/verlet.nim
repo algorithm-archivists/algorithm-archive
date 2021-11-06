@@ -46,17 +46,17 @@ func velocityVerlet(pos_in, acc, dt: float): (float, float) =
 
 when isMainModule:
   let timeV = verlet(5.0, -10.0, 0.01)
-  echo "[#]\nTime for Verlet integration is:"
+  echo "[#] Time for Verlet integration is:"
   echo timeV
 
   let (timeSV, velSV) = stormerVerlet(5.0, -10.0, 0.01)
-  echo "[#]\nTime for Stormer Verlet integration is:"
+  echo "[#] Time for Stormer Verlet integration is:"
   echo timeSV
-  echo "[#]\nVelocity for Stormer Verlet integration is:"
+  echo "[#] Velocity for Stormer Verlet integration is:"
   echo velSV
 
   let (timeVV, velVV) = velocityVerlet(5.0, -10.0, 0.01)
-  echo "[#]\nTime for velocity Verlet integration is:"
+  echo "[#] Time for velocity Verlet integration is:"
   echo timeVV
-  echo "[#]\nVelocity for velocity Verlet integration is:"
+  echo "[#] Velocity for velocity Verlet integration is:"
   echo velVV

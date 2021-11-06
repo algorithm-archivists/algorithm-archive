@@ -10,21 +10,13 @@ function createTree(rows, children) {
 }
 
 function dfsPreorder(tree) {
-  if (!tree) {
-    return;
-  }
-
-  process.stdout.write(tree.id + " ");
+  console.log(tree.id);
   tree.children.forEach(dfsPreorder);
 }
 
 function dfsPostorder(tree) {
-  if (!tree) {
-    return;
-  }
-
   tree.children.forEach(dfsPostorder);
-  process.stdout.write(tree.id + " ");
+  console.log(tree.id);
 }
 
 function dfsInorder(tree) {
@@ -32,29 +24,20 @@ function dfsInorder(tree) {
     return;
   }
 
-  switch (tree.children.length) {
-    case 2:
-      dfsInorder(tree.children[0]);
-      console.log(tree.id);
-      dfsInorder(tree.children[1]);
-      break;
-    case 1:
-      dfsInorder(tree.children[0]);
-      console.log(tree.id);
-      break;
-    case 0:
-      console.log(tree.id);
-      break;
-    default:
-      throw new Error("Postorder traversal is only valid for binary trees");
+  if (tree.children.length > 2) {
+    throw new Error("Postorder traversal is only valid for binary trees");
   }
+
+  dfsInorder(tree.children[0]);
+  console.log(tree.id);
+  dfsInorder(tree.children[1]);
 }
 
 function dfsIterative(tree) {
   const stack = [tree];
   while (stack.length > 0) {
     const current = stack.pop();
-    process.stdout.write(current.id + " ");
+    console.log(current.id);
     stack.push(...current.children);
   }
 }
@@ -63,26 +46,13 @@ function bfs(tree) {
   const queue = [tree];
   while (queue.length > 0) {
     const current = queue.shift();
-    process.stdout.write(current.id + " ");
+    console.log(current.id);
     queue.push(...current.children);
   }
 }
 
-const root = createTree(2, 3);
-console.log("[#]\nRecursive DFS:");
+const root = createTree(3, 3);
 dfsPreorder(root);
-console.log();
-console.log("[#]\nRecursive Postorder DFS:");
 dfsPostorder(root);
-console.log();
-console.log("[#]\nStack-based DFS:");
 dfsIterative(root);
-console.log();
-console.log("[#]\nQueue-based BFS:");
 bfs(root);
-console.log();
-const root_binary = createTree(3, 2);
-console.log("[#]\nRecursive Inorder DFS for Binary Tree:");
-dfsInorder(root_binary);
-console.log();
-

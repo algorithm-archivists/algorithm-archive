@@ -56,7 +56,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="scala" %}
 [import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
-[import:3-14, lang="racket"](code/racket/euclidean_algorithm.rkt)
+[import:3-14, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% sample lang="ruby" %}
 [import:8-19, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
@@ -146,7 +146,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="scala" %}
 [import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
-[import:16-24, lang="racket"](code/racket/euclidean_algorithm.rkt)
+[import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% sample lang="ruby" %}
 [import:1-6, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
@@ -252,7 +252,7 @@ and modulo method:
 {% sample lang="scala" %}
 [import, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
-[import, lang="racket"](code/racket/euclidean_algorithm.rkt)
+[import, lang="lisp"](code/racket/euclidean_algorithm.rkt)
 {% sample lang="ruby" %}
 [import, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}

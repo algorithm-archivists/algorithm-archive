@@ -1,5 +1,6 @@
+// submitted by xam4lor
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -8,8 +9,8 @@ public class Tree {
 
     public Tree(int rowCount, int childrenCount) {
         // this.root is the root node of the Tree
-        this.root = new Node(rowCount);
-        this.createAllChildren(this.root, rowCount-1, childrenCount);
+        this.root = new Node(1);
+        this.createAllChildren(this.root, rowCount, childrenCount);
     }
 
 
@@ -18,7 +19,7 @@ public class Tree {
     }
 
     private void dfsRecursive(Node node) {
-        System.out.print(node.id + " ");
+        System.out.println(node.id);
 
         for (Node n : node.children) {
             dfsRecursive(n);
@@ -36,7 +37,7 @@ public class Tree {
         }
 
         // Here we are doing something ...
-        System.out.print(node.id + " ");
+        System.out.println(node.id);
     }
 
 
@@ -44,22 +45,19 @@ public class Tree {
         dfsRecursiveInOrderBinary(this.root);
     }
 
+    // This assumes only 2 children
     private void dfsRecursiveInOrderBinary(Node node) {
-        switch (node.children.size()) {
-            case 2:
-                dfsRecursiveInOrderBinary(node.children.get(0));
-                System.out.print(node.id + " ");
-                dfsRecursiveInOrderBinary(node.children.get(1));
-                break;
-            case 1:
-                dfsRecursiveInOrderBinary(node.children.get(0));
-                System.out.print(node.id + " ");
-                break;
-            case 0:
-                System.out.print(node.id + " ");
-                break;
-            default:
-                System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
+        if (node.children.size() > 2) {
+            System.err.println("Not a binary tree at dfsRecursiveInOrderBinary()!");
+            return;
+        }
+
+        if (node.children.size() > 1) {
+            dfsRecursiveInOrderBinary(node.children.get(0));
+            System.out.println(node.id);
+            dfsRecursiveInOrderBinary(node.children.get(1));
+        } else {
+            System.out.println(node.id);
         }
     }
 
@@ -71,7 +69,7 @@ public class Tree {
         Node tmp;
 
         while (stack.size() != 0) {
-            System.out.print(stack.peek().id + " ");
+            System.out.println(stack.peek().id);
             tmp = stack.pop();
 
             for (Node c : tmp.children) {
@@ -81,11 +79,11 @@ public class Tree {
     }
 
     public void bfsQueue() {
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<Node> queue = new PriorityQueue<Node>();
         queue.add(this.root);
 
         while (queue.size() != 0) {
-            System.out.print(queue.peek().id + " ");
+            System.out.println(queue.peek().id);
             Node temp = queue.poll(); // return null if the queue is empty
 
             if (temp != null) {
@@ -98,12 +96,12 @@ public class Tree {
 
 
     private void createAllChildren(Node node, int rowCount, int childrenCount) {
-        if (rowCount < 0) {
+        if (rowCount <= 1) {
            return; 
         }
 
         for (int i = 0; i < childrenCount; i++) {
-            node.children.add(new Node(rowCount));
+            node.children.add(new Node(node.id * 10 + i + 1));
             createAllChildren(node.children.get(i), rowCount - 1, childrenCount);
         }
     }
@@ -128,34 +126,32 @@ public class Tree {
     }
     
     public static void main(String[] args) {
-        Tree tree = new Tree(2, 3);
+        System.out.println("Creating Tree");
+        Tree tree = new Tree(3, 3);
 
-        System.out.println("[#]\nRecursive DFS:");
+        System.out.println("Using recursive DFS :");
         tree.dfsRecursive();
-        System.out.println();
 
-        System.out.println("[#]\nRecursive Postorder DFS:");
-        tree.dfsRecursivePostOrder();
-        System.out.println();
-
-
-        System.out.println("[#]\nStack-based DFS:");
+        System.out.println("Using stack-based DFS :");
         tree.dfsStack();
-        System.out.println();
 
-
-        System.out.println("[#]\nQueue-based BFS:");
+        System.out.println("Using queue-based BFS :");
         tree.bfsQueue();
-        System.out.println();
+
+        System.out.println("Using post-order recursive DFS :");
+        tree.dfsRecursivePostOrder();
 
 
         // Uncommenting the following 2 lines will result in an exception thrown because at least one Node of the Tree has more than 2 children and therefor a DFSRecursiveInorderBinary doesn't work.
-        //System.out.println("Using in-order binary recursive DFS : (fail)");
-        //tree.dfsRecursiveInOrderBinary();
+        System.out.println("Using in-order binary recursive DFS : (fail)");
+        tree.dfsRecursiveInOrderBinary();
 
         tree = new Tree(3, 2);
-        System.out.println("[#]\nRecursive Inorder DFS for Binary Tree:");
+        System.out.println("Using in-order binary recursive DFS : (succeed)");
         tree.dfsRecursiveInOrderBinary();
-        System.out.println();
+
+
+        System.out.println("");
     }
+    
 }

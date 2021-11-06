@@ -18,16 +18,12 @@ Here is a simple implementation of a stack:
 {% method %}
 {% sample lang="ts" %}
 [import, lang:"typescript"](code/typescript/stack.ts)
-{% sample lang="java" %}
-[import, lang:"java"](code/java/Stack.java)
 {% endmethod %}
 
 Here is a simple implementation of a queue:
 {% method %}
 {% sample lang="ts" %}
 [import, lang:"typescript"](code/typescript/queue.ts)
-{% sample lang="java" %}
-[import, lang:"java" ](code/java/Queue.java)
 {% endmethod %}
 
 

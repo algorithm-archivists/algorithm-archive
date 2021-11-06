@@ -51,7 +51,7 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Vincent Zalzal
 - Jonathan D B Van Schenck
 - James Goytia
-- Sammy Plat 
+- Amaras
 - Jonathan Dönszelmann
 - Ishaan Verma
 - Delphi1024
@@ -59,5 +59,3 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Mahdi Sarikhani
 - Ridham177
 - Hugo Salou
-- Dimitri Belopopsky
-+ Henrik Abel Christensen

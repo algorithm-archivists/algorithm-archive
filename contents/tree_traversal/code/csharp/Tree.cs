@@ -1,3 +1,4 @@
+// submitted by Julian Schacher (jspp)
 using System;
 using System.Collections.Generic;
 
@@ -10,23 +11,23 @@ namespace TreeTraversal
 
         public Tree(int depthCount, int childrenCount)
         {
-            Id = 1;
+            this.Id = 1;
 
-            if (depthCount > 0)
+            if (!(depthCount <= 1))
             {
                 for (int i = 0; i < childrenCount; i++)
-                    _children.Add(new Tree(Id * 10 + i + 1, depthCount - 1, childrenCount));
+                    this._children.Add(new Tree(this.Id * 10 + i + 1, depthCount - 1, childrenCount));
             }
         }
 
         private Tree(int id, int depthCount, int childrenCount)
         {
-            Id = id;
+            this.Id = id;
 
             if (!(depthCount <= 1))
             {
                 for (int i = 0; i < childrenCount; i++)
-                    _children.Add(new Tree(Id * 10 + i + 1, depthCount - 1, childrenCount));
+                    this._children.Add(new Tree(this.Id * 10 + i + 1, depthCount - 1, childrenCount));
             }
         }
 
@@ -36,7 +37,7 @@ namespace TreeTraversal
 
             void DFSRecursive(Tree tree)
             {
-                Console.Write(tree.Id + " ");
+                Console.WriteLine(tree.Id);
 
                 foreach (var c in tree._children)
                     DFSRecursive(c);
@@ -52,7 +53,7 @@ namespace TreeTraversal
                 foreach (var c in tree._children)
                     DFSRecursivePostorder(c);
 
-                Console.Write(tree.Id + " ");
+                Console.WriteLine(tree.Id);
             }
         }
 
@@ -60,25 +61,20 @@ namespace TreeTraversal
         {
             DFSRecursiveInorderBinary(this);
 
+            // This assumes only 2 children
             void DFSRecursiveInorderBinary(Tree tree)
             {
-                switch (tree._children.Count)
+                if (tree._children.Count > 2)
+                    throw new Exception("Not binary tree!");
+
+                if (tree._children.Count > 0)
                 {
-                    case 2:
-                        DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.Write(tree.Id + " ");
-                        DFSRecursiveInorderBinary(tree._children[1]);
-                        break;
-                    case 1:
-                        DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.Write(tree.Id + " ");
-                        break;
-                    case 0:
-                        Console.Write(tree.Id + " ");
-                        break;
-                    default:
-                        throw new Exception("Not binary tree!");
+                    DFSRecursiveInorderBinary(tree._children[0]);
+                    Console.WriteLine(tree.Id);
+                    DFSRecursiveInorderBinary(tree._children[1]);
                 }
+                else
+                    Console.WriteLine(tree.Id);
             }
         }
 
@@ -89,7 +85,7 @@ namespace TreeTraversal
 
             while (stack.Count != 0)
             {
-                Console.Write(stack.Peek().Id + " ");
+                Console.WriteLine(stack.Peek().Id);
                 var temp = stack.Pop();
 
                 foreach (var c in temp._children)
@@ -104,7 +100,7 @@ namespace TreeTraversal
 
             while (queue.Count != 0)
             {
-                Console.Write(queue.Peek().Id + " ");
+                Console.WriteLine(queue.Peek().Id);
                 var temp = queue.Dequeue();
 
                 foreach (var c in temp._children)

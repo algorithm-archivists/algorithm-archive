@@ -43,18 +43,18 @@ fun velocityVerlet(_pos: Double, acc: Double, dt: Double): VerletValues {
 
 fun main(args: Array<String>) {
     val verletTime = verlet(5.0, -10.0, 0.01)
-    println("[#]\nTime for Verlet integration is:")
+    println("[#] Time for Verlet integration is:")
     println("$verletTime")
 
     val stormerVerlet = stormerVerlet(5.0, -10.0, 0.01)
-    println("[#]\nTime for Stormer Verlet integration is:")
+    println("[#] Time for Stormer Verlet integration is:")
     println("${stormerVerlet.time}")
-    println("[#]\nVelocity for Stormer Verlet integration is:")
+    println("[#] Velocity for Stormer Verlet integration is:")
     println("${stormerVerlet.vel}")
 
     val velocityVerlet = velocityVerlet(5.0, -10.0, 0.01)
-    println("[#]\nTime for Velocity Verlet integration is:")
+    println("[#] Time for Velocity Verlet integration is:")
     println("${velocityVerlet.time}")
-    println("[#]\nVelocity for Velocity Verlet integration is:")
+    println("[#] Velocity for Velocity Verlet integration is:")
     println("${velocityVerlet.vel}")
 }

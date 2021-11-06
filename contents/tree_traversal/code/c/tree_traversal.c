@@ -35,7 +35,7 @@ void destroy_tree(struct node n) {
 }
 
 void dfs_recursive(struct node n) {
-    printf("%d ", n.id);
+    printf("%d\n", n.id);
 
     if (n.children) {
         for (size_t i = 0; i < n.children_size; ++i) {
@@ -49,22 +49,22 @@ void dfs_recursive_postorder(struct node n) {
         dfs_recursive_postorder(n.children[i]);
     }
 
-    printf("%d ", n.id);
+    printf("%d\n", n.id);
 }
 
 void dfs_recursive_inorder_btree(struct node n) {
     switch (n.children_size) {
     case 2:
         dfs_recursive_inorder_btree(n.children[0]);
-        printf("%d ", n.id);
+        printf("%d\n", n.id);
         dfs_recursive_inorder_btree(n.children[1]);
         break;
     case 1:
         dfs_recursive_inorder_btree(n.children[0]);
-        printf("%d ", n.id);
+        printf("%d\n", n.id);
         break;
     case 0:
-        printf("%d ", n.id);
+        printf("%d\n", n.id);
         break;
     default:
         printf("This is not a binary tree.\n");
@@ -83,7 +83,7 @@ void dfs_stack(struct node n) {
             break;
         }
 
-        printf("%d ", tmp->id);
+        printf("%d\n", tmp->id);
         for (size_t i = 0; i < tmp->children_size; ++i) {
             stack_push(&stk, &tmp->children[i]);
         }
@@ -103,7 +103,7 @@ void bfs_queue(struct node n) {
             break;
         }
 
-        printf("%d ", tmp->id);
+        printf("%d\n", tmp->id);
         for (size_t i = 0; i < tmp->children_size; ++i) {
             enqueue(&q, &tmp->children[i]);
         }
@@ -113,31 +113,9 @@ void bfs_queue(struct node n) {
 }
 
 int main() {
-    struct node root = create_tree(2, 3);
-
-    printf("[#]\nRecursive DFS:\n");
-    dfs_recursive(root);
-    printf("\n");
-    
-    printf("[#]\nRecursive Postorder DFS:\n");
-    dfs_recursive_postorder(root);
-    printf("\n");
-    
-    printf("[#]\nStack-based DFS:\n");
-    dfs_stack(root);
-    printf("\n");
-    
-    printf("[#]\nQueue-based BFS:\n");
+    struct node root = create_tree(3, 3);
     bfs_queue(root);
-    printf("\n");
-    
     destroy_tree(root);
-    struct node root_binary = create_tree(3, 2);
 
-    printf("[#]\nRecursive Inorder DFS for Binary Tree:\n");
-    dfs_recursive_inorder_btree(root_binary);
-    printf("\n");
-    
-    destroy_tree(root_binary);
     return 0;
 }

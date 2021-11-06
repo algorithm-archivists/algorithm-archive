@@ -34,17 +34,17 @@
     while (> p 0)
     finally (return (list time vel))))
 
-(format T "[#]~%Time for Verlet integration:~%")
+(format T "[#] Time for Verlet integration:~%")
 (format T "~d~%" (verlet 5 -10 0.01))
 
 (defvar stormer-verlet-result (stormer-verlet 5 -10 0.01))
-(format T "[#]~%Time for Stormer Verlet integration is:~%")
+(format T "[#] Time for Stormer Verlet integration is:~%")
 (format T "~d~%" (first stormer-verlet-result))
-(format T "[#]~%Velocity for Stormer Verlet integration is:~%")
+(format T "[#] Velocity for Stormer Verlet integration is:~%")
 (format T "~d~%" (second stormer-verlet-result))
 
 (defvar velocity-verlet-result (velocity-verlet 5 -10 0.01))
-(format T "[#]~%Time for velocity Verlet integration is:~%")
+(format T "[#] Time for velocity Verlet integration is:~%")
 (format T "~d~%" (first velocity-verlet-result))
-(format T "[#]~%Velocity for velocity Verlet integration is:~%")
+(format T "[#] Velocity for velocity Verlet integration is:~%")
 (format T "~d~%" (second velocity-verlet-result))

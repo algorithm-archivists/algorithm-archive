@@ -80,7 +80,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="lua" %}
 [import:2-4, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
-[import:6-8, lang:"racket"](code/racket/monte_carlo.rkt)
+[import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
 {% sample lang="lisp" %}
@@ -188,7 +188,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
-[import, lang:"racket"](code/racket/monte_carlo.rkt)
+[import, lang:"lisp"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/monte_carlo.scala)
 {% sample lang="lisp" %}

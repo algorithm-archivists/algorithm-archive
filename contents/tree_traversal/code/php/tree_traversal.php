@@ -40,7 +40,9 @@ class TreeTraversal
 {
     public static function DFSRecursive(Tree $tree): void
     {
-        echo $tree->getId() . ' ';
+        if ($tree->getId()) {
+            echo $tree->getId() . PHP_EOL;
+        }
         foreach ($tree->getChildren() as $child) {
             static::DFSRecursive($child);
         }
@@ -51,7 +53,7 @@ class TreeTraversal
         foreach ($tree->getChildren() as $child) {
             static::DFSRecursivePostorder($child);
         }
-        echo $tree->getId() . ' ';
+        echo $tree->getId() . PHP_EOL;
     }
 
     public static function DFSRecursiveInorderBinary(Tree $tree): void
@@ -59,15 +61,15 @@ class TreeTraversal
         switch (count($tree->getChildren())) {
             case 2:
                 static::DFSRecursiveInorderBinary($tree->getChildren()[0]);
-                echo $tree->getId() . ' ';
+                echo $tree->getId() . PHP_EOL;
                 static::DFSRecursiveInorderBinary($tree->getChildren()[1]);
                 break;
             case 1:
                 static::DFSRecursiveInorderBinary($tree->getChildren()[0]);
-                echo $tree->getId() . ' ';
+                echo $tree->getId() . PHP_EOL;
                 break;
             case 0:
-                echo $tree->getId() . ' ';
+                echo $tree->getId() . PHP_EOL;
                 break;
             default:
                 throw new InvalidArgumentException('Not a binary tree!');
@@ -81,7 +83,7 @@ class TreeTraversal
         $temp = null;
 
         while (null !== ($temp = array_pop($stack))) {
-            echo $temp->getId() . ' ';
+            echo $temp->getId() . PHP_EOL;
             foreach ($temp->getChildren() as $child) {
                 $stack[] = $child;
             }
@@ -94,7 +96,7 @@ class TreeTraversal
         $temp = null;
 
         while (null !== ($temp = array_shift($stack))) {
-            echo $temp->getId() . ' ';
+            echo $temp->getId() . PHP_EOL;
             foreach ($temp->getChildren() as $child) {
                 $stack[] = $child;
             }
@@ -102,13 +104,16 @@ class TreeTraversal
     }
 }
 
-function generate_tree(int $numOfRows, int $numOfChildren): Tree
+function generate_tree(int $numOfRows, int $numOfChildren, int $id = -1): Tree
 {
-    $node = new Tree($numOfRows);
+    if ($id === -1) {
+        $id = 1;
+    }
+    $node = new Tree($id);
 
-    if ($numOfRows > 0) {
+    if ($numOfRows > 1) {
         for ($i = 0; $i < $numOfChildren; $i++) {
-            $child = generate_tree($numOfRows - 1, $numOfChildren);
+            $child = generate_tree($numOfRows - 1, $numOfChildren, $id * 10 + $i + 1);
             $node->addChild($child);
         }
     }
@@ -116,28 +121,23 @@ function generate_tree(int $numOfRows, int $numOfChildren): Tree
     return $node;
 }
 
-$node = generate_tree(2, 3);
+$node = generate_tree(3, 3);
 
-echo '[#]' . PHP_EOL . 'Recursive DFS:' . PHP_EOL;
+echo 'DFS Recursive:' . PHP_EOL;
 TreeTraversal::DFSRecursive($node);
-echo PHP_EOL;
 
-echo '[#]' . PHP_EOL . 'Recursive Postorder DFS:' . PHP_EOL;
+echo 'DFS Recursive Postorder:' . PHP_EOL;
 TreeTraversal::DFSRecursivePostorder($node);
-echo PHP_EOL;
 
-echo '[#]' . PHP_EOL . 'Stack-based DFS:' . PHP_EOL;
+echo 'DFS Stack:' . PHP_EOL;
 TreeTraversal::DFSStack($node);
-echo PHP_EOL;
 
-echo '[#]' . PHP_EOL . 'Queue-based BFS:' . PHP_EOL;
+echo 'DFS Queue:' . PHP_EOL;
 TreeTraversal::DFSQueue($node);
-echo PHP_EOL;
 
 // If you want to try to run binary order on a non-binary tree,
 // comment out the generation of the new tree below.
 // If you do that, an exception will be thrown
 $node = generate_tree(3, 2);
-echo '[#]' . PHP_EOL . 'Recursive Inorder DFS for Binary Tree:' . PHP_EOL;
+echo 'DFS Recursive Inorder Binary:' . PHP_EOL;
 TreeTraversal::DFSRecursiveInorderBinary($node);
-echo PHP_EOL;

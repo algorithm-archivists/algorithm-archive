@@ -45,17 +45,17 @@ def velocity_verlet(pos, acc, dt)
 
 end
 
-puts "[#]\nTime for Verlet integration is:"
+puts "[#] Time for Verlet integration is:"
 p verlet(5.0, -10, 0.01)
 
 time, vel = stormer_verlet(5.0, -10, 0.01)
-puts "[#]\nTime for Stormer Verlet integration is:"
+puts "[#] Time for Stormer Verlet integration is:"
 p time
-puts "[#]\nVelocity for Stormer Verlet integration is:"
+puts "[#] Velocity for Stormer Verlet integration is:"
 p vel
 
 time, vel = velocity_verlet(5.0, -10, 0.01)
-puts "[#]\nTime for velocity Verlet integration is:"
+puts "[#] Time for velocity Verlet integration is:"
 p time
-puts "[#]\nVelocity for velocity Verlet integration is:"
+puts "[#] Velocity for velocity Verlet integration is:"
 p vel
