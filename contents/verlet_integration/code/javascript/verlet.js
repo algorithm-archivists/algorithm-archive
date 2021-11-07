@@ -1,55 +1,61 @@
-function verlet(pos, acc, dt){
+function verlet(pos, acc, dt) {
+  let prevPos = pos;
+  let time = 0;
+  let tempPos;
 
-    var prev_pos, temp_pos, time;
-    prev_pos = pos;
-    time = 0;
+  while (pos > 0) {
+    time += dt;
+    tempPos = pos;
+    pos = pos * 2 - prevPos + acc * dt * dt;
+    prevPos = tempPos;
+  }
 
-    while (pos > 0){
-        time += dt;
-        temp_pos = pos;
-        pos = pos*2 - prev_pos + acc * dt * dt;
-        prev_pos = temp_pos;
-    }
-
-   return time;
-
+  return time;
 }
 
-function stormer_verlet(pos, acc, dt){
+function stormerVerlet(pos, acc, dt) {
+  let prevPos = pos;
+  let time = 0;
+  let vel = 0;
+  let tempPos;
 
-    var prev_pos, temp_pos, time, vel;
-    prev_pos = pos;
-    vel = 0;
-    time = 0;
-    while (pos > 0){
-        time += dt;
-        temp_pos = pos;
-        pos = pos*2 - prev_pos + acc * dt * dt;
-        prev_pos = temp_pos;
+  while (pos > 0) {
+    time += dt;
+    tempPos = pos;
+    pos = pos * 2 - prevPos + acc * dt * dt;
+    prevPos = tempPos;
 
-        vel += acc*dt;
-    }
+    vel += acc * dt;
+  }
 
-   return time;
-
+  return { time, vel };
 }
 
-function velocity_verlet(pos, acc, dt){
+function velocityVerlet(pos, acc, dt) {
+  let time = 0;
+  let vel = 0;
 
-    var time, vel;
-    vel = 0;
-    time = 0;
-    while (pos > 0){
-        time += dt;
-        pos += vel*dt + 0.5*acc * dt * dt;
-        vel += acc*dt;
-    }
+  while (pos > 0) {
+    time += dt;
+    pos += vel * dt + 0.5 * acc * dt * dt;
+    vel += acc * dt;
+  }
 
-   return time;
-
+  return { time, vel };
 }
 
-console.log(verlet(5.0, -10, 0.01));
-console.log(stormer_verlet(5.0, -10, 0.01));
-console.log(velocity_verlet(5.0, -10, 0.01));
+const time = verlet(5, -10, 0.01);
+console.log(`[#]\nTime for Verlet integration is:`);
+console.log(`${time}`);
 
+const stormer = stormerVerlet(5, -10, 0.01);
+console.log(`[#]\nTime for Stormer Verlet integration is:`);
+console.log(`${stormer.time}`);
+console.log(`[#]\nVelocity for Stormer Verlet integration is:`);
+console.log(`${stormer.vel}`);
+
+const velocity = velocityVerlet(5, -10, 0.01);
+console.log(`[#]\nTime for velocity Verlet integration is:`);
+console.log(`${velocity.time}`);
+console.log(`[#]\nVelocity for velocity Verlet integration is:`);
+console.log(`${velocity.vel}`);

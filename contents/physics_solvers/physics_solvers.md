@@ -7,3 +7,20 @@ It's worth noting that many algorithms used throughout the Archive can also be u
 
 In the future, we may also place several unique physical systems along with different methods to solve these systems.
 For example, there are many different ways to solve the Schrödinger equation, heat equation, kinematic equation and several other systems that are unique to physics and there are benefits and drawbacks for solving certain physical systems in certain ways.
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

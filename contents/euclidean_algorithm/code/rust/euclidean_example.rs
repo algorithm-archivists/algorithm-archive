@@ -32,4 +32,3 @@ fn main() {
     println!("{}", chk1);
     println!("{}", chk2);
 }
-

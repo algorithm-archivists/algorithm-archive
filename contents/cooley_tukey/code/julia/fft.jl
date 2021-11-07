@@ -110,23 +110,17 @@ function butterfly(x)
     return y
 end
 
-function approx(x, y)
-    val = true
-    for i = 1:length(x)
-        if (abs(x[i]) - abs(y[i]) > 1e-5)
-            val = false
-        end
-    end
-    println(val)
-end
-
 function main()
     x = rand(128)
     y = cooley_tukey(x)
     z = iterative_cooley_tukey(x)
     w = fft(x)
-    approx(y, w)
-    approx(z, w)
+    if(isapprox(y, w))
+        println("Recursive Cooley Tukey matches fft() from FFTW package.")
+    end
+    if(isapprox(z, w))
+        println("Iterative Cooley Tukey matches fft() from FFTW package.")
+    end
 end
 
 main()

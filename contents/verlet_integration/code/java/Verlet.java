@@ -1,15 +1,16 @@
-// Submitted by lolatomroflsinnlos
-public class VerletValues {
-	public double time;
-	public double vel;
-  
-	public VerletValues(double time, double vel) {
-        this.time = time;
-        this.vel = vel;
-    }
-}
-
 public class Verlet {
+    
+    private static class VerletValues {
+        public double time;
+        public double vel;
+    
+        public VerletValues(double time, double vel) {
+            this.time = time;
+            this.vel = vel;
+        }
+    }
+    
+
     static double verlet(double pos, double acc, double dt) {
 
       // Note that we are using a temp variable for the previous position
@@ -44,8 +45,7 @@ public class Verlet {
              vel += acc*dt;
         }
       
-       VerletValues stormerVerlet = new VerletValues(time, vel);
-       return stormerVerlet;
+       return new VerletValues(time, vel);
     }
 
     static VerletValues velocity_verlet(double pos, double acc, double dt) {
@@ -58,23 +58,27 @@ public class Verlet {
             time += dt;
             pos += vel*dt + 0.5*acc * dt * dt;
             vel += acc*dt;
-      }
-
-        VerletValues velocityVerlet = new VerletValues(time, vel);
-        return velocityVerlet;
+        }
+        return new VerletValues(time, vel);
     }
 
     public static void main(String[] args) {
 
         double verletTime = verlet(5.0, -10, 0.01);
-        System.out.println("Time for Verlet integration is: " + verletTime);
+        System.out.println("[#]\nTime for Verlet integration is:");
+        System.out.println(verletTime);
       
         VerletValues stormerVerlet = stormer_verlet(5.0, -10, 0.01);
-        System.out.println("Time for Stormer Verlet integration is: " + stormerVerlet.time);
-        System.out.println("Velocity for Stormer Verlet integration is: " + stormerVerlet.vel);
+        System.out.println("[#]\nTime for Stormer Verlet integration is:");
+        System.out.println(stormerVerlet.time);
+        System.out.println("[#]\nVelocity for Stormer Verlet integration is:");
+        System.out.println(stormerVerlet.vel);
         
         VerletValues velocityVerlet = velocity_verlet(5.0, -10, 0.01);
-        System.out.println("Time for velocity Verlet integration is: " + velocityVerlet.time);
-        System.out.println("Velocity for velocity Verlet integration is: " + velocityVerlet.vel);
+        System.out.println("[#]\nTime for velocity Verlet integration is:");
+        System.out.println(velocityVerlet.time);
+        System.out.println("[#]\nVelocity for velocity Verlet integration is:");
+        System.out.println(velocityVerlet.vel);
+        
     }
 }

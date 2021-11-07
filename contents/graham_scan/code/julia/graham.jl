@@ -7,7 +7,7 @@ function ccw(a::Point, b::Point, c::Point)
     return ((b.x - a.x)*(c.y - a.y) - (b.y - a.y)*(c.x - a.x))
 end
 
-function graham_scan(points::Vector{Point})
+function graham_scan!(points::Vector{Point})
     N = length(points)
 
     # Place the lowest point at the start of the array
@@ -47,11 +47,11 @@ end
 function main()
     # This hull is just a simple test so we know what the output should be
     points = [
-        Point(-5.,2), Point(5,7), Point(-6,-12), Point(-14,-14), Point(9,9),
+        Point(-5,2), Point(5,7), Point(-6,-12), Point(-14,-14), Point(9,9),
         Point(-1,-1), Point(-10,11), Point(-6,15), Point(-6,-8), Point(15,-9),
         Point(7,-7), Point(-2,-9), Point(6,-5), Point(0,14), Point(2,8)
     ]
-    hull = graham_scan(points)
+    hull = graham_scan!(points)
     println(hull)
 end
 

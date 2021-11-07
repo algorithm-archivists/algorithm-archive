@@ -1,4 +1,4 @@
-function gaussian_elimination(A::Array{Float64,2})
+function gaussian_elimination!(A::Array{Float64,2})
 
     rows = size(A,1)
     cols = size(A,2)
@@ -9,7 +9,7 @@ function gaussian_elimination(A::Array{Float64,2})
     # Main loop going through all columns
     for col = 1:(cols-1)
 
-        # Step 1: finding the maximum element for each column
+        # finding the maximum element for each column
         max_index = argmax(abs.(A[row:end,col])) + row-1
 
         # Check to make sure matrix is good!
@@ -18,7 +18,7 @@ function gaussian_elimination(A::Array{Float64,2})
             continue
         end
 
-        # Step 2: swap row with highest value for that column to the top
+        # swap row with highest value for that column to the top
         temp_vector = A[max_index, :]
         A[max_index, :] = A[row, :]
         A[row, :] = temp_vector
@@ -26,18 +26,18 @@ function gaussian_elimination(A::Array{Float64,2})
         # Loop for all remaining rows
         for i = (row+1):rows
 
-            # Step 3: finding fraction
+            # finding fraction
             fraction = A[i,col]/A[row,col]
 
             # loop through all columns for that row
             for j = (col+1):cols
 
-                 # Step 4: re-evaluate each element
+                 # re-evaluate each element
                  A[i,j] -= A[row,j]*fraction
 
             end
 
-            # Step 5: Set lower elements to 0
+            # Set lower elements to 0
             A[i,col] = 0
         end
         row += 1
@@ -64,7 +64,7 @@ function back_substitution(A::Array{Float64,2})
 end
 
 
-function gauss_jordan_elimination(A::Array{Float64,2})
+function gauss_jordan_elimination!(A::Array{Float64,2})
 
     rows = size(A,1)
     cols = size(A,2)
@@ -97,10 +97,10 @@ function main()
          1 2 3 4;
          3 -4 0 10]
 
-    gaussian_elimination(A)
+    gaussian_elimination!(A)
     println(A)
 
-    gauss_jordan_elimination(A)
+    gauss_jordan_elimination!(A)
     println(A)
 
     soln = back_substitution(A)
