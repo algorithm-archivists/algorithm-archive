@@ -40,7 +40,7 @@ Here is a video describing the stable marriage problem:
 {% sample lang="c" %}
 [import, lang:"c"](code/c/stable_marriage.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/stable_marriage.cpp)
+[import, lang:"cpp"](code/cpp/stable_marriage.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}

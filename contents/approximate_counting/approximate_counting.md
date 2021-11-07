@@ -363,7 +363,7 @@ As we do not have any objects to count, we will instead simulate the counting wi
 {% sample lang="c" %}
 [import, lang:"c"](code/c/approximate_counting.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/approximate_counting.cpp)
+[import, lang:"cpp"](code/cpp/approximate_counting.cpp)
 {% sample lang="python" %}
 [import, lang:"python"](code/python/approximate_counting.py)
 {% endmethod %}
