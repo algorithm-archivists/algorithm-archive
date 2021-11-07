@@ -78,7 +78,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/huffman.lua)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/huffman.cpp)
+[import, lang:"cpp"](code/cpp/huffman.cpp)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/huffman.clj)
 {% sample lang="py" %}
@@ -88,11 +88,18 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/huffman.go)
+[import, lang:"go"](code/go/huffman.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/huffman.s)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/huffman_encoding.scala)
+{% sample lang="scratch" %}
+The code snippet was taken from this [scratch project](https://scratch.mit.edu/projects/389604255/)
+<p>
+    <img  class="center" src="code/scratch/huffman.svg" width="700" />
+</p>
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/huffman.coco)
 {% endmethod %}
 
 <script>

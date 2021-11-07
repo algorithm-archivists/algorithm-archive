@@ -112,7 +112,7 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/thomas.hs)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/thomas.go)
+[import, lang:"go"](code/go/thomas.go)
 {% sample lang="v" %}
 [import, lang:"v"](code/v/thomas.v)
 {% sample lang="swift" %}
@@ -122,7 +122,7 @@ You will find this algorithm implemented [in this project](https://scratch.mit.e
 {% sample lang="nim" %}
 [import, lang:"nim"](code/nim/thomas_algorithm.nim)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/thomas.cpp)
+[import, lang:"cpp"](code/cpp/thomas.cpp)
 {% sample lang="lua" %}
 [import, lang:"lua"](code/lua/thomas.lua)
 {% sample lang="crystal" %}

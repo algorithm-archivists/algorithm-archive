@@ -1,13 +1,13 @@
 {
   "honkit": ">= 3.0.0",
   "root": "./",
+  "title": "Arcane Algorithm Archive",
   "plugins": [
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
     "wordcount",
     "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "include-codeblock",
-    "ga",
     "bulk-redirect",
     "prism",
     "-highlight"
@@ -26,9 +26,6 @@
     "bulk-redirect": {
       "basepath": "/",
       "redirectsFile": "redirects.json"
-    },
-    "ga": {
-      "token": "UA-118252470-1"
     },
     "prism": {
       "lang": {
@@ -196,8 +193,8 @@
         {
           "lang": "ps1",
           "name": "PowerShell"
-	},
-	{
+        },
+        {
           "lang": "v",
           "name": "Vlang"
         },
@@ -210,12 +207,20 @@
           "name": "Kotlin"
         },
         {
+          "lang": "ts",
+          "name": "TypeScript"
+        },
+        {
           "lang": "vim",
           "name": "VimL"
         },
         {
           "lang": "coco",
           "name": "Coconut"
+        },
+        {
+          "lang": "dart",
+          "name": "Dart"
         }
       ]
     }

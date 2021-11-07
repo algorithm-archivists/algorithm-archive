@@ -514,3 +514,13 @@ vscode/
 
 # Coconut compilation files
 **/coconut/*.py
+
+# aspell
+*.bak
+
+# SCons intermidiate files
+.sconsign.dblite
+*.o
+
+# SCons build directory
+build/

@@ -45,12 +45,17 @@ function velocityVerlet(pos, acc, dt) {
 }
 
 const time = verlet(5, -10, 0.01);
-console.log(`Time for Verlet integration is: ${time}\n`);
+console.log(`[#]\nTime for Verlet integration is:`);
+console.log(`${time}`);
 
 const stormer = stormerVerlet(5, -10, 0.01);
-console.log(`Time for Stormer Verlet integration is: ${stormer.time}`);
-console.log(`Velocity for Stormer Verlet integration is: ${stormer.vel}\n`);
+console.log(`[#]\nTime for Stormer Verlet integration is:`);
+console.log(`${stormer.time}`);
+console.log(`[#]\nVelocity for Stormer Verlet integration is:`);
+console.log(`${stormer.vel}`);
 
 const velocity = velocityVerlet(5, -10, 0.01);
-console.log(`Time for Velocity Verlet integration is: ${velocity.time}`);
-console.log(`Velocity for Velocity Verlet integration is: ${velocity.vel}\n`);
+console.log(`[#]\nTime for velocity Verlet integration is:`);
+console.log(`${velocity.time}`);
+console.log(`[#]\nVelocity for velocity Verlet integration is:`);
+console.log(`${velocity.vel}`);
