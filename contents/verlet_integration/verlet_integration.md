@@ -33,7 +33,7 @@ Here is what it looks like in code:
 {% sample lang="jl" %}
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:9-22, lang:"cpp"](code/c++/verlet.cpp)
+[import:9-22, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import:3-14, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
@@ -53,7 +53,7 @@ Here is what it looks like in code:
 {% sample lang="ruby" %}
 [import:1-14, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import:5-16, lang:"go"](code/golang/verlet.go)
+[import:5-16, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import:18-42, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -82,7 +82,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="jl" %}
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:24-41, lang:"cpp"](code/c++/verlet.cpp)
+[import:24-41, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import:16-31, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
@@ -102,7 +102,7 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="ruby" %}
 [import:16-32, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import:18-30, lang:"go"](code/golang/verlet.go)
+[import:18-30, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import:44-71, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -145,7 +145,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="jl" %}
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:43-54, lang:"cpp"](code/c++/verlet.cpp)
+[import:43-54, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import:33-43, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
@@ -165,7 +165,7 @@ Here is the velocity Verlet method in code:
 {% sample lang="ruby" %}
 [import:34-46, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import:32-42, lang:"go"](code/golang/verlet.go)
+[import:32-42, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import:73-101, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -194,7 +194,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/verlet.cpp)
+[import, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
@@ -214,7 +214,7 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="ruby" %}
 [import, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/verlet.go)
+[import, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}

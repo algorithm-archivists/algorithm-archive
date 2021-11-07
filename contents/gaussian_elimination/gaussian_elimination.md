@@ -315,7 +315,7 @@ In code, this process might look like this:
 [import:5-13, lang:"c"](code/c/gaussian_elimination.c)
 [import:19-34, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:13-23, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:13-23, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -389,7 +389,7 @@ Here is what it might look like in code:
 {% sample lang="c" %}
 [import:36-41, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:25-32, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:25-32, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
@@ -412,7 +412,7 @@ When we put everything together, it looks like this:
 {% sample lang="c" %}
 [import:15-48, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:8-34, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:8-34, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-36, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -453,7 +453,7 @@ Here it is in code:
 {% sample lang="c" %}
 [import:64-82, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:36-54, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:36-54, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -497,7 +497,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:50-62, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:56-72, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:56-72, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import:98-112, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -567,7 +567,7 @@ Here's a video describing Gaussian elimination:
 {% sample lang="c" %}
 [import, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
