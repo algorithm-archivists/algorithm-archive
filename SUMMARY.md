@@ -32,8 +32,6 @@
 * [FFT](contents/cooley_tukey/cooley_tukey.md)
 * [Decision Problems](contents/decision_problems/decision_problems.md)
     * [Stable Marriage Problem](contents/stable_marriage_problem/stable_marriage_problem.md)
-* [Differential Equation Solvers](contents/differential_equations/differential_equations.md)
-    * [Forward Euler Method](contents/forward_euler_method/forward_euler_method.md)
 * [Physics Solvers](contents/physics_solvers/physics_solvers.md)
     * [Verlet Integration](contents/verlet_integration/verlet_integration.md)
     * [Quantum Systems](contents/quantum_systems/quantum_systems.md)
