@@ -116,11 +116,11 @@ Note that in this case, the velocity is directly given by the ODE and the accele
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}
-[import:44-54, lang:"elm"](code/elm/euler.elm)
-[import:193-210, lang:"elm"](code/elm/euler.elm)
+[import:78-91, lang:"elm"](code/elm/src/Euler.elm)
+[import:236-252, lang:"elm"](code/elm/src/Euler.elm)
 
 Full code for the visualization follows:
-[import, lang:"elm"](code/elm/euler.elm)
+[import, lang:"elm"](code/elm/src/Euler.elm)
 
 {% sample lang="py" %}
 [import, lang:"python"](code/python/euler.py)
