@@ -39,7 +39,7 @@ fn main() {
     i32stack.push(5);
     i32stack.push(6);
 
-    println!("{:?}", i32stack.pop().unwrap());
-    println!("{:?}", i32stack.size());
-    println!("{:?}", i32stack.top().unwrap());
+    println!("{:?}", i32stack.pop().unwrap()); // 6
+    println!("{:?}", i32stack.size()); // 2
+    println!("{:?}", i32stack.top().unwrap()); // 5
 }
