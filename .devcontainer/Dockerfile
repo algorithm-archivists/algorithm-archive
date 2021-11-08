@@ -99,9 +99,10 @@ RUN mkdir -p ~/vlang && wget https://github.com/vlang/v/releases/download/weekly
     unzip ~/vlang/vlang.zip -d ~/vlang 
 ENV PATH=$PATH:~/vlang/v
 
-# # Install the packages that needed extra help
+# Install the packages that needed extra help
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
+
 
 RUN pip install wheel matplotlib numpy coconut scons
 
