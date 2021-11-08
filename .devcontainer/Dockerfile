@@ -50,8 +50,7 @@ RUN git clone https://github.com/justinmeza/lci.git ~/lolcode && cd ~/lolcode &&
 ENV PATH=$PATH:~/lolcode/build
 
 # Setup Piet
-## Use: https://github.com/boothby/repiet
-
+RUN pip install repiet
 
 # Setup Matlab
 # ?????? This is a licensed language???
@@ -90,7 +89,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-rec
 ## ?
 
 # Setup Elm
-## https://github.com/elm/compiler/blob/master/installers/linux/README.md
+RUN mkdir -p ~/elm && curl -L -o ~/elm/elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz && \
+    gunzip ~/elm/elm.gz && chmod +x ~/elm/elm
+ENV PATH=$PATH:~/elm
 
 # Setup V
 RUN mkdir -p ~/vlang && wget https://github.com/vlang/v/releases/download/weekly.2021.44/v_linux.zip -O ~/vlang/vlang.zip && \
