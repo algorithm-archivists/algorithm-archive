@@ -75,7 +75,7 @@ int main()
 {
     srand(time(NULL));
 
-    printf("Counting Tests, 100 trials\n");
+    printf("[#]\nCounting Tests, 100 trials\n");
     printf("[#]\ntesting 1,000, a = 30, 10%% error\n");
     test_approximation_count(100, 1000, 30, 0.1);
     printf("[#]\ntesting 12,345, a = 10, 10%% error\n");

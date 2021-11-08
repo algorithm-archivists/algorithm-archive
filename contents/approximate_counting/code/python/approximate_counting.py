@@ -43,7 +43,7 @@ def test_approximate_count(n_trials, n_items, a, threshold):
     else:
         print("failed")
 
-print("Counting Tests, 100 trials\n")
+print("[#]\nCounting Tests, 100 trials")
 print("[#]\ntesting 1,000, a = 30, 10% error")
 test_approximate_count(100, 1000, 30, 0.1)
 print("[#]\ntesting 12,345, a = 10, 10% error")

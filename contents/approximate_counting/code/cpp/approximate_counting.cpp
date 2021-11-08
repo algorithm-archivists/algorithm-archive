@@ -59,7 +59,7 @@ auto test_approximate_count(
 }
 
 int main() {
-  std::cout << "Counting Tests, 100 trials\n";
+  std::cout << "[#]\nCounting Tests, 100 trials\n";
 
   std::cout << "[#]\ntesting 1,000, a = 30, 10% error \n"
             << test_approximate_count(100, 1000, 30, 0.1) << "\n";

@@ -54,7 +54,7 @@ function test_approximate_count(n_trials, n_items, a, threshold)
     end
 end
 
-println("Counting Tests, 100 trials")
+println("[#]\nCounting Tests, 100 trials")
 
 println("[#]\ntesting 1,000, a = 30, 10% error")
 test_approximate_count(100, 1000, 30, 0.1)
