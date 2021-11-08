@@ -232,7 +232,7 @@ This ultimately looks like this:
 {% sample lang="c" %}
 [import:150-184, lang:"c"](../split-operator_method/code/c/split_op.c)
 {% sample lang="cpp" %}
-[import:158-189, lang:"cpp"](../split-operator_method/code/c++/split_op.cpp)
+[import:158-189, lang:"cpp"](../split-operator_method/code/cpp/split_op.cpp)
 {% sample lang="py" %}
 [import:98-112, lang:"python"](../split-operator_method/code/python/split_op.py)
 {% endmethod %}

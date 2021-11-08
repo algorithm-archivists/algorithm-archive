@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk rustc libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch libfftw3-dev
+    && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk rustc libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch libfftw3-dev cmake
 
 # Setup Crystal
 RUN echo 'deb http://download.opensuse.org/repositories/devel:/languages:/crystal/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/devel:languages:crystal.list
@@ -46,11 +46,11 @@ RUN unzip /usr/local/kotlinc.zip
 ENV PATH=$PATH:/usr/local/kotlinc/bin
 
 # Setup lolcode
-## Use: https://github.com/justinmeza/lci
+RUN git clone https://github.com/justinmeza/lci.git ~/lolcode && cd ~/lolcode && mkdir build && cd build && cmake .. && make -B
+ENV PATH=$PATH:~/lolcode/build
 
 # Setup Piet
-## Use: https://github.com/boothby/repiet
-
+RUN pip install repiet
 
 # Setup Matlab
 # ?????? This is a licensed language???
@@ -90,7 +90,9 @@ RUN mkdir -p ~/whitespace && git clone https://github.com/wspace/whitespace-hask
 ENV PATH=$PATH:~/whitespace
 
 # Setup Elm
-## https://github.com/elm/compiler/blob/master/installers/linux/README.md
+RUN mkdir -p ~/elm && curl -L -o ~/elm/elm.gz https://github.com/elm/compiler/releases/download/0.19.1/binary-for-linux-64-bit.gz && \
+    gunzip ~/elm/elm.gz && chmod +x ~/elm/elm
+ENV PATH=$PATH:~/elm
 
 # Setup V
 RUN mkdir -p ~/vlang && wget https://github.com/vlang/v/releases/download/weekly.2021.44/v_linux.zip -O ~/vlang/vlang.zip && \

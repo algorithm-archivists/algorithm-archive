@@ -6,7 +6,7 @@ Trees are naturally recursive data structures, and because of this, we cannot ac
 {% sample lang="jl" %}
 [import:3-7, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:12-15, lang:"cpp"](code/c++/tree_example.cpp)
+[import:12-15, lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 [import:6-10, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -35,7 +35,7 @@ As a note, a `node` struct is not necessary in javascript, so this is an example
 {% sample lang="st" %}
 [import:1-20, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import:5-8, lang:"go"](code/golang/treetraversal.go)
+[import:5-8, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:24-27, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
@@ -54,7 +54,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="jl" %}
 [import:9-16, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:17-24, lang:"cpp"](code/c++/tree_example.cpp)
+[import:17-24, lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 [import:33-44, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -82,7 +82,7 @@ Because of this, the most straightforward way to traverse the tree might be recu
 {% sample lang="st" %}
 [import:22-27, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import:10-15, lang:"go"](code/golang/treetraversal.go)
+[import:10-15, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:290-314, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
@@ -110,7 +110,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="jl" %}
 [import:18-26, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:26-31, lang:"cpp"](code/c++/tree_example.cpp)
+[import:26-31, lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 [import:46-57, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -138,7 +138,7 @@ Now, in this case the first element searched through is still the root of the tr
 {% sample lang="st" %}
 [import:29-34, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import:17-22, lang:"go"](code/golang/treetraversal.go)
+[import:17-22, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:316-344, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
@@ -161,7 +161,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="jl" %}
 [import:28-43, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:34-52 lang:"cpp"](code/c++/tree_example.cpp)
+[import:34-52 lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 [import:59-83, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -189,7 +189,7 @@ In this case, the first node visited is at the bottom of the tree and moves up t
 {% sample lang="st" %}
 [import:36-49, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import:24-38, lang:"go"](code/golang/treetraversal.go)
+[import:24-38, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:346-396, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
@@ -221,7 +221,7 @@ In code, it looks like this:
 {% sample lang="jl" %}
 [import:45-56, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:55-70, lang:"cpp"](code/c++/tree_example.cpp)
+[import:55-70, lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 [import:85-98, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -249,7 +249,7 @@ In code, it looks like this:
 {% sample lang="st" %}
 [import:47-58, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import:40-49, lang:"go"](code/golang/treetraversal.go)
+[import:40-49, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:398-445, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
@@ -274,7 +274,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="jl" %}
 [import:58-69, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import:73-86, lang:"cpp"](code/c++/tree_example.cpp)
+[import:73-86, lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 [import:100-113, lang:"csharp"](code/csharp/Tree.cs)
 {% sample lang="c" %}
@@ -302,7 +302,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="st" %}
 [import:60-71, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import:51-60, lang:"go"](code/golang/treetraversal.go)
+[import:51-60, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import:447-498, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
@@ -328,7 +328,7 @@ Here is a video describing tree traversal:
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/Tree.jl)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/tree_example.cpp)
+[import, lang:"cpp"](code/cpp/tree_example.cpp)
 {% sample lang="cs" %}
 ##### Tree.cs
 [import, lang:"csharp"](code/csharp/Tree.cs)
@@ -366,7 +366,7 @@ The code snippets were taken from this [Scratch project](https://scratch.mit.edu
 {% sample lang="st" %}
 [import, lang:"smalltalk"](code/smalltalk/tree_traversal.st)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/treetraversal.go)
+[import, lang:"go"](code/go/treetraversal.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/tree_traversal.s)
 {% sample lang="emojic" %}
