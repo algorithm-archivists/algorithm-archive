@@ -1,18 +1,17 @@
 # Metropolis-Hastings Algorithm
 
-We saw how [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) uses random numbers to approximate the area of pretty much any shape we choose. 
-The Metropolis-Hastings algorithm is a slightly more advanced Monte Carlo method which uses random numbers to approximate a probability distribution.
-What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
+We saw how [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis-Hastings algorithm is a slightly more advanced Monte Carlo method which uses random numbers to approximate a probability distribution. What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
 
 Why is this helpful? Well, we often have probability functions of the following form:
 
 $$
 P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}
 $$
+
 where $$D$$ is the domain, i.e., all possible values of the coordinates $$\mathbf{x}$$. 
-It's often easy for us to know $$f(x)$$ (eg. for a Gaussian distribution, it is $$e^{-x^2}$$). 
-But the integral at the bottom can be quite difficult to calculate, even numerically.
-This is especially true when the coordinates ($$\mathbf{x}$$) are multidimensional, and $$f(\mathbf{x})$$ is an expensive calculation. 
+
+It's often easy for us to know $$f(x)$$. But the integral in the denominator can be quite difficult to calculate, even numerically.
+This is especially true when the coordinates ($$\mathbf{x}$$) are multidimensional, and $$f(\mathbf{x})$$ is an expensive calculation. One example of a use case is the Boltzmann distribution, for which $$f(x) = e^{-E(\mathbf{x})}$$, where $$E(\mathbf{x})$$ is some complicated high-dimensional energy function for a system. 
 
 ## Random walk in 1D
 
@@ -26,10 +25,16 @@ The dot above is a "walker", whose initial position is randomly chosen. We also 
 
 ## Random walk, but with an acceptance criteria
 
-The Metropolis-Hastings algorithm works in a similar way, but differs crucially in one way - after choosing a random step for the walker (left or right), a decision is made about whether to __reject__ or __accept__ the step. This decision is guided by $$f(x)$$, or any function that is proportional to the target probability function. 
+The Metropolis-Hastings algorithm works in a similar way to the Random Walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step. Here is where $$f(x)$$ comes in: if $$x_t$$ is the position before the step, and $$x'$$ the position after it, then the probability of __accepting the step__ is given by
+
+$$
+A = \min \left(\frac{f(x')}{f(x_t)}, 1\right)
+$$
+
+The $$\min$$ function above implies that $$A$$ will be $$1$$ if $$f(x') \gt f(x_t)$$, which is to say that the move will __always__ be accepted if it is toward a higher probability location. Otherwise, it will be accepted with a probability of $$f(x') / f(x_t)$$. If we create a histogram of this process for some arbitrary function $$P(x)$$, we can see from the figure below that the histogram distribution approaches the true probability after many iterations. 
 
 <p>
-	<img class="center" src="res/metropolis_walk.png" alt="<FIG> Metropolis Walk in 1D" style="width:100%"/>
+	<img class="center" src="res/animated_metropolis.gif" alt="<FIG> Metropolis Walk in 1D" style="width:100%"/>
 </p>
 
 ## The function for generating a random step
