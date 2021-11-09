@@ -19,7 +19,7 @@ This is especially true when the coordinates ($$\mathbf{x}$$) are multidimension
 The Metropolis-Hastings Algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
 <p>
-	<img class="center" src="res/random_walk.png" alt="<FIG> Random Walk in 1D" style="width:40%"/>
+	<img class="center" src="res/random_walk.png" alt="<FIG> Random Walk in 1D" style="width:100%"/>
 </p>
 
 The dot above is a "walker", whose initial position is randomly chosen. We also divide the domain into discrete locations or "bins" and set the visit counter to be zero for each bin. Then at each iteration, the walker randomly choses to go either to the right ($$x \rightarrow x+1$$) or left ($$x \rightarrow x-1$$). Each time it visits a bin, the visit count for that bin goes up by one. Over time, we get a distribution of visits, in this case a random one. 
@@ -29,7 +29,7 @@ The dot above is a "walker", whose initial position is randomly chosen. We also 
 The Metropolis-Hastings algorithm works in a similar way, but differs crucially in one way - after choosing a random step for the walker (left or right), a decision is made about whether to __reject__ or __accept__ the step. This decision is guided by $$f(x)$$, or any function that is proportional to the target probability function. 
 
 <p>
-	<img class="center" src="res/metropolis_walk.png" alt="<FIG> Metropolis Walk in 1D" style="width:40%"/>
+	<img class="center" src="res/metropolis_walk.png" alt="<FIG> Metropolis Walk in 1D" style="width:100%"/>
 </p>
 
 ## The function for generating a random step
@@ -58,7 +58,7 @@ $$
 We chose a sum of three Guassians because it is easy to verify - we know what the integral of it will be. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
 
 <p>
-	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:40%"/>
+	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:100%"/>
 </p>
 
 Next, we choose some symmetric step generating function. Here we will use a random number in the interval $$(-1,1)$$
