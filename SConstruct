@@ -10,12 +10,7 @@ To run the compilation for all implmentations in one language, e.g. C, run the c
 from pathlib import Path
 import os
 
-env = Environment(ENV={'PATH': os.environ['PATH']})
-
-env['CC'] = 'gcc'
-for tool in ['gcc','gnulink']:
-   env.Tool(tool)
-env['CCFLAGS']=''
+env = Environment()
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
