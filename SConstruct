@@ -10,7 +10,12 @@ To run the compilation for all implmeentations in one language, e.g. Rust, run t
 from pathlib import Path
 import os
 
-env = Environment(ENV={'PATH': os.environ['PATH']}, tools=['gcc', 'default'])
+env = Environment(ENV={'PATH': os.environ['PATH']})
+
+env['CC'] = 'gcc'
+for tool in ['gcc','gnulink']:
+   env.Tool(tool)
+env['CCFLAGS']=''
 
 # Add other languages here when you want to add language targets
 languages = ['c']
@@ -18,4 +23,4 @@ languages = ['c']
 env.C = env.Program
 
 SConscript('SConscript', exports='env languages')
-Default('build/c')
+
