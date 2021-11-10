@@ -1,6 +1,6 @@
-# Metropolis-Hastings Algorithm
+# Metropolis Algorithm
 
-We saw how [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis-Hastings algorithm is a slightly more advanced Monte Carlo method which uses random numbers to approximate a probability distribution. What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
+The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) method uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis algorithm is a slightly more advanced Monte Carlo method which uses random numbers to approximate a probability distribution. What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
 
 Why is this helpful? Well, we often have probability functions of the following form:
 
@@ -8,85 +8,90 @@ $$
 P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}
 $$
 
-where $$D$$ is the domain, i.e., all possible values of the coordinates $$\mathbf{x}$$. 
+where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the coordinates $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined. 
 
 It's often easy for us to know $$f(x)$$. But the integral in the denominator can be quite difficult to calculate, even numerically.
-This is especially true when the coordinates ($$\mathbf{x}$$) are multidimensional, and $$f(\mathbf{x})$$ is an expensive calculation. One example of a use case is the Boltzmann distribution, for which $$f(x) = e^{-E(\mathbf{x})}$$, where $$E(\mathbf{x})$$ is some complicated high-dimensional energy function for a system. 
+This is especially true when the coordinates ($$\mathbf{x}$$) are multidimensional, and $$f(\mathbf{x})$$ is an expensive calculation. One example use case is a multidimensional physical system with energy $$E(\mathbf{x})$$, for which we know that $$f(x) = e^{-E(\mathbf{x})}$$, but $$P(x)$$ is almost always impossible to calculate. 
 
-## Random walk in 1D
+## A Random Walk in One Dimension
 
-The Metropolis-Hastings Algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
+The Metropolis Algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
 <p>
-	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> Random Walk in 1D" style="width:100%"/>
+	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> Random Walk in 1D" style="width:80%"/>
 </p>
 
-The dot above is a "walker", whose initial position is $$x=0$$. The step size, $$g$$, is a random number in the interval $$(-1, 1)$$. To get the next positions, we simply add $$g$$ to the current position. To get a distribution of $$x$$ from this walk, we can divide the domain into discrete locations or "bins" and count how often the walker visits each bin. Each time it visits a bin, the frequency for that bin goes up by one. Over many iterations, we get a distribution of $$x$$, in this case a random one. 
+The dot in the figure above is a "walker", whose initial position is $$x=0$$. The step size, $$g$$, is a random number in the interval $$(-1, 1)$$. To get the next position of the walker, we simply generate $$g$$ and add it to the current position. To get a distribution of $$x$$ from this walk, we can divide the domain into discrete locations or "bins" and count how often the walker visits each bin. Each time it visits a bin, the frequency for that bin goes up by one. Over many iterations, we get a frequency distribution of $$x$$. 
 
-## Random walk, but with an acceptance criteria
+## A Random Walk With an Acceptance Criterion
 
-The Metropolis-Hastings algorithm works in a similar way to the Random Walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on $$f(x)$$. Let's call $$x_t$$ the position before the step, and $$x'$$ the position after it. Then the probability of __accepting the step__ is given by
+The Metropolis algorithm works in a similar way to the Random Walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on the function $$f(x)$$. To understand how this works, let's call $$x_t$$ the position before the step, and $$x'$$ the position after it. We then define the probability of __accepting the step__ to be
 
 $$
 A = \min \left(\frac{f(x')}{f(x_t)}, 1\right)
 $$
 
-The $$\min$$ function above implies that $$A$$ will be $$1$$ if $$f(x') \gt f(x_t)$$, which means that the move will __always__ be accepted if it is toward a higher probability position. Otherwise, it will be accepted with a probability of $$f(x') / f(x_t)$$. If we create a histogram of this walk for some arbitrary target function $$P(x)$$, we can see from the figure below that the frequency starts to look very much like it after many iterations! 
+The $$\min$$ function above implies that $$A=1$$ if $$f(x') \gt f(x_t)$$, which means that the move will __always__ be accepted if it is toward a higher probability position. Otherwise, it will be accepted with a probability of $$f(x') / f(x_t)$$. If we create a histogram of this walk for some arbitrary target function $$P(x)$$, we can see from the figure below that the frequency starts to look very much like it after many iterations! 
 
 <p>
-	<img class="center" src="res/animated_metropolis.gif" alt="<FIG> Metropolis Walk in 1D" style="width:100%"/>
+	<img class="center" src="res/animated_metropolis.gif" alt="<FIG> Metropolis Walk in 1D" style="width:80%"/>
 </p>
 
-## The full algorithm for a 1D example function
+## The Algorithm for a One Dimensional Example
 
-### Initialize
+### The Initial Setup
 
-Let our target distribution be:
+Let our target distribution be
 $$
 P(x) = \frac{f(x)}{\int_{-10}^{10} f(x)}
 $$
 
-where $$f(x)$$ is the function proportional to it,
+where $$f(x)$$ is the function we know and is given by
 $$
 f(x) = 10e^{-4(x+4)^2} + 3e^{-0.2(x+1)^2} + e^{-2(x-5)^2}
 $$
+
+The code for defining this function is given below.
 
 {% method %}
 {% sample lang="py" %}
 [import:4-13, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
-We chose a sum of three Guassians because it is easy to verify - we know what the integral of it will be. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
+Since this is an easy function to integrate, and hence get our target distribution $$P(x)$$ directly,  we can use it to verify the Metropolis algorithm. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
 
 <p>
-	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:60%"/>
+	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:80%"/>
 </p>
 
-Next, we choose some symmetric step generating function. Here we will use a random number in the interval $$(-1,1)$$
+Next, we define our walker's symmetric step generating function. As in the Random Walker example, we will use a random number in the interval $$(-1,1)$$
 
 {% method %}
 {% sample lang="py" %}
 [import:15-17, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
-Choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
+Finally, we choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
 
 {% method %}
 {% sample lang="py" %}
 [import:34-35, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
-Then iterate:
+### How to Iterate 
 
-1. Generate new position $$x' = x_t + g()$$
-2. Calculate the acceptance probability, $$A = \min\left(1, \frac{f(x_{t+1})}{f(x)}\right)$$
-3. Choose a random real number, $$u$$, between $$0$$ and $$1$$
-4. Accept or reject:
+1. Generate new proposed position $$x' = x_t + g$$
+2. Calculate the acceptance probability, 
+$$
+A = \min\left(1, \frac{f(x')}{f(x_t)}\right)
+$$
+3. Accept or reject:
+	* Generate a random number $$u$$ between $$0$$ and $$1$$.
     * If $$ u \leq A $$, then __accept__ move, and set new position, $$x_{t+1} = x' $$
     * Otherwise, __reject__ move, and set new position to current, $$x_{t+1} = x_t $$
-5. Increment $$t \rightarrow t + 1$$ and repeat from step 1.
+4. Increment $$t \rightarrow t + 1$$ and repeat from step 1.
 
-The code for steps 1 to 4 is:
+The code for steps 1 to 3 is:
 
 {% method %}
 {% sample lang="py" %}
@@ -96,12 +101,12 @@ The code for steps 1 to 4 is:
 The following plot shows the result of running the algorithm for different numbers of iterations ($$N$$), with the same initial position. The histograms are normalized so that they integrate to 1. We can see the convergence toward $$P(x)$$ as we increase $$N$$.
 
 <p>
-	<img class="center" src="res/multiple_histograms.png" alt="<FIG> multiple histograms" style="width:100%"/>
+	<img class="center" src="res/multiple_histograms.png" alt="<FIG> multiple histograms" style="width:80%"/>
 </p>
 
 
-## Full Example Code
-The following code puts everything discussed together, and runs Metropolis-Hastings algorithm for $$N$$ steps. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
+## Example Code
+The following code puts everything together, and runs Metropolis algorithm for $$N$$ steps. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
 
 {% method %}
 {% sample lang="py" %}
@@ -111,13 +116,14 @@ The following code puts everything discussed together, and runs Metropolis-Hasti
 
 ## Things to consider 
 
-### The function for generating a random step
+### Any symmetric function can be used to generate the step
 
-So far the function $$g$$ we used for  generating the next step is a random number in the interval $$(-1,1)$$. However, this can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number randomly from a list of numbers like $$[ -3, -1, -1, +1, +1, +3]$$. In higher dimensions, the function should be symmetric in all directions, such as multidimensional Gaussian function. All of these will work, but the exact choice of $$g$$ does affect how quickly the distribution will converge __and__ the resolution of the distribution. If the steps are too large, the resolution will be poor, but it will cover a broader range in a short time. Too small, and it will only sample a small region accurately. 
+So far the function $$g$$ we used for  generating the next step is a random number in the interval $$(-1,1)$$. However, this can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number randomly from a list of numbers like $$[ -3, -1, -1, +1, +1, +3]$$. In higher dimensions, the function should be symmetric in all directions, such as multidimensional Gaussian function. However, the choice of $$g$$ can affect how quickly the target distribution is achieved. The optimal choice for $$g$$ is not a trivial problem, and depends on the nature of the target distribution, and what you're interested in.
+
 
 ### A runaway walker
 
-In the example above, the probability decays very quickly as $$x$$ goes far from the 3 peaks. But sometimes, the function can flatten out so that the acceptance probability is always close to 1. This means it will behave a lot like a random walker in those regions, and may drift away into infinity! So it is a good idea to apply some boundaries beyond which $$f(x)$$ will simply drop to zero.
+In the example above, the probability decays very quickly as $$\left|x\right| \rightarrow \infty$$. But sometimes, the function can flatten out and decay more slowly, so that the acceptance probability is always close to 1. This means it will behave a lot like a random walker in those regions, and may drift away and get lost! So it is a good idea to apply some boundaries beyond which $$f(x)$$ will simply drop to zero.
 
 
 
@@ -131,16 +137,21 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
 
+
+##### Images/Graphics
+- The animation "[animated_random_walk](res/animated_random_walk.gif)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+- The animation "[animated_metropolis](res/animated_metropolis.gif)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+- The image "[plot_of_P](res/plot_of_P.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+- The image "[multiple_histograms](res/multiple_histograms.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
 ##### Text
 
 The text of this chapter was written by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
-
-##### Images/Graphics
-- The image "[squarecircle](res/square_circle.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The animation "[simplemontecarlo](res/monte_carlo.gif)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-
 
 ##### Pull Requests
 
