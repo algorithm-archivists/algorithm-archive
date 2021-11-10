@@ -18,28 +18,24 @@ This is especially true when the coordinates ($$\mathbf{x}$$) are multidimension
 The Metropolis-Hastings Algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
 <p>
-	<img class="center" src="res/random_walk.png" alt="<FIG> Random Walk in 1D" style="width:100%"/>
+	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> Random Walk in 1D" style="width:100%"/>
 </p>
 
-The dot above is a "walker", whose initial position is randomly chosen. We also divide the domain into discrete locations or "bins" and set the visit counter to be zero for each bin. Then at each iteration, the walker randomly choses to go either to the right ($$x \rightarrow x+1$$) or left ($$x \rightarrow x-1$$). Each time it visits a bin, the visit count for that bin goes up by one. Over time, we get a distribution of visits, in this case a random one. 
+The dot above is a "walker", whose initial position is $$x=0$$. The step size, $$g$$, is a random number in the interval $$(-1, 1)$$. To get the next positions, we simply add $$g$$ to the current position. To get a distribution of $$x$$ from this walk, we can divide the domain into discrete locations or "bins" and count how often the walker visits each bin. Each time it visits a bin, the frequency for that bin goes up by one. Over many iterations, we get a distribution of $$x$$, in this case a random one. 
 
 ## Random walk, but with an acceptance criteria
 
-The Metropolis-Hastings algorithm works in a similar way to the Random Walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step. Here is where $$f(x)$$ comes in: if $$x_t$$ is the position before the step, and $$x'$$ the position after it, then the probability of __accepting the step__ is given by
+The Metropolis-Hastings algorithm works in a similar way to the Random Walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on $$f(x)$$. Let's call $$x_t$$ the position before the step, and $$x'$$ the position after it. Then the probability of __accepting the step__ is given by
 
 $$
 A = \min \left(\frac{f(x')}{f(x_t)}, 1\right)
 $$
 
-The $$\min$$ function above implies that $$A$$ will be $$1$$ if $$f(x') \gt f(x_t)$$, which is to say that the move will __always__ be accepted if it is toward a higher probability location. Otherwise, it will be accepted with a probability of $$f(x') / f(x_t)$$. If we create a histogram of this process for some arbitrary function $$P(x)$$, we can see from the figure below that the histogram distribution approaches the true probability after many iterations. 
+The $$\min$$ function above implies that $$A$$ will be $$1$$ if $$f(x') \gt f(x_t)$$, which means that the move will __always__ be accepted if it is toward a higher probability position. Otherwise, it will be accepted with a probability of $$f(x') / f(x_t)$$. If we create a histogram of this walk for some arbitrary target function $$P(x)$$, we can see from the figure below that the frequency starts to look very much like it after many iterations! 
 
 <p>
 	<img class="center" src="res/animated_metropolis.gif" alt="<FIG> Metropolis Walk in 1D" style="width:100%"/>
 </p>
-
-## The function for generating a random step
-
-So far we used a very simple function for generating the next step: it will be either +1 or -1 to the current location. For the simple version of the algorithm to work, this can actually be any symmetric function. For example, it can be any real number between $$-a$$ and $$+a$$, or it can be sampled from some symmetric distribution, $$g$$, such as a Gaussian. 
 
 ## The full algorithm for a 1D example function
 
@@ -63,7 +59,7 @@ $$
 We chose a sum of three Guassians because it is easy to verify - we know what the integral of it will be. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
 
 <p>
-	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:100%"/>
+	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:60%"/>
 </p>
 
 Next, we choose some symmetric step generating function. Here we will use a random number in the interval $$(-1,1)$$
@@ -103,6 +99,7 @@ The following plot shows the result of running the algorithm for different numbe
 	<img class="center" src="res/multiple_histograms.png" alt="<FIG> multiple histograms" style="width:100%"/>
 </p>
 
+
 ## Full Example Code
 The following code puts everything discussed together, and runs Metropolis-Hastings algorithm for $$N$$ steps. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
 
@@ -112,7 +109,16 @@ The following code puts everything discussed together, and runs Metropolis-Hasti
 {% endmethod %}
 
 
-# === Monte Carlo ===
+## Things to consider 
+
+### The function for generating a random step
+
+So far the function $$g$$ we used for  generating the next step is a random number in the interval $$(-1,1)$$. However, this can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number randomly from a list of numbers like $$[ -3, -1, -1, +1, +1, +3]$$. In higher dimensions, the function should be symmetric in all directions, such as multidimensional Gaussian function. All of these will work, but the exact choice of $$g$$ does affect how quickly the distribution will converge __and__ the resolution of the distribution. If the steps are too large, the resolution will be poor, but it will cover a broader range in a short time. Too small, and it will only sample a small region accurately. 
+
+### A runaway walker
+
+In the example above, the probability decays very quickly as $$x$$ goes far from the 3 peaks. But sometimes, the function can flatten out so that the acceptance probability is always close to 1. This means it will behave a lot like a random walker in those regions, and may drift away into infinity! So it is a good idea to apply some boundaries beyond which $$f(x)$$ will simply drop to zero.
+
 
 
 <script>
