@@ -1,6 +1,6 @@
 # Metropolis Algorithm
 
-The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) method uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis algorithm is a slightly more advanced Monte Carlo method which uses random numbers to approximate a probability distribution. What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
+The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) method uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis algorithm {{ "metropolis1953equation" | cite }} is a slightly more advanced Monte Carlo method which uses random numbers to approximate a probability distribution. What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
 
 Why is this helpful? Well, we often have probability functions of the following form:
 
@@ -131,6 +131,10 @@ In the example above, the probability decays very quickly as $$\left|x\right| \r
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
 
+### Bibliography
+
+{% references %} {% endreferences %}
+
 ## License
 
 ##### Code Examples
@@ -139,13 +143,13 @@ The code examples are licensed under the MIT license (found in [LICENSE.md](http
 
 
 ##### Images/Graphics
-- The animation "[animated_random_walk](res/animated_random_walk.gif)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[Animated Random Walk](res/animated_random_walk.gif)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-- The animation "[animated_metropolis](res/animated_metropolis.gif)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[Animated Metropolis](res/animated_metropolis.gif)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-- The image "[plot_of_P](res/plot_of_P.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Plot of P(x)](res/plot_of_P.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-- The image "[multiple_histograms](res/multiple_histograms.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[Multiple Histograms](res/multiple_histograms.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Text
 
