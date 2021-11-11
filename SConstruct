@@ -15,7 +15,7 @@ env = Environment(ENV={'PATH': os.environ['PATH']})
 env['CC'] = 'gcc'
 for tool in ['gcc','gnulink']:
    env.Tool(tool)
-env['CCFLAGS']=''
+env['CCFLAGS'] = ''
 
 # Add other languages here when you want to add language targets
 languages = ['c']
