@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def f(x):
     '''Function proportional to target distribution, a sum of Gaussians'''
     # Gaussian heights, width parameters, and mean positions respectively:
