@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as pp
 
 def f(x):
     '''Function proportional to target distribution, a sum of Gaussians'''
