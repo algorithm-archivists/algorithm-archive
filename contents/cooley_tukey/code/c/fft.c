@@ -17,7 +17,7 @@ void fft(double complex *x, int n) {
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    for (size_t i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         x[i] = y[i] / sqrt((double)n);
     }
 }
@@ -56,8 +56,8 @@ void cooley_tukey(double complex *X, const size_t N) {
 }
 
 void bit_reverse(double complex *X, size_t N) {
-    for (int i = 0; i < N; ++i) {
-        int n = i;
+    for (size_t i = 0; i < N; ++i) {
+        size_t n = i;
         int a = i;
         int count = (int)log2((double)N) - 1;
 
@@ -85,7 +85,7 @@ void iterative_cooley_tukey(double complex *X, size_t N) {
         double complex w = cexp(-2.0 * I * M_PI / stride);
         for (size_t j = 0; j < N; j += stride) {
             double complex v = 1.0;
-            for (size_t k = 0; k < stride / 2; ++k) {
+            for (int k = 0; k < stride / 2; ++k) {
                 X[k + j + stride / 2] = X[k + j] - v * X[k + j + stride / 2];
                 X[k + j] -= (X[k + j + stride / 2] - X[k + j]);
                 v *= w;
