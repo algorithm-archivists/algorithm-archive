@@ -26,7 +26,7 @@ env.C = env.Program
 Export('env')
 
 sconscripts = []
-files_to_compile = {language: [] for language in languages.keys()}
+files_to_compile = {language: [] for language in languages}
 
 for chapter_dir in Path.cwd().joinpath('contents').iterdir():
     if (code_dir := (chapter_dir / 'code')).exists():
@@ -37,9 +37,7 @@ for chapter_dir in Path.cwd().joinpath('contents').iterdir():
                     sconscripts.append(sconscript_path)
                     SConscript(sconscript_path, exports='env')
                 else:
-                    files_to_compile[path.stem].extend(
-                                                       path.glob(f'*.{languages[path.stem]}')
-                                                      )
+                    files_to_compile[path.stem].extend(path.glob(f'*.{languages[path.stem]}'))
 
 sconscript_dir_path = Path('sconscripts')
 for language, files in files_to_compile.items():
