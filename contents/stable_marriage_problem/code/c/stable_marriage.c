@@ -20,7 +20,7 @@ void shuffle(size_t *array, size_t size) {
     }
 }
 
-void create_group(struct person *group, size_t size, bool are_men) {
+void create_group(struct person *group, size_t size) {
     for (size_t i = 0; i < size; ++i) {
         group[i].id = i;
         group[i].partner = NULL;
@@ -85,8 +85,8 @@ int main() {
 
     struct person men[5], women[5];
 
-    create_group(men, 5, true);
-    create_group(women, 5, false);
+    create_group(men, 5);
+    create_group(women, 5);
 
     for (size_t i = 0; i < 5; ++i) {
         printf("preferences of man %zu: ", i);
