@@ -8,8 +8,14 @@ Currently, the aim is to provide a way to compile or copy the implementation fil
 To run the compilation for all implmeentations in one language, e.g. Rust, run the command `scons build/c`, and the resulting executables will be available in the `cuild/c` directory, each in their respective algorithm directory, containing the executable."""
 
 from pathlib import Path
+import os
 
-env = Environment()
+env = Environment(ENV={'PATH': os.environ['PATH']})
+
+env['CC'] = 'gcc'
+for tool in ['gcc','gnulink']:
+   env.Tool(tool)
+env['CCFLAGS'] = ''
 
 # Add other languages here when you want to add language targets
 languages = ['c']
