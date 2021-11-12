@@ -15,7 +15,7 @@ env = Environment(ENV={'PATH': os.environ['PATH']})
 env['CC'] = 'gcc'
 for tool in ['gcc','gnulink']:
    env.Tool(tool)
-env['CCFLAGS'] = '-Wall -Wextra -Werror -Wno-error=return-type'
+env['CCFLAGS'] = '-Wall -Wextra -Werror'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'

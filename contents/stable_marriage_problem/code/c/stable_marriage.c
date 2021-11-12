@@ -24,7 +24,7 @@ void create_group(struct person *group, size_t size) {
     for (size_t i = 0; i < size; ++i) {
         group[i].id = i;
         group[i].partner = NULL;
-        group[i].prefers = (size_t*)malloc(sizeof(size_t) * size);
+        group[i].prefers = malloc(sizeof(size_t) * size);
         group[i].index = 0;
 
         for (size_t j = 0; j < size; ++j) {
@@ -43,6 +43,7 @@ bool prefers_partner(size_t *prefers, size_t partner, size_t id, size_t size) {
             return false;
         }
     }
+    return true;
 }
 
 void stable_marriage(struct person *men, struct person *women, size_t size) {
