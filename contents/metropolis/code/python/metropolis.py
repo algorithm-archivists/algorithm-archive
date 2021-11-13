@@ -8,25 +8,23 @@ def f(x):
     a2, b2, x2 =  3, 0.2, -1
     a3, b3, x3 =  1,   2,  5
     
-    return a1*np.exp( -b1*(x-x1)**2 ) + \
-           a2*np.exp( -b2*(x-x2)**2 ) + \
-           a3*np.exp( -b3*(x-x3)**2 )
+    return (
+           a1 * np.exp(-b1 * (x - x1)**2) + 
+           a2 * np.exp(-b2 * (x - x2)**2) + 
+           a3 * np.exp(-b3 * (x - x3)**2)
+        )
 
 def g():
     '''Random step vector'''
     return np.random.uniform(-1,1)
 
-def iterate(x, f=f, g=g):
+def metropolis_step(x, f=f, g=g):
     '''Perform one full iteration and return new position'''
     
     x_proposed = x + g()
-    A = min(1, f(x_proposed)/f(x) )
+    a = min(1, f(x_proposed) / f(x))
     
-    u = np.random.uniform(0,1)
-    if u <= A:
-        x_new = x_proposed
-    else:
-        x_new = x
+    x_new = np.random.choice([x_proposed, x], p=[a, 1-a])
         
     return x_new
 
@@ -35,10 +33,10 @@ if __name__ == "__main__":
     x0 = np.random.uniform(xmin, xmax)
 
     x_dat = [x0]  # for storing values
-    N = 50_000   # no. of iterations
+    num_steps = 50_000
     
     x = x0
-    for n in range(N):
+    for n in range(num_steps):
         x = iterate(x)
         x_dat.append(x)
         
