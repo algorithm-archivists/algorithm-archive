@@ -55,7 +55,7 @@ The code for defining this function is given below.
 
 {% method %}
 {% sample lang="py" %}
-[import:4-13, lang:"python"](code/python/metropolis.py)
+[import:4-15, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 Since this is an easy function to integrate, and hence get our target distribution $$P(x)$$ directly,  we can use it to verify the Metropolis algorithm. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
@@ -68,14 +68,14 @@ Next, we define our walker's symmetric step generating function. As in the rando
 
 {% method %}
 {% sample lang="py" %}
-[import:15-17, lang:"python"](code/python/metropolis.py)
+[import:17-19, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 Finally, we choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
 
 {% method %}
 {% sample lang="py" %}
-[import:34-35, lang:"python"](code/python/metropolis.py)
+[import:32-33, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 ### How to Iterate 
@@ -95,7 +95,7 @@ The code for steps 1 to 3 is:
 
 {% method %}
 {% sample lang="py" %}
-[import:19-31, lang:"python"](code/python/metropolis.py)
+[import:21-29, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 The following plot shows the result of running the algorithm for different numbers of iterations ($$N$$), with the same initial position. The histograms are normalized so that they integrate to 1. We can see the convergence toward $$P(x)$$ as we increase $$N$$.
