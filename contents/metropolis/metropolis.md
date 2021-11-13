@@ -18,14 +18,14 @@ This is especially true when the coordinates ($$\mathbf{x}$$) are multidimension
 The Metropolis Algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
 <p>
-	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> Random Walk in 1D" style="width:80%"/>
+	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> random walk in 1D" style="width:80%"/>
 </p>
 
 The dot in the figure above is a "walker", whose initial position is $$x=0$$. The step size, $$g$$, is a random number in the interval $$(-1, 1)$$. To get the next position of the walker, we simply generate $$g$$ and add it to the current position. To get a distribution of $$x$$ from this walk, we can divide the domain into discrete locations or "bins" and count how often the walker visits each bin. Each time it visits a bin, the frequency for that bin goes up by one. Over many iterations, we get a frequency distribution of $$x$$. 
 
 ## A Random Walk With an Acceptance Criterion
 
-The Metropolis algorithm works in a similar way to the Random Walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on the function $$f(x)$$. To understand how this works, let's call $$x_t$$ the position before the step, and $$x'$$ the position after it. We then define the probability of __accepting the step__ to be
+The Metropolis algorithm works in a similar way to the random walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on the function $$f(x)$$. To understand how this works, let's call $$x_t$$ the position before the step, and $$x'$$ the position after it. We then define the probability of __accepting the step__ to be
 
 $$
 A = \min \left(\frac{f(x')}{f(x_t)}, 1\right)
@@ -64,7 +64,7 @@ Since this is an easy function to integrate, and hence get our target distributi
 	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:80%"/>
 </p>
 
-Next, we define our walker's symmetric step generating function. As in the Random Walker example, we will use a random number in the interval $$(-1,1)$$
+Next, we define our walker's symmetric step generating function. As in the random walk example, we will use a random number in the interval $$(-1,1)$$
 
 {% method %}
 {% sample lang="py" %}
