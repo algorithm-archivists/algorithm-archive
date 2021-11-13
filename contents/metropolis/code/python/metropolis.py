@@ -37,7 +37,7 @@ if __name__ == "__main__":
     
     x = x0
     for n in range(num_steps):
-        x = iterate(x)
+        x = metropolis_step(x)
         x_dat.append(x)
         
     # Write data to file
