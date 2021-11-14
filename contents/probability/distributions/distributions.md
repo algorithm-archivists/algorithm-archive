@@ -1,4 +1,6 @@
-## What's a probability distribution?
+# What's a probability distribution?
+
+## A Discrete Probability Distribution
 
 It's easy to understand what a __discrete__ probability distribution is - for example, the probability distribution of obtaining the number $$n$$ in a dice roll is
 
