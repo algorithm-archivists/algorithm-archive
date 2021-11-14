@@ -2,7 +2,7 @@
 
 ## Discrete Probability Distributions
 
-It's easy to understand what a __discrete__ probability distribution is - for example, the probability distribution of obtaining a head or tail from a coin toss is simply
+It's intuitive for us to understand what a __discrete__ probability distribution is - for example, we understand the outcomes of a coin toss very well, and also that of a dice roll. For a single coin toss, the probability distribution can be formally written as,
 
 $$
 P(n) = \begin{cases}
@@ -11,7 +11,9 @@ P(n) = \begin{cases}
 		\end{cases}
 $$
 
-which is basically saying that the probability that the outcome $$n$$ takes on any specific value is 0.5, if those specific values are heads (H) or tails (T). And the probability of any other possibility is zero. We can call $$[H,T]$$ the __domain__ of $$n$$ in this case. We can usually ignore the second line, since it is assumed that anything outside the domain has a probability of zero.
+which is basically saying that the probability that the outcome $$n$$ takes on any specific value is 0.5, if those specific values are heads (H) or tails (T). The second line states that the probability of any other possibility is zero. We can usually ignore this line, as it is quite trivial, and it is understood that anything outside of heads or tails is impossible. 
+
+One important thing to always take note of for a probability distribution, is the set of possibilities, or the __domain__ of the distribution. Here, $$[H,T]$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be $$H$$ or $$T$$. 
 
 The outcome $$n$$ can also be a number. For example, the outcome of a __dice roll__ has the probability distribution,
 
@@ -23,15 +25,23 @@ P(n) = \begin{matrix}
 $$
 which is saying that the probability of $$n$$ being a whole number between 1 and 6 is $$1/6$$, and we assume that the probability of getting any other $$n$$ is 0. This is a discrete probability function because $$n$$ is an integer, and thus only takes discrete values. 
 
-An example of a discrete probability function where the probability actually varies, is when $$n$$ is the sum of numbers on a __roll of two die__. In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both die), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). So if we had to create a probability distribution for this system, we would first count up the number of possibilities for each $$n$$ - let's call this the frequency, $$f(n)$$ of each number. We can visualize $$f(n)$$ in a plot,
+Both of the above examples are rather boring, because the value of $$P(n)$$ is the same for all $$n$$. An example of a discrete probability function where the probability actually depends on $$n$$, is when $$n$$ is the sum of numbers on a __roll of two die__. In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both die), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). 
+
+The rolling two die is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. So let's go ahead and construct it! 
+
+Let's first define the domain of our target $$P(n)$$. We know that the lowest sum of two die is 2 (a 1 on both die), so $$n \geq 2$$ for sure. Similarly, the maximum is sum of two sixes, or 12, so $$n \leq 12$$ also. 
+
+So now we the domain of possibilites, i.e., $$n \in [2..12]$$. Next, we take a very common approach - we count up the number of different ways each of the possbile values of $$n$$ can occur. Let's call this the frequency, $$f(n)$$ of each possible $$n$$. We already know that $$f(2)=1$$, as there is only one way to get a pair of 1s. For $$n=3$$, we see that there are two possible ways: a $$1$$ and $$2$$, or a $$2$$ and $$1$$, so $$f(3)=2$$. If you continue doing this for all $$n$$, you may see a pattern (homework for the reader!). Once you have all the $$f(n)$$, we can visualize it in a plot,
 
 <p>
 	<img class="center" src="res/double_die_frequencies.png" alt="<FIG> Die Roll" style="width:80%"/>
 </p>
 
+So the most common sum of two die is a $$7$$, and the further away from $$7$$ you get, the less likely the outcome. Good to know, for a prospective gambler!
+
 ### Normalization 
 
-The $$f(n)$$ plotted above is NOT the probability $$P(n)$$ that we are after - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. But we can just get that by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. For two die, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
+The $$f(n)$$ plotted above is technically NOT the probability $$P(n)$$ - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. But we can just get that by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. For two die, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
 
 $$
 N = \sum_n f(n)
@@ -120,4 +130,23 @@ $$
 In general, normalization can allow us to create a probability distribution out of almost any function $$f(x)$$. There are really only two rules that $$f(\mathbf{x})$$ must satisfy to be a candidate for a probability density distribution:
 1. $$\int_{S\in D}f(\mathbf{x})d\mathbf{x}$$ is non-negative for any subdomain $$S$$ of $$D$$.
 2. $$\int_D f(\mathbf{x})d\mathbf{x}$$ must be finite.
+
+## License
+
+##### Images/Graphics
+
+- The image "[Frequency distribution of a double die roll](res/double_die_frequencies.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+- The image "[Probability Density](res/normal_distribution.png)" was created by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+##### Text
+
+The text of this chapter was written by [K. Shudipto Amin](https://github.com/shudipto-amin) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none
 
