@@ -1,11 +1,14 @@
 #include<iostream>
-using namespace std;
+#include<cassert>
+#include<memory>
 
 namespace my {
+    const char endl = '\n';
     /**
-     *implementation using parameterised linked list
+     * implementation using linked list
      * [value][next] -> [value][next] -> ... -> [value][next]
-     * (top Node)      (intermediat Nodes)      (dummy Node)
+     * (top Node)      (intermediat Nodes)
+     * left most Node represents top element of stack
      */
     template<typename T>
     struct Node {
@@ -13,52 +16,54 @@ namespace my {
         * next: will store right Node address
         */
         T value;
-        Node<T>* next;
-        Node(const T& V) : value(V), next(nullptr) { }
+        std::unique_ptr<Node<T>> next;
+        Node(const T& V) : value(V) { }
     };
 
     template<typename T>
     class stack {
     private:
         /**
-         * _top:  points to left most node
-         * count: keeps track of current number of elements present in stack excluding dummy Node
+         * top_pointer: points to left most node
+         * count: keeps track of current number of elements present in stack
          */
-        Node<T>* _top;
+        std::unique_ptr<Node<T>> top_pointer;
         size_t count;
     public:
-        stack() : _top(nullptr), count(0ULL) {
-            _top = new Node<T>(0); // creating a dummy node
-        }
+        stack() : count(0ULL) { }
 
         void push(const T& element) {
-            Node<T>* buffer = new Node<T>(element);
-            buffer->next = _top;
-            _top = buffer;
+            auto new_node = std::make_unique<Node<T>>(element);
+            new_node->next = std::move(top_pointer);
+            top_pointer = std::move(new_node);
             count = count + 1;
         }
 
         void pop() {
             if (count > 0) {
-                Node<T>* buffer = _top;
-                _top = _top->next;
+                top_pointer = std::move(top_pointer->next);
                 count = count - 1;
-                delete buffer;
             }
         }
 
-        T& top() const { return _top->value; }
-        // returning reference can very usefull if someone wants to modify top element
+        T& top() {
+            assert(count > 0 and "calling top() on an empty stack");
+            return top_pointer->value;
+        }
+        // returning mutable reference can very be usefull if someone wants to modify top element
+
+        T const& top() const {
+            assert(count > 0 and "calling top() on an empty stack");
+            return top_pointer->value;
+        }
 
         size_t size() const { return count; }
 
         bool empty() const { return count == 0; }
 
         ~stack() {
-            for (Node<T>* pointer = _top; pointer != nullptr;) {
-                Node<T>* buffer = pointer;
-                pointer = pointer->next;
-                delete buffer;
+            while (top_pointer.get() != nullptr) {
+                top_pointer = std::move(top_pointer->next);
             }
         }
     };
@@ -66,14 +71,11 @@ namespace my {
 
 int main() {
     my::stack<int> S;
-    S.push(0);
-    S.push(1);
-    S.push(2);
     S.push(3);
-    cout << "size: " << S.size() << endl;
+    std::cout << "size: " << S.size() << my::endl;
     S.top() = 10;
     while (S.empty() != true) {
-        cout << "element: " << S.top() << endl;
+        std::cout << "element: " << S.top() << my::endl;
         S.pop();
     }
     return 0;

@@ -1,11 +1,13 @@
 #include<iostream>
-using namespace std;
+#include<memory>
+#include<cassert>
 
 namespace my {
+    const char endl = '\n';
     /**
-     * parameterised type implementation using linked list
-     * [value][next] -> [value][next] -> ... -> [value][next] -> [value][next]
-     *  (front Node)   (intermediat Nodes)    (rear Node)      (dummy Node)
+     * implementation using linked list
+     * [value][next] -> [value][next] -> ... -> [value][next]
+     *  (front Node)   (intermediat Nodes)     (rear Node)
      */
     template<typename T>
     struct Node {
@@ -13,61 +15,63 @@ namespace my {
         * next: will store right Node address
         */
         T value;
-        Node<T>* next;
-        Node(const T& V) : value(V), next(nullptr) { }
+        std::shared_ptr<Node<T>> next;
+        Node(const T& V) : value(V) { }
     };
 
     template<typename T>
     class queue {
     private:
         /**
-         * _front :  points to left most node
-         * count: keeps track of current number of elements present in queue excluding dummy Node
-         * rear:  points to most recent Node added into the queue, which is just left size of dummy Node
+         * front_pointer:  points to left most node
+         * count: keeps track of current number of elements present in queue
+         * rear_pointer:  points to most recent Node added into the queue, which is right most Node
          */
-        Node<T>* _front;
-        Node<T>* rear;
+        std::shared_ptr<Node<T>> front_pointer;
+        std::shared_ptr<Node<T>> rear_pointer;
         size_t count;
     public:
-        queue() : _front(nullptr), rear(nullptr), count(0ULL) {
-            _front = rear = new Node<T>(0); // creating a dummy Node
-        }
+        queue() : count(0ULL) { }
 
         void push(const T& element) {
-            Node<T>* new_node = new Node<T>(element);  // create New Node
+            auto new_node = std::make_shared<Node<T>>(element);
             if (count > 0) {
-                new_node->next = rear->next; // make new Node point to dummy Node
-                rear->next = new_node;       // make rear Node point to new Node
-                rear = new_node;             // make rear Node's pointer to point to new Node
+                new_node->next = front_pointer;
+                front_pointer = new_node;
             } else {
-                new_node->next = rear;
-                rear = _front = new_node;
+                rear_pointer = front_pointer = new_node;
             }
             count = count + 1;
         }
 
         void dequeue() {
-            if (count > 0) {
-                Node<T>* buffer = _front;
-                _front = _front->next;
+            if (count > 1) {
+                front_pointer = front_pointer->next;
                 count = count - 1;
-                delete buffer;
+            } else if (count == 1) {
+                front_pointer.reset();
+                rear_pointer.reset();
+                count = count - 1;
             }
-            rear = (count != 0) ? rear : _front;
         }
 
-        T& front() const { return _front->value; }
-        T const& front() const { return _front->value; }
+        T& front() {
+            assert(count > 0 && "calling front on an empty queue");
+            return front_pointer->value;
+        }
+
+        T const& front() const {
+            assert(count > 0 && "calling front on an empty queue");
+            return front_pointer->value;
+        }
 
         size_t size() const { return count; }
 
         bool empty() const { return count == 0; }
 
         ~queue() {
-            for (Node<T>* pointer = _front; pointer != nullptr;) {
-                Node<T>* buffer = pointer;
-                pointer = pointer->next;
-                delete buffer;
+            while (front_pointer.get() != nullptr) {
+                front_pointer = front_pointer->next;
             }
         }
     };
@@ -75,26 +79,14 @@ namespace my {
 
 int main() {
     my::queue<int> Q;
-
     Q.push(0);
-    Q.push(1);
-    Q.push(2);
     Q.push(3);
-    cout << "count: " << Q.size() << endl;
+    std::cout << "count: " << Q.size() << my::endl;
     Q.front() = 10;
 
     while (Q.empty() != true) {
-        cout << "element: " << Q.front() << endl;
-        Q.dequeue();
-    }
-
-    Q.push(3);
-    Q.push(6);
-    cout << "count: " << Q.size() << endl;
-    while (Q.empty() != true) {
-        cout << "element: " << Q.front() << endl;
+        std::cout << "element: " << Q.front() << my::endl;
         Q.dequeue();
     }
     return 0;
 }
-
