@@ -1,17 +1,16 @@
 #include<iostream>
 using namespace std;
 
-
 namespace my {
     /**
-     *implementation using parameterised linked list
+     * parameterised type implementation using linked list
      * [value][next] -> [value][next] -> ... -> [value][next] -> [value][next]
-     *  (front Node)   (intermediat elements)    (rear Node)      (dummy Node)
+     *  (front Node)   (intermediat Nodes)    (rear Node)      (dummy Node)
      */
     template<typename T>
     struct Node {
         /**
-        * next: will store next Node(right) address
+        * next: will store right Node address
         */
         T value;
         Node<T>* next;
@@ -22,8 +21,9 @@ namespace my {
     class queue {
     private:
         /**
-         * variabel: _front points to left most node , right most  Node is dummy Node
-         * count: will keep track of current number of elements present in stack excluding dummy Node
+         * _front :  points to left most node
+         * count: keeps track of current number of elements present in queue excluding dummy Node
+         * rear:  points to most recent Node added into the queue, which is just left size of dummy Node
          */
         Node<T>* _front;
         Node<T>* rear;
@@ -36,9 +36,9 @@ namespace my {
         void push(const T& element) {
             Node<T>* new_node = new Node<T>(element);  // create New Node
             if (count > 0) {
-                new_node->next = rear->next; // make buffer point to dummy Node
-                rear->next = new_node;       // make rear Node point to buffer
-                rear = new_node;             // make rear pointer to point to buffer
+                new_node->next = rear->next; // make new Node point to dummy Node
+                rear->next = new_node;       // make rear Node point to new Node
+                rear = new_node;             // make rear Node's pointer to point to new Node
             } else {
                 new_node->next = rear;
                 rear = _front = new_node;
@@ -80,9 +80,7 @@ int main() {
     Q.push(1);
     Q.push(2);
     Q.push(3);
-
     cout << "count: " << Q.size() << endl;
-
     Q.front() = 10;
 
     while (Q.empty() != true) {

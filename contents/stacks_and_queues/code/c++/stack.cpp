@@ -1,4 +1,3 @@
-
 #include<iostream>
 using namespace std;
 
@@ -7,13 +6,11 @@ namespace my {
      *implementation using parameterised linked list
      * [value][next] -> [value][next] -> ... -> [value][next]
      * (top Node)      (intermediat Nodes)      (dummy Node)
-     * left most Node represents_top element of stack
-     * right most Node is a dummy Node
      */
     template<typename T>
     struct Node {
         /**
-        * next: will store next Node(right) address
+        * next: will store right Node address
         */
         T value;
         Node<T>* next;
@@ -24,8 +21,8 @@ namespace my {
     class stack {
     private:
         /**
-         * variabel:_top points to left most node , right most  Node is dummy Node
-         * count: will keep track of current number of elements present in stack excluding dummy Node
+         * _top:  points to left most node
+         * count: keeps track of current number of elements present in stack excluding dummy Node
          */
         Node<T>* _top;
         size_t count;
