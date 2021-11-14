@@ -58,7 +58,6 @@ namespace my {
 
         T& front() const { return _front->value; }
         T const& front() const { return _front->value; }
-        // returning reference can very usefull if someone wants to modify _front element
 
         size_t size() const { return count; }
 
