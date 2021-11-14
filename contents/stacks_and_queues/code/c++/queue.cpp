@@ -36,8 +36,8 @@ namespace my {
         void push(const T& element) {
             auto new_node = std::make_shared<Node<T>>(element);
             if (count > 0) {
-                new_node->next = front_pointer;
-                front_pointer = new_node;
+                rear_pointer->next = new_node;
+                rear_pointer = new_node;
             } else {
                 rear_pointer = front_pointer = new_node;
             }
@@ -79,10 +79,12 @@ namespace my {
 
 int main() {
     my::queue<int> Q;
-    Q.push(0);
+    Q.push(-1);
+    Q.push(1);
+    Q.push(2);
     Q.push(3);
     std::cout << "count: " << Q.size() << my::endl;
-    Q.front() = 10;
+    Q.front() = 0;
 
     while (Q.empty() != true) {
         std::cout << "element: " << Q.front() << my::endl;
