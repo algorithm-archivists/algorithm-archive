@@ -16,7 +16,7 @@ which is basically saying that the probability of $$n$$ being a whole number bet
 Another example of a discrete probability function is when $$n$$ is the sum of numbers on a roll of two die. In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both die), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). So if we had to create a probability distribution for this system, we would first count up the number of possibilities for each $$n$$ - let's call this the frequency, $$f(n)$$ of each number. We can visualize $$f(n)$$ in a plot,
 
 <p>
-	<img class="center" src="res/die_roll.png" alt="<FIG> Die Roll" style="width:80%"/>
+	<img class="center" src="res/double_die_frequencies.png" alt="<FIG> Die Roll" style="width:80%"/>
 </p>
 
 The above is NOT the probability $$P(n)$$ that we are after - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. But we can just get that by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. For two die, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
@@ -50,7 +50,7 @@ What if instead of a discrete variable $$n$$, we had a continuous one, like temp
  What does that mean? Well, suppose $$x$$ is a continous quantity, and we have a probability density function, $$P(x)$$ which looks like
 
 <p>
-	<img class="center" src="res/probability_density.png" alt="<FIG> probability density" style="width:80%"/>
+	<img class="center" src="res/normal_distribution.png" alt="<FIG> probability density" style="width:100%"/>
 </p>
 
 Now imagine that the thin sliver in the diagram, placed at $$x=x_0$$ and with a width of $$dx$$, is really, really thin - infinitesimally thin, to be precise. In that case, the probability that the value of $$x$$ will be in the range $$ x_0 \lt x \lt x_0 + dx $$, is given by
