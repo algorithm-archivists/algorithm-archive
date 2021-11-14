@@ -1,6 +1,6 @@
 # What's a probability distribution?
 
-## A Discrete Probability Distribution
+## Discrete Probability Distributions
 
 It's easy to understand what a __discrete__ probability distribution is - for example, the probability distribution of obtaining a head or tail from a coin toss is simply
 
@@ -55,9 +55,9 @@ $$
 \mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n)
 $$
 
-## A Probability Density Function
+## Probability Density Functions
 
-What if instead of a discrete variable $$n$$, we had a continuous one, like temperature or weight? In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number - there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! But it _does_ make sense to ask what the probability is that $$x$$ will be between a certain range of values. For example, one might say that there is 50% chance that the temperature tomorrow noon will be between 5 and 15, or 5% chance that it will be between 16 and 16.5. But how do we put all that information, for every possible range, in a single function? The answer is to use a __probability density function__. 
+What if instead of a discrete variable $$n$$, we had a continuous variable $$x$$, like temperature or weight? In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number - there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! But it _does_ make sense to ask what the probability is that $$x$$ will be _between_ a certain range of values. For example, one might say that there is 50% chance that the temperature tomorrow noon will be between 5 and 15, or 5% chance that it will be between 16 and 16.5. But how do we put all that information, for every possible range, in a single function? The answer is to use a __probability density function__. 
 
  What does that mean? Well, suppose $$x$$ is a continous quantity, and we have a probability density function, $$P(x)$$ which looks like
 
@@ -65,15 +65,19 @@ What if instead of a discrete variable $$n$$, we had a continuous one, like temp
 	<img class="center" src="res/normal_distribution.png" alt="<FIG> probability density" style="width:100%"/>
 </p>
 
-Now, if we are interested in the probability of the range of values that lie between $$x_0$$ and $$x_0 + dx$$, all we have to do is calculate the _area_ of the green sliver above. This is the defining feature of a  probability density function: that the probability of a range of values is the _area_ under the curve and within that range. 
+Now, if we are interested in the probability of the range of values that lie between $$x_0$$ and $$x_0 + dx$$, all we have to do is calculate the _area_ of the green sliver above. This is the defining feature of a  probability density function: 
 
-But how do we quantify this area? Imagine that the green sliver in the diagram is really, really thin - infinitesimally thin, to be precise, with the width $$dx$$ almost vanishing to zero. In that case, the area of the green sliver is approximated by rectangle of height $$P(x)$$ and width $$dx$$. And so the area will be $$P(x)dx$$, and thus
+> the probability of a range of values is the _area_ of the region under the probability density curve which is within that range. 
+
+But how do we quantify this area? Imagine that the green sliver in the diagram is really, really thin - infinitesimally thin, to be precise, with the width $$dx$$ almost vanishing to zero. In that case, the area of the green sliver is approximated by a rectangle of height $$P(x)$$ and width $$dx$$. So the area will be $$P(x)dx$$, and thus
 
 $$
 \mathbb{P}(x_0 \leq x \leq x_0 + dx) = P(x)dx
 $$
 
-So strictly speaking, $$P(x)$$ itself is NOT a probability, but rather the quantity $$P(x)dx$$, or any area under the curve. That is why we call $$P(x)$$ the probability density at $$x$$, and the actual probability is only defined for ranges of $$x$$. But what about for large ranges of $$x$$, which are not infinitesimal? We do exactly what we did for the discrete case - sum up all the individual probabilities for each range of values of width $$dx$$. And what do we call such a sum over a continuous variable? Why, an integral, of course! Who knew calculus would come in handy one day? And so we have,
+So strictly speaking, $$P(x)$$ itself is NOT a probability, but rather the probability is the quantity $$P(x)dx$$, or any area under the curve. That is why we call $$P(x)$$ the probability _density_ at $$x$$, while the actual probability is only defined for ranges of $$x$$. 
+
+But what about large ranges of $$x$$, which are not infinitesimally thin? We do exactly what we did for the discrete case - sum up the probabilities of each and every distinct range of values, each with an infinitesimal width $$dx$$. And what do we call such a sum over a continuous variable? Why, an integral, of course! Who knew calculus would come in handy one day? And so we have,
 
 $$
 \mathbb{P}(a \leq x \leq b ) = \int_a^b P(x)dx
@@ -101,13 +105,13 @@ $$
 f(x) = e^{-x^2}
 $$
 
-which is defined for all real numbers $$x$$. We first integrate it (or do a quick google search) to get
+which is defined for all real numbers $$x$$. We first integrate it (or do a quick google search, as it is rather tricky) to get
 
 $$
 N = \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 $$
 
-and so we have
+(yes, we get $$\pi$$ out of nowhere, which is an interesting topic for another chapter!) and so we have
 
 $$
 P(x) = \frac{1}{N} e^{-x^2} = \frac{1}{\sqrt{\pi}} e^{-x^2}
