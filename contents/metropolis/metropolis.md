@@ -20,7 +20,7 @@ In practice, it's often easy for us to know $$f(x)$$, but the integral in the de
 
 ## An  example application
 
- One example of a complicated probability function arises when considering a physical system of $$N$$ number of particles. These could be atoms, molecules, or even star systems! For such systems, we can usually describe the __potential energy__ (__cite__) of the system as a function of the coordinates of all particles, $$\mathbf{x}$$,
+ One example of a complicated probability function arises when considering a physical system of $$N$$ number of particles. These could be atoms, molecules, or even star systems! For such systems, we can usually describe the __potential energy__ {{ "potential_energy_wiki" | cite }} of the system as a function of the coordinates of all particles, $$\mathbf{x}$$,
 
 $$
 E(\mathbf{x}) = E(x_1, y_1, z_1, x_2, y_2, z_2, ... ,x_N, y_N, z_N) 
@@ -28,7 +28,7 @@ $$
 
 where $$x_i, y_i, z_i$$ are the spatial coordinates of particle $$i$$. So altogether there are $$3N$$ coordinates - already this is complicated, but it doesn't end there!
 
-The physicist Ludwig Boltzmann (__cite__) discovered that when such a system is in equilibrium at some temperature $$T$$, you can describe the probability density of the system for any set of coordinates $$\mathbf{x}$$ using,
+The physicist Ludwig Boltzmann {{ "ludwig_boltzmann_wiki" | cite }} discovered that when such a system is in equilibrium at some temperature $$T$$, you can describe the probability density of the system for any set of coordinates $$\mathbf{x}$$ using, {{ "boltzmann_distribution_wiki" | cite }} 
 
 $$
 P(\mathbf{x}) = \frac{\displaystyle \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]} {Q}
@@ -66,9 +66,12 @@ Finally, the Metropolis algorithm can be modified or implemented in other algori
 
 In the rest of this chapter, we will look at 1D examples to understand the Metropolis algorithm. Although the algorithm is not particularly efficient in just one dimension, it is much easier to understand and learn how to implement than in higher dimensions. The Metropolis algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
-<p>
-	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> random walk in 1D" style="width:80%"/>
-</p>
+<div style="text-align:center">
+<video style="width:80%" controls loop>
+  <source src="res/animated_random_walk.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
 
 The dot in the figure above is a "walker", whose initial position is $$x=0$$. The step size, $$g$$, is a random number in the interval $$(-1, 1)$$. To get the next position of the walker, we simply generate $$g$$ and add it to the current position. To get a distribution of $$x$$ from this walk, we can divide the domain into discrete locations or "bins" and count how often the walker visits each bin. Each time it visits a bin, the frequency for that bin goes up by one. Over many iterations, we get a frequency distribution of $$x$$. 
 
@@ -82,9 +85,12 @@ $$
 
 The $$\min$$ function above implies that $$A=1$$ if $$f(x') \gt f(x_t)$$, which means that the move will __always__ be accepted if it is toward a higher probability position. Otherwise, it will be accepted with a probability of $$f(x') / f(x_t)$$. If we create a histogram of this walk for some arbitrary target function $$P(x)$$, we can see from the figure below that the frequency starts to look very much like it after many iterations! 
 
-<p>
-	<img class="center" src="res/animated_metropolis.gif" alt="<FIG> Metropolis Walk in 1D" style="width:80%"/>
-</p>
+<div style="text-align:center">
+<video style="width:80%" controls loop>
+  <source src="res/animated_metropolis.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
 
 ## The Algorithm for a One Dimensional Example
 
@@ -113,14 +119,20 @@ Since this is an easy function to integrate, and hence get our target distributi
 	<img class="center" src="res/plot_of_P.png" alt="<FIG> Plot of P(x)" style="width:80%"/>
 </p>
 
-Next, we define our walker's symmetric step generating function. As in the random walk example, we will use a random number in the interval $$(-1,1)$$
+Next, we define our walker's symmetric step generating function. As in the random walk example, we will use a random real number between $$-1$$ and $$+1$$ as the step size. 
 
 {% method %}
 {% sample lang="py" %}
 [import:17-19, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
-Finally, we choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
+However, $$g$$ can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number chosen randomly from a discrete list, such as $$[ -3, -1, -1, +1, +1, +3]$$. It can also be a number chosen from a symmetric continuos distribution, like the Gaussian, $$e^{-x^2}$$. In higher dimensions, the function should be spherically symmetric, such as multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. Whatever function you choose, there are at least a couple of things to note:
+1. If the function $$g$$ is discrete, you will only sample discrete values. For example, if $$g$$ returns only -1 or +1, and nothing in between, you will sample only integer steps away from the initial $$x_0$$. 
+2. The average step size really matters! A small step-size means the walker will carefully sample nearby regions more, but will walk more slowly, so might not be good at exploring far and wide. On the other hand, a walker with a large step size may not sample nearby regions accurately - and actually has a higher chance of being rejected if the walker is already in a high probability region, since the acceptance ratio is more drastic for large steps. The effect of step-size on the walker's efficiency is far from obvious! 
+
+How to choose $$g$$ is in itself a research field and depends on what the goal of the sampling is. Some methods even use an "adaptive" method where $$g$$ is "trained" on-the-fly using a learning algorithm! Some of these methods and others are discussed in Ref. {{ "rosenthal2011optimal" | cite }} and Ref. {{ "gareth2001optimal" | cite }}. In a lot of cases, people just use trial and error, as the algorithm is not too difficult to implement.
+
+After chosing $$g$$, we are almost ready to iterate. We just need to choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
 
 {% method %}
 {% sample lang="py" %}
@@ -134,7 +146,7 @@ Finally, we choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_
 $$
 A = \min\left(1, \frac{f(x')}{f(x_t)}\right)
 $$
-3. Accept or reject:
+3. Accept proposal, $$x'$$ with probability $$A$$. If your programming language doesn't have a built-in method for this,
 	* Generate a random number $$u$$ between $$0$$ and $$1$$.
     * If $$ u \leq A $$, then __accept__ move, and set new position, $$x_{t+1} = x' $$
     * Otherwise, __reject__ move, and set new position to current, $$x_{t+1} = x_t $$
@@ -155,24 +167,12 @@ The following plot shows the result of running the algorithm for different numbe
 
 
 ## Example Code
-The following code puts everything together, and runs Metropolis algorithm for $$N$$ steps. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
+The following code puts everything together, and runs Metropolis algorithm for a number of  steps given by `num_steps`. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
 
 {% method %}
 {% sample lang="py" %}
 [import, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
-
-
-## Things to consider 
-
-### Any symmetric function can be used to generate the step
-
-So far the function $$g$$ we used for  generating the next step is a random number in the interval $$(-1,1)$$. However, this can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number randomly from a list of numbers like $$[ -3, -1, -1, +1, +1, +3]$$. In higher dimensions, the function should be symmetric in all directions, such as multidimensional Gaussian function. However, the choice of $$g$$ can affect how quickly the target distribution is achieved. The optimal choice for $$g$$ is not a trivial problem, and depends on the nature of the target distribution, and what you're interested in.
-
-
-### A runaway walker
-
-In the example above, the probability decays very quickly as $$\left|x\right| \rightarrow \infty$$. But sometimes, the function can flatten out and decay more slowly, so that the acceptance probability is always close to 1. This means it will behave a lot like a random walker in those regions, and may drift away and get lost! So it is a good idea to apply some boundaries beyond which $$f(x)$$ will simply drop to zero.
 
 
 
