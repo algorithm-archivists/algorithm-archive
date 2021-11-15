@@ -1,27 +1,70 @@
 # Metropolis Algorithm
 
-The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) method uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis algorithm {{ "metropolis1953equation" | cite }} is a slightly more advanced Monte Carlo method which uses random numbers to approximate a __probability distribution__.
+The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) method uses random numbers to approximate the area of pretty much any shape we choose. The Metropolis algorithm {{ "metropolis1953equation" | cite }} is a slightly more advanced Monte Carlo method which uses random numbers to approximate a [probability distribution](../probability/distributions/distributions.md).
 
+Here we will use the Metropolis algorithm to approximate a __probability density function__, as described in [this chapter](../probability/distributions/distributions.md), which is of the form,
 
-
-## Metropolis
-
-What's really powerful about this approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
-
-Why is this helpful? Well, we often have probability functions of the following form:
 
 $$
-P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}
+P(\mathbf{x}) = \frac{f(\mathbf{x})}{\displaystyle\int_D f(\mathbf{x})d\mathbf{x}}
 $$
 
-where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the coordinates $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined. 
+where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined; and $$f(\mathbf{x})$$ is some a function that is proportional to $$P(x)$$, such as a frequency distribution of $$\mathbf{x}$$. A one-dimensional example is the __normal distribution__, or __Gaussian distribution__, given by
 
-It's often easy for us to know $$f(x)$$. But the integral in the denominator can be quite difficult to calculate, even numerically.
-This is especially true when the coordinates ($$\mathbf{x}$$) are multidimensional, and $$f(\mathbf{x})$$ is an expensive calculation. One example use case is a multidimensional physical system with energy $$E(\mathbf{x})$$, for which we know that $$f(x) = e^{-E(\mathbf{x})}$$, but $$P(x)$$ is almost always impossible to calculate. 
+$$
+P(x) = \frac{e^{-x^2}}{\displaystyle\int_{-\infty}^{\infty} e^{-x^2} dx} = \frac{1}{\sqrt{\pi}} e^{-x^2}
+$$
+
+
+In practice, it's often easy for us to know $$f(x)$$, but the integral in the denominator can be quite difficult to calculate, even numerically. This is especially true when the coordinates ($$\mathbf{x}$$) are multidimensional, and $$f(\mathbf{x})$$ is an expensive calculation, as we shall see in the examples below.
+
+## An  example application
+
+ One example of a complicated probability function arises when considering a physical system of $$N$$ number of particles. These could be atoms, molecules, or even star systems! For such systems, we can usually describe the __potential energy__ (__cite__) of the system as a function of the coordinates of all particles, $$\mathbf{x}$$,
+
+$$
+E(\mathbf{x}) = E(x_1, y_1, z_1, x_2, y_2, z_2, ... ,x_N, y_N, z_N) 
+$$
+
+where $$x_i, y_i, z_i$$ are the spatial coordinates of particle $$i$$. So altogether there are $$3N$$ coordinates - already this is complicated, but it doesn't end there!
+
+The physicist Ludwig Boltzmann (__cite__) discovered that when such a system is in equilibrium at some temperature $$T$$, you can describe the probability density of the system for any set of coordinates $$\mathbf{x}$$ using,
+
+$$
+P(\mathbf{x}) = \frac{\displaystyle \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]} {Q}
+$$
+
+where $$Q$$ is the [normalization constant](../probability/distributions/distributions.md),
+$$
+Q = \int_D \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right] d\mathbf{x}
+$$
+
+We can already see that the probability density function is quite complicated, particularly because of $$Q$$. Almost always, no analytical solution exists to the integral in $$Q$$, and the numerical integration is unfeasible. 
+
+To see that $$Q$$ is unfeasible to calculate, imagine there are just 10 particles which all exist in a 1D world, restricted to a line segment.
+
+<p>
+	<img class="center" src="res/1d_particles.png" style="width:100%" alt="<FIG> 1D particles">
+</p>
+
+This means that the energy $$E(\mathbf{x})$$ of the system is a 10D function, as there are 10 coordinates in total. Now imagine that we divide the 1D line segment into only 50 different intervals, allowing each particle to take on 50 different positions. This is equivalent to dividing the length a football field into intervals of about 2 meters - not a resolution you'd wanna watch a game in! Even with such poor resolution, the number of different combinations of position is $$10^{50}$$ - a colossal number indeed! Even if a single computation of $$E(\mathbf{x})$$ took only 1 nanosecond on a single processor, even with all the processors in the world running in parallel, calculating $$Q$$ would still take many orders of magnitude greater than the age of the universe!
+
+What's really powerful about the Metropolis approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. What this means for the Botlzmann distribution is that you only need to know the term,
+
+$$
+f(\mathbf{x}) = \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]
+$$
+
+And the Metropolis algorithm can bypass calculation of $$Q$$ altogether and use $$f(x)$$ to generate a distribution of $$x$$ which follows the probability density $$P(x)$$. In other words, it can sample values of $$x$$ in such away that the probability of sampling will follow the actual distribution $$P(x)$$ - the more likely a value of $$x$$ is according to $$P(x)$$, the more likely it will be sampled by the Metropolis algorithm. This fact dramatically reduces the number of samples needed to approximate the probability distribution.
+
+Of course to be truly proportional to $$P(x)$$ the Metropolis algorithm would still take some time before it converges - but it scales very well with the dimensionality of $$\mathbf{x}$$, which is important since the number of particles can get large in physical systems. Furthermore, we often don't care about the _entire_ space of possibilities. We usually care about a local region of $$P(x)$$, where the probability is relatively high, and so you would have "realistic" positions for the particles (it turns out reality tries to exist in a high probability state, who would've guessed?). Because the Metropolis algorithm tends toward high probability regions, it's good at sampling those regions and providing us with a nice, collection of systems!
+
+Finally, the Metropolis algorithm can be modified or implemented in other algorithms. It forms the basis of many advanced sampling algorithms. The most popular is probably the Metropolis-Hastings algorithm (**cite**) which is fundamentally the same. Other algorithms that implement the algorithm are Metropolis-adjusted Langevin algorithm, and Hamiltonian Monte Carlo, to name a few (**cite**). They are often used for physical systems that follow a Boltzmann distribution.
+
 
 ## A Random Walk in One Dimension
 
-The Metropolis Algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
+In the rest of this chapter, we will look at 1D examples to understand the Metropolis algorithm. Although the algorithm is not particularly efficient in just one dimension, it is much easier to understand and learn how to implement than in higher dimensions. The Metropolis algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
 <p>
 	<img class="center" src="res/animated_random_walk.gif" alt="<FIG> random walk in 1D" style="width:80%"/>
