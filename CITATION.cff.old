@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this resource, please cite it using the metadata from this file."
 
 # Citation information, which will be used for Github display
-# and for differnt file formats like BibTex
+# and for different file formats like BibTex
 title: "The Arcane Algorithm Archive"
 date-released: 2017-01-11
 url: "https://algorithm-archive.org/"
