@@ -110,7 +110,7 @@ The code for defining this function is given below.
 
 {% method %}
 {% sample lang="py" %}
-[import:4-15, lang:"python"](code/python/metropolis.py)
+[import:4-22, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 Since this is an easy function to integrate, and hence get our target distribution $$P(x)$$ directly,  we can use it to verify the Metropolis algorithm. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
@@ -123,7 +123,7 @@ Next, we define our walker's symmetric step generating function. As in the rando
 
 {% method %}
 {% sample lang="py" %}
-[import:17-19, lang:"python"](code/python/metropolis.py)
+[import:24-26, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 However, $$g$$ can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number chosen randomly from a discrete list, such as $$[ -3, -1, -1, +1, +1, +3]$$. It can also be a number chosen from a symmetric continuos distribution, like the Gaussian, $$e^{-x^2}$$. In higher dimensions, the function should be spherically symmetric, such as multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. Whatever function you choose, there are at least a couple of things to note:
@@ -136,7 +136,7 @@ After chosing $$g$$, we are almost ready to iterate. We just need to choose the 
 
 {% method %}
 {% sample lang="py" %}
-[import:32-33, lang:"python"](code/python/metropolis.py)
+[import:75-76, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 ### How to Iterate 
@@ -156,7 +156,7 @@ The code for steps 1 to 3 is:
 
 {% method %}
 {% sample lang="py" %}
-[import:21-29, lang:"python"](code/python/metropolis.py)
+[import:38-47, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 The following plot shows the result of running the algorithm for different numbers of iterations ($$N$$), with the same initial position. The histograms are normalized so that they integrate to 1. We can see the convergence toward $$P(x)$$ as we increase $$N$$.
@@ -167,7 +167,7 @@ The following plot shows the result of running the algorithm for different numbe
 
 
 ## Example Code
-The following code puts everything together, and runs Metropolis algorithm for a number of  steps given by `num_steps`. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
+The following code puts everything together, and runs Metropolis algorithm for a number of  steps given by `num_steps`. All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. The code also incorporates a few tests of the algorithm using the `test_metropolis_iterate` method. This test will create a normalized density histogram from the generated data, and compare it to $$P(x)$$ using the Root Mean Square Deviations metric {{ "rmsd_wiki" | cite }}.
 
 {% method %}
 {% sample lang="py" %}
