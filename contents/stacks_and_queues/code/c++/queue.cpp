@@ -33,7 +33,7 @@ namespace my {
     public:
         queue() : count(0ULL) { }
 
-        void push(const T& element) {
+        void enqueue(const T& element) {
             auto new_node = std::make_shared<Node<T>>(element);
             if (count > 0) {
                 rear_pointer->next = new_node;
@@ -78,17 +78,15 @@ namespace my {
 }
 
 int main() {
-    my::queue<int> Q;
-    Q.push(-1);
-    Q.push(1);
-    Q.push(2);
-    Q.push(3);
-    std::cout << "count: " << Q.size() << my::endl;
-    Q.front() = 0;
+  my::queue<int> intQueue;
+  intQueue.enqueue(4);
+  intQueue.enqueue(5);
+  intQueue.enqueue(9);
 
-    while (Q.empty() != true) {
-        std::cout << "element: " << Q.front() << my::endl;
-        Q.dequeue();
-    }
-    return 0;
+  int frontElement = intQueue.front();
+  intQueue.dequeue();
+  std::cout << frontElement << my::endl;
+  std::cout << intQueue.size() << my::endl;
+  std::cout << intQueue.front() << my::endl;
+  return 0;
 }

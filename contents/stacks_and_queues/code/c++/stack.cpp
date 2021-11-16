@@ -70,13 +70,16 @@ namespace my {
 }
 
 int main() {
-    my::stack<int> S;
-    S.push(3);
-    std::cout << "size: " << S.size() << my::endl;
-    S.top() = 10;
-    while (S.empty() != true) {
-        std::cout << "element: " << S.top() << my::endl;
-        S.pop();
-    }
-    return 0;
+  my::stack<int> intStack;
+
+  intStack.push(4);
+  intStack.push(5);
+  intStack.push(9);
+
+  int topElement = intStack.top();
+  intStack.pop();
+  std::cout << topElement << my::endl;
+  std::cout << intStack.size() << my::endl;
+  std::cout << intStack.top() << my::endl;
+  return 0;
 }
