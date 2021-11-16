@@ -40,10 +40,9 @@ ENV PATH=$PATH:~/dlang/dmd-$DLANG_VERSION/linux/bin64/
 RUN sudo sh -c 'wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local'
 ENV PATH=$PATH:/usr/local/go/bin
 
-# Setup Kotlin (doesnt unzip right maybe?)
-RUN sudo sh -c 'wget -c https://github.com/JetBrains/kotlin/releases/download/v1.5.30/kotlin-compiler-1.5.30.zip -O /usr/local/kotlinc.zip'
-RUN unzip /usr/local/kotlinc.zip
-ENV PATH=$PATH:/usr/local/kotlinc/bin
+# Setup Kotlin
+RUN mkdir -p ~/kotlin && wget -c https://github.com/JetBrains/kotlin/releases/download/v1.5.30/kotlin-compiler-1.5.30.zip -O ~/kotlin/kotlinc.zip && cd ~/kotlin && unzip kotlinc.zip
+ENV PATH=$PATH:~/kotlin/kotlinc/bin
 
 # Setup lolcode
 RUN git clone https://github.com/justinmeza/lci.git ~/lolcode && cd ~/lolcode && mkdir build && cd build && cmake .. && make -B
