@@ -92,6 +92,9 @@ Your browser does not support the video tag.
 </video>
 </div>
 
+Although convergence occurs eventually, not all parts of the distribution achieve convergence quickly. Note from the animation above, that the walker very quickly replicates the distribution of the two peaks on the left, but takes quite a while to even reach the third peak to the right. This is because there is a long "barrier" of low probability region between the third peak and second peak. This may not necessarily be a bad thing - sometimes one might want to estimate how long something takes to transition from one state to another, and often these peaks represent such 'states'. So averaging over many metropolis runs may give some estimate of these transition times. And if global sampling is the goal, the process of exploration could be sped up by choosing larger step sizes for the walker, for example by choosing step size $$g$$ from an interval like $$(-3,3)$$ instead of $$(-1,1)$$. 
+
+
 ## The Algorithm for a One Dimensional Example
 
 ### The Initial Setup
@@ -110,7 +113,7 @@ The code for defining this function is given below.
 
 {% method %}
 {% sample lang="py" %}
-[import:4-22, lang:"python"](code/python/metropolis.py)
+[import:4-18, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 Since this is an easy function to integrate, and hence get our target distribution $$P(x)$$ directly,  we can use it to verify the Metropolis algorithm. The plot of $$P(x)$$ in the figure below shows three different peaks of varying width and height, with some overlap as well.
@@ -123,7 +126,7 @@ Next, we define our walker's symmetric step generating function. As in the rando
 
 {% method %}
 {% sample lang="py" %}
-[import:24-26, lang:"python"](code/python/metropolis.py)
+[import:20-22, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 However, $$g$$ can be any function symmetric about $$0$$ for the above algorithm to work. For example, it can be a number chosen randomly from a discrete list, such as $$[ -3, -1, -1, +1, +1, +3]$$. It can also be a number chosen from a symmetric continuos distribution, like the Gaussian, $$e^{-x^2}$$. In higher dimensions, the function should be spherically symmetric, such as multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. Whatever function you choose, there are at least a couple of things to note:
@@ -136,7 +139,7 @@ After chosing $$g$$, we are almost ready to iterate. We just need to choose the 
 
 {% method %}
 {% sample lang="py" %}
-[import:75-76, lang:"python"](code/python/metropolis.py)
+[import:70-71, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 ### How to Iterate 
@@ -156,7 +159,7 @@ The code for steps 1 to 3 is:
 
 {% method %}
 {% sample lang="py" %}
-[import:38-47, lang:"python"](code/python/metropolis.py)
+[import:34-42, lang:"python"](code/python/metropolis.py)
 {% endmethod %}
 
 The following plot shows the result of running the algorithm for different numbers of iterations ($$N$$), with the same initial position. The histograms are normalized so that they integrate to 1. We can see the convergence toward $$P(x)$$ as we increase $$N$$.
