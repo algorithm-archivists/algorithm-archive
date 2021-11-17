@@ -54,7 +54,7 @@ def test_metropolis_iterate(num_steps, xmin, xmax, x0):
     centers = np.arange(xmin + bin_width/2, xmax, bin_width)
     
     true_values = f(centers, normalize=True)
-    mean_value = np.mean(true_values)
+    mean_value = np.mean(true_values - min(true_values))
 
     x_dat = list(metropolis_iterate(x0, num_steps))
     heights, _ = np.histogram(x_dat, bins=bins, density=True)
@@ -62,7 +62,7 @@ def test_metropolis_iterate(num_steps, xmin, xmax, x0):
     nmsd = np.average((heights - true_values)**2 / mean_value)
     nrmsd = np.sqrt(nmsd)
 
-    print(f"    NRMSD Error : {nrmsd*100:4.1f} %")
+    return nrmsd
 
         
  
@@ -83,6 +83,8 @@ if __name__ == "__main__":
         
     
     # Testing
+    print(f"Testing with x0 = {x0:5.2f}")
+    print(f"{'num_steps':>10s} {'NRMSD':10s}")
     for num_steps in (500, 5_000, 50_000):
-        print(f"Testing with x0 = {x0:5.2f} and num_steps = {num_steps:,}")
-        test_metropolis_iterate(num_steps, xmin, xmax, x0)
+        nrmsd = test_metropolis_iterate(num_steps, xmin, xmax, x0)
+        print(f"{num_steps:10d} {nrmsd:5.1%}")
