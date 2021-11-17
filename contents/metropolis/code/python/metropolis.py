@@ -7,19 +7,15 @@ def f(x, normalize=False):
     For testing, set normalize to True, to get target distribution exactly.
     '''
     # Gaussian heights, width parameters, and mean positions respectively:
-    a1, b1, x1 = 10,   4, -4
-    a2, b2, x2 =  3, 0.2, -1
-    a3, b3, x3 =  1,   2,  5
+    a  = np.array([10.,  3. , 1.]).reshape(3, 1)
+    b  = np.array([ 4.,  0.2, 2.]).reshape(3, 1)
+    xs = np.array([-4., -1. , 5.]).reshape(3, 1)
 
     if normalize:
-        norm = np.sqrt(np.pi)*(a1/np.sqrt(b1) + a2/np.sqrt(b2) + a3/np.sqrt(b3))
-        a1, a2, a3 = a1/norm, a2/norm, a3/norm
+        norm = (np.sqrt(np.pi) * (a / np.sqrt(b))).sum()
+        a /= norm
 
-    return (
-           a1 * np.exp(-b1 * (x - x1)**2) + 
-           a2 * np.exp(-b2 * (x - x2)**2) + 
-           a3 * np.exp(-b3 * (x - x3)**2)
-        )
+    return (a * np.exp(-b * (x - xs)**2)).sum(axis=0)
 
 def g():
     '''Random step vector.'''
@@ -29,7 +25,7 @@ def metropolis_step(x, f=f, g=g):
     '''Perform one full iteration and return new position.'''
     
     x_proposed = x + g()
-    a = min(1, f(x_proposed) / f(x))
+    a = min(1, (f(x_proposed) / f(x)).item())
     
     x_new = np.random.choice([x_proposed, x], p=[a, 1-a])
         
