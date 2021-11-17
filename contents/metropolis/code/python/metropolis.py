@@ -7,9 +7,9 @@ def f(x, normalize=False):
     For testing, set normalize to True, to get target distribution exactly.
     '''
     # Gaussian heights, width parameters, and mean positions respectively:
-    a  = np.array([10.,  3. , 1.]).reshape(3, 1)
-    b  = np.array([ 4.,  0.2, 2.]).reshape(3, 1)
-    xs = np.array([-4., -1. , 5.]).reshape(3, 1)
+    a = np.array([10., 3., 1.]).reshape(3, 1)
+    b = np.array([ 4., 0.2, 2.]).reshape(3, 1)
+    xs = np.array([-4., -1., 5.]).reshape(3, 1)
 
     if normalize:
         norm = (np.sqrt(np.pi) * (a / np.sqrt(b))).sum()
@@ -34,13 +34,12 @@ def metropolis_step(x, f=f, g=g):
 def metropolis_iterate(x0, num_steps):
     '''Iterate metropolis algorithm for num_steps using iniital position x_0'''
     
-    x_dat = [x0]
-    x = x0
     for n in range(num_steps):
-        x = metropolis_step(x)
-        x_dat.append(x)
-    
-    return x_dat
+        if n == 0:
+            x = x0
+        else:
+            x = metropolis_step(x)
+        yield x
     
 
 def test_metropolis_iterate(num_steps, xmin, xmax, x0):
@@ -57,10 +56,10 @@ def test_metropolis_iterate(num_steps, xmin, xmax, x0):
     true_values = f(centers, normalize=True)
     mean_value = np.mean(true_values)
 
-    x_dat = metropolis_iterate(x0, num_steps)
+    x_dat = list(metropolis_iterate(x0, num_steps))
     heights, _ = np.histogram(x_dat, bins=bins, density=True)
                     
-    nmsd = np.average( (heights - true_values)**2 / mean_value )
+    nmsd = np.average((heights - true_values)**2 / mean_value)
     nrmsd = np.sqrt(nmsd)
 
     print(f"    NRMSD Error : {nrmsd*100:4.1f} %")
@@ -73,7 +72,7 @@ if __name__ == "__main__":
 
     num_steps = 50_000
 
-    x_dat = metropolis_iterate(x0, 50_000)
+    x_dat = list(metropolis_iterate(x0, 50_000))
         
     # Write data to file
     output_string = "\n".join(str(x) for x in x_dat)
