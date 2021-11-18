@@ -14,7 +14,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="clj" %}
 [import:2-8, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:18-31, lang="c_cpp"](code/c++/euclidean.cpp)
+[import:18-31, lang="c_cpp"](code/cpp/euclidean.cpp)
 {% sample lang="java" %}
 [import:3-16, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="kotlin" %}
@@ -56,7 +56,7 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 {% sample lang="scala" %}
 [import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
-[import:3-14, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+[import:3-14, lang="racket"](code/racket/euclidean_algorithm.rkt)
 {% sample lang="ruby" %}
 [import:8-19, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
@@ -104,7 +104,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="clj" %}
 [import:9-13, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import:5-15, lang="c_cpp"](code/c++/euclidean.cpp)
+[import:5-15, lang="c_cpp"](code/cpp/euclidean.cpp)
 {% sample lang="java" %}
 [import:18-26, lang="java"](code/java/EuclideanAlgo.java)
 {% sample lang="kotlin" %}
@@ -146,7 +146,7 @@ Modern implementations, though, often use the modulus operator (%) like so
 {% sample lang="scala" %}
 [import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
-[import:16-24, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+[import:16-24, lang="racket"](code/racket/euclidean_algorithm.rkt)
 {% sample lang="ruby" %}
 [import:1-6, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}
@@ -207,9 +207,11 @@ Here's a video on the Euclidean algorithm:
 {% sample lang="clj" %}
 [import, lang="clojure"](code/clojure/euclidean_example.clj)
 {% sample lang="cpp" %}
-[import, lang="c_cpp"](code/c++/euclidean.cpp)
+[import, lang="c_cpp"](code/cpp/euclidean.cpp)
 {% sample lang="java" %}
 [import, lang="java"](code/java/EuclideanAlgo.java)
+{% sample lang="kotlin" %}
+[import, lang="kotlin"](code/kotlin/Euclidean.kt)
 {% sample lang="js" %}
 [import, lang="javascript"](code/javascript/euclidean_example.js)
 {% sample lang="lisp" %}
@@ -250,7 +252,7 @@ and modulo method:
 {% sample lang="scala" %}
 [import, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
-[import, lang="lisp"](code/racket/euclidean_algorithm.rkt)
+[import, lang="racket"](code/racket/euclidean_algorithm.rkt)
 {% sample lang="ruby" %}
 [import, lang="ruby"](code/ruby/euclidean.rb)
 {% sample lang="st" %}

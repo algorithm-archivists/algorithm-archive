@@ -50,15 +50,20 @@ func velocityVerlet(pos: Double, acc: Double, dt: Double) -> (time: Double, vel:
 
 func main() {
     let verletTime = verlet(pos: 5.0, acc: -10.0, dt: 0.01)
-    print("Time for Verlet integration is: \(verletTime)")
+    print("[#]\nTime for Verlet integration is:")
+    print("\(verletTime)")
     
     let stormer = stormerVerlet(pos: 5.0, acc: -10.0, dt: 0.01);
-    print("Time for Stormer Verlet integration is: \(stormer.time)")
-    print("Velocity for Stormer Verlet integration is: \(stormer.vel)")
+    print("[#]\nTime for Stormer Verlet integration is:")
+    print("\(stormer.time)")
+    print("[#]\nVelocity for Stormer Verlet integration is:")
+    print("\(stormer.vel)")
     
     let velVerlet = velocityVerlet(pos: 5.0, acc: -10, dt: 0.01)
-    print("Time for velocity Verlet integration is: \(velVerlet.time)")
-    print("Velocity for velocity Verlet integration is: \(velVerlet.vel)")
+    print("[#]\nTime for velocity Verlet integration is:")
+    print("\(velVerlet.time)")
+    print("[#]\nVelocity for velocity Verlet integration is:")
+    print("\(velVerlet.vel)")
 }
 
 main()

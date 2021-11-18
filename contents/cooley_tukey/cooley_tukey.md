@@ -76,13 +76,11 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="clj" %}
 [import:15-30, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:23-33, lang:"cpp"](code/c++/fft.cpp)
+[import:23-33, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:6-12, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-[import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="asm-x64" %}
 [import:15-74, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
@@ -131,13 +129,11 @@ In the end, the code looks like:
 {% sample lang="clj" %}
 [import:31-58, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:36-66, lang:"cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import:15-26, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-[import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="asm-x64" %}
 [import:76-165, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}
@@ -246,13 +242,11 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/fft.cpp)
+[import, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/fft.s)
 {% sample lang="js" %}

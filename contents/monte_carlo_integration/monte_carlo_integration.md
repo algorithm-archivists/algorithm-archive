@@ -44,7 +44,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="c" %}
 [import:7-9, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import:7-16, lang:"cpp"](code/c++/monte_carlo.cpp)
+[import:7-16, lang:"cpp"](code/cpp/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -80,7 +80,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="lua" %}
 [import:2-4, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
-[import:2-4, lang:"lisp"](code/racket/monte_carlo.rkt)
+[import:6-8, lang:"racket"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import:3-3, lang:"scala"](code/scala/monte_carlo.scala)
 {% sample lang="lisp" %}
@@ -99,6 +99,8 @@ each point is tested to see whether it's in the circle or not:
 </p>
 {% sample lang="coco" %}
 [import:4-9, lang:"coconut"](code/coconut/monte_carlo.coco)
+{% sample lang="ps1" %}
+[import:1-3, lang:"powershell"](code/powershell/MonteCarlo.ps1)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -145,7 +147,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="c" %}
 [import, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/monte_carlo.cpp)
+[import, lang:"cpp"](code/cpp/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -186,7 +188,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/monte_carlo.lua)
 {% sample lang="racket" %}
-[import, lang:"lisp"](code/racket/monte_carlo.rkt)
+[import, lang:"racket"](code/racket/monte_carlo.rkt)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/monte_carlo.scala)
 {% sample lang="lisp" %}
@@ -206,6 +208,8 @@ The code snippets were taken from this [scratch project](https://scratch.mit.edu
 </p>
 {% sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/monte_carlo.coco)
+{% sample lang="ps1" %}
+[import, lang:"powershell"](code/powershell/MonteCarlo.ps1)
 {% endmethod %}
 
 <script>

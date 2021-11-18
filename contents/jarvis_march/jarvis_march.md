@@ -39,17 +39,19 @@ Since this algorithm, there have been many other algorithms that have advanced t
 {% sample lang="py" %}
 [import, lang:"python"](code/python/jarvis_march.py)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/jarvis_march.cpp)
+[import, lang:"cpp"](code/cpp/jarvis_march.cpp)
 {% sample lang="lisp" %}
 [import, lang:"lisp"](code/clisp/jarvis-march.lisp)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/JarvisMarch.java)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/jarvis.go)
+[import, lang:"go"](code/go/jarvis.go)
 {% sample lang="v" %}
 [import, lang:"v"](code/v/jarvis.v)
 {% sample lang="rust" %}
 [import, lang:"rust"](code/rust/jarvis_march.rs)
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/jarvis_march.coco)
 {% endmethod %}
 
 <script>
