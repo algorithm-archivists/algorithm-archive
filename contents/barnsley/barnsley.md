@@ -128,7 +128,7 @@ The biggest differences between the two code implementations is that the Barnsle
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/src/main.rs)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/barnsley.cpp)
+[import, lang:"cpp"](code/cpp/barnsley.cpp)
 {% sample lang="c" %}
 [import, lang:"c"](code/c/barnsley.c)
 {% sample lang="java" %}
