@@ -3,7 +3,7 @@
 {
 	"name": "Ubuntu",
 	"build": {
-		"dockerfile": "Dockerfile",
+		"dockerfile": "../Dockerfile",
 		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
 		"args": { "VARIANT": "focal" }
 	},
