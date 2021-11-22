@@ -18,7 +18,6 @@ for tool in ['gcc','gnulink']:
    env.Tool(tool)
 env['CCFLAGS'] = ''
 env['CXXFLAGS'] = '-std=c++17'
-env['LINKFLAGS'] = '-no-pie'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
