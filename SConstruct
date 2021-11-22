@@ -16,12 +16,15 @@ env['CC'] = 'gcc'
 for tool in ['gcc','gnulink']:
    env.Tool(tool)
 env['CCFLAGS'] = '-Wall -Wextra -Werror'
+env['CXXFLAGS'] = '-std=c++17'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
-languages = {'c': 'c'}
+languages = {'c': 'c', 'cpp': 'cpp'}
 
 env.C = env.Program
+env.CPlusPlus = env.Program
+
 
 Export('env')
 
