@@ -13,18 +13,20 @@ import os
 env = Environment(ENV={'PATH': os.environ['PATH']})
 
 env['CC'] = 'gcc'
+env['AS'] = 'as'
 for tool in ['gcc','gnulink']:
    env.Tool(tool)
 env['CCFLAGS'] = ''
 env['CXXFLAGS'] = '-std=c++17'
+env['LINKFLAGS'] = '-no-pie'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
-languages = {'c': 'c', 'cpp': 'cpp'}
+languages = {'c': 'c', 'cpp': 'cpp', 'asm-x64': 's'}
 
 env.C = env.Program
 env.CPlusPlus = env.Program
-
+env.X64 = env.Program
 
 Export('env')
 
@@ -46,7 +48,8 @@ sconscript_dir_path = Path('sconscripts')
 for language, files in files_to_compile.items():
     if files:
         if (sconscript_path := sconscript_dir_path / f"{language}_SConscript").exists():
-            SConscript(sconscript_path, exports = {'files_to_compile': files})
+            SConscript(sconscript_path, exports = {'files_to_compile': files,
+                                                   'language': language})
         else:
             print(f'{language} file found at {files[0]}, but no sconscript file is present ')
 
