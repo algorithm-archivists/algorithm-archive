@@ -1,26 +1,33 @@
 # What's a probability distribution?
 
+Probability distributions are mathematical functions that give the probabilities of a range or set of outcomes. 
+These outcomes can be the result of an experiment or procedure, such as tossing a coin or rolling dice. 
+They can also be the result of a physical measurement, such as measuring the temperature of an object, counting how many electrons are spin up, etc.
+Broadly speaking, we can classify probability distributions into two categories - __discrete probability distributions__ and __continuous probability distributions__.
+
 ## Discrete Probability Distributions
 
-It's intuitive for us to understand what a __discrete__ probability distribution is - for example, we understand the outcomes of a coin toss very well, and also that of a dice roll. 
-For a single coin toss, the probability distribution can be formally written as,
+It's intuitive for us to understand what a __discrete__ probability distribution is. 
+For example, we understand the outcomes of a coin toss very well, and also that of a dice roll. 
+For a single coin toss, we know that the probability of getting heads (H) is half, or $$P(H) = \frac{1}{2}$$. 
+Similarly, the probability of getting tails (T) is $$P(T) = \frac{1}{2}$$. 
+Assuming that we can neglect the possibility of the coin landing on it's edge, that pretty much covers it. 
+Formally, we can write the probability distribution for such a coin toss as,
 
 $$
-P(n) = \begin{cases}
-			\frac 1 2 & n \in [H,T] \\
-			0         & n \notin [H,T] 
-		\end{cases}.
+P(n) =	\begin{matrix}
+        \displaystyle \frac 1 2 &;& n \in \left\{H,T\right\} 
+        \end{matrix}
 $$
 
-This means that the first line of the equation is saying that the probability of the outcome $$n$$ taking on the value of either heads (H) or tails (T) value is $$\frac{1}{2}$$. 
-The second line states that the probability of any other possibility is zero. 
-We can usually ignore this line, because anything outside of heads or tails (such as landing on an edge) is incredibly unlikely and even impossible depending on how we toss our coin.
+Here, $$n$$ denotes the outcome, and we used the "set notation", $$n \in\left\{H,T\right\}$$, which means "$$n$$ belongs to a set containing $$H$$ and $$T$$". 
+From the above equation, we can also assume that any other outcome for $$n$$ (such as landing on an edge) is incredibly unlikely, impossible, or simply "not allowed" (eg. just toss again if it _does_ land on its edge!).
 
-For a probability distribution, it's important to take not of the set of possibilities, or the __domain__ of the distribution. 
-Here, $$[H,T]$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be $$H$$ or $$T$$.
+For a probability distribution, it's important to take note of the set of possibilities, or the __domain__ of the distribution. 
+Here, $$\left\{H,T\right\}$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be either $$H$$ or $$T$$.
 
-If we use a different system, the outcome $$n$$ could also be a number. 
-For example, the outcome of a __dice roll__ has the probability distribution,
+If we use a different system, the outcome $$n$$ could mean other things - it could also be a number. 
+For example, the outcome of a __die roll__ has the probability distribution,
 
 
 $$
@@ -32,35 +39,37 @@ which is saying that the probability of $$n$$ being a whole number between 1 and
 This is a discrete probability function because $$n$$ is an integer, and thus only takes discrete values. 
 
 Both of the above examples are rather boring, because the value of $$P(n)$$ is the same for all $$n$$. 
-An example of a discrete probability function where the probability actually depends on $$n$$, is when $$n$$ is the sum of numbers on a __roll of two die__. 
-In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both die), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). 
+An example of a discrete probability function where the probability actually depends on $$n$$, is when $$n$$ is the sum of numbers on a __roll of two dice__. 
+In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both dice), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). 
 
-The rolling two die is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. 
+The rolling two dice is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. 
 So let's go ahead and construct it! 
 
 Let's first define the domain of our target $$P(n)$$. 
-We know that the lowest sum of two die is 2 (a 1 on both die), so $$n \geq 2$$ for sure. Similarly, the maximum is sum of two sixes, or 12, so $$n \leq 12$$ also. 
+We know that the lowest sum of two dice is 2 (a 1 on both dice), so $$n \geq 2$$ for sure. Similarly, the maximum is sum of two sixes, or 12, so $$n \leq 12$$ also. 
 
 So now we know the domain of possibilities, i.e., $$n \in [2..12]$$. 
-Next, we take a very common approach - we count up the number of different ways each of the possbile values of $$n$$ can occur. 
-Let's call this the frequency, $$f(n)$$ of each possible $$n$$. 
-We already know that $$f(2)=1$$, as there is only one way to get a pair of 1s. 
-For $$n=3$$, we see that there are two possible ways: a $$1$$ and $$2$$, or a $$2$$ and $$1$$, so $$f(3)=2$$. 
+Next, we take a very common approach - for each outcome $$n$$, we count up the number of different ways it can occur. 
+Let's call this number the __frequency of n__, $$f(n)$$. 
+We already mentioned that there is only one way to get $$n=2$$, by getting a pair of 1s. 
+By our definition of the function $$f$$, this means that $$f(2)=1$$. 
+For $$n=3$$, we see that there are two possible ways of getting this outcome: the first die shows a $$1$$ and the second a  $$2$$, or the first die shows a  $$2$$ and the second a $$1$$. 
+Thus, $$f(3)=2$$. 
 If you continue doing this for all $$n$$, you may see a pattern (homework for the reader!). 
-Once you have all the $$f(n)$$, we can visualize it in a plot,
+Once you have all the $$f(n)$$, we can visualize it by plotting $$f(n)$$ vs $$n$$, as shown below.
 
 <p>
 	<img class="center" src="res/double_die_frequencies.png" alt="<FIG> Die Roll" style="width:80%"/>
 </p>
 
-So the most common sum of two die is a $$7$$, and the further away from $$7$$ you get, the less likely the outcome. 
+We can see from the plot that the most common outcome for the sum of two dice is a $$n=7$$, and the further away from $$n=7$$ you get, the less likely the outcome. 
 Good to know, for a prospective gambler!
 
 ### Normalization 
 
 The $$f(n)$$ plotted above is technically NOT the probability $$P(n)$$ - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. 
 But we can get the probability by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. 
-For two die, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
+For two dice, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
 
 $$
 N = \sum_n f(n)
@@ -112,10 +121,8 @@ This is the defining feature of a  probability density function:
 
 > the probability of a range of values is the _area_ of the region under the probability density curve which is within that range. 
 
-But how do we quantify this area? 
-Imagine that the green sliver in the diagram is really, really thin - infinitesimally thin, to be precise, with the width $$dx$$ almost vanishing to zero. 
-In that case, the area of the green sliver is approximated by a rectangle of height $$P(x)$$ and width $$dx$$. 
-So the area will be $$P(x)dx$$, and thus
+
+So if $$dx$$ is infinitesimally small, then the area of the green sliver is
 
 $$
 \mathbb{P}(x_0 \leq x \leq x_0 + dx) = P(x)dx
@@ -124,15 +131,16 @@ $$
 So strictly speaking, $$P(x)$$ itself is NOT a probability, but rather the probability is the quantity $$P(x)dx$$, or any area under the curve. 
 That is why we call $$P(x)$$ the probability _density_ at $$x$$, while the actual probability is only defined for ranges of $$x$$. 
 
-But what about large ranges of $$x$$, which are not infinitesimally thin? 
-We do exactly what we did for the discrete case - sum up the probabilities of each and every distinct range of values, each with an infinitesimal width $$dx$$. 
-And what do we call such a sum over a continuous variable? 
-Why, an integral, of course! 
-Who knew calculus would come in handy one day? 
-And so we have,
+Thus, to obtain the probability of $$x$$ lying within a range, we simply integrate $$P(x)$$ between that range, i.e.,
 
 $$
 \mathbb{P}(a \leq x \leq b ) = \int_a^b P(x)dx
+$$
+
+This is analagous to finding the probability of a range of discrete values from the previous section:
+
+$$
+\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n)
 $$
 
 And the fact that all probabilities must sum to 1 translates to
@@ -141,7 +149,7 @@ $$
 \int_D P(x)dx = 1
 $$
 
-where $$D$$ denotes the __domain__ of $$P(x)$$, i.e., the entire range of possible values of $$x$$ for which $$P(x)$$ is defined. 
+where $$D$$ denotes the __domain__ of $$P(x)$$, i.e., the entire range of possible values of $$x$$ for which $$P(x)$$ is defined.
  
 ### Normalization of a Density Function
 
@@ -152,7 +160,7 @@ $$
 P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}
 $$
 
-For example, consider the __normal distribution function__, 
+For example, consider the following  __Gaussian function__ (popularly used in  __normal distributions__), 
 
 $$
 f(x) = e^{-x^2}
@@ -165,7 +173,7 @@ $$
 N = \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 $$
 
-(yes, we get $$\pi$$ out of nowhere, which is an interesting topic for another chapter!) and so we have
+and so we have a Gaussian probability distribution,
 
 $$
 P(x) = \frac{1}{N} e^{-x^2} = \frac{1}{\sqrt{\pi}} e^{-x^2}
@@ -173,8 +181,18 @@ $$
 
 In general, normalization can allow us to create a probability distribution out of almost any function $$f(x)$$. 
 There are really only two rules that $$f(\mathbf{x})$$ must satisfy to be a candidate for a probability density distribution:
-1. $$\int_{S\in D}f(\mathbf{x})d\mathbf{x}$$ is non-negative for any subdomain $$S$$ of $$D$$.
-2. $$\int_D f(\mathbf{x})d\mathbf{x}$$ must be finite.
+1. The integral of $$f(\mathbf{x})$$ over any subset of $$D$$ (denoted by $$S$$) has to be non-negative (it can be zero):
+$$
+\int_{S}f(\mathbf{x})d\mathbf{x} \geq 0
+$$ 
+2. The following integral must be finite:
+$$
+\int_{D} f(\mathbf{x})d\mathbf{x}
+$$ 
+
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
 
 ## License
 
