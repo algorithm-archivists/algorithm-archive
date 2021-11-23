@@ -59,7 +59,7 @@ $$
 \sum_n P(n) = \frac{\displaystyle\sum_{n}f(n)}{\displaystyle\sum_{n} f(n)} = 1
 $$
 
-Once we have the probability function $$P(n)$$, we can calculate all sorts of probabilites. For example, let's say we want to find the probability that $$n$$ will be between two integers $$a$$ and $$b$$ inclusive. For brevity, we will use the notation $$\mathbb{P}(a \leq n \leq b)$$ to denote this probability. And to calculate it, we simply have to sum up all the probabilities for each value of $$n$$ in that range, i.e.,
+Once we have the probability function $$P(n)$$, we can calculate all sorts of probabilites. For example, let's say we want to find the probability that $$n$$ will be between two integers $$a$$ and $$b$$, inclusively (also including $$a$$ and $$b$$). For brevity, we will use the notation $$\mathbb{P}(a \leq n \leq b)$$ to denote this probability. And to calculate it, we simply have to sum up all the probabilities for each value of $$n$$ in that range, i.e.,
 
 $$
 \mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n)
