@@ -21,7 +21,7 @@ This is especially true when the coordinates ($$\mathbf{x}$$) are multidimension
 
 ## An  example application
 
- One example of a complicated probability function arises when considering a physical system of $$N$$ number of particles. 
+One example of a complicated probability function arises when considering a physical system of $$N$$ particles. 
 These could be atoms, molecules, or even star systems! 
 For such systems, we can usually describe the __potential energy__ {{ "potential_energy_wiki" | cite }} of the system as a function of the coordinates of all particles, $$\mathbf{x}$$,
 
