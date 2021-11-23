@@ -67,7 +67,7 @@ $$
 
 ## Probability Density Functions
 
-What if instead of a discrete variable $$n$$, we had a continuous variable $$x$$, like temperature or weight? In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number - there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! But it _does_ make sense to ask what the probability is that $$x$$ will be _between_ a certain range of values. For example, one might say that there is 50% chance that the temperature tomorrow noon will be between 5 and 15, or 5% chance that it will be between 16 and 16.5. But how do we put all that information, for every possible range, in a single function? The answer is to use a __probability density function__. 
+What if instead of a discrete variable $$n$$, we had a continuous variable $$x$$, like temperature or weight? In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number - there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! But it _does_ make sense to ask what the probability is that $$x$$ will be _between_ a certain range of values. For example, one might say that there is 50% chance that the temperature tomorrow at noon will be between 5 and 15, or 5% chance that it will be between 16 and 16.5. But how do we put all that information, for every possible range, in a single function? The answer is to use a __probability density function__. 
 
  What does that mean? Well, suppose $$x$$ is a continous quantity, and we have a probability density function, $$P(x)$$ which looks like
 
