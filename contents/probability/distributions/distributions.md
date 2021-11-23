@@ -15,7 +15,7 @@ This means that the first line of the equation is saying that the probability of
 
 For a probability distribution, it's important to take not of the set of possibilities, or the __domain__ of the distribution. Here, $$[H,T]$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be $$H$$ or $$T$$.
 
-The outcome $$n$$ can also be a number. For example, the outcome of a __dice roll__ has the probability distribution,
+If we use a different system, the outcome $$n$$ could also be a number. For example, the outcome of a __dice roll__ has the probability distribution,
 
 
 $$
