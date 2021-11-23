@@ -8,7 +8,7 @@ $$
 P(n) = \begin{cases}
 			\frac 1 2 & n \in [H,T] \\
 			0         & n \notin [H,T] 
-		\end{cases}
+		\end{cases}.
 $$
 
 which is basically saying that the probability that the outcome $$n$$ takes on any specific value is 0.5, if those specific values are heads (H) or tails (T). The second line states that the probability of any other possibility is zero. We can usually ignore this line, as it is quite trivial, and it is understood that anything outside of heads or tails is impossible. 
