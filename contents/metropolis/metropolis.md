@@ -68,7 +68,7 @@ f(\mathbf{x}) = \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]
 $$
 
 And the Metropolis algorithm can bypass calculation of $$Q$$ altogether and use $$f(x)$$ to generate a distribution of $$x$$ which follows the probability density $$P(x)$$. 
-In other words, it can sample values of $$x$$ in such away that the probability of sampling $$x$$ will follow the actual distribution $$P(x)$$ - the more likely a value of $$x$$ is according to $$P(x)$$, the more likely it will be sampled by the Metropolis algorithm. 
+In other words, it can sample values of $$x$$ in such away that the probability of sampling $$x$$ will follow the actual distribution $$P(x)$$. 
 This fact dramatically reduces the number of samples needed to approximate the probability distribution.
 
 Of course to be truly proportional to $$P(x)$$ the Metropolis algorithm would still take some time before it converges - but it scales very well with the dimensionality of $$\mathbf{x}$$, which in this case is proportional to the number of particles in the system, which can get very large in practice. 
