@@ -61,7 +61,7 @@ To see how large this number is, imagine that a single computation of $$E(\mathb
  With that speed, it would require $$10^{41}$$ seconds on a single processor to calculate $$Q$$ - which means that _even_ with all the processors in the world running in parallel (there could be billions or trillions of them), calculating $$Q$$ would still take longer than the age of the universe - by many orders of magnitude!
 
 What's really powerful about the Metropolis approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
-What this means for the Botlzmann distribution is that you only need to know the term,
+What this means for the Boltzmann distribution is that you only need to know the term,
 
 $$
 f(\mathbf{x}) = \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]
