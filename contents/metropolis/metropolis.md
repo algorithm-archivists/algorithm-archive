@@ -1,10 +1,7 @@
 # The Metropolis Algorithm
 
 The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration.html) method uses random numbers to approximate the area of pretty much any shape we choose. 
-The Metropolis algorithm {{ "metropolis1953equation" | cite }} is a slightly more advanced Monte Carlo method which uses random numbers to approximate a [probability distribution](../probability/distributions/distributions.md).
-
-Here we will use the Metropolis algorithm to approximate a __probability density function__, as described in [this chapter](../probability/distributions/distributions.md), which is of the form,
-
+The Metropolis algorithm {{ "metropolis1953equation" | cite }} is a slightly more advanced Monte Carlo method which uses random numbers to approximate a [probability distribution](../probability/distributions/distributions.md):
 
 $$
 P(\mathbf{x}) = \frac{f(\mathbf{x})}{\displaystyle\int_D f(\mathbf{x})d\mathbf{x}}
