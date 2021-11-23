@@ -122,7 +122,7 @@ This is the defining feature of a  probability density function:
 > the probability of a range of values is the _area_ of the region under the probability density curve which is within that range. 
 
 
-So if $$dx$$ is infinitesimally small, then the area of the green sliver is
+So if $$dx$$ is infinitesimally small, then the area of the green sliver becomes $$P(x)dx$$, and hence,
 
 $$
 \mathbb{P}(x_0 \leq x \leq x_0 + dx) = P(x)dx
