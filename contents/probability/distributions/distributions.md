@@ -13,7 +13,7 @@ $$
 
 This means that the first line of the equation is saying that the probability of the outcome $$n$$ taking on the value of either heads (H) or tails (T) value is $$\frac{1}{2}$$. The second line states that the probability of any other possibility is zero. We can usually ignore this line, because anything outside of heads or tails (such as landing on an edge) is incredibly unlikely and even impossible depending on how we toss our coin.
 
-One important thing to always take note of for a probability distribution, is the set of possibilities, or the __domain__ of the distribution. Here, $$[H,T]$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be $$H$$ or $$T$$. 
+For a probability distribution, it's important to take not of the set of possibilities, or the __domain__ of the distribution. Here, $$[H,T]$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be $$H$$ or $$T$$.
 
 The outcome $$n$$ can also be a number. For example, the outcome of a __dice roll__ has the probability distribution,
 
