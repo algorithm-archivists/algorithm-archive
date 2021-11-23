@@ -41,7 +41,7 @@ So the most common sum of two die is a $$7$$, and the further away from $$7$$ yo
 
 ### Normalization 
 
-The $$f(n)$$ plotted above is technically NOT the probability $$P(n)$$ - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. But we can just get that by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. For two die, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
+The $$f(n)$$ plotted above is technically NOT the probability $$P(n)$$ - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. But we can get the probability by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. For two die, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
 
 $$
 N = \sum_n f(n)
