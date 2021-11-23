@@ -78,7 +78,7 @@ Because the Metropolis algorithm tends toward high probability regions, it's goo
 
 Finally, the Metropolis algorithm can be modified or implemented in other algorithms, and forms the basis of many advanced sampling algorithms. 
 The most popular is probably the Metropolis-Hastings algorithm {{ "hastings1970monte" | cite }} which is fundamentally the same. 
-Other algorithms that implement the algorithm are Metropolis-adjusted Langevin algorithm {{ "mala_wiki" | cite }}, and Hamiltonian Monte Carlo {{ "hmc_wiki" | cite }}, to name a few. 
+Some other algorithms that use this method are Metropolis-adjusted Langevin algorithm {{ "mala_wiki" | cite }}, and Hamiltonian Monte Carlo {{ "hmc_wiki" | cite }}, to name a few. 
 They are often used for physical systems that follow a Boltzmann distribution.
 
 
