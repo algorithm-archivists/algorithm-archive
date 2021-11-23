@@ -11,7 +11,7 @@ P(n) = \begin{cases}
 		\end{cases}.
 $$
 
-which is basically saying that the probability that the outcome $$n$$ takes on any specific value is 0.5, if those specific values are heads (H) or tails (T). The second line states that the probability of any other possibility is zero. We can usually ignore this line, as it is quite trivial, and it is understood that anything outside of heads or tails is impossible. 
+This means that the first line of the equation is saying that the probability of the outcome $$n$$ taking on the value of either heads (H) or tails (T) value is $$\frac{1}{2}$$. The second line states that the probability of any other possibility is zero. We can usually ignore this line, because anything outside of heads or tails (such as landing on an edge) is incredibly unlikely and even impossible depending on how we toss our coin.
 
 One important thing to always take note of for a probability distribution, is the set of possibilities, or the __domain__ of the distribution. Here, $$[H,T]$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be $$H$$ or $$T$$. 
 
