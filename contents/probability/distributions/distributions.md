@@ -31,7 +31,7 @@ The rolling two die is a great case study for how we can construct a probability
 
 Let's first define the domain of our target $$P(n)$$. We know that the lowest sum of two die is 2 (a 1 on both die), so $$n \geq 2$$ for sure. Similarly, the maximum is sum of two sixes, or 12, so $$n \leq 12$$ also. 
 
-So now we the domain of possibilites, i.e., $$n \in [2..12]$$. Next, we take a very common approach - we count up the number of different ways each of the possbile values of $$n$$ can occur. Let's call this the frequency, $$f(n)$$ of each possible $$n$$. We already know that $$f(2)=1$$, as there is only one way to get a pair of 1s. For $$n=3$$, we see that there are two possible ways: a $$1$$ and $$2$$, or a $$2$$ and $$1$$, so $$f(3)=2$$. If you continue doing this for all $$n$$, you may see a pattern (homework for the reader!). Once you have all the $$f(n)$$, we can visualize it in a plot,
+So now we know the domain of possibilities, i.e., $$n \in [2..12]$$. Next, we take a very common approach - we count up the number of different ways each of the possbile values of $$n$$ can occur. Let's call this the frequency, $$f(n)$$ of each possible $$n$$. We already know that $$f(2)=1$$, as there is only one way to get a pair of 1s. For $$n=3$$, we see that there are two possible ways: a $$1$$ and $$2$$, or a $$2$$ and $$1$$, so $$f(3)=2$$. If you continue doing this for all $$n$$, you may see a pattern (homework for the reader!). Once you have all the $$f(n)$$, we can visualize it in a plot,
 
 <p>
 	<img class="center" src="res/double_die_frequencies.png" alt="<FIG> Die Roll" style="width:80%"/>
