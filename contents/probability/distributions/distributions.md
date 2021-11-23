@@ -53,7 +53,7 @@ $$
 P(n) = \frac{f(n)}{\displaystyle\sum_{n} f(n)}
 $$
 
-Note that $$f(n)$$ does not necessarily have to be the frequency of $$n$$ - it could really be any function which is _proportional_ to $$P(n)$$, and the above definition of $$P(n)$$ would still hold. And it's easy to check that the sum is now equal to 1, since
+Note that $$f(n)$$ does not necessarily have to be the frequency of $$n$$ - it could be any function which is _proportional_ to $$P(n)$$, and the above definition of $$P(n)$$ would still hold. And it's easy to check that the sum is now equal to 1, since
 
 $$
 \sum_n P(n) = \frac{\displaystyle\sum_{n}f(n)}{\displaystyle\sum_{n} f(n)} = 1
