@@ -16,7 +16,7 @@ Formally, we can write the probability distribution for such a coin toss as,
 
 $$
 P(n) =	\begin{matrix}
-        \displaystyle \frac 1 2 &;& n \in \left\{H,T\right\} 
+        \displaystyle \frac 1 2 &;& n \in \left\{H,T\right\}. 
         \end{matrix}
 $$
 
