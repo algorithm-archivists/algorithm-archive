@@ -26,7 +26,7 @@ From the above equation, we can also assume that any other outcome for $$n$$ (su
 For a probability distribution, it's important to take note of the set of possibilities, or the __domain__ of the distribution. 
 Here, $$\left\{H,T\right\}$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be either $$H$$ or $$T$$.
 
-If we use a different system, the outcome $$n$$ could mean other things - it could also be a number. 
+If we use a different system, the outcome $$n$$ could mean other things.
 For example, the outcome of a __die roll__ has the probability distribution,
 
 
