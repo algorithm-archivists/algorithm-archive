@@ -35,7 +35,7 @@ P(n) = \begin{matrix}
 		\displaystyle\frac 1 6 &;& n \in [1..6] 
 		\end{matrix}.
 $$
-which is saying that the probability of $$n$$ being a whole number between 1 and 6 is $$1/6$$, and we assume that the probability of getting any other $$n$$ is 0. 
+This is saying that the probability of $$n$$ being a whole number between 1 and 6 is $$1/6$$, and we assume that the probability of getting any other $$n$$ is 0. 
 This is a discrete probability function because $$n$$ is an integer, and thus only takes discrete values. 
 
 Both of the above examples are rather boring, because the value of $$P(n)$$ is the same for all $$n$$. 
