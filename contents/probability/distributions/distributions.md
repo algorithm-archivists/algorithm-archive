@@ -27,7 +27,7 @@ For a probability distribution, it's important to take note of the set of possib
 Here, $$\left\{H,T\right\}$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be either $$H$$ or $$T$$.
 
 If we use a different system, the outcome $$n$$ could mean other things.
-For example, the outcome of a __die roll__ has the probability distribution,
+For example, it could be a number like the outcome of a __die roll__ which has the probability distribution,
 
 
 $$
