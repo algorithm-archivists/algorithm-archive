@@ -119,7 +119,7 @@ Well, suppose $$x$$ is a continous quantity, and we have a probability density f
 Now, if we are interested in the probability of the range of values that lie between $$x_0$$ and $$x_0 + dx$$, all we have to do is calculate the _area_ of the green sliver above. 
 This is the defining feature of a  probability density function: 
 
-> the probability of a range of values is the _area_ of the region under the probability density curve which is within that range. 
+ __the probability of a range of values is the _area_ of the region under the probability density curve which is within that range.__ 
 
 
 So if $$dx$$ is infinitesimally small, then the area of the green sliver becomes $$P(x)dx$$, and hence,
@@ -179,7 +179,7 @@ $$
 P(x) = \frac{1}{N} e^{-x^2} = \frac{1}{\sqrt{\pi}} e^{-x^2}.
 $$
 
-In general, normalization can allow us to create a probability distribution out of almost any function $$f(x)$$. 
+In general, normalization can allow us to create a probability distribution out of almost any function $$f(\mathbf{x})$$. 
 There are really only two rules that $$f(\mathbf{x})$$ must satisfy to be a candidate for a probability density distribution:
 1. The integral of $$f(\mathbf{x})$$ over any subset of $$D$$ (denoted by $$S$$) has to be non-negative (it can be zero):
 $$
