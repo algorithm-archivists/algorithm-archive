@@ -42,11 +42,11 @@ Both of the above examples are rather boring, because the value of $$P(n)$$ is t
 An example of a discrete probability function where the probability actually depends on $$n$$, is when $$n$$ is the sum of numbers on a __roll of two dice__. 
 In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both dice), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). 
 
-The rolling two dice is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. 
+The example of rolling two dice is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. 
 So let's go ahead and construct it! 
 
 Let's first define the domain of our target $$P(n)$$. 
-We know that the lowest sum of two dice is 2 (a 1 on both dice), so $$n \geq 2$$ for sure. Similarly, the maximum is sum of two sixes, or 12, so $$n \leq 12$$ also. 
+We know that the lowest sum of two dice is 2 (a 1 on both dice), so $$n \geq 2$$ for sure. Similarly, the maximum is the sum of two sixes, or 12, so $$n \leq 12$$ also. 
 
 So now we know the domain of possibilities, i.e., $$n \in [2..12]$$. 
 Next, we take a very common approach - for each outcome $$n$$, we count up the number of different ways it can occur. 
@@ -72,7 +72,7 @@ But we can get the probability by dividing $$f(n)$$ by the _total_ number of pos
 For two dice, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
 
 $$
-N = \sum_n f(n)
+N = \sum_n f(n),
 $$
 
 which would also equal to 36 in this case. 
@@ -81,14 +81,14 @@ This process is called __normalization__ and is crucial for determining almost a
 So in general, if we have the function $$f(n)$$, we can get the probability as
 
 $$
-P(n) = \frac{f(n)}{\displaystyle\sum_{n} f(n)}
+P(n) = \frac{f(n)}{\displaystyle\sum_{n} f(n)}.
 $$
 
-Note that $$f(n)$$ does not necessarily have to be the frequency of $$n$$ - it could be any function which is _proportional_ to $$P(n)$$, and the above definition of $$P(n)$$ would still hold. 
-And it's easy to check that the sum is now equal to 1, since
+Note that $$f(n)$$ does not necessarily have to be the frequency of $$n$$ &ndash; it could be any function which is _proportional_ to $$P(n)$$, and the above definition of $$P(n)$$ would still hold. 
+It's easy to check that the sum is now equal to 1, since
 
 $$
-\sum_n P(n) = \frac{\displaystyle\sum_{n}f(n)}{\displaystyle\sum_{n} f(n)} = 1
+\sum_n P(n) = \frac{\displaystyle\sum_{n}f(n)}{\displaystyle\sum_{n} f(n)} = 1.
 $$
 
 Once we have the probability function $$P(n)$$, we can calculate all sorts of probabilites. 
@@ -97,13 +97,13 @@ For brevity, we will use the notation $$\mathbb{P}(a \leq n \leq b)$$ to denote 
 And to calculate it, we simply have to sum up all the probabilities for each value of $$n$$ in that range, i.e.,
 
 $$
-\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n)
+\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n).
 $$
 
 ## Probability Density Functions
 
 What if instead of a discrete variable $$n$$, we had a continuous variable $$x$$, like temperature or weight? 
-In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number - there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! 
+In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number &ndash; there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! 
 But it _does_ make sense to ask what the probability is that $$x$$ will be _between_ a certain range of values. 
 For example, one might say that there is 50% chance that the temperature tomorrow at noon will be between 5 and 15, or 5% chance that it will be between 16 and 16.5. 
 But how do we put all that information, for every possible range, in a single function? 
@@ -125,7 +125,7 @@ This is the defining feature of a  probability density function:
 So if $$dx$$ is infinitesimally small, then the area of the green sliver becomes $$P(x)dx$$, and hence,
 
 $$
-\mathbb{P}(x_0 \leq x \leq x_0 + dx) = P(x)dx
+\mathbb{P}(x_0 \leq x \leq x_0 + dx) = P(x)dx.
 $$
 
 So strictly speaking, $$P(x)$$ itself is NOT a probability, but rather the probability is the quantity $$P(x)dx$$, or any area under the curve. 
@@ -134,19 +134,19 @@ That is why we call $$P(x)$$ the probability _density_ at $$x$$, while the actua
 Thus, to obtain the probability of $$x$$ lying within a range, we simply integrate $$P(x)$$ between that range, i.e.,
 
 $$
-\mathbb{P}(a \leq x \leq b ) = \int_a^b P(x)dx
+\mathbb{P}(a \leq x \leq b ) = \int_a^b P(x)dx.
 $$
 
 This is analagous to finding the probability of a range of discrete values from the previous section:
 
 $$
-\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n)
+\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n).
 $$
 
-And the fact that all probabilities must sum to 1 translates to
+The fact that all probabilities must sum to 1 translates to
 
 $$
-\int_D P(x)dx = 1
+\int_D P(x)dx = 1.
 $$
 
 where $$D$$ denotes the __domain__ of $$P(x)$$, i.e., the entire range of possible values of $$x$$ for which $$P(x)$$ is defined.
@@ -157,7 +157,7 @@ Just like in the discrete case, we often first calculate some density or frequen
 We can get the probability density function by normalizing it in a similar way, except that we integrate instead of sum:
 
 $$
-P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}
+P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}.
 $$
 
 For example, consider the following  __Gaussian function__ (popularly used in  __normal distributions__), 
@@ -170,24 +170,24 @@ which is defined for all real numbers $$x$$.
 We first integrate it (or do a quick google search, as it is rather tricky) to get
 
 $$
-N = \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+N = \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}.
 $$
 
-and so we have a Gaussian probability distribution,
+Now we have a Gaussian probability distribution,
 
 $$
-P(x) = \frac{1}{N} e^{-x^2} = \frac{1}{\sqrt{\pi}} e^{-x^2}
+P(x) = \frac{1}{N} e^{-x^2} = \frac{1}{\sqrt{\pi}} e^{-x^2}.
 $$
 
 In general, normalization can allow us to create a probability distribution out of almost any function $$f(x)$$. 
 There are really only two rules that $$f(\mathbf{x})$$ must satisfy to be a candidate for a probability density distribution:
 1. The integral of $$f(\mathbf{x})$$ over any subset of $$D$$ (denoted by $$S$$) has to be non-negative (it can be zero):
 $$
-\int_{S}f(\mathbf{x})d\mathbf{x} \geq 0
+\int_{S}f(\mathbf{x})d\mathbf{x} \geq 0.
 $$ 
 2. The following integral must be finite:
 $$
-\int_{D} f(\mathbf{x})d\mathbf{x}
+\int_{D} f(\mathbf{x})d\mathbf{x}.
 $$ 
 
 <script>
