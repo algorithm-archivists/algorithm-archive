@@ -10,7 +10,7 @@ Broadly speaking, we can classify probability distributions into two categories 
 It's intuitive for us to understand what a __discrete__ probability distribution is. 
 For example, we understand the outcomes of a coin toss very well, and also that of a dice roll. 
 For a single coin toss, we know that the probability of getting heads (H) is half, or $$P(H) = \frac{1}{2}$$. 
-Similarly, the probability of getting tails (T) is $$P(T) = \frac{1}{2}$$. 
+Similarly, the probability of getting tails $$(T)$$ is $$P(T) = \frac{1}{2}$$. 
 Assuming that we can neglect the possibility of the coin landing on it's edge, that pretty much covers it. 
 Formally, we can write the probability distribution for such a coin toss as,
 
