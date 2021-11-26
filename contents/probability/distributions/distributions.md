@@ -21,7 +21,7 @@ P(n) =	\begin{matrix}
 $$
 
 Here, $$n$$ denotes the outcome, and we used the "set notation", $$n \in\left\{H,T\right\}$$, which means "$$n$$ belongs to a set containing $$H$$ and $$T$$". 
-From the above equation, we can also assume that any other outcome for $$n$$ (such as landing on an edge) is incredibly unlikely, impossible, or simply "not allowed" (eg. just toss again if it _does_ land on its edge!).
+From the above equation, we can also assume that any other outcome for $$n$$ (such as landing on an edge) is incredibly unlikely, impossible, or simply "not allowed" (for example, just toss again if it _does_ land on its edge!).
 
 For a probability distribution, it's important to take note of the set of possibilities, or the __domain__ of the distribution. 
 Here, $$\left\{H,T\right\}$$ is the domain of $$P(n)$$, telling us that $$n$$ can only be either $$H$$ or $$T$$.
@@ -35,23 +35,23 @@ P(n) = \begin{matrix}
 		\displaystyle\frac 1 6 &;& n \in [\![1,6]\!] 
 		\end{matrix}.
 $$
-This is saying that the probability of $$n$$ being a whole number between 1 and 6 is $$1/6$$, and we assume that the probability of getting any other $$n$$ is 0. 
+This is saying that the probability of $$n$$ being a whole number between $$1$$ and $$6$$ is $$1/6$$, and we assume that the probability of getting any other $$n$$ is $$0$$. 
 This is a discrete probability function because $$n$$ is an integer, and thus only takes discrete values. 
 
 Both of the above examples are rather boring, because the value of $$P(n)$$ is the same for all $$n$$. 
 An example of a discrete probability function where the probability actually depends on $$n$$, is when $$n$$ is the sum of numbers on a __roll of two dice__. 
-In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a 1 on both dice), whereas $$n=4$$ can happen in 3 ways (1 and 3; or 2 and 2; or 3 and 1). 
+In this case, $$P(n)$$  is different for each $$n$$ as some possibilities like $$n=2$$ can happen in only one possible way (by getting a $$1$$ on both dice), whereas $$n=4$$ can happen in $$3$$ ways ($$1$$ and $$3$$; or $$2$$ and $$2$$; or $$3$$ and $$1$$). 
 
 The example of rolling two dice is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. 
 So let's go ahead and construct it! 
 
 Let's first define the domain of our target $$P(n)$$. 
-We know that the lowest sum of two dice is 2 (a 1 on both dice), so $$n \geq 2$$ for sure. Similarly, the maximum is the sum of two sixes, or 12, so $$n \leq 12$$ also. 
+We know that the lowest sum of two dice is $$2$$ (a $$1$$ on both dice), so $$n \geq 2$$ for sure. Similarly, the maximum is the sum of two sixes, or $$12$$, so $$n \leq 12$$ also. 
 
 So now we know the domain of possibilities, i.e., $$n \in [\![2,12]\!]$$. 
 Next, we take a very common approach - for each outcome $$n$$, we count up the number of different ways it can occur. 
 Let's call this number the __frequency of n__, $$f(n)$$. 
-We already mentioned that there is only one way to get $$n=2$$, by getting a pair of 1s. 
+We already mentioned that there is only one way to get $$n=2$$, by getting a pair of $$1$$s. 
 By our definition of the function $$f$$, this means that $$f(2)=1$$. 
 For $$n=3$$, we see that there are two possible ways of getting this outcome: the first die shows a $$1$$ and the second a  $$2$$, or the first die shows a  $$2$$ and the second a $$1$$. 
 Thus, $$f(3)=2$$. 
@@ -67,7 +67,7 @@ Good to know, for a prospective gambler!
 
 ### Normalization 
 
-The $$f(n)$$ plotted above is technically NOT the probability $$P(n)$$ - because we know that the sum of all probabilities should be 1, which clearly isn't the case for $$f(n)$$. 
+The $$f(n)$$ plotted above is technically NOT the probability $$P(n)$$ &ndash; because we know that the sum of all probabilities should be $$1$$, which clearly isn't the case for $$f(n)$$. 
 But we can get the probability by dividing $$f(n)$$ by the _total_ number of possibilities, $$N$$. 
 For two dice, that is $$N = 6 \times 6 = 36$$, but we could also express it as the _sum of all frequencies_,
 
@@ -75,7 +75,7 @@ $$
 N = \sum_n f(n),
 $$
 
-which would also equal to 36 in this case. 
+which would also equal to $$36$$ in this case. 
 So, by dividing $$f(n)$$ by $$\sum_n f(n)$$ we get our target probability distribution, $$P(n)$$. 
 This process is called __normalization__ and is crucial for determining almost any probability distribution. 
 So in general, if we have the function $$f(n)$$, we can get the probability as
@@ -85,7 +85,7 @@ P(n) = \frac{f(n)}{\displaystyle\sum_{n} f(n)}.
 $$
 
 Note that $$f(n)$$ does not necessarily have to be the frequency of $$n$$ &ndash; it could be any function which is _proportional_ to $$P(n)$$, and the above definition of $$P(n)$$ would still hold. 
-It's easy to check that the sum is now equal to 1, since
+It's easy to check that the sum is now equal to $$1$$, since
 
 $$
 \sum_n P(n) = \frac{\displaystyle\sum_{n}f(n)}{\displaystyle\sum_{n} f(n)} = 1.
@@ -105,7 +105,7 @@ $$
 What if instead of a discrete variable $$n$$, we had a continuous variable $$x$$, like temperature or weight? 
 In that case, it doesn't make sense to ask what the probability is of $$x$$ being _exactly_ a particular number &ndash; there are infinite possible real numbers, after all, so the probability of $$x$$ being exactly any one of them is essentially zero! 
 But it _does_ make sense to ask what the probability is that $$x$$ will be _between_ a certain range of values. 
-For example, one might say that there is 50% chance that the temperature tomorrow at noon will be between 5 and 15, or 5% chance that it will be between 16 and 16.5. 
+For example, one might say that there is $$50\%$$ chance that the temperature tomorrow at noon will be between $$5$$ and $$15$$, or $$5\%$$ chance that it will be between $$16$$ and $$16.5$$. 
 But how do we put all that information, for every possible range, in a single function? 
 The answer is to use a __probability density function__. 
 
@@ -143,7 +143,7 @@ $$
 \mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n).
 $$
 
-The fact that all probabilities must sum to 1 translates to
+The fact that all probabilities must sum to $$1$$ translates to
 
 $$
 \int_D P(x)dx = 1.
@@ -163,7 +163,7 @@ $$
 For example, consider the following  __Gaussian function__ (popularly used in  __normal distributions__), 
 
 $$
-f(x) = e^{-x^2}
+f(x) = e^{-x^2},
 $$
 
 which is defined for all real numbers $$x$$. 
