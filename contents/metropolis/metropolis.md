@@ -120,7 +120,7 @@ To understand how this works, let's call $$x_t$$ the position before the step, a
 We then define the probability of __accepting the step__ to be
 
 $$
-A = \min \left(\frac{f(x')}{f(x_t)}, 1\right)
+A = \min \left(\frac{f(x')}{f(x_t)}, 1\right).
 $$
 
 The $$\min$$ function above implies that $$A=1$$ if $$f(x') \gt f(x_t)$$, which means that the move will __always__ be accepted if it is toward a higher probability position. 
@@ -148,12 +148,12 @@ And if global sampling is the goal, the process of exploration could be sped up 
 
 Let our target distribution be
 $$
-P(x) = \frac{f(x)}{\int_{-10}^{10} f(x)}
+P(x) = \frac{f(x)}{\int_{-10}^{10} f(x)},
 $$
 
 where $$f(x)$$ is the function we know and is given by
 $$
-f(x) = 10e^{-4(x+4)^2} + 3e^{-0.2(x+1)^2} + e^{-2(x-5)^2}
+f(x) = 10e^{-4(x+4)^2} + 3e^{-0.2(x+1)^2} + e^{-2(x-5)^2}.
 $$
 
 The code for defining this function is given below.
@@ -205,15 +205,15 @@ We just need to choose the domain of $$x$$, and an initial point for $$ x_0 $$ (
 
 ### How to Iterate 
 
-1. Generate new proposed position $$x' = x_t + g$$
+1. Generate new proposed position $$x' = x_t + g$$.
 2. Calculate the acceptance probability, 
 $$
-A = \min\left(1, \frac{f(x')}{f(x_t)}\right)
+A = \min\left(1, \frac{f(x')}{f(x_t)}\right).
 $$
 3. Accept proposal, $$x'$$ with probability $$A$$. If your programming language doesn't have a built-in method for this,
 	* Generate a random number $$u$$ between $$0$$ and $$1$$.
-    * If $$ u \leq A $$, then __accept__ move, and set new position, $$x_{t+1} = x' $$
-    * Otherwise, __reject__ move, and set new position to current, $$x_{t+1} = x_t $$
+    * If $$ u \leq A $$, then __accept__ move, and set new position, $$x_{t+1} = x' $$.
+    * Otherwise, __reject__ move, and set new position to current, $$x_{t+1} = x_t $$.
 4. Increment $$t \rightarrow t + 1$$ and repeat from step 1.
 
 The code for steps 1 to 3 is:
