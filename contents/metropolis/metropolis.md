@@ -4,19 +4,19 @@ The [Monte Carlo Integration](../monte_carlo_integration/monte_carlo_integration
 The Metropolis algorithm {{ "metropolis1953equation" | cite }} is a slightly more advanced Monte Carlo method which uses random numbers to approximate a [probability distribution](../probability/distributions/distributions.md):
 
 $$
-P(\mathbf{x}) = \frac{f(\mathbf{x})}{\displaystyle\int_D f(\mathbf{x})d\mathbf{x}}
+P(\mathbf{x}) = \frac{f(\mathbf{x})}{\displaystyle\int_D f(\mathbf{x})d\mathbf{x}},
 $$
 
 where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined; 
 and $$f(\mathbf{x})$$ is some a function that is proportional to $$P(x)$$, such as a statistical frequency distribution, i.e., one that counts the number of occurences of each $$\mathbf{x}$$.
 The integral in the denominator is the __normalization factor__ which ensures that the sum of all probabilities is unity, i.e.,
 $$
-\int_D P(\mathbf{x}) d\mathbf{x} = 1
+\int_D P(\mathbf{x}) d\mathbf{x} = 1.
 $$
 A one-dimensional example is the __normal distribution__, or __Gaussian distribution__, given by
 
 $$
-P(x) = \frac{e^{-x^2}}{\displaystyle\int_{-\infty}^{\infty} e^{-x^2} dx} = \frac{1}{\sqrt{\pi}} e^{-x^2}
+P(x) = \frac{e^{-x^2}}{\displaystyle\int_{-\infty}^{\infty} e^{-x^2} dx} = \frac{1}{\sqrt{\pi}} e^{-x^2}.
 $$
 
 
@@ -30,22 +30,22 @@ These could be atoms, molecules, or even star systems!
 For such systems, we can usually describe the __potential energy__ {{ "potential_energy_wiki" | cite }} of the system as a function of the coordinates of all particles, $$\mathbf{x}$$,
 
 $$
-E(\mathbf{x}) = E(x_1, y_1, z_1, x_2, y_2, z_2, ... ,x_N, y_N, z_N) 
+E(\mathbf{x}) = E(x_1, y_1, z_1, x_2, y_2, z_2, ... ,x_N, y_N, z_N),
 $$
 
 where $$x_i, y_i, z_i$$ are the spatial coordinates of particle $$i$$. 
-So altogether there are $$3N$$ coordinates - making $$E(\mathbf{x})$$ a $$3N$$ dimensional function, which can be a computationally intensive calculation on it's own. But it doesn't end there!
+So altogether there are $$3N$$ coordinates &ndash; making $$E(\mathbf{x})$$ a $$3N$$ dimensional function, which can be a computationally intensive calculation on it's own. But it doesn't end there!
 
 The physicist Ludwig Boltzmann {{ "ludwig_boltzmann_wiki" | cite }} discovered that when such a system is in equilibrium at some temperature $$T$$, you can describe the probability density of the system for any set of coordinates $$\mathbf{x}$$ using, {{ "boltzmann_distribution_wiki" | cite }} 
 
 $$
-P(\mathbf{x}) = \frac{\displaystyle \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]} {Q}
+P(\mathbf{x}) = \frac{\displaystyle \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]} {Q},
 $$
 
 where the numerator is called the __Boltzmann factor__, and $$Q$$ is the [normalization constant](../probability/distributions/distributions.md),
 
 $$
-Q = \int_D \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right] d\mathbf{x}
+Q = \int_D \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right] d\mathbf{x}.
 $$
 
 We can see now that the probability density function is a difficult calculation, particularly because of $$Q$$. 
@@ -60,33 +60,34 @@ To see that $$Q$$ is unfeasible to calculate, imagine there are just 10 particle
 Let's assume that the particles _interact_, meaning that the position of one particle affects that of another. 
 This could be the case, for example, if all the particles were charged, and so they would be repelling or attracting each other. 
 This means that the energy $$E(\mathbf{x}) = E(x_1,...,x_{10})$$ of the system is a 10D function, and it would not be possible to simplify it any further due to the interactions. 
-Thus, the Boltzmann factor, $$\exp\left[-E(\mathbf{x})/T\right]$$, is also a 10D function. And so, to calculate $$Q$$, we would have to integrate the Boltzmann factor 10 times, one for each coordinate,
+Thus, the Boltzmann factor, $$\exp\left[-E(\mathbf{x})/T\right]$$, is also a 10D function. To calculate $$Q$$, we would have to integrate the Boltzmann factor 10 times, one for each coordinate,
 
 $$
-Q = \int_{x_1} \dots \int_{x_{10}} \exp\left[\frac{-E(x_1,\dots x_{10})}{T}\right]\ dx_1\dots dx_{10}
+Q = \int_{x_1} \dots \int_{x_{10}} \exp\left[\frac{-E(x_1,\dots x_{10})}{T}\right]\ dx_1\dots dx_{10}.
 $$
  
 In most cases, there is no known analytical expression for the above integral, so it has to be done numerically.
 To do so, imagine that we divide the 1D line segment into only 50 different intervals, allowing each particle to take on 50 different positions. 
 This is equivalent to dividing the length of a football field into intervals of about 2 meters - not a resolution you'd wanna watch a game in! 
-Even with such poor resolution, the number of different combinations of positions is $$10^{50}$$ - a colossal number indeed. 
+Even with such poor resolution, the number of different combinations of positions is $$10^{50}$$ &ndash; a colossal number indeed. 
 To see how large this number is, imagine that a single computation of $$E(\mathbf{x})$$ took only 1 nanosecond on a single processor, which is much faster than most energy calculations for physical systems in practice.
  With that speed, it would require $$10^{41}$$ seconds on a single processor to calculate $$Q$$ - which means that _even_ with all the processors in the world running in parallel (there could be billions or trillions of them), calculating $$Q$$ would still take longer than the age of the universe - by many orders of magnitude!
 
-What's really powerful about the Metropolis approach is that you don't need to know the probability function itself - you just need a function which is _proportional_ to it. 
+What's really powerful about the Metropolis approach is that you don't need to know the probability function itself.
+Instead, you just need a function which is _proportional_ to it. 
 What this means for the Boltzmann distribution is that you only need to know the term,
 
 $$
-f(\mathbf{x}) = \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right]
+f(\mathbf{x}) = \exp\left[{\displaystyle\frac{-E(\mathbf{x})}{T} } \right].
 $$
 
-The Metropolis algorithm can bypass calculation of $$Q$$ altogether and use $$f(x)$$ to generate a distribution of $$x$$ which follows the probability density $$P(x)$$. 
+The Metropolis algorithm can bypass the calculation of $$Q$$ altogether and use $$f(x)$$ to generate a distribution of $$x$$ which follows the probability density $$P(x)$$. 
 In other words, it can sample values of $$x$$ in such away that the probability of sampling $$x$$ will follow the actual distribution $$P(x)$$. 
 Thus, if Metropolis was used to sample from $$x$$, the number of occurences of $$x$$ would be proportional to $$P(x)$$.
 Numerical normalization can then be done by using the total number of samples instead of performing an integration. 
 This fact dramatically reduces the number of calculations needed to approximate the probability distribution.
 
-Finally, the Metropolis algorithm can be modified or implemented in other algorithms, and forms the basis of many advanced sampling algorithms. 
+Finally, the Metropolis algorithm can be modified or implemented in other methods, and forms the basis of many advanced sampling algorithms. 
 The most popular is probably the Metropolis-Hastings algorithm {{ "hastings1970monte" | cite }} which is fundamentally the same. 
 Some other algorithms that use this method are Metropolis-adjusted Langevin algorithm {{ "mala_wiki" | cite }}, and Hamiltonian Monte Carlo {{ "hmc_wiki" | cite }}, to name a few. 
 They are often used for physical systems that follow a Boltzmann distribution.
