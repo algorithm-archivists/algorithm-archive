@@ -32,7 +32,7 @@ For example, it could be a number like the outcome of a __die roll__ which has t
 
 $$
 P(n) = \begin{matrix}
-		\displaystyle\frac 1 6 &;& n \in [1..6] 
+		\displaystyle\frac 1 6 &;& n \in [\![1,6]\!] 
 		\end{matrix}.
 $$
 This is saying that the probability of $$n$$ being a whole number between 1 and 6 is $$1/6$$, and we assume that the probability of getting any other $$n$$ is 0. 
@@ -48,7 +48,7 @@ So let's go ahead and construct it!
 Let's first define the domain of our target $$P(n)$$. 
 We know that the lowest sum of two dice is 2 (a 1 on both dice), so $$n \geq 2$$ for sure. Similarly, the maximum is the sum of two sixes, or 12, so $$n \leq 12$$ also. 
 
-So now we know the domain of possibilities, i.e., $$n \in [2..12]$$. 
+So now we know the domain of possibilities, i.e., $$n \in [\![2,12]\!]$$. 
 Next, we take a very common approach - for each outcome $$n$$, we count up the number of different ways it can occur. 
 Let's call this number the __frequency of n__, $$f(n)$$. 
 We already mentioned that there is only one way to get $$n=2$$, by getting a pair of 1s. 
