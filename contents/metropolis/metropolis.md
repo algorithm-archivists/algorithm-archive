@@ -51,7 +51,7 @@ $$
 We can see now that the probability density function is a difficult calculation, particularly because of $$Q$$. 
 Almost always, no analytical solution exists to the integral in $$Q$$, and the numerical integration is unfeasible. 
 
-To see that $$Q$$ is unfeasible to calculate, imagine there are just 10 particles which all exist in a 1D world, restricted to a line segment.
+To see that $$Q$$ is unfeasible to calculate, imagine there are just $$10$$ particles which all exist in a $$1$$D world, restricted to a line segment.
 
 <p>
 	<img class="center" src="res/1D_particles.png" style="width:100%" alt="<FIG> 1D particles">
@@ -59,19 +59,19 @@ To see that $$Q$$ is unfeasible to calculate, imagine there are just 10 particle
 
 Let's assume that the particles _interact_, meaning that the position of one particle affects that of another. 
 This could be the case, for example, if all the particles were charged, and so they would be repelling or attracting each other. 
-This means that the energy $$E(\mathbf{x}) = E(x_1,...,x_{10})$$ of the system is a 10D function, and it would not be possible to simplify it any further due to the interactions. 
-Thus, the Boltzmann factor, $$\exp\left[-E(\mathbf{x})/T\right]$$, is also a 10D function. To calculate $$Q$$, we would have to integrate the Boltzmann factor 10 times, one for each coordinate,
+This means that the energy $$E(\mathbf{x}) = E(x_1,...,x_{10})$$ of the system is a $$10$$D function, and it would not be possible to simplify it any further due to the interactions. 
+Thus, the Boltzmann factor, $$\exp\left[-E(\mathbf{x})/T\right]$$, is also a $$10$$D function. To calculate $$Q$$, we would have to integrate the Boltzmann factor $$10$$ times, one for each coordinate,
 
 $$
 Q = \int_{x_1} \dots \int_{x_{10}} \exp\left[\frac{-E(x_1,\dots x_{10})}{T}\right]\ dx_1\dots dx_{10}.
 $$
  
 In most cases, there is no known analytical expression for the above integral, so it has to be done numerically.
-To do so, imagine that we divide the 1D line segment into only 50 different intervals, allowing each particle to take on 50 different positions. 
-This is equivalent to dividing the length of a football field into intervals of about 2 meters - not a resolution you'd wanna watch a game in! 
+To do so, imagine that we divide the $$1$$D line segment into only $$50$$ different intervals, allowing each particle to take on $$50$$ different positions. 
+This is equivalent to dividing the length of a football field into intervals of about $$2$$ meters &ndash; not a resolution you'd wanna watch a game in! 
 Even with such poor resolution, the number of different combinations of positions is $$10^{50}$$ &ndash; a colossal number indeed. 
-To see how large this number is, imagine that a single computation of $$E(\mathbf{x})$$ took only 1 nanosecond on a single processor, which is much faster than most energy calculations for physical systems in practice.
- With that speed, it would require $$10^{41}$$ seconds on a single processor to calculate $$Q$$ - which means that _even_ with all the processors in the world running in parallel (there could be billions or trillions of them), calculating $$Q$$ would still take longer than the age of the universe - by many orders of magnitude!
+To see how large this number is, imagine that a single computation of $$E(\mathbf{x})$$ took only $$1$$ nanosecond on a single processor, which is much faster than most energy calculations for physical systems in practice.
+ With that speed, it would require $$10^{41}$$ seconds on a single processor to calculate $$Q$$ &ndash; which means that _even_ with all the processors in the world running in parallel (there could be billions or trillions of them), calculating $$Q$$ would still take longer than the age of the universe &ndash; by many orders of magnitude!
 
 What's really powerful about the Metropolis approach is that you don't need to know the probability function itself.
 Instead, you just need a function which is _proportional_ to it. 
@@ -95,7 +95,7 @@ They are often used for physical systems that follow a Boltzmann distribution.
 
 ## A Random Walk in One Dimension
 
-In the rest of this chapter, we will look at 1D examples to understand the Metropolis algorithm. 
+In the rest of this chapter, we will look at $$1$$D examples to understand the Metropolis algorithm. 
 Although the algorithm is not particularly efficient in just one dimension, it is much easier to understand and learn how to implement than in higher dimensions. 
 The Metropolis algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
@@ -115,7 +115,7 @@ Over many iterations, we get a frequency distribution of $$x$$.
 
 ## A Random Walk With an Acceptance Criterion
 
-The Metropolis algorithm works in a similar way to the random walk, but differs crucially in one way - after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on the function $$f(x)$$. 
+The Metropolis algorithm works in a similar way to the random walk, but differs crucially in one way &ndash; after choosing a random step for the walker, a decision is made about whether to __accept__  or __reject__ the step based on the function $$f(x)$$. 
 To understand how this works, let's call $$x_t$$ the position before the step, and $$x'$$ the position after it. 
 We then define the probability of __accepting the step__ to be
 
@@ -137,7 +137,7 @@ Your browser does not support the video tag.
 Although convergence occurs eventually, not all parts of the distribution achieve convergence quickly. 
 Note from the animation above, that the walker very quickly replicates the distribution of the two peaks on the left, but takes quite a while to even reach the third peak to the right. 
 This is because there is a long "barrier" of low probability region between the third peak and second peak. 
-This may not necessarily be a bad thing - sometimes one might want to estimate how long something takes to transition from one state to another, and often these peaks represent such 'states'. 
+This may not necessarily be a bad thing &ndash; sometimes one might want to estimate how long something takes to transition from one state to another, and often these peaks represent such 'states'. 
 So averaging over many metropolis runs may give some estimate of these transition times. 
 And if global sampling is the goal, the process of exploration could be sped up by choosing larger step sizes for the walker, for example by choosing step size $$g$$ from an interval like $$(-3,3)$$ instead of $$(-1,1)$$. 
 
@@ -184,10 +184,10 @@ It can also be a number chosen from a symmetric continuos distribution, like the
 In higher dimensions, the function should be spherically symmetric, such as multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. 
 Whatever function you choose, there are at least a couple of things to note:
 1. If the function $$g$$ is discrete, you will only sample discrete values. 
-For example, if $$g$$ returns only -1 or +1, and nothing in between, you will sample only integer steps away from the initial $$x_0$$. 
+For example, if $$g$$ returns only $$-1$$ or $$+1$$, and nothing in between, you will sample only integer steps away from the initial $$x_0$$. 
 2. The average step size really matters! 
 A small step-size means the walker will carefully sample nearby regions more, but will walk more slowly, so might not be good at exploring far and wide. 
-On the other hand, a walker with a large step size may not sample nearby regions accurately - and actually has a higher chance of being rejected if the walker is already in a high probability region, since the acceptance ratio is more drastic for large steps. 
+On the other hand, a walker with a large step size may not sample nearby regions accurately &ndash; and actually has a higher chance of being rejected if the walker is already in a high probability region, since the acceptance ratio is more drastic for large steps. 
 The effect of step-size on the walker's efficiency is far from obvious! 
 
 How to choose $$g$$ is in itself a research field and depends on what the goal of the sampling is. 
@@ -224,7 +224,7 @@ The code for steps 1 to 3 is:
 {% endmethod %}
 
 The following plot shows the result of running the algorithm for different numbers of iterations ($$N$$), with the same initial position. 
-The histograms are normalized so that they integrate to 1. 
+The histograms are normalized so that they integrate to $$1$$. 
 We can see the convergence toward $$P(x)$$ as we increase $$N$$.
 
 <p>
