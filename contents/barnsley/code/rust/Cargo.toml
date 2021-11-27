@@ -7,3 +7,7 @@ edition = "2018"
 
 [dependencies]
 rand = "0.8.4"
+
+[[bin]]
+path = "./main.rs"
+name = "main"
