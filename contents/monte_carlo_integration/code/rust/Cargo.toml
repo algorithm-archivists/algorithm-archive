@@ -1,5 +1,5 @@
 [package]
-name = "barnsley"
+name = "montecarlo"
 version = "0.1.0"
 edition = "2018"
 
@@ -9,5 +9,5 @@ edition = "2018"
 rand = "0.8.4"
 
 [[bin]]
-path = "./barnsley.rs"
+path = "./monte_carlo.rs"
 name = "main"
