@@ -10,12 +10,10 @@ To run the compilation for all implementations in one language, e.g. C, run the 
 from pathlib import Path
 import os
 
-env = Environment(ENV={'PATH': os.environ['PATH']})
+env = Environment(ENV={'PATH': os.environ['PATH']},
+		  tools=['gcc', 'gnulink', 'g++'])
 
-env['CC'] = 'gcc'
 env['AS'] = 'as'
-for tool in ['gcc','gnulink']:
-   env.Tool(tool)
 env['CCFLAGS'] = ''
 env['CXXFLAGS'] = '-std=c++17'
 
