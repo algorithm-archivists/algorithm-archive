@@ -96,7 +96,7 @@ They are often used for physical systems that follow a Boltzmann distribution.
 ## A Random Walk in One Dimension
 
 In the rest of this chapter, we will look at $$1$$D examples to understand the Metropolis algorithm. 
-Although the algorithm is not particularly efficient in just one dimension, it is much easier to understand and learn how to implement than in higher dimensions. 
+Although the algorithm is not particularly efficient in just one dimension, it is much easier to understand in one dimension than in multiple dimensions. 
 The Metropolis algorithm is very similar to a random walk, so let's first see how we can get a distribution from a random walk.
 
 <div style="text-align:center">
@@ -139,7 +139,7 @@ Note from the animation above, that the walker very quickly replicates the distr
 This is because there is a long "barrier" of low probability region between the third peak and second peak. 
 This may not necessarily be a bad thing &ndash; sometimes one might want to estimate how long something takes to transition from one state to another, and often these peaks represent such 'states'. 
 So averaging over many metropolis runs may give some estimate of these transition times. 
-And if global sampling is the goal, the process of exploration could be sped up by choosing larger step sizes for the walker, for example by choosing step size $$g$$ from an interval like $$(-3,3)$$ instead of $$(-1,1)$$. 
+If global sampling is the goal, the process of exploration could be sped up by choosing larger step sizes for the walker, for example by choosing step size $$g$$ from an interval like $$(-3,3)$$ instead of $$(-1,1)$$. 
 
 
 ## The Algorithm for a One Dimensional Example
@@ -151,7 +151,7 @@ $$
 P(x) = \frac{f(x)}{\int_{-10}^{10} f(x)},
 $$
 
-where $$f(x)$$ is the function we know and is given by
+where $$f(x)$$ is the same function we have shown above and is given by
 $$
 f(x) = 10e^{-4(x+4)^2} + 3e^{-0.2(x+1)^2} + e^{-2(x-5)^2}.
 $$
@@ -181,7 +181,7 @@ As in the random walk example, we will use a random real number between $$-1$$ a
 However, $$g$$ can be any function symmetric about $$0$$ for the above algorithm to work. 
 For example, it can be a number chosen randomly from a discrete list, such as $$[ -3, -1, -1, +1, +1, +3]$$. 
 It can also be a number chosen from a symmetric continuos distribution, like the Gaussian, $$e^{-x^2}$$. 
-In higher dimensions, the function should be spherically symmetric, such as multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. 
+In higher dimensions, the function should be spherically symmetric, such as a multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. 
 Whatever function you choose, there are at least a couple of things to note:
 1. If the function $$g$$ is discrete, you will only sample discrete values. 
 For example, if $$g$$ returns only $$-1$$ or $$+1$$, and nothing in between, you will sample only integer steps away from the initial $$x_0$$. 
@@ -233,7 +233,7 @@ We can see the convergence toward $$P(x)$$ as we increase $$N$$.
 
 
 ## Example Code
-The following code puts everything together, and runs Metropolis algorithm for a number of  steps given by `num_steps`. 
+The following code puts everything together, and runs the Metropolis algorithm for a number of  steps given by `num_steps`. 
 All the positions visited by the algorithm are then written to a file, which can be later read and fed into a histogram or other density calculating scheme. 
 The code also incorporates a few tests of the algorithm using the `test_metropolis_iterate` method. 
 This test will create a normalized density histogram from the generated data, and compare it to $$P(x)$$ using the Root Mean Square Deviations metric {{ "rmsd_wiki" | cite }}.
