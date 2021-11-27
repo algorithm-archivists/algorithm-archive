@@ -14,10 +14,11 @@ import os
 # Put 'name_of_language_directory' : 'file_extension'
 languages = {'c': 'c', 'rust': 'rs'}
 
-rust_builder = Builder("cargo build --bin $SOURCE --target-dir $TARGET")
+#rust_cargo_builder = Builder(action="cargo build --bin $SOURCE --target-dir $TARGET")
+rust_rustc_builder = Builder(action="rustc $SOURCE -o $TARGET$PROGSUFFIX")
 
 env = Environment(ENV={'PATH': os.environ['PATH']},
-                  BUILDERS={'Rust': rust_builder},
+                  BUILDERS={'rustc': rust_rustc_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas'])
 
 env['CCFLAGS'] = ''
@@ -31,7 +32,7 @@ languages = {'c': 'c', 'cpp': 'cpp', 'asm-x64': 's'}
 env.C = env.Program
 env.CPlusPlus = env.Program
 env.X64 = env.Program
-env.rust = rust_builder
+#env.rustc = rust_rustc_builder
 
 Export('env')
 
