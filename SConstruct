@@ -11,9 +11,10 @@ from pathlib import Path
 import os
 
 env = Environment(ENV={'PATH': os.environ['PATH']},
-		  tools=['gcc', 'gnulink', 'g++'])
+		  tools=['gcc', 'gnulink', 'g++', 'gas'])
 
-env['AS'] = 'as'
+env['ASFLAGS'] = '--64'
+
 env['CCFLAGS'] = ''
 env['CXXFLAGS'] = '-std=c++17'
 
