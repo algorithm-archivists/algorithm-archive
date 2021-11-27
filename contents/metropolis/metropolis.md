@@ -144,6 +144,8 @@ If global sampling is the goal, the process of exploration could be sped up by c
 
 ## The Algorithm for a One Dimensional Example
 
+Now let's dive into the actual algorithm with some example code!
+
 ### The Initial Setup
 
 Let our target distribution be
