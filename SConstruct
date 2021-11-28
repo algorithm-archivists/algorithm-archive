@@ -50,6 +50,8 @@ languages = {
     'php': 'php',
     'ruby': 'rb',
     'lua': 'lua',
+    'powershell': 'ps1',
+    'bash': 'bash',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
