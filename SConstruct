@@ -52,6 +52,7 @@ languages = {
     'lua': 'lua',
     'powershell': 'ps1',
     'bash': 'bash',
+    'smalltalk': 'st'
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
