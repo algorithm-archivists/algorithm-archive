@@ -47,6 +47,7 @@ languages = {
     'fortran': 'f90',
     'python': 'py',
     'julia': 'jl',
+    'php': 'php',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
