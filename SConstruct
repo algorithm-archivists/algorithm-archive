@@ -10,16 +10,12 @@ To run the compilation for all implementations in one language, e.g. C, run the 
 from pathlib import Path
 import os
 
-# Add other languages here when you want to add language targets
-# Put 'name_of_language_directory' : 'file_extension'
-languages = {'c': 'c', 'rust': 'rs'}
-
 rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFEST',
                                      Move('$TARGET$PROGSUFFIX', '$SOURCE_DIR/target/debug/main$PROGSUFFIX')])
 
 rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
-env = Environment(ENV={'PATH': os.environ['PATH']},
+env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder, 'cargo': rust_cargo_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas'])
 
@@ -29,12 +25,11 @@ env['ASFLAGS'] = '--64'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
-languages = {'c': 'c', 'cpp': 'cpp', 'asm-x64': 's'}
+languages = {'c': 'c', 'cpp': 'cpp', 'asm-x64': 's', 'rust': 'rs'}
 
 env.C = env.Program
 env.CPlusPlus = env.Program
 env.X64 = env.Program
-#env.rustc = rust_rustc_builder
 
 Export('env')
 
