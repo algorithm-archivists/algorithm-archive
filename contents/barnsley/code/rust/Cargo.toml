@@ -1,5 +1,5 @@
 [package]
-name = "rust"
+name = "barnsley"
 version = "0.1.0"
 edition = "2018"
 
@@ -7,3 +7,7 @@ edition = "2018"
 
 [dependencies]
 rand = "0.8.4"
+
+[[bin]]
+path = "./barnsley.rs"
+name = "main"
