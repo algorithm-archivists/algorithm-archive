@@ -17,8 +17,8 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// Use 'forwardPorts' to make a list of ports inside the container available locally (outside the container).
 	// Port : Usage
-	// 4000 : Honkit serves by default on this prot
+	// 4000 : Honkit serves by default on this port
 	"forwardPorts": [4000]
 }
