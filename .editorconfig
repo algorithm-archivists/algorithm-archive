@@ -51,6 +51,11 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
+# Emacs Lisp
+[*.el]
+indent_style = space
+indent_size = 2
+
 # Emojicode
 [*.emojic]
 indent_style = space
