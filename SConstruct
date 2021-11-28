@@ -15,8 +15,12 @@ rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFE
 
 rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
+go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
+
 env = Environment(ENV=os.environ,
-                  BUILDERS={'rustc': rust_rustc_builder, 'cargo': rust_cargo_builder},
+                  BUILDERS={'rustc': rust_rustc_builder,
+                            'cargo': rust_cargo_builder,
+                            'Go': go_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
 env['CCFLAGS'] = ''
@@ -30,6 +34,7 @@ languages = {
     'cpp': 'cpp',
     'asm-x64': 's',
     'rust': 'rs',
+    'go': 'go'
     'fortran': 'f90',
 }
 
