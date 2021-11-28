@@ -11,7 +11,7 @@ c |
 c# |
 clojure |
 coconut | [@amaras]
-c++ |
+c++ | [@ShadowMitia]
 emojicode |
 fortran | [@leios]
 gnuplot | [@leios]
