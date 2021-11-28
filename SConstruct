@@ -34,7 +34,7 @@ languages = {
     'cpp': 'cpp',
     'asm-x64': 's',
     'rust': 'rs',
-    'go': 'go'
+    'go': 'go',
     'fortran': 'f90',
 }
 
