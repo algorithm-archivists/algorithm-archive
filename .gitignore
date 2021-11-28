@@ -527,3 +527,4 @@ build/
 
 # Cargo artifacts
 Cargo.lock
+target/

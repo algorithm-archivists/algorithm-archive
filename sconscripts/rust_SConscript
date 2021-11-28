@@ -5,5 +5,7 @@ for file in files_to_compile:
     chapter_name = file.parent.parent.parent.stem
     if (file.parent / 'Cargo.toml').exists():
         env.cargo(f'#/build/rust/{chapter_name}', str(file), MANIFEST=str(file.parent / 'Cargo.toml'))
+        env.Clean('rust', str(file.parent / 'target'))
     else:
         env.rustc(f'#/build/rust/{chapter_name}', str(file))
+        env.Clean('rust', f'#/build/rust/{chapter_name}.pdb')
