@@ -21,7 +21,7 @@ env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder,
                             'cargo': rust_cargo_builder,
                             'Go': go_builder},
-                  tools=['gcc', 'gnulink', 'g++', 'gas'])
+                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
 env['CCFLAGS'] = ''
 env['CXXFLAGS'] = '-std=c++17'
@@ -29,11 +29,19 @@ env['ASFLAGS'] = '--64'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
-languages = {'c': 'c', 'cpp': 'cpp', 'asm-x64': 's', 'rust': 'rs', 'go': 'go'}
+languages = {
+    'c': 'c',
+    'cpp': 'cpp',
+    'asm-x64': 's',
+    'rust': 'rs',
+    'go': 'go',
+    'fortran': 'f90',
+}
 
 env.C = env.Program
 env.CPlusPlus = env.Program
 env.X64 = env.Program
+env.Fortran = env.Program
 
 Export('env')
 
