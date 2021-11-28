@@ -26,7 +26,7 @@ lua |
 matlab |
 nim |
 php |
-python | [@ntindle]
+python | [@ntindle],[@ShadowMitia]
 ruby |
 rust | [@ShadowMitia]
 scala |
