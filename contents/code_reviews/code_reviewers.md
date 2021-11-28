@@ -18,7 +18,7 @@ gnuplot | [@leios]
 go |
 haskell |
 java |
-javascript | [@ntindle]
+javascript | [@ntindle],[@ShadowMitia]
 julia | [@leios]
 kotlin |
 lisp |
