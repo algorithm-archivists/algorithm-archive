@@ -19,11 +19,15 @@ rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
 go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
 
+# For interpreted languages to copy to build directory
+copy_builder = Builder(action=Copy('$TARGET', '$SOURCE'))
+
 env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder,
                             'cargo': rust_cargo_builder,
-                            'Go': go_builder},
-                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
+                            'Go': go_builder,
+                            'Python': copy_builder},
+                  tools=['gcc', 'gnulink', 'g++', 'gas'])
 
 Export('env')
 
@@ -33,6 +37,7 @@ env['ASFLAGS'] = '--64'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
+
 languages = {
     'c': 'c', 
     'cpp': 'cpp',
@@ -40,6 +45,7 @@ languages = {
     'rust': 'rs',
     'go': 'go',
     'fortran': 'f90',
+    'python': 'py',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above

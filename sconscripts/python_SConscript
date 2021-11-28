@@ -1,0 +1,6 @@
+Import('files_to_compile env')
+from pathlib import Path
+
+for file in files_to_compile:
+    chapter_name = file.parent.parent.parent.stem
+    env.Python(f'#/build/python/{chapter_name}.py', str(file))
