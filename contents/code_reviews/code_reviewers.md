@@ -28,7 +28,7 @@ nim |
 php |
 python | [@ntindle]
 ruby |
-rust |
+rust | [@ShadowMitia]
 scala |
 scratch | [@leios]
 swift |
