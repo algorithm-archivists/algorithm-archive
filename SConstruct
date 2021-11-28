@@ -27,7 +27,7 @@ env = Environment(ENV=os.environ,
                             'cargo': rust_cargo_builder,
                             'Go': go_builder,
                             'Copier': copy_builder},
-                  tools=['gcc', 'gnulink', 'g++', 'gas'])
+                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
 Export('env')
 
