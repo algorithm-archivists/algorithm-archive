@@ -3,4 +3,4 @@ from pathlib import Path
 
 for file in files_to_compile:
     chapter_name = file.parent.parent.parent.stem
-    env.Copier(f'#/build/python/{chapter_name}.py', str(file))
+    env.Copier(f'#/build/julia/{chapter_name}.jl', str(file))

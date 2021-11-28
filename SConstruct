@@ -26,7 +26,7 @@ env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder,
                             'cargo': rust_cargo_builder,
                             'Go': go_builder,
-                            'Python': copy_builder},
+                            'Copier': copy_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas'])
 
 Export('env')
@@ -46,6 +46,7 @@ languages = {
     'go': 'go',
     'fortran': 'f90',
     'python': 'py',
+    'julia': 'jl',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
