@@ -15,7 +15,7 @@ import os
 languages = {'c': 'c', 'rust': 'rs'}
 
 rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFEST',
-                                     Move('$TARGET$PROGSUFFIX', '$SOURCE/../target/debug/main$PROGSUFFIX')])
+                                     Move('$TARGET$PROGSUFFIX', '$SOURCE_DIR/target/debug/main$PROGSUFFIX')])
 
 rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
