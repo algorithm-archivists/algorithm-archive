@@ -49,6 +49,7 @@ languages = {
     'julia': 'jl',
     'php': 'php',
     'ruby': 'rb',
+    'lua': 'lua',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
