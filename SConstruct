@@ -14,9 +14,8 @@ import os
 # Put 'name_of_language_directory' : 'file_extension'
 languages = {'c': 'c', 'rust': 'rs'}
 
-rust_cargo_builder = Builder(action=['cargo build --bins --target-dir $TARGET --manifest-path $MANIFEST',
-                                     Move('$TARGET$PROGSUFFIX', '$TARGET/debug/main$PROGSUFFIX'),
-                                     Delete('$TARGET')])
+rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFEST',
+                                     Move('$TARGET$PROGSUFFIX', '$SOURCE/../target/debug/main$PROGSUFFIX')])
 
 rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
