@@ -4,6 +4,6 @@ from pathlib import Path
 for file in files_to_compile:
     chapter_name = file.parent.parent.parent.stem
     if (file.parent / 'Cargo.toml').exists():
-        print(f"Building with cargo for {chapter_name}")
+        env.cargo(f'#/build/rust/{chapter_name}', str(file), MANIFEST=str(file.parent / 'Cargo.toml'))
     else:
         env.rustc(f'#/build/rust/{chapter_name}', str(file))

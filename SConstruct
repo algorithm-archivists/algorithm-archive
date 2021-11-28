@@ -14,11 +14,14 @@ import os
 # Put 'name_of_language_directory' : 'file_extension'
 languages = {'c': 'c', 'rust': 'rs'}
 
-#rust_cargo_builder = Builder(action="cargo build --bin $SOURCE --target-dir $TARGET")
-rust_rustc_builder = Builder(action="rustc $SOURCE -o $TARGET$PROGSUFFIX")
+rust_cargo_builder = Builder(action=['cargo build --bins --target-dir $TARGET --manifest-path $MANIFEST',
+                                     Move('$TARGET$PROGSUFFIX', '$TARGET/debug/main$PROGSUFFIX'),
+                                     Delete('$TARGET')])
+
+rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
 env = Environment(ENV={'PATH': os.environ['PATH']},
-                  BUILDERS={'rustc': rust_rustc_builder},
+                  BUILDERS={'rustc': rust_rustc_builder, 'cargo': rust_cargo_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas'])
 
 env['CCFLAGS'] = ''
