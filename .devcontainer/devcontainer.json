@@ -18,10 +18,7 @@
 	"extensions": [],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [4000],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-
-	// "initializeCommand": ["npm", "install"]
+	// Port : Usage
+	// 4000 : Honkit serves by default on this prot
+	"forwardPorts": [4000]
 }
