@@ -46,6 +46,7 @@ languages = {
     'fortran': 'f90',
     'go': 'go',
     'julia': 'jl',
+    'lolcode': 'lol',
     'lua': 'lua',
     'php': 'php',
     'powershell': 'ps1',
