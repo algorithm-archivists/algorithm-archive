@@ -47,13 +47,13 @@ void gaussian_elimination(double *a, const size_t rows, const size_t cols) {
     }
 }
 
-void back_substitution(const double *a, double *x, const size_t rows,
-                       const size_t cols) {
+void back_substitution(const double *a, double *x, const int rows,
+                       const int cols) {
 
-    for (size_t i = rows - 1; i >= 0; --i) {
+    for (int i = rows - 1; i >= 0; --i) {
         double sum = 0.0;
 
-        for (size_t j = cols - 2; j > i; --j) {
+        for (int j = cols - 2; j > i; --j) {
             sum += x[j] * a[i * cols + j];
         }
 
