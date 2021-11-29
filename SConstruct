@@ -45,6 +45,7 @@ languages = {
     'cpp': 'cpp',
     'fortran': 'f90',
     'go': 'go',
+    'javascript': 'js',
     'julia': 'jl',
     'lolcode': 'lol',
     'lua': 'lua',
