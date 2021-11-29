@@ -95,7 +95,7 @@ In code, this might look like this:
 {% sample lang="py" %}
 [import:10-25, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:15-19, lang="coconut"](code/coconut/flood_fill.coco)
+[import:15-20, lang="coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -117,7 +117,7 @@ In code, it might look like this:
 {% sample lang="py" %}
 [import:55-63, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:54-63, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:52-61, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
