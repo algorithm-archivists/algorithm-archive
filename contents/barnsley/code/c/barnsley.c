@@ -44,6 +44,7 @@ struct matrix select_array(struct matrix *hutchinson_op, double *probabilities,
         }
         rnd -= probabilities[i];
     }
+    return hutchinson_op[0];
 }
 
 // This is a general function to simulate a chaos game
