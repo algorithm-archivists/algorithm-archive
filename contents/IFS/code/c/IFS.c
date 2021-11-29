@@ -20,7 +20,7 @@ void chaos_game(struct point *in, size_t in_n, struct point *out,
 
     struct point cur_point = {drand(), drand()};
 
-    for (int i = 0; i < out_n; ++i) {
+    for (size_t i = 0; i < out_n; ++i) {
         out[i] = cur_point;
         struct point tmp = random_element(in, in_n);
         cur_point.x = 0.5 * (cur_point.x + tmp.x);
