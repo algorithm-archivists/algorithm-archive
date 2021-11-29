@@ -8,7 +8,7 @@ Language | Reviewers
 -|-
 asm-x64 |
 bash |
-c |
+c | [@amaras]
 c# |
 clojure |
 coconut | [@amaras]
