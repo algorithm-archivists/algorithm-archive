@@ -41,7 +41,7 @@ python | [@ntindle],[@ShadowMitia],[@amaras]
 r |
 racket |
 ruby |
-rust | [@ShadowMitia]
+rust | [@ShadowMitia],[@PeanutbutterWarrior]
 scala |
 scheme |
 scratch | [@leios]
