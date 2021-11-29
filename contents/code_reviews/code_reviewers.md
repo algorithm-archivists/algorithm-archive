@@ -37,7 +37,7 @@ ocaml | [@ShadowMitia]
 php |
 piet |
 powershell |
-python | [@ntindle],[@ShadowMitia],[@amaras]
+python | [@ntindle],[@ShadowMitia],[@amaras],[@PeanutbutterWarrior]
 r |
 racket |
 ruby |
