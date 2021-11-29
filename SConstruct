@@ -23,7 +23,7 @@ env = Environment(ENV=os.environ,
                             'Go': go_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
-env['CCFLAGS'] = ''
+env['CCFLAGS'] = '-Wall -Wextra -Werror'
 env['CXXFLAGS'] = '-std=c++17'
 env['ASFLAGS'] = '--64'
 
