@@ -60,7 +60,7 @@ Dev Container | [@ntindle], [@ShadowMitia]
 Docker | [@ntindle], [@ShadowMitia]
 Github Actions | [@ntindle]
 Honkit |
-Scons | [@amaras]
+Scons | [@amaras],[@PeanutbutterWarrior]
 Chapters | [@leios]
 
 [@leios]: https://github.com/leios
