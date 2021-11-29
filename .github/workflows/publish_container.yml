@@ -2,14 +2,14 @@ name: Publish Docker
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@main
       with:
         name: algorithm-archivists/aaa-langs
         username: ${{ github.actor }}
