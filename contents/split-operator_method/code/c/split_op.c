@@ -28,7 +28,7 @@ struct operators {
     double complex *wfc;
 };
 
-void fft(double complex *x, int n, bool inverse) {
+void fft(double complex *x, size_t n, bool inverse) {
     double complex y[n];
     memset(y, 0, sizeof(y));
     fftw_plan p;
@@ -139,8 +139,8 @@ void split_op(struct params par, struct operators opr) {
         sprintf(filename, "output%lu.dat", i);
         FILE *fp = fopen(filename, "w");
 
-        for (int i = 0; i < opr.size; ++i) {
-            fprintf(fp, "%d\t%f\t%f\n", i, density[i], creal(opr.v[i]));
+        for (size_t i = 0; i < opr.size; ++i) {
+            fprintf(fp, "%ld\t%f\t%f\n", i, density[i], creal(opr.v[i]));
         }
 
         fclose(fp);
