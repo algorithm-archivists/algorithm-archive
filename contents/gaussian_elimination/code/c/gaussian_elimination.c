@@ -50,7 +50,7 @@ void gaussian_elimination(double *a, const size_t rows, const size_t cols) {
 void back_substitution(const double *a, double *x, const size_t rows,
                        const size_t cols) {
 
-    for (size_t i = rows - 1; i == 0; --i) {
+    for (size_t i = rows - 1; i >= 0; --i) {
         double sum = 0.0;
 
         for (size_t j = cols - 2; j > i; --j) {
