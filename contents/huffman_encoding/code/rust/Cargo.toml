@@ -1,13 +1,13 @@
 [package]
-name = "barnsley"
+name = "huffman"
 version = "0.1.0"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rand = "0.8.4"
+itertools = "0.10.1"
 
 [[bin]]
-path = "./barnsley.rs"
+path = "./huffman.rs"
 name = "main"
