@@ -67,3 +67,4 @@ Chapters | [@leios]
 [@ntindle]: https://github.com/ntindle
 [@amaras]: https://github.com/amaras
 [@ShadowMitia]: https://github.com/ShadowMitia
+[@PeanutbutterWarrior]: https://github.com/PeanutbutterWarrior
