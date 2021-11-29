@@ -6,13 +6,19 @@ If you are comfortable reviewing a language, please add yourself to the table be
 
 Language | Reviewers
 -|-
-asm |
+asm-x64 |
+bash |
 c |
 c# |
 clojure |
 coconut | [@amaras]
 c++ | [@ShadowMitia]
+crystal |
+D |
+dart |
+elm |
 emojicode |
+factor |
 fortran | [@leios]
 gnuplot | [@leios]
 go |
@@ -21,18 +27,28 @@ java |
 javascript | [@ntindle],[@ShadowMitia]
 julia | [@leios]
 kotlin |
+labview |
+lolcode |
 lisp |
 lua |
 matlab |
 nim |
+ocaml | [@ShadowMitia]
 php |
+piet |
+powershell |
 python | [@ntindle],[@ShadowMitia]
+r |
+racket |
 ruby |
 rust | [@ShadowMitia]
 scala |
+scheme |
 scratch | [@leios]
+smalltask |
 swift |
 typescript | [@ntindle]
+v |
 viml |
 whitespace |
 
