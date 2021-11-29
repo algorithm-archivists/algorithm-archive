@@ -14,11 +14,7 @@ impl<T> Queue<T> {
     // Note that this returns a reference to the value
     // This is in contrast to dequeue which gives ownership of the value
     fn front(&self) -> Option<&T> {
-        if self.list.len() > 0 {
-            Some(&self.list[0])
-        } else {
-            None
-        }
+        self.list.front()
     }
 
     fn dequeue(&mut self) -> Option<T> {

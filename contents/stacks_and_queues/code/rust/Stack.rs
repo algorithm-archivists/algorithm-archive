@@ -12,11 +12,7 @@ impl<T> Stack<T> {
     // Note that this returns a reference to the value
     // This is in contrast to pop which gives ownership of the value
     fn top(&self) -> Option<&T> {
-        if self.list.len() > 0 {
-            Some(&self.list[self.list.len() - 1])
-        } else {
-            None
-        }
+        self.list.last()
     }
 
     fn pop(&mut self) -> Option<T> {
