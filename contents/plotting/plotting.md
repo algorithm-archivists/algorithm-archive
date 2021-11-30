@@ -1,7 +1,7 @@
 # Plotting
 
 Plotting is an essential tool for visualizing and understanding important details of several algorithms and methods and is necessary for studies in various areas of computational science.
-For many languages, such as python, julia, and matlab, it is relatively straightforward to create simple plots for various types of data; however, for several other languages, like fortran, C/C++, and java, plotting can be a chore.
+For many languages, such as python, julia, and matlab, it is relatively straightforward to create simple plots for various types of data; however, for several other languages, like Fortran, C/C++, and java, plotting can be a chore.
 Because the Algorithm Archive strives to be language agnostic, we do not want to favor any particular set of languages and have decided instead to output all data that needs plotting into a file format that can easily be read in by various plotting scripts separate from the algorithm implementations.
 
 If you are implementing any algorithm in a language found on this page, you should be able to modify your existing code to allow for on-the-fly plotting.
@@ -485,7 +485,7 @@ In the case of two-dimensional image output, the data file be similar, but this 
 
 [import](data/2d_sample_low_res.dat)
 
-It is expected that the number of columns does not vary in each row and that we are working with an $$n \times m$$ matrix which can be simply plotted as a series of pixels that scale in color according to some defined colorbar.
+It is expected that the number of columns does not vary in each row and that we are working with an $$n \times m$$ matrix which can be simply plotted as a series of pixels that scale in color according to some defined color bar.
 
 {% method %}
 {% sample lang="gnuplot" %}
@@ -503,7 +503,7 @@ splot "sample_data.dat" matrix with image
 
 {% endmethod %}
 
-#### changing the colorbar
+#### changing the color bar
 
 For plotting images from data files, we will often need to specify how we color the image by setting a custom color bar
 
@@ -537,7 +537,7 @@ For the purposes of the Algorithm Archive, this space is mainly two-dimensional;
 We will update this section if three-dimensional scatter plots are required.
 
 For the purposes of the Algorithm Archive, scatter plot data will be output as a series of $$x$$ and $$y$$ pairs, where each row has an $$x$$ and a $$y$$ value, separated by a tab character.
-For example, a datafile might look like this:
+For example, a data file might look like this:
 
 [import:1-10](data/scatterplot_data.dat)
 
@@ -560,6 +560,37 @@ Which will create the following image
 Here, we have chosen `pointtype 7`, simply because it is easier to see when compared to the default crosses.
 
 {% endmethod %}
+
+# Histograms
+
+Many different algorithms will output data as a series of points that must be organized into separate bins before anyone can make sense of the data.
+For example, here are 10 values from a set of 100 randomly generated integers between 1 and 9:
+
+[import:50-60](data/rand.dat)
+
+Someone might ask, "How many 1s show up in this string of numbers?"
+Similarly, someone might want to know how many 1s we have *in comparison* to the number of 2s (or 3s or 4s, etc).
+To do this, we would create a set of bins and then iterate through the data, adding one to a bin every time we find a corresponding number.
+Note that the bins do not necessarily need to be sequential integer values and that for floating point numbers, the input might need to be rounded.
+You can even histograms objects or anything that else that can be categorized.
+
+For the data that we have shown above, we might create a histogram that looks like this:
+
+<p>
+    <img  class="center" src="res/gnuplot/histogram.png" style="width:70%" />
+</p>
+
+And here is a plotting script to generate it:
+
+{% method %}
+[import](code/gnuplot/histogram.gp)
+{% sample lang="gnuplot" %}
+
+For this, we are using a fill style to use with `fillsteps` so the histogram is colored, but if you just want a line, you could remove the fill style and use `histeps` instead.
+As another note, we are using `t 'data' smooth frequency`, which essentially turns the input numbers into a small, binned array to plot.
+{% endmethod %}
+
+Note that this code rounds the input in the case of floating point numbers.
 
 If you are interested in seeing this type of plot generate fractal patterns, please look at the chapter on [iterated function systems](../IFS/IFS.md).
 
@@ -607,6 +638,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 - The image "[gnuplot_2d_sample](res/gnuplot/2d_sample.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[gnuplot_2d_sample_colorbar](res/gnuplot/2d_sample_cb.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 - The image "[gnuplot_scatterplot](res/gnuplot/scatterplot.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[gnuplot_histogram](res/gnuplot/histogram.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 {% endmethod %}
 
