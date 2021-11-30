@@ -2,10 +2,11 @@ name: Publish Docker
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.repository == 'algorithm-archivists/algorithm-archive'
     steps:
     - uses: actions/checkout@master
     - name: Publish to Registry
