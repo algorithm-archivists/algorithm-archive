@@ -15,7 +15,9 @@ For now, here are the basics for submitting code to the Algorithm Archive:
 3. **CONTRIBUTORS.md**: After contributing code, please echo your name to the end of `CONTRIBUTORS.md` with `echo "- name" >> CONTRIBUTORS.md`.
 4. **Building the Algorithm Archive**: Before every submission, you should build the Algorithm Archive on your own machine. To do this, install [Node](https://nodejs.org/) and use `npm install` and then `npm run serve` in the main directory (where `README.md` is). This will provide a local URL to go to to view the archive in your browser of choice. Use this server to make sure your version of the Algorithm Archive works cleanly for the chapter you are updating!
 
-To submit code, simply go to the `code/` directory of whatever chapter you want and add another directory for your language of choice.
+To **submit code**, go to the `code/` directory of whatever chapter you want and add another directory for your language of choice.
+
+You can also help out by **reviewing code**, if you have the ability to review a language (and want to be asked to do so), please add yourself to [the Code Reviewers list](../code_reviews/code_reviewers.md)
 
 We use two GitBook plugins to allow users to flip between languages on different algorithms.
 One is the theme-api, and the other is the include-codeblock api.
