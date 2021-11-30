@@ -20,7 +20,5 @@ jobs:
   
       - name: check user
         run: whoami
-      - name: check cargo
-        run: which cargo
       - name: Run Scons
         run: scons -kQ
