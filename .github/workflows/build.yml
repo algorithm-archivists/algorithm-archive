@@ -4,6 +4,7 @@ on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: ghcr.io/algorithm-archivists/aaa-langs:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -14,3 +15,5 @@ jobs:
         run: |
           npm install
           npx honkit build
+      - name: Scons
+        run: scons
