@@ -21,6 +21,6 @@ jobs:
       - name: check user
         run: whoami
       - name: check cargo
-        run: which cargo
+        run: sudo which cargo
       - name: Run Scons
-        run: scons
+        run: sudo scons
