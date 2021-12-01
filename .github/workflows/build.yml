@@ -18,7 +18,8 @@ jobs:
           npm install
           npx honkit build
   
-      - name: check user
-        run: whoami
+      - name: Initalize cargo?
+        run:  . "$HOME/.cargo/env"
+      
       - name: Run Scons
         run: scons -kQ
