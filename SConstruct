@@ -57,24 +57,27 @@ files_to_compile = {language: [] for language in languages}
 FileInformation = namedtuple('FileInformation', ['path', 'chapter', 'language'])
 
 for chapter_dir in Path.cwd().joinpath('contents').iterdir():
-    print(chapter_dir)
     if (code_dir := (chapter_dir / 'code')).exists():
-        for path in code_dir.iterdir():
-            if path.stem in languages:
+        for language_dir in code_dir.iterdir():
+            if (language := language_dir.stem) in languages:
                 # Check for overriding sconscript
-                if (sconscript_path := path / 'SConscript').exists():
+                if (sconscript_path := language_dir / 'SConscript').exists():
                     sconscripts.append(sconscript_path)
                     SConscript(sconscript_path, exports='env')
-                else:
-                    #new_files = [FileInformation(path=path, chapter=chapter_dir.
-                    files_to_compile[path.stem].extend(path.glob(f'*.{languages[path.stem]}'))
+                    continue
+                
+                new_files = [FileInformation(path=file_path,
+                                             chapter=chapter_dir.name,
+                                             language=language)
+                                             for file_path in language_dir.glob(f'**/*.{languages[language]}')
+                            ]
+                files_to_compile[language].extend(new_files)
 
-sconscript_dir_path = Path('sconscripts')
+sconscript_dir_path = Path.cwd().joinpath('sconscripts')
 for language, files in files_to_compile.items():
     if files:
         if (sconscript_path := sconscript_dir_path / f"{language}_SConscript").exists():
-            SConscript(sconscript_path, exports = {'files_to_compile': files,
-                                                   'language': language})
+            SConscript(sconscript_path, exports = {'files_to_compile': files})
         else:
             print(f'{language} file found at {files[0]}, but no sconscript file is present ')
 
