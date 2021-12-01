@@ -10,6 +10,7 @@ To run the compilation for all implementations in one language, e.g. C, run the 
 from pathlib import Path
 import os
 
+
 rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFEST',
                                      Move('$TARGET$PROGSUFFIX', '$SOURCE_DIR/target/debug/main$PROGSUFFIX')])
 
@@ -22,6 +23,8 @@ env = Environment(ENV=os.environ,
                             'cargo': rust_cargo_builder,
                             'Go': go_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
+
+Export('env')
 
 env['CFLAGS'] = '-Wall -Wextra -Werror'
 env['CXXFLAGS'] = '-std=c++17'
@@ -38,12 +41,14 @@ languages = {
     'fortran': 'f90',
 }
 
+# Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
 env.C = env.Program
 env.CPlusPlus = env.Program
 env.X64 = env.Program
 env.Fortran = env.Program
 
-Export('env')
+for language in languages:
+    Alias(language, f'#/build/{language}')
 
 sconscripts = []
 files_to_compile = {language: [] for language in languages}
