@@ -179,7 +179,7 @@ The code would look something like this:
 {% sample lang="py" %}
 [import:38-53, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:37-51, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:36-49, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
