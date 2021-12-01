@@ -2,8 +2,5 @@ Import('files_to_compile env')
 
 for file_info in files_to_compile:
     build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}'
-    
-    env.C(build_target, str(file_info.path))
-    # Gives error e.g. when running 'scons flood_fill'
-    # scons: *** [flood_fill] Source `build\c\flood_fill\flood_fill' not found, needed by target `flood_fill'
-    env.Alias(str(file_info.chapter), build_target)
+    build_result = env.C(build_target, str(file_info.path))
+    env.Alias(str(file_info.chapter), build_result)
