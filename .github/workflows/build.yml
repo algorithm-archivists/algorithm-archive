@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      options: --entrypoint /bin/bash
+      options: --entrypoint /bin/bash --user 0
       image: ghcr.io/algorithm-archivists/aaa-langs:latest
     defaults:
       run:
