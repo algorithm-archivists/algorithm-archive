@@ -34,14 +34,16 @@ env['ASFLAGS'] = '--64'
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
 languages = {
-    'c': 'c',
+    'c': 'c', }
+    
+'''
     'cpp': 'cpp',
     'asm-x64': 's',
     'rust': 'rs',
     'go': 'go',
     'fortran': 'f90',
 }
-
+'''
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
 env.C = env.Program
 env.CPlusPlus = env.Program
