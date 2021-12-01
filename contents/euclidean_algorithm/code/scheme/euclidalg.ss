@@ -11,5 +11,7 @@
         a
         (euclid-mod b (modulo a b))))
 
+(display "[#]\nModulus-based euclidean algorithm result:") (newline)
 (display (euclid-mod (* 64 67) (* 64 81))) (newline)
-(display (euclid-sub (* 64 12) (* 64 27))) (newline)
+(display "[#]\nSubtraction-based euclidean algorithm result:") (newline)
+(display (euclid-sub (* 128 12) (* 128 77))) (newline)
