@@ -22,7 +22,7 @@ jobs:
           npx honkit build
   
       - name: Initalize cargo?
-        run:  . "/root/.cargo/env"
+        run:  . "$HOME/.cargo/env"
       
       - name: Run Scons
         run: scons -kQ
