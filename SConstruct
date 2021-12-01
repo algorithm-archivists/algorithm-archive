@@ -56,22 +56,25 @@ files_to_compile = {language: [] for language in languages}
 
 FileInformation = namedtuple('FileInformation', ['path', 'chapter', 'language'])
 
-for chapter_dir in Path.cwd().joinpath('contents').iterdir():
-    if (code_dir := (chapter_dir / 'code')).exists():
+
+contents_path = Path.cwd().joinpath('contents')
+for chapter_dir in contents_path.iterdir():
+    for code_dir in chapter_dir.glob('**/code'):
+        # For nested chapters e.g. contents/convolutions/1d/
+        extended_chapter_path = code_dir.relative_to(contents_path).parent
+        
         for language_dir in code_dir.iterdir():
             if (language := language_dir.stem) in languages:
-                # Check for overriding sconscript
-                if (sconscript_path := language_dir / 'SConscript').exists():
-                    sconscripts.append(sconscript_path)
-                    SConscript(sconscript_path, exports='env')
-                    continue
-                
                 new_files = [FileInformation(path=file_path,
-                                             chapter=chapter_dir.name,
+                                             chapter=extended_chapter_path,
                                              language=language)
                                              for file_path in language_dir.glob(f'**/*.{languages[language]}')
                             ]
-                files_to_compile[language].extend(new_files)
+                # Check for overriding SConscript
+                if (sconscript_path := language_dir / 'SConscript').exists():
+                    SConscript(sconscript_path, exports={'files_to_compile': new_files})
+                else:
+                    files_to_compile[language].extend(new_files)
 
 sconscript_dir_path = Path.cwd().joinpath('sconscripts')
 for language, files in files_to_compile.items():
