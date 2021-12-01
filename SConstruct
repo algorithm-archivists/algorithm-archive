@@ -8,6 +8,7 @@ Currently, the aim is to provide a way to compile or copy the implementation fil
 To run the compilation for all implementations in one language, e.g. C, run the command `scons build/c`, and the resulting executables will be available in the `build/c` directory, each in their respective algorithm directory, containing the executable."""
 
 from pathlib import Path
+from collections import namedtuple
 import os
 
 
@@ -53,7 +54,10 @@ for language in languages:
 sconscripts = []
 files_to_compile = {language: [] for language in languages}
 
+FileInformation = namedtuple('FileInformation', ['path', 'chapter', 'language'])
+
 for chapter_dir in Path.cwd().joinpath('contents').iterdir():
+    print(chapter_dir)
     if (code_dir := (chapter_dir / 'code')).exists():
         for path in code_dir.iterdir():
             if path.stem in languages:
@@ -62,6 +66,7 @@ for chapter_dir in Path.cwd().joinpath('contents').iterdir():
                     sconscripts.append(sconscript_path)
                     SConscript(sconscript_path, exports='env')
                 else:
+                    #new_files = [FileInformation(path=path, chapter=chapter_dir.
                     files_to_compile[path.stem].extend(path.glob(f'*.{languages[path.stem]}'))
 
 sconscript_dir_path = Path('sconscripts')
