@@ -3,4 +3,4 @@ from pathlib import Path
 
 dirname = Path.cwd().parents[1].stem
 
-env.C(f'#/build/c/{dirname}', Glob('*.c'))
+env.Fortran(f'#/build/fortran/{dirname}', 'euclidean.f90')
