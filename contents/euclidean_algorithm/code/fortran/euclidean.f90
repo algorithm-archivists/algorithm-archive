@@ -49,7 +49,7 @@ PROGRAM euclidean
     b = 128 * 77
     
     WRITE(*,'(a)') '[#]'
-    WRITE(*,'(a)') 'Subtraction-based euclidean algorithm result::'
+    WRITE(*,'(a)') 'Subtraction-based euclidean algorithm result:'
     WRITE(*, '(g0)') euclid_sub(a, b)
 
 END PROGRAM euclidean 
