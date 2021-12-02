@@ -62,3 +62,4 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Dimitri Belopopsky
 - Henrik Abel Christensen
 - Peanutbutter_Warrior
+- Thijs Raymakers 
