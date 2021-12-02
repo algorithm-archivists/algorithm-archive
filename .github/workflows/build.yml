@@ -22,7 +22,7 @@ jobs:
           npx honkit build
   
       - name: Initalize cargo?
-        run:  echo "source $HOME/.cargo/env" >> "$HOME/.profile"
+        run:  export PATH="$PATH:$HOME/.cargo/bin"
       
       - name: Run Scons
         run: scons -kQ
