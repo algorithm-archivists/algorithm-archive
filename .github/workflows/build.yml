@@ -4,13 +4,23 @@ on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HOME: /root
     container:
       options: --entrypoint /bin/bash --user 0 -e "HOME=/root"
       image: ghcr.io/algorithm-archivists/aaa-langs:latest
+      env:
+        HOME: /root
     defaults:
       run:
         shell: bash --rcfile /root/.bashrc -eo pipefail {0} 
     steps:
+      - name: Redefine what home is
+        run: | 
+          printenv
+          export HOME=/root
+          echo
+          printenv
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -22,7 +32,9 @@ jobs:
           npx honkit build
   
       - name: Initalize cargo and run SCons
+        env:
+          HOME: /root
         run:  |
-          export HOME=/root
+          printenv
           . "$HOME/.cargo/env"
           scons -Q
