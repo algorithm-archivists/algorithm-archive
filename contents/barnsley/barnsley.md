@@ -126,7 +126,7 @@ The biggest differences between the two code implementations is that the Barnsle
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/barnsley.jl)
 {% sample lang="rs" %}
-[import, lang:"rust"](code/rust/src/main.rs)
+[import, lang:"rust"](code/rust/barnsley.rs)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/cpp/barnsley.cpp)
 {% sample lang="c" %}
@@ -151,7 +151,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
