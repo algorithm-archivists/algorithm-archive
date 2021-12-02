@@ -26,7 +26,7 @@ impl Ord for Point {
     }
 }
 
-fn counter_clockwise(a: &Point, b: &Point, c: &Point) -> bool {
+fn counter_clockwise(a: &Point, b: &Point, c: &Point) -> f64 {
     (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
 }
 
@@ -41,10 +41,10 @@ fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
     let pivot = points.remove(0);
 
     // Sort all points based on the angle between the pivot point and itself
-    &mut points.sort_by(|a, b| (polar_angle(&pivot, a).
-                                partial_cmp(&polar_angle(&pivot, b))
-                                ).unwrap()
-                       );
+    points.sort_by(|a, b| (polar_angle(&pivot, a).
+                           partial_cmp(&polar_angle(&pivot, b))
+                           ).unwrap()
+                  );
 
     points.insert(0, pivot);
 
@@ -52,7 +52,7 @@ fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
 
     // Move the points of the hull towards the beginning of the vector.
     for mut i in 2..points.len() {
-        while counter_clockwise(&points[m - 1], &points[m], &points[i]) <= 0 {
+        while counter_clockwise(&points[m - 1], &points[m], &points[i]) <= 0.0 {
             if m > 1 {
                 m -= 1;
             // All points are colinear
