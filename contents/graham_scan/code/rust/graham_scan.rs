@@ -27,12 +27,12 @@ impl Ord for Point {
 }
 
 fn counter_clockwise(a: &Point, b: &Point, c: &Point) -> bool {
-    (b.x - a.x) * (c.y - a.y) >= (b.y - a.y) * (c.x - a.x)
+    (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
 }
 
 // Calculate the polar angle of a  point relative to a reference point.
 fn polar_angle(reference: &Point, point: &Point) -> f64 {
-    (point.y - point.y).atan2(point.x - reference.x)
+    (point.y - reference.y).atan2(point.x - reference.x)
 }
 
 fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
@@ -41,23 +41,22 @@ fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
     let pivot = points.remove(0);
 
     // Sort all points based on the angle between the pivot point and itself
-    &mut points.sort_by(|a, b| (polar_angle(a, &pivot).
-                                partial_cmp(&polar_angle(b, &pivot))
+    &mut points.sort_by(|a, b| (polar_angle(&pivot, a).
+                                partial_cmp(&polar_angle(&pivot, b))
                                 ).unwrap()
                        );
 
-    // Reinsert the pivot point
     points.insert(0, pivot);
 
-    let n = points.len();
     let mut m = 1;
 
     // Move the points of the hull towards the beginning of the vector.
-    for mut i in 2..n {
-        while counter_clockwise(&points[m - 1], &points[m], &points[i]) {
+    for mut i in 2..points.len() {
+        while counter_clockwise(&points[m - 1], &points[m], &points[i]) <= 0 {
             if m > 1 {
                 m -= 1;
-            } else if m == i {
+            // All points are colinear
+            } else if i == points.len() {
                 break;
             } else {
                 i += 1;
