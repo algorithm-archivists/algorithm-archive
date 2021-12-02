@@ -23,6 +23,7 @@ jobs:
   
       - name: Initalize cargo and run SCons
         run:  |
+          export $HOME=/root
           ls -lah
           whoami
           printenv
