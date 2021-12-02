@@ -1,7 +1,6 @@
-extern crate num;
 extern crate rustfft;
 
-use num::complex::Complex;
+use rustfft::num_complex::Complex;
 use rustfft::FFTplanner;
 use std::f64::consts::PI;
 use std::fs::File;
@@ -95,7 +94,7 @@ fn fft(x: &mut Vec<Complex<f64>>, inverse: bool) {
     let mut y = vec![Complex::new(0.0_f64, 0.0_f64); x.len()];
     let mut p = FFTplanner::new(inverse);
     let fft = p.plan_fft(x.len());
-    fft.process(x, &mut y);
+    fft.process(x.as_mut_slice(), y.as_mut_slice());
 
     for i in 0..x.len() {
         x[i] = y[i] / (x.len() as f64).sqrt();

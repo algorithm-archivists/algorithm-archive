@@ -40,10 +40,13 @@ def test_approximate_count(n_trials, n_items, a, threshold):
 
     if abs((avg - n_items)/n_items) < threshold:
         print("passed")
+    else:
+        print("failed")
 
-print("testing 1,000, a = 30, 1% error")
+print("[#]\nCounting Tests, 100 trials")
+print("[#]\ntesting 1,000, a = 30, 10% error")
 test_approximate_count(100, 1000, 30, 0.1)
-print("testing 12,345, a = 10, 1% error")
+print("[#]\ntesting 12,345, a = 10, 10% error")
 test_approximate_count(100, 12345, 10, 0.1)
-print("testing 222,222, a = 0.5, 10% error")
+print("[#]\ntesting 222,222, a = 0.5, 20% error")
 test_approximate_count(100, 222222, 0.5, 0.2)

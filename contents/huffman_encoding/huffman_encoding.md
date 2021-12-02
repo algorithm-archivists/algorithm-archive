@@ -78,7 +78,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/huffman.lua)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/huffman.cpp)
+[import, lang:"cpp"](code/cpp/huffman.cpp)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/huffman.clj)
 {% sample lang="py" %}
@@ -88,7 +88,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/huffman.go)
+[import, lang:"go"](code/go/huffman.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/huffman.s)
 {% sample lang="scala" %}
@@ -110,7 +110,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

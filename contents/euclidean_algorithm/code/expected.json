@@ -1,0 +1,8 @@
+{
+    "Description": "euclidean algorithm",
+    "Delta" : 0.0,
+    "OutputValues" : [
+        "64",
+        "128"
+    ]
+}

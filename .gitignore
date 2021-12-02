@@ -517,3 +517,17 @@ vscode/
 
 # aspell
 *.bak
+
+# SCons intermidiate files
+.sconsign.dblite
+*.o
+
+# SCons build directory
+build/
+
+# Cargo artifacts
+Cargo.lock
+target/
+
+*.out
+*.class
