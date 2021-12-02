@@ -27,4 +27,5 @@ jobs:
           whoami
           printenv
           . "/root/.cargo/env"
+          printenv
           scons -Q
