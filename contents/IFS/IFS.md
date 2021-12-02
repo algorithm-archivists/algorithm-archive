@@ -135,7 +135,7 @@ Here, instead of tracking children of children, we track a single individual tha
 {% sample lang="hs" %}
 [import:7-13, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
-[import:39-52, lang:"cpp"](code/c++/IFS.cpp)
+[import:39-52, lang:"cpp"](code/cpp/IFS.cpp)
 {% sample lang="py" %}
 [import:5-12, lang:"python"](code/python/IFS.py)
 {% sample lang="c" %}
@@ -223,7 +223,7 @@ In addition, we have written the chaos game code to take in a set of points so t
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/IFS.cpp)
+[import, lang:"cpp"](code/cpp/IFS.cpp)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/IFS.py)
 {% sample lang="c" %}
@@ -250,7 +250,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

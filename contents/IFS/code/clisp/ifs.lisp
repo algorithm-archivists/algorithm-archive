@@ -21,7 +21,7 @@
     `((0 0) (0.5 ,(sqrt 0.75)) (1 0))))
 
 ;; output the data to the "out.dat" file
-(with-open-file (out "out.dat" :direction :output :if-exists :supersede)
+(with-open-file (out "sierpinski.dat" :direction :output :if-exists :supersede)
   (flet ((format-point (p)
            ;; this is not very clean, but it's the simplest way to insert a tab into a string.
            (format nil "~f~c~f" (point-x p) #\tab (point-y p))))
