@@ -26,5 +26,5 @@ jobs:
           ls -lah
           whoami
           printenv
-          ps -p $$
+          . "/root/.cargo/env"
           scons -Q
