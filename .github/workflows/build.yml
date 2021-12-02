@@ -4,8 +4,6 @@ on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HOME: /root
     container:
       options: --entrypoint /bin/bash --user 0 
       image: ghcr.io/algorithm-archivists/aaa-langs:latest
@@ -22,7 +20,13 @@ jobs:
         run: |
           npm install
           npx honkit build
+          
+      - name: Initalize Cargo
+        env:
+          HOME: /root
+        run:  |
+          . "$HOME/.cargo/env"
   
-      - name: Initalize cargo and run SCons
+      - name: Run SCons
         run:  |
           scons -Q
