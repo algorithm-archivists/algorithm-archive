@@ -21,8 +21,5 @@ jobs:
           npm install
           npx honkit build
   
-      - name: Initalize cargo?
-        run:  export PATH="$PATH:/root/.cargo/bin"
-      
-      - name: Run Scons
-        run: echo "$PATH" && scons -Q --random
+      - name: Initalize cargo and run SCons
+        run:  export PATH="$PATH:$HOME/.cargo/bin" && scons -Q
