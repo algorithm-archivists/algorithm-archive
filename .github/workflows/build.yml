@@ -26,4 +26,5 @@ jobs:
           ls -lah
           whoami
           printenv
-          export PATH="$PATH:/root/.cargo/bin" && scons -Q
+          ps -p $$
+          scons -Q
