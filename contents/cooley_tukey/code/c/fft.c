@@ -6,7 +6,7 @@
 #include <time.h>
 #include <fftw3.h>
 
-void fft(double complex *x, int n) {
+void fft(double complex *x, size_t n) {
     double complex y[n];
     memset(y, 0, sizeof(y));
     fftw_plan p;
@@ -56,8 +56,8 @@ void cooley_tukey(double complex *X, const size_t N) {
 }
 
 void bit_reverse(double complex *X, size_t N) {
-    for (int i = 0; i < N; ++i) {
-        int n = i;
+    for (size_t i = 0; i < N; ++i) {
+        size_t n = i;
         int a = i;
         int count = (int)log2((double)N) - 1;
 
@@ -81,7 +81,7 @@ void iterative_cooley_tukey(double complex *X, size_t N) {
     bit_reverse(X, N);
 
     for (int i = 1; i <= log2((double)N); ++i) {
-        int stride = pow(2, i);
+        size_t stride = pow(2, i);
         double complex w = cexp(-2.0 * I * M_PI / stride);
         for (size_t j = 0; j < N; j += stride) {
             double complex v = 1.0;
