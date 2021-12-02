@@ -11,6 +11,8 @@ jobs:
       run:
         shell: bash --rcfile /root/.bashrc -eo pipefail {0} 
     steps:
+      - name: Redefine what home is
+        run: export HOME=/root
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -23,10 +25,5 @@ jobs:
   
       - name: Initalize cargo and run SCons
         run:  |
-          export HOME=/root
-          ls -lah
-          whoami
-          printenv
           . "/root/.cargo/env"
-          printenv
           scons -Q
