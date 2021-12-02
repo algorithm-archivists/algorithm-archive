@@ -26,7 +26,6 @@ impl Ord for Point {
     }
 }
 
-// Check if the turn of the points is counter clockwise.
 fn counter_clockwise(a: &Point, b: &Point, c: &Point) -> bool {
     (b.x - a.x) * (c.y - a.y) >= (b.y - a.y) * (c.x - a.x)
 }
@@ -37,15 +36,15 @@ fn polar_angle(reference: &Point, point: &Point) -> f64 {
 }
 
 fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
-    // First, sort the points so the one with the lowest y-coordinate comes first (the pivot)
     points.sort_unstable();
 
-    // Take ownership of the pivot point
     let pivot = points.remove(0);
 
     // Sort all points based on the angle between the pivot point and itself
-    &mut points
-        .sort_by(|a, b| (polar_angle(a, &pivot).partial_cmp(&polar_angle(b, &pivot))).unwrap());
+    &mut points.sort_by(|a, b| (polar_angle(a, &pivot).
+                                partial_cmp(&polar_angle(b, &pivot))
+                                ).unwrap()
+                       );
 
     // Reinsert the pivot point
     points.insert(0, pivot);
