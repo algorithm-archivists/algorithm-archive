@@ -7,8 +7,8 @@ $$
 P(\mathbf{x}) = \frac{f(\mathbf{x})}{\displaystyle\int_D f(\mathbf{x})d\mathbf{x}},
 $$
 
-where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined; 
-and $$f(\mathbf{x})$$ is some a function that is proportional to $$P(x)$$, such as a statistical frequency distribution, i.e., one that counts the number of occurences of each $$\mathbf{x}$$.
+where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined.
+$$f(\mathbf{x})$$ is a function that is proportional to $$P(x)$$, such as a statistical frequency distribution which counts the number of occurences of each $$\mathbf{x}$$.
 The integral in the denominator is the __normalization factor__ which ensures that the sum of all probabilities is unity, i.e.,
 $$
 \int_D P(\mathbf{x}) d\mathbf{x} = 1.
@@ -136,7 +136,7 @@ Your browser does not support the video tag.
 
 Although convergence occurs eventually, not all parts of the distribution achieve convergence quickly. 
 Note from the animation above, that the walker very quickly replicates the distribution of the two peaks on the left, but takes quite a while to even reach the third peak to the right. 
-This is because there is a long "barrier" of low probability region between the third peak and second peak. 
+This is because there is a long low probability region between the third peak and second peak that acts as a "barrier." 
 This may not necessarily be a bad thing &ndash; sometimes one might want to estimate how long something takes to transition from one state to another, and often these peaks represent such 'states'. 
 So averaging over many metropolis runs may give some estimate of these transition times. 
 If global sampling is the goal, the process of exploration could be sped up by choosing larger step sizes for the walker, for example by choosing step size $$g$$ from an interval like $$(-3,3)$$ instead of $$(-1,1)$$. 
@@ -193,7 +193,7 @@ On the other hand, a walker with a large step size may not sample nearby regions
 The effect of step-size on the walker's efficiency is far from obvious! 
 
 How to choose $$g$$ is in itself a research field and depends on what the goal of the sampling is. 
-Some methods even use an "adaptive" method where $$g$$ is "trained" on-the-fly using a learning algorithm! 
+Some techniques even use an "adaptive" method where $$g$$ is "trained" on-the-fly using a learning algorithm! 
 Some of these methods and others are discussed in Ref. {{ "rosenthal2011optimal" | cite }} and Ref. {{ "gareth2001optimal" | cite }}. 
 In a lot of cases, people just use trial and error, as the algorithm is not too difficult to implement.
 
@@ -215,7 +215,7 @@ $$
 3. Accept proposal, $$x'$$ with probability $$A$$. If your programming language doesn't have a built-in method for this,
 	* Generate a random number $$u$$ between $$0$$ and $$1$$.
     * If $$ u \leq A $$, then __accept__ move, and set new position, $$x_{t+1} = x' $$.
-    * Otherwise, __reject__ move, and set new position to current, $$x_{t+1} = x_t $$.
+    * Otherwise, __reject__ move, and set new position to current position, $$x_{t+1} = x_t $$.
 4. Increment $$t \rightarrow t + 1$$ and repeat from step 1.
 
 The code for steps 1 to 3 is:

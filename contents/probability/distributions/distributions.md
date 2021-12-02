@@ -9,9 +9,8 @@ Broadly speaking, we can classify probability distributions into two categories 
 
 It's intuitive for us to understand what a __discrete__ probability distribution is. 
 For example, we understand the outcomes of a coin toss very well, and also that of a dice roll. 
-For a single coin toss, we know that the probability of getting heads (H) is half, or $$P(H) = \frac{1}{2}$$. 
+For a single coin toss, we know that the probability of getting heads $$(H)$$ is half, or $$P(H) = \frac{1}{2}$$. 
 Similarly, the probability of getting tails $$(T)$$ is $$P(T) = \frac{1}{2}$$. 
-Assuming that we can neglect the possibility of the coin landing on it's edge, that pretty much covers it. 
 Formally, we can write the probability distribution for such a coin toss as,
 
 $$
@@ -50,7 +49,7 @@ We know that the lowest sum of two dice is $$2$$ (a $$1$$ on both dice), so $$n 
 
 So now we know the domain of possibilities, i.e., $$n \in [\![2,12]\!]$$. 
 Next, we take a very common approach - for each outcome $$n$$, we count up the number of different ways it can occur. 
-Let's call this number the __frequency of n__, $$f(n)$$. 
+Let's call this number the __frequency of__ $$n$$, $$f(n)$$. 
 We already mentioned that there is only one way to get $$n=2$$, by getting a pair of $$1$$s. 
 By our definition of the function $$f$$, this means that $$f(2)=1$$. 
 For $$n=3$$, we see that there are two possible ways of getting this outcome: the first die shows a $$1$$ and the second a  $$2$$, or the first die shows a  $$2$$ and the second a $$1$$. 
