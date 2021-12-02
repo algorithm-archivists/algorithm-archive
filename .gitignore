@@ -524,3 +524,10 @@ vscode/
 
 # SCons build directory
 build/
+
+# Cargo artifacts
+Cargo.lock
+target/
+
+*.out
+*.class

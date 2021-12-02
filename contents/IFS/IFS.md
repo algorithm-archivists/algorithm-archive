@@ -135,7 +135,7 @@ Here, instead of tracking children of children, we track a single individual tha
 {% sample lang="hs" %}
 [import:7-13, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
-[import:39-52, lang:"cpp"](code/c++/IFS.cpp)
+[import:39-52, lang:"cpp"](code/cpp/IFS.cpp)
 {% sample lang="py" %}
 [import:5-12, lang:"python"](code/python/IFS.py)
 {% sample lang="c" %}
@@ -146,6 +146,8 @@ Here, instead of tracking children of children, we track a single individual tha
 [import:4-16, lang:"coconut"](code/coconut/IFS.coco)
 {% sample lang="java" %}
 [import:16-39, lang:"java"](code/java/IFS.java)
+{% sample lang="ps1" %}
+[import:2-19, lang:"powershell"](code/powershell/IFS.ps1)
 {% endmethod %}
 
 If we set the initial point to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
@@ -221,7 +223,7 @@ In addition, we have written the chaos game code to take in a set of points so t
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/IFS.hs)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/IFS.cpp)
+[import, lang:"cpp"](code/cpp/IFS.cpp)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/IFS.py)
 {% sample lang="c" %}
@@ -232,6 +234,8 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"coconut"](code/coconut/IFS.coco)
 {%sample lang="java" %}
 [import, lang:"java"](code/java/IFS.java)
+{% sample lang="ps1" %}
+[import, lang:"powershell"](code/powershell/IFS.ps1)
 {% endmethod %}
 
 ### Bibliography
@@ -246,7 +250,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

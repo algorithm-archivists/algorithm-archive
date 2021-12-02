@@ -76,7 +76,7 @@ For some reason, though, putting code to this transformation really helped me fi
 {% sample lang="clj" %}
 [import:15-30, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:23-33, lang:"cpp"](code/c++/fft.cpp)
+[import:23-33, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
@@ -129,7 +129,7 @@ In the end, the code looks like:
 {% sample lang="clj" %}
 [import:31-58, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:36-66, lang:"cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
@@ -242,7 +242,7 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/fft.cpp)
+[import, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
@@ -265,7 +265,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
