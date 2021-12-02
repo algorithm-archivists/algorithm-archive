@@ -25,4 +25,4 @@ jobs:
         run:  export PATH="$PATH:/root/.cargo/bin"
       
       - name: Run Scons
-        run: scons -kQ
+        run: echo "$PATH" && scons -Q --random
