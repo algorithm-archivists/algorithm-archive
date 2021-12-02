@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      options: --entrypoint /bin/bash --user 0 -e HOME=/root
+      options: --entrypoint /bin/bash --user 0 -e "HOME=/root"
       image: ghcr.io/algorithm-archivists/aaa-langs:latest
     defaults:
       run:
