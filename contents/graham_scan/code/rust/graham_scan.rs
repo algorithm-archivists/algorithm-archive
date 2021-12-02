@@ -1,7 +1,29 @@
-#[derive(Debug)]
+use std::cmp::Ordering;
+
+#[derive(Debug, PartialEq)]
 struct Point {
     x: f64,
     y: f64,
+}
+
+impl Eq for Point {}
+
+impl PartialOrd for Point {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        if self.y == other.y {
+            self.x.partial_cmp(&other.x)
+        } else {
+            self.y.partial_cmp(&other.y)
+        }
+    }
+}
+
+// Defines an order for Points so they can be sorted
+impl Ord for Point {
+    fn cmp(&self, other: &Self) -> Ordering {
+        // Neither field of Point will be NaN, so this is safe
+        self.partial_cmp(other).unwrap()
+    }
 }
 
 // Check if the turn of the points is counter clockwise.
@@ -16,7 +38,7 @@ fn polar_angle(reference: &Point, point: &Point) -> f64 {
 
 fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
     // First, sort the points so the one with the lowest y-coordinate comes first (the pivot)
-    sort_based_on_lowest_coordinate(&mut points);
+    points.sort_unstable();
 
     // Take ownership of the pivot point
     let pivot = points.remove(0);
@@ -50,10 +72,6 @@ fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
     // Remove all non-hull points from the vector
     points.truncate(m + 1);
     points
-}
-
-fn sort_based_on_lowest_coordinate(points: &mut Vec<Point>) {
-    points.sort_unstable_by(|a, b| (a.y).partial_cmp(&b.y).unwrap());
 }
 
 fn main() {
