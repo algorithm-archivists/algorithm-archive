@@ -22,4 +22,9 @@ jobs:
           npx honkit build
   
       - name: Initalize cargo and run SCons
-        run:  export PATH="$PATH:/root/.cargo/bin" && scons -Q
+        run:  |
+          ls -lah
+          whoami
+          tree
+          printenv
+          export PATH="$PATH:/root/.cargo/bin" && scons -Q
