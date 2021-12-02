@@ -9,7 +9,7 @@ jobs:
       image: ghcr.io/algorithm-archivists/aaa-langs:latest
     defaults:
       run:
-        shell: bash
+        shell: bash --rcfile /root/.bashrc -eo pipefail {0} 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -25,6 +25,5 @@ jobs:
         run:  |
           ls -lah
           whoami
-          tree
           printenv
           export PATH="$PATH:/root/.cargo/bin" && scons -Q
