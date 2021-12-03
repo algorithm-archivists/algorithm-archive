@@ -28,4 +28,4 @@ jobs:
           HOME: /root
         run:  |
           . "$HOME/.cargo/env"
-          scons -Q
+          scons -Q $(git diff --name-only main | grep code | cut -s -d '/' -f4,2 | sed -r -e "s|(.*)/(.*)|build/\2/\1|" | tr '\n' ' ')
