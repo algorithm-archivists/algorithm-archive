@@ -8,7 +8,7 @@ P(\mathbf{x}) = \frac{f(\mathbf{x})}{\displaystyle\int_D f(\mathbf{x})d\mathbf{x
 $$
 
 where $$D$$ is the domain of $$P(\mathbf{x})$$, i.e., all possible values of the $$\mathbf{x}$$ for which $$P(\mathbf{x})$$ is defined.
-$$f(\mathbf{x})$$ is a function that is proportional to $$P(x)$$, such as a statistical frequency distribution which counts the number of occurences of each $$\mathbf{x}$$.
+$$f(\mathbf{x})$$ is a function that is proportional to $$P(x)$$, such as a statistical frequency distribution which counts the number of occurrences of each $$\mathbf{x}$$.
 The integral in the denominator is the __normalization factor__ which ensures that the sum of all probabilities is unity, i.e.,
 $$
 \int_D P(\mathbf{x}) d\mathbf{x} = 1.
@@ -83,7 +83,7 @@ $$
 
 The Metropolis algorithm can bypass the calculation of $$Q$$ altogether and use $$f(x)$$ to generate a distribution of $$x$$ which follows the probability density $$P(x)$$. 
 In other words, it can sample values of $$x$$ in such away that the probability of sampling $$x$$ will follow the actual distribution $$P(x)$$. 
-Thus, if Metropolis was used to sample from $$x$$, the number of occurences of $$x$$ would be proportional to $$P(x)$$.
+Thus, if Metropolis was used to sample from $$x$$, the number of occurrences of $$x$$ would be proportional to $$P(x)$$.
 Numerical normalization can then be done by using the total number of samples instead of performing an integration. 
 This fact dramatically reduces the number of calculations needed to approximate the probability distribution.
 
@@ -182,7 +182,7 @@ As in the random walk example, we will use a random real number between $$-1$$ a
 
 However, $$g$$ can be any function symmetric about $$0$$ for the above algorithm to work. 
 For example, it can be a number chosen randomly from a discrete list, such as $$[ -3, -1, -1, +1, +1, +3]$$. 
-It can also be a number chosen from a symmetric continuos distribution, like the Gaussian, $$e^{-x^2}$$. 
+It can also be a number chosen from a symmetric continuous distribution, like the Gaussian, $$e^{-x^2}$$. 
 In higher dimensions, the function should be spherically symmetric, such as a multidimensional Gaussian function, $$e^{-(x^2 +y^2 + ...)}$$. 
 Whatever function you choose, there are at least a couple of things to note:
 1. If the function $$g$$ is discrete, you will only sample discrete values. 
@@ -197,7 +197,7 @@ Some techniques even use an "adaptive" method where $$g$$ is "trained" on-the-fl
 Some of these methods and others are discussed in Ref. {{ "rosenthal2011optimal" | cite }} and Ref. {{ "gareth2001optimal" | cite }}. 
 In a lot of cases, people just use trial and error, as the algorithm is not too difficult to implement.
 
-After chosing $$g$$, we are almost ready to iterate. 
+After choosing $$g$$, we are almost ready to iterate. 
 We just need to choose the domain of $$x$$, and an initial point for $$ x_0 $$ ($$x_t$$ at $$t = 0$$) chosen randomly from the domain of $$x$$.
 
 {% method %}
