@@ -61,4 +61,5 @@ This file lists everyone, who contributed to this repo and wanted to show up her
 - Hugo Salou
 - Dimitri Belopopsky
 - Henrik Abel Christensen
+- K. Shudipto Amin
 - Peanutbutter_Warrior
