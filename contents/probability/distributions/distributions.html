@@ -1,0 +1,1128 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Probability Distributions · Arcane Algorithm Archive</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.23">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-bibtex-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../tree_traversal/tree_traversal.html" />
+    
+    
+    <link rel="prev" href="../../convolutions/convolutional_theorem/convolutional_theorem.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Algorithm Archive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../introduction/introduction.html">
+            
+                <a href="../../introduction/introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../how_to_contribute/how_to_contribute.html">
+            
+                <a href="../../how_to_contribute/how_to_contribute.html">
+            
+                    
+                    How To Contribute
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../code_reviews/code_reviewers.html">
+            
+                <a href="../../code_reviews/code_reviewers.html">
+            
+                    
+                    Code Reviewers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../plotting/plotting.html">
+            
+                <a href="../../plotting/plotting.html">
+            
+                    
+                    Plotting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../domain_coloring/domain_coloring.html">
+            
+                <a href="../../domain_coloring/domain_coloring.html">
+            
+                    
+                    Domain Coloring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../IFS/IFS.html">
+            
+                <a href="../../IFS/IFS.html">
+            
+                    
+                    Iterated Function Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../barnsley/barnsley.html">
+            
+                <a href="../../barnsley/barnsley.html">
+            
+                    
+                    The Barnsley Fern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../data_structures/data_structures.html">
+            
+                <a href="../../data_structures/data_structures.html">
+            
+                    
+                    Data Structures
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../stacks_and_queues/stacks_and_queues.html">
+            
+                <a href="../../stacks_and_queues/stacks_and_queues.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../mathematical_background/mathematical_background.html">
+            
+                <a href="../../mathematical_background/mathematical_background.html">
+            
+                    
+                    Mathematical Background
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../notation/notation.html">
+            
+                <a href="../../notation/notation.html">
+            
+                    
+                    Complexity Notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../affine_transformations/affine_transformations.html">
+            
+                <a href="../../affine_transformations/affine_transformations.html">
+            
+                    
+                    Affine Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../bitlogic/bitlogic.html">
+            
+                <a href="../../bitlogic/bitlogic.html">
+            
+                    
+                    Bit Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../taylor_series_expansion/taylor_series_expansion.html">
+            
+                <a href="../../taylor_series_expansion/taylor_series_expansion.html">
+            
+                    
+                    Taylor Series
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../convolutions/convolutions.html">
+            
+                <a href="../../convolutions/convolutions.html">
+            
+                    
+                    Convolutions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../../convolutions/1d/1d.html">
+            
+                <a href="../../convolutions/1d/1d.html">
+            
+                    
+                    Convolutions in 1D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../../convolutions/multiplication/multiplication.html">
+            
+                <a href="../../convolutions/multiplication/multiplication.html">
+            
+                    
+                    Multiplication as a Convolution
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../../convolutions/2d/2d.html">
+            
+                <a href="../../convolutions/2d/2d.html">
+            
+                    
+                    Convolutions of Images (2D)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                <a href="../../convolutions/convolutional_theorem/convolutional_theorem.html">
+            
+                    
+                    Convolutional Theorem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.6" data-path="distributions.html">
+            
+                <a href="distributions.html">
+            
+                    
+                    Probability Distributions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../tree_traversal/tree_traversal.html">
+            
+                <a href="../../tree_traversal/tree_traversal.html">
+            
+                    
+                    Tree Traversal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../euclidean_algorithm/euclidean_algorithm.html">
+            
+                <a href="../../euclidean_algorithm/euclidean_algorithm.html">
+            
+                    
+                    Euclidean Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../monte_carlo_integration/monte_carlo_integration.html">
+            
+                <a href="../../monte_carlo_integration/monte_carlo_integration.html">
+            
+                    
+                    Monte Carlo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../metropolis/metropolis.html">
+            
+                <a href="../../metropolis/metropolis.html">
+            
+                    
+                    Metropolis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../matrix_methods/matrix_methods.html">
+            
+                <a href="../../matrix_methods/matrix_methods.html">
+            
+                    
+                    Matrix Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../gaussian_elimination/gaussian_elimination.html">
+            
+                <a href="../../gaussian_elimination/gaussian_elimination.html">
+            
+                    
+                    Gaussian Elimination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../thomas_algorithm/thomas_algorithm.html">
+            
+                <a href="../../thomas_algorithm/thomas_algorithm.html">
+            
+                    
+                    Thomas Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../computational_geometry/computational_geometry.html">
+            
+                <a href="../../computational_geometry/computational_geometry.html">
+            
+                    
+                    Computational Geometry
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../gift_wrapping/gift_wrapping.html">
+            
+                <a href="../../gift_wrapping/gift_wrapping.html">
+            
+                    
+                    Gift Wrapping
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../../jarvis_march/jarvis_march.html">
+            
+                <a href="../../jarvis_march/jarvis_march.html">
+            
+                    
+                    Jarvis March
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.1.2" data-path="../../graham_scan/graham_scan.html">
+            
+                <a href="../../graham_scan/graham_scan.html">
+            
+                    
+                    Graham Scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../cooley_tukey/cooley_tukey.html">
+            
+                <a href="../../cooley_tukey/cooley_tukey.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../decision_problems/decision_problems.html">
+            
+                <a href="../../decision_problems/decision_problems.html">
+            
+                    
+                    Decision Problems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../stable_marriage_problem/stable_marriage_problem.html">
+            
+                <a href="../../stable_marriage_problem/stable_marriage_problem.html">
+            
+                    
+                    Stable Marriage Problem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../physics_solvers/physics_solvers.html">
+            
+                <a href="../../physics_solvers/physics_solvers.html">
+            
+                    
+                    Physics Solvers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../verlet_integration/verlet_integration.html">
+            
+                <a href="../../verlet_integration/verlet_integration.html">
+            
+                    
+                    Verlet Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../../quantum_systems/quantum_systems.html">
+            
+                <a href="../../quantum_systems/quantum_systems.html">
+            
+                    
+                    Quantum Systems
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../../split-operator_method/split-operator_method.html">
+            
+                <a href="../../split-operator_method/split-operator_method.html">
+            
+                    
+                    Split-Operator Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../data_compression/data_compression.html">
+            
+                <a href="../../data_compression/data_compression.html">
+            
+                    
+                    Data Compression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../huffman_encoding/huffman_encoding.html">
+            
+                <a href="../../huffman_encoding/huffman_encoding.html">
+            
+                    
+                    Huffman Encoding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../../computer_graphics/computer_graphics.html">
+            
+                <a href="../../computer_graphics/computer_graphics.html">
+            
+                    
+                    Computer Graphics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../../flood_fill/flood_fill.html">
+            
+                <a href="../../flood_fill/flood_fill.html">
+            
+                    
+                    Flood Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../../quantum_information/quantum_information.html">
+            
+                <a href="../../quantum_information/quantum_information.html">
+            
+                    
+                    Quantum Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../../computus/computus.html">
+            
+                <a href="../../computus/computus.html">
+            
+                    
+                    Computus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../../approximate_counting/approximate_counting.html">
+            
+                <a href="../../approximate_counting/approximate_counting.html">
+            
+                    
+                    Approximate Counting Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Probability Distributions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="whats-a-probability-distribution">What&apos;s a probability distribution?</h1>
+<p>Probability distributions are mathematical functions that give the probabilities of a range or set of outcomes. 
+These outcomes can be the result of an experiment or procedure, such as tossing a coin or rolling dice. 
+They can also be the result of a physical measurement, such as measuring the temperature of an object, counting how many electrons are spin up, etc.
+Broadly speaking, we can classify probability distributions into two categories - <strong>discrete probability distributions</strong> and <strong>continuous probability distributions</strong>.</p>
+<h2 id="discrete-probability-distributions">Discrete Probability Distributions</h2>
+<p>It&apos;s intuitive for us to understand what a <strong>discrete</strong> probability distribution is. 
+For example, we understand the outcomes of a coin toss very well, and also that of a dice roll. 
+For a single coin toss, we know that the probability of getting heads <script type="math/tex; ">(H)</script> is half, or <script type="math/tex; ">P(H) = \frac{1}{2}</script>. 
+Similarly, the probability of getting tails <script type="math/tex; ">(T)</script> is <script type="math/tex; ">P(T) = \frac{1}{2}</script>. 
+Formally, we can write the probability distribution for such a coin toss as,</p>
+<p><script type="math/tex; mode=display">
+P(n) =    \begin{matrix}
+        \displaystyle \frac 1 2 &;& n \in \left\{H,T\right\}. 
+        \end{matrix}
+</script></p>
+<p>Here, <script type="math/tex; ">n</script> denotes the outcome, and we used the &quot;set notation&quot;, <script type="math/tex; ">n \in\left\{H,T\right\}</script>, which means &quot;<script type="math/tex; ">n</script> belongs to a set containing <script type="math/tex; ">H</script> and <script type="math/tex; ">T</script>&quot;. 
+From the above equation, we can also assume that any other outcome for <script type="math/tex; ">n</script> (such as landing on an edge) is incredibly unlikely, impossible, or simply &quot;not allowed&quot; (for example, just toss again if it <em>does</em> land on its edge!).</p>
+<p>For a probability distribution, it&apos;s important to take note of the set of possibilities, or the <strong>domain</strong> of the distribution. 
+Here, <script type="math/tex; ">\left\{H,T\right\}</script> is the domain of <script type="math/tex; ">P(n)</script>, telling us that <script type="math/tex; ">n</script> can only be either <script type="math/tex; ">H</script> or <script type="math/tex; ">T</script>.</p>
+<p>If we use a different system, the outcome <script type="math/tex; ">n</script> could mean other things.
+For example, it could be a number like the outcome of a <strong>die roll</strong> which has the probability distribution,</p>
+<p><script type="math/tex; mode=display">
+P(n) = \begin{matrix}
+        \displaystyle\frac 1 6 &;& n \in [\![1,6]\!] 
+        \end{matrix}.
+</script>
+This is saying that the probability of <script type="math/tex; ">n</script> being a whole number between <script type="math/tex; ">1</script> and <script type="math/tex; ">6</script> is <script type="math/tex; ">1/6</script>, and we assume that the probability of getting any other <script type="math/tex; ">n</script> is <script type="math/tex; ">0</script>. 
+This is a discrete probability function because <script type="math/tex; ">n</script> is an integer, and thus only takes discrete values. </p>
+<p>Both of the above examples are rather boring, because the value of <script type="math/tex; ">P(n)</script> is the same for all <script type="math/tex; ">n</script>. 
+An example of a discrete probability function where the probability actually depends on <script type="math/tex; ">n</script>, is when <script type="math/tex; ">n</script> is the sum of numbers on a <strong>roll of two dice</strong>. 
+In this case, <script type="math/tex; ">P(n)</script>  is different for each <script type="math/tex; ">n</script> as some possibilities like <script type="math/tex; ">n=2</script> can happen in only one possible way (by getting a <script type="math/tex; ">1</script> on both dice), whereas <script type="math/tex; ">n=4</script> can happen in <script type="math/tex; ">3</script> ways (<script type="math/tex; ">1</script> and <script type="math/tex; ">3</script>; or <script type="math/tex; ">2</script> and <script type="math/tex; ">2</script>; or <script type="math/tex; ">3</script> and <script type="math/tex; ">1</script>). </p>
+<p>The example of rolling two dice is a great case study for how we can construct a probability distribution, since the probability varies and it is not immediately obvious how it varies. 
+So let&apos;s go ahead and construct it! </p>
+<p>Let&apos;s first define the domain of our target <script type="math/tex; ">P(n)</script>. 
+We know that the lowest sum of two dice is <script type="math/tex; ">2</script> (a <script type="math/tex; ">1</script> on both dice), so <script type="math/tex; ">n \geq 2</script> for sure. Similarly, the maximum is the sum of two sixes, or <script type="math/tex; ">12</script>, so <script type="math/tex; ">n \leq 12</script> also. </p>
+<p>So now we know the domain of possibilities, i.e., <script type="math/tex; ">n \in [\![2,12]\!]</script>. 
+Next, we take a very common approach - for each outcome <script type="math/tex; ">n</script>, we count up the number of different ways it can occur. 
+Let&apos;s call this number the <strong>frequency of</strong> <script type="math/tex; ">n</script>, <script type="math/tex; ">f(n)</script>. 
+We already mentioned that there is only one way to get <script type="math/tex; ">n=2</script>, by getting a pair of <script type="math/tex; ">1</script>s. 
+By our definition of the function <script type="math/tex; ">f</script>, this means that <script type="math/tex; ">f(2)=1</script>. 
+For <script type="math/tex; ">n=3</script>, we see that there are two possible ways of getting this outcome: the first die shows a <script type="math/tex; ">1</script> and the second a  <script type="math/tex; ">2</script>, or the first die shows a  <script type="math/tex; ">2</script> and the second a <script type="math/tex; ">1</script>. 
+Thus, <script type="math/tex; ">f(3)=2</script>. 
+If you continue doing this for all <script type="math/tex; ">n</script>, you may see a pattern (homework for the reader!). 
+Once you have all the <script type="math/tex; ">f(n)</script>, we can visualize it by plotting <script type="math/tex; ">f(n)</script> vs <script type="math/tex; ">n</script>, as shown below.</p>
+<p>
+    <img class="center" src="res/double_die_frequencies.png" alt="&lt;FIG&gt; Die Roll" style="width:80%">
+</p>
+
+<p>We can see from the plot that the most common outcome for the sum of two dice is a <script type="math/tex; ">n=7</script>, and the further away from <script type="math/tex; ">n=7</script> you get, the less likely the outcome. 
+Good to know, for a prospective gambler!</p>
+<h3 id="normalization">Normalization</h3>
+<p>The <script type="math/tex; ">f(n)</script> plotted above is technically NOT the probability <script type="math/tex; ">P(n)</script> – because we know that the sum of all probabilities should be <script type="math/tex; ">1</script>, which clearly isn&apos;t the case for <script type="math/tex; ">f(n)</script>. 
+But we can get the probability by dividing <script type="math/tex; ">f(n)</script> by the <em>total</em> number of possibilities, <script type="math/tex; ">N</script>. 
+For two dice, that is <script type="math/tex; ">N = 6 \times 6 = 36</script>, but we could also express it as the <em>sum of all frequencies</em>,</p>
+<p><script type="math/tex; mode=display">
+N = \sum_n f(n),
+</script></p>
+<p>which would also equal to <script type="math/tex; ">36</script> in this case. 
+So, by dividing <script type="math/tex; ">f(n)</script> by <script type="math/tex; ">\sum_n f(n)</script> we get our target probability distribution, <script type="math/tex; ">P(n)</script>. 
+This process is called <strong>normalization</strong> and is crucial for determining almost any probability distribution. 
+So in general, if we have the function <script type="math/tex; ">f(n)</script>, we can get the probability as</p>
+<p><script type="math/tex; mode=display">
+P(n) = \frac{f(n)}{\displaystyle\sum_{n} f(n)}.
+</script></p>
+<p>Note that <script type="math/tex; ">f(n)</script> does not necessarily have to be the frequency of <script type="math/tex; ">n</script> – it could be any function which is <em>proportional</em> to <script type="math/tex; ">P(n)</script>, and the above definition of <script type="math/tex; ">P(n)</script> would still hold. 
+It&apos;s easy to check that the sum is now equal to <script type="math/tex; ">1</script>, since</p>
+<p><script type="math/tex; mode=display">
+\sum_n P(n) = \frac{\displaystyle\sum_{n}f(n)}{\displaystyle\sum_{n} f(n)} = 1.
+</script></p>
+<p>Once we have the probability function <script type="math/tex; ">P(n)</script>, we can calculate all sorts of probabilites. 
+For example, let&apos;s say we want to find the probability that <script type="math/tex; ">n</script> will be between two integers <script type="math/tex; ">a</script> and <script type="math/tex; ">b</script>, inclusively (also including <script type="math/tex; ">a</script> and <script type="math/tex; ">b</script>). 
+For brevity, we will use the notation <script type="math/tex; ">\mathbb{P}(a \leq n \leq b)</script> to denote this probability. 
+And to calculate it, we simply have to sum up all the probabilities for each value of <script type="math/tex; ">n</script> in that range, i.e.,</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n).
+</script></p>
+<h2 id="probability-density-functions">Probability Density Functions</h2>
+<p>What if instead of a discrete variable <script type="math/tex; ">n</script>, we had a continuous variable <script type="math/tex; ">x</script>, like temperature or weight? 
+In that case, it doesn&apos;t make sense to ask what the probability is of <script type="math/tex; ">x</script> being <em>exactly</em> a particular number – there are infinite possible real numbers, after all, so the probability of <script type="math/tex; ">x</script> being exactly any one of them is essentially zero! 
+But it <em>does</em> make sense to ask what the probability is that <script type="math/tex; ">x</script> will be <em>between</em> a certain range of values. 
+For example, one might say that there is <script type="math/tex; ">50\%</script> chance that the temperature tomorrow at noon will be between <script type="math/tex; ">5</script> and <script type="math/tex; ">15</script>, or <script type="math/tex; ">5\%</script> chance that it will be between <script type="math/tex; ">16</script> and <script type="math/tex; ">16.5</script>. 
+But how do we put all that information, for every possible range, in a single function? 
+The answer is to use a <strong>probability density function</strong>. </p>
+<p> What does that mean? 
+Well, suppose <script type="math/tex; ">x</script> is a continous quantity, and we have a probability density function, <script type="math/tex; ">P(x)</script> which looks like</p>
+<p>
+    <img class="center" src="res/normal_distribution.png" alt="&lt;FIG&gt; probability density" style="width:100%">
+</p>
+
+<p>Now, if we are interested in the probability of the range of values that lie between <script type="math/tex; ">x_0</script> and <script type="math/tex; ">x_0 + dx</script>, all we have to do is calculate the <em>area</em> of the green sliver above. 
+This is the defining feature of a  probability density function: </p>
+<p> <strong>the probability of a range of values is the <em>area</em> of the region under the probability density curve which is within that range.</strong> </p>
+<p>So if <script type="math/tex; ">dx</script> is infinitesimally small, then the area of the green sliver becomes <script type="math/tex; ">P(x)dx</script>, and hence,</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}(x_0 \leq x \leq x_0 + dx) = P(x)dx.
+</script></p>
+<p>So strictly speaking, <script type="math/tex; ">P(x)</script> itself is NOT a probability, but rather the probability is the quantity <script type="math/tex; ">P(x)dx</script>, or any area under the curve. 
+That is why we call <script type="math/tex; ">P(x)</script> the probability <em>density</em> at <script type="math/tex; ">x</script>, while the actual probability is only defined for ranges of <script type="math/tex; ">x</script>. </p>
+<p>Thus, to obtain the probability of <script type="math/tex; ">x</script> lying within a range, we simply integrate <script type="math/tex; ">P(x)</script> between that range, i.e.,</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}(a \leq x \leq b ) = \int_a^b P(x)dx.
+</script></p>
+<p>This is analagous to finding the probability of a range of discrete values from the previous section:</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}(a \leq n \leq b) = \sum_{n=a}^{b} P(n).
+</script></p>
+<p>The fact that all probabilities must sum to <script type="math/tex; ">1</script> translates to</p>
+<p><script type="math/tex; mode=display">
+\int_D P(x)dx = 1.
+</script></p>
+<p>where <script type="math/tex; ">D</script> denotes the <strong>domain</strong> of <script type="math/tex; ">P(x)</script>, i.e., the entire range of possible values of <script type="math/tex; ">x</script> for which <script type="math/tex; ">P(x)</script> is defined.</p>
+<h3 id="normalization-of-a-density-function">Normalization of a Density Function</h3>
+<p>Just like in the discrete case, we often first calculate some density or frequency function <script type="math/tex; ">f(x)</script>, which is NOT <script type="math/tex; ">P(x)</script>, but proportional to it. 
+We can get the probability density function by normalizing it in a similar way, except that we integrate instead of sum:</p>
+<p><script type="math/tex; mode=display">
+P(\mathbf{x}) = \frac{f(\mathbf{x})}{\int_D f(\mathbf{x})d\mathbf{x}}.
+</script></p>
+<p>For example, consider the following  <strong>Gaussian function</strong> (popularly used in  <strong>normal distributions</strong>), </p>
+<p><script type="math/tex; mode=display">
+f(x) = e^{-x^2},
+</script></p>
+<p>which is defined for all real numbers <script type="math/tex; ">x</script>. 
+We first integrate it (or do a quick google search, as it is rather tricky) to get</p>
+<p><script type="math/tex; mode=display">
+N = \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}.
+</script></p>
+<p>Now we have a Gaussian probability distribution,</p>
+<p><script type="math/tex; mode=display">
+P(x) = \frac{1}{N} e^{-x^2} = \frac{1}{\sqrt{\pi}} e^{-x^2}.
+</script></p>
+<p>In general, normalization can allow us to create a probability distribution out of almost any function <script type="math/tex; ">f(\mathbf{x})</script>. 
+There are really only two rules that <script type="math/tex; ">f(\mathbf{x})</script> must satisfy to be a candidate for a probability density distribution:</p>
+<ol>
+<li>The integral of <script type="math/tex; ">f(\mathbf{x})</script> over any subset of <script type="math/tex; ">D</script> (denoted by <script type="math/tex; ">S</script>) has to be non-negative (it can be zero):
+<script type="math/tex; mode=display">
+\int_{S}f(\mathbf{x})d\mathbf{x} \geq 0.
+</script> </li>
+<li>The following integral must be finite:
+<script type="math/tex; mode=display">
+\int_{D} f(\mathbf{x})d\mathbf{x}.
+</script> </li>
+</ol>
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+<h2 id="license">License</h2>
+<h5 id="imagesgraphics">Images/Graphics</h5>
+<ul>
+<li><p>The image &quot;<a href="res/double_die_frequencies.png">Frequency distribution of a double die roll</a>&quot; was created by <a href="https://github.com/shudipto-amin" target="_blank">K. Shudipto Amin</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</li>
+<li><p>The image &quot;<a href="res/normal_distribution.png">Probability Density</a>&quot; was created by <a href="https://github.com/shudipto-amin" target="_blank">K. Shudipto Amin</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+</li>
+</ul>
+<h5 id="text">Text</h5>
+<p>The text of this chapter was written by <a href="https://github.com/shudipto-amin" target="_blank">K. Shudipto Amin</a> and is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><p><img class="center" src="../cc/CC-BY-SA_icon.svg"></p></a></p>
+<h5 id="pull-requests">Pull Requests</h5>
+<p>After initial licensing (<a href="https://github.com/algorithm-archivists/algorithm-archive/pull/560" target="_blank">#560</a>), the following pull requests have modified the text or graphics of this chapter:</p>
+<ul>
+<li>none</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../convolutions/convolutional_theorem/convolutional_theorem.html" class="navigation navigation-prev " aria-label="Previous page: Convolutional Theorem">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../tree_traversal/tree_traversal.html" class="navigation navigation-next " aria-label="Next page: Tree Traversal">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Probability Distributions","level":"1.6.6","depth":2,"next":{"title":"Tree Traversal","level":"1.7","depth":1,"path":"contents/tree_traversal/tree_traversal.md","ref":"contents/tree_traversal/tree_traversal.md","articles":[]},"previous":{"title":"Convolutional Theorem","level":"1.6.5.4","depth":3,"path":"contents/convolutions/convolutional_theorem/convolutional_theorem.md","ref":"contents/convolutions/convolutional_theorem/convolutional_theorem.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax@https://github.com/algorithm-archivists/plugin-mathjax","bibtex-cite","wordcount","api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git","include-codeblock","bulk-redirect","prism","-highlight"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"api-language-selector":{"languages":[{"lang":"jl","name":"Julia","default":true},{"lang":"bash","name":"Bash"},{"lang":"cs","name":"C#"},{"lang":"cpp","name":"C++"},{"lang":"c","name":"C"},{"lang":"c8","name":"chip-8"},{"lang":"py","name":"Python"},{"lang":"js","name":"JavaScript"},{"lang":"scratch","name":"Scratch"},{"lang":"hs","name":"Haskell"},{"lang":"rs","name":"Rust"},{"lang":"ml","name":"OCaml"},{"lang":"java","name":"Java"},{"lang":"clj","name":"Clojure"},{"lang":"elm","name":"Elm"},{"lang":"LabVIEW","name":"LabVIEW"},{"lang":"d","name":"D"},{"lang":"go","name":"Go"},{"lang":"swift","name":"Swift"},{"lang":"racket","name":"Racket"},{"lang":"m","name":"Matlab"},{"lang":"r","name":"R"},{"lang":"ti83b","name":"TI-83 Basic"},{"lang":"lua","name":"Lua"},{"lang":"crystal","name":"Crystal"},{"lang":"php","name":"PHP"},{"lang":"lisp","name":"Common Lisp"},{"lang":"nim","name":"Nim"},{"lang":"asm-x64","name":"X86-64 Assembly"},{"lang":"f90","name":"Fortran90"},{"lang":"factor","name":"Factor"},{"lang":"ws","name":"Whitespace"},{"lang":"scala","name":"Scala"},{"lang":"emojic","name":"Emojicode"},{"lang":"lolcode","name":"LOLCODE"},{"lang":"piet","name":"Piet"},{"lang":"ss","name":"Scheme"},{"lang":"ps1","name":"PowerShell"},{"lang":"v","name":"Vlang"},{"lang":"coffee","name":"CoffeeScript"},{"lang":"kotlin","name":"Kotlin"},{"lang":"ts","name":"TypeScript"},{"lang":"vim","name":"VimL"},{"lang":"coco","name":"Coconut"},{"lang":"dart","name":"Dart"}]},"prism":{"lang":{"asm-x64":"nasm"},"ignore":["emojicode","text"],"css":["prismjs/themes/prism-tomorrow.css"]},"wordcount":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"bibtex-cite":{},"mathjax":{"forceSVG":false,"version":"2.6.1"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":true,"template":"default","theme":"chrome","unindent":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","lunr":{"maxIndexSize":1000000000},"honkit":">= 3.0.0","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Arcane Algorithm Archive","bib":[{"citationKey":"CT1965","entryType":"ARTICLE","entryTags":{"TITLE":"An algorithm for the machine calculation of complex Fourier series","AUTHOR":"Cooley, James W and Tukey, John W","JOURNAL":"Mathematics of computation","VOLUME":"19","NUMBER":"90","PAGES":"297--301","YEAR":"1965","PUBLISHER":"JSTOR"}},{"citationKey":"JM1973","entryType":"ARTICLE","entryTags":{"TITLE":"On the identification of the convex hull of a finite set of points in the plane","AUTHOR":"Jarvis, Ray A","JOURNAL":"Information processing letters","VOLUME":"2","NUMBER":"1","PAGES":"18--21","YEAR":"1973","PUBLISHER":"Elsevier"}},{"citationKey":"GS1972","entryType":"ARTICLE","entryTags":{"TITLE":"An efficient algorithm for determining the convex hull of a finite planar set","AUTHOR":"Graham, Ronald L","JOURNAL":"Information processing letters","VOLUME":"1","NUMBER":"4","PAGES":"132--133","YEAR":"1972","PUBLISHER":"Elsevier"}},{"citationKey":"GNUPLOT","entryType":"MISC","entryTags":{"TITLE":"Gnuplot 5.0: An Interactive Plotting Program, Official Gnuplot Documentation","AUTHOR":"Williams, T and Kelley, C","YEAR":"2015"}},{"citationKey":"BEDE725","entryType":"BOOK","entryTags":{"TITLE":"Bede, the Reckoning of Time","AUTHOR":"Venerabilis, Beda and others","VOLUME":"29","YEAR":"1999","PUBLISHER":"Liverpool University Press"}},{"citationKey":"DICTCOMPUTUS","entryType":"MISC","entryTags":{"TITLE":"Dictionary.com definition of computus","URL":"https://www.merriam-webster.com/dictionary/computus","YEAR":"2020"}},{"citationKey":"COMPUTUS1876","entryType":"ARTICLE","entryTags":{"TITLE":"To find Easter: a new York correspondent sends us the following","AUTHOR":"unknown","JOURNAL":"Nature","YEAR":"1876"}},{"citationKey":"BIEN2004","entryType":"ARTICLE","entryTags":{"TITLE":"Gauss and beyond: The making of Easter algorithms","AUTHOR":"Bien, Reinhold","JOURNAL":"Archive for history of exact sciences","VOLUME":"58","NUMBER":"5","PAGES":"439--452","YEAR":"2004","PUBLISHER":"Springer"}},{"citationKey":"SERVOIS","entryType":"INPROCEEDINGS","entryTags":{"TITLE":"84 Calendrier","AUTHOR":"Servois, M","BOOKTITLE":"Annales de Mathématiques pures et appliquées","VOLUME":"4","NUMBER":"1813-1814","PAGES":"84--90"}},{"citationKey":"STANDISH2004","entryType":"ARTICLE","entryTags":{"TITLE":"The astronomical unit now","AUTHOR":"Standish, EM","JOURNAL":"Proceedings of the International Astronomical Union","VOLUME":"2004","NUMBER":"IAUC196","PAGES":"163--179","YEAR":"2004","PUBLISHER":"Cambridge University Press"}},{"citationKey":"LUNAR_MONTH_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Lunar Month","URL":"https://en.wikipedia.org/wiki/Lunar_month","YEAR":"2020"}},{"citationKey":"SELF-SIMILAR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Self-similarity","URL":"https://en.wikipedia.org/wiki/Self-similarity","YEAR":"2019"}},{"citationKey":"HAUSDORFF","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hausdorff dimension","URL":"https://en.wikipedia.org/wiki/Hausdorff_dimension","YEAR":"2019"}},{"citationKey":"3B1BFRACTAL","entryType":"MISC","entryTags":{"AUTHOR":"Sanderson, G","TITLE":"3blue1brown: Fractals are typically not self-similar","URL":"https://www.youtube.com/watch?v=gB9n2gHsHN4","YEAR":"2017"}},{"citationKey":"MANDELBROT1983FRACTAL","entryType":"BOOK","entryTags":{"TITLE":"The fractal geometry of nature","AUTHOR":"Mandelbrot, Benoit B","VOLUME":"173","YEAR":"1983","PUBLISHER":"WH freeman New York"}},{"citationKey":"MANDELBROT1967LONG","entryType":"ARTICLE","entryTags":{"TITLE":"How long is the coast of Britain? Statistical self-similarity and fractional dimension","AUTHOR":"Mandelbrot, Benoit","JOURNAL":"science","VOLUME":"156","NUMBER":"3775","PAGES":"636--638","YEAR":"1967","PUBLISHER":"American Association for the Advancement of Science"}},{"citationKey":"JAMPOUR2010NEW","entryType":"ARTICLE","entryTags":{"TITLE":"A new fast technique for fingerprint identification with fractal and chaos game theory","AUTHOR":"Jampour, Mahdi and Yaghoobi, Mahdi and Ashourzadeh, Maryam and Soleimani, Adel","JOURNAL":"Fractals","VOLUME":"18","NUMBER":"03","PAGES":"293--300","YEAR":"2010","PUBLISHER":"World Scientific"}},{"citationKey":"FRACTAL-COMPRESSION","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Fractal Compression","URL":"https://en.wikipedia.org/wiki/Fractal_compression","YEAR":"2019"}},{"citationKey":"SAUPE1994REVIEW","entryType":"ARTICLE","entryTags":{"TITLE":"A review of the fractal image compression literature","AUTHOR":"Saupe, Dietmar and Hamzaoui, Raouf","JOURNAL":"ACM SIGGRAPH Computer Graphics","VOLUME":"28","NUMBER":"4","PAGES":"268--276","YEAR":"1994","PUBLISHER":"ACM"}},{"citationKey":"GNEITING2012ESTIMATORS","entryType":"ARTICLE","entryTags":{"TITLE":"Estimators of fractal dimension: Assessing the roughness of time series and spatial data","AUTHOR":"Gneiting, Tilmann and Ševčíková, Hana and Percival, Donald B","JOURNAL":"Statistical Science","PAGES":"247--277","YEAR":"2012","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON1981FRACTALS","entryType":"ARTICLE","entryTags":{"TITLE":"Fractals and self similarity","AUTHOR":"Hutchinson, John E","JOURNAL":"Indiana University Mathematics Journal","VOLUME":"30","NUMBER":"5","PAGES":"713--747","YEAR":"1981","PUBLISHER":"JSTOR"}},{"citationKey":"HUTCHINSON-OPERATOR","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hutchinson Operator","URL":"https://en.wikipedia.org/wiki/Hutchinson_operator","YEAR":"2019"}},{"citationKey":"CHAOS-GAME","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Chaos Game","URL":"https://en.wikipedia.org/wiki/Chaos_game","YEAR":"2019"}},{"citationKey":"CHAOS-GAME-WOLF","entryType":"MISC","entryTags":{"TITLE":"Wolfram: Chaos Game","URL":"http://mathworld.wolfram.com/ChaosGame.html","YEAR":"2019"}},{"citationKey":"BARNSLEY2014FRACTALS","entryType":"BOOK","entryTags":{"TITLE":"Fractals everywhere","AUTHOR":"Barnsley, Michael F","YEAR":"2014","PUBLISHER":"Academic press"}},{"citationKey":"HSV","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: HSL and HSV","URL":"https://en.wikipedia.org/wiki/HSL_and_HSV","YEAR":"2020"}},{"citationKey":"SCHLOSS2019","entryType":"ARTICLE","entryTags":{"TITLE":"Massively parallel split-step Fourier techniques for simulating quantum systems on graphics processing units","AUTHOR":"Schloss, James","YEAR":"2019"}},{"citationKey":"PETHICK2008","entryType":"BOOK","entryTags":{"TITLE":"Bose--Einstein condensation in dilute gases","AUTHOR":"Pethick, Christopher J and Smith, Henrik","YEAR":"2008","PUBLISHER":"Cambridge university press"}},{"citationKey":"WEGERT2012","entryType":"BOOK","entryTags":{"TITLE":"Visual complex functions: an introduction with phase portraits","AUTHOR":"Wegert, Elias","YEAR":"2012","PUBLISHER":"Springer Science \\& Business Media"}},{"citationKey":"POELKEDOMAIN","entryType":"ARTICLE","entryTags":{"TITLE":"Domain Coloring of Complex Functions","AUTHOR":"Poelke, Konstantin and Polthier, Konrad"}},{"citationKey":"LUNDMARK2004","entryType":"ARTICLE","entryTags":{"TITLE":"Visualizing complex analytic functions using domain coloring","AUTHOR":"Lundmark, Hans","JOURNAL":"Recuperado el","VOLUME":"24","YEAR":"2004"}},{"citationKey":"GIMP_BUCKET","entryType":"MISC","entryTags":{"TITLE":"Bucket Fill in Gimp","URL":"https://docs.gimp.org/2.10/en/gimp-tool-bucket-fill.html","YEAR":"2020"}},{"citationKey":"TORBERT2016","entryType":"BOOK","entryTags":{"TITLE":"Applied computer science","AUTHOR":"Torbert, Shane","YEAR":"2016","PAGES":"158","PUBLISHER":"Springer"}},{"citationKey":"CANNY1986COMPUTATIONAL","entryType":"ARTICLE","entryTags":{"TITLE":"A computational approach to edge detection","AUTHOR":"Canny, John","JOURNAL":"IEEE Transactions on pattern analysis and machine intelligence","NUMBER":"6","PAGES":"679--698","YEAR":"1986","PUBLISHER":"Ieee"}},{"citationKey":"MORRIS1978COUNTING","entryType":"ARTICLE","entryTags":{"TITLE":"Counting large numbers of events in small registers","AUTHOR":"Morris, R","JOURNAL":"Communications of the ACM","VOLUME":"21","NUMBER":"10","PAGES":"840--842","YEAR":"1978","PUBLISHER":"ACM New York, NY, USA"}},{"citationKey":"FLAJOLET1985APPROXIMATE","entryType":"ARTICLE","entryTags":{"TITLE":"Approximate counting: a detailed analysis","AUTHOR":"Flajolet, P","JOURNAL":"BIT Numerical Mathematics","VOLUME":"25","NUMBER":"1","PAGES":"113--134","YEAR":"1985","PUBLISHER":"Springer"}},{"citationKey":"ARPIT_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Morris's Algorithm for Approximate Counting","AUTHOR":"Bhayani, A","URL":"https://arpitbhayani.me/blogs/morris-counter","YEAR":"2020"}},{"citationKey":"GREGGUNDERSON_COUNTING","entryType":"MISC","entryTags":{"TITLE":"Approximate Counting with Morris's Algorithm","AUTHOR":"Gundersen, G","URL":"http://gregorygundersen.com/blog/2019/11/11/morris-algorithm/","YEAR":"2019"}},{"citationKey":"3B1B_FINGER_COUNT","entryType":"MISC","entryTags":{"TITLE":"How to count to 1000 on two hands","AUTHOR":"Sanderson, G","URL":"https://youtu.be/1SMmc9gQmHQ","YEAR":"2015"}},{"citationKey":"METROPOLIS1953EQUATION","entryType":"ARTICLE","entryTags":{"PAGES":"1087-1092","EPRINT":"https://doi.org/10.1063/1.1699114\n    \n","NUMBER":"6","AUTHOR":"Metropolis,Nicholas  and Rosenbluth,Arianna W.  and Rosenbluth,Marshall N.  and Teller,Augusta H.  and Teller,Edward ","URL":"https://doi.org/10.1063/1.1699114\n    \n","JOURNAL":"The Journal of Chemical Physics","TITLE":"Equation of State Calculations by Fast Computing Machines","VOLUME":"21","YEAR":"1953","DOI":"10.1063/1.1699114"}},{"citationKey":"ROSENTHAL2011OPTIMAL","entryType":"ARTICLE","entryTags":{"TITLE":"Optimal proposal distributions and adaptive MCMC","AUTHOR":"Rosenthal, Jeffrey S and others","JOURNAL":"Handbook of Markov Chain Monte Carlo","VOLUME":"4","NUMBER":"10.1201","YEAR":"2011","PUBLISHER":"Chapman & Hall/CRC Boca Raton, FL"}},{"citationKey":"GARETH2001OPTIMAL","entryType":"ARTICLE","entryTags":{"PAGES":"351 -- 367","NUMBER":"4","AUTHOR":"Gareth O. Roberts and Jeffrey S. Rosenthal","URL":"https://doi.org/10.1214/ss/1015346320","JOURNAL":"Statistical Science","TITLE":"Optimal scaling for various Metropolis-Hastings algorithms","VOLUME":"16","PUBLISHER":"Institute of Mathematical Statistics","YEAR":"2001","DOI":"10.1214/ss/1015346320"}},{"citationKey":"POTENTIAL_ENERGY_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Potential Energy","URL":"https://en.wikipedia.org/wiki/Potential_energy","YEAR":"2021"}},{"citationKey":"LUDWIG_BOLTZMANN_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Ludwig Boltzmann","URL":"https://en.wikipedia.org/wiki/Ludwig_Boltzmann","YEAR":"2021"}},{"citationKey":"BOLTZMANN_DISTRIBUTION_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Boltzmann distribution","URL":"https://en.wikipedia.org/wiki/Boltzmann_distribution","YEAR":"2021"}},{"citationKey":"HASTINGS1970MONTE","entryType":"ARTICLE","entryTags":{"MONTH":"04","ABSTRACT":"{A generalization of the sampling method introduced by Metropolis et al. (1953) is presented along with an exposition of the relevant theory, techniques of application and methods and difficulties of assessing the error in Monte Carlo estimates. Examples of the methods, including the generation of random orthogonal matrices and potential applications of the methods to numerical problems arising in statistics, are discussed.}","PAGES":"97-109","ISSN":"0006-3444","EPRINT":"https://academic.oup.com/biomet/article-pdf/57/1/97/23940249/57-1-97.pdf","NUMBER":"1","AUTHOR":"Hastings, W. K.","URL":"https://doi.org/10.1093/biomet/57.1.97","JOURNAL":"Biometrika","TITLE":"Monte Carlo sampling methods using Markov chains and their applications","VOLUME":"57","YEAR":"1970","DOI":"10.1093/biomet/57.1.97"}},{"citationKey":"MALA_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Metropolis-adjusted Langevin Algorithm","URL":"https://en.wikipedia.org/wiki/Metropolis-adjusted_Langevin_algorithm","YEAR":"2021"}},{"citationKey":"HMC_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Hamiltonian Monte Carlo","URL":"https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo","YEAR":"2021"}},{"citationKey":"RMSD_WIKI","entryType":"MISC","entryTags":{"TITLE":"Wikipedia: Root Mean Square Deviation","URL":"https://en.wikipedia.org/wiki/Root-mean-square_deviation","YEAR":"2021"}}],"gitbook":"*"},"file":{"path":"contents/probability/distributions/distributions.md","mtime":"2021-12-03T13:25:26.591Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2021-12-03T13:25:50.684Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-api-language-selector/api-language-selector.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
