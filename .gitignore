@@ -528,3 +528,6 @@ build/
 # Cargo artifacts
 Cargo.lock
 target/
+
+*.out
+*.class
