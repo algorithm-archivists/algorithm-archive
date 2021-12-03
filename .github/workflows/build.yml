@@ -20,10 +20,15 @@ jobs:
         run: |
           npm install
           npx honkit build
-          
+      
+      - name: Diff code changes
+      run: |
+          echo "CODE_DIFF=$(git diff --name-only main | grep code | cut -s -d '/' -f4,2 | sed -r -e "s|(.*)/(.*)|build/\2/\1|" | tr '\n' ' ')" >> $GITHUB_ENV
+
       - name: Initalize cargo and run SCons
+        if: ${{ env.CODE_DIFF != '' }}
         env:
           HOME: /root
         run:  |
           . "$HOME/.cargo/env"
-          scons -Q $(git diff --name-only main | grep code | cut -s -d '/' -f4,2 | sed -r -e "s|(.*)/(.*)|build/\2/\1|" | tr '\n' ' ')
+          scons -Q 
