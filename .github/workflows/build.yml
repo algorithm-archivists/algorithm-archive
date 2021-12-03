@@ -22,8 +22,6 @@ jobs:
           npx honkit build
           
       - name: Initalize cargo and run SCons
-        paths-ignore:
-        - '**.md'
         env:
           HOME: /root
         run:  |
