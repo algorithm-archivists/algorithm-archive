@@ -192,7 +192,7 @@ A small step-size means the walker will carefully sample nearby regions more, bu
 On the other hand, a walker with a large step size may not sample nearby regions accurately &ndash; and actually has a higher chance of being rejected if the walker is already in a high probability region, since the acceptance ratio is more drastic for large steps. 
 The effect of step-size on the walker's efficiency is far from obvious! 
 
-How to choose $$g$$ is in itself a research field and depends on what the goal of the sampling is. 
+The question of how to choose an optimal $$g$$ is a research area on its own, and depends largely on what the goal of the sampling is.
 Some techniques even use an "adaptive" method where $$g$$ is "trained" on-the-fly using a learning algorithm! 
 Some of these methods and others are discussed in Ref. {{ "rosenthal2011optimal" | cite }} and Ref. {{ "gareth2001optimal" | cite }}. 
 In a lot of cases, people just use trial and error, as the algorithm is not too difficult to implement.

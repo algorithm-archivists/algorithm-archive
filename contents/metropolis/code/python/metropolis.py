@@ -67,7 +67,7 @@ def test_metropolis_iterate(num_steps, xmin, xmax, x0):
         
  
 if __name__ == "__main__":
-    xmin, xmax = -7, 7
+    xmin, xmax = -10, 10
     x0 = np.random.uniform(xmin, xmax)
 
     num_steps = 50_000
