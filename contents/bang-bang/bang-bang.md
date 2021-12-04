@@ -1,6 +1,6 @@
 # Bang-Bang Control
 
-A bang-bang controller is one of the simplest forms of feedback controller, meant for systems in which a simple on/off switch is used to regulate some aspect of a system to stay within a desired range. The controller will usually specify acceptable limits for the system (temperature limits, for example), and will toggle the input between on/off states as needed to keep the system within the specified range. Common everyday examples include water heaters and air conditioning controllers. 
+A bang-bang controller is one of the simplest forms of feedback controller, used in systems where a simple on/off control signal is used to regulate some aspect of the system (temperature, for example). The controller compares the measured system state with user-defined min/max limits, and toggles the input between on/off states as needed to keep the system within the specified range. Common everyday examples include water heaters and air conditioning controllers. 
 
 ##### Simple Example: Water Heater Control
 Imagine a water heater that needs to regulate temperature, keeping within an allowable range of 45 to 50°C. The heater only has binary on/off control, with no in-between states. In order to regulate the system temperature, the heater must cycle between on/off states to keep the temperature in spec. A basic bang-bang controller would implement the following logic:
