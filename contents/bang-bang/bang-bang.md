@@ -18,7 +18,7 @@ Implementing just these two rules will keep the system temperature within the de
     <img  class="center" src="res/bang_bang_control_history.png" style="width:70%" />
 </p>
 
-An important factor to consider when designing a bang-bang controller is the frequency at which a given controller will toggle the system state. In the example above, with a wide allowable temperature band of 45-50°C, the heater would be powered every ~18 minutes to maintain the overall system. If tighter control over the output were desired (for example, keeping temperature within a narrow range of 45 - 45.2°C), a bang-bang controller could still be used to regulate the system, but the heater would have to toggle on/off much more frequently to keep temperature in the narrower allowable range. Depending on the system being controlled, this rapid on/off cycling may be undesirable:
+An important factor to consider when designing a bang-bang controller is the frequency at which a given controller will toggle the system state. In the example above, with a wide allowable temperature band of 45-50°C, the heater would be powered every ~18 minutes to maintain the overall system. If tighter control over the output were desired (for example, limiting temperature to a narrow range of 45 - 45.2°C), a bang-bang controller can still be used to regulate the system, but the heater would have to toggle on/off much more frequently to keep the temperature in the specified range. Depending on the system being controlled, this rapid on/off cycling may be undesirable:
 
 <p>
     <img  class="center" src="res/bang_temp_fast.png" style="width:70%" />
