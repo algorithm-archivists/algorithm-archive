@@ -44,3 +44,5 @@
 * [Quantum Information](contents/quantum_information/quantum_information.md)
 * [Computus](contents/computus/computus.md)
 * [Approximate Counting Algorithm](contents/approximate_counting/approximate_counting.md)
+* [Bang-Bang Control](contents/bang-bang/bang-bang.md)
+* [PID Control](contents/PID/PID.md)
