@@ -27,4 +27,4 @@ main = do
       points = chaosGame g 10000 sierpinski
       showPoint (Point x y) = show x ++ "\t" ++ show y
 
-  writeFile "out.dat" $ intercalate "\n" $ map showPoint points
+  writeFile "sierpinski.dat" $ intercalate "\n" $ map showPoint points
