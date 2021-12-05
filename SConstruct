@@ -19,10 +19,13 @@ rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
 go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
 
+coconut_builder = Builder(action='coconut $COCONUTFLAGS $SOURCE $TARGET', src_suffix='.coco', target_suffix='.py')
+
 env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder,
                             'cargo': rust_cargo_builder,
-                            'Go': go_builder},
+                            'Go': go_builder,
+                            'Coconut': coconut_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
 Export('env')
@@ -30,6 +33,7 @@ Export('env')
 env['CFLAGS'] = '-Wall -Wextra -Werror'
 env['CXXFLAGS'] = '-std=c++17'
 env['ASFLAGS'] = '--64'
+env['COCONUTFLAGS'] = '--target 3.8'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
@@ -40,6 +44,7 @@ languages = {
     'rust': 'rs',
     'go': 'go',
     'fortran': 'f90',
+    'coconut': 'coco',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
