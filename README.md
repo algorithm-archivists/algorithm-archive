@@ -14,7 +14,7 @@ Here are some essential links:
 - Book / website: <https://www.algorithm-archive.org/>
 - GitHub repository: <https://github.com/algorithm-archivists/algorithm-archive>
 - YouTube channel (LeiosOS): <https://www.youtube.com/user/LeiosOS>
-- Twitch livestream (simuleios): <https://www.twitch.tv/simuleios>
+- Twitch livestream: <https://www.twitch.tv/leioslabs>
 - Discord server: <https://discord.gg/Pr2E9S6>
 
 Note that this project is essentially a book about algorithms collaboratively written by an online community.

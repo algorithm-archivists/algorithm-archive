@@ -20,7 +20,7 @@ void chaos_game(struct point *in, size_t in_n, struct point *out,
 
     struct point cur_point = {drand(), drand()};
 
-    for (int i = 0; i < out_n; ++i) {
+    for (size_t i = 0; i < out_n; ++i) {
         out[i] = cur_point;
         struct point tmp = random_element(in, in_n);
         cur_point.x = 0.5 * (cur_point.x + tmp.x);
@@ -29,16 +29,18 @@ void chaos_game(struct point *in, size_t in_n, struct point *out,
 }
 
 int main() {
+    const int point_count = 10000;
+    
     struct point shape_points [3] = {{0.0,0.0}, {0.5,sqrt(0.75)}, {1.0,0.0}};
-    struct point out_points[1000];
+    struct point out_points[point_count];
 
     srand(time(NULL));
 
-    chaos_game(shape_points, 3, out_points, 1000);
+    chaos_game(shape_points, 3, out_points, point_count);
 
     FILE *fp = fopen("sierpinksi.dat", "w+");
 
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < point_count; ++i) {
         fprintf(fp, "%f\t%f\n", out_points[i].x, out_points[i].y);
     }
 
@@ -46,4 +48,3 @@ int main() {
 
     return 0;
 }
-

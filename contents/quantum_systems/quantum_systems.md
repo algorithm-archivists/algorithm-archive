@@ -226,15 +226,15 @@ This ultimately looks like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import, lang:"julia"](code/julia/energy.jl)
+[import:114-132, lang:"julia"](../split-operator_method/code/julia/split_op.jl)
 {% sample lang="hs" %}
-[import, lang:"haskell"](code/haskell/Energy.hs)
+[import:75-82, lang:"haskell"](../split-operator_method/code/haskell/splitOp.hs)
 {% sample lang="c" %}
-[import:29-, lang:"c"](code/c/energy.c)
+[import:150-184, lang:"c"](../split-operator_method/code/c/split_op.c)
 {% sample lang="cpp" %}
-[import:26-, lang:"cpp"](code/c++/energy.cpp)
+[import:158-189, lang:"cpp"](../split-operator_method/code/cpp/split_op.cpp)
 {% sample lang="py" %}
-[import:4-17, lang:"python"](code/python/energy.py)
+[import:98-112, lang:"python"](../split-operator_method/code/python/split_op.py)
 {% endmethod %}
 
 This calculation will be used in many different simulations of quantum systems to check our results.
@@ -260,7 +260,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

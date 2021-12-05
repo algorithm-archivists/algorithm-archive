@@ -1,4 +1,4 @@
-using DataStructures
+using DataStructures, Printf
 
 struct Node
     children::Vector{Node}
@@ -8,7 +8,7 @@ end
 
 function DFS_recursive(n::Node)
     # Here we are doing something...
-    println(n.ID)
+    print(n.ID, " ")
 
     for child in n.children
         DFS_recursive(child)
@@ -22,7 +22,7 @@ function DFS_recursive_postorder(n::Node)
     end
 
     # Here we are doing something...
-    println(n.ID)
+    print(n.ID, " ")
 end
 
 # This assumes only 2 children, but accounts for other possibilities
@@ -30,13 +30,13 @@ function DFS_recursive_inorder_btree(n::Node)
 
     if (length(n.children) == 2)
         DFS_recursive_inorder_btree(n.children[1])
-        println(n.ID)
+        print(n.ID, " ")
         DFS_recursive_inorder_btree(n.children[2])
     elseif (length(n.children) == 1)
         DFS_recursive_inorder_btree(n.children[1])
-        println(n.ID)
+        print(n.ID, " ")
     elseif (length(n.children) == 0)
-        println(n.ID)
+        print(n.ID, " ")
     else
         println("Not a binary tree!")
     end
@@ -47,7 +47,7 @@ function DFS_stack(n::Node)
     push!(s, n)
 
     while(length(s) > 0)
-        println(first(s).ID)
+        print(top(s).ID, " ")
         temp = pop!(s)
         for child in temp.children
             push!(s, child)
@@ -60,7 +60,7 @@ function BFS_queue(n::Node)
     enqueue!(q, n)
 
     while(length(q) > 0)
-        println(first(q).ID)
+        print(first(q).ID, " ")
         temp = dequeue!(q)
         for child in temp.children
             enqueue!(q, child)
@@ -84,26 +84,28 @@ function create_tree(num_row::Int64, num_child::Int64)
 end
 
 function main()
-
-    println("Creating Tree")
     root = create_tree(2, 3)
 
-    println("Using recursive DFS:")
+    println("[#]\nRecursive DFS:")
     DFS_recursive(root);
+    println()
 
-    println("Using recursive DFS with post-order traversal:")
+    println("[#]\nRecursive Postorder DFS:")
     DFS_recursive_postorder(root);
+    println()
 
-    println("Using stack-based DFS:")
+    println("[#]\nStack-based DFS:")
     DFS_stack(root);
+    println()
 
-    println("Using queue-based BFS:")
+    println("[#]\nQueue-based BFS:")
     BFS_queue(root);
+    println()
 
-    println("Creating binary tree to test in-order traversal.")
     root_binary = create_tree(3,2)
-    println("Using In-order DFS:")
+    println("[#]\nRecursive Inorder DFS for Binary Tree:")
     DFS_recursive_inorder_btree(root_binary)
+    println()
 end
 
 main()

@@ -1,0 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "Arcane Algorithm Archive All Languages",
+
+	// Comment out 'image' and uncomment 'build' to test changes to the dockerfile locally
+	"image": "ghcr.io/algorithm-archivists/aaa-langs:latest",
+	// "build": {\
+	//  // For config options, see the README at:https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/ubuntu
+	// 	"dockerfile": "../Dockerfile",
+	// 	// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
+	// 	"args": { "VARIANT": "focal" }
+	// },
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally (outside the container).
+	// Port : Usage
+	// 4000 : Honkit serves by default on this port
+	"forwardPorts": [4000]
+}
