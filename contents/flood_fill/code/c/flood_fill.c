@@ -25,7 +25,7 @@ int inbounds(struct point p, struct canvas c) {
     return (p.x < 0 || p.y < 0 || p.y >= c.max_y || p.x >= c.max_x) ? 0 : 1;
 }
 
-int find_neighbors(struct canvas c, struct point p, int old_val, int new_val,
+int find_neighbors(struct canvas c, struct point p, int old_val, 
         struct point *neighbors) {
     int cnt = 0;
     struct point points[4] = {
@@ -90,7 +90,7 @@ void stack_fill(struct canvas c, struct point p, int old_val, int new_val) {
             c.data[cur_loc.x + c.max_x * cur_loc.y] = new_val;
 
             struct point neighbors[4];
-            int cnt = find_neighbors(c, cur_loc, old_val, new_val, neighbors);
+            int cnt = find_neighbors(c, cur_loc, old_val, neighbors);
 
             for (int i = 0; i < cnt; ++i) {
                 stack_push(&stk, neighbors[i]);
@@ -160,7 +160,7 @@ void queue_fill(struct canvas c, struct point p, int old_val, int new_val) {
             c.data[cur_loc.x + c.max_x * cur_loc.y] = new_val;
 
             struct point neighbors[4];
-            int cnt = find_neighbors(c, cur_loc, old_val, new_val, neighbors);
+            int cnt = find_neighbors(c, cur_loc, old_val, neighbors);
 
             for (int i = 0; i < cnt; ++i) {
                 enqueue(&q, neighbors[i]);
@@ -181,7 +181,7 @@ void recursive_fill(struct canvas c, struct point p, int old_val,
     c.data[p.x + c.max_x * p.y] = new_val;
 
     struct point neighbors[4];
-    int cnt = find_neighbors(c, p, old_val, new_val, neighbors);
+    int cnt = find_neighbors(c, p, old_val, neighbors);
 
     for (int i = 0; i < cnt; ++i) {
         recursive_fill(c, neighbors[i], old_val, new_val);

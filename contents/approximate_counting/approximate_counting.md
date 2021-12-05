@@ -366,6 +366,8 @@ As we do not have any objects to count, we will instead simulate the counting wi
 [import, lang:"cpp"](code/cpp/approximate_counting.cpp)
 {% sample lang="python" %}
 [import, lang:"python"](code/python/approximate_counting.py)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/ApproximateCounting.java)
 {% endmethod %}
 
 ### Bibliography
@@ -380,7 +382,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

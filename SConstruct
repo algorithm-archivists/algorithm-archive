@@ -26,7 +26,7 @@ env = Environment(ENV=os.environ,
                             'Coconut': coconut_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
-env['CCFLAGS'] = ''
+env['CFLAGS'] = '-Wall -Wextra -Werror'
 env['CXXFLAGS'] = '-std=c++17'
 env['ASFLAGS'] = '--64'
 env['COCONUTFLAGS'] = '--target 3.8'
