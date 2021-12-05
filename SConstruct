@@ -54,7 +54,6 @@ languages = {
     'python': 'py',
     'ruby': 'rb',
     'rust': 'rs',
-    'smalltalk': 'st',
     'viml': 'vim',
 }
 
