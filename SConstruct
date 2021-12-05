@@ -19,12 +19,16 @@ rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
 
 go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
 
+# For interpreted languages to copy to build directory
+copy_builder = Builder(action=Copy('$TARGET', '$SOURCE'))
+
 coconut_builder = Builder(action='coconut $COCONUTFLAGS $SOURCE $TARGET', src_suffix='.coco', target_suffix='.py')
 
 env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder,
                             'cargo': rust_cargo_builder,
                             'Go': go_builder,
+                            'Copier': copy_builder,
                             'Coconut': coconut_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
@@ -37,14 +41,25 @@ env['COCONUTFLAGS'] = '--target 3.8'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
+
 languages = {
-    'c': 'c', 
-    'cpp': 'cpp',
     'asm-x64': 's',
-    'rust': 'rs',
-    'go': 'go',
-    'fortran': 'f90',
+    'bash': 'bash',
+    'c': 'c',
     'coconut': 'coco',
+    'cpp': 'cpp',
+    'fortran': 'f90',
+    'go': 'go',
+    'javascript': 'js',
+    'julia': 'jl',
+    'lolcode': 'lol',
+    'lua': 'lua',
+    'php': 'php',
+    'powershell': 'ps1',
+    'python': 'py',
+    'ruby': 'rb',
+    'rust': 'rs',
+    'viml': 'vim',
 }
 
 # Do not add new Builders here, add them to the BUILDERS argument in the call to Environment above
