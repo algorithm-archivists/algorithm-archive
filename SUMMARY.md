@@ -20,7 +20,7 @@
         * [Multiplication as a Convolution](contents/convolutions/multiplication/multiplication.md)
         * [Convolutions of Images (2D)](contents/convolutions/2d/2d.md)
         * [Convolutional Theorem](contents/convolutions/convolutional_theorem/convolutional_theorem.md)
-	* [Probability Distributions](contents/probability_distributions/distributions.md)	
+    * [Probability Distributions](contents/probability_distributions/distributions.md)	
 * [Tree Traversal](contents/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](contents/euclidean_algorithm/euclidean_algorithm.md)
 * [Monte Carlo](contents/monte_carlo_integration/monte_carlo_integration.md)
