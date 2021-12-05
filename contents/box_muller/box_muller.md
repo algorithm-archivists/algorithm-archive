@@ -88,12 +88,12 @@ r &= \sqrt{-2\ln(u_1)} \\
 \end{align}
 $$
 
-Then $$z_1$$ and $$z_2$$ are essentially $$x,y$$ values of
+Then we can calculate our new $$x,y$$ points as,
 
 $$
 \begin{align}
-z_1 &= r\cos(\theta) \\
-z_2 &= r\sin(\theta).
+x &= r\cos(\theta) \\
+y &= r\sin(\theta).
 \end{align}
 $$
 
@@ -101,7 +101,16 @@ This can be more easily visualized in the following animation:
 
 ADD ANIMATION
 
-In general, this can be written qite simply in code like so:
+Finally, in order to specify the size and shape of the generated Gaussian distribution, we can use the standard deviation, $$\sigma$$, and the mean, $$\mu$$, like so:
+
+$$
+\begin{align}
+z_1 &= x\sigma + \mu \\
+z_2 &= y\sigma + \mu.
+\end{align}
+$$
+
+In general, this can all be written in code like so:
 
 ADD CODE
 
