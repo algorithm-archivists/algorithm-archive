@@ -1,7 +1,7 @@
 # The Box&mdash;Muller Transform
 
 The Box&mdash;Muller transform holds a special pace in my heart as it was the first method I ever had to implement for my own research.
-It was also my first introduction to Fortran, so it wasn't all sunshine and rainbows!
+It was also marked my first time writing Fortran code, so it wasn't all sunshine and rainbows!
 
 The purpose of this transformation is simple.
 It takes a uniform (probably random) distribution and turns it into a Gaussian one.
@@ -10,62 +10,69 @@ ADD IMAGE
 
 That's it.
 
-It was originally developed by George Box (yes, Box is his last name) and Mervin Muller in 1958 and is one of the most common methods to create non-uniform, random distributions of points.
-It's particularly useful when you want to initialize a distribution of particles for a physical, N-body simulation.
+It was originally developed by George Box (yes, Box is his last name) and Mervin Muller in 1958 and is one of the most common methods to create non-uniform, random distributions of points {{ "box1958" | cite }}.
+It's particularly useful when initializing a distribution of particles for a physical, N-body simulation.
 This chapter will be divided into a few subsections:
 
 1. How to initialize the Box&mdash;Muller transform
 2. How to use the Box&mdash;Muller transform in Cartesian coordinates
 3. How to use the Box&mdash;Muller transform in Polar Coordinates
-4. Cartesian vs Polar. Which will come out on top?
 
 Note that for this chapter, we will be focusing on two dimensional transformations, as these are still relatively easy to understand and show how the method can be abstracted to higher dimensions.
+There will be a brief discussion of how to do this in section 2.
 Of course, there will be full code examples at the bottom.
 So, let's get to it!
 
-## How to visualize distributions
-
-Though this is not exactly related to Box Box&mdashMuller transform, it is important to discuss how we will visually represent the distributions in this chapter.
-Namely we will make heavy use of histograms.
-
-If I'm honest, histogramming is one of those endlessly optimizable problems (specifically on parallel hardware) and I am itching to make a chapter on it, but for now, the histogram section on the [plotting chapter](../plotting/plotting.md) is all we need.
-This was also used frequently when discussing probability density functions in the [probability distributions](../probability_distributions/probability_distributions.md) chapter.
+## How to initialize the Box&mdash;Muller transform
 
 The main thing to mention here is that the Box&mdash;Muller transform requires some form of uniform distribution as it's input.
 One obvious way to initialize a random distribution of points is to start with a grid, like so:
 
-ADD CODE
+{% method %}
+{% sample lang="jl" %}
+[import:1-35, lang:"julia"](code/julia/box_muller.jl)
+{% endmethod %}
 
-This will create the following set of points for $$n=100$$.
+This will create the following set of points for $$n=100$$:
 
-ADD IMAGE
+<p>
+    <img  class="center" src="res/grid.png" style="width:70%" />
+</p>
 
 To be honest, there are a bunch of ways to generate this exact same distribution.
-Here, we simply walked backwards half of the grid size, determine the step size, and then place a particle at each step.
+Here, we simply walked backwards half of the grid size, determined the step size, and then placed a particle at each step.
 Note that there is an inherent limitation with this method in that it only works for a square numbers.
-We could have rounded up or down to the nearest square number, but instead chose to just stop adding particles when we run out.
-It's not the cleanest implementation, but the grid will mainly be used for debugging anyway.
+For this, we just decided to round $$n$$ up to the nearest square to make a nice grid.
+It's not the cleanest implementation, but the grid will mainly be used for debugging anyway, so it's ok to be a *little* messy here.
 
 The real star of the show here is the uniform random distribution, which can be generated like this:
 
-ADD CODE
+{% method %}
+{% sample lang="jl" %}
+[import:37-39, lang:"julia"](code/julia/box_muller.jl)
+{% endmethod %}
 
-This will create the following set of points for $$n=100$
+This will create the following set of points for $$n=100$$:
 
-ADD IMAGE
+<p>
+    <img  class="center" src="res/rand_dist.png" style="width:70%" />
+</p>
 
 Ok, but how do we know this is uniform?
 Good question!
 
 The easiest way is to plot a histogram of a super large number of points.
 If the random distribution is uniform, then all the bins should be roughly the same value.
-The more points you have, the more likely the bin values will be the same.
+The more points we have, the closer the bin values will be to each other.
 Here is a set of images for $$n=100$$, $$1,000$$, and $$10,000$$ all in one dimension.
 
-ADD IMAGE
 
-You can clearly tell that the 10,000 case looks the most uniform.
-Once you have done this test, you can be fairly sure that the function you are using to generate a random distribution is uniform and ready for the next step of the process: actually using the Box&mdash;Muller transform!
+| $$100$$ | $$1,000$$ | $$10,000$$ |
+|---------|-----------|------------|
+|![100 points](res/rand100.png)|![1000 points](res/rand1000.png)|![10000 points](res/rand10000.png)|
+
+It is clear that the 10,000 case looks the most uniform.
+Once this test is complete, we can be fairly sure that the function we are using to generate a random distribution is uniform and ready for the next step of the process: actually using the Box&mdash;Muller transform!
 
 
 ## How to use the Box&mdash;Muller transform in Cartesian coordinates
@@ -152,22 +159,14 @@ At this stage, we have a good idea of how the transform works, but some people s
 ## How to use the Box&mdash;Muller transform in polar coordinates
 
 Though the Cartesian form of the Box&mdash;Muller transform is relatively intuitive, the polar is essentially the same, but without the costly $$\sin$$ and $$\cos$$ operations.
-In this case, we use the input values to create an initial value for $$r$$ (to be scaled later:
+In this case, we use the input values to create an initial value for $$r$$ (to be scaled later):
 
 $$
-r_0 = \sqrt{\u_1^2 + u_2^2}.
+r_0 = \sqrt{u_1^2 + u_2^2}.
 $$
 
 This means that we are essentially trying to transform our set of $$u$$ values into a new input value $$r_0$$ and this has a few important consequences:
-1. To ensure that r_0 is also uniformly distributed, we must reject any values for $$u_1$$ and $$u_2$$ where
-$$
-r_0 \left\{
-\begin{equation}
-= 0 \\
-\geq 1
-\end{equation}
-$$.
-2. $$0 < r_0 \leq 1$$
+1. To ensure that r_0 is also uniformly distributed, we must reject any values for $$u_1$$ and $$u_2$$ where $$r$$ is either $$0$$ or $$\gt 1$$
 
 From here, we can use basic trigonometric identities to redefine the $$\sin$$ and $$\cos$$ to be
 
@@ -175,14 +174,15 @@ $$
 \begin{align}
 \cos(\theta) &= u_1/\sqrt{r_0} \\
 \sin(\theta) &= u_2/\sqrt{r_0}.
+\end{align}
 $$
 
 This changes the output equations to be
 
 $$
 \begin{align}
-z_1 &= r\cos(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_1}{\sqrt{r_0}} = u_1 \sqrt{\frac{-2\ln(r_0)}{r_0}} \\
-z_2 &= r\sin(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_2}{\sqrt{r_0}} = u_2 \sqrt{\frac{-2\ln(r_0)}{r_0}}.
+z_1 &= r\cos(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_1}{\sqrt{r_0}}\right) = u_1 \sqrt{\frac{-2\ln(r_0)}{r_0}} \\
+z_2 &= r\sin(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_2}{\sqrt{r_0}}\right) = u_2 \sqrt{\frac{-2\ln(r_0)}{r_0}}.
 \end{align}
 $$
 
