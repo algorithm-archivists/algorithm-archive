@@ -1,16 +1,22 @@
 # Bang-Bang Control
 
-A bang-bang controller is one of the simplest forms of feedback controller, used in systems where a simple on/off control signal is used to regulate some aspect of the system (temperature, for example). The controller compares the measured system state with user-defined min/max limits and toggles the input between on/off states as needed to keep the system within the specified range. Common everyday examples include water heaters and air conditioning controllers. 
+A bang-bang controller is one of the simplest forms of feedback controller, used in systems where a simple on/off control signal is used to regulate some aspect of the system (temperature, for example).
+The controller compares the measured system state with user-defined min/max limits and toggles the input between on/off states as needed to keep the system within the specified range.
+Common everyday examples include water heaters and air conditioning controllers. 
 
 ##### Simple Example: Water Heater Control
-Imagine a water heater that needs to regulate temperature, keeping within an allowable range of 45 to 50°C. The heater only has binary on/off control with no in-between states. In order to regulate the system temperature, the heater must cycle between on/off states to keep the temperature within the specified range. A basic bang-bang controller would implement the following logic:
+Imagine a water heater that needs to regulate temperature, keeping within an allowable range of 45 to 50°C.
+The heater only has binary on/off control with no in-between states.
+In order to regulate the system temperature, the heater must cycle between on/off states to keep the temperature within the specified range.
+A basic bang-bang controller would implement the following logic:
 
 | System State | Action |
 | -------------- | ------------- |
 | Temperature is below desired range (<45°C) | Turn heater ON |
 | Temperature exceeds desired range (>50°C) | Turn heater OFF |
 
-Implementing just these two rules will keep the system temperature within the desired range. The overall system will oscillate between the two limits as the heater turns on and off: 
+Implementing just these two rules will keep the system temperature within the desired range.
+The overall system will oscillate between the two limits as the heater turns on and off: 
 <p>
     <img  class="center" src="res/bang_bang_temp_history.png" style="width:70%" />
 </p>
@@ -18,7 +24,10 @@ Implementing just these two rules will keep the system temperature within the de
     <img  class="center" src="res/bang_bang_control_history.png" style="width:70%" />
 </p>
 
-An important factor to consider when designing a bang-bang controller is the frequency at which a given controller will toggle the system state. In the example above, with a wide allowable temperature band of 45-50°C, the heater would be powered every ~18 minutes to maintain the overall system. If tighter control over the output were desired (for example, limiting temperature to a narrow range of 45 - 45.2°C), a bang-bang controller can still be used to regulate the system, but the heater would have to toggle on/off much more frequently to keep the temperature in the specified range. Depending on the system being controlled, this rapid on/off cycling may be undesirable:
+An important factor to consider when designing a bang-bang controller is the frequency at which a given controller will toggle the system state.
+In the example above, with a wide allowable temperature band of 45-50°C, the heater would be powered every ~18 minutes to maintain the overall system.
+If tighter control over the output is desired (for example, limiting temperature to a narrow range of 45 - 45.2°C), a bang-bang controller can still be used to regulate the system, but the heater would have to toggle on/off much more frequently to keep the temperature in the specified range.
+Depending on the system being controlled, this rapid on/off cycling may be undesirable:
 
 <p>
     <img  class="center" src="res/bang_temp_fast.png" style="width:70%" />
@@ -34,10 +43,12 @@ An important factor to consider when designing a bang-bang controller is the fre
 
 ##### Cons:
 1. The system is not controlled to a *specific* target value; it instead oscillates between specified upper and lower limits.
-2. Setting tight min/max limits on the system output may require the controller to toggle on/off very frequently to maintain the correct output. This may be undesirable depending on the system being controlled (for example, excess wear and tear caused by rapidly turning a pump on and off.)
+2. Setting tight min/max limits on the system output may require the controller to toggle on/off very frequently to maintain the correct output.
+This may be undesirable depending on the system being controlled (for example, excess wear and tear caused by rapidly turning a pump on and off.)
 
 ##### More Reading:
-Bang-bang controllers are only meant for systems controlled with binary on/off inputs. For systems with a continously variable input signal (for example, cruise control in a car), try PID Control.
+Bang-bang controllers are only meant for systems controlled with binary on/off inputs.
+For systems with a continously variable input signal (for example, cruise control in a car), try PID Control.
 
 
 ## License
