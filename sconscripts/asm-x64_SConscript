@@ -1,6 +1,6 @@
-Import('files_to_compile language env')
-from pathlib import Path
+Import('files_to_compile env')
 
-for file in files_to_compile:
-    chapter_name = file.parent.parent.parent.stem
-    env.X64(f'#/build/{language}/{chapter_name}', str(file), LINKFLAGS='-no-pie')
+for file_info in files_to_compile:
+    build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}'
+    build_result = env.X64(build_target, str(file_info.path), LINKFLAGS='-no-pie')
+    env.Alias(str(file_info.chapter), build_result)
