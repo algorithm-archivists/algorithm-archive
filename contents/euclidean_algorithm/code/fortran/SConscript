@@ -1,6 +1,0 @@
-Import('*')
-from pathlib import Path
-
-dirname = Path.cwd().parents[1].stem
-
-env.Fortran(f'#/build/fortran/{dirname}', 'euclidean.f90')
