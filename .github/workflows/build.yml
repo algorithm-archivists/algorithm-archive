@@ -26,4 +26,4 @@ jobs:
           HOME: /root
         run:  |
           . "$HOME/.cargo/env"
-          scons -Q
+          scons -Q --random -j2
