@@ -22,11 +22,14 @@ go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
 # For interpreted languages to copy to build directory
 copy_builder = Builder(action=Copy('$TARGET', '$SOURCE'))
 
+coconut_builder = Builder(action='coconut $COCONUTFLAGS $SOURCE $TARGET', src_suffix='.coco', target_suffix='.py')
+
 env = Environment(ENV=os.environ,
                   BUILDERS={'rustc': rust_rustc_builder,
                             'cargo': rust_cargo_builder,
                             'Go': go_builder,
-                            'Copier': copy_builder},
+                            'Copier': copy_builder,
+                            'Coconut': coconut_builder},
                   tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
 
 Export('env')
@@ -34,6 +37,7 @@ Export('env')
 env['CFLAGS'] = '-Wall -Wextra -Werror'
 env['CXXFLAGS'] = '-std=c++17'
 env['ASFLAGS'] = '--64'
+env['COCONUTFLAGS'] = '--target 3.8'
 
 # Add other languages here when you want to add language targets
 # Put 'name_of_language_directory' : 'file_extension'
@@ -42,6 +46,7 @@ languages = {
     'asm-x64': 's',
     'bash': 'bash',
     'c': 'c',
+    'coconut': 'coco',
     'cpp': 'cpp',
     'fortran': 'f90',
     'go': 'go',
