@@ -37,7 +37,7 @@ An important factor to consider when designing a bang-bang controller is the fre
 2. Setting tight min/max limits on the system output may require the controller to toggle on/off very frequently to maintain the correct output. This may be undesirable depending on the system being controlled (for example, excess wear and tear caused by rapidly turning a pump on and off.)
 
 ##### More Reading:
-Bang-bang controllers are only meant for systems controlled with binary on/off inputs. For systems with a continously variable input signal (for example, cruise control in a car), try [PID Control(coming soon...)](https://www.algorithm-archive.org/contents/PID/PID.html).
+Bang-bang controllers are only meant for systems controlled with binary on/off inputs. For systems with a continously variable input signal (for example, cruise control in a car), try PID Control.
 
 
 ## License
