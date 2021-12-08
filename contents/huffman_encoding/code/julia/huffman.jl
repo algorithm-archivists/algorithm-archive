@@ -1,3 +1,5 @@
+using Test
+
 # This is for the PriorityQueue
 using DataStructures
 
@@ -13,8 +15,6 @@ struct Branch
 end
 
 const Node = Union{Leaf, Branch}
-isbranch(branch::Branch) = true
-isbranch(other::T) where {T} = false
 
 function codebook_recurse!(leaf::Leaf, code::String,
                           dict::Dict{Char,String})
@@ -33,7 +33,11 @@ end
 # This outputs encoding Dict to be used for encoding
 function create_codebook(n::Node)
     codebook = Dict{Char,String}()
-    codebook_recurse!(n, "", codebook)
+    if isa(n, Leaf)
+        codebook[n.key]="0"
+    else
+        codebook_recurse!(n, "", codebook)
+    end
     return codebook
 end
 
@@ -85,14 +89,19 @@ function decode(huffman_tree::Node, bitstring::String)
     current = huffman_tree
     final_string = ""
     for i in bitstring
-        if (i == '1')
-            current = current.left
+        if isa(huffman_tree, Branch)
+            if (i == '1')
+                current = current.left
+            else
+                current = current.right
+            end
+
+            if (!isa(current, Branch))
+                final_string *= string(current.key)
+                current = huffman_tree
+            end
         else
-            current = current.right
-        end
-        if (!isbranch(current))
-            final_string = final_string * string(current.key)
-            current = huffman_tree
+            final_string *= string(huffman_tree.key)
         end
     end
 
@@ -102,11 +111,13 @@ end
 function two_pass_huffman(phrase::String)
     huffman_tree = create_tree(phrase)
     codebook = create_codebook(huffman_tree)
-    println(codebook)
     bitstring = encode(codebook, phrase)
     final_string = decode(huffman_tree, bitstring)
-    println(bitstring)
-    println(final_string)
+    return final_string
 end
 
-two_pass_huffman("bibbity bobbity")
+@testset "b-string tests" begin
+    @test two_pass_huffman("b") == "b"
+    @test two_pass_huffman("bbbbbbbb") == "bbbbbbbb"
+    @test two_pass_huffman("bibbity bobbity") == "bibbity bobbity"
+end

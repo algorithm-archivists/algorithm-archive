@@ -33,25 +33,16 @@ Here is what it looks like in code:
 {% sample lang="jl" %}
 [import:1-13, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:9-22, lang:"cpp"](code/c++/verlet.cpp)
+[import:9-22, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import:3-14, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:2-17, lang:"java"](code/java/Verlet.java)
+[import:14-29, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:1-10, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:14-21, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="matlab" %}
-Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="LabVIEW" %}
-Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
-[import:1-13, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:1-14, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:1-13, lang:"rust"](code/rust/verlet.rs)
@@ -62,7 +53,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="ruby" %}
 [import:1-14, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import:5-16, lang:"go"](code/golang/verlet.go)
+[import:5-16, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import:18-42, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -91,25 +82,16 @@ However, the error for this is $$\mathcal{O}(\Delta t)$$, which is quite poor, b
 {% sample lang="jl" %}
 [import:15-31, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:24-41, lang:"cpp"](code/c++/verlet.cpp)
+[import:24-41, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import:16-31, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:19-37, lang:"java"](code/java/Verlet.java)
+[import:31-49, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:12-23, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:23-28, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="matlab" %}
-Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="LabVIEW" %}
-Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
-[import:15-31, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:16-32, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:15-32, lang:"rust"](code/rust/verlet.rs)
@@ -120,7 +102,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="ruby" %}
 [import:16-32, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import:18-30, lang:"go"](code/golang/verlet.go)
+[import:18-30, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import:44-71, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -163,25 +145,16 @@ Here is the velocity Verlet method in code:
 {% sample lang="jl" %}
 [import:33-45, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import:43-54, lang:"cpp"](code/c++/verlet.cpp)
+[import:43-54, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import:33-43, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import:39-51, lang:"java"](code/java/Verlet.java)
+[import:51-63, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import:25-34, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import:30-35, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
-Unfortunately, this has not yet been implemented in scratch, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="matlab" %}
-Unfortunately, this has not yet been implemented in matlab, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="LabVIEW" %}
-Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia code:
-[import:33-45, lang:"julia"](code/julia/verlet.jl)
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import:34-45, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import:34-45, lang:"rust"](code/rust/verlet.rs)
@@ -192,7 +165,7 @@ Unfortunately, this has not yet been implemented in LabVIEW, so here's Julia cod
 {% sample lang="ruby" %}
 [import:34-46, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import:32-42, lang:"go"](code/golang/verlet.go)
+[import:32-42, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import:73-101, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -221,30 +194,16 @@ Both of these methods work simply by iterating timestep-by-timestep and can be w
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/verlet.jl)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/verlet.cpp)
+[import, lang:"cpp"](code/cpp/verlet.cpp)
 {% sample lang="c" %}
 [import, lang:"c"](code/c/verlet.c)
 {% sample lang="java" %}
-[import, lang:"java"](code/java/VerletValues.java)
 [import, lang:"java"](code/java/Verlet.java)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/verlet.py)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/verlet.hs)
-{% sample lang="scratch" %}
-Submitted by Jie
-<p>
-    <img  class="center" src="code/scratch/verlet_scratch.png" />
-</p>
-Link: [https://scratch.mit.edu/projects/173039394/](https://scratch.mit.edu/projects/173039394/)
-{% sample lang="matlab" %}
-[import, lang:"matlab"](code/matlab/verlet.m)
-{% sample lang="LabVIEW" %}
-Submitted by P. Mekhail
-<p>
-    <img  class="center" src="code/labview/verlet_labview.png" />
-</p>
-{% sample lang="javascript" %}
+{% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/verlet.js)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/verlet.rs)
@@ -255,7 +214,7 @@ Submitted by P. Mekhail
 {% sample lang="ruby" %}
 [import, lang="ruby"](code/ruby/verlet.rb)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/verlet.go)
+[import, lang:"go"](code/go/verlet.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/verlet.s)
 {% sample lang="kotlin" %}
@@ -275,7 +234,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

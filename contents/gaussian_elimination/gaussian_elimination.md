@@ -315,12 +315,14 @@ In code, this process might look like this:
 [import:5-13, lang:"c"](code/c/gaussian_elimination.c)
 [import:19-34, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:13-23, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:13-23, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="js" %}
 [import:7-23, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:15-32, lang:"go"](code/go/gaussian_elimination.go)
 {% sample lang="py" %}
 [import:13-19, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
@@ -387,12 +389,14 @@ Here is what it might look like in code:
 {% sample lang="c" %}
 [import:36-41, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:25-32, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:25-32, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="js" %}
 [import:25-30, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:38-49, lang:"go"](code/go/gaussian_elimination.go)
 {% sample lang="py" %}
 [import:21-26, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
@@ -408,7 +412,7 @@ When we put everything together, it looks like this:
 {% sample lang="c" %}
 [import:15-48, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:8-34, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:8-34, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-36, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -449,7 +453,7 @@ Here it is in code:
 {% sample lang="c" %}
 [import:64-82, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:36-54, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:36-54, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -493,7 +497,7 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:50-62, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:56-72, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:56-72, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import:98-112, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -519,7 +523,7 @@ Well, this analogy breaks down quickly when we start moving beyond 3D, so it is 
 That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
 
 <div style="text-align:center">
-<video width="560" height="315" autoplay controls loop>
+<video style="width:70%" controls loop>
   <source src="res/GE_vis.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -563,7 +567,7 @@ Here's a video describing Gaussian elimination:
 {% sample lang="c" %}
 [import, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -587,7 +591,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
@@ -596,7 +600,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Pull Requests
 

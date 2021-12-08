@@ -125,13 +125,22 @@ struct tree* generate_tree(const char* str) {
     }
 
     struct heap heap = { 0 };
-    for (int i = 0; i < sizeof(counts) / sizeof(int); ++i) {
+    for (size_t i = 0; i < sizeof(counts) / sizeof(int); ++i) {
         if (counts[i]) {
             struct tree* tree = calloc(1, sizeof(struct tree));
             tree->value = (char)i;
             tree->count = counts[i];
             heap_push(&heap, tree);
         }
+    }
+
+    if (heap.length == 1) {
+        struct tree* leaf = heap_pop(&heap);
+        struct tree* root = calloc(0, sizeof(struct tree));
+        root->left = leaf;
+        root->count = leaf->count;
+        heap_free(&heap);
+        return root;
     }
 
     while (heap.length > 1) {
@@ -202,8 +211,6 @@ char* encode(const char* input, struct tree** huffman_tree,
     *codebook = generate_codebook(*huffman_tree);
 
     char* result = duplicate(get_code(codebook, *input));
-    int result_length = strlen(result);
-    int result_capacity = result_length;
 
     input += 1;
 
