@@ -23,13 +23,13 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="py" %}
 [import:4-6, lang:"python"](code/python/graham_scan.py)
 {% sample lang="go" %}
-[import:13-15, lang:"go"](code/golang/graham.go)
+[import:13-15, lang:"go"](code/go/graham.go)
 {% sample lang="java" %}
 [import:27-29, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="lisp" %}
 [import:5-13, lang:"lisp"](code/clisp/graham-scan.lisp)
 {% sample lang="cpp" %}
-[import:18-20, lang="cpp"](code/c++/graham_scan.cpp)
+[import:18-20, lang="cpp"](code/cpp/graham_scan.cpp)
 {% sample lang="coco" %}
 [import:4-8, lang="coconut"](code/coconut/graham_scan.coco)
 {% endmethod %}
@@ -57,13 +57,13 @@ In the end, the code should look something like this:
 {% sample lang="py" %}
 [import:14-28, lang:"python"](code/python/graham_scan.py)
 {% sample lang="go" %}
-[import:21-42, lang:"go"](code/golang/graham.go)
+[import:21-42, lang:"go"](code/go/graham.go)
 {% sample lang="java" %}
 [import:35-70, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="lisp" %}
 [import:15-58, lang:"lisp"](code/clisp/graham-scan.lisp)
 {% sample lang="cpp" %}
-[import:26-62, lang="cpp"](code/c++/graham_scan.cpp)
+[import:26-62, lang="cpp"](code/cpp/graham_scan.cpp)
 {% sample lang="coco" %}
 [import:17-30, lang="coconut"](code/coconut/graham_scan.coco)
 {% endmethod %}
@@ -86,13 +86,13 @@ In the end, the code should look something like this:
 {% sample lang="py" %}
 [import, lang:"python"](code/python/graham_scan.py)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/graham.go)
+[import, lang:"go"](code/go/graham.go)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/GrahamScan.java)
 {% sample lang="lisp" %}
 [import, lang:"lisp"](code/clisp/graham-scan.lisp)
 {% sample lang="cpp" %}
-[import, lang="cpp"](code/c++/graham_scan.cpp)
+[import, lang="cpp"](code/cpp/graham_scan.cpp)
 {%sample lang="coco" %}
 [import, lang="coconut"](code/coconut/graham_scan.coco)
 {% endmethod %}
@@ -105,7 +105,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

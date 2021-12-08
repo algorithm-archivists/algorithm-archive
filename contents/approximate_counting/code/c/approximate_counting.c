@@ -63,19 +63,24 @@ void test_approximation_count(size_t n_trials, size_t n_items, double a,
     }
     double avg = sum / n_trials;
 
-    assert(fabs((avg - n_items) / n_items) < threshold);
+    if (fabs((avg - n_items) / n_items) < threshold){
+        printf("passed\n");
+    }
+    else{
+        printf("failed\n");
+    }
 }
 
 int main()
 {
     srand(time(NULL));
 
-    printf("Counting Tests, 100 trials\n");
-    printf("testing 1000, a = 30, 1%% error\n");
+    printf("[#]\nCounting Tests, 100 trials\n");
+    printf("[#]\ntesting 1,000, a = 30, 10%% error\n");
     test_approximation_count(100, 1000, 30, 0.1);
-    printf("testing 12345, a = 10, 1%% error\n");
+    printf("[#]\ntesting 12,345, a = 10, 10%% error\n");
     test_approximation_count(100, 12345, 10, 0.1);
-    printf("testing 222222, a = 0.5, 10%% error\n");
+    printf("[#]\ntesting 222,222, a = 0.5, 20%% error\n");
     test_approximation_count(100, 222222, 0.5, 0.2);
 
     return 0;

@@ -44,7 +44,7 @@ each point is tested to see whether it's in the circle or not:
 {% sample lang="c" %}
 [import:7-9, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import:7-16, lang:"cpp"](code/c++/monte_carlo.cpp)
+[import:7-16, lang:"cpp"](code/cpp/monte_carlo.cpp)
 {% sample lang="js" %}
 [import:2-6, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -147,7 +147,7 @@ Feel free to submit your version via pull request, and thanks for reading!
 {% sample lang="c" %}
 [import, lang:"c"](code/c/monte_carlo.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/monte_carlo.cpp)
+[import, lang:"cpp"](code/cpp/monte_carlo.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/monte_carlo.js)
 {% sample lang="hs" %}
@@ -220,7 +220,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
