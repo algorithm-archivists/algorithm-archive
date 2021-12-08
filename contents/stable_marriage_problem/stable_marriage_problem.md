@@ -40,7 +40,7 @@ Here is a video describing the stable marriage problem:
 {% sample lang="c" %}
 [import, lang:"c"](code/c/stable_marriage.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/stable_marriage.cpp)
+[import, lang:"cpp"](code/cpp/stable_marriage.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}
@@ -68,7 +68,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
