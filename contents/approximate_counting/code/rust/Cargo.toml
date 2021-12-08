@@ -9,5 +9,5 @@ edition = "2021"
 rand = "0.8.4"
 
 [[bin]]
-name = "approximate_counting"
+name = "main"
 path = "approximate_counting.rs"
