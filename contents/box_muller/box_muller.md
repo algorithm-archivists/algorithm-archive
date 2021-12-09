@@ -43,7 +43,7 @@ To be honest, there are a bunch of ways to generate this exact same distribution
 Here, we simply walked backwards half of the grid size, determined the step size, and then placed a particle at each step.
 Note that there is an inherent limitation with this method in that it only works for a square numbers.
 For this, we just decided to round $$n$$ up to the nearest square to make a nice grid.
-It's not the cleanest implementation, but the grid will mainly be used for debugging anyway, so it's ok to be a *little* messy here.
+It's not the cleanest implementation, but the grid will mainly be used for debugging anyway, so it's OK to be a *little* messy here.
 
 The real star of the show here is the uniform random distribution, which can be generated like this:
 
@@ -58,7 +58,7 @@ This will create the following set of points for $$n=100$$:
     <img  class="center" src="res/rand_dist.png" style="width:70%" />
 </p>
 
-Ok, but how do we know this is uniform?
+OK, but how do we know this is uniform?
 Good question!
 
 The easiest way is to plot a histogram of a super large number of points.
@@ -128,7 +128,7 @@ For now, I would like to briefly touch on how to abstract this to different dime
 If you would like to use the Box&mdash;Muller transform in one dimension, things are relatively easy, just ignore $$u_2$$ and $$\theta$$, such that
 
 $$
-z = r =  \sqrt{-2\ln(u)}.
+z = r =  \sigma\sqrt{-2\ln(u)} + \mu.
 $$
 
 There shouldn't be any funny business here.
@@ -136,10 +136,10 @@ We will leave the code modifications to the reader, but show the results:
 
 ADD IMAGE
 
-### Ok, what about for 3D?
+### OK, what about for 3D?
 
-For three dimensions, you would need to use spherical coordinates and one additional uniform distribution to create a third point $$u_3$$ and $$z_3$$.
-For spherical coordinates, the additional angular value of $$\phi$$ only stretches to $$\pi$$, so the appropriate transforms would be
+For three dimensions, need need to use spherical coordinates and one additional uniform distribution to create a third point $$u_3$$ and $$z_3$$.
+Also, the additional angular value of $$\phi$$ only stretches to $$\pi$$, so the appropriate transforms would be
 
 $$
 \begin{align}
@@ -149,13 +149,23 @@ r &= \sqrt{-2\ln(u_1)} \\
 \end{align}
 $$
 
-Then $$z_1$$, $$z_2$$, and $$z_3$$ are essentially $$x,y,z$$ values of
+Then $$x,y,z$$ are
 
 $$
 \begin{align}
-z_1 &= r\cos(\theta)sin(\phi) \\
-z_2 &= r\sin(\theta)sin(\phi) \\
-z_3 &= r\cos(\phi).
+x &= r\cos(\theta)sin(\phi) \\
+y &= r\sin(\theta)sin(\phi) \\
+z &= r\cos(\phi),
+\end{align}
+$$
+
+and 
+
+$$
+\begin{align}
+z_1 &= \sigma x + \mu \\ 
+z_2 &= \sigma y + \mu \\ 
+z_3 &= \sigma z + \mu.
 \end{align}
 $$
 
@@ -163,19 +173,19 @@ Similar to the previous subsection, we will leave the code modifications to the 
 
 ADD IMAGE
 
-At this stage, we have a good idea of how the transform works, but some people shy away from the Cartesian method in-practice and instead opt for the polar form, which we will be talking about in the next section.
+At this stage, we have a good idea of how the transform works, but some people shy away from the Cartesian method in practice and instead opt for the polar form, which we will be talking about in the next section.
 
 ## How to use the Box&mdash;Muller transform in polar coordinates
 
-Though the Cartesian form of the Box&mdash;Muller transform is relatively intuitive, the polar is essentially the same, but without the costly $$\sin$$ and $$\cos$$ operations.
-In this case, we use the input values to create an initial value for $$r$$ (to be scaled later):
+The Cartesian form of the Box&mdash;Muller transform is relatively intuitive, and the polar method is essentially the same, but without the costly $$\sin$$ and $$\cos$$ operations.
+In this case, we use the input values to create an initial radial (to be scaled later):
 
 $$
 r_0 = \sqrt{u_1^2 + u_2^2}.
 $$
 
-This means that we are essentially trying to transform our set of $$u$$ values into a new input value $$r_0$$ and this has a few important consequences:
-1. To ensure that r_0 is also uniformly distributed, we must reject any values for $$u_1$$ and $$u_2$$ where $$r$$ is either $$0$$ or $$\gt 1$$
+This means that we are essentially trying to transform our set of $$u$$ values into a new input value $$r_0$$.
+To do this, we need to start with a uniformly distributed *circle*, so we must reject any values for $$u_1$$ and $$u_2$$ where $$r$$ is either $$0$$ or $$\gt 1$$.
 
 From here, we can use basic trigonometric identities to redefine the $$\sin$$ and $$\cos$$ to be
 
@@ -190,10 +200,23 @@ This changes the output equations to be
 
 $$
 \begin{align}
-z_1 &= r\cos(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_1}{\sqrt{r_0}}\right) = u_1 \sqrt{\frac{-2\ln(r_0)}{r_0}} \\
-z_2 &= r\sin(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_2}{\sqrt{r_0}}\right) = u_2 \sqrt{\frac{-2\ln(r_0)}{r_0}}.
+x &= r\cos(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_1}{\sqrt{r_0}}\right) = u_1 \sqrt{\frac{-2\ln(r_0)}{r_0}} \\
+y &= r\sin(\theta) = \sqrt{-2\ln(r_0)}\left(\frac{u_2}{\sqrt{r_0}}\right) = u_2 \sqrt{\frac{-2\ln(r_0)}{r_0}}.
 \end{align}
 $$
+
+Again, the final values are:
+
+$$
+\begin{align}
+z_1 &= \sigma x + \mu \\
+z_2 &= \sigma x + \mu.
+\end{align}
+$$
+
+This can be more easily visualized in the following animation:
+
+ADD ANIMATION
 
 In code, this might look like this:
 
@@ -203,40 +226,102 @@ Again, this is ultimately the same as the Cartesian method, except that it:
 1. Rejects points outside the unit circle (rejection sampling)
 2. Avoids costly $$\sin$$ and $$\cos$$ operations
 
-Point 2 means that the polar method is way faster than the Cartesian one, but 1 is somewhat interesting in it's own right...
+Point 2 means that the polar method *should be* way faster than the Cartesian one, but 1 is somewhat interesting in it's own right...
 
 ### Just how costly is rejection sampling anyway?
 
-Essentially if you want to ensure there are $$n$$ particles in your final distribution of points, you probably want to wrap the polar Box&mdash;Muller transform in a `while` loop until $$n$$ points are found to be in the unit circle
+Let's imagine we want to have a final Gaussian with $$n$$ particles in it.
+With the Cartesian Box&mdash;Muller method, this is easy: start the initial distribution with $$n$$ particles and then do the transform.
+Things *can* be easy with the Polar Box&mdash;Muller method as well, so long as we start with a uniformly distributed circle instead of a uniformly distributed square.
+That is to say, so long as we do the rejection sampling before-hand, the Polar Box&mdash;Muller method will always be more efficient.
+To be fair, there are methods to generate a uniform distribution of points within a circle without rejection sampling, but let's assume that we require using it for this example
+
+This means that someone somehow needs to do the rejections sampling for the Polar method, which is sometimes a painful process.
+In the end the Box&mdash;Muller method can be used to teach some of the fundamentals of General-Purpose GPU computing.
+Note that because of the specificity of this problem, all the code in this subsection will be in Julia and using the package KernelAbstractions.jl, which allows us to execute the same kernels on either CPU or GPU hardware depending on how we configure things.
+
+Let's first consider the case where we do the rejection sampling as a part of the polar Box&mdash;Muller kernel instead of as a pre-processing step.
+In this case, we can imagine 2 separate ways of writing our kernel:
+1. With replacement: In this case, we *absolutely require* the final number of points in our Gaussian distribution to be $$n$$, so if we find a point outside of the unit circle while running the kernel, we will "re-roll" again for a new point that *is* within the circle.
+2. Without replacement: This means that we will start with a uniform distribution of $$n$$ points, but end with a Gaussian of $$m < n$$ points. In this case, if we find a point outside of the unit circle while running the kernel, we just ignore it by setting the output values to NaNs (or something).
+
+OK, so 1 first:
+
+ADD CODE
+
+This is an awful idea for a number of reasons.
+Here are a few:
+1. If we find a point outside of the unit circle, we have to continually look for new points until we *do* find one inside of the circle. This means that some threads might take literally forever finding a new point (if you are really unlucky).
+2. To generate new points, we need to re-generate a uniform distribution, but what if your uniform distribution is not random? What if it's a grid (or something similar) instead? In this case, we really shouldn't look for a new point on the inside of the circle as all those points have already been accounted for.
+3. The `rand()` function is kinda tricky on some parallel platforms (like GPUs) and might not work out of the box. In fact, the implementation shown above can only be run on the CPU.
+
+OK, fine.
+I don't think anyone expected a kernel with a `while` loop inside of it to be fast.
+Well, what about a method without replacement?
+Surely there is no problem if we just ignore the while loop altogether!
+Well, the problem with that is a bit less straightforward, but first, code:
+
+ADD CODE
+
 In the [Monte Carlo chapter](../monte_carlo/monte_carlo.md) we calculated the value of $$\pi$$ by embedding it into a circle.
 There, we found that the probability of a randomly chosen point falling within the unit circle to be $$\frac{\pi r^2}{(2r)^2} = \frac{pi}{4} \sim 78.54\%$$, shown in the image below:
 
 ADD IMAGE
 
-This means that this method rejects $$\sim 21.46\%$$ of points.
-This also means that if you have a specific $$n$$ value you want for the final distribution, you will need $$\frac{1}{0.7853} \sim 1.273$$ more input values on average!
+This means that a uniform distribution of points within a circle will reject $$\sim 21.46\%$$ of points on the square.
+This also means that if we have a specific $$n$$ value we want for the final distribution, we will need $$\frac{1}{0.7853} \sim 1.273$$ more input values on average!
 
-Ok, but is this fast enough to be worth it?
-I also asked myself the same question and created the following benchmarks:
+No problem!
+In this hypothetical case, we don't need *exactly* $$n$$ points, so we can just start everything with $$1.273 n$$ points, right?
+
+Right.
+That will work well on parallel CPU operations, but on the GPU this will still have an issue.
+
+On the GPU, computation is all done in parallel, but there is a minimum unit of parallelism called a *warp*.
+The warp is the smallest number of threads that can execute something in parallel and is usually about 32.
+This means that if an operation is queued, all 32 threads will do it at the same time.
+If 16 threads need to execute something and the other 16 threads need to execute something else, this will lead to a *warp divergence* where 2 actions need to be performed instead of 1.
+
+ADD IMAGE
+
+This is why `if` statements in a kernel can be dangerous!
+If some threads in a warp are asked to do something different than their partners in the same warp, computation can slow down by factor of $$\ell$$, where $$\ell$$ is the number of unique actions you ask for a warp to perform.
+
+If we look at the above kernel, we are essentially asking $$78.53\%$$ of our threads to do something different than everyone else, and because we are usually inputting a uniform random distribution, this means that *most* warps will have to queue up 2 parallel actions instead of 1.
+Now we need to pick our poison: fast $$\sin$$ and $$\cos$$ operations or warp divergence.
+
+The only way to know which is better is to perform benchmarks, which we will show in a bit, but there is one final scenario we should consider: what about doing the rejection sampling as a pre-processing step?
+That would mean that we pre-initialize the polar kernel with a uniform distribution of points in the unit circle.
+This means no warp divergence, so we can get the best of both worlds, right?
+
+Well, not exactly.
+The polar Box&mdash;Muller method will definitely be faster, but again: someone somewhere needed to do rejection sampling and if you include that step into the process, it's things become complicated again.
+
+In many cases, it's worth spending a little time before-hand to make sure your final operations are fast, but in this case, you only have a single operation (singular), not a set of operations (plural).
+The Box&mdash;Muller methods will usually only be used once at the start of your simulation, which means that your pre-processing step of rejection sampling might end up being overkill.
+
+No matter the case, benchmarks will show the true nature of what we are dealing with here:
 
 ADD TABLE OF BENCHMARKS for GPU / CPU
+1. BM CARTESIAN
+2. BM POLAR W REPLACEMENT
+3. BM POLAR WO REPLACEMENT
+4. BM POLAR WITH PRE-PROCESSING
 
 These were run with an Nvidia GTX 970 GPU and a Ryzen 3700X 16 core CPU.
-The code can be found [here](ADD) and was written in Julia using the KernelAbstractions package for parallelization.
-There are 2 variations of the polar code, one where each thread continually attempts to find a valid point, thereby filling a vector of $$n$$ elements exactly, and another that only partially fills the matrix, leaving all rejected entries as $$0$$.
+Again, the code can be found [here](ADD) and was written in Julia using the KernelAbstractions package for parallelization.
 
+Here, we see an interesting divergence in the results.
+On the CPU, the polar method is *always* faster, but on the GPU, both methods are comparable.
+I believe this is the most important lesson to be learned from the Box&mdash;Muller method: sometimes, no matter how hard you try to optimize your code, different hardware can provide radically different results!
+It's incredibly important to benchmark code to make sure it is actually as performant as you think it is!
 
-## Video Explanation
-
-Here is a video describing the Barnsley fern:
-
-<div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xoXe0AljUMA"
- frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
-ture-in-picture" allowfullscreen></iframe>
-</div>
 
 ## Example Code
+
+The example code here is straightforward: we start with a uniform distribution of points (both on a grid and a uniform random distribution) and then we preform the Box&mdash;Muller transform to see how far off it is from the Gaussian we expect.
+
+ADD CODE
 
 ### Bibliography
 
