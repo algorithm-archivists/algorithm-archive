@@ -29,8 +29,8 @@ function create_grid(n, endpoints)
     for i = 1:axis_num
         for j = 1:axis_num
             a[(i - 1) * axis_num + j, :] .=
-                [i * dx * grid_extents + endpoints[1],
-                 j * dx * grid_extents + endpoints[1]]
+                [i * dx + endpoints[1],
+                 j * dx + endpoints[1]]
         end
     end
 
@@ -60,7 +60,7 @@ function polar_box_muller(input_pts, sigma, mu)
 
     # this method is only valid for points within the unit circle
     if r_0 == 0 || r_0 > 1
-        return [0,0]
+        return [NaN, NaN]
     end
 
     return [sigma * input_pts[1] * sqrt(-2 * log(r_0) / r_0) + mu,
