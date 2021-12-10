@@ -6,7 +6,9 @@ It was also marked my first time writing Fortran code, so it wasn't all sunshine
 The purpose of this transformation is simple.
 It takes a uniform (probably random) distribution and turns it into a Gaussian one.
 
-ADD IMAGE
+<p>
+    <img  class="center" src="res/cartesian_rand_transform.png" style="width:100%" />
+</p>
 
 That's it.
 
@@ -112,11 +114,18 @@ $$
 
 In general, this can all be written in code like so:
 
-ADD CODE
+{% method %}
+{% sample lang="jl" %}
+[import:37-39, lang:"julia"](code/julia/box_muller.jl)
+{% endmethod %}
 
 Which produces the following output
 
 ADD IMAGE (WITH XY CROSS SECTIONS AS HISTOGRAMS)
+<p>
+    <img  class="center" src="res/cartesian_rand_transform.png" style="width:100%" />
+    <img  class="center" src="res/cartesian_grid_transform.png" style="width:100%" />
+</p>
 
 Note that we have written this to work on a single set of input values, but this could also be written to read in the entire distribution of points all at once.
 As this particular technique is usually implemented in parallel, it's up to you to decided what is the fastest for your own individual use-case.
@@ -220,7 +229,17 @@ ADD ANIMATION
 
 In code, this might look like this:
 
-ADD CODE
+{% method %}
+{% sample lang="jl" %}
+[import:1-35, lang:"julia"](code/julia/box_muller.jl)
+{% endmethod %}
+
+This will produce the following output:
+
+<p>
+    <img  class="center" src="res/polar_rand_transform.png" style="width:100%" />
+    <img  class="center" src="res/polar_grid_transform.png" style="width:100%" />
+</p>
 
 Again, this is ultimately the same as the Cartesian method, except that it:
 1. Rejects points outside the unit circle (rejection sampling)
@@ -247,7 +266,7 @@ In this case, we can imagine 2 separate ways of writing our kernel:
 
 OK, so 1 first:
 
-ADD CODE
+[import:1-35, lang:"julia"](code/julia/box_muller.jl)
 
 This is an awful idea for a number of reasons.
 Here are a few:
@@ -261,7 +280,7 @@ Well, what about a method without replacement?
 Surely there is no problem if we just ignore the while loop altogether!
 Well, the problem with that is a bit less straightforward, but first, code:
 
-ADD CODE
+[import:1-35, lang:"julia"](code/julia/box_muller.jl)
 
 In the [Monte Carlo chapter](../monte_carlo/monte_carlo.md) we calculated the value of $$\pi$$ by embedding it into a circle.
 There, we found that the probability of a randomly chosen point falling within the unit circle to be $$\frac{\pi r^2}{(2r)^2} = \frac{pi}{4} \sim 78.54\%$$, shown in the image below:
@@ -321,7 +340,10 @@ It's incredibly important to benchmark code to make sure it is actually as perfo
 
 The example code here is straightforward: we start with a uniform distribution of points (both on a grid and a uniform random distribution) and then we preform the Box&mdash;Muller transform to see how far off it is from the Gaussian we expect.
 
-ADD CODE
+{% method %}
+{% sample lang="jl" %}
+[import, lang:"julia"](code/julia/box_muller.jl)
+{% endmethod %}
 
 ### Bibliography
 
