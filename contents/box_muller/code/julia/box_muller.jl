@@ -19,10 +19,7 @@ function create_grid(n, endpoints)
     # Initializing the array, particles along the column, dimensions along rows
     a = zeros(n, 2)
 
-    # This works by firxt generating an N dimensional tuple with the number
-    # of particles to be places along each dimension ((10,10) for 2D and n=100)
-    # Then we generate the list of all CartesianIndices and cast that onto a
-    # grid by multiplying by dx and subtracting grid_extents/2
+    # This loops over the relevant dimensions
     for i = 1:axis_num
         for j = 1:axis_num
             a[(i - 1) * axis_num + j, :] .=

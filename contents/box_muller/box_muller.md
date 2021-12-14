@@ -31,7 +31,7 @@ One obvious way to initialize a random distribution of points is to start with a
 
 {% method %}
 {% sample lang="jl" %}
-[import:3-35, lang:"julia"](code/julia/box_muller.jl)
+[import:3-32, lang:"julia"](code/julia/box_muller.jl)
 {% endmethod %}
 
 This will create the following set of points for $$n=100$$:
@@ -50,7 +50,7 @@ The real star of the show here is the uniform random distribution, which can be 
 
 {% method %}
 {% sample lang="jl" %}
-[import:37-40, lang:"julia"](code/julia/box_muller.jl)
+[import:34-37, lang:"julia"](code/julia/box_muller.jl)
 {% endmethod %}
 
 This will create the following set of points for $$n=100$$:
@@ -123,7 +123,7 @@ In general, this can all be written in code like so:
 
 {% method %}
 {% sample lang="jl" %}
-[import:44-51, lang:"julia"](code/julia/box_muller.jl)
+[import:41-63, lang:"julia"](code/julia/box_muller.jl)
 {% endmethod %}
 
 Which produces the following output
@@ -239,7 +239,7 @@ In code, this might look like this:
 
 {% method %}
 {% sample lang="jl" %}
-[import:55-66, lang:"julia"](code/julia/box_muller.jl)
+[import:52-63, lang:"julia"](code/julia/box_muller.jl)
 {% endmethod %}
 
 This will produce the following output:
