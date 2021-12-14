@@ -16,6 +16,11 @@ function create_grid(n, endpoints)
     # Distance between each point
     dx = grid_extents / (axis_num)
 
+    # This is warning in the case that we do not have a square number
+    if sqrt(n) != axis_num
+        println("Cannot evenly divide ", n, " into 2 dimensions!")
+    end 
+
     # Initializing the array, particles along the column, dimensions along rows
     a = zeros(n, 2)
 
