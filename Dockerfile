@@ -110,3 +110,4 @@ RUN pip install wheel matplotlib numpy coconut scons
 
 RUN sudo sh -c 'npm install -g typescript'
 
+CMD /bin/bash
