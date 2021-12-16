@@ -5,7 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
+      options: --entrypoint /bin/bash --user 0 
       image: ghcr.io/algorithm-archivists/aaa-langs:latest
+    defaults:
+      run:
+        shell: bash --rcfile /root/.bashrc -eo pipefail {0} 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -17,8 +21,9 @@ jobs:
           npm install
           npx honkit build
           
-      - name: run SCons
+      - name: Initalize cargo and run SCons
         env:
           HOME: /root
         run:  |
+          . "$HOME/.cargo/env"
           scons -Q --random -j2
