@@ -43,7 +43,7 @@ interface IQueue<T> {
 }
 
 
-public class Queue<T> implements  IQueue<T> {
+class Queue<T> implements  IQueue<T> {
 
     private List<T> list;
 
