@@ -30,7 +30,7 @@ env = Environment(ENV=os.environ,
                             'Go': go_builder,
                             'Copier': copy_builder,
                             'Coconut': coconut_builder},
-                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran'])
+                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran', 'javac'])
 
 Export('env')
 
@@ -50,6 +50,7 @@ languages = {
     'cpp': 'cpp',
     'fortran': 'f90',
     'go': 'go',
+    'java': 'java',
     'javascript': 'js',
     'julia': 'jl',
     'lolcode': 'lol',
