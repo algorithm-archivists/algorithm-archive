@@ -11,26 +11,18 @@ from pathlib import Path
 from collections import namedtuple
 import os
 
-
-rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFEST',
-                                     Move('$TARGET$PROGSUFFIX', '$SOURCE_DIR/target/debug/main$PROGSUFFIX')])
-
-rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
-
-go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
-
 # For interpreted languages to copy to build directory
 copy_builder = Builder(action=Copy('$TARGET', '$SOURCE'))
 
-coconut_builder = Builder(action='coconut $COCONUTFLAGS $SOURCE $TARGET', src_suffix='.coco', target_suffix='.py')
-
 env = Environment(ENV=os.environ,
-                  BUILDERS={'rustc': rust_rustc_builder,
-                            'cargo': rust_cargo_builder,
-                            'Go': go_builder,
-                            'Copier': copy_builder,
-                            'Coconut': coconut_builder},
-                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran', 'javac'])
+                  BUILDERS={'Copier': copy_builder}, 
+                            tools=[
+                                'g++', 'gas', 'gcc', 'gfortran', 'gnulink', 'javac',
+                                'cargo',
+                                'coconut',
+                                'go',
+                                'rustc',
+                            ], toolpath=['builders'])
 
 Export('env')
 
