@@ -1,7 +1,29 @@
 from SCons.Builder import Builder
+import SCons.Util
+
+class ToolCocoWarning(SCons.Warnings.SConsWarning):
+    pass
+
+class CoconutNotFound(ToolCocoWarning):
+    pass
+
+SCons.Warnings.enableWarningClass(ToolCocoWarning)
+
+def _detect(env):
+    try:
+        return env['COCONUT']
+    except KeyError:
+        pass
+
+    coconut = env.WhereIs('coconut')
+    if coconut:
+        return coconut
+
+    raise SCons.Errors.StopError(CoconutNotFound, 'Could not find Coconut executable')
+
 
 def generate(env):
-    env['COCONUT'] = 'coconut'
+    env['COCONUT'] = _detect(env)
     env['COCONUTFLAGS'] = []
 
     coconut_compiler = Builder(
