@@ -11,7 +11,7 @@ SCons.Warnings.enableWarningClass(ToolCocoWarning)
 
 def _detect(env):
     try:
-        return env['COCONUT']
+        return env['coconut']
     except KeyError:
         pass
 
@@ -19,7 +19,7 @@ def _detect(env):
     if coconut:
         return coconut
 
-    raise SCons.Errors.StopError(CoconutNotFound, 'Could not find Coconut executable')
+    SCons.Warnings.warn(CoconutNotFound, 'Could not find Coconut executable')
 
 
 def generate(env):

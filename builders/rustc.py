@@ -1,4 +1,26 @@
 from SCons.Builder import Builder
+import SCons.Util
+
+class ToolRustcWarning(SCons.Warnings.SConsWarning):
+    pass
+
+class RustcNotFound(ToolRustcWarning):
+    pass
+
+SCons.Warnings.enableWarningClass(ToolRustcWarning)
+
+def _detect(env):
+    try:
+        return env['rustc']
+    except KeyError:
+        pass
+
+    cargo = env.WhereIs('rustc')
+    if cargo:
+        return cargo
+
+    SCons.Warnings.warn(RustcNotFound, 'Could not detect rustc')
+
 
 def exists(env):
     return env.Detect('rustc')
@@ -11,7 +33,7 @@ def rustc_emitter(target, source, env):
     return (target, source)
 
 def generate(env):
-    env['RUSTC'] = 'rustc'
+    env['RUSTC'] = _detect(env)
     env['RUSTCFLAGS'] = []
 
     rust_cargo_builder = Builder(
