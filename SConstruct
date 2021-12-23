@@ -51,7 +51,7 @@ for language, tools in languages_to_import.items():
         try:
             env.Tool(tool)
         except SCons.Warnings.SConsWarning as w:
-            print(w.args[0], ', ignoring')
+            print(f'{w.args[0][0]}, ignoring')
             break
     else:
         available_languages.add(language)

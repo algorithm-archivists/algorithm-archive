@@ -27,7 +27,7 @@ def generate(env):
     env['COCONUTFLAGS'] = []
 
     coconut_compiler = Builder(
-        action='$COCONUT $COCONUTFLAGS $SOURCE $TARGET',
+        action='"$COCONUT" $COCONUTFLAGS $SOURCE $TARGET',
         src_suffix='.coco',
         suffix='.py',
     )

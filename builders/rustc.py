@@ -37,7 +37,7 @@ def generate(env):
     env['RUSTCFLAGS'] = []
 
     rust_cargo_builder = Builder(
-            action='$RUSTC $RUSTCFLAGS -o $TARGET $SOURCE',
+            action='"$RUSTC" $RUSTCFLAGS -o $TARGET $SOURCE',
             suffix='$PROGSUFFIX',
             src_suffix='.rs',
             emitter=rustc_emitter,

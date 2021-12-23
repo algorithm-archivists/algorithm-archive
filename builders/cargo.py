@@ -32,7 +32,7 @@ def generate(env):
     env['MANIFEST'] = []
 
     rust_cargo_builder = Builder(
-            action=['$CARGO build $CARGOFLAGS --bins --manifest-path $MANIFEST',
+            action=['"$CARGO" build $CARGOFLAGS --bins --manifest-path $MANIFEST',
                     Move('$TARGET$PROGSUFFIX', 
                          '$SOURCE_DIR/target/debug/main$PROGSUFFIX')
                     ],
