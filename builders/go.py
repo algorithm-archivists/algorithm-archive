@@ -29,7 +29,7 @@ def generate(env):
     env['GOFLAGS'] = []
 
     go_builder = Builder(
-        action='"$GO" build -o $TARGET$PROGSUFFIX $GOFLAGS $SOURCE',
+        action='"$GO" build -o $TARGET $GOFLAGS $SOURCE',
         src_suffix='.go',
         suffix='$PROGSUFFIX',
     )
