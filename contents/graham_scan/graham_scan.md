@@ -33,7 +33,7 @@ We can find whether a rotation is counter-clockwise with trigonometric functions
 {% sample lang="coco" %}
 [import:4-8, lang="coconut"](code/coconut/graham_scan.coco)
 {% sample lang="rs" %}
-[import:7-10, lang: "rust"](code/rust/graham_scan.rs)
+[import:33-35, lang: "rust"](code/rust/graham_scan.rs)
 {% endmethod %}
 
 If the output of this function is 0, the points are collinear.
@@ -69,7 +69,7 @@ In the end, the code should look something like this:
 {% sample lang="coco" %}
 [import:17-30, lang="coconut"](code/coconut/graham_scan.coco)
 {% sample lang="rs" %}
-[import:17-53, lang: "rust"](code/rust/graham_scan.rs)
+[import:42-61, lang: "rust"](code/rust/graham_scan.rs)
 {% endmethod %}
 
 ### Bibliography
