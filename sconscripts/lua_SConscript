@@ -1,0 +1,6 @@
+Import('files_to_compile env')
+
+for file_info in files_to_compile:
+    build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}.lua'
+    build_result = env.Copier(build_target, str(file_info.path))
+    env.Alias(str(file_info.chapter), build_result)
