@@ -40,12 +40,12 @@ fn polar_angle(reference: &Point, point: &Point) -> f64 {
 }
 
 fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
-    if points.len() == 0 {
+    if points.is_empty() {
         return Vec::new();
     }
 
     // Unwrap is safe because length is > 0
-    let start = points.iter().min().unwrap().clone();
+    let start = *points.iter().min().unwrap();
     points.retain(|a| a != &start);
     points.sort_unstable_by(|a, b| polar_angle(&start, a).partial_cmp(&polar_angle(&start, b)).unwrap());
 
