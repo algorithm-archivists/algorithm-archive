@@ -11,26 +11,51 @@ from pathlib import Path
 from collections import namedtuple
 import os
 
-
-rust_cargo_builder = Builder(action=['cargo build --bins --manifest-path $MANIFEST',
-                                     Move('$TARGET$PROGSUFFIX', '$SOURCE_DIR/target/debug/main$PROGSUFFIX')])
-
-rust_rustc_builder = Builder(action='rustc $SOURCE -o $TARGET$PROGSUFFIX')
-
-go_builder = Builder(action='go build -o $TARGET$PROGSUFFIX $SOURCE')
+import SCons
+SCons.Warnings.warningAsException()
 
 # For interpreted languages to copy to build directory
 copy_builder = Builder(action=Copy('$TARGET', '$SOURCE'))
 
-coconut_builder = Builder(action='coconut $COCONUTFLAGS $SOURCE $TARGET', src_suffix='.coco', target_suffix='.py')
-
 env = Environment(ENV=os.environ,
-                  BUILDERS={'rustc': rust_rustc_builder,
-                            'cargo': rust_cargo_builder,
-                            'Go': go_builder,
-                            'Copier': copy_builder,
-                            'Coconut': coconut_builder},
-                  tools=['gcc', 'gnulink', 'g++', 'gas', 'gfortran', 'javac'])
+                  BUILDERS={'Copier': copy_builder}, 
+                  tools=[
+                    'g++', 'gas', 'gcc', 'gfortran', 'gnulink', 'javac'],
+                  toolpath=['builders'])
+
+available_languages = {
+    'asm-x64',
+    'bash',
+    'c',
+    'cpp',
+    'fortran',
+    'java',
+    'julia',
+    'lolcode'
+    'lua',
+    'php',
+    'powershell',
+    'python',
+    'ruby',
+    'viml',
+}
+
+languages_to_import = {
+    'coconut': ['coconut'],
+    'go': ['go'],
+    'rust': ['rustc', 'cargo'],
+}
+
+for language, tools in languages_to_import.items():
+    for tool in tools:
+        try:
+            env.Tool(tool)
+        except SCons.Warnings.SConsWarning as w:
+            print(f'{w.args[0][0]}, ignoring')
+            break
+    else:
+        available_languages.add(language)
+
 
 Export('env')
 
@@ -69,11 +94,11 @@ env.CPlusPlus = env.Program
 env.X64 = env.Program
 env.Fortran = env.Program
 
-for language in languages:
+for language in available_languages:
     Alias(language, f'#/build/{language}')
 
 sconscripts = []
-files_to_compile = {language: [] for language in languages}
+files_to_compile = {language: [] for language in languages if language in available_languages}
 
 FileInformation = namedtuple('FileInformation', ['path', 'chapter', 'language'])
 
@@ -85,7 +110,7 @@ for chapter_dir in contents_path.iterdir():
         extended_chapter_path = code_dir.relative_to(contents_path).parent
         
         for language_dir in code_dir.iterdir():
-            if (language := language_dir.stem) in languages:
+            if (language := language_dir.stem) in available_languages:
                 new_files = [FileInformation(path=file_path,
                                              chapter=extended_chapter_path,
                                              language=language)
