@@ -26,6 +26,10 @@ impl Ord for Point {
     }
 }
 
+// Determines whether the angle abc is clockwise, counter-clockwise or colinear
+// result > 0 : counter-clockwise
+// result = 0 : colinear
+// result < 0 : clockwise
 fn counter_clockwise(a: &Point, b: &Point, c: &Point) -> f64 {
     (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
 }
