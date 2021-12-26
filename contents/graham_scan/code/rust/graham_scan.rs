@@ -1,6 +1,6 @@
 use std::cmp::Ordering;
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Copy, Clone)]
 struct Point {
     x: f64,
     y: f64,
@@ -40,40 +40,24 @@ fn polar_angle(reference: &Point, point: &Point) -> f64 {
 }
 
 fn graham_scan(mut points: Vec<Point>) -> Vec<Point> {
-    points.sort_unstable();
-
-    let pivot = points.remove(0);
-
-    // Sort all points based on the angle between the pivot point and itself
-    points.sort_by(|a, b| (polar_angle(&pivot, a).
-                           partial_cmp(&polar_angle(&pivot, b))
-                           ).unwrap()
-                  );
-
-    points.insert(0, pivot);
-
-    let mut m = 1;
-
-    // Move the points of the hull towards the beginning of the vector.
-    for mut i in 2..points.len() {
-        while counter_clockwise(&points[m - 1], &points[m], &points[i]) <= 0.0 {
-            if m > 1 {
-                m -= 1;
-            // All points are colinear
-            } else if i == points.len() {
-                break;
-            } else {
-                i += 1;
-            }
-        }
-
-        m += 1;
-        points.swap(i, m);
+    if points.len() == 0 {
+        return Vec::new();
     }
 
-    // Remove all non-hull points from the vector
-    points.truncate(m + 1);
-    points
+    // Unwrap is safe because length is > 0
+    let start = points.iter().min().unwrap().clone();
+    points.retain(|a| a != &start);
+    points.sort_unstable_by(|a, b| polar_angle(&start, a).partial_cmp(&polar_angle(&start, b)).unwrap());
+
+    let mut hull: Vec<Point> = vec![start, points[0], points[1]];
+
+    for pt in points[2..points.len()].iter() {
+        while counter_clockwise(&hull[hull.len() - 2], &hull[hull.len() - 1], pt) < 0.0 {
+            hull.pop();
+        }
+        hull.push(*pt);
+    }
+    hull
 }
 
 fn main() {
