@@ -46,18 +46,12 @@ def dfs_recursive_inorder_btree(node):
 
 
 def dfs_stack(node):
-    stack = []
-    stack.append(node)
-
-    temp = None
-
-    while len(stack) > 0:
-        print(stack[-1].data, end=' ')
-        temp = stack.pop()
-
-        for child in temp.children:
-            stack.append(child)
-
+    stack = [node]
+    while stack:
+        node = stack.pop()
+        if node.children:
+            stack += node.children
+        print(node.data, end=' ')
 
 def bfs_queue(node):
     queue = []
