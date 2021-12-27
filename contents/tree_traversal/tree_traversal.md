@@ -231,7 +231,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:53-60, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:48-59, lang:"python"](code/python/tree_traversal.py)
+[import:48-54, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-stack.svg" style="width:70%" />
@@ -284,7 +284,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:62-69, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:62-72, lang:"python"](code/python/tree_traversal.py)
+[import:56-62, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" style="width:70%" />
