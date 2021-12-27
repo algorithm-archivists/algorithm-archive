@@ -49,16 +49,14 @@ def dfs_stack(node):
     stack = [node]
     while stack:
         node = stack.pop()
-        if node.children:
-            stack.extend(node.children)
+        stack.extend(node.children)
         print(node.data, end=' ')
 
 def bfs_queue(node):
     queue = [node]
     while queue:
         node = queue.pop(0)
-        if node.children:
-            queue.extend(node.children)
+        queue.extend(node.children)
         print(node.data)
 
 
