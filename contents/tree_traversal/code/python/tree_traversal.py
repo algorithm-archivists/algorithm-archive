@@ -60,17 +60,12 @@ def dfs_stack(node):
 
 
 def bfs_queue(node):
-    queue = []
-    queue.append(node)
-
-    temp = None
-
-    while len(queue) > 0:
-        print(queue[0].data, end=' ')
-        temp = queue.pop(0)
-
-        for child in temp.children:
-            queue.append(child)
+    queue = [node]
+    while queue:
+        node = queue.pop(0)
+        if node.children:
+            queue += node.children
+        print(node.data)
 
 
 def main():
