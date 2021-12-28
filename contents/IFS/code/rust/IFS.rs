@@ -1,4 +1,4 @@
-use rand::prelude::*;
+use rand::*;
 
 #[derive(Clone, Copy)]
 struct Point {
@@ -12,7 +12,7 @@ fn chaos_game(iters: usize, shapes: Vec<Point>) -> Vec<Point> {
 
     (0..iters).into_iter().map(|_| {
         let old_point = p;
-        let tmp = shapes[rng.gen_range(0, shapes.len())];
+        let tmp = shapes[rng.gen_range(0..shapes.len())];
         p.x = 0.5 * (p.x + tmp.x);
         p.y = 0.5 * (p.y + tmp.y);
         old_point
@@ -22,7 +22,7 @@ fn chaos_game(iters: usize, shapes: Vec<Point>) -> Vec<Point> {
 fn main() {
     let shapes = vec![
         Point{x: 0., y: 0.},
-        Point{x: 0.5, y: (0.75 as f64).sqrt()},
+        Point{x: 0.5, y: 0.75_f64.sqrt()},
         Point{x: 1., y: 0.},
     ];
 
@@ -32,5 +32,5 @@ fn main() {
         out += format!("{}\t{}\n", point.x, point.y).as_str();
     }
 
-    std::fs::write("./out.dat", out).unwrap();
+    std::fs::write("./sierpinski.dat", out).unwrap();
 }
