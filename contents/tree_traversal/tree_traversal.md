@@ -240,7 +240,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:53-60, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:48-59, lang:"python"](code/python/tree_traversal.py)
+[import:48-53, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-stack.svg" style="width:70%" />
@@ -295,7 +295,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:62-69, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:62-72, lang:"python"](code/python/tree_traversal.py)
+[import:55-60, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" style="width:70%" />
@@ -403,7 +403,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

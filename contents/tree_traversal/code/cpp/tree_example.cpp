@@ -11,7 +11,7 @@ using std::size_t;
 
 struct node {
   std::vector<node> children;
-  int value;
+  size_t value;
 };
 
 // Simple recursive scheme for DFS
