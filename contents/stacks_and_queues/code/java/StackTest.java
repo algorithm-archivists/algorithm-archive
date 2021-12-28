@@ -42,7 +42,7 @@ interface IStack<T> {
 }
 
 
-public class Stack<T> implements IStack<T> {
+class Stack<T> implements IStack<T> {
     
     private List<T> list;
 
