@@ -144,6 +144,8 @@ Here, instead of tracking children of children, we track a single individual tha
 [import:5-14, lang:"lisp"](code/clisp/ifs.lisp)
 {% sample lang="coco" %}
 [import:4-16, lang:"coconut"](code/coconut/IFS.coco)
+{% sample lang="rust" %}
+[import:9-20, lang:"rust"](code/rust/IFS.rs)
 {% sample lang="java" %}
 [import:16-39, lang:"java"](code/java/IFS.java)
 {% sample lang="ps1" %}
@@ -232,6 +234,8 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"lisp"](code/clisp/ifs.lisp)
 {%sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/IFS.coco)
+{%sample lang="rust" %}
+[import, lang:"rust"](code/rust/IFS.rs)
 {%sample lang="java" %}
 [import, lang:"java"](code/java/IFS.java)
 {% sample lang="ps1" %}
