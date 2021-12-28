@@ -20,13 +20,22 @@ It's also fine if the message is replaced, because then the receiver won't be ab
 Unsurprisingly, a very early method of encryption was supposedly developed by Julius Caeser and called the "Caesar Cipher."
 Here, every character in the message is replaced by another character based on some pre-defined table or chart that only the sender and receiver have.
 The table is created by simply rotating the alphabet by $$n$$ spaces, where $$n$$ is chosen in a discussion between the sender and receiver before-hand.
+|  $$n$$ | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
+|--------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|      0 | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
+|      2 | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b |
+|     14 | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n |
+|     18 | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r |
+|     21 | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u |
+|     24 | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x |
+
 It is certainly not the most complicated scheme out there, but it is generally the first encryption scheme people come up with when trying to encode secret messages to one another.
 Honestly, I remember sending messages back and forth to friends in elementary school, but we would never provide the necessary table to decode the message.
 Instead, we would provide enough text that they could find the table themselves from context.
 If a bunch of elementary school kids can figure out how to break this encryption scheme, it cannot be too robust.
 In fact, it's interesting to see how the field of cryptography has grown since the Caesar cipher was developed.
 In the cryptographic literature, there is always a sender, receiver, and eavesdropper.
-For some reason beyond my own comprehension, these three people are almost always given the names Alice (sender), Bob (receiver), and Charlie (attacker or eavesdropper).
+For some reason beyond my own comprehension, these three people are almost always given the names Alice (sender), Bob (receiver), and Eve (attacker or eavesdropper).
 These names are consistent even with quantum cryptography, so they are here to stay.
 
 In general, there are two different types of encryption: symmetric and asymmetric.
@@ -35,16 +44,16 @@ Both of which are described in the following sections.
 Cryptographic systems are a cornerstone to modern information technology and lie at the heart of everything from WiFi to online banking.
 If an attacker manages to crack modern cryptographic algorithms, they could cause serious damage.
 For this reason, it is important to keep a few things in mind:
-* Because crypto has become such an advanced field crypto systems should be analyzed by trained professionals and have to go under extensive testing and vetting.
+* Because cryptography has become such an advanced field cryptography systems should be analyzed by trained professionals and have to go under extensive testing and vetting.
     Meaning whenever possible use a widely accepted cryptography library instead of writing your own cypher.
-* Kerckhoffs's principle says that when determining the robustness of a crypto system it should be assumed that the attacker knows the encryption and decryption algorithm. 
+* Kerckhoffs's principle says that when determining the robustness of a cryptography system it should be assumed that the attacker knows the encryption and decryption algorithm. 
     This does not include any pre-shared or secret keys.
 * With the advances in technology cryptography often hits its limits.
-    Many formerly thought hashing algorithms became obsolete because the computer used to crack them got faster and better.
+    Many formerly state-of-the-art hashing algorithms have become obsolete because the computers used to crack them have gotten faster and better.
     The keys for RSA have to be longer or different and stronger algorithms have to be used. 
     Another field that cryptography will have to face is Quantum Computing.
-    Quantum Computers will have a big impact on cryptography and especially asymmetric crypto.
-    This whole set of problems is summarized in the field of Post-quantum cryptography.
+    Quantum computers will have a big impact on cryptography and especially asymmetric cryptography.
+    This whole set of problems is summarized in the field of post-quantum cryptography.
 
 ## Symmetric Cryptography
 
@@ -66,7 +75,7 @@ This section is currently a work-in-progress, and all of these methods will have
 
 ## Asymmetric Cryptography
 
-Asymmetric cryptography is sometimes called "public key cryptography" (or PK Crypto in short) because Bob and Alice both need a shared public key and a private key they keep to themselves.
+Asymmetric cryptography is sometimes called "public key cryptography" (or PK cryptography in short) because Bob and Alice both need a shared public key and a private key they keep to themselves.
 These algorithms are called asymmetric because what is encrypted with the public key can only be decrypted with the private key and vice versa. 
 This can be used for a number of different applications, like digital signing, encrypted communication or secretly sharing keys.
 For example, if Alice wants to send a message to Bob and this message has to kept private Alice will encrypt the message with Bob's private key.
@@ -83,7 +92,7 @@ Some examples for public key cryptography:
 This section is currently a work-in-progress. These methods will also have corresponding chapters in the near future.
 
 ## License
-The text of this of this chapter is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode) with attribution to Liikt.
+The text of this chapter was written by [Liikt](https://github.com/Liikt) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 The code examples are licensed under the MIT license (found in LICENSE.md).
 
 ##### Code Examples
