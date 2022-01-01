@@ -148,6 +148,8 @@ Here, instead of tracking children of children, we track a single individual tha
 [import:9-20, lang:"rust"](code/rust/IFS.rs)
 {% sample lang="java" %}
 [import:16-39, lang:"java"](code/java/IFS.java)
+{% sample lang="go" %}
+[import:27-44, lang:"go"](code/go/IFS.go)
 {% sample lang="ps1" %}
 [import:2-19, lang:"powershell"](code/powershell/IFS.ps1)
 {% endmethod %}
@@ -238,6 +240,8 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"rust"](code/rust/IFS.rs)
 {%sample lang="java" %}
 [import, lang:"java"](code/java/IFS.java)
+{% sample lang="go" %}
+[import, lang:"go"](code/go/IFS.go)
 {% sample lang="ps1" %}
 [import, lang:"powershell"](code/powershell/IFS.ps1)
 {% endmethod %}
