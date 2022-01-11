@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk rustc libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch libfftw3-dev cmake
+    && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch libfftw3-dev cmake
 
 # Setup Crystal
 RUN echo 'deb http://download.opensuse.org/repositories/devel:/languages:/crystal/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/devel:languages:crystal.list
@@ -40,10 +40,9 @@ ENV PATH=$PATH:~/dlang/dmd-$DLANG_VERSION/linux/bin64/
 RUN sudo sh -c 'wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local'
 ENV PATH=$PATH:/usr/local/go/bin
 
-# Setup Kotlin (doesnt unzip right maybe?)
-RUN sudo sh -c 'wget -c https://github.com/JetBrains/kotlin/releases/download/v1.5.30/kotlin-compiler-1.5.30.zip -O /usr/local/kotlinc.zip'
-RUN unzip /usr/local/kotlinc.zip
-ENV PATH=$PATH:/usr/local/kotlinc/bin
+# Setup Kotlin
+RUN mkdir -p ~/kotlin && wget -c https://github.com/JetBrains/kotlin/releases/download/v1.5.30/kotlin-compiler-1.5.30.zip -O ~/kotlin/kotlinc.zip && cd ~/kotlin && unzip kotlinc.zip
+ENV PATH=$PATH:~/kotlin/kotlinc/bin
 
 # Setup lolcode
 RUN git clone https://github.com/justinmeza/lci.git ~/lolcode && cd ~/lolcode && mkdir build && cd build && cmake .. && make -B
@@ -72,6 +71,9 @@ RUN sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu fo
 # To run scheme files, use `racket -f <file.ss>`
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D9D33FCD84D82C17288BA03B3C9A6980F827E01E
 RUN sudo add-apt-repository 'deb http://ppa.launchpad.net/plt/racket/ubuntu focal main'
+
+# Setup Rust
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Setup Scratch
 ## using 1.x right now.... in future checkout snap or adobe air?

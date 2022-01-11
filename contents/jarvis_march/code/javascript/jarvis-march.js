@@ -24,16 +24,22 @@ function isLeftOf({ a, b }, p) {
 }
 
 const points = [
-  { x: 1, y: 3 },
-  { x: 2, y: 4 },
-  { x: 4, y: 0 },
-  { x: 1, y: 0 },
-  { x: 0, y: 2 },
-  { x: 2, y: 2 },
-  { x: 3, y: 4 },
-  { x: 3, y: 1 },
+  { x: -5, y: 2 },
+  { x: 5, y: 7 },
+  { x: -6, y: -12 },
+  { x: -14, y: -14 },
+  { x: 9, y: 9 },
+  { x: -1, y: -1 },
+  { x: -10, y: 11 },
+  { x: -6, y: 15 },
+  { x: -6, y: -8 },
+  { x: 15, y: -9 },
+  { x: 7, y: -7 },
+  { x: -2, y: -9 },
+  { x: 6, y: -5 },
+  { x: 0, y: 14 },
+  { x: 2, y: 8 }
 ];
 
 const convexHull = jarvisMarch(points);
 convexHull.forEach(p => console.log(`(${p.x}, ${p.y})`));
-
