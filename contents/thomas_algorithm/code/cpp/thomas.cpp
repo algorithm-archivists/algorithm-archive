@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <iostream>
 #include <vector>
 
@@ -6,21 +7,19 @@ void thomas(
     std::vector<double> const& b,
     std::vector<double> const& c,
     std::vector<double>& x) {
-  const auto size = a.size();
-  auto y = std::vector<double>(size, 0.0);
+  auto y = std::vector<double>(a.size(), 0.0);
 
   y[0] = c[0] / b[0];
   x[0] = x[0] / b[0];
 
-  for (std::size_t i = 1; i < size; ++i) {
-    double scale = 1.0 / (b[i] - a[i] * y[i - 1]);
+  for (std::size_t i = 1; i < a.size(); ++i) {
+    const auto scale = 1.0 / (b[i] - a[i] * y[i - 1]);
     y[i] = c[i] * scale;
     x[i] = (x[i] - a[i] * x[i - 1]) * scale;
   }
 
-  for (int i = static_cast<int>(size) - 2; i >= 0; --i) {
-    auto iu = static_cast<std::size_t>(i);
-    x[iu] -= y[iu] * x[iu + 1];
+  for (std::size_t i = a.size() - 2; i < a.size(); --i) {
+    x[i] -= y[i] * x[i + 1];
   }
 }
 
@@ -30,16 +29,16 @@ int main() {
   const std::vector<double> c = {4.0, 5.0, 0.0};
   std::vector<double> x = {7.0, 5.0, 3.0};
 
-  std::cout << "The system" << std::endl;
-  std::cout << "[1.0  4.0  0.0][x] = [7.0]" << std::endl;
-  std::cout << "[2.0  3.0  5.0][y] = [5.0]" << std::endl;
-  std::cout << "[0.0  3.0  6.0][z] = [3.0]" << std::endl;
-  std::cout << "has the solution" << std::endl;
+  std::cout << "The system\n";
+  std::cout << "[1.0  4.0  0.0][x] = [7.0]\n";
+  std::cout << "[2.0  3.0  5.0][y] = [5.0]\n";
+  std::cout << "[0.0  3.0  6.0][z] = [3.0]\n";
+  std::cout << "has the solution:\n";
 
   thomas(a, b, c, x);
 
   for (auto const& val : x) {
-    std::cout << "[" << val << "]" << std::endl;
+    std::cout << "[" << val << "]\n";
   }
 
   return 0;
