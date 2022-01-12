@@ -3,7 +3,6 @@
 #include<cassert>
 
 namespace my {
-    const char endl = '\n';
     /**
      * implementation using linked list
      * [value][next] -> [value][next] -> ... -> [value][next]
@@ -85,8 +84,8 @@ int main() {
 
   int frontElement = intQueue.front();
   intQueue.dequeue();
-  std::cout << frontElement << my::endl;
-  std::cout << intQueue.size() << my::endl;
-  std::cout << intQueue.front() << my::endl;
+  std::cout << frontElement << '\n';
+  std::cout << intQueue.size() << '\n';
+  std::cout << intQueue.front() << '\n';
   return 0;
 }

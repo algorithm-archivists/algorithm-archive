@@ -3,7 +3,6 @@
 #include<memory>
 
 namespace my {
-    const char endl = '\n';
     /**
      * implementation using linked list
      * [value][next] -> [value][next] -> ... -> [value][next]
@@ -78,8 +77,8 @@ int main() {
 
   int topElement = intStack.top();
   intStack.pop();
-  std::cout << topElement << my::endl;
-  std::cout << intStack.size() << my::endl;
-  std::cout << intStack.top() << my::endl;
+  std::cout << topElement << '\n';
+  std::cout << intStack.size() << '\n';
+  std::cout << intStack.top() << '\n';
   return 0;
 }
