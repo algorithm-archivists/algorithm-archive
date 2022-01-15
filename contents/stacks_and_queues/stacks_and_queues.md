@@ -19,7 +19,11 @@ Here is a simple implementation of a stack:
 {% sample lang="ts" %}
 [import, lang:"typescript"](code/typescript/stack.ts)
 {% sample lang="java" %}
-[import, lang:"java"](code/java/Stack.java)
+[import, lang:"java"](code/java/StackTest.java)
+{% sample lang = "cpp"%}
+[import, lang:"cpp"](code/cpp/stack.cpp)
+{% sample lang="rust" %}
+[import, lang:"rust"](code/rust/Stack.rs)
 {% endmethod %}
 
 Here is a simple implementation of a queue:
@@ -27,7 +31,11 @@ Here is a simple implementation of a queue:
 {% sample lang="ts" %}
 [import, lang:"typescript"](code/typescript/queue.ts)
 {% sample lang="java" %}
-[import, lang:"java" ](code/java/Queue.java)
+[import, lang:"java" ](code/java/QueueTest.java)
+{% sample lang = "cpp"%}
+[import, lang:"cpp"](code/cpp/queue.cpp)
+{% sample lang="rust" %}
+[import, lang:"rust" ](code/rust/Queue.rs)
 {% endmethod %}
 
 
@@ -35,7 +43,7 @@ Here is a simple implementation of a queue:
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

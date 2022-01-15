@@ -1,0 +1,15 @@
+Import('files_to_compile env')
+
+for file_info in files_to_compile:
+    build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}'
+    if (file_info.path.parent / 'Cargo.toml').exists():
+        build_result = env.cargo(target=build_target,
+                                 source=str(file_info.path),
+                                 MANIFEST=str(file_info.path.parent / 'Cargo.toml'),
+                                 SOURCE_DIR=str(file_info.path.parent))
+        env.Clean('rust', str(file_info.path.parent / 'target'))
+    else:
+        build_result = env.rustc(build_target, str(file_info.path))
+        env.Clean('rust', f'{build_target}.pdb')
+    
+    env.Alias(str(file_info.chapter), build_result)

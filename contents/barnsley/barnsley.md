@@ -24,7 +24,7 @@ In this chapter, I hope to provide a slightly more satisfying answer by introduc
 
 | Hutchinson Operator | Attractor |
 | ------------------- | --------- |
-| $$\begin{align} f_1(P) &= \begin{bmatrix} 0 &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ f_2(P) &= \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix} \\ f_3(P) &= \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &022 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix} \\ f_4(P) &= \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix} \end{align}$$ | <img class="center" src="res/full_fern.png" alt="Barnsley Chaos Game"  style="width:100%"> |
+| $$\begin{align} f_1(P) &= \begin{bmatrix} 0 &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ f_2(P) &= \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix} \\ f_3(P) &= \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &0.22 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix} \\ f_4(P) &= \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix} \end{align}$$ | <img class="center" src="res/full_fern.png" alt="Barnsley Chaos Game"  style="width:100%"> |
 
 At first glance, this set of functions looks like an incomprehensible mess of magic numbers to create a specific result, and in a sense, that is precisely correct.
 That said, we will go through each function and explain how it works, while also providing a simple chaos game implementation in code.
@@ -54,7 +54,7 @@ Now let's hop into disecting the Barnsley fern by seeing how each transform affe
 | -------- | --------- |
 | $$f_1(P) = \begin{bmatrix} 0 &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$ <p> This operation moves every point to a single line. | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_rnd_0.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 | $$f_2(P) = \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ <p> This operation moves every point up and to the right. | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_rnd_1.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
-| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &022 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ <p> This operation rotates every point to the left. | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_rnd_2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
+| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &0.22 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ <p> This operation rotates every point to the left. | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_rnd_2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 | $$f_4(P) = \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix}$$ <p> This operation flips every point and rotates to the right.| <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_rnd_3.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 
 At this stage, it *might* be clear what is going on, but it's not exactly obvious.
@@ -71,7 +71,7 @@ The easiest way to make sense of this is to show the operations on the Barnsley 
 | -------- | --------- |
 | $$f_1(P) = \begin{bmatrix} 0 &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$ | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_fern_0.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 | $$f_2(P) = \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_fern_1.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
-| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &022 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_fern_2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
+| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &0.22 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_fern_2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 | $$f_4(P) = \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix}$$ | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/affine_fern_3.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 
 Here, the self-similar nature of the fern becomes apparent.
@@ -86,7 +86,7 @@ To account for this, each function is also given a probability of being chosen:
 | -------- | ----------- |
 | $$f_1(P) = \begin{bmatrix} 0 &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$ | 0.01 |
 | $$f_2(P) = \begin{bmatrix} 0.85 &0.04 \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | 0.85 |
-| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &022 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | 0.07 |
+| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &0.22 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ | 0.07 |
 | $$f_4(P) = \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0.44 \end{bmatrix}$$ | 0.07 |
 
 ## Playing around a bit...
@@ -98,7 +98,7 @@ Here are a few examples of ferns that can be generated by modifying constituent 
 | -------- | --------- |
 | $$f_1(P) = \begin{bmatrix} \tau &0 \\ 0 &0.16 \end{bmatrix}P + \begin{bmatrix} 0 \\ 0 \end{bmatrix}$$ <p> where $$-0.5 < \tau < 0.5 $$ <p> Turning stems to leaves | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/fern_twiddle_0.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 | $$f_2(P) = \begin{bmatrix} 0.85 & \tau \\ -0.04 &0.85 \end{bmatrix}P + \begin{bmatrix} 0 \\ 1.6 \end{bmatrix}$$ <p> where $$ -0.01 < \tau < 0.09 $$ <p> Changing fern tilt | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/fern_twiddle_1.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
-| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &022 \end{bmatrix}P + \begin{bmatrix} \tau \\ 1.6 \end{bmatrix}$$ <p> where $$-0.5 < \tau < 0.5$$ <p> Plucking left leaves | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/fern_twiddle_2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
+| $$f_3(P) = \begin{bmatrix} 0.2 &-0.26 \\ 0.23 &0.22 \end{bmatrix}P + \begin{bmatrix} \tau \\ 1.6 \end{bmatrix}$$ <p> where $$-0.5 < \tau < 0.5$$ <p> Plucking left leaves | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/fern_twiddle_2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 | $$f_4(P) = \begin{bmatrix} -0.15 &0.28 \\ 0.26 &0.24 \end{bmatrix}P + \begin{bmatrix} \tau \\ 0.44 \end{bmatrix}$$ <p> where $$-0.5 < \tau < 0.5$$ <p> Plucking right leaves | <div style="text-align:center"> <video style="width:100%" controls loop> <source src="res/fern_twiddle_3.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </div> |
 
 As an important note: the idea of modifying a resulting image by twiddling the knobs of an affine transform is the heart of many interesting methods, including fractal image compression where a low resolution version of an image is stored along with a reconstructing function set to generate high-quality images on-the-fly {{ "fractal-compression" | cite }}{{ "saupe1994review" | cite }}.
@@ -126,7 +126,7 @@ The biggest differences between the two code implementations is that the Barnsle
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/barnsley.jl)
 {% sample lang="rs" %}
-[import, lang:"rust"](code/rust/src/main.rs)
+[import, lang:"rust"](code/rust/barnsley.rs)
 {% sample lang="cpp" %}
 [import, lang:"cpp"](code/cpp/barnsley.cpp)
 {% sample lang="c" %}
@@ -135,6 +135,8 @@ The biggest differences between the two code implementations is that the Barnsle
 [import, lang:"java"](code/java/Barnsley.java)
 {% sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/barnsley.coco)
+{% sample lang="hs" %}
+[import, lang:"haskell"](code/haskell/Barnsley.hs)
 {% endmethod %}
 
 ### Bibliography
@@ -149,7 +151,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

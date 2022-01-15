@@ -95,7 +95,7 @@ In code, this might look like this:
 {% sample lang="py" %}
 [import:10-25, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:15-19, lang="coconut"](code/coconut/flood_fill.coco)
+[import:15-20, lang="coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -117,7 +117,7 @@ In code, it might look like this:
 {% sample lang="py" %}
 [import:55-63, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:54-63, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:52-61, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -179,7 +179,7 @@ The code would look something like this:
 {% sample lang="py" %}
 [import:38-53, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:37-51, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:36-49, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
@@ -279,7 +279,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
