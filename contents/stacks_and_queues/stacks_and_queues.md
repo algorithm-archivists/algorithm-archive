@@ -20,6 +20,8 @@ Here is a simple implementation of a stack:
 [import, lang:"typescript"](code/typescript/stack.ts)
 {% sample lang="java" %}
 [import, lang:"java"](code/java/StackTest.java)
+{% sample lang = "cpp"%}
+[import, lang:"cpp"](code/cpp/stack.cpp)
 {% sample lang="rust" %}
 [import, lang:"rust"](code/rust/Stack.rs)
 {% endmethod %}
@@ -30,6 +32,8 @@ Here is a simple implementation of a queue:
 [import, lang:"typescript"](code/typescript/queue.ts)
 {% sample lang="java" %}
 [import, lang:"java" ](code/java/QueueTest.java)
+{% sample lang = "cpp"%}
+[import, lang:"cpp"](code/cpp/queue.cpp)
 {% sample lang="rust" %}
 [import, lang:"rust" ](code/rust/Queue.rs)
 {% endmethod %}
