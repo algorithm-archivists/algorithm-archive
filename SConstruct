@@ -44,6 +44,7 @@ languages_to_import = {
     'coconut': ['coconut'],
     'go': ['go'],
     'rust': ['rustc', 'cargo'],
+    'kotlin': ['kotlin'],
 }
 
 for language, tools in languages_to_import.items():
@@ -78,6 +79,7 @@ languages = {
     'java': 'java',
     'javascript': 'js',
     'julia': 'jl',
+    'kotlin': 'kt',
     'lolcode': 'lol',
     'lua': 'lua',
     'php': 'php',
