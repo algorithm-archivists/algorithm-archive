@@ -78,7 +78,7 @@ This section is currently a work-in-progress, and all of these methods will have
 Asymmetric cryptography is sometimes called "public key cryptography" (or PK cryptography in short) because Bob and Alice both need a shared public key and a private key they keep to themselves.
 These algorithms are called asymmetric because what is encrypted with the public key can only be decrypted with the private key and vice versa. 
 This can be used for a number of different applications, like digital signing, encrypted communication or secretly sharing keys.
-For example, if Alice wants to send a message to Bob and this message has to kept private Alice will encrypt the message with Bob's private key.
+For example, if Alice wants to send a message to Bob and this message has to be kept private, Alice will encrypt the message with Bob's public key.
 Now only Bob can decrypt the message again and read it.
 If Charlie were to alter Alice's message, Bob couldn't decrypt it anymore.
 If Bob wants to make sure the message is actually from Alice, Alice can encrypt the already encrypted message with her private key again.
@@ -90,6 +90,9 @@ Some examples for public key cryptography:
     This has the positive side effect that you need smaller numbers than non-ECC algorithms like RSA to achieve the same level of security.
 
 This section is currently a work-in-progress. These methods will also have corresponding chapters in the near future.
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
 
 ## License
 The text of this chapter was written by [Liikt](https://github.com/Liikt) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
@@ -101,6 +104,6 @@ The code examples are licensed under the MIT license (found in [LICENSE.md](http
 
 ##### Text
 
-The text of this chapter was written by Liikt and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+The text of this chapter was written by [Liikt](https://github.com/Liikt) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
