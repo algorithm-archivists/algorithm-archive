@@ -20,14 +20,35 @@ It's also fine if the message is replaced, because then the receiver won't be ab
 Unsurprisingly, a very early method of encryption was supposedly developed by Julius Caeser and called the "Caesar Cipher."
 Here, every character in the message is replaced by another character based on some pre-defined table or chart that only the sender and receiver have.
 The table is created by simply rotating the alphabet by $$n$$ spaces, where $$n$$ is chosen in a discussion between the sender and receiver before-hand.
-|  $$n$$ | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
-|--------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|      0 | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
-|      2 | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | a | b |
-|     14 | o | p | q | r | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n |
-|     18 | s | t | u | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r |
-|     21 | v | w | x | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u |
-|     24 | y | z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x |
+
+ | $$n$$ | 0 | 2 | 14 | 18 | 21 | 24 | 
+ | ----- | - | - | -- | -- | -- | -- |
+ | a | a | c | o | s | v | y | 
+ | b | b | d | p | t | w | z | 
+ | c | c | e | q | u | x | a | 
+ | d | d | f | r | v | y | b | 
+ | e | e | g | s | w | z | c | 
+ | f | f | h | t | x | a | d | 
+ | g | g | i | u | y | b | e | 
+ | h | h | j | v | z | c | f | 
+ | i | i | k | w | a | d | g | 
+ | j | j | l | x | b | e | h | 
+ | k | k | m | y | c | f | i | 
+ | l | l | n | z | d | g | j | 
+ | m | m | o | a | e | h | k | 
+ | n | n | p | b | f | i | l | 
+ | o | o | q | c | g | j | m | 
+ | p | p | r | d | h | k | n | 
+ | q | q | s | e | i | l | o | 
+ | r | r | t | f | j | m | p | 
+ | s | s | u | g | k | n | q | 
+ | t | t | v | h | l | o | r | 
+ | u | u | w | i | m | p | s | 
+ | v | v | x | j | n | q | t | 
+ | w | w | y | k | o | r | u | 
+ | x | x | z | l | p | s | v | 
+ | y | y | a | m | q | t | w | 
+ | z | z | b | n | r | u | x | 
 
 It is certainly not the most complicated scheme out there, but it is generally the first encryption scheme people come up with when trying to encode secret messages to one another.
 Honestly, I remember sending messages back and forth to friends in elementary school, but we would never provide the necessary table to decode the message.
