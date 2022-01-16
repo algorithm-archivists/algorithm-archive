@@ -1,0 +1,28 @@
+import math
+
+def forward_euler(time_step, n):
+    factors = [1] + [1 - 3 * time_step] * (n-1)
+    # We want all the cumulative values, thus the use of scan
+    return scan((*), factors)
+
+
+
+def check(result, threshold, time_step):
+    approx = True
+    # A scan object has a len if the underlying iterable has a len
+    solution = range(len(result)) |> map$(i -> math.exp(-3*i*time_step))
+    for y, sol in zip(result, solution):
+        if not math.isclose(y, sol, abs_tol=threshold):
+            print(y, sol)
+            approx = False
+    return approx
+
+
+if __name__ == '__main__':
+    time_step = 0.01
+    n = 100
+    threshold = 0.01
+
+    result = forward_euler(time_step, n)
+    approx = check(result, threshold, time_step)
+    print("All values within threshold") if approx else print("Value(s) not in threshold")

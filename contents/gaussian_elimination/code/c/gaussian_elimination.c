@@ -47,13 +47,13 @@ void gaussian_elimination(double *a, const size_t rows, const size_t cols) {
     }
 }
 
-void back_substitution(const double *a, double *x, const size_t rows,
-                       const size_t cols) {
+void back_substitution(const double *a, double *x, const int rows,
+                       const int cols) {
 
     for (int i = rows - 1; i >= 0; --i) {
         double sum = 0.0;
 
-        for (size_t j = cols - 2; j > i; --j) {
+        for (int j = cols - 2; j > i; --j) {
             sum += x[j] * a[i * cols + j];
         }
 
@@ -61,17 +61,17 @@ void back_substitution(const double *a, double *x, const size_t rows,
     }
 }
 
-void gauss_jordan(double *a, const size_t rows, const size_t cols) {
-    int row = 0;
+void gauss_jordan(double *a, const size_t cols) {
+    size_t row = 0;
 
-    for (int col = 0; col < cols - 1; ++col) {
+    for (size_t col = 0; col < cols - 1; ++col) {
         if (a[row * cols + col] != 0) {
-            for (int i = cols - 1; i > col - 1; --i) {
+            for (size_t i = cols - 1; i > col - 1; --i) {
                 a[row * cols + i] /= a[row * cols + col];
             }
 
-            for (int i = 0; i < row; ++i) {
-                for (int j = cols - 1; j > col - 1; --j) {
+            for (size_t i = 0; i < row; ++i) {
+                for (size_t j = cols - 1; j > col - 1; --j) {
                     a[i * cols + j] -= a[i * cols + col] * a[row * cols + j];
                 }
             }
@@ -99,7 +99,7 @@ int main() {
 
     printf("\nGauss-Jordan:\n");
 
-    gauss_jordan((double *)a, 3, 4);
+    gauss_jordan((double *)a, 4);
 
     for (size_t i = 0; i < 3; ++i) {
         printf("[");

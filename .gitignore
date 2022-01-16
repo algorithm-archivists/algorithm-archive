@@ -478,7 +478,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-
+*.ipynb_checkpoints*
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
@@ -524,3 +524,10 @@ vscode/
 
 # SCons build directory
 build/
+
+# Cargo artifacts
+Cargo.lock
+target/
+
+*.out
+*.class

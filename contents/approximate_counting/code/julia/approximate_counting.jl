@@ -47,15 +47,21 @@ function test_approximate_count(n_trials, n_items, a, threshold)
 
     avg = sum(samples)/n_trials
 
-    @test (abs((avg - n_items) / n_items) < threshold)
+    if (abs((avg - n_items) / n_items) < threshold)
+        println("passed")
+    else
+        println("failed")
+    end
 end
 
-@testset "Counting Tests, 100 trials" begin
-    println("testing 1,000, a = 30, 10% error")
-        test_approximate_count(100, 1000, 30, 0.1)
-    println("testing 12,345, a = 10, 10% error")
-        test_approximate_count(100, 12345, 10, 0.1)
-    # Note: with a lower a, we need more trials, so a higher % error here.
-    println("testing 222,222, a = 0.5, 20% error")
-        test_approximate_count(100, 222222, 0.5, 0.2)
-end
+println("[#]\nCounting Tests, 100 trials")
+
+println("[#]\ntesting 1,000, a = 30, 10% error")
+test_approximate_count(100, 1000, 30, 0.1)
+
+println("[#]\ntesting 12,345, a = 10, 10% error")
+test_approximate_count(100, 12345, 10, 0.1)
+
+# Note: with a lower a, we need more trials, so a higher % error here.
+println("[#]\ntesting 222,222, a = 0.5, 20% error")
+test_approximate_count(100, 222222, 0.5, 0.2)
