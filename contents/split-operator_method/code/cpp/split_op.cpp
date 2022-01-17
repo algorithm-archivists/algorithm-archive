@@ -142,7 +142,7 @@ void split_op(Params &par, Operators &opr) {
         std::ofstream fstream = std::ofstream(filename_stream.str());
 
         if (fstream) {
-            for (int i = 0; i < opr.size; ++i) {
+            for (std::size_t i = 0; i < opr.size; ++i) {
                 std::stringstream data_stream;
 
                 data_stream << i << "\t" << density[i] << "\t" << real(opr.v[i]) << "\n";
