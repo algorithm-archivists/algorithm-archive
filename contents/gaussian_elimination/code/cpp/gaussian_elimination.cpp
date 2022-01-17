@@ -73,10 +73,10 @@ std::vector<double> backSubs(const std::vector<std::vector<double> > &eqns) {
 
 
 void printMatrix(const std::vector<std::vector<double> > &matrix) {
-  for (int row = 0; row < matrix.size(); row++) {
+  for (std::size_t row = 0; row < matrix.size(); row++) {
     std::cout << "[";
 
-    for (int col = 0; col < matrix[row].size() - 1; col++)
+    for (std::size_t col = 0; col < matrix[row].size() - 1; col++)
       std::cout << std::setw(8) << std::fixed << std::setprecision(3)
                 << matrix[row][col];
 
