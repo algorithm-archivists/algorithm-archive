@@ -97,7 +97,7 @@ void fft(vector_complex &x, bool inverse) {
 }
 
 void split_op(Params &par, Operators &opr) {
-    double density[opr.size];
+    auto density = std::vector<double>(opr.size, 0);
 
     for (size_t i = 0; i < par.timesteps; ++i) {
         for (size_t j = 0; j < opr.size; ++j) {
