@@ -55,7 +55,7 @@ void cooley_tukey(Iter first, Iter last) {
 
     // now combine each of those halves with the butterflies
     for (int k = 0; k < size / 2; ++k) {
-      auto w = std::exp(complex(0, -2.0 * pi * k / size));
+      auto w = std::exp(complex(0, -2.0 * pi * k / static_cast<double>(size)));
 
       auto& bottom = first[k];
       auto& top = first[k + size / 2];
@@ -78,7 +78,7 @@ void sort_by_bit_reverse(Iter first, Iter last) {
     b = (((b & 0xcccccccc) >> 2) | ((b & 0x33333333) << 2));
     b = (((b & 0xf0f0f0f0) >> 4) | ((b & 0x0f0f0f0f) << 4));
     b = (((b & 0xff00ff00) >> 8) | ((b & 0x00ff00ff) << 8));
-    b = ((b >> 16) | (b << 16)) >> (32 - std::uint32_t(log2(size)));
+    b = ((b >> 16) | (b << 16)) >> (32 - std::uint32_t(log2(static_cast<double>(size))));
     if (b > i) {
       swap(first[b], first[i]);
     }
