@@ -13,7 +13,7 @@ void solve_euler(double timestep, double *result, size_t n) {
 int check_result(double *result, size_t n, double threshold, double timestep) {
     int is_approx = 1;
     for (size_t i = 0; i < n; ++i) {
-        double solution = exp(-3.0 * i * timestep);
+        double solution = exp(-3.0 * (double)i * timestep);
         if (fabs(result[i] - solution) > threshold) {
             printf("%f    %f\n", result[i], solution);
             is_approx = 0;
