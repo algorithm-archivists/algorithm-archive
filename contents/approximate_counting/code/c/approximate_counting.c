@@ -40,7 +40,7 @@ double increment(double v, double a)
 // It returns n(v, a), the approximate count
 double approximate_count(size_t n_items, double a)
 {
-    int v = 0;
+    double v = 0;
     for (size_t i = 0; i < n_items; ++i) {
         v = increment(v, a);
     }
@@ -61,9 +61,10 @@ void test_approximation_count(size_t n_trials, size_t n_items, double a,
     for (size_t i = 0; i < n_trials; ++i) {
         sum += approximate_count(n_items, a);
     }
-    double avg = sum / n_trials;
+    double avg = sum / (double)n_trials;
 
-    if (fabs((avg - n_items) / n_items) < threshold){
+    double items = (double)n_items;
+    if (fabs((avg - items) / items) < threshold){
         printf("passed\n");
     }
     else{
@@ -73,7 +74,7 @@ void test_approximation_count(size_t n_trials, size_t n_items, double a,
 
 int main()
 {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 
     printf("[#]\nCounting Tests, 100 trials\n");
     printf("[#]\ntesting 1,000, a = 30, 10%% error\n");

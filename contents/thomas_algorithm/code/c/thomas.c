@@ -16,7 +16,7 @@ void thomas(double * const a, double * const b, double * const c,
         x[i] = (x[i] - a[i] * x[i - 1]) * scale;
     }
 
-    for (int i = size - 2; i >= 0; --i) {
+    for (size_t i = size - 2; i < size - 1; --i) {
         x[i] -= y[i] * x[i + 1];
     }
 }

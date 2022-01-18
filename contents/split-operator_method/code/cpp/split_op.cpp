@@ -28,9 +28,9 @@ struct Params {
         im_time = im;
 
         for (size_t i = 0; i < res; ++i) {
-            x.emplace_back(xmax / res - xmax + i * (2.0 * xmax / res));
+            x.emplace_back(xmax / res - xmax + static_cast<double>(i) * (2.0 * xmax / res));
             if (i < res / 2) {
-                k.push_back(i * M_PI / xmax);
+                k.push_back(static_cast<double>(i) * M_PI / xmax);
             } else {
                 k.push_back((static_cast<double>(i) - res) * M_PI / xmax);
             }
@@ -85,7 +85,7 @@ void fft(vector_complex &x, bool inverse) {
 
     fftw_complex *in = reinterpret_cast<fftw_complex*>(x.data());
     fftw_complex *out = reinterpret_cast<fftw_complex*>(y.data());
-    p = fftw_plan_dft_1d(x.size(), in, out,
+    p = fftw_plan_dft_1d(static_cast<int>(x.size()), in, out,
                          (inverse ? FFTW_BACKWARD : FFTW_FORWARD), FFTW_ESTIMATE);
 
     fftw_execute(p);
