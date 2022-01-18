@@ -23,8 +23,8 @@ struct codebook {
 
 struct heap {
     struct tree** data;
-    int length;
-    int capacity;
+    size_t length;
+    size_t capacity;
 };
 
 bool is_leaf(const struct tree* t) {
@@ -39,21 +39,21 @@ void swap(struct tree** lhs, struct tree** rhs) {
 
 /* The two concat functions are horribly inefficient */
 void concat(char** dst, const char* src) {
-    int dst_len = strlen(*dst);
-    int src_len = strlen(src);
+    size_t dst_len = strlen(*dst);
+    size_t src_len = strlen(src);
     *dst = realloc(*dst, src_len + dst_len + 1);
     strcat(*dst, src);
 }
 
 void concat_char(char** dst, char c) {
-    int len = strlen(*dst);
+    size_t len = strlen(*dst);
     *dst = realloc(*dst, len + 2);
     (*dst)[len] = c;
     (*dst)[len + 1] = '\0';
 }
 
 char* duplicate(const char* src) {
-    int length = strlen(src);
+    size_t length = strlen(src);
     char* dst = malloc(length + 1);
     memcpy(dst, src, length + 1);
     return dst;
@@ -66,9 +66,9 @@ void heap_push(struct heap* heap, struct tree* value) {
     }
     heap->data[heap->length++] = value;
 
-    int index = heap->length - 1;
+    size_t index = heap->length - 1;
     while (index) {
-        int parent_index = (index - 1) / 2;
+        size_t parent_index = (index - 1) / 2;
         if (heap->data[parent_index]->count <= heap->data[index]->count) {
             break;
         }
@@ -86,11 +86,11 @@ struct tree* heap_pop(struct heap* heap) {
     struct tree* result = heap->data[0];
     swap(&heap->data[0], &heap->data[--heap->length]);
 
-    int index = 0;
+    size_t index = 0;
     for (;;) {
-        int target = index;
-        int left = 2 * index + 1;
-        int right = left + 1;
+        size_t target = index;
+        size_t left = 2 * index + 1;
+        size_t right = left + 1;
 
         if (left < heap->length &&
                 heap->data[left]->count < heap->data[target]->count) {

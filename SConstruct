@@ -60,7 +60,7 @@ for language, tools in languages_to_import.items():
 
 Export('env')
 
-env['CCFLAGS'] = '-Wall -Wextra -Werror -pedantic'
+env['CCFLAGS'] = '-Wall -Wextra -Werror -pedantic -Wconversion'
 env['CFLAGS'] = '-std=gnu99'
 env['CXXFLAGS'] = '-std=c++17 -Wold-style-cast'
 env['ASFLAGS'] = '--64'
