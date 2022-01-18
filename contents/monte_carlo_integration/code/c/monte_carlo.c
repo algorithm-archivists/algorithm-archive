@@ -24,7 +24,7 @@ double monte_carlo(unsigned int samples) {
 }
 
 int main() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 
     double estimate = monte_carlo(1000000);
 
