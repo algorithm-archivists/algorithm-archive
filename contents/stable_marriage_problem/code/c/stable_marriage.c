@@ -5,7 +5,7 @@
 #include <time.h>
 
 struct person {
-    int id;
+    size_t id;
     struct person *partner;
     size_t *prefers;
     size_t index;
@@ -13,7 +13,7 @@ struct person {
 
 void shuffle(size_t *array, size_t size) {
     for (size_t i = size - 1; i > 0; --i) {
-        size_t j = rand() % (i + 1);
+        size_t j = (size_t)rand() % (i + 1);
         size_t tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
@@ -82,7 +82,7 @@ void free_group(struct person *group, size_t size) {
 }
 
 int main() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 
     struct person men[5], women[5];
 
@@ -114,7 +114,7 @@ int main() {
     printf("\n");
 
     for (size_t i = 0; i < 5; ++i) {
-        printf("the partner of man %zu is woman %d\n", i, men[i].partner->id);
+        printf("the partner of man %zu is woman %ld\n", i, men[i].partner->id);
     }
 
     free_group(men, 5);
