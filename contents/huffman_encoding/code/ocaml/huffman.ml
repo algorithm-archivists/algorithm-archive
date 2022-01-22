@@ -28,7 +28,7 @@ let counter str =
   let char_lst = str_to_charlist str in
   let rec loop acc str char_lst =
     match char_lst with
-    | [] -> List.filter (fun (x,y) -> y != 0) (List.rev acc)
+    | [] -> List.filter (fun (_,y) -> y != 0) (List.rev acc)
           |> List.map (fun (x, y) -> (Printf.sprintf "%c" x, y))
     | hd :: tl -> 
       let (new_str, old_str) = char_diff str hd in
