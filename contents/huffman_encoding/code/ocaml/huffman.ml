@@ -104,7 +104,7 @@ let encode_msg codebook msg =
   List.fold_left (fun acc x -> acc ^ x) ""
 
 let decode codebook key =
-  List.find_opt (fun (ch,code) -> key = code) codebook
+  List.find_opt (fun (_,code) -> key = code) codebook
   
 
 let decode_msg codebook msg =
