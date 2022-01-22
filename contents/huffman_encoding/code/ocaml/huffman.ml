@@ -11,10 +11,7 @@ let char_diff str ch =
   (res, str)
 
 (* Converts "ABCD" -> ['A'; 'B'; 'C'; 'D'] *)
-let str_to_charlist str = 
-  let lst = ref [] in
-  String.iter (fun x -> lst := x :: !lst) str |> fun _ -> 
-  List.rev !lst
+let str_to_charlist s = List.init (String.length s) (String.get s)
 
 (* Takes a word like "bibbity_bob" and converts to a tuple list of
    unique characters with their frequency
