@@ -96,7 +96,7 @@ let list_to_string lst =
 
 (* Encoding and decoding functions *)
 let encode codebook x =
-  List.filter (fun (ch, code) -> ch = x) codebook |> fun x ->
+  List.filter (fun (ch, _) -> ch = x) codebook |> fun x ->
   List.hd x |> snd
 
 let encode_msg codebook msg =
