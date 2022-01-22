@@ -88,7 +88,7 @@ let str_list msg =
   List.map char_to_str @@ str_to_charlist msg
 
 let list_to_string lst =
-  List.fold_left (fun acc x -> acc ^ x) "" lst
+  String.concat "" lst
 
 (* Encoding and decoding functions *)
 let encode codebook x =
