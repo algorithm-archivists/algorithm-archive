@@ -97,7 +97,7 @@ let encode codebook x =
 
 let encode_msg codebook msg =
   List.map (fun x -> encode codebook x) @@ str_list msg |>
-  List.fold_left (fun acc x -> acc ^ x) ""
+   list_to_string (List.map (fun x -> encode codebook x) (str_list msg))
 
 let decode codebook key =
   List.find_opt (fun (_,code) -> key = code) codebook
