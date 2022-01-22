@@ -7,9 +7,8 @@
   TL;DR : "Chennai" -> ("Cheai", "Chennai")
 *)
 let char_diff str ch = 
-  (String.split_on_char ch str, str) |> fun (new_str, old_str) -> 
-  (List.rev new_str, old_str) |> fun (new_str, old_str) -> 
-  (List.fold_left (fun acc x -> x ^ acc) "" new_str, old_str)
+  let res = String.concat "" (String.split_on_char ch str) in
+  (res, str)
 
 (* Converts "ABCD" -> ['A'; 'B'; 'C'; 'D'] *)
 let str_to_charlist str = 
