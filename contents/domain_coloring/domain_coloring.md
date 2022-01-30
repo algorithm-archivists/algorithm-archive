@@ -164,7 +164,7 @@ We will be using domain coloring in other contexts throughout this text when des
 Here is a video describing domain coloring:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EbanExb75mc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EbanExb75mc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

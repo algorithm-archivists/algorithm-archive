@@ -111,7 +111,7 @@ We'll definitely come back to this soon, I just wanted to briefly mention it now
 Here is a video describing the Barnsley fern:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xoXe0AljUMA"
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xoXe0AljUMA"
  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
 ture-in-picture" allowfullscreen></iframe>
 </div>
