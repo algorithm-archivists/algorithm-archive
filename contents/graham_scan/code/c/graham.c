@@ -36,8 +36,8 @@ void polar_angles_sort(struct point *points, struct point origin, size_t size) {
 
     double pivot_angle = polar_angle(origin, points[size / 2]);
 
-    int i = 0;
-    int j = size - 1;
+    size_t i = 0;
+    size_t j = size - 1;
     while (1) {
         while (polar_angle(origin, points[i]) < pivot_angle) {
             i++;

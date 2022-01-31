@@ -37,8 +37,6 @@ double monte_carlo_pi(unsigned samples) {
 }
 
 int main() {
-    unsigned samples;
-
     double pi_estimate = monte_carlo_pi(10000000);
     std::cout << "Pi = " << pi_estimate << '\n';
     std::cout << "Percent error is: " << 100 * std::abs(pi_estimate - PI) / PI << " %\n";

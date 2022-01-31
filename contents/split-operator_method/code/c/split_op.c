@@ -34,10 +34,10 @@ void fft(double complex *x, size_t n, bool inverse) {
     fftw_plan p;
 
     if (inverse) {
-        p = fftw_plan_dft_1d(n, (fftw_complex*)x, (fftw_complex*)y,
+        p = fftw_plan_dft_1d((int)n, (fftw_complex*)x, (fftw_complex*)y,
                              FFTW_BACKWARD, FFTW_ESTIMATE);
     } else {
-        p = fftw_plan_dft_1d(n, (fftw_complex*)x, (fftw_complex*)y,
+        p = fftw_plan_dft_1d((int)n, (fftw_complex*)x, (fftw_complex*)y,
                              FFTW_FORWARD, FFTW_ESTIMATE);
     }
 
@@ -63,9 +63,9 @@ void init_params(struct params *par, double xmax, unsigned int res, double dt,
     par->im_time = im;
 
     for (size_t i = 0; i < res; ++i) {
-        par->x[i] = xmax / res - xmax + i * (2.0 * xmax / res);
+        par->x[i] = xmax / res - xmax + (double)i * (2.0 * xmax / res);
         if (i < res / 2) {
-            par->k[i] = i * M_PI / xmax;
+            par->k[i] = (double)i * M_PI / xmax;
         } else {
             par->k[i] = ((double)i - res) * M_PI / xmax;
         }
