@@ -36,8 +36,8 @@ void polar_angles_sort(struct point *points, struct point origin, size_t size) {
 
     double pivot_angle = polar_angle(origin, points[size / 2]);
 
-    int i = 0;
-    int j = size - 1;
+    size_t i = 0;
+    size_t j = size - 1;
     while (1) {
         while (polar_angle(origin, points[i]) < pivot_angle) {
             i++;
@@ -95,15 +95,17 @@ size_t graham_scan(struct point *points, size_t size) {
 }
 
 int main() {
-    struct point points[] = {{2.0, 1.9}, {1.0, 1.0}, {2.0, 4.0}, {3.0, 1.0},
-                                {2.0, 0.0}};
+    struct point points[] = {{-5, 2}, {5, 7}, {-6, -12}, {-14, -14}, {9, 9},
+                             {-1, -1}, {-10, 11}, {-6, 15}, {-6, -8}, {15, -9},
+                             {7, -7}, {-2, -9}, {6, -5}, {0, 14}, {2, 8}};
+    size_t num_initial_points = 15;
 
     printf("Points:\n");
-    for (size_t i = 0; i < 5; ++i) {
+    for (size_t i = 0; i < num_initial_points; ++i) {
         printf("(%f,%f)\n", points[i].x, points[i].y);
     }
 
-    size_t hull_size = graham_scan(points, 5);
+    size_t hull_size = graham_scan(points, num_initial_points);
 
     printf("\nHull:\n");
     for (size_t i = 0; i < hull_size; ++i) {

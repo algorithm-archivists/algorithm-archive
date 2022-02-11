@@ -1,36 +1,64 @@
 -- submitted by Jie
-type Position     = [Double]
-type Speed        = [Double]
-type Time         = Double
-type Particle     = (Position, Speed, Acceleration, Time)
-type Acceleration = [Double]
+type Time = Double
 
-verletStep :: (Particle -> Acceleration)
-              -> Time
-              -> Particle
-              -> Particle
-              -> Particle
-verletStep acc dt (xOld, _, aOld, _) (x, v, a, t) = (x', v', a', t+dt)
+type Position = Double
+
+type Speed = Double
+
+type Acceleration = Double
+
+type Particle = (Position, Speed, Acceleration, Time)
+
+type Model = Particle -> Acceleration
+
+type Method = Model -> Time -> Particle -> Particle -> Particle
+
+verlet :: Method
+verlet acc dt (xOld, _, _, _) (x, _, a, t) = (x', v', a', t + dt)
   where
-  x' = zipWith3 (\xOld x a -> 2*x - xOld + a*dt^2 ) xOld x a
-  v' = zipWith3 (\v a aOld -> v + 0.5*(aOld + a)*dt) v a aOld
-  a' = acc (x', v', [], t+dt)
+    x' = 2 * x - xOld + a * dt ^ 2
+    v' = 0
+    a' = acc (x', v', a, t + dt)
 
-trajectory :: (Particle -> Acceleration)
-              -> Time
-              -> Particle
-              -> [Particle]
-trajectory acc dt p0@(x, v, a, t0) = t
+stormerVerlet :: Method
+stormerVerlet acc dt (xOld, _, _, _) (x, _, a, t) = (x', v', a', t + dt)
   where
-  t  = p0 : p1 : zipWith (verletStep acc dt) t (tail t)
-  p1 = (x', v', acc (x', v', [], t0+dt), t0+dt)
-  x' = zipWith3 (\x v a -> x + v*dt + 0.5*a*dt^2 ) x v a
-  v' = zipWith (\v a -> v + a*dt) v a
+    x' = 2 * x - xOld + a * dt ^ 2
+    v' = (x' - x) / dt
+    a' = acc (x', v', a, t + dt)
 
-freeFall :: Particle
-freeFall = last $ takeWhile (\([x],_,_,_) -> x > 0) $ trajectory acc dt p0
+velocityVerlet :: Method
+velocityVerlet acc dt (xOld, _, aOld, _) (x, v, a, t) = (x', v', a', t + dt)
   where
-  p0    = ([5], [0], [-10], 0)
-  dt    = 0.001
-  acc _ = [-10]
+    x' = 2 * x - xOld + a * dt ^ 2
+    v' = v + 0.5 * (aOld + a) * dt
+    a' = acc (x', v', a, t + dt)
 
+trajectory :: Method -> Model -> Time -> Particle -> [Particle]
+trajectory method acc dt p0@(x, v, a, t0) = traj
+  where
+    traj = p0 : p1 : zipWith (method acc dt) traj (tail traj)
+    p1 = (x', v', acc (x', v', a, t0 + dt), t0 + dt)
+    x' = x + v * dt + 0.5 * a * dt ^ 2
+    v' = v + a * dt
+
+main :: IO ()
+main = do
+  let p0 = (5, 0, -10, 0)
+      dt = 0.001
+      freefall _ = -10
+      aboveGround (x, _, _, _) = x > 0
+      timeVelocity m =
+        let (_, v, _, t) = last $ takeWhile aboveGround $ trajectory m freefall dt p0
+         in (show t, show v)
+
+  putStrLn "[#]\nTime for Verlet integration is:"
+  putStrLn $ fst $ timeVelocity verlet
+  putStrLn "[#]\nTime for Stormer Verlet integration is:"
+  putStrLn $ fst $ timeVelocity stormerVerlet
+  putStrLn "[#]\nVelocity for Stormer Verlet integration is:"
+  putStrLn $ snd $ timeVelocity stormerVerlet
+  putStrLn "[#]\nTime for velocity Verlet integration is:"
+  putStrLn $ fst $ timeVelocity velocityVerlet
+  putStrLn "[#]\nVelocity for velocity Verlet integration is:"
+  putStrLn $ snd $ timeVelocity velocityVerlet

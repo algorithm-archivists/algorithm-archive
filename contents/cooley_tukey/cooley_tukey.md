@@ -5,7 +5,7 @@ On the surface, the algorithm seems like a simple application of recursion, and 
 From calculating superfluid vortex positions to super-resolution imaging, Fourier Transforms lay at the heart of many scientific disciplines and are essential to many algorithms we will cover later in this book.
 
 Simply put, the Fourier Transform is a beautiful application of complex number systems; however, it would rarely be used today if not for the ability to quickly perform the operation with Fast Fourier Transform, first introduced by the great Frederick Gauss in 1805 and later independently discovered by James Cooley and John Tukey in 1965 {{ "ct1965" | cite }}.
-Gauss (of course) already had too many things named after him and Cooley and Tukey both had cooler names, so the most common algorithm for FFT's today is known as the Cooley-Tukey algorithm.
+Gauss (of course) already had too many things named after him and Cooley and Tukey both had cooler names, so the most common algorithm for FFTs today is known as the Cooley-Tukey algorithm.
 
 ### What is a Fourier Transform?
 
@@ -29,7 +29,7 @@ Each constituent wave can be described by only one value: $$\omega$$.
 So, instead of representing these curves as seen above, we could instead describe them as peaks in frequency space, as shown below.
 
 <p>
-    <img  class="center" src="res/FT_example.png" width="500" />
+    <img  class="center" src="res/FT_example.png" style="width:70%" />
 </p>
 
 This is what the Fourier Transform does!
@@ -70,17 +70,25 @@ For some reason, though, putting code to this transformation really helped me fi
 
 {% method %}
 {% sample lang="jl" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:4-13, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:8-19, lang:"c_cpp"](code/c/fft.c)
+[import:25-35, lang:"c"](code/c/fft.c)
+{% sample lang="clj" %}
+[import:15-30, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:23-33, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:7-13, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
-{% sample lang="scratch" %}
-[import:2-11, lang:"julia"](code/julia/fft.jl)
+[import:6-12, lang:"python"](code/python/fft.py)
+{% sample lang="asm-x64" %}
+[import:15-74, lang:"asm-x64"](code/asm-x64/fft.s)
+{% sample lang="js" %}
+[import:3-15, lang:"javascript"](code/javascript/fft.js)
+{% sample lang="rs" %}
+[import:24-37, lang:"rust"](code/rust/fft.rs)
+{% sample lang="lisp" %}
+[import:2-12, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
 
 In this function, we define `n` to be a set of integers from $$0 \rightarrow N-1$$ and arrange them to be a column.
@@ -97,7 +105,7 @@ M = [1.0+0.0im  1.0+0.0im           1.0+0.0im          1.0+0.0im;
 
 It was amazing to me when I saw the transform for what it truly was: an actual transformation matrix!
 That said, the Discrete Fourier Transform is slow -- primarily because matrix multiplication is slow, and as mentioned before, slow code is not particularly useful.
-So what was the trick that everyone used to go from a Discrete Fourier Transform to a *Fast* Fourier Transform?
+So what was the trick that everyone used to go from a Discrete Fourier Transform to a _Fast_ Fourier Transform?
 
 Recursion!
 
@@ -105,7 +113,7 @@ Recursion!
 
 The problem with using a standard DFT is that it requires a large matrix multiplications and sums over all elements, which are prohibitively complex operations.
 The Cooley-Tukey algorithm calculates the DFT directly with fewer summations and without matrix multiplications.
-If necessary, DFT's can still be calculated directly at the early stages of the FFT calculation.
+If necessary, DFTs can still be calculated directly at the early stages of the FFT calculation.
 The trick to the Cooley-Tukey algorithm is recursion.
 In particular, we split the matrix we wish to perform the FFT on into two parts: one for all elements with even indices and another for all odd indices.
 We then proceed to split the array again and again until we have a manageable array size to perform a DFT (or similar FFT) on.
@@ -115,17 +123,25 @@ With recursion, we can reduce the complexity to $$\sim \mathcal{O}(n \log n)$$, 
 In the end, the code looks like:
 {% method %}
 {% sample lang="jl" %}
-[import:14-31, lang:"julia"](code/julia/fft.jl)
+[import:16-32, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import:20-39, lang:"c_cpp"](code/c/fft.c)
+[import:37-56, lang:"c"](code/c/fft.c)
+{% sample lang="clj" %}
+[import:31-58, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import:27-57, lang:"c_cpp"](code/c++/fft.cpp)
+[import:36-66, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
-[import:6-19, lang:"haskell"](code/haskell/fft.hs)
+[import:15-28, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
-[import:5-16, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-[import:14-31, lang:"julia"](code/julia/fft.jl)
+[import:15-26, lang:"python"](code/python/fft.py)
+{% sample lang="asm-x64" %}
+[import:76-165, lang:"asm-x64"](code/asm-x64/fft.s)
+{% sample lang="js" %}
+[import:17-39, lang="javascript"](code/javascript/fft.js)
+{% sample lang="rs" %}
+[import:39-55, lang:"rust"](code/rust/fft.rs)
+{% sample lang="lisp" %}
+[import:14-42, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
 
 As a side note, we are enforcing that the array must be a power of 2 for the operation to work.
@@ -134,6 +150,7 @@ This is a limitation of the fact that we are using recursion and dividing the ar
 The above method is a perfectly valid FFT; however, it is missing the pictorial heart and soul of the Cooley-Tukey algorithm: Butterfly Diagrams.
 
 ### Butterfly Diagrams
+
 Butterfly Diagrams show where each element in the array goes before, during, and after the FFT.
 As mentioned, the FFT must perform a DFT.
 This means that even though we need to be careful about how we add elements together, we are still ultimately performing the following operation:
@@ -150,7 +167,7 @@ For example, imagine we need to perform an FFT of an array of only 2 elements.
 We can represent this addition with the following (radix-2) butterfly:
 
 <p>
-    <img  class="center" src="res/radix-2screen_positive.jpg" width="400" />
+    <img  class="center" src="res/radix-2screen_positive.jpg" style="width:60%" />
 </p>
 
 Here, the diagram means the following:
@@ -164,7 +181,7 @@ $$
 However, it turns out that the second half of our array of $$\omega$$ values is always the negative of the first half, so $$\omega_2^0 = -\omega_2^1$$, so we can use the following butterfly diagram:
 
 <p>
-    <img  class="center" src="res/radix-2screen.jpg" width="400" />
+    <img  class="center" src="res/radix-2screen.jpg" style="width:60%" />
 </p>
 
 With the following equations:
@@ -181,7 +198,7 @@ In this case, we start with simple butterflies, as shown above, and then sum but
 For example, if we have 8 elements, this might look like this:
 
 <p>
-    <img  class="center" src="res/radix-8screen.jpg" width="500" />
+    <img  class="center" src="res/radix-8screen.jpg" style="width:70%" />
 </p>
 
 Note that we can perform a DFT directly before using any butterflies, if we so desire, but we need to be careful with how we shuffle our array if that's the case.
@@ -190,7 +207,7 @@ In the code snippet provided in the previous section, the subdivision was perfor
 For example, take a look at the ordering of FFT ([found on wikipedia](https://en.wikipedia.org/wiki/Butterfly_diagram)) that performs the DFT shortcut:
 
 <p>
-    <img  class="center" src="res/butterfly_diagram.png" width="600" />
+    <img  class="center" src="res/butterfly_diagram.png" style="width:70%" />
 </p>
 
 Here, the ordering of the array was simply divided into even and odd elements once, but they did not recursively divide the arrays of even and odd elements again because they knew they would perform a DFT soon thereafter.
@@ -206,13 +223,13 @@ I'll definitely come back to this at some point, so let me know what you liked a
 
 To be clear, the example code this time will be complicated and requires the following functions:
 
-* An FFT library (either in-built or something like FFTW)
-* An approximation function to tell if two arrays are similar
+- An FFT library (either in-built or something like FFTW)
+- An approximation function to tell if two arrays are similar
 
 As mentioned in the text, the Cooley-Tukey algorithm may be implemented either recursively or non-recursively, with the recursive method being much easier to implement.
 I would ask that you implement either the recursive or non-recursive methods (or both, if you feel so inclined).
 If the language you want to write your implementation in is already used, please append your code to the already existing codebase.
-As before, pull requests are favoured.
+As before, pull requests are favored.
 
 Note: I implemented this in Julia because the code seems more straightforward in Julia; however, if you wish to write better Julia code or better code in your own language, please feel free to do so!
 **I do not claim that this is the most efficient way to implement the Cooley-Tukey method, so if you have a better way to do it, feel free to implement it that way!**
@@ -221,18 +238,51 @@ Note: I implemented this in Julia because the code seems more straightforward in
 {% sample lang="jl" %}
 [import, lang:"julia"](code/julia/fft.jl)
 {% sample lang="c" %}
-[import, lang:"c_cpp"](code/c/fft.c)
+[import, lang:"c"](code/c/fft.c)
+{% sample lang="clj" %}
+[import, lang:"clojure"](code/clojure/fft.clj)
 {% sample lang="cpp" %}
-[import, lang:"c_cpp"](code/c++/fft.cpp)
+[import, lang:"cpp"](code/cpp/fft.cpp)
 {% sample lang="hs" %}
 [import, lang:"haskell"](code/haskell/fft.hs)
 {% sample lang="py" %}
 [import, lang:"python"](code/python/fft.py)
-{% sample lang="scratch" %}
-Some rather impressive scratch code was submitted by Jie and can be found here: https://scratch.mit.edu/projects/37759604/#editor
+{% sample lang="asm-x64" %}
+[import, lang:"asm-x64"](code/asm-x64/fft.s)
+{% sample lang="js" %}
+[import, lang:"javascript"](code/javascript/fft.js)
+{% sample lang="rs" %}
+[import, lang:"rust"](code/rust/fft.rs)
+{% sample lang="lisp" %}
+[import, lang:"lisp"](code/clisp/fft.lisp)
 {% endmethod %}
-
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Images/Graphics
+
+- The image "[FTexample](res/FT_example.png)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[radix2positive](res/radix-2screen_positive.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[radix2](res/radix-2screen.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[radix8](res/radix-8screen.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[DIT-FFT-butterfly](https://en.wikipedia.org/wiki/Butterfly_diagram#/media/File:DIT-FFT-butterfly.png)" was created by Virens and is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+
+- none

@@ -1,4 +1,4 @@
-fn verlet(mut pos: f64, acc: f64, dt: f64) {
+fn verlet(mut pos: f64, acc: f64, dt: f64) -> f64 {
     let mut prev_pos = pos;
     let mut time = 0.0;
 
@@ -9,24 +9,29 @@ fn verlet(mut pos: f64, acc: f64, dt: f64) {
         prev_pos = temp_pos;
     }
 
-    println!("{}", time);
+    time
 }
 
-fn stormer_verlet(mut pos: f64, acc: f64, dt: f64) {
+fn stormer_verlet(mut pos: f64, acc: f64, dt: f64) -> (f64, f64) {
     let mut prev_pos = pos;
     let mut time = 0.0;
+    let mut vel = 0.0;
 
     while pos > 0.0 {
         time += dt;
         let temp_pos = pos;
         pos = pos * 2.0 - prev_pos + acc * dt * dt;
         prev_pos = temp_pos;
+
+        // Because acceleration is constant, velocity is
+        // straightforward
+        vel += acc * dt;
     }
 
-    println!("{}", time);
+    (time, vel)
 }
 
-fn velocity_verlet(mut pos: f64, acc: f64, dt: f64) {
+fn velocity_verlet(mut pos: f64, acc: f64, dt: f64) -> (f64, f64) {
     let mut time = 0.0;
     let mut vel = 0.0;
 
@@ -36,11 +41,24 @@ fn velocity_verlet(mut pos: f64, acc: f64, dt: f64) {
         vel += acc * dt;
     }
 
-    println!("{}", time);
+    (time, vel)
 }
 
 fn main() {
-    verlet(5.0, -10.0, 0.01);
-    stormer_verlet(5.0, -10.0, 0.01);
-    velocity_verlet(5.0, -10.0, 0.01);
+    let time_v = verlet(5.0, -10.0, 0.01);
+    let (time_sv, vel_sv) = stormer_verlet(5.0, -10.0, 0.01);
+    let (time_vv, vel_vv) = velocity_verlet(5.0, -10.0, 0.01);
+
+    println!("[#]\nTime for Verlet integration is:");
+    println!("{}", time_v);
+    
+    println!("[#]\nTime for Stormer Verlet integration is:");
+    println!("{}", time_sv);
+    println!("[#]\nVelocity for Stormer Verlet integration is:");
+    println!("{}", vel_sv);
+    
+    println!("[#]\nTime for velocity Verlet integration is:");
+    println!("{}", time_vv);
+    println!("[#]\nVelocity for velocity Verlet integration is:");
+    println!("{}", vel_vv);
 }

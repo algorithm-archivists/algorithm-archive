@@ -1,0 +1,13 @@
+[package]
+name = "splitop"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rustfft = "4.1.0"
+
+[[bin]]
+path = "./split_op.rs"
+name = "main"

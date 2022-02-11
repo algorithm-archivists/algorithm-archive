@@ -20,19 +20,19 @@ Remember how I said I couldn't get the virus software to work on my computer? Ye
 
 I don't remember the exact order, but I knew the key players were there: Ubuntu, Mint, Fedora, Debian, and Arch. Now, here's where my years of gaming experience came in. I personified each distribution as a class in a game world. Ubuntu was the easy to use axe-wielding warrior that would get the job done. Fedora was the Archer in the back with a feather in his cap and a quick quip for everything. Debian was the grandmotherly spellcaster just trying to keep everyone alive. Then there was Arch, the one who rushed into combat without any armor and uses only the environment as a weapon.
 
-Which one did I choose? Arch. I've always been a fan of playing the underdog characters. In fact, when I looked up what made Arch Arch, I found the [Archwiki](https://wiki.Archlinux.org/), which was absolutely beautiful and filled with any information I could ever want to know about the distribution, including a page on ["The Arch Way"](https://wiki.Archlinux.org/index.php/Arch_Linux#Principles) --  Which now redirects to a page about Archlinux principles instead. After reading through it, there was not a single shadow of a doubt in my mind. Arch was the distribution for me.
+Which one did I choose? Arch. I've always been a fan of playing the underdog characters. In fact, when I looked up what made Arch Arch, I found the [Archwiki](https://wiki.Archlinux.org/), which was absolutely beautiful and filled with any information I could ever want to know about the distribution, including a page on ["The Arch Way"](https://wiki.Archlinux.org/index.php/Arch_Linux#Principles) -- Which now redirects to a page about Archlinux principles instead. After reading through it, there was not a single shadow of a doubt in my mind. Arch was the distribution for me.
 
 In hindsight, this could have been the most disastrous decision of my life. I hope that at this point, you understand how bad I was with computers, and a slow internet connection didn't help. The next day, I went to the store and bought a 25 pack of writable DVD's. So now for the hard part: Installation.
 
 #### Step 1: Burning to a disk
 
-Now, I know many of you reading think this is an easy thing to do. In fact, I also currently think it's an easy thing to do. Back then, though, it was nearly impossible. I wasted 3-4 DVD's backing up my Windows set-up, just in case. Then I wasted another 15 trying to figure out what to do. At first, I just copied the Archiso onto the disk. That obviously didn't work. It took me ~5 hours to realize that *burning* to a disk was different than simply dragging and dropping files. I then needed to figure out how to do the burning with Windows Vista. By the time I figured this out, nearly my entire stack of DVD's was gone. Oh well, lessons learned, right?
+Now, I know many of you reading think this is an easy thing to do. In fact, I also currently think it's an easy thing to do. Back then, though, it was nearly impossible. I wasted 3-4 DVD's backing up my Windows set-up, just in case. Then I wasted another 15 trying to figure out what to do. At first, I just copied the Archiso onto the disk. That obviously didn't work. It took me ~5 hours to realize that *burning* to a disk was different from simply dragging and dropping files. I then needed to figure out how to do the burning with Windows Vista. By the time I figured this out, nearly my entire stack of DVD's was gone. Oh well, lessons learned, right?
 
 #### Step 2: Just type "root"
 
 After the disk burning fiasco, I thought to myself, *Alright. It'll only get easier from here, right?* Nope. I booted up the Archiso and up popped a prompt talking about how to install Arch. I don't remember what it said exactly, but I know it mentioned that if you wanted to install Arch on a "kerosene-powered cheese grater" that you should consult the wiki. Now, here's the thing: for anyone else, this would just be an idle quip -- something to chuckle at before moving on, but I was not able to move past this prompt. Right under it was a rather surprising adversary, the phrase `Archiso login:` with a blinking cursor.
 
-In my head, I knew what this meant. I needed to create my username, right? So I tried putting in what I wanted my username to be. No luck. I tried any number of different combinations of letters and characters. I even tried our wifi password. Nothing. I tried re-burning the disk a few more times, but I was still completely lost. What did they want? What was I supposed to type to move forward with the installation? I couldn't figure it out, and after hours of sitting there, looking at a blinking prompt, I started wondering if my computer was actually a kerosene-powered cheese grater and consulted the wiki, but even that wasn't particularly clear. So I googled some more, and then some more and more. Somehow, I stumbled onto a page that gave me the answer -- the magical password that would allow me access to the Arch installer:
+In my head, I knew what this meant. I needed to create my username, right? So I tried putting in what I wanted my username to be. No luck. I tried any number of different combinations of letters and characters. I even tried our Wi-Fi password. Nothing. I tried re-burning the disk a few more times, but I was still completely lost. What did they want? What was I supposed to type to move forward with the installation? I couldn't figure it out, and after hours of sitting there, looking at a blinking prompt, I started wondering if my computer was actually a kerosene-powered cheese grater and consulted the wiki, but even that wasn't particularly clear. So I googled some more, and then some more and more. Somehow, I stumbled onto a page that gave me the answer -- the magical password that would allow me access to the Arch installer:
 
 **root**
 
@@ -50,7 +50,7 @@ Truth be told, I learned a lot at this stage of the installation, including moun
 
 In the middle of the installation, when all the packages were popping up, I remember getting a very particular error under the acronym DRDY. I didn't know what this meant. In fact, I don't think very many people did. The error said it was fatal, so I restarted the install from scratch. I got the same error, but this time in a different place, so I did the install again. And then again. And then again. I repeated the installation so many times that I had memorized every last part from start to finish. I had read all the guides online, and yet I was still getting that darned error! DRDY. What could it mean?
 
-Well, I didn't know, but at that point, it was late at night and I was a bit delirious. I phonetically sounded out the error and realized it sounded like the word "dirty." I figured this meant that the hard drive was dirty, so I unplugged it , blew on the socket, and plugged it back in. No more error.
+Well, I didn't know, but at that point, it was late at night and I was a bit delirious. I phonetically sounded out the error and realized it sounded like the word "dirty." I figured this meant that the hard drive was dirty, so I unplugged it, blew on the socket, and plugged it back in. No more error.
 
 To this day, I don't know how or why this worked.
 
@@ -64,6 +64,23 @@ Blitz login:
 
 The same as I saw in the installation before. Except this time, I didn't sit there waiting for hours, trying to figure out some password to enter my system. I simply entered my moniker and got to setting up my system.
 
-I'll be honest, even though this happened almost a decade ago, it is burned into my head as one of the best learning experiences I have ever had. I am sure many, many people would have found it incredibly frustrating. They would have thrown their computer at the wall, exclaiming, "What am I supposed to do?" For me, though, it was captivating. I would never see my computer in the same way again and to this day when I pop open a terminal, I cannot help but smile a little bit.
+I'll be honest, even though this happened almost a decade ago, it is burned into my head as one of the best learning experiences I have ever had. I am sure many, many people would have found it incredibly frustrating. They would have thrown their computer at the wall, exclaiming, "What am I supposed to do?" For me, though, it was captivating. I would never see my computer in the same way again and to this day when I pop open a terminal, I cannot help but smile a little.
 
 Basically, since the first time I was able to directly interact with my computer, I have been captivated with the idea, and though I was not able use the knowledge until much later in my life, it stuck with me and definitely shaped my perspective of the world.
+
+## License
+
+##### Code Examples
+
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
+
+##### Text
+
+The text of this chapter was written by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+
+[<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+
+##### Pull Requests
+
+After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+- none

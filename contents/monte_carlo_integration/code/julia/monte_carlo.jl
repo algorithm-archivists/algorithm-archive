@@ -23,9 +23,9 @@ function monte_carlo(n::Int64)
     # The formula is pi = (box_length^2 / radius^2) * (pi_count / n), but we
     #     are only using the upper quadrant and the unit circle, so we can use
     #     4*pi_count/n instead
-    pi_estimate = 4*pi_count/n
-    println("The pi estimate is: ", pi_estimate)
-    println("Percent error is: ", signif(100 * abs(pi_estimate - pi) / pi, 3), " %")
+    return 4*pi_count/n
 end
 
-monte_carlo(10000000)
+pi_estimate = monte_carlo(10000000)
+println("The pi estimate is: ", pi_estimate)
+println("Percent error is: ", 100 * abs(pi_estimate - pi) / pi, " %")

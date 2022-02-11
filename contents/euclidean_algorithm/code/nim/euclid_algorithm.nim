@@ -1,27 +1,28 @@
-proc euclid_mod(in1, in2: int): int =
-    var
-        a = abs(in1)
-        b = abs(in2)
-    
-    while b != 0:
-        var temp: int = b
-        b = a mod b
-        a = temp;
+func euclid_mod(in1, in2: int): int =
+  var
+    a = abs(in1)
+    b = abs(in2)
 
-    return a
+  while b != 0:
+    let temp: int = b
+    b = a mod b
+    a = temp;
 
-proc euclid_sub(in1, in2: int): int =
-    var
-        a = abs(in1)
-        b = abs(in2)
+  result = a
 
-    while a != b:
-        if a > b:
-            a -= b
-        else:
-            b -= a
-    
-    return a
+func euclid_sub(in1, in2: int): int =
+  var
+    a = abs(in1)
+    b = abs(in2)
 
-echo euclid_sub(32*5,32*3)
-echo euclid_mod(64*2,64*7)
+  while a != b:
+    if a > b:
+      a -= b
+    else:
+      b -= a
+
+  result = a
+
+when isMainModule:
+  echo euclid_sub(64 * 67, 64 * 81)
+  echo euclid_mod(128 * 12, 128 * 77)

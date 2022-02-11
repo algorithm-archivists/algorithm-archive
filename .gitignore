@@ -77,6 +77,9 @@ anaconda-mode/
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
 
+# npm package lock for local installs
+package-lock.json
+
 # Book build output
 _book
 
@@ -475,7 +478,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-
+*.ipynb_checkpoints*
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
@@ -498,3 +501,33 @@ __pycache__/
 
 -# Other
 -*.xcf
+
+# Cache files for sublime text
+*.sublime-workspace
+*.sublime-project
+
+# Settings directory for visual studio code
+vscode/
+
+# Data file extension for Algorithm Archive
+*.dat
+
+# Coconut compilation files
+**/coconut/*.py
+
+# aspell
+*.bak
+
+# SCons intermidiate files
+.sconsign.dblite
+*.o
+
+# SCons build directory
+build/
+
+# Cargo artifacts
+Cargo.lock
+target/
+
+*.out
+*.class
