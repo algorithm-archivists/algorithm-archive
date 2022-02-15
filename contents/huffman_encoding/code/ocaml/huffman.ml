@@ -76,8 +76,8 @@ let rec create_huffman_tree q =
 
 let rec prefixes_of_tree prefix trees = match trees with
   | Leaf s -> [(s, prefix)]
-  | Node (t0, t1) -> prefixes_of_tree (prefix ^ "0") t0
-                   @ prefixes_of_tree (prefix ^ "1") t1
+  | Node (t0, t1) -> 
+    List.append (prefixes_of_tree (prefix ^ "0") t0) (prefixes_of_tree (prefix ^ "1") t1)
 
 let huffman huffman_tree = prefixes_of_tree "" huffman_tree
 
