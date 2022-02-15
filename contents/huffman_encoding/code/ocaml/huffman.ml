@@ -96,7 +96,7 @@ let encode codebook x =
   List.hd x |> snd
 
 let encode_msg codebook msg =
-  List.map (fun x -> encode codebook x) @@ str_list msg |>
+  List.map (fun x -> encode codebook x) (str_list msg) |>
    list_to_string (List.map (fun x -> encode codebook x) (str_list msg))
 
 let decode codebook key =
