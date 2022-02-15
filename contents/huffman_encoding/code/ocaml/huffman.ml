@@ -85,7 +85,7 @@ let huffman huffman_tree = prefixes_of_tree "" huffman_tree
 let char_to_str = Printf.sprintf "%c"
 
 let str_list msg = 
-  List.map char_to_str @@ str_to_charlist msg
+  List.map char_to_str (str_to_charlist msg)
 
 let list_to_string lst =
   String.concat "" lst
