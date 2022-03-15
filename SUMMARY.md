@@ -22,6 +22,7 @@
         * [Convolutional Theorem](contents/convolutions/convolutional_theorem/convolutional_theorem.md)
     * [Probability Distributions](contents/probability/distributions/distributions.md)	
     * [Box Muller Transform](contents/box_muller/box_muller.md)	
+        * [How costly is rejection sampling?](contents/box_muller/box_muller_rejection.md)	
 * [Tree Traversal](contents/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](contents/euclidean_algorithm/euclidean_algorithm.md)
 * [Monte Carlo](contents/monte_carlo_integration/monte_carlo_integration.md)
