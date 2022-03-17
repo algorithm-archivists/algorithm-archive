@@ -21,7 +21,7 @@ OK, so first with replacement:
 
 This is an awful idea for a number of reasons.
 Here are a few:
-1. If we find a point outside of the unit circle, we have to continually look for new points until we *do* find one inside of the circle. Because we are running this program in parallel, where each thread transforms exactly one point, some threads might take literally forever to find a new point (if we are really unlucky).
+1. If we find a point outside of the unit circle, we have to continually look for new points until we *do* find one inside of the circle. Because we are running this program in parallel, where each thread transforms one point at a time, some threads might take literally forever to find a new point (if we are really unlucky).
 2. To generate new points, we need to re-generate a uniform distribution, but what if our uniform distribution is not random? What if it's a grid (or something similar) instead? In this case, we really shouldn't look for a new point on the inside of the circle as all those points have already been accounted for.
 3. The `rand()` function is kinda tricky on some parallel platforms (like GPUs) and might not work out of the box. In fact, the implementation shown above can only be run on the CPU.
 
@@ -69,7 +69,7 @@ In this case, we could sort the array before-hand so that all even elements come
 This would mean that the warps will almost certainly not diverge because the elements queued will all be of the same type and require the same operations.
 Unfortunately, this comes at the cost of a sorting operation which is prohibitively expensive.
 
-If we look at the above kernel, we are essentially asking $$78.53\%$$ of our threads to do something different than everyone else, and because we are usually inputting a uniform random distribution, this means that *most* warps will have to queue up 2 parallel actions instead of 1.
+If we look at the above kernel, we are essentially asking $$21.47\%$$ of our threads to do something different than everyone else, and because we are usually inputting a uniform random distribution, this means that *most* warps will have to queue up 2 parallel actions instead of 1.
 
 Essentially, we need to pick our poison:
 * Slow $$\sin$$ and $$\cos$$ operations with the Cartesian method
@@ -95,10 +95,9 @@ No matter the case, benchmarks will show the true nature of what we are dealing 
 | Polar with replacement    | $$433.644 \pm 2.64$$ms | NA                     |
 
 These were run with an Nvidia GTX 970 GPU and a Ryzen 3700X 16 core CPU.
-For those interested, the code is in Julia using the KernelAbstractions.jl package for parallelization.
+For those interested, the code can be found below.
 For these benchmarks, we used Julia's inbuilt benchmarking suite from `BenchmarkTools`, making sure to sync the GPU kernels with `CUDA.@sync`.
 We also ran with $$4096^2$$ input points.
-The full script can be found below.
 
 Here, we see an interesting divergence in the results.
 On the CPU, the polar method is *always* faster, but on the GPU, both methods are comparable.
