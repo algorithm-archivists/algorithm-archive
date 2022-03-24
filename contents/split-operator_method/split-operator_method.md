@@ -172,7 +172,7 @@ The Split-Operator method is one of the most commonly used quantum simulation al
 Here is a video describing the split-operator method:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BBt8EugN03Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BBt8EugN03Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

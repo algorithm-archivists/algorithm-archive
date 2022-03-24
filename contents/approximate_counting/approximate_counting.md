@@ -345,7 +345,7 @@ This was probably more useful in 1978 than it is now, but it's still nice to kee
 Here is a video describing the Approximate Counting Algorithm:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c4RJhPsc14s"
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/c4RJhPsc14s"
  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
 ture-in-picture" allowfullscreen></iframe>
 </div>

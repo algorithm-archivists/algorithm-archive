@@ -291,7 +291,7 @@ Sure, this can be done straightforwardly with a calculator, but it is no doubt a
 Here is a video describing key elements of Gauss's Easter Algorithm:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x6Yud882QKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x6Yud882QKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

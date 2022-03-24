@@ -208,7 +208,7 @@ If you are interested, please let me know and I will be more than willing to add
 Here is a video describing iterated function systems:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nIIp-vo8rHg"
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nIIp-vo8rHg"
  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
 ture-in-picture" allowfullscreen></iframe>
 </div>
