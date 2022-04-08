@@ -16,8 +16,8 @@ It's particularly useful when initializing a set of particles for a physical, N-
 This chapter will be divided into a few subsections:
 
 1. How to initialize the Box&mdash;Muller transform
-2. How to use the Box&mdash;Muller transform in Cartesian coordinates
-3. How to use the Box&mdash;Muller transform in Polar Coordinates
+2. How to use the Box&mdash;Muller transform in Cartesian coordinates {{ "box_muller_wiki" | cite }}.
+3. How to use the Box&mdash;Muller transform in Polar Coordinates, also called the Marsaglia transform {{ "marsaglia_wiki" | cite }}.
 
 Of course, there will be full code examples at the bottom.
 So, let's get to it!
