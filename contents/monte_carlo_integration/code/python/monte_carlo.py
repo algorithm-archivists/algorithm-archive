@@ -19,7 +19,7 @@ def monte_carlo(n_samples, radius = 1):
 		if(in_circle(x, y, radius)):
 			in_circle_count += 1
 
-	# Since we've generated points in upper left quadrant ([0,radius], [0, radius])
+	# Since we've generated points in upper right quadrant ([0,radius], [0, radius])
 	# We need to multiply the number of points by 4	
 	pi_estimate = 4 * in_circle_count / (n_samples)
 

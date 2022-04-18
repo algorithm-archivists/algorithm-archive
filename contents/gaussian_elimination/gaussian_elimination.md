@@ -315,16 +315,18 @@ In code, this process might look like this:
 [import:5-13, lang:"c"](code/c/gaussian_elimination.c)
 [import:19-34, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:13-23, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:13-23, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-17, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:44-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="js" %}
 [import:7-23, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:15-32, lang:"go"](code/go/gaussian_elimination.go)
 {% sample lang="py" %}
 [import:13-19, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
-[import:43-60, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:43-76, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 As a note, if the highest value is $$0$$, the matrix is singular and the system has no single solution.
@@ -387,16 +389,18 @@ Here is what it might look like in code:
 {% sample lang="c" %}
 [import:36-41, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:25-32, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:25-32, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:19-33, lang:"haskell"](code/haskell/gaussianElimination.hs)
 [import:42-42, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="js" %}
 [import:25-30, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:38-49, lang:"go"](code/go/gaussian_elimination.go)
 {% sample lang="py" %}
 [import:21-26, lang:"python"](code/python/gaussian_elimination.py)
 {% sample lang="rs" %}
-[import:62-71, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:62-75, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 #### All together
@@ -408,9 +412,7 @@ When we put everything together, it looks like this:
 {% sample lang="c" %}
 [import:15-48, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:8-34, lang:"cpp"](code/c++/gaussian_elimination.cpp)
-{% sample lang="rs" %}
-[import:41-78, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:8-34, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:10-36, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -419,6 +421,10 @@ When we put everything together, it looks like this:
 [import:5-47, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:1-38, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:9-53, lang:"go"](code/go/gaussian_elimination.go)
+{% sample lang="rs" %}
+[import:41-77, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 To be clear: if the matrix is found to be singular during this process, the system of equations is either over- or under-determined and no general solution exists.
@@ -447,10 +453,7 @@ Here it is in code:
 {% sample lang="c" %}
 [import:64-82, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:36-54, lang:"cpp"](code/c++/gaussian_elimination.cpp)
-{% sample lang="rs" %}
-This code does not exist yet in rust, so here's Julia code (sorry for the inconvenience)
-[import:67-93, lang:"julia"](code/julia/gaussian_elimination.jl)
+[import:36-54, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="hs" %}
 [import:38-46, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -459,6 +462,10 @@ This code does not exist yet in rust, so here's Julia code (sorry for the inconv
 [import:49-70, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:57-76, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:55-82, lang:"go"](code/go/gaussian_elimination.go)
+{% sample lang="rs" %}
+[import:79-96, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% endmethod %}
 
 As a note: Gauss-Jordan elimination can also be used to find the inverse of a matrix by following the same procedure to generate a reduced row echelon matrix, but with an identity matrix on the other side instead of the right-hand side of each equation.
@@ -490,9 +497,9 @@ In code, it looks like this:
 {% sample lang="c" %}
 [import:50-62, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import:56-72, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import:56-72, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="rs" %}
-[import:79-94, lang:"rust"](code/rust/gaussian_elimination.rs)
+[import:98-112, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
 [import:48-53, lang:"haskell"](code/haskell/gaussianElimination.hs)
 {% sample lang="py" %}
@@ -501,6 +508,8 @@ In code, it looks like this:
 [import:72-87, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import:40-55, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import:84-98, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 ## Visual Representation
@@ -514,10 +523,10 @@ Well, this analogy breaks down quickly when we start moving beyond 3D, so it is 
 That said, it is particularly interesting to see what happens as we plot our matrix during Gaussian elimination for the 3D case.
 
 <div style="text-align:center">
-<video width="560" height="315" autoplay controls loop>
+<video style="width:70%" controls loop>
   <source src="res/GE_vis.mp4" type="video/mp4">
 Your browser does not support the video tag.
-</video> 
+</video>
 </div>
 
 As we can see in the above visualization, the planes wobble about in 3D until they reach row echelon form, where one plane is parallel to the $$x$$ and $$y$$ axes.
@@ -547,7 +556,7 @@ There are also plenty of other solvers that do similar things that we will get t
 Here's a video describing Gaussian elimination:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2tlwSqblrvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2tlwSqblrvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code
@@ -558,7 +567,7 @@ Here's a video describing Gaussian elimination:
 {% sample lang="c" %}
 [import, lang:"c"](code/c/gaussian_elimination.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/gaussian_elimination.cpp)
+[import, lang:"cpp"](code/cpp/gaussian_elimination.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/gaussian_elimination.rs)
 {% sample lang="hs" %}
@@ -569,6 +578,8 @@ Here's a video describing Gaussian elimination:
 [import, lang:"java"](code/java/GaussianElimination.java)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/gaussian_elimination.js)
+{% sample lang="go" %}
+[import, lang:"go"](code/go/gaussian_elimination.go)
 {% endmethod %}
 
 
@@ -580,7 +591,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
@@ -589,7 +600,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The animation "[GEvis](res/GE_vis.mp4)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Pull Requests
 

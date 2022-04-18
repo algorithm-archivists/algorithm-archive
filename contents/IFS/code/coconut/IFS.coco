@@ -1,0 +1,30 @@
+from math import sqrt
+from random import random, choice
+
+data point(x=0, y=0):
+    def __add__(self, other):
+        return point(self.x + other.x, self.y + other.y)
+
+    def __rmul__(self, other):
+        return point(self.x * other, self.y * other)
+
+def chaos_game(n, shape_points):
+    p = point(random(), random())
+
+    for _ in range(n):
+        p = (1/2) * (p + choice(shape_points))
+        yield p
+
+
+# This will generate a Sierpinski triangle with a chaos game of n points for an
+# initial triangle with three points on the vertices of an equilateral triangle:
+#     A = (0.0, 0.0)
+#     B = (0.5, sqrt(0.75))
+#     C = (1.0, 0.0)
+# It will output the file sierpinski.dat, which can be plotted after
+shape_points = [point(0.0, 0.0),
+                point(0.5, sqrt(0.75)),
+                point(1.0, 0.0)]
+with open("sierpinski.dat", "w") as f:
+    for p in chaos_game(10000, shape_points):
+        f.write("{0}\t{1}\n".format(p.x, p.y))

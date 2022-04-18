@@ -23,7 +23,7 @@ I am incredibly interested to see what you guys do and how you implement the alg
 Here is a video describing the stable marriage problem:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A7xRZQAQU8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A7xRZQAQU8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code
@@ -40,7 +40,7 @@ Here is a video describing the stable marriage problem:
 {% sample lang="c" %}
 [import, lang:"c"](code/c/stable_marriage.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/stable_marriage.cpp)
+[import, lang:"cpp"](code/cpp/stable_marriage.cpp)
 {% sample lang="js" %}
 [import, lang:"javascript"](code/javascript/stable-marriage.js)
 {% sample lang="cs" %}
@@ -68,7 +68,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

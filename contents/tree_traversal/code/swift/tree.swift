@@ -22,7 +22,7 @@ func createTree(numRows: Int, numChildren: Int) -> Node {
 }
 
 func dfsRecursive(node: Node) {
-    print(node.value)
+    print(node.value, terminator:" ")
 
     for child in node.children! {
         dfsRecursive(node: child)
@@ -34,19 +34,19 @@ func dfsRecursivePostOrder(node: Node) {
         dfsRecursivePostOrder(node: child)
     }
 
-    print(node.value)
+    print(node.value, terminator:" ")
 }
 
 func dfsRecursiveInOrderBinary(node: Node) {
     if node.children?.count == 2 {
         dfsRecursiveInOrderBinary(node: node.children![0])
-        print(node.value)
+        print(node.value, terminator:" ")
         dfsRecursiveInOrderBinary(node: node.children![1])
     } else if node.children?.count == 1 {
         dfsRecursiveInOrderBinary(node: node.children![0])
-        print(node.value)
+        print(node.value, terminator:" ")
     } else if node.children?.count == 0 {
-        print(node.value)
+        print(node.value, terminator:" ")
     } else {
         print("Not a binary tree!")
     }
@@ -58,7 +58,7 @@ func dfsStack(node: Node) {
 
     while stack.count > 0 {
         temp = stack.popLast()!
-        print(temp.value)
+        print(temp.value, terminator:" ")
 
         for child in temp.children! {
             stack.append(child)
@@ -72,7 +72,7 @@ func bfsQueue(node: Node) {
 
     while queue.count > 0 {
         temp = queue.remove(at: 0)
-        print(temp.value)
+        print(temp.value, terminator:" ")
 
         for child in temp.children! {
             queue.append(child)
@@ -81,24 +81,29 @@ func bfsQueue(node: Node) {
 }
 
 func main() {
-    let root = createTree(numRows: 3, numChildren: 3)
+    let root = createTree(numRows: 2, numChildren: 3)
 
-    print("Using recursive DFS:")
+    print("[#]\nRecursive DFS:")
     dfsRecursive(node: root)
+    print()
     
-    print("Using recursive postorder DFS:")
+    print("[#]\nRecursive Postorder DFS:")
     dfsRecursivePostOrder(node: root)
+    print()
 
-    print("Using stack-based DFS:")
+    print("[#]\nStack-based DFS:")
     dfsStack(node: root)
+    print()
 
-    print("Using queue-based BFS:")
+    print("[#]\nQueue-based BFS:")
     bfsQueue(node: root)
+    print()
 
     let rootBinary = createTree(numRows: 3, numChildren: 2)
 
-    print("Using In-order DFS:")
+    print("[#]\nRecursive Inorder DFS for Binary Tree:")
     dfsRecursiveInOrderBinary(node: rootBinary)
+    print()
 }
 
 main()

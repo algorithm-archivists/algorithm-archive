@@ -135,8 +135,8 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
-# Racket
-[*.rkt]
+# Racket/Scheme
+[*.{rkt,ss,scm}]
 indent_style = space
 indent_size = 2
 
@@ -145,6 +145,15 @@ indent_size = 2
 indent_style = space
 indent_size = 4
 
+# Scratch (text code)
+[contents/*/code/scratch/*.txt]
+indent_style = space
+indent_size = 4
+
+# V
+[*.v]
+indent_style = tab
+
 # Whitespace
 [*.ws]
 indent_style = space
@@ -152,3 +161,17 @@ indent_size = 0
 trim_trailing_whitespace = false
 insert_final_newline = false
 end_of_line = lf
+
+# PowerShell
+[*.ps1]
+indent_style = space
+indent_size = 4
+
+# CoffeeScript
+[*.coffee]
+indent_style = space
+indent_size = 2
+
+[*.coco]
+indent_style = space
+indent_size = 4

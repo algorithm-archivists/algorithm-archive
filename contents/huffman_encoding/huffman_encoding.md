@@ -29,7 +29,7 @@ And that's it.
 Here's an image of what this might look like for the phrase `bibbity_bobbity`:
 
 <p>
-    <img  class="center" src="res/huffman_tree.png" width="500" />
+    <img  class="center" src="res/huffman_tree.png" style="width:70%" />
 </p>
 
 This will create a codebook that looks like this:
@@ -52,7 +52,7 @@ The fact that this algorithm is both conceptually simple and provably useful is 
 Here is a quick video explanation for Huffman encoding:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wHyUxTc2Ohk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wHyUxTc2Ohk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code
@@ -78,7 +78,7 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="lua" %}
 [import, lang="lua"](code/lua/huffman.lua)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/huffman.cpp)
+[import, lang:"cpp"](code/cpp/huffman.cpp)
 {% sample lang="clj" %}
 [import, lang:"clojure"](code/clojure/huffman.clj)
 {% sample lang="py" %}
@@ -88,11 +88,18 @@ Whether you use a stack or straight-up recursion also depends on the language, b
 {% sample lang="java" %}
 [import, lang:"java"](code/java/huffman.java)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/huffman.go)
+[import, lang:"go"](code/go/huffman.go)
 {% sample lang="asm-x64" %}
 [import, lang:"asm-x64"](code/asm-x64/huffman.s)
 {% sample lang="scala" %}
 [import, lang:"scala"](code/scala/huffman_encoding.scala)
+{% sample lang="scratch" %}
+The code snippet was taken from this [scratch project](https://scratch.mit.edu/projects/389604255/)
+<p>
+    <img  class="center" src="code/scratch/huffman.svg" width="700" />
+</p>
+{% sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/huffman.coco)
 {% endmethod %}
 
 <script>
@@ -103,7 +110,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
@@ -112,7 +119,7 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The image "[huffman_tree](res/huffman_tree.png)" was created by [Julian Schacher](https://github.com/julianschacher) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[huffman_tree](res/huffman_tree.png)" was created by [Julian Schacher](https://github.com/julianschacher) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Pull Requests
 

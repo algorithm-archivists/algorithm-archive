@@ -96,37 +96,37 @@ These operations are called *gates*, and follow somewhat straightforward logic.
 The *AND* gate, for example, reads in 2 bits and will only output a 1 value if both inputs are 1. This can be seen in the corresponding truth table:
 
 <p>
-    <img  class="center" src="res/and.jpg" width="423" />
+    <img  class="center" src="res/and.jpg" style="width:50%" />
 </p>
 
 The *OR* gate will output 1 if either input bits are 1:
 
 <p>
-    <img  class="center" src="res/or.jpg" width="423" />
+    <img  class="center" src="res/or.jpg" style="width:50%" />
 </p>
 
 The *exclusive OR* or *XOR* gate is the same as the *OR* gate, but will not output 1 if both bits are 1:
 
 <p>
-    <img  class="center" src="res/xor.jpg" width="423" />
+    <img  class="center" src="res/xor.jpg" style="width:50%" />
 </p>
 
 The *NOT* gate simply flips the input bit:
 
 <p>
-    <img  class="center" src="res/not.jpg" width="423" />
+    <img  class="center" src="res/not.jpg" style="width:50%" />
 </p>
 
 By combining the NOT and AND gates, we get the *NAND* gate:
 
 <p>
-    <img  class="center" src="res/nand.jpg" width="423" />
+    <img  class="center" src="res/nand.jpg" style="width:50%" />
 </p>
 
 And NOT and OR create *NOR*:
 
 <p>
-    <img  class="center" src="res/nor.jpg" width="423" />
+    <img  class="center" src="res/nor.jpg" style="width:50%" />
 </p>
 
 There are a few other gates, but this is enough for most things. We'll add more as the need arises!
@@ -137,7 +137,7 @@ That's about it for bitlogic. I realize it was a bit long, but this is absolutel
 Here is a video describing the contents of this chapter:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zMuEk44Ufkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zMuEk44Ufkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <script>
@@ -148,7 +148,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
@@ -157,12 +157,12 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 [<p><img  class="center" src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ##### Images/Graphics
-- The image "[ANDgate](res/and.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[ORgate](res/or.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[XORgate](res/xor.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[NOTgate](res/not.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[NANDgate](res/nand.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
-- The image "[NORgate](res/nor.jpg)" was created by [James Schloss](https://github.com/leios) and is licenced under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[ANDgate](res/and.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[ORgate](res/or.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[XORgate](res/xor.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[NOTgate](res/not.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[NANDgate](res/nand.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
+- The image "[NORgate](res/nor.jpg)" was created by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
 ##### Pull Requests
 

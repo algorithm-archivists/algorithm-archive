@@ -5,7 +5,7 @@
 #include <time.h>
 
 struct person {
-    int id;
+    size_t id;
     struct person *partner;
     size_t *prefers;
     size_t index;
@@ -13,18 +13,18 @@ struct person {
 
 void shuffle(size_t *array, size_t size) {
     for (size_t i = size - 1; i > 0; --i) {
-        size_t j = rand() % (i + 1);
+        size_t j = (size_t)rand() % (i + 1);
         size_t tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
     }
 }
 
-void create_group(struct person *group, size_t size, bool are_men) {
+void create_group(struct person *group, size_t size) {
     for (size_t i = 0; i < size; ++i) {
         group[i].id = i;
         group[i].partner = NULL;
-        group[i].prefers = (size_t*)malloc(sizeof(size_t) * size);
+        group[i].prefers = malloc(sizeof(size_t) * size);
         group[i].index = 0;
 
         for (size_t j = 0; j < size; ++j) {
@@ -43,6 +43,7 @@ bool prefers_partner(size_t *prefers, size_t partner, size_t id, size_t size) {
             return false;
         }
     }
+    return true;
 }
 
 void stable_marriage(struct person *men, struct person *women, size_t size) {
@@ -81,12 +82,12 @@ void free_group(struct person *group, size_t size) {
 }
 
 int main() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 
     struct person men[5], women[5];
 
-    create_group(men, 5, true);
-    create_group(women, 5, false);
+    create_group(men, 5);
+    create_group(women, 5);
 
     for (size_t i = 0; i < 5; ++i) {
         printf("preferences of man %zu: ", i);
@@ -113,7 +114,7 @@ int main() {
     printf("\n");
 
     for (size_t i = 0; i < 5; ++i) {
-        printf("the partner of man %zu is woman %d\n", i, men[i].partner->id);
+        printf("the partner of man %zu is woman %ld\n", i, men[i].partner->id);
     }
 
     free_group(men, 5);
