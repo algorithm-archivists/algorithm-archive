@@ -41,7 +41,7 @@ Of the three Big $$O$$ is used the most, and is used in conversation to mean tha
 Unfortunately, at this point, these notations might be a little vague.
 In fact, it was incredibly vague for me for a long time, and it wasn't until I saw the notations in action that it all started to make sense, so that's what this section is about: providing concrete examples to better understand computational complexity notation.
 
-######In algorithms below, let we consider that the *slowest* statement is `println`, and we always talk about all the `println` in the function.
+######In algorithms below, let us consider that the *slowest* statement is `println`, and we always talk about all the `println` in the function.
 
 ## Constant Time
 
@@ -178,7 +178,7 @@ end
 ```
 To be honest, it is not obvious that the provided `logarithmic` function should operate in $$\Theta(\log(n))$$ time, where $$n$$ is the size of `a`.
 That said, I encourage you to think about an array of size 8.
-First, we split it in half and run the algorithm on 1 of them, creating an array of 4 elements.
+First, we split it in half and run the algorithm on one of them, creating an array of 4 elements.
 If we split the new array and run it on 1 of them, we have an array of 2, and if we split it by two and run on 1 we have an array of 1 element each.
 This is as far as we can go, and we ended up dividing the array 3 times to get to this point.
 $$3 = \log_2(8)$$, so this function runs with a logarithmic number of operations.
