@@ -21,9 +21,27 @@ In addition, there are many different notations depending on who you ask, but fo
 Big $$O$$ assumes the worst, which is the often the most useful description of an algorithm.
 On the other hand, $$\Omega$$ assumes the best and $$\Theta$$ is used when the best and worst cases are the same.
 
+It *may* seems like strange that an algorithm can run in different time, but let me explain a while:
+```julia
+function constant(a::UInt64, b::UInt64)
+    println(b)
+    for i=0:18446744073709551615
+        if(a < b)
+            b = a - b
+            println(b)
+        end
+    end
+end
+```
+If we calculates the big 3 in b, it will be $$\Omega(1)$$ and $$O(b)$$, Obviously not the same.
+The best-case runtime will be $$1$$ `println` statement if a > b, the worst-case runtime will be $$b$$ `println` statement if a = 1.
+So that's the explanation, and let's move on.
+
 Of the three Big $$O$$ is used the most, and is used in conversation to mean that the algorithm will take "on the order of" $$n$$ operations.
 Unfortunately, at this point, these notations might be a little vague.
 In fact, it was incredibly vague for me for a long time, and it wasn't until I saw the notations in action that it all started to make sense, so that's what this section is about: providing concrete examples to better understand computational complexity notation.
+
+######In algorithms below, let us consider that the *slowest* statement is `println`, and we always talk about all the `println` in the function.
 
 ## Constant Time
 
@@ -137,9 +155,10 @@ Here is a simple example of a function with exponential runtime:
 # Here, n is the number of iterations
 function exponential(value::Int64, n::Int64)
     println(value)
-    value += 1
-    exponential(value, n-1)
-    exponential(value, n-1)
+    if(n >= 0)
+        value += 1
+        exponential(value, n-1)
+        exponential(value, n-1)
 end
 ```
 
@@ -152,7 +171,6 @@ Instead of taking a value and computing more and more values each time, a good e
 # Here, cutoff is an arbitrary variable to know when to stop recursing
 function logarithmic(a::Array{Float64}, cutoff::Int64)
     if (length(a) > cutoff)
-        logarithmic(a[1:length(a)/2], cutoff)
         logarithmic(a[length(a)/2+1:end], cutoff)
     end
     println(length(a))
@@ -160,8 +178,8 @@ end
 ```
 To be honest, it is not obvious that the provided `logarithmic` function should operate in $$\Theta(\log(n))$$ time, where $$n$$ is the size of `a`.
 That said, I encourage you to think about an array of size 8.
-First, we split it in half, creating 2 arrays of 4 elements each.
-If we split these new arrays, we have 4 arrays of 2, and if we split these by two we have 8 arrays of 1 element each.
+First, we split it in half and run the algorithm on one of them, creating an array of 4 elements.
+If we split the new array and run it on 1 of them, we have an array of 2, and if we split it by two and run on 1 we have an array of 1 element each.
 This is as far as we can go, and we ended up dividing the array 3 times to get to this point.
 $$3 = \log_2(8)$$, so this function runs with a logarithmic number of operations.
 
