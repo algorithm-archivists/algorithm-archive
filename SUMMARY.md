@@ -20,6 +20,8 @@
         * [Multiplication as a Convolution](contents/convolutions/multiplication/multiplication.md)
         * [Convolutions of Images (2D)](contents/convolutions/2d/2d.md)
         * [Convolutional Theorem](contents/convolutions/convolutional_theorem/convolutional_theorem.md)
+    * [Box Muller Transform](contents/box_muller/box_muller.md)
+        * [How costly is rejection sampling?](contents/box_muller/box_muller_rejection.md)
     * [Probability Distributions](contents/probability_distributions/distributions.md)
 * [Tree Traversal](contents/tree_traversal/tree_traversal.md)
 * [Euclidean Algorithm](contents/euclidean_algorithm/euclidean_algorithm.md)
