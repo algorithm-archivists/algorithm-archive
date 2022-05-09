@@ -24,6 +24,8 @@ Here is a simple implementation of a stack:
 [import, lang:"cpp"](code/cpp/stack.cpp)
 {% sample lang="rust" %}
 [import, lang:"rust"](code/rust/Stack.rs)
+{% sample lang="csharp" %}
+[import, lang:"csharp"](code/csharp/Stack.cs)
 {% endmethod %}
 
 Here is a simple implementation of a queue:
@@ -36,6 +38,8 @@ Here is a simple implementation of a queue:
 [import, lang:"cpp"](code/cpp/queue.cpp)
 {% sample lang="rust" %}
 [import, lang:"rust" ](code/rust/Queue.rs)
+{% sample lang="csharp" %}
+[import, lang:"csharp"](code/csharp/Queue.cs)
 {% endmethod %}
 
 
