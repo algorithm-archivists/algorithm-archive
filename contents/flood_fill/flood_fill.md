@@ -96,6 +96,8 @@ In code, this might look like this:
 [import:10-25, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
 [import:15-20, lang="coconut"](code/coconut/flood_fill.coco)
+{% sample lang="java" %}
+[import:20-35, lang="java"](code/coconut/flood_fill.java)
 {% endmethod %}
 
 
@@ -118,6 +120,8 @@ In code, it might look like this:
 [import:55-63, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
 [import:52-61, lang:"coconut"](code/coconut/flood_fill.coco)
+{% sample lang="java" %}
+[import:50-56, lang="java"](code/coconut/flood_fill.java)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -135,6 +139,8 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 [import:27-36, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
 [import:23-34, lang:"coconut"](code/coconut/flood_fill.coco)
+{% sample lang="java" %}
+[import:37-48, lang="java"](code/coconut/flood_fill.java)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -180,6 +186,8 @@ The code would look something like this:
 [import:38-53, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
 [import:36-49, lang:"coconut"](code/coconut/flood_fill.coco)
+{% sample lang="java" %}
+[import:58-69, lang="java"](code/coconut/flood_fill.java)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
