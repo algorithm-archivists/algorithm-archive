@@ -187,7 +187,7 @@ The code would look something like this:
 {% sample lang="coco" %}
 [import:36-49, lang:"coconut"](code/coconut/flood_fill.coco)
 {% sample lang="java" %}
-[import:58-69, lang="java"](code/coconut/flood_fill.java)
+[import:58-69`, lang="java"](code/coconut/flood_fill.java)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
