@@ -11,8 +11,7 @@ public class flood_fill {
         }
         public static boolean inbound(int[][] grid, Point p){
             int row = grid.length, col = grid[0].length;
-            if (p.x < 0 || p.x >= row || p.y < 0 || p.y >= col) return false;
-            return true;
+            return (p.x < 0 || p.x >= row || p.y < 0 || p.y >= col);
         }
         public static List<Point> find_neighbors(int[][] grid, Point p, int old_val, int new_val){
             //north, south, east, west neighbors
