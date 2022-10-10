@@ -18,7 +18,7 @@ SCons.Warnings.warningAsException()
 copy_builder = Builder(action=Copy('$TARGET', '$SOURCE'))
 
 env = Environment(ENV=os.environ,
-                  BUILDERS={'Copier': copy_builder}, 
+                  BUILDERS={'Copier': copy_builder},
                   tools=[
                     'g++', 'gas', 'gcc', 'gfortran', 'gnulink', 'javac'],
                   toolpath=['builders'])
@@ -33,6 +33,7 @@ available_languages = {
     'julia',
     'lolcode'
     'lua',
+    'ocaml',
     'php',
     'powershell',
     'python',
@@ -45,6 +46,7 @@ languages_to_import = {
     'go': ['go'],
     'rust': ['rustc', 'cargo'],
     'kotlin': ['kotlin'],
+    'ocaml': ['ocaml'],
 }
 
 for language, tools in languages_to_import.items():
@@ -83,6 +85,7 @@ languages = {
     'kotlin': 'kt',
     'lolcode': 'lol',
     'lua': 'lua',
+    'ocaml': 'ml',
     'php': 'php',
     'powershell': 'ps1',
     'python': 'py',
@@ -111,7 +114,7 @@ for chapter_dir in contents_path.iterdir():
     for code_dir in chapter_dir.glob('**/code'):
         # For nested chapters e.g. contents/convolutions/1d/
         extended_chapter_path = code_dir.relative_to(contents_path).parent
-        
+
         for language_dir in code_dir.iterdir():
             if (language := language_dir.stem) in available_languages:
                 new_files = [FileInformation(path=file_path,
