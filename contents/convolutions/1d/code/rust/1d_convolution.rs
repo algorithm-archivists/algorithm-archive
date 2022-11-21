@@ -48,8 +48,8 @@ fn normalize(array: Vec<f64>) -> Vec<f64> {
     let norm = norm(&array);
     let mut output: Vec<f64> = Vec::with_capacity(array.len());
 
-    for i in 0..array.len() {
-        output.push(array[i] / norm);
+    for value in array {
+        output.push(value / norm);
     }
 
     output
