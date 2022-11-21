@@ -17,7 +17,7 @@ fn main() {
     // The way I do it is a little weird but it is to store the data the same way as the other programs
     let mut full_file = File::create("full_linear.dat").unwrap();
     for i in full_linear_output {
-        write!(full_file, "{}\n", i).unwrap();
+        writeln!(full_file, "{}", i).unwrap();
     }
     full_file.sync_all().unwrap();
 
