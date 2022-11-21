@@ -73,7 +73,7 @@ fn convolve_linear(signal: &Vec<f64>, filter: &Vec<f64>, output_size: usize) -> 
         let mut sum: f64 = 0.;
         for j in max(0, i as isize - filter.len() as isize)..=i as isize {
             if j < signal.len() as isize && (i - j) < filter.len() as isize {
-                sum += signal[j as usize] * filter[(i-j) as usize]
+                sum += signal[j as usize] * filter[(i-j) as usize];
             }
         }
         output.push(sum);
