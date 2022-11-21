@@ -23,7 +23,7 @@ fn main() {
 
     let mut simple_file = File::create("simple_linear.dat").unwrap();
     for i in simple_linear_output {
-        write!(simple_file, "{}\n", i).unwrap();
+        writeln!(simple_file, "{}", i).unwrap();
     }
     simple_file.sync_all().unwrap();
 
