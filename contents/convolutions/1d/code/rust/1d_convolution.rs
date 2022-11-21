@@ -57,7 +57,7 @@ fn normalize(array: Vec<f64>) -> Vec<f64> {
 
 // Calculates the norm of an array.
 fn norm(array: &[f64]) -> f64 {
-    let sum = array.iter().map(|i| i * i).sum::<f64>()
+    let sum = array.iter().map(|i| i * i).sum::<f64>();
     sum.sqrt()
 }
 
