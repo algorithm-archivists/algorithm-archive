@@ -38,7 +38,7 @@ fn main() {
 fn create_sawtooth(length: usize) -> Vec<f64> {
     let mut array: Vec<f64> = Vec::with_capacity(length);
     for i in 0..length {
-        array.push((i+1) as f64 / 200.);
+        array.push((i+1) as f64 / length as f64); // divide by length for normalization
     }
     array
 }
