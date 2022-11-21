@@ -29,7 +29,7 @@ fn main() {
 
     let mut cyclic_file = File::create("cyclic.dat").unwrap();
     for i in cyclic_output {
-        write!(cyclic_file, "{}\n", i).unwrap();
+        writeln!(cyclic_file, "{}", i).unwrap();
     }
     cyclic_file.sync_all().unwrap();
 }
