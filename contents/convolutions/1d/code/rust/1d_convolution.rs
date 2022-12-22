@@ -64,14 +64,14 @@ fn norm(array: &[f64]) -> f64 {
 
 // Modulus function that handles negative values correctly.
 // Assumes that y >= 0.
-fn modulus(x: isize, y: isize) -> isize {((x%y) + y) % y}
+fn modulus(x: isize, y: usize) -> usize {((x%y as isize) as usize + y) % y}
 
 fn convolve_linear(signal: &Vec<f64>, filter: &Vec<f64>, output_size: usize) -> Vec<f64> {
     let mut output = Vec::with_capacity(output_size);
 
     for i in 0..(output_size as isize) {
         let mut sum: f64 = 0.;
-        for j in max(0, i as isize - filter.len() as isize)..=i as isize {
+        for j in max(0, i - filter.len() as isize)..=i {
             if j < signal.len() as isize && (i - j) < filter.len() as isize {
                 sum += signal[j as usize] * filter[(i-j) as usize];
             }
@@ -83,14 +83,14 @@ fn convolve_linear(signal: &Vec<f64>, filter: &Vec<f64>, output_size: usize) -> 
 }
 
 fn convolve_cyclic(signal: &Vec<f64>, filter: &Vec<f64>) -> Vec<f64> {
-    let output_size = max(signal.len(), filter.len()) as isize;
+    let output_size = max(signal.len(), filter.len());
 
-    let mut output: Vec<f64> = Vec::with_capacity(output_size as usize);
+    let mut output: Vec<f64> = Vec::with_capacity(output_size);
     for i in 0..output_size {
         let mut sum: f64 = 0.;
         for j in 0..output_size {
-            if modulus(i - j, output_size) < filter.len() as isize {
-                sum += signal[modulus(j - 1, output_size) as usize] * filter[modulus(i - j, output_size) as usize];
+            if modulus((i - j) as isize, output_size) < filter.len() {
+                sum += signal[modulus((j - 1) as isize, output_size)] * filter[modulus((i - j) as isize, output_size)];
             }
         }
         output.push(sum);
