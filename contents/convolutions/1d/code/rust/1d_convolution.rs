@@ -17,19 +17,19 @@ fn main() {
     // The way I do it is a little weird but it is to store the data the same way as the other programs
     let mut full_file = File::create("full_linear.dat").unwrap();
     for i in full_linear_output {
-        writeln!(full_file, "{}", i).unwrap();
+        writeln!(full_file, "{i}").unwrap();
     }
     full_file.sync_all().unwrap();
 
     let mut simple_file = File::create("simple_linear.dat").unwrap();
     for i in simple_linear_output {
-        writeln!(simple_file, "{}", i).unwrap();
+        writeln!(simple_file, "{i}").unwrap();
     }
     simple_file.sync_all().unwrap();
 
     let mut cyclic_file = File::create("cyclic.dat").unwrap();
     for i in cyclic_output {
-        writeln!(cyclic_file, "{}", i).unwrap();
+        writeln!(cyclic_file, "{i}").unwrap();
     }
     cyclic_file.sync_all().unwrap();
 }
