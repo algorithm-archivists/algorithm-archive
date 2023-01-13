@@ -18,14 +18,16 @@ function euclidSub(a, b) {
 
   while (a !== b) {
     if (a > b) {
-      a -= a - b;
+      a -= b;
     } else {
-      b = b - a;
+      b -= a;
     }
   }
 
   return a;
 }
 
+console.log('[#]\nModulus-based euclidean algorithm result:')
 console.log(euclidMod(64 * 67, 64 * 81));
+console.log('[#]\nSubtraction-based euclidean algorithm result:')
 console.log(euclidSub(128 * 12, 128 * 77));

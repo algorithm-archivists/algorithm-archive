@@ -1,7 +1,8 @@
 .intel_syntax noprefix
 
 .section .rodata
-  fmt:  .string "%d\n"
+  euclid_mod_fmt: .string "[#]\nModulus-based euclidean algorithm result:\n%d\n"
+  euclid_sub_fmt: .string "[#]\nSubtraction-based euclidean algorithm result:\n%d\n"
 
 .section .text
   .global main
@@ -59,14 +60,14 @@ main:
   mov    rdi, 4288          # Call euclid_mod
   mov    rsi, 5184
   call   euclid_mod
-  mov    rdi, OFFSET fmt    # Print output
+  mov    rdi, OFFSET euclid_mod_fmt    # Print output
   mov    rsi, rax
   xor    rax, rax
   call   printf
   mov    rdi, 1536          # Call euclid_sub
   mov    rsi, 9856
   call   euclid_sub
-  mov    rdi, OFFSET fmt    # Print output
+  mov    rdi, OFFSET euclid_sub_fmt    # Print output
   mov    rsi, rax
   xor    rax, rax
   call   printf

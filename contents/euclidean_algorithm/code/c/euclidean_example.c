@@ -33,8 +33,8 @@ int main() {
   int check1 = euclid_mod(64 * 67, 64 * 81);
   int check2 = euclid_sub(128 * 12, 128 * 77);
 
-  printf("%d\n", check1);
-  printf("%d\n", check2);
+  printf("[#]\nModulus-based euclidean algorithm result:\n%d\n", check1);
+  printf("[#]\nSubtraction-based euclidean algorithm result:\n%d\n", check2);
 
   return 0;
 }

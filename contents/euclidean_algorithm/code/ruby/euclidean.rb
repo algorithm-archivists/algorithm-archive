@@ -17,9 +17,8 @@ def gcd_minus(a, b)
 	end
 	a
 end
- 
-p gcd_mod(12 * 6, 12 * 4) #=> 12
-p gcd_mod(9 * 667, 9 * 104) #=> 9
 
-p gcd_minus(12 * 6, 12 * 4) #=> 12
-p gcd_minus(9 * 667, 9 * 104) #=> 9
+print "[#]\nModulus-based euclidean algorithm result:\n"
+p gcd_mod(64 * 67, 64 * 81)
+print "[#]\nSubtraction-based euclidean algorithm result:\n"
+p gcd_minus(128 * 12, 128 * 77)
