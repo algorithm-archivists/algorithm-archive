@@ -26,7 +26,9 @@ public class EuclideanAlgo {
     }
     
     public static void main(String[] args) {
+        System.out.println("[#]\nModulus-based euclidean algorithm result:");
         System.out.println(euclidMod(64 * 67, 64 * 81));
+        System.out.println("[#]\nSubtraction-based euclidean algorithm result:");
         System.out.println(euclidSub(128 * 12, 128 * 77));
     }
 }

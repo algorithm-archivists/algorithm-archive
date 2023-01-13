@@ -23,5 +23,7 @@
     )
   )
 
+(displayln "[#]\nModulus-based euclidean algorithm result:")
 (displayln (euclid_sub (* 64 67) (* 64 81)))
+(displayln "[#]\nSubtraction-based euclidean algorithm result:")
 (displayln (euclid_mod (* 128 12) (* 128 77)))

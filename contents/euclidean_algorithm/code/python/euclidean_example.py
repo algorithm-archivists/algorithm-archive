@@ -27,5 +27,7 @@ def euclid_sub(a, b):
     return a
 
 if __name__=="__main__":
-    print('Euclidean mod: ', euclid_mod(64 * 67, 64 * 81))
-    print('Euclidean sub: ', euclid_sub(128 * 12, 128 * 77))
+    print('[#]\nModulus-based euclidean algorithm result:'),
+    print(euclid_mod(64 * 67, 64 * 81))
+    print('[#]\nSubtraction-based euclidean algorithm result:')
+    print(euclid_sub(128 * 12, 128 * 77))

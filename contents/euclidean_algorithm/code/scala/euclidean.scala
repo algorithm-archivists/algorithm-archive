@@ -3,8 +3,8 @@ object Euclid {
   def euclid_sub(a: Int, b: Int): Int =
     (Math.abs(a), Math.abs(b)) match {
       case (0, _) | (_, 0) => 0
-      case (x, y) if x < y => euclid(x, y - x)
-      case (x, y) if x > y => euclid(x - y, y)
+      case (x, y) if x < y => euclid_sub(x, y - x)
+      case (x, y) if x > y => euclid_sub(x - y, y)
       case _ => a
     }
 
@@ -15,8 +15,10 @@ object Euclid {
     }
 
   def main(args: Array[String]): Unit = {
-    println(euclid_sub(151 * 899, 151 * 182))
-    println(euclid_mod(151 * 899, 151 * 182))
+    println("[#]\nModulus-based euclidean algorithm result:")
+    println(euclid_mod(64 * 67, 64 * 81))
+    println("[#]\nSubtraction-based euclidean algorithm result:")
+    println(euclid_sub(128 * 12, 128 * 77))
   }
 
 }

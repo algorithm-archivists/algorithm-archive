@@ -38,12 +38,18 @@ PROGRAM euclidean
     IMPLICIT NONE
     INTEGER :: a, b, euclid_sub, euclid_mod
     
-    a = 24
-    b = 27
-    WRITE(*,*) 'Subtraction method: GCD is: ', euclid_sub(a, b)
+    a = 64 * 67
+    b = 64 * 81
     
-    a = 24
-    b = 27
-    WRITE(*,*) 'Modulus method:     GCD is: ', euclid_mod(a, b)
+    WRITE(*,'(a)') '[#]'
+    WRITE(*,'(a)') 'Modulus-based euclidean algorithm result:'
+    WRITE(*, '(g0)') euclid_mod(a, b)
+    
+    a = 128 * 12
+    b = 128 * 77
+    
+    WRITE(*,'(a)') '[#]'
+    WRITE(*,'(a)') 'Subtraction-based euclidean algorithm result:'
+    WRITE(*, '(g0)') euclid_sub(a, b)
 
 END PROGRAM euclidean 

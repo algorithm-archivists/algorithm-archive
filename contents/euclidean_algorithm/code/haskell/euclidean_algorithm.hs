@@ -31,5 +31,7 @@ main :: IO ()
 main = do
   let chk1 = euclidMod (64 * 67) (64 * 81)
       chk2 = euclidSub (128 * 12) (128 * 77)
+  putStrLn "[#]\nModulus-based euclidean algorithm result:"
   print chk1
+  putStrLn "[#]\nSubtraction-based euclidean algorithm result:"
   print chk2
