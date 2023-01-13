@@ -1,6 +1,6 @@
-Import('*')
-from pathlib import Path
+Import('files_to_compile env')
 
-dirname = Path.cwd().parents[1].stem
-
-env.C(f'#/build/c/{dirname}', Glob('*.c'), LIBS='m')
+for file_info in files_to_compile:    
+    build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}'
+    build_result = env.C(build_target, str(file_info.path), LIBS='m')
+    env.Alias(str(file_info.chapter), build_result)

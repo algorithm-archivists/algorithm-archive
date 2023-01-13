@@ -231,7 +231,7 @@ In code, it looks like this:
 {% sample lang="js" %}
 [import:53-60, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:48-59, lang:"python"](code/python/tree_traversal.py)
+[import:48-53, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/dfs-stack.svg" style="width:70%" />
@@ -284,7 +284,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 {% sample lang="js" %}
 [import:62-69, lang:"javascript"](code/javascript/tree.js)
 {% sample lang="py" %}
-[import:62-72, lang:"python"](code/python/tree_traversal.py)
+[import:55-60, lang:"python"](code/python/tree_traversal.py)
 {% sample lang="scratch" %}
 <p>
   <img  class="center" src="code/scratch/bfs.svg" style="width:70%" />
@@ -320,7 +320,7 @@ And this is exactly what Breadth-First Search (BFS) does! On top of that, it can
 Here is a video describing tree traversal:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cZPXfl_tUkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cZPXfl_tUkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

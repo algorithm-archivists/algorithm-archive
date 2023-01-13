@@ -95,7 +95,7 @@ In code, this might look like this:
 {% sample lang="py" %}
 [import:10-25, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:15-19, lang="coconut"](code/coconut/flood_fill.coco)
+[import:15-20, lang="coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 
@@ -117,7 +117,7 @@ In code, it might look like this:
 {% sample lang="py" %}
 [import:55-63, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:54-63, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:52-61, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -179,7 +179,7 @@ The code would look something like this:
 {% sample lang="py" %}
 [import:38-53, lang="python"](code/python/flood_fill.py)
 {% sample lang="coco" %}
-[import:37-51, lang:"coconut"](code/coconut/flood_fill.coco)
+[import:36-49, lang:"coconut"](code/coconut/flood_fill.coco)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.
@@ -244,7 +244,7 @@ These will all be covered in subsequent chapters which will come out somewhat re
 Here is a video describing tree traversal:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ldqAmkdthHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ldqAmkdthHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

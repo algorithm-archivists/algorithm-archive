@@ -27,7 +27,7 @@ template <typename Iter>
 bool check_result(Iter first, Iter last, double threshold, double timestep) {
   auto it = first;
   for (size_t idx = 0; it != last; ++idx, ++it) {
-    double solution = std::exp(-3.0 * idx * timestep);
+    double solution = std::exp(-3.0 * static_cast<double>(idx) * timestep);
     if (std::abs(*it - solution) > threshold) {
       std::cout << "We found a value outside the threshold; the " << idx
                 << "-th value was " << *it << ", but the expected solution was "

@@ -75,6 +75,7 @@ auto select_array(
     rnd -= probabilities[i];
   }
   assert(!static_cast<bool>("check if probabilities adding up to 1"));
+  return hutchinson_op[0];
 }
 
 // This is a general function to simulate a chaos game

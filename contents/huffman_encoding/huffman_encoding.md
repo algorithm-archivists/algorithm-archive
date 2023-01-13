@@ -52,7 +52,7 @@ The fact that this algorithm is both conceptually simple and provably useful is 
 Here is a quick video explanation for Huffman encoding:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wHyUxTc2Ohk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wHyUxTc2Ohk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

@@ -297,7 +297,7 @@ I think that is a nice note to end on: affine transformations are linear transfo
 Here is a video describing affine transformations:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3Phj6J287o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/E3Phj6J287o" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <script>

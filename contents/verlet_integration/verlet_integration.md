@@ -64,13 +64,24 @@ Here is what it looks like in code:
 [import:3-13, lang:"lisp"](code/clisp/verlet.lisp)
 {% endmethod %}
 
-Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method, which is the same as before, but we calculate velocity like so
+Now, obviously this poses a problem; what if we want to calculate a term that requires velocity, like the kinetic energy, $$\frac{1}{2}mv^2$$? In this case, we certainly cannot get rid of the velocity! Well, we can find the velocity to $$\mathcal{O}(\Delta t^2)$$ accuracy by using the Stormer-Verlet method.
+We have the equations for $$x(t+\Delta t)$$ and $$x(t-\Delta t)$$ above, so let's start there.
+If we subtract the latter from the former, we get the following:
 
 $$
-v(t) = \frac{x(t+\Delta t) - x(t-\Delta t)}{2\Delta t} + \mathcal{O}(\Delta t^2)
+x(t+\Delta t) - x(t - \Delta t) = 2v(t)\Delta t + \frac{1}{3}b(t)\Delta t^3.
 $$
 
-Note that the 2 in the denominator appears because we are going over 2 timesteps. It's essentially solving $$v=\frac{\Delta x}{\Delta t}$$. In addition, we can calculate the velocity of the next timestep like so
+When we solve for $$v(t)$$, we get
+
+$$
+\begin{align}
+v(t) &= \frac{x(t+\Delta t) - x(t-\Delta t)}{2\Delta t} + \frac{b(t) \Delta t^3}{3 \Delta t} \\ 
+v(t) &= \frac{x(t+\Delta t) - x(t-\Delta t)}{2\Delta t} + \mathcal{O}(\Delta t^2).
+\end{align}
+$$
+
+Note that the 2 in the denominator makes sense because we are going over 2 timesteps. It's essentially solving $$v=\frac{\Delta x}{\Delta t}$$. In addition, we can calculate the velocity of the next timestep like so
 
 $$
 v(t+\Delta t) = \frac{x(t+\Delta t) - x(t)}{\Delta t} + \mathcal{O}(\Delta t)
@@ -176,14 +187,14 @@ Here is the velocity Verlet method in code:
 [import:28-35, lang:"lisp"](code/clisp/verlet.lisp)
 {% endmethod %}
 
-Even though this method is more widely used than the simple Verlet method mentioned above, it unforunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulaton with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulatons are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
+Even though this method is more widely used than the simple Verlet method mentioned above, it unfortunately has an error term of $$\mathcal{O}(\Delta t^2)$$, which is two orders of magnitude worse. That said, if you want to have a simulation with many objects that depend on one another --- like a gravity simulation --- the Velocity Verlet algorithm is a handy choice; however, you may have to play further tricks to allow everything to scale appropriately. These types of simulations are sometimes called *n-body* simulations and one such trick is the Barnes-Hut algorithm, which cuts the complexity of n-body simulations from $$\sim \mathcal{O}(n^2)$$ to $$\sim \mathcal{O}(n\log(n))$$.
 
 ## Video Explanation
 
 Here is a video describing Verlet integration:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/g55QvpAev0I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/g55QvpAev0I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code

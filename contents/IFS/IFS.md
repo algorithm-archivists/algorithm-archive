@@ -20,8 +20,8 @@ To begin the discussion of Iterated Function Systems (IFSs), we will first discu
 <img class="center" src="res/IFS_triangle_1.png" alt="Sierpinsky Triangle Chaos Game"  style="width:100%">
 
 This image is clearly a set of triangles embedded in a larger triangle in such a way that it can be continually cut into three identical pieces and still retain its internal structure.
-This idea is known as self-similarity {{"self-similar" | cite }}, and it is usually the first aspect of fractals to catch an audience's attention.
-In fact, there are plenty of uses of fractals and their mathematical underpinnings, such as estimating the coastline of Britain {{ "mandelbrot1967long" | cite}}, identifying fingerprints {{ "jampour2010new" | cite }}, and image compression {{ "fractal-compression" | cite }}{{ "saupe1994review" | cite }}.
+This idea is known as self-similarity {{ "self-similar" | cite }}, and it is usually the first aspect of fractals to catch an audience's attention.
+In fact, there are plenty of uses of fractals and their mathematical underpinnings, such as estimating the coastline of Britain {{ "mandelbrot1967long" | cite }}, identifying fingerprints {{ "jampour2010new" | cite }}, and image compression {{ "fractal-compression" | cite }}{{ "saupe1994review" | cite }}.
 In many more rigorous definitions, a fractal can be described as any system that has a non-integer Hausdorff dimension {{ "3b1bfractal" | cite }}{{ "hausdorff" | cite }}{{ "gneiting2012estimators" | cite }}.
 Though this is an incredibly interesting concept, the discussion of this chapter will instead focus on methods to generate fractal patterns through iterated function systems.
 
@@ -41,7 +41,7 @@ f_3(P) &= \frac{P + C}{2}\\
 $$
 
 Each function will read in a particular location in space (here, $$P \in \mathbb{R}^2$$) and output a new location that is the midpoint between the input location and $$A$$, $$B$$, or $$C$$ for $$f_1$$, $$f_2$$, and $$f_3$$ respectively.
-The union of all of these functions (the set of all possible functions available for use) is often notated as the _Hutchinson operator_ {{ "hutchinson-operator" | cite }}{{ "hutchinson1981fractals" | cite}}, and for this case it would look like this:
+The union of all of these functions (the set of all possible functions available for use) is often notated as the _Hutchinson operator_ {{ "hutchinson-operator" | cite }}{{ "hutchinson1981fractals" | cite }}, and for this case it would look like this:
 
 $$
 H(P) = \bigcup_{i=1}^3f_i(P)
@@ -144,8 +144,12 @@ Here, instead of tracking children of children, we track a single individual tha
 [import:5-14, lang:"lisp"](code/clisp/ifs.lisp)
 {% sample lang="coco" %}
 [import:4-16, lang:"coconut"](code/coconut/IFS.coco)
+{% sample lang="rust" %}
+[import:9-20, lang:"rust"](code/rust/IFS.rs)
 {% sample lang="java" %}
 [import:16-39, lang:"java"](code/java/IFS.java)
+{% sample lang="ps1" %}
+[import:2-19, lang:"powershell"](code/powershell/IFS.ps1)
 {% endmethod %}
 
 If we set the initial point to the on the equilateral triangle we saw before, we can see the Sierpinski triangle again after a few thousand iterations, as shown below:
@@ -204,7 +208,7 @@ If you are interested, please let me know and I will be more than willing to add
 Here is a video describing iterated function systems:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nIIp-vo8rHg"
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nIIp-vo8rHg"
  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pic
 ture-in-picture" allowfullscreen></iframe>
 </div>
@@ -230,8 +234,12 @@ In addition, we have written the chaos game code to take in a set of points so t
 [import, lang:"lisp"](code/clisp/ifs.lisp)
 {%sample lang="coco" %}
 [import, lang:"coconut"](code/coconut/IFS.coco)
+{%sample lang="rust" %}
+[import, lang:"rust"](code/rust/IFS.rs)
 {%sample lang="java" %}
 [import, lang:"java"](code/java/IFS.java)
+{% sample lang="ps1" %}
+[import, lang:"powershell"](code/powershell/IFS.ps1)
 {% endmethod %}
 
 ### Bibliography

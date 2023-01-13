@@ -1,14 +1,15 @@
 Import('files_to_compile env')
-from pathlib import Path
 
-for file in files_to_compile:
-    chapter_name = file.parent.parent.parent.stem
-    if (file.parent / 'Cargo.toml').exists():
-        env.cargo(target=f'#/build/rust/{chapter_name}',
-                  source=str(file),
-                  MANIFEST=str(file.parent / 'Cargo.toml'),
-                  SOURCE_DIR=str(file.parent))
-        env.Clean('rust', str(file.parent / 'target'))
+for file_info in files_to_compile:
+    build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}'
+    if (file_info.path.parent / 'Cargo.toml').exists():
+        build_result = env.cargo(target=build_target,
+                                 source=str(file_info.path),
+                                 MANIFEST=str(file_info.path.parent / 'Cargo.toml'),
+                                 SOURCE_DIR=str(file_info.path.parent))
+        env.Clean('rust', str(file_info.path.parent / 'target'))
     else:
-        env.rustc(f'#/build/rust/{chapter_name}', str(file))
-        env.Clean('rust', f'#/build/rust/{chapter_name}.pdb')
+        build_result = env.rustc(build_target, str(file_info.path))
+        env.Clean('rust', f'{build_target}.pdb')
+    
+    env.Alias(str(file_info.chapter), build_result)

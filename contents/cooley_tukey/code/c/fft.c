@@ -11,7 +11,7 @@ void fft(double complex *x, size_t n) {
     memset(y, 0, sizeof(y));
     fftw_plan p;
 
-    p = fftw_plan_dft_1d(n, (fftw_complex*)x, (fftw_complex*)y,
+    p = fftw_plan_dft_1d((int)n, (fftw_complex*)x, (fftw_complex*)y,
                          FFTW_FORWARD, FFTW_ESTIMATE);
 
     fftw_execute(p);
@@ -27,7 +27,7 @@ void dft(double complex *X, const size_t N) {
     for (size_t i = 0; i < N; ++i) {
         tmp[i] = 0;
         for (size_t j = 0; j < N; ++j) {
-            tmp[i] += X[j] * cexp(-2.0 * M_PI * I * j * i / N);
+            tmp[i] += X[j] * cexp(-2.0 * M_PI * I * (double)j * (double)i / (double)N);
         }
     }
 
@@ -49,7 +49,7 @@ void cooley_tukey(double complex *X, const size_t N) {
         cooley_tukey(X + N / 2, N / 2);
 
         for (size_t i = 0; i < N / 2; ++i) {
-            X[i + N / 2] = X[i] - cexp(-2.0 * I * M_PI * i / N) * X[i + N / 2];
+            X[i + N / 2] = X[i] - cexp(-2.0 * I * M_PI * (double)i / (double)N) * X[i + N / 2];
             X[i] -= (X[i + N / 2]-X[i]);
         }
     }
@@ -58,7 +58,7 @@ void cooley_tukey(double complex *X, const size_t N) {
 void bit_reverse(double complex *X, size_t N) {
     for (size_t i = 0; i < N; ++i) {
         size_t n = i;
-        int a = i;
+        size_t a = i;
         int count = (int)log2((double)N) - 1;
 
         n >>= 1;
@@ -67,7 +67,7 @@ void bit_reverse(double complex *X, size_t N) {
             count--;
             n >>= 1;
         }
-        n = (a << count) & ((1 << (int)log2((double)N)) - 1);
+        n = (a << count) & (size_t)((1 << (size_t)log2((double)N)) - 1);
 
         if (n > i) {
             double complex tmp = X[i];
@@ -81,8 +81,8 @@ void iterative_cooley_tukey(double complex *X, size_t N) {
     bit_reverse(X, N);
 
     for (int i = 1; i <= log2((double)N); ++i) {
-        size_t stride = pow(2, i);
-        double complex w = cexp(-2.0 * I * M_PI / stride);
+        size_t stride = (size_t)pow(2, i);
+        double complex w = cexp(-2.0 * I * M_PI / (double)stride);
         for (size_t j = 0; j < N; j += stride) {
             double complex v = 1.0;
             for (size_t k = 0; k < stride / 2; ++k) {
@@ -105,7 +105,7 @@ void approx(double complex *X, double complex *Y, size_t N) {
 }
 
 int main() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     double complex x[64], y[64], z[64];
     for (size_t i = 0; i < 64; ++i) {
         x[i] = rand() / (double) RAND_MAX;
