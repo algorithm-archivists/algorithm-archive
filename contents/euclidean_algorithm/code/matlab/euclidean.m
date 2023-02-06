@@ -31,6 +31,7 @@ function gcd = euclidMod(a,b)
 end
 
 function euclid()
-    ['gcd(520,420) via euclidSub: ',num2str(euclidSub(520,420))]
-    ['gcd(183,244) via euclidMod: ',num2str(euclidMod(183,244))]
+    ['[#] Modulus-based euclidean algorithm result: ',num2str(euclidMod(64 * 67, 64 * 81))]
+
+    ['[#] Subtraction-based euclidean algorithm result: ',num2str(euclidSub(128 * 12, 128 * 77))]
 end

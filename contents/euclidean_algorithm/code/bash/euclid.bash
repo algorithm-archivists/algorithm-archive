@@ -38,6 +38,6 @@ euclid_sub() {
 }
 
 result=$(euclid_mod $((64 * 67)) $((64 * 81)))
-echo "$result"
+echo -e "[#]\nModulus-based euclidean algorithm result:\n$result"
 result=$(euclid_sub $((128 * 12)) $((128 * 77)))
-echo "$result"
+echo -e "[#]\nSubtraction-based euclidean algorithm result:\n$result"

@@ -29,6 +29,6 @@ fn euclid_rem(mut a: i64, mut b: i64) -> i64 {
 fn main() {
     let chk1 = euclid_rem(64 * 67, 64 * 81);
     let chk2 = euclid_sub(128 * 12, 128 * 77);
-    println!("{}", chk1);
-    println!("{}", chk2);
+    println!("[#]\nModulus-based euclidean algorithm result:\n{}", chk1);
+    println!("[#]\nSubtraction-based euclidean algorithm result:\n{}", chk2);
 }

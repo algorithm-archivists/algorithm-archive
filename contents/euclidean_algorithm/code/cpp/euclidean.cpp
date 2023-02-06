@@ -34,6 +34,6 @@ int main() {
   auto check1 = euclid_mod(64 * 67, 64 * 81);
   auto check2 = euclid_sub(128 * 12, 128 * 77);
 
-  std::cout << check1 << '\n';
-  std::cout << check2 << '\n';
+  std::cout << "[#]\nModulus-based euclidean algorithm result:\n" << check1 << '\n';
+  std::cout << "[#]\nSubtraction-based euclidean algorithm result:\n" << check2 << '\n';
 }

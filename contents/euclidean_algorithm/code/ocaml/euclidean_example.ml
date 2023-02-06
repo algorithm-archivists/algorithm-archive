@@ -19,6 +19,7 @@ let euclid_sub a b =
 let chk1 = euclid_mod (64 * 67) (64 * 81)
 let chk2 = euclid_sub (128 * 12) (128 * 77)
 let () =
+  Printf.printf "[#]\nModulus-based euclidean algorithm result:\n";
   chk1 |> print_int |> print_newline;
+  Printf.printf "[#]\nSubtraction-based euclidean algorithm result:\n";
   chk2 |> print_int |> print_newline
-
