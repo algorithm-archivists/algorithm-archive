@@ -97,7 +97,7 @@ In code, this might look like this:
 {% sample lang="coco" %}
 [import:15-20, lang="coconut"](code/coconut/flood_fill.coco)
 {% sample lang="cs" %}
-[import:61-85, lang="csharp"](code/csharp/FloodFill.cs)
+[import:64-88, lang="csharp"](code/csharp/FloodFill.cs)
 {% endmethod %}
 
 
@@ -121,7 +121,7 @@ In code, it might look like this:
 {% sample lang="coco" %}
 [import:52-61, lang:"coconut"](code/coconut/flood_fill.coco)
 {% sample lang="cs" %}
-[import:87-98, lang="csharp"](code/csharp/FloodFill.cs)
+[import:90-101, lang="csharp"](code/csharp/FloodFill.cs)
 {% endmethod %}
 
 The above code continues recursing through available neighbors as long as neighbors exist, and this should work so long as we are adding the correct set of neighbors.
@@ -140,7 +140,7 @@ Additionally, it is possible to do the same type of traversal by managing a stac
 {% sample lang="coco" %}
 [import:23-34, lang:"coconut"](code/coconut/flood_fill.coco)
 {% sample lang="cs" %}
-[import:123-148, lang="csharp"](code/csharp/FloodFill.cs)
+[import:126-151, lang="csharp"](code/csharp/FloodFill.cs)
 {% endmethod %}
 
 This is ultimately the same method of traversal as before; however, because we are managing our own data structure, there are a few distinct differences:
@@ -187,7 +187,7 @@ The code would look something like this:
 {% sample lang="coco" %}
 [import:36-49, lang:"coconut"](code/coconut/flood_fill.coco)
 {% sample lang="cs" %}
-[import:100-120, lang="csharp"](code/csharp/FloodFill.cs)
+[import:103-123, lang="csharp"](code/csharp/FloodFill.cs)
 {% endmethod %}
 
 Now, there is a small trick in this code that must be considered to make sure it runs optimally.

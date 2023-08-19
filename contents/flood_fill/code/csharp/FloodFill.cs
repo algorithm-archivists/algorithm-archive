@@ -13,30 +13,33 @@ namespace Graphics
             // Coordinates
             public int x;
             public int y;
-            
+
             public Point2I(int x, int y)
             {
                 this.x = x;
                 this.y = y;
             }
 
-            public override bool Equals(object? o) 
+            public override bool Equals(object o)
             {
                 if(!(o is Point2I other))
                     return false;
                 return this.x.Equals(other.x) && this.y.Equals(other.y);
             }
-            
-            public override int GetHashCode() 
+
+            public override int GetHashCode()
             {
-                return HashCode.Combine(x, y);
+                int hash = 17;
+                hash = 31 * hash + x;
+                hash = 31 * hash + y;
+                return hash;
             }
         }
-        
+
         // Utility object for comparing List<List<float>> objects.
         private class FloatListEqualityComparer : IEqualityComparer<List<float>>
         {
-            public bool Equals(List<float>? one, List<float>? two) 
+            public bool Equals(List<float> one, List<float> two)
             {
                 if (ReferenceEquals(one, two))
                     return true;
@@ -49,8 +52,8 @@ namespace Graphics
                 return list.GetHashCode();
             }
         }
-        
-        private static bool InBounds(Point2I size, Point2I loc) 
+
+        private static bool InBounds(Point2I size, Point2I loc)
         {
           if (loc.x < 0 || loc.y < 0) {
             return false;
@@ -62,10 +65,10 @@ namespace Graphics
         {
             var possibleNeighbors = new List<Point2I>
             {
-                new(loc.x, loc.y + 1),
-                new(loc.x + 1, loc.y),
-                new(loc.x, loc.y - 1),
-                new(loc.x - 1, loc.y)
+                new Point2I(loc.x, loc.y + 1),
+                new Point2I(loc.x + 1, loc.y),
+                new Point2I(loc.x, loc.y - 1),
+                new Point2I(loc.x - 1, loc.y)
             };
             var neighbors = new List<Point2I>();
 
@@ -83,8 +86,8 @@ namespace Graphics
             }
             return neighbors;
         }
-        
-        private static void RecursiveFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue) 
+
+        private static void RecursiveFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue)
         {
             if (oldValue.Equals(newValue)) {
                 return;
@@ -96,8 +99,8 @@ namespace Graphics
                 RecursiveFill(ref grid, possibleNeighbor, oldValue, newValue);
             }
         }
-        
-        private static void  QueueFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue) 
+
+        private static void  QueueFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue)
         {
             if (oldValue.Equals(newValue)) {
                 return;
@@ -107,20 +110,20 @@ namespace Graphics
             queue.Enqueue(loc);
             grid[loc.x][loc.y] = newValue;
 
-            while (queue.Count > 0) 
+            while (queue.Count > 0)
             {
                 var currentLoc = queue.Dequeue();
                 var possibleNeighbors = FindNeighbors(ref grid, currentLoc, oldValue);
-                foreach (Point2I neighbor in possibleNeighbors) 
+                foreach (Point2I neighbor in possibleNeighbors)
                 {
                     grid[neighbor.x][neighbor.y] = newValue;
                     queue.Enqueue(neighbor);
                 }
             }
         }
-        
-        
-        private static void StackFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue) 
+
+
+        private static void StackFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue)
         {
             if (oldValue.Equals(newValue)) {
                 return;
@@ -129,14 +132,14 @@ namespace Graphics
             var stack = new Stack<Point2I>();
             stack.Push(loc);
 
-            while (stack.Count > 0) 
+            while (stack.Count > 0)
             {
                 var currentLoc = stack.Pop();
 
                 var x = currentLoc.x;
                 var y = currentLoc.y;
 
-                if (grid[x][y].Equals(oldValue)) 
+                if (grid[x][y].Equals(oldValue))
                 {
                     grid[x][y] = newValue;
                     var possibleNeighbors = FindNeighbors(ref grid, currentLoc, oldValue);
@@ -153,19 +156,19 @@ namespace Graphics
             // All neighbouring zeros, adjacent to (1, 1), must be replaced with 3 in the end result.
             var grid = new List<List<float>>
             {
-                new(){0, 0, 1, 0, 0},
-                new(){0, 0, 1, 0, 0},
-                new(){0, 0, 1, 0, 0},
-                new(){8, 0, 1, 1, 1},
-                new(){0, 0, 0, 0, 0}
+                new List<float>(){0, 0, 1, 0, 0},
+                new List<float>(){0, 0, 1, 0, 0},
+                new List<float>(){0, 0, 1, 0, 0},
+                new List<float>(){8, 0, 1, 1, 1},
+                new List<float>(){0, 0, 0, 0, 0}
             };
             var solutionGrid = new List<List<float>>
             {
-                new(){3, 3, 1, 0, 0},
-                new(){3, 3, 1, 0, 0},
-                new(){3, 3, 1, 0, 0},
-                new(){8, 3, 1, 1, 1},
-                new(){3, 3, 3, 3, 3}
+                new List<float>(){3, 3, 1, 0, 0},
+                new List<float>(){3, 3, 1, 0, 0},
+                new List<float>(){3, 3, 1, 0, 0},
+                new List<float>(){8, 3, 1, 1, 1},
+                new List<float>(){3, 3, 3, 3, 3}
             };
             var startingPoint = new Point2I(1, 1);
             var gridComparator = new FloatListEqualityComparer();
@@ -173,7 +176,7 @@ namespace Graphics
             var testGrid = new List<List<float>>(grid);
             RecursiveFill(ref testGrid, startingPoint, 0, 3);
             Debug.Assert(testGrid.SequenceEqual(solutionGrid, gridComparator), "Recursive Flood Fill Failed");
-            
+
             testGrid = new List<List<float>>(grid);
             QueueFill(ref testGrid, startingPoint, 0, 3);
             Debug.Assert(testGrid.SequenceEqual(solutionGrid, gridComparator), "Queue Flood Fill Failed");
