@@ -28,6 +28,7 @@ available_languages = {
     'bash',
     'c',
     'cpp',
+    'csharp',
     'fortran',
     'java',
     'julia',
@@ -43,6 +44,7 @@ available_languages = {
 
 languages_to_import = {
     'coconut': ['coconut'],
+    'csharp': ['mcs'],
     'go': ['go'],
     'rust': ['rustc', 'cargo'],
     'kotlin': ['kotlin'],
@@ -77,6 +79,7 @@ languages = {
     'c': 'c',
     'coconut': 'coco',
     'cpp': 'cpp',
+    'csharp': 'cs',
     'fortran': 'f90',
     'go': 'go',
     'java': 'java',
