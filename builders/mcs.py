@@ -15,9 +15,9 @@ def _detect(env):
     except KeyError:
         pass
 
-    go = env.WhereIs('mcs')
-    if go:
-        return go
+    mcs = env.WhereIs('mcs')
+    if mcs:
+        return mcs
 
     SCons.Warnings.warn(MCSNotFound, 'Could not find mcs executable')
 
