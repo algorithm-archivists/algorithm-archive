@@ -30,29 +30,51 @@ namespace TreeTraversal
             }
         }
 
+        private void DFSRecursive(Tree tree) {
+            Console.Write(tree.Id + " ");
+
+            foreach (var c in tree._children)
+                DFSRecursive(c);
+        }
+
         public void DFSRecursive()
         {
             DFSRecursive(this);
 
-            void DFSRecursive(Tree tree)
-            {
-                Console.Write(tree.Id + " ");
+        }
 
-                foreach (var c in tree._children)
-                    DFSRecursive(c);
-            }
+        private void DFSRecursivePostorder(Tree tree)
+        {
+            foreach (var c in tree._children)
+                DFSRecursivePostorder(c);
+
+            Console.Write(tree.Id + " ");
         }
 
         public void DFSRecursivePostorder()
         {
             DFSRecursivePostorder(this);
 
-            void DFSRecursivePostorder(Tree tree)
-            {
-                foreach (var c in tree._children)
-                    DFSRecursivePostorder(c);
+        }
 
-                Console.Write(tree.Id + " ");
+        private void DFSRecursiveInorderBinary(Tree tree)
+        {
+            switch (tree._children.Count)
+            {
+                case 2:
+                    DFSRecursiveInorderBinary(tree._children[0]);
+                    Console.Write(tree.Id + " ");
+                    DFSRecursiveInorderBinary(tree._children[1]);
+                    break;
+                case 1:
+                    DFSRecursiveInorderBinary(tree._children[0]);
+                    Console.Write(tree.Id + " ");
+                    break;
+                case 0:
+                    Console.Write(tree.Id + " ");
+                    break;
+                default:
+                    throw new Exception("Not binary tree!");
             }
         }
 
@@ -60,26 +82,6 @@ namespace TreeTraversal
         {
             DFSRecursiveInorderBinary(this);
 
-            void DFSRecursiveInorderBinary(Tree tree)
-            {
-                switch (tree._children.Count)
-                {
-                    case 2:
-                        DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.Write(tree.Id + " ");
-                        DFSRecursiveInorderBinary(tree._children[1]);
-                        break;
-                    case 1:
-                        DFSRecursiveInorderBinary(tree._children[0]);
-                        Console.Write(tree.Id + " ");
-                        break;
-                    case 0:
-                        Console.Write(tree.Id + " ");
-                        break;
-                    default:
-                        throw new Exception("Not binary tree!");
-                }
-            }
         }
 
         public void DFSStack()
