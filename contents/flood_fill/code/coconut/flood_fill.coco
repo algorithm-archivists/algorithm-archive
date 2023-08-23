@@ -3,16 +3,16 @@ import numpy as np
 
 
 data Point(x, y):
-    def __add__(self, other is Point) = Point(self.x + other.x, self.y + other.y)
+    def __add__(self, Point(other)) = Point(self.x + other.x, self.y + other.y)
 
 
 # This function is necessary, because negative indices wrap around the
 # array in Coconut.
-def inbounds(canvas_shape, location is Point) =
+def inbounds(canvas_shape, Point(location)) =
     min(location) >= 0 and location.x < canvas_shape[0] and location.y < canvas_shape[1]
 
 
-def find_neighbours(canvas, location is Point, old_value):
+def find_neighbours(canvas, Point(location), old_value):
     possible_neighbours = ((Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
                           |> map$(location.__add__))
 
@@ -20,7 +20,7 @@ def find_neighbours(canvas, location is Point, old_value):
                                                     and canvas[x] == old_value))
 
 
-def stack_fill(canvas, location is Point, old_value, new_value):
+def stack_fill(canvas,  Point(location), old_value, new_value):
     if new_value == old_value or not inbounds(canvas.shape, location):
         return
 
@@ -33,7 +33,7 @@ def stack_fill(canvas, location is Point, old_value, new_value):
             stack.extend(find_neighbours(canvas, current_location, old_value))
 
 
-def queue_fill(canvas, location is Point, old_value, new_value):
+def queue_fill(canvas, Point(location), old_value, new_value):
     if new_value == old_value or not inbounds(canvas.shape, location):
         return
 
@@ -49,7 +49,7 @@ def queue_fill(canvas, location is Point, old_value, new_value):
             queue.append(neighbour)
 
 
-def recursive_fill(canvas, location is Point, old_value, new_value):
+def recursive_fill(canvas, Point(location), old_value, new_value):
     if new_value == old_value or not inbounds(canvas.shape, location):
         return
 

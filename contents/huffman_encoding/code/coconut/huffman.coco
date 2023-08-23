@@ -4,13 +4,13 @@ from bisect import bisect
 class Tree
 
 data Empty() from Tree
-data Leaf(char, n is int) from Tree:
+data Leaf(char, int(n)) from Tree:
     def __str__(self):
         return f'Leaf({self.char}, {self.n})'
 
     __repr__ = __str__
 
-data Node(left is Tree, right is Tree) from Tree:
+data Node(Tree(left), Tree(right)) from Tree:
     def __str__(self):
         return f'Node({str(self.left)}, {str(self.right)})'
     __repr__ = __str__
@@ -52,7 +52,7 @@ def build_huffman_tree(message):
 
 def build_codebook(Empty(), code='') = []
 addpattern def build_codebook(Leaf(char, n), code='') = [(char, code)]
-addpattern def build_codebook(Node(left, right), code='') = 
+addpattern def build_codebook(Node(left, right), code='') =
     build_codebook(left, code+'0') + build_codebook(right, code+'1')
 
 def huffman_encode(codebook, message):
