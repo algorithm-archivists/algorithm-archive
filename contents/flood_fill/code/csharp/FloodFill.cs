@@ -19,21 +19,6 @@ namespace Graphics
                 this.x = x;
                 this.y = y;
             }
-
-            public override bool Equals(object o)
-            {
-                if(!(o is Point2I other))
-                    return false;
-                return this.x.Equals(other.x) && this.y.Equals(other.y);
-            }
-
-            public override int GetHashCode()
-            {
-                int hash = 17;
-                hash = 31 * hash + x;
-                hash = 31 * hash + y;
-                return hash;
-            }
         }
 
         // Utility object for comparing List<List<float>> objects.
@@ -41,24 +26,18 @@ namespace Graphics
         {
             public bool Equals(List<float> one, List<float> two)
             {
-                if (ReferenceEquals(one, two))
-                    return true;
-                if (one == null || two == null)
-                    return false;
-                return one.SequenceEqual(two);
+                return ReferenceEquals(one, two) || one != null && two != null && one.SequenceEqual(two);
             }
 
-            public int GetHashCode(List<float> list) {
+            public int GetHashCode(List<float> list)
+            {
                 return list.GetHashCode();
             }
         }
 
         private static bool InBounds(Point2I size, Point2I loc)
         {
-          if (loc.x < 0 || loc.y < 0) {
-            return false;
-          }
-          return loc.x < size.x && loc.y < size.y;
+            return loc.x >= 0 && loc.y >= 0 && loc.x < size.x && loc.y < size.y;
         }
 
         private static List<Point2I> FindNeighbors(ref List<List<float>> grid, Point2I loc, float oldValue)
@@ -71,10 +50,10 @@ namespace Graphics
                 new Point2I(loc.x - 1, loc.y)
             };
             var neighbors = new List<Point2I>();
+            var size = new Point2I(grid[0].Count, grid.Count);
 
             foreach (Point2I possibleNeighbor in possibleNeighbors)
             {
-                var size = new Point2I(grid[0].Count, grid.Count);
                 var x = possibleNeighbor.x;
                 var y = possibleNeighbor.y;
                 if (!InBounds(size, possibleNeighbor)) {
@@ -100,7 +79,7 @@ namespace Graphics
             }
         }
 
-        private static void  QueueFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue)
+        private static void QueueFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue)
         {
             if (oldValue.Equals(newValue)) {
                 return;
@@ -121,7 +100,6 @@ namespace Graphics
                 }
             }
         }
-
 
         private static void StackFill(ref List<List<float>> grid, Point2I loc, float oldValue, float newValue)
         {
