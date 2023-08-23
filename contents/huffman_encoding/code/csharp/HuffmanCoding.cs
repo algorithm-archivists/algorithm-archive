@@ -133,25 +133,26 @@ namespace HuffmanCoding
             return nodePriorityList.Pop();
         }
 
+
+        private void CreateDictionary(Node node, string bitString, Dictionary<char, string> localDictionary)
+        {
+            if (node.IsLeaf)
+                localDictionary.Add(node.Key[0], bitString);
+            else
+            {
+                if (node.LeftChild != null)
+                    CreateDictionary(node.LeftChild, bitString + '0', localDictionary);
+                if (node.RightChild != null)
+                    CreateDictionary(node.RightChild, bitString + '1', localDictionary);
+            }
+        }
+
         private Dictionary<char, string> CreateDictionary(Node root)
         {
             // We're using a string instead of a actual bits here, since it makes the code somewhat more readable and this is an educational example.
             var dictionary = new Dictionary<char, string>();
             CreateDictionary(root, "", dictionary);
             return dictionary;
-
-            void CreateDictionary(Node node, string bitString, Dictionary<char, string> localDictionary)
-            {
-                if (node.IsLeaf)
-                    localDictionary.Add(node.Key[0], bitString);
-                else
-                {
-                    if (node.LeftChild != null)
-                        CreateDictionary(node.LeftChild, bitString + '0', localDictionary);
-                    if (node.RightChild != null)
-                        CreateDictionary(node.RightChild, bitString + '1', localDictionary);
-                }
-            }
         }
 
 
