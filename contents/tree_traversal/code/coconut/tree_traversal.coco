@@ -38,7 +38,7 @@ def dfs_stack(Node(node)):
         for child in current_node.children:
             stack.append(child)
 
-def bfs_queue(Nonde(node)):
+def bfs_queue(Node(node)):
     """A breadth first search approach for printing out all values in a tree."""
     queue = deque([node])
     while queue:
