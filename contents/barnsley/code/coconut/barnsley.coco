@@ -8,7 +8,7 @@ data Point(x=0, y=0):
         return Point(x, y)
 
 
-def chaos_game(initial_location is Point, hutchinson_op, probabilities):
+def chaos_game(Point(initial_location), hutchinson_op, probabilities):
     point = initial_location
     while True:
         yield (point := choices(hutchinson_op, probabilities) @ point)
