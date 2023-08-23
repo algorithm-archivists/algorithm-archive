@@ -4,7 +4,7 @@ import random
 data point(x, y):
     def __abs__(self) = (self.x, self.y) |> map$(pow$(?, 2)) |> sum |> math.sqrt
 
-def in_circle(p is point, radius = 1):
+def in_circle(point(p), radius = 1):
     """Return True if the point is in the circle and False otherwise."""
     return abs(p) < radius
 
