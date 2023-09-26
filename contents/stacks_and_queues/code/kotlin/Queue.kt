@@ -17,7 +17,7 @@ class Queue<T> {
         } else list[0]
     }
 
-    fun size(): Int = return list.size
+    fun size(): Int = list.size
 }
 
 fun main(args: Array<String>) {

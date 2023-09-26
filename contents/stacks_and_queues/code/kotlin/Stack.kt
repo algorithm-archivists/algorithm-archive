@@ -1,22 +1,22 @@
 class Stack<T> {
-    private val stack = mutableListOf<T>()
+    private val list = mutableListOf<T>()
 
     fun push(item: T) {
-        stack.add(item)
+        list.add(item)
     }
 
     fun pop(): T? {
-        return if (stack.isEmpty()) {
+        return if (list.isEmpty()) {
             null
-        } else stack.removeAt(stack.size - 1)
+        } else list.removeAt(list.size - 1)
     }
 
-    fun size(): Int = return stack.size
+    fun size(): Int = list.size
 
     fun top(): T? {
-        return if (stack.isEmpty()) {
+        return if (list.isEmpty()) {
             null
-        } else stack[stack.size - 1]
+        } else list[list.size - 1]
     }
 }
 
