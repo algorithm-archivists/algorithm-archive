@@ -26,5 +26,5 @@ function Mod-Euclid($a, $b) {
     return $a
 }
 
-Write-Host "Subtraction-based euclidean algorithm result: $(Mod-Euclid $(64 * 67) $(64 * 81))"
-Write-Host "Modulus-based euclidean algorithm result: $(Sub-Euclid $(128 * 12) $(128 * 77))"
+Write-Host "[#]`nSubtraction-based euclidean algorithm result:`n$(Mod-Euclid $(64 * 67) $(64 * 81))"
+Write-Host "[#]`nModulus-based euclidean algorithm result:`n$(Sub-Euclid $(128 * 12) $(128 * 77))"

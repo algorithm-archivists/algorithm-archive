@@ -1,0 +1,113 @@
+from collections import deque
+import numpy as np
+
+
+data Point(x, y):
+    def __add__(self, Point(other)) = Point(self.x + other.x, self.y + other.y)
+
+
+# This function is necessary, because negative indices wrap around the
+# array in Coconut.
+def inbounds(canvas_shape, Point(location)) =
+    min(location) >= 0 and location.x < canvas_shape[0] and location.y < canvas_shape[1]
+
+
+def find_neighbours(canvas, Point(location), old_value):
+    possible_neighbours = ((Point(0, 1), Point(1, 0), Point(0, -1), Point(-1, 0))
+                          |> map$(location.__add__))
+
+    yield from possible_neighbours |> filter$(x -> (inbounds(canvas.shape, x)
+                                                    and canvas[x] == old_value))
+
+
+def stack_fill(canvas,  Point(location), old_value, new_value):
+    if new_value == old_value or not inbounds(canvas.shape, location):
+        return
+
+    stack = [location]
+
+    while stack:
+        current_location = stack.pop()
+        if canvas[current_location] == old_value:
+            canvas[current_location] = new_value
+            stack.extend(find_neighbours(canvas, current_location, old_value))
+
+
+def queue_fill(canvas, Point(location), old_value, new_value):
+    if new_value == old_value or not inbounds(canvas.shape, location):
+        return
+
+    queue = deque()
+    queue.append(location)
+
+    canvas[location] = new_value
+
+    while queue:
+        current_location = queue.popleft()
+        for neighbour in find_neighbours(canvas, current_location, old_value):
+            canvas[neighbour] = new_value
+            queue.append(neighbour)
+
+
+def recursive_fill(canvas, Point(location), old_value, new_value):
+    if new_value == old_value or not inbounds(canvas.shape, location):
+        return
+
+    canvas[location] = new_value
+    # consume is important here, because otherwise, the recursive function is not called again
+    consume(
+        find_neighbours(canvas, location, old_value)
+        |> map$(recursive_fill$(canvas, ?, old_value, new_value))
+    )
+
+
+def test_grid(initial_canvas, final_canvas, function):
+    canvas = initial_canvas.copy() # ensure the initial_canvas is unchanged
+    function(canvas)
+    return (canvas == final_canvas).all()
+
+def test():
+    from collections import namedtuple
+
+    TestResults = namedtuple('TestResults', 'passes failures')
+    pass_count = failure_count = 0
+
+    grid = np.zeros((5, 5))
+    grid[2,:] = 1
+    solution_grid = np.zeros((5, 5))
+    solution_grid[:3,] = 1
+
+    starting_location = Point(0, 0)
+
+    recursive_test_func = recursive_fill$(?, starting_location, 0, 1)
+    # The following is manual unit testing of the function
+    if test_grid(grid, solution_grid, recursive_test_func):
+        pass_count += 1
+        print('.', end='')
+    else:
+        failure_count += 1
+        print('F', end='')
+
+    stack_test_func = stack_fill$(?, starting_location, 0, 1)
+    if test_grid(grid, solution_grid, stack_test_func):
+        print('.', end='')
+        pass_count += 1
+    else:
+        print('F', end='')
+        failure_count += 1
+
+    queue_test_func = queue_fill$(?, starting_location, 0, 1)
+    if test_grid(grid, solution_grid, queue_test_func):
+        print('.', end='')
+        pass_count += 1
+    else:
+        print('F', end='')
+        failure_count += 1
+
+    print()
+    print(TestResults(pass_count, failure_count))
+
+if __name__ == '__main__':
+    # Testing setup
+    test()
+

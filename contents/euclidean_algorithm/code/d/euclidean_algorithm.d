@@ -37,6 +37,6 @@ void main()
     auto check1 = euclid_mod(64 * 67, 64 * 81);
     auto check2 = euclid_sub(128 * 12, 128 * 77);
 
-    writeln("Modulus-based euclidean algorithm result: ", check1);
-    writeln("Subtraction-based euclidean algorithm result: ", check2);
+    writeln("[#]\nModulus-based euclidean algorithm result:\n", check1);
+    writeln("[#]\nSubtraction-based euclidean algorithm result:\n", check2);
 }

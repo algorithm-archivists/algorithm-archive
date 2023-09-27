@@ -1,0 +1,29 @@
+name: build
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      options: --entrypoint /bin/bash --user 0 
+      image: ghcr.io/algorithm-archivists/aaa-langs:latest
+    defaults:
+      run:
+        shell: bash --rcfile /root/.bashrc -eo pipefail {0} 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Install and build
+        run: |
+          npm install
+          npx honkit build
+          
+      - name: Initalize cargo and run SCons
+        env:
+          HOME: /root
+        run:  |
+          . "$HOME/.cargo/env"
+          scons -Q --random -j2

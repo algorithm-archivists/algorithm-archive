@@ -1,0 +1,6 @@
+Import('files_to_compile env')
+
+for file_info in files_to_compile:
+    build_target = f'#/build/{file_info.language}/{file_info.chapter}/{file_info.path.stem}'
+    build_result = env.X64(build_target, str(file_info.path), LINKFLAGS='-no-pie')
+    env.Alias(str(file_info.chapter), build_result)

@@ -28,8 +28,8 @@ function main()
     check1 = euclid_mod(64 * 67, 64 * 81);
     check2 = euclid_sub(128 * 12, 128 * 77);
 
-    println("Modulus-based euclidean algorithm result: $(check1)")
-    println("subtraction-based euclidean algorithm result: $(check2)")
+    println("[#]\nModulus-based euclidean algorithm result:\n$(check1)")
+    println("[#]\nSubtraction-based euclidean algorithm result:\n$(check2)")
 
 end
 

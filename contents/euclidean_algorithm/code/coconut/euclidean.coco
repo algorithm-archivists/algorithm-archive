@@ -1,0 +1,21 @@
+def euclid_sub(int(a), 0) = a
+addpattern def euclid_sub(0, int(b)) = b
+
+addpattern def euclid_sub(int(a), int(b)):
+    if a < b:
+        return euclid_sub(a, b - a)
+    elif b < a:
+        return euclid_sub(a - b, b)
+    return a
+
+
+def euclid_mod(int(a), 0) = a
+addpattern def euclid_mod(0, int(b)) = b
+
+addpattern def euclid_mod(int(a), int(b)) = euclid_mod(b, a % b)
+
+if __name__ == '__main__':
+    print('[#]\nModulus-based euclidean algorithm result:')
+    print(euclid_mod(64 * 67, 64 * 81))
+    print('[#]\nSubtraction-based euclidean algorithm result:')
+    print(euclid_sub(128 * 12, 128 * 77))

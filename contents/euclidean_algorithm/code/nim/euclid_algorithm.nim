@@ -1,16 +1,16 @@
-proc euclid_mod(in1, in2: int): int =
+func euclid_mod(in1, in2: int): int =
   var
     a = abs(in1)
     b = abs(in2)
-    
+
   while b != 0:
     let temp: int = b
     b = a mod b
     a = temp;
 
-    return a
+  result = a
 
-proc euclid_sub(in1, in2: int): int =
+func euclid_sub(in1, in2: int): int =
   var
     a = abs(in1)
     b = abs(in2)
@@ -20,8 +20,11 @@ proc euclid_sub(in1, in2: int): int =
       a -= b
     else:
       b -= a
-    
-    return a
 
-echo euclid_sub(64 * 67, 64 * 81)
-echo euclid_mod(128 * 12, 128 * 77)
+  result = a
+
+when isMainModule:
+  echo "[#]\nModulus-based euclidean algorithm result:"
+  echo euclid_sub(64 * 67, 64 * 81)
+  echo "[#]\nSubtraction-based euclidean algorithm result:"
+  echo euclid_mod(128 * 12, 128 * 77)

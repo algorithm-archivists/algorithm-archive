@@ -25,8 +25,10 @@ local function euclid_mod(a, b)
 end
 
 local function main()
-  print(euclid_sub(128 * 12, 128 * 77))
+  print("[#]\nModulus-based euclidean algorithm result:")
   print(euclid_mod(64 * 67, 64 * 81))
+  print("[#]\nSubtraction-based euclidean algorithm result:")
+  print(euclid_sub(128 * 12, 128 * 77))
 end
 
 main()

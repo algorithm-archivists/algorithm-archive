@@ -7,17 +7,48 @@ In *stacks*, data follows *Last In, First Out* (LIFO), which basically means tha
 In *Queues*, data follows *First In, First Out* (FIFO), which means that whichever element you put in first will be the first element you take out. Imagine a queue of people. It would be unfair if the first person in line for groceries were not the first person to receive attention once the attendant finally shows up.
 
 For the most part, though, queues and stacks are treated the same way. There must be a way to:
+
 1. look at the first element (`top()`)
 2. to remove the first element (`pop()`)
 3. to push elements onto the data structure (`push()`)
 
 The notation for this depends on the language you are using. Queues, for example, will often use `dequeue()` instead of `pop()` and `front()` instead of `top()`. You will see the language-specific details in the source code under the algorithms in this book, so for now it's simply important to know what stacks and queues are and how to access elements held within them.
 
+## Example Code
+
+Here is a simple implementation of a stack:
+{% method %}
+{% sample lang="ts" %}
+[import, lang:"typescript"](code/typescript/stack.ts)
+{% sample lang="java" %}
+[import, lang:"java"](code/java/StackTest.java)
+{% sample lang = "cpp"%}
+[import, lang:"cpp"](code/cpp/stack.cpp)
+{% sample lang="rust" %}
+[import, lang:"rust"](code/rust/Stack.rs)
+{% sample lang="python" %}
+[import, lang:"python"](code/python/stack.py)
+{% endmethod %}
+
+Here is a simple implementation of a queue:
+{% method %}
+{% sample lang="ts" %}
+[import, lang:"typescript"](code/typescript/queue.ts)
+{% sample lang="java" %}
+[import, lang:"java" ](code/java/QueueTest.java)
+{% sample lang = "cpp"%}
+[import, lang:"cpp"](code/cpp/queue.cpp)
+{% sample lang="rust" %}
+[import, lang:"rust" ](code/rust/Queue.rs)
+{% sample lang="python" %}
+[import, lang:"python"](code/python/queue.py)
+{% endmethod %}
+
 ## License
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 
@@ -28,4 +59,5 @@ The text of this chapter was written by [James Schloss](https://github.com/leios
 ##### Pull Requests
 
 After initial licensing ([#560](https://github.com/algorithm-archivists/algorithm-archive/pull/560)), the following pull requests have modified the text or graphics of this chapter:
+
 - none

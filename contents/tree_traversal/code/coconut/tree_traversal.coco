@@ -1,0 +1,86 @@
+from collections import deque
+
+data Node(value: int, children: Node[])
+
+def dfs_recursive(Node(value, children)):
+    """A depth first approach for printing out all values in a tree."""
+    print(value, end=' ')
+    for child in children:
+        dfs_recursive(child)
+
+def dfs_recursive_postorder(Node(value, children)):
+    """A depth first approach for printing out all values in a tree starting from the bottom."""
+    for child in children:
+        dfs_recursive_postorder(child)
+    print(value, end=' ')
+
+def dfs_recursive_inorder_btree(Node(value, children)):
+    """A depth first search approach for printing all values in a binary tree."""
+    match len(children):
+        case 2:
+            dfs_recursive_inorder_btree(children[0])
+            print(value, end=' ')
+            dfs_recursive_inorder_btree(children[1])
+        case 1:
+            dfs_recursive_inorder_btree(children[0])
+            print(value, end=' ')
+        case 0:
+            print(value, end=' ')
+    else:
+        print('Invalid binary tree')
+
+def dfs_stack(Node(node)):
+    """A depth first approach for printing out all values in a tree using a stack."""
+    stack = [node]
+    while stack:
+        current_node = stack.pop()
+        print(current_node.value, end=' ')
+        for child in current_node.children:
+            stack.append(child)
+
+def bfs_queue(Node(node)):
+    """A breadth first search approach for printing out all values in a tree."""
+    queue = deque([node])
+    while queue:
+        current_node = queue.popleft()
+        print(current_node.value, end=' ')
+        for child in current_node.children:
+            queue.append(child)
+
+def create_tree(num_rows, num_child):
+    """Creates a simple tree, where every node has
+    'num_child' children and is 'num_rows' deep."""
+    if num_rows == 0:
+        return Node(0, ())
+    else:
+        return Node(num_rows, tuple(create_tree(num_rows-1, num_child)
+                                    for _ in range(num_child)))
+
+
+if __name__ =='__main__':
+    # A ternary tree for testing
+    tree = create_tree(2, 3)
+
+    print("[#]\nRecursive DFS:")
+    dfs_recursive(tree)
+    print()
+
+    print("[#]\nRecursive Postorder DFS:")
+    dfs_recursive_postorder(tree)
+    print()
+
+    print("[#]\nStack-based DFS:")
+    dfs_stack(tree)
+    print()
+
+    print("[#]\nQueue-based BFS:")
+    bfs_queue(tree)
+    print()
+
+    # And a binary tree for testing
+    binary_tree = create_tree(3, 2)
+
+    print("[#]\nRecursive Inorder DFS for Binary Tree:")
+    dfs_recursive_inorder_btree(binary_tree)
+    print()
+

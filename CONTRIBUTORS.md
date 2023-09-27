@@ -55,3 +55,18 @@ emd9dk3.meoe emd9do3.mdkd94mr.idoeme.dmrkmemd8ir.4.d.d9rm4.dodo
 - Akash Dhiman
 - Vincent Zalzal
 - Jonathan D B Van Schenck
+- James Goytia
+- Sammy Plat
+- Jonathan Dönszelmann
+- Ishaan Verma
+- Delphi1024
+- ntindle
+- Mahdi Sarikhani
+- Ridham177
+- Hugo Salou
+- Dimitri Belopopsky
+- Henrik Abel Christensen
+- K. Shudipto Amin
+- Peanutbutter_Warrior
+- Thijs Raymakers 
+- Michael Ciccotosto-Camp

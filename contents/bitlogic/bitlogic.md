@@ -137,7 +137,7 @@ That's about it for bitlogic. I realize it was a bit long, but this is absolutel
 Here is a video describing the contents of this chapter:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zMuEk44Ufkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zMuEk44Ufkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <script>
@@ -148,7 +148,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

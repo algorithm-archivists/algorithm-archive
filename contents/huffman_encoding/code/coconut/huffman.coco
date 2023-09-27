@@ -1,0 +1,119 @@
+from collections import Counter, deque
+from bisect import bisect
+
+class Tree
+
+data Empty() from Tree
+data Leaf(char, int(n)) from Tree:
+    def __str__(self):
+        return f'Leaf({self.char}, {self.n})'
+
+    __repr__ = __str__
+
+data Node(Tree(left), Tree(right)) from Tree:
+    def __str__(self):
+        return f'Node({str(self.left)}, {str(self.right)})'
+    __repr__ = __str__
+
+def weight(Tree()) = 0
+addpattern def weight(Leaf(char, n)) = n
+addpattern def weight(Node(left, right)) = weight(left) + weight(right)
+
+def build_huffman_tree(message):
+
+    # get sorted list of character and frequency pairs
+    frequencies = Counter(message)
+    trees = frequencies.most_common() |> map$(t -> Leaf(*t)) |> reversed |> deque
+
+    if not trees:
+        return Empty()
+
+    # while there is more than one tree
+    while len(trees) > 1:
+
+        # pop off the two trees of least weight from the trees list
+        tree_left = trees.popleft()
+        tree_right = trees.popleft()
+
+        # combine the nodes and add back to the nodes list
+        new_tree = Node(tree_left, tree_right)
+
+        # find the first tree that has a weight smaller than new_weight
+        # and returns its index in the list.
+        # If no such tree can be found, use len(trees) instead to append
+        index = bisect(trees |> map$(weight) |> list, weight(new_tree))
+
+        # insert the new tree there
+        trees.insert(index, new_tree)
+
+    huffman_tree = trees[0]
+    return huffman_tree
+
+
+def build_codebook(Empty(), code='') = []
+addpattern def build_codebook(Leaf(char, n), code='') = [(char, code)]
+addpattern def build_codebook(Node(left, right), code='') =
+    build_codebook(left, code+'0') + build_codebook(right, code+'1')
+
+def huffman_encode(codebook, message):
+
+    if len(codebook) == 1:
+        return '0' * len(message)
+
+    # build a char -> code dictionary
+    forward_dict = dict(codebook)
+
+    return ''.join(message |> map$(forward_dict[]))
+
+def huffman_decode(codebook, encoded_message):
+
+    decoded_message = []
+    key = ''
+
+    if not codebook:
+        return ''
+    elif len(codebook) == 1:
+        return codebook[0][0] * len(encoded_message)
+
+    # build a code -> char dictionary
+    inverse_dict = dict((v, k) for k, v in codebook)
+
+    # for each bit in the encoding
+    # if the bit is in the dictionary, replace the bit with the paired
+    # character else look at the bit and the following bits together
+    # until a match occurs move to the next bit not yet looked at.
+    if encoded_message == '':
+        return inverse_dict['']
+
+    for bit in encoded_message:
+        key += bit
+        if key in inverse_dict:
+            decoded_message.append(inverse_dict[key])
+            key = ''
+
+    return ''.join(decoded_message)
+
+
+if __name__ == '__main__':
+    # test example
+    message = 'bibbity_bobbity'
+    tree = build_huffman_tree(message)
+    codebook = build_codebook(tree)
+    encoded_message = huffman_encode(codebook, message)
+    decoded_message = huffman_decode(codebook, encoded_message)
+
+    print('message:', message)
+    print('huffman tree:', tree)
+    print('codebook:', codebook)
+    print('encoded message:', encoded_message)
+    print('decoded message:', decoded_message)
+
+    # prints the following:
+    #
+    #  message: bibbity_bobbity
+    #  huffman_tree: Node(Leaf(b, 6), Node(Node(Leaf(y, 2), Leaf(t, 2)),
+    #                     Node(Node(Leaf(o, 1), Leaf(_, 1)), Leaf(i, 3))))
+    #  codebook: [('b', '0'), ('y', '100'), ('t', '101'),
+    #             ('o', '1100'), ('_', '1101'), ('i', '111')]
+    #  encoded_message: 01110011110110011010110000111101100
+    #  decoded_message: bibbity_bobbity

@@ -29,7 +29,7 @@ function euclid_mod(int $a, int $b): int
     return $a;
 }
 
-printf('Euclidean mod: %s', euclid_mod(64 * 67, 64 * 81));
+printf('[#]'.PHP_EOL.'Modulus-based euclidean algorithm result:'.PHP_EOL.'%s', euclid_mod(64 * 67, 64 * 81));
 echo PHP_EOL;
-printf('Euclidean sub: %s', euclid_sub(128 * 12, 128 * 77));
+printf('[#]'.PHP_EOL.'Subtraction-based euclidean algorithm result:'.PHP_EOL.'%s', euclid_sub(128 * 12, 128 * 77));
 echo PHP_EOL;

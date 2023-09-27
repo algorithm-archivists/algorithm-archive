@@ -1,0 +1,15 @@
+Import('files_to_compile env')
+
+language = files_to_compile[0].language
+chapter = files_to_compile[0].chapter
+
+from collections import defaultdict
+chapter_files = defaultdict(list)
+
+for file_info in files_to_compile:
+    chapter_files[file_info.chapter].append(file_info.path)
+
+for chapter, files in chapter_files.items():
+    build_target = f'#/build/{language}/{chapter}/{chapter}'
+    build_result = env.MCS(build_target, [str(file) for file in files])
+    env.Alias(str(chapter), build_result)

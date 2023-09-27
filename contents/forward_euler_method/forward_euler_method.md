@@ -96,7 +96,7 @@ That said, variations of this method *are* certainly used (for example Crank-Nic
 Here is a video describing the forward Euler method:
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wG7h8g6VLBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wG7h8g6VLBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Example Code
@@ -112,15 +112,15 @@ Note that in this case, the velocity is directly given by the ODE and the accele
 {% sample lang="c" %}
 [import, lang:"c"](code/c/euler.c)
 {% sample lang="cpp" %}
-[import, lang:"cpp"](code/c++/euler.cpp)
+[import, lang:"cpp"](code/cpp/euler.cpp)
 {% sample lang="rs" %}
 [import, lang:"rust"](code/rust/euler.rs)
 {% sample lang="elm" %}
-[import:44-54, lang:"elm"](code/elm/euler.elm)
-[import:193-210, lang:"elm"](code/elm/euler.elm)
+[import:78-91, lang:"elm"](code/elm/src/Euler.elm)
+[import:236-252, lang:"elm"](code/elm/src/Euler.elm)
 
 Full code for the visualization follows:
-[import, lang:"elm"](code/elm/euler.elm)
+[import, lang:"elm"](code/elm/src/Euler.elm)
 
 {% sample lang="py" %}
 [import, lang:"python"](code/python/euler.py)
@@ -135,7 +135,7 @@ Full code for the visualization follows:
 {% sample lang="f90" %}
 [import, lang:"fortran"](code/fortran/euler.f90)
 {% sample lang="go" %}
-[import, lang:"go"](code/golang/euler.go)
+[import, lang:"go"](code/go/euler.go)
 {% sample lang="v" %}
 [import, lang:"v"](code/v/euler.v)
 {% sample lang="asm-x64" %}
@@ -146,6 +146,8 @@ Full code for the visualization follows:
 [import, lang:"nim"](code/nim/forwardeuler.nim)
 {% sample lang="lisp" %}
 [import, lang="lisp"](code/clisp/euler.lisp)
+{%sample lang="coco" %}
+[import, lang:"coconut"](code/coconut/euler.coco)
 {% endmethod %}
 
 <script>
@@ -156,7 +158,7 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 
 ##### Code Examples
 
-The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/master/LICENSE.md)).
+The code examples are licensed under the MIT license (found in [LICENSE.md](https://github.com/algorithm-archivists/algorithm-archive/blob/main/LICENSE.md)).
 
 ##### Text
 

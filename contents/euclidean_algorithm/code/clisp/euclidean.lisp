@@ -17,8 +17,10 @@
       (abs a)
       (euclid-mod b (mod a b))))
 
-(print (euclid-sub (* 64 67) (* 64 81)))
-(print (euclid-mod (* 128 12) (* 128 77)))
+(format T "[#]~%Modulus-based euclidean algorithm result:~%")
+(format T "~d~%" (euclid-sub (* 64 67) (* 64 81)))
+(format T "[#]~%Subtraction-based euclidean algorithm result:~%")
+(format T "~d~%" (euclid-mod (* 128 12) (* 128 77)))
 
 ;; Quick test
 (assert
