@@ -1,6 +1,11 @@
 This file lists everyone, who contributed to this repo and wanted to show up here. If you're looking for information on contribution, please check the `CONTRIBUTING.md` out.
 
 # Contributors
+4.e.e9ir.e 9dos.w.39e9kfpf9r..dod
+rod9rkrm r8di4ne ie8ei3n3n enrjd8rnrdi9rm4 r884inr.e.e.3.3.e.diod
+e
+dkdi4.3kd9em3.md9r..4oepwme.e..
+emd9dk3.meoe emd9do3.mdkd94mr.idoeme.dmrkmemd8ir.4.d.d9rm4.dodo
 
 - James Schloss
 - Nicole Mazzuca
