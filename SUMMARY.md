@@ -41,6 +41,7 @@
     * [Verlet Integration](contents/verlet_integration/verlet_integration.md)
     * [Quantum Systems](contents/quantum_systems/quantum_systems.md)
         * [Split-Operator Method](contents/split-operator_method/split-operator_method.md)
+* [PID Controller](contents/pid_controller/pid_controller.md)
 * [Data Compression](contents/data_compression/data_compression.md)
     * [Huffman Encoding](contents/huffman_encoding/huffman_encoding.md)
 * [Computer Graphics](contents/computer_graphics/computer_graphics.md)
