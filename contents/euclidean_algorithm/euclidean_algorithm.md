@@ -192,6 +192,12 @@ Here's a video on the Euclidean algorithm:
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/h86RzlyHfUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+## Proof
+
+Some intuition as to why the Euclidean Algorithm works lies in it's proof. Only a proof for the subtraction method will be given at this point, but the modular version follows the same line of reasoning.
+
+Given two positive integers $$a$$ and $$b$$, they have a greatest common divisor $$d$$. There is always a common divisor, because every number is divisable by 1. Since $$a$$ and $$b$$ is divisable by $$d$$, $$a - b$$ is also divisable by $$d$$  ($$b < a$$). Let's call this value $$c$$. Now we once more have two numbers $$b$$ and $$c$$, which are both divisable by $$d$$. This process can be continued until the values are equal: this is the greatest common divisor $$d$$.
+
 ## Example Code
 
 {% method %}
