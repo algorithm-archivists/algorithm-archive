@@ -50,7 +50,7 @@ RUN git clone https://github.com/justinmeza/lci.git ~/lolcode && cd ~/lolcode &&
 ENV PATH=$PATH:~/lolcode/build
 
 # Setup Piet
-RUN pip install repiet
+RUN python3 -m pip install --no-cache-dir repiet
 
 # Setup Matlab
 # ?????? This is a licensed language???
@@ -107,6 +107,6 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
 
 
-RUN pip install wheel matplotlib numpy coconut scons
+RUN python3 -m pip install --no-cache-dir wheel matplotlib numpy coconut scons
 
 RUN sudo sh -c 'npm install -g typescript'
