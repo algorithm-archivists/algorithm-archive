@@ -1,11 +1,12 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/ubuntu/.devcontainer/base.Dockerfile
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # [Choice] Ubuntu version: bionic, focal
 ARG VARIANT="focal"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-# [Optional] Uncomment this section to install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+RUN apt-get update \
     && apt-get -y install --no-install-recommends build-essential software-properties-common xz-utils g++ sbcl julia python3 python3-pip python3-dev ghc openjdk-11-jdk libssl-dev gfortran libxml2-dev libyaml-dev libgmp-dev libz-dev libncurses5 gnuplot nodejs npm lua5.3 ocaml php ruby-full gnu-smalltalk scratch libfftw3-dev cmake mono-devel
 
 # Setup Crystal
@@ -49,7 +50,7 @@ RUN git clone https://github.com/justinmeza/lci.git ~/lolcode && cd ~/lolcode &&
 ENV PATH=$PATH:~/lolcode/build
 
 # Setup Piet
-RUN pip install repiet
+RUN python3 -m pip install --no-cache-dir repiet
 
 # Setup Matlab
 # ?????? This is a licensed language???
@@ -85,7 +86,7 @@ ENV PATH=$PATH:~/swift/usr/bin
 
 # Setup viml
 # To run vim script commands use `/usr/bin/vim -c ":source %" <path_to_file>`
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install --no-install-recommends vim
+RUN apt-get -y install --no-install-recommends vim
 
 # Setup whitespace
 RUN mkdir -p ~/whitespace && git clone https://github.com/wspace/whitespace-haskell ~/whitespace && cd ~/whitespace && make -B
@@ -102,10 +103,10 @@ RUN mkdir -p ~/vlang && wget https://github.com/vlang/v/releases/download/weekly
 ENV PATH=$PATH:~/vlang/v
 
 # Install the packages that needed extra help
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+RUN apt-get update \
     && apt-get -y install --no-install-recommends crystal dart nim powershell scala dotnet-sdk-5.0 r-base racket
 
 
-RUN pip install wheel matplotlib numpy coconut scons
+RUN python3 -m pip install --no-cache-dir wheel matplotlib numpy coconut scons
 
 RUN sudo sh -c 'npm install -g typescript'
