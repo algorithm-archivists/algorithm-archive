@@ -51,8 +51,6 @@ The algorithm is a simple way to find the *greatest common divisor* (GCD) of two
 [import:4-18, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import:1-13, lang="factor"](code/factor/euclid.factor)
-{% sample lang="ws" %}
-[import, lang="whitespace"](code/whitespace/euclidian_sub.ws)
 {% sample lang="scala" %}
 [import:3-8, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
@@ -141,8 +139,6 @@ Modern implementations, though, often use the modulus operator (%) like so
 [import:20-30, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import:15-25, lang="factor"](code/factor/euclid.factor)
-{% sample lang="ws" %}
-[import, lang="whitespace"](code/whitespace/euclidian_mod.ws)
 {% sample lang="scala" %}
 [import:10-14, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
@@ -244,11 +240,6 @@ Here's a video on the Euclidean algorithm:
 [import, lang="php"](code/php/euclidean.php)
 {% sample lang="factor" %}
 [import, lang="factor"](code/factor/euclid.factor)
-{% sample lang="ws" %}
-Here is a readable version of the algorithms with comments. First, subtraction method:
-[import, lang="whitespace"](code/whitespace/euclidian_sub_comments.ws)
-and modulo method:
-[import, lang="whitespace"](code/whitespace/euclidian_mod_comments.ws)
 {% sample lang="scala" %}
 [import, lang="scala"](code/scala/euclidean.scala)
 {% sample lang="racket" %}
