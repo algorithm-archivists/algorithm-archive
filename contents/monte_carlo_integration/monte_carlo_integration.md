@@ -101,6 +101,8 @@ each point is tested to see whether it's in the circle or not:
 [import:4-9, lang:"coconut"](code/coconut/monte_carlo.coco)
 {% sample lang="ps1" %}
 [import:1-3, lang:"powershell"](code/powershell/MonteCarlo.ps1)
+{% sample lang="crystal" %}
+[import:2-6, lang:"crystal"](code/crystal/monte_carlo.cr)
 {% endmethod %}
 
 If it's in the circle, we increase an internal count by one, and in the end,
@@ -210,6 +212,8 @@ The code snippets were taken from this [scratch project](https://scratch.mit.edu
 [import, lang:"coconut"](code/coconut/monte_carlo.coco)
 {% sample lang="ps1" %}
 [import, lang:"powershell"](code/powershell/MonteCarlo.ps1)
+{% sample lang="crystal" %}
+[import, lang:"crystal"](code/crystal/monte_carlo.cr)
 {% endmethod %}
 
 <script>
