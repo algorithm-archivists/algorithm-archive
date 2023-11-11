@@ -46,6 +46,8 @@
 * [Computer Graphics](contents/computer_graphics/computer_graphics.md)
     * [Flood Fill](contents/flood_fill/flood_fill.md)
 * [Quantum Information](contents/quantum_information/quantum_information.md)
+* [Graph Algorithms](contents/graph_algorithms/README.md)
+   * [Dijkstra's Algorithm](contents/dijkstra/dijkstra.md)
 * [Cryptography](contents/cryptography/cryptography.md)
 * [Computus](contents/computus/computus.md)
 * [Approximate Counting Algorithm](contents/approximate_counting/approximate_counting.md)
