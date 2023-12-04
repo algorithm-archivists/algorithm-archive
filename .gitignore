@@ -531,3 +531,7 @@ target/
 
 *.out
 *.class
+
+# OCaml compilation files
+*.cmi
+*.cmx
