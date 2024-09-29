@@ -328,6 +328,8 @@ For now, we have the code outputting a tuple of $$d$$ and $$e$$, so users can us
 [import, lang:"javascript"](code/javascript/gauss_easter.js)
 {% sample lang="typescript" %}
 [import, lang:"typescript"](code/typescript/gauss_easter.ts)
+{% sample lang="elisp" %}
+[import, lang:"elisp"](code/elisp/gauss-easter.el)
 {% endmethod %}
 
 
